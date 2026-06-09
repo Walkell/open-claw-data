@@ -61,35 +61,41 @@ web_search / tavily_search 兜底
 web_search / tavily_search
 ```
 
-### Bitable 双账户（v3.1）
+### Bitable 双账户（v4.0 — 2026-06-09 重构）
 
 ⚠️ 不在此维护任何 token（token 可能刷新）
 ⚠️ TOKEN 动态获取：每次调 Bitable API 之前，第一步必须是 feishu_bitable_app.list()，用返回的完整 token
 ⚠️ 绝对不串账户！每个 principal 只有自己的数据域
+⚠️ 2026-06-09 新建 Towney-投资管理 和 Klaire-投资管理，按 InvestmentOS 表结构复制
 
+| principal | Bitable 名称 | app_token | 状态 |
+|-----------|-------------|-----------|------|
+| towney | Towney-投资管理 | OcmCb7TQYaHqnvsjBjAc0GRdnTb | 🆕 新建 |
+| klaire | Klaire-投资管理 | J5zobSJFwaW4JjsEzLhcTNKTnBc | 🆕 新建 |
+
+**历史旧表（迁移完成后可废弃）：**
 | principal | Bitable 名称 | app_token |
 |-----------|-------------|-----------|
-| towney | towney | ODPxbiwnzazrOSsrgY3c9sqGneg |
-| klaire | Klaire - 投资管理 | HYf4bOpq1RRdj6NRP5scjnqQsUnb |
+| towney | InvestmentOS | ODPxbiwnzazrOSsrgY3c9sqGneg |
+| klaire | 程珂 - 投资管理 | HYf4bOpq1RRdj6NRP5scjnqQsUnb |
 
 表结构参考（通过 app.list() + table.list() 动态获取，此处仅供识别人名）：
 ```
-towney (towney):
-  持仓表: tblGcWd82BIXTT9W
-  报告表: tblTaIWRcRyZgd04
-  交易记录: tbllEHanR9gTPnJU
-  观察池: tblxfCjgr1zkKAbi
-  监控记录: tbl8mYixzl6hztip
-  决策复盘: tblaPynTH8R9SMKw
+towny (Towney-投资管理):
+  持仓表: tblUeTGMf0IKJ8Pk
+  报告表: tbllqOCpSadabEYt
+  交易记录: tblUZ9WvrF6FVZTS
+  观察池: tblaLlSQp8tEcWgJ
+  监控记录: tblFAfrZs4Rz4AOu
+  决策复盘: tbl7TR8G43GCN057
 
-klaire (Klaire - 投资管理):
-  持仓表: tblEsbj5wKnu4Jw4
-  报告表: tbl9uqQYP6llgjPA
-  交易记录: tbl1PXHGEwGZOoai
-  观察池: tblZtpWCzAXJVvyY
-  监控记录: tblDMOdxSKwetSzG
-  KPI追踪: tblXE4UsBX6EAlap
-  执行手册: tblrCkXtQDsd5XOF
+klaire (Klaire-投资管理):
+  持仓表: tbl9xYrGkBDZlnYm
+  报告表: tblsyCW1JE0sJnwm
+  交易记录: tblVKj7wdGxMI4DQ
+  观察池: tblaQY1jOFWOXd1U
+  监控记录: tblHkc0MfQbe2x37
+  决策复盘: tblrV0rNe4npQfic
 ```
 
 【Bitable 标准调用流程 —— 每次必走，不可跳过】

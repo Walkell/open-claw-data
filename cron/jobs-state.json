@@ -1,31 +1,22 @@
 {
   "version": 1,
   "jobs": {
-    "7d942d45-0f26-4525-bca9-e71076695604": {
-      "updatedAtMs": 1780978142069,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/10 9-11 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
+    "7f3a9c12-b4e8-4d2f-a671-8e5c3f29b0d1": {
+      "updatedAtMs": 1749427200000,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"30 7 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1781053200000,
-        "lastRunAtMs": 1780978114576,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 27493,
-        "lastDeliveryStatus": "delivered",
-        "lastFailureNotificationDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0,
-        "consecutiveSkipped": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1781047800000
       }
     },
     "b1795f87-68ae-4aa4-a29e-9edc3041ad58": {
-      "updatedAtMs": 1780986040523,
+      "updatedAtMs": 1780992066115,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/10 13-15 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1780986600000,
-        "lastRunAtMs": 1780986000006,
+        "nextRunAtMs": 1781067600000,
+        "lastRunAtMs": 1780991746158,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 40517,
+        "lastDurationMs": 319957,
         "lastDeliveryStatus": "delivered",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
@@ -34,41 +25,19 @@
       }
     },
     "8f4f5463-f1cd-4a65-970f-7154313d7af4": {
-      "updatedAtMs": 1780967742435,
+      "updatedAtMs": 1781001196602,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"30 18 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1781001000000,
-        "lastRunAtMs": 1780914600006,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 366656,
-        "lastDeliveryStatus": "not-delivered",
-        "lastFailureNotificationDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 1,
+        "nextRunAtMs": 1781087400000,
+        "lastRunAtMs": 1781001000005,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 196597,
+        "lastDeliveryStatus": "delivered",
+        "lastFailureNotificationDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
         "consecutiveSkipped": 0,
-        "lastDelivered": false,
-        "lastError": "Request was aborted",
-        "lastDiagnostics": {
-          "summary": "Request was aborted",
-          "entries": [
-            {
-              "ts": 1780914966659,
-              "source": "tool",
-              "severity": "error",
-              "message": "Request was aborted"
-            },
-            {
-              "ts": 1780914966659,
-              "source": "agent-run",
-              "severity": "error",
-              "message": "Request was aborted"
-            }
-          ]
-        },
-        "lastDiagnosticSummary": "Request was aborted",
-        "lastDeliveryError": "Request was aborted",
-        "lastFailureNotificationDelivered": false,
-        "lastFailureNotificationDeliveryError": "Request was aborted"
+        "lastDelivered": true
       }
     },
     "bfbfdc36-64e3-4e1b-93ce-23be6eb695c4": {
@@ -110,19 +79,11 @@
         "consecutiveSkipped": 0
       }
     },
-    "fe748f0f-a34c-46fe-8756-109be5fbe0ef": {
-      "updatedAtMs": 1780977043932,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/10 9-11 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":30000}}",
+    "64b5f1d8-3547-4b45-afbc-ade4b0df1611": {
+      "updatedAtMs": 1780995322393,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"30,32,34 9 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "lastRunAtMs": 1780977014815,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 29117,
-        "lastDeliveryStatus": "not-requested",
-        "lastFailureNotificationDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0,
-        "consecutiveSkipped": 0,
-        "nextRunAtMs": 1781053214809
+        "nextRunAtMs": 1781055000000
       }
     },
     "56078609-aee4-4332-9ef5-d952714fe061": {
@@ -157,6 +118,13 @@
           ]
         },
         "lastDiagnosticSummary": "⚠️ ✉️ Message failed"
+      }
+    },
+    "f14657c4-17fa-4d9d-a79d-771ca7df7730": {
+      "updatedAtMs": 1780988885207,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"30 8 * * 2-5\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {
+        "nextRunAtMs": 1781051400000
       }
     },
     "82452460-7ffa-4eff-9bdb-89e86182c872": {
@@ -207,29 +175,48 @@
       }
     },
     "00bad0b6-3fc5-4fd2-8a8c-61775e826573": {
-      "updatedAtMs": 1780985933247,
+      "updatedAtMs": 1780991744114,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 13-15 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":15000}}",
       "state": {
-        "nextRunAtMs": 1780986606681,
-        "lastRunAtMs": 1780985814073,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 119174,
+        "nextRunAtMs": 1781067606681,
+        "lastRunAtMs": 1780991356158,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 387956,
         "lastDeliveryStatus": "not-requested",
         "lastFailureNotificationDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0,
-        "consecutiveSkipped": 0
+        "consecutiveErrors": 3,
+        "consecutiveSkipped": 0,
+        "lastDiagnostics": {
+          "summary": "Request was aborted",
+          "entries": [
+            {
+              "ts": 1780991744112,
+              "source": "tool",
+              "severity": "error",
+              "message": "Request was aborted"
+            },
+            {
+              "ts": 1780991744112,
+              "source": "agent-run",
+              "severity": "error",
+              "message": "Request was aborted"
+            }
+          ]
+        },
+        "lastDiagnosticSummary": "Request was aborted",
+        "lastError": "Request was aborted"
       }
     },
     "066bd57e-ed9a-4c40-a8a5-4799e14b197d": {
-      "updatedAtMs": 1780915737660,
+      "updatedAtMs": 1781002117507,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"45 18 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1781001900000,
-        "lastRunAtMs": 1780915500007,
+        "nextRunAtMs": 1781088300000,
+        "lastRunAtMs": 1781001900062,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 237653,
+        "lastDurationMs": 217445,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "lastFailureNotificationDeliveryStatus": "not-requested",
@@ -278,15 +265,20 @@
         "lastDeliveryError": "cron: job interrupted by gateway restart"
       }
     },
+    "a4f8e2d1-7c3b-4a9e-b512-6d0f3e8a1c74": {
+      "updatedAtMs": 1749427200000,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":false,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 10 * * 1\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {}
+    },
     "c12c9f97-69ca-4e25-9127-32342da608e7": {
-      "updatedAtMs": 1780985330723,
+      "updatedAtMs": 1780986723076,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/30 9-14 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":45000}}",
       "state": {
-        "nextRunAtMs": 1780986605511,
-        "lastRunAtMs": 1780985322617,
+        "nextRunAtMs": 1781053205511,
+        "lastRunAtMs": 1780986714420,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8106,
+        "lastDurationMs": 8656,
         "lastDeliveryStatus": "delivered",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
