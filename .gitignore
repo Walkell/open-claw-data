@@ -1,0 +1,168 @@
+# ============================================================
+#  .gitignore — 投资委员会智能体（仓库根 = .openclaw 目录）
+# ============================================================
+#  白名单模式：默认忽略一切，显式放行配置/定义。
+#  新目录出现时默认被忽略，安全；要纳管须显式加放行。
+#
+#  ⚠️ 提交前：
+#     1. openclaw.json 里 apiKey 改成 ${ENV_VAR} 引用
+#     2. 仓库 PRIVATE
+#     3. git status 确认无密钥/持仓混入
+# ============================================================
+
+
+# ────────────────────────────────────────────
+#  默认忽略一切
+# ────────────────────────────────────────────
+*
+
+
+# ────────────────────────────────────────────
+#  放行：git 自身
+# ────────────────────────────────────────────
+!.gitignore
+!README.md
+
+
+# ────────────────────────────────────────────
+#  放行：主配置
+# ────────────────────────────────────────────
+!openclaw.json
+
+
+# ────────────────────────────────────────────
+#  放行：agent 定义
+# ────────────────────────────────────────────
+!agents/
+!agents/**
+
+
+# ────────────────────────────────────────────
+#  放行：主工作区定义文档
+# ────────────────────────────────────────────
+!workspace/
+!workspace/SOUL.md
+!workspace/AGENTS.md
+!workspace/TOOLS.md
+!workspace/MEMORY.md
+!workspace/HEARTBEAT.md
+!workspace/USER.md
+
+# 主工作区下的自建 skills
+!workspace/skills/
+!workspace/skills/**
+
+
+# ────────────────────────────────────────────
+#  放行：各委员/角色工作区
+# ────────────────────────────────────────────
+!workspace-industry/
+!workspace-industry/**
+!workspace-monitor/
+!workspace-monitor/**
+!workspace-news/
+!workspace-news/**
+!workspace-research/
+!workspace-research/**
+!workspace-risk/
+!workspace-risk/**
+
+# 各 workspace 内排除运行时产物
+workspace*/memory/
+workspace*/*.log
+workspace*/cache/
+workspace*/tmp/
+workspace*/.openclaw/
+
+
+# ────────────────────────────────────────────
+#  放行：cron / flows / extensions / devices
+# ────────────────────────────────────────────
+!cron/
+!cron/*.json
+
+!flows/
+!flows/**
+
+!extensions/
+!extensions/**
+
+!devices/
+!devices/**
+
+!plugin-skills/
+!plugin-skills/**
+
+
+# ────────────────────────────────────────────
+#  放行：项目级脚本/文档（你的 adapter 等）
+# ────────────────────────────────────────────
+!*.py
+!*.md
+!*.sh
+
+
+# ────────────────────────────────────────────
+#  强制排除（即使上面有通配放行也不进库）
+# ────────────────────────────────────────────
+
+# 密钥 / 身份（绝不入库）
+credentials/
+secrets/
+identity/
+.env
+.env.*
+*.key
+*.pem
+*.secret
+
+# 运行时数据
+completions/
+delivery-queue/
+session-delivery-queue/
+subagents/
+tasks/
+tui/
+monitor/
+logs/
+memory/
+workspace/memory/
+
+# 插件 / 依赖（可重装）
+plugins/
+npm/
+**/node_modules/
+
+# Agent 会话日志/轨迹
+agents/*/sessions/
+
+# 配置备份 / 崩溃恢复
+openclaw.json.bak*
+openclaw.json.clobbered.*
+openclaw.json.last-good
+gateway-supervisor-restart-handoff.json
+update-check.json
+
+# OS / 编辑器
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# Python 运行时
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# 数据库 / 日志
+*.db
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.log
+*.pid
+*.lock

@@ -1,0 +1,76 @@
+# CHENGKE_CONFIG.md — principal 配置档
+
+## principal 标识
+
+```yaml
+principal:
+  id: "chengke"
+  display_name: "程珂"
+```
+
+## 数据域（隔离核心）
+
+```yaml
+ledger:
+  app_token: "HYf4bOpq1RRdj6NRP5scjnqQsUnb"
+  bitable_name: "程珂 - 投资管理"
+  positions_table: "持仓表"
+  watchlist_table: "观察池"
+  reports_table: "报告表"
+  trades_table: "交易记录"
+  monitor_table: "监控记录"
+  kpi_table: "KPI追踪"
+  playbook_table: "执行手册"
+  notes_table: "说明"
+  write_scope: "HYf4bOpq1RRdj6NRP5scjnqQsUnb 内全部表"
+```
+
+## 行情数据源
+
+```yaml
+market_adapter:
+  quotes: "腾讯财经 qt.gtimg.cn（主）｜ akshare（备）"
+  hist_data: "akshare | Yahoo Finance"
+  news: "akshare get_news_data | web_search | tavily_search"
+```
+
+## 委员会构成
+
+```yaml
+active_members: ["research", "industry", "news", "risk"]
+```
+
+## 风险阈值
+
+```yaml
+risk_thresholds:
+  veto: 7      # ≥7 自动 VETO
+  hard_veto: 9 # ≥9 硬否决，不可 override
+```
+
+## 仓位体系
+
+- 每只独立满仓线
+- 不涉及总资金金额数字
+
+## 输出通道
+
+- **群聊:** 程珂+投委会+Towney（oc_c19042fb899cda7eeca1bbbd7d981d1a）
+- ⚠️ 群内禁输出持仓数据（成本/盈亏/仓位/交易记录），禁写 Bitable
+
+## cron 清单
+
+| 名称 | 频率 | 输出 |
+|------|------|------|
+| chengke-pre-market | 每早 8:35（二-五） | 群 |
+| chengke-monday-briefing | 每周一 8:25 | 群 |
+| chengke-intraday-monitor | 每15分 9-11 | 写表 |
+| chengke-watchlist-scan | 每日 11:00 | 群 |
+| chengke-afternoon-monitor-pm | 每15分 13-15 | 写表 |
+| chengke-eod-review | 收盘 18:45 | 群 |
+| chengke-weekly-review | 每周五 18:50 | 群 |
+| chengke-monthly-review | 每月末 18:55 | 群 |
+
+---
+
+_配置档版本化，修改时不影响框架代码。_
