@@ -42,8 +42,8 @@ Two principals share the agent infrastructure but have **strictly isolated data 
 
 | Principal | Bitable | Delivery |
 |-----------|---------|----------|
-| towney | `InvestmentOS` (ODPxbi…Gneg) | DM Towney |
-| chengke | 程珂-投资管理 (HYf4bO…sUnb) | Group chat oc_c19042… |
+| towney | `towney` (ODPxbi…Gneg) | DM Towney |
+| klaire | Klaire-投资管理 (HYf4bO…sUnb) | Group chat oc_c19042… |
 
 **Cross-principal data access = incident.** Every cycle must confirm principal, every sub-agent dispatch injects `principal` + `ledger_ref`. Cycle IDs carry principal prefix: `towney-20260608-1430-688008`.
 
@@ -68,7 +68,7 @@ User instruction → CIO confirms principal →
 | `workspace/TOOLS.md` | Market data sources, Bitable call protocol, position system rules |
 | `workspace/MEMORY.md` | Curated long-term memory (mistakes logged, lessons learned) |
 | `workspace/TOWNEY_CONFIG.md` | towney principal config (tables, thresholds, cron schedule) |
-| `workspace/CHENGKE_CONFIG.md` | chengke principal config |
+| `workspace/KLAIRE_CONFIG.md` | klaire principal config |
 | `workspace-*/` | Sub-agent workspaces (each has SOUL/AGENTS/TOOLS/USER/HEARTBEAT/IDENTITY) |
 
 ### Data Sources
@@ -92,7 +92,7 @@ Defined in `cron/jobs.json`. Cover pre-market briefings, intraday monitoring (ev
 ## Critical Rules
 
 1. **Bitable = single source of truth.** No static snapshots in any file. Every analysis/report must pull live data from Bitable first.
-2. **Tenant isolation.** Never mix towney and chengke data. Violating this is an incident, not a quality issue.
+2. **Tenant isolation.** Never mix towney and klaire data. Violating this is an incident, not a quality issue.
 3. **Sub-agent output is internal.** Raw JSON envelopes from Research/Industry/News/Risk are never delivered to users — CIO synthesizes into human-readable conclusions.
 4. **Cost values require user confirmation** before writing to Bitable.
 5. **No amount references.** User has never disclosed total capital. Use only position % relative to each stock's own full-position line.

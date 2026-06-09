@@ -69,12 +69,12 @@ web_search / tavily_search
 
 | principal | Bitable 名称 | app_token |
 |-----------|-------------|-----------|
-| towney | InvestmentOS | ODPxbiwnzazrOSsrgY3c9sqGneg |
-| chengke | 程珂 - 投资管理 | HYf4bOpq1RRdj6NRP5scjnqQsUnb |
+| towney | towney | ODPxbiwnzazrOSsrgY3c9sqGneg |
+| klaire | Klaire - 投资管理 | HYf4bOpq1RRdj6NRP5scjnqQsUnb |
 
 表结构参考（通过 app.list() + table.list() 动态获取，此处仅供识别人名）：
 ```
-towney (InvestmentOS):
+towney (towney):
   持仓表: tblGcWd82BIXTT9W
   报告表: tblTaIWRcRyZgd04
   交易记录: tbllEHanR9gTPnJU
@@ -82,7 +82,7 @@ towney (InvestmentOS):
   监控记录: tbl8mYixzl6hztip
   决策复盘: tblaPynTH8R9SMKw
 
-chengke (程珂 - 投资管理):
+klaire (Klaire - 投资管理):
   持仓表: tblEsbj5wKnu4Jw4
   报告表: tbl9uqQYP6llgjPA
   交易记录: tbl1PXHGEwGZOoai

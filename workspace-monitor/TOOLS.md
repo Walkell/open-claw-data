@@ -12,7 +12,7 @@
 | 读持仓 | towney | 持仓表 | tblGcWd82BIXTT9W |
 | 写监控记录 | towney | 监控记录 | tbl8mYixzl6hztip |
 
-Monitor 只服务 towney 的 InvestmentOS（app_token 动态获取，不写死）。
+Monitor 只服务 towney 的 towney（app_token 动态获取，不写死）。
 
 写监控记录前必须先 `feishu_bitable_app_table_field.list()` 确认字段名，再 `batch_create`。
 

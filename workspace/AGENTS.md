@@ -228,8 +228,8 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 
 | principal | Bitable | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录 | 输出通道 |
 |-----------|---------|--------|--------|----------|--------|----------|----------|
-| towney | InvestmentOS: `ODPxbiwnzazrOSsrgY3c9sqGneg` | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录+决策复盘 | DM Towney |
-| chengke | 程珂 - 投资管理: `HYf4bOpq1RRdj6NRP5scjnqQsUnb` | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录+KPI追踪+执行手册+说明 | 群 oc_c19042fb899cda7eeca1bbbd7d981d1a |
+| towney | towney: `ODPxbiwnzazrOSsrgY3c9sqGneg` | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录+决策复盘 | DM Towney |
+| klaire | Klaire - 投资管理: `HYf4bOpq1RRdj6NRP5scjnqQsUnb` | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录+KPI追踪+执行手册+说明 | 群 oc_c19042fb899cda7eeca1bbbd7d981d1a |
 
 ### 铁律
 
@@ -298,7 +298,7 @@ Secretary cron → session 健康检查、日志归档、cron 告警
 - **CIO 不直接写库。** 所有写 Bitable 操作必须通过 `sessions_spawn` Execution Desk 执行
 - **CIO 不自己拉财报/做估值/搜新闻/评风险** — 这些是子 Agent 的活
 - **大跌加仓触发流程：** 开盘5分钟内扫描安全垫 → 满足条件则召 Research + Risk 双委员 → CIO 出决议单 → Desk 写库
-- **每个决策周期开始时，CIO 先确认 principal：** 从用户当前对话上下文判断是 towney 还是 chengke，加载对应配置档
+- **每个决策周期开始时，CIO 先确认 principal：** 从用户当前对话上下文判断是 towney 还是 klaire，加载对应配置档
 
 ### CIO 聚合公式（§7 确定性量化，v3.2）
 
@@ -406,7 +406,7 @@ baseline_score 取值范围 0-10，5 为中性基准。
 
 ```json
 {
-  "principal": "towney|chengke",
+  "principal": "towney|klaire",
   "agent": "research|industry|news|risk",
   "cycle_id": "{principal}-{YYYYMMDD}-{HHMM}-{symbol}",
   "data": { ... }
@@ -434,7 +434,7 @@ baseline_score 取值范围 0-10，5 为中性基准。
 
 ### Bitable 引用规范
 - 引用表时使用中文表名（如「持仓表」），不是 table_id
-- 引用 Bitable 时使用名称（如「InvestmentOS」），不是 app_token
-- principal 配置细节见独立配置档（TOWNEY_CONFIG.md / CHENGKE_CONFIG.md）
+- 引用 Bitable 时使用名称（如「towney」），不是 app_token
+- principal 配置细节见独立配置档（TOWNEY_CONFIG.md / KLAIRE_CONFIG.md）
 
 ⚠️ 绝对不串账户。

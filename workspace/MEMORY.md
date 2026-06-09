@@ -27,7 +27,7 @@
 | 账户 | app_token | 持仓表 | 报告表 | 交易记录 | 观察池 |
 |------|-----------|--------|--------|----------|--------|
 | 投委会 | ODPxbi…Gneg | tblGcWd82BIXTT9W | tblTaIWRcRyZgd04 | tbllEHanR9gTPnJU | tblxfCjgr1zkKAbi |
-| 程珂 | HYf4bOp…sUnb | tblEsbj5wKnu4Jw4 | tbl9uqQYP6llgjPA | tbl1PXHGEwGZOoai | tblZtpWCzAXJVvyY |
+| Klaire | HYf4bOp…sUnb | tblEsbj5wKnu4Jw4 | tbl9uqQYP6llgjPA | tbl1PXHGEwGZOoai | tblZtpWCzAXJVvyY |
 | | | | | (还有监控/KPI/执行手册/说明表) | |
 
 ⚠️ 绝对不串账户
@@ -40,9 +40,9 @@
    - **硬性规则（新增）：** 任何涉及"持仓"的分析报告，第一步必须 `feishu_bitable_app_table_record.list` 从Bitable拉最新数据，不做这一步不准出结论
 8. **Bitable写入时成本写错** → 均胜写25.42（实25.8）、盾安写11.25（实11.415）、均胜写2手（实1手）；token过期时直接报错放弃不重试
    - **硬性规则：** 成本必须等用户确认后再写入；permission_denied时自动走OAuth续期后重试
-9. **凭空编造时代电气688187和江苏雷利300660** → 多次在程珂群报告/预警中出现
-   - **根因：** 7个程珂cron的prompt里硬编码了标的列表，没从Bitable动态拉
-   - **修复：** 所有程珂cron已改为第一步从Bitable拉白名单，只分析白名单内标的
+9. **凭空编造时代电气688187和江苏雷利300660** → 多次在Klaire群报告/预警中出现
+   - **根因：** 7个Klairecron的prompt里硬编码了标的列表，没从Bitable动态拉
+   - **修复：** 所有Klairecron已改为第一步从Bitable拉白名单，只分析白名单内标的
 10. **已建仓标的未从观察池移除** → 均胜/盾安建仓后仍显示"已入池"
 
 ### 2026-06-08

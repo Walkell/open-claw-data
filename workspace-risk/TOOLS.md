@@ -10,8 +10,8 @@
 
 | principal | 持仓表 |
 |-----------|--------|
-| towney | tblGcWd82BIXTT9W（InvestmentOS）|
-| chengke | tblEsbj5wKnu4Jw4（程珂-投资管理）|
+| towney | tblGcWd82BIXTT9W（towney）|
+| klaire | tblEsbj5wKnu4Jw4（Klaire-投资管理）|
 
 principal 由 CIO 注入，只读对应表，不碰其他 principal 的数据。
 

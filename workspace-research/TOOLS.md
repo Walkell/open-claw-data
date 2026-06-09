@@ -11,8 +11,8 @@
 
 | principal | Bitable 名称 | 持仓表 | 观察池 |
 |-----------|-------------|--------|--------|
-| towney | InvestmentOS | tblGcWd82BIXTT9W | tblxfCjgr1zkKAbi |
-| chengke | 程珂-投资管理 | tblEsbj5wKnu4Jw4 | tblZtpWCzAXJVvyY |
+| towney | towney | tblGcWd82BIXTT9W | tblxfCjgr1zkKAbi |
+| klaire | Klaire-投资管理 | tblEsbj5wKnu4Jw4 | tblZtpWCzAXJVvyY |
 
 ---
 

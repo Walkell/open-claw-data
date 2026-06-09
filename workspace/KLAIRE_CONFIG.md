@@ -1,11 +1,11 @@
-# CHENGKE_CONFIG.md — principal 配置档
+# KLAIRE_CONFIG.md — principal 配置档
 
 ## principal 标识
 
 ```yaml
 principal:
-  id: "chengke"
-  display_name: "程珂"
+  id: "klaire"
+  display_name: "Klaire"
 ```
 
 ## 数据域（隔离核心）
@@ -13,7 +13,7 @@ principal:
 ```yaml
 ledger:
   app_token: "HYf4bOpq1RRdj6NRP5scjnqQsUnb"
-  bitable_name: "程珂 - 投资管理"
+  bitable_name: "Klaire - 投资管理"
   positions_table: "持仓表"
   watchlist_table: "观察池"
   reports_table: "报告表"
@@ -55,21 +55,21 @@ risk_thresholds:
 
 ## 输出通道
 
-- **群聊:** 程珂+投委会+Towney（oc_c19042fb899cda7eeca1bbbd7d981d1a）
+- **群聊:** Klaire+投委会+Towney（oc_c19042fb899cda7eeca1bbbd7d981d1a）
 - ⚠️ 群内禁输出持仓数据（成本/盈亏/仓位/交易记录），禁写 Bitable
 
 ## cron 清单
 
 | 名称 | 频率 | 输出 |
 |------|------|------|
-| chengke-pre-market | 每早 8:35（二-五） | 群 |
-| chengke-monday-briefing | 每周一 8:25 | 群 |
-| chengke-intraday-monitor | 每15分 9-11 | 写表 |
-| chengke-watchlist-scan | 每日 11:00 | 群 |
-| chengke-afternoon-monitor-pm | 每15分 13-15 | 写表 |
-| chengke-eod-review | 收盘 18:45 | 群 |
-| chengke-weekly-review | 每周五 18:50 | 群 |
-| chengke-monthly-review | 每月末 18:55 | 群 |
+| klaire-pre-market | 每早 8:35（二-五） | 群 |
+| klaire-monday-briefing | 每周一 8:25 | 群 |
+| klaire-intraday-monitor | 每15分 9-11 | 写表 |
+| klaire-watchlist-scan | 每日 11:00 | 群 |
+| klaire-afternoon-monitor-pm | 每15分 13-15 | 写表 |
+| klaire-eod-review | 收盘 18:45 | 群 |
+| klaire-weekly-review | 每周五 18:50 | 群 |
+| klaire-monthly-review | 每月末 18:55 | 群 |
 
 ---
 
