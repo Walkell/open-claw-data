@@ -26,6 +26,8 @@ principal 由 CIO 注入，只读对应表，不碰其他 principal 的数据。
       'https://qt.gtimg.cn/q=sh688120,...', timeout=10).read().decode('gbk'); ..."
 ```
 
+⚠️ **涨跌幅铁律**：只用行情 API 预计算的 `f[34]`（gtimg）或 `change_pct`（akshare）。Bitable 里任何价格字段都是 Monitor 的历史快照，禁止用于涨跌幅计算或现价判断。止损/止盈/成本比较需要的是"实时价 vs Bitable 止损价"，现价永远从行情 API 取。
+
 ### 历史走势（技术面）
 ```
 akshare__get_hist_data(symbol, interval=day, recent_n=60)
