@@ -1,44 +1,48 @@
-# TOOLS.md - Local Notes
+# TOOLS.md - Industry Agent
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+## 数据来源优先级
 
-## What Goes Here
-
-Things like:
-
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
-
-## Examples
-
-```markdown
-### Cameras
-
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
+### 宏观数据（利率 / PMI / 社融 / 汇率 / VIX）
+```
+web_search / tavily_search：优先选财联社、Wind、国家统计局等来源
+tavily_extract：拉取具体页面原文
 ```
 
-## Why Separate?
+### 行业景气度（资金流向 / ETF / 板块）
+```
+web_search："{行业名} ETF 资金流向 近期"
+web_search："{行业名} 板块 景气度 2026"
+tavily_search：补充英文来源（半导体/AI 等全球化行业）
+```
 
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
+### 实时指数 / 期货
+```
+python3 -c "import urllib.request; r=urllib.request.urlopen(
+  'https://qt.gtimg.cn/q=sh000001,sz399006,...', timeout=10).read().decode('gbk'); ..."
+```
 
 ---
 
-Add whatever helps you do your job. This is your cheat sheet.
+## Bitable（辅助查持仓行业分布，非必须）
 
-## Related
+如需了解当前持仓的行业分布，可读持仓表：
 
-- [Agent workspace](/concepts/agent-workspace)
+1. `feishu_bitable_app.list()` → 获取最新 token（不缓存）
+2. `permission_denied` → `feishu_oauth` 续期 → 重试
+
+| principal | 持仓表 |
+|-----------|--------|
+| towney | tblGcWd82BIXTT9W（InvestmentOS）|
+| chengke | tblEsbj5wKnu4Jw4（程珂-投资管理）|
+
+principal 由 CIO 注入，只读对应表。
+
+---
+
+## 输出给 Risk / CIO 的关键字段
+
+下游 Risk Agent 和 CIO §7 公式会从你的输出中取：
+- `macro_score`：宏观评分，**0-10**（0=极度收紧/衰退，5=中性，10=极度宽松/景气）
+- `industry_score`：行业景气度评分，**0-10**（0=极度萎缩，5=中性，10=极度繁荣）
+
+确保这两个字段在 JSON 信封的 `data` 层中存在且有数值。

@@ -1,44 +1,68 @@
-# TOOLS.md - Local Notes
+# TOOLS.md - Monitor Agent
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+## Bitable 调用协议
 
-## What Goes Here
+**每次必走，不可跳过：**
+1. `feishu_bitable_app.list()` → 获取最新完整 token（不缓存、不假设）
+2. 读持仓表获取当前持仓列表（代码、止损价、止盈价、仓位、备注）
+3. `permission_denied` → `feishu_oauth` 续期 → 重新 `list()` → 继续，不放弃写入
 
-Things like:
+| 用途 | principal | 表名 | table_id |
+|------|-----------|------|----------|
+| 读持仓 | towney | 持仓表 | tblGcWd82BIXTT9W |
+| 写监控记录 | towney | 监控记录 | tbl8mYixzl6hztip |
 
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
+Monitor 只服务 towney 的 InvestmentOS（app_token 动态获取，不写死）。
 
-## Examples
-
-```markdown
-### Cameras
-
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
-
-## Why Separate?
-
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
+写监控记录前必须先 `feishu_bitable_app_table_field.list()` 确认字段名，再 `batch_create`。
 
 ---
 
-Add whatever helps you do your job. This is your cheat sheet.
+## 行情拉取
 
-## Related
+### 主路径（优先）
+```
+akshare__get_realtime_data(source=eastmoney_direct)
+```
 
-- [Agent workspace](/concepts/agent-workspace)
+### 备用路径（主路径 502 时）
+```python
+python3 -c "
+import urllib.request
+codes = 'sh688120,sh688008,sz300394,sh688041,sh588090,sz159949,sh510500,sh513300,sh513650,sh518880,hk09988'
+r = urllib.request.urlopen(f'https://qt.gtimg.cn/q={codes}', timeout=10).read().decode('gbk')
+for line in r.strip().split('\n'):
+    if '~' not in line: continue
+    f = line.split('~')
+    print(f[2], f[1], float(f[3]), float(f[32]), float(f[34]), float(f[33]))
+    # 代码, 名称, 现价, 涨跌额, 涨跌%, 昨收
+"
+```
+
+港股（hk09988）行情为港币，推送时注明。
+
+---
+
+## 交易时段判断
+
+```python
+python3 -c "
+import datetime
+t = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8)))
+h, m = t.hour, t.minute
+am = (h == 9 and m >= 30) or (h == 10) or (h == 11 and m == 0)
+pm = (h == 13) or (h == 14) or (h == 15 and m == 0)
+print('TRADING' if (am or pm) else 'NOTRADE')
+"
+```
+
+非交易时段直接 `NO_REPLY`，不拉行情不写表。
+
+---
+
+## 预警推送
+
+预警发送至 `feishu_im_user_message`，delivery mode 为 none 时仍可直接调工具发送：
+- towney 私聊：`ou_aa8d3c082f316a8c9e18b9e6e8eeb88b`
+
+非预警时不发任何消息，保持静默。

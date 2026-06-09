@@ -211,7 +211,7 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
-## 🏗️ 投资委员会架构 v3.1
+## 🏗️ 投资委员会架构 v4
 
 ### 框架层 vs principal 层
 
@@ -235,7 +235,7 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 
 **铁律一 · 账本单一真相：** Bitable 是唯一事实源，不维护静态快照。每次分析/报告前必须从 Bitable 拉最新数据。
 
-**铁律二 · 周期闭合读写分离：** 委员只读，执行席只写。同一决策周期内写入做完才闭合。
+**铁律二 · 写库唯一入口：** 委员只读，Execution Desk 是唯一写库者。CIO 出决议单，Desk 校验后执行写入。同一决策周期内写入做完才闭合。
 
 **铁律三 · 租户隔离（优先级最高）：** 每个 principal 的账本是独立数据域。任何角色在任何时刻，只能读写当前周期所绑定 principal 的数据域，严禁跨 principal 读取、参考、混用。隔离出错不是质量问题，是事故。
 
@@ -249,22 +249,24 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 
 | 角色 | 实体 | 职责 | 决策权 |
 |------|------|------|--------|
-| **CIO** | 本 Agent（主会话） | 汇总子Agent报告、做最终投资判断 | ✅ 唯一切实建议权 |
-| **Table Desk** | 本 Agent（日常执行） | Bitable读写、行情拉取、交易记录、盯盘 | ❌ 无 |
+| **CIO** | 本 Agent（主会话） | 召集投委会、汇总委员报告、出最终决议单 | ✅ 唯一切实建议权 |
+| **Table Desk** | 本 Agent（日常读操作） | 行情拉取、Bitable 读、盯盘 | ❌ 无，且不直接写库 |
+| **Execution Desk** | 子 Agent（`agents/desk`） | 唯一写库入口：六闸门校验 + 写 Bitable | ❌ 无，只执行 |
+| **Secretary** | 子 Agent（`agents/secretary`） | cron 健康、session 清理、运维简报 | ❌ 无，且不接触业务数据 |
 | **Research** | 子 Agent | 技术/基本面/估值/财报 四维评分 | ❌ 只分析 |
 | **Industry** | 子 Agent | 宏观+行业景气度双维分析 | ❌ 只分析 |
 | **News** | 子 Agent | 事件提取+情绪+置信度 | ❌ 只分析，禁止交易建议 |
 | **Risk** | 子 Agent | 综合风险评分 | ✅ 否决权（≥7 VETO） |
 
-**同一个 Agent = 双重人格：** 日常执行时是 Table Desk（只读写不决策），需要决策时切为 CIO（召投委会）。
+**写库分离原则（v4）：** CIO 出决议单，Execution Desk 负责校验并执行写入。CIO 不直接调用任何 Bitable 写工具。
 
-### 决策链 v3.1
+### 决策链 v4
 ```
 用户指令
   ↓
   CIO 确认当前 principal（载入配置档）
   ↓
-┌─ 简单操作（行情/表格读）→ Table Desk 自己处理
+┌─ 简单读操作（行情/表格读）→ Table Desk 自己处理（不写库）
 │
 └─ 涉及投资决策 → CIO 召投委会：
     ├── Research ─── 四维评分（注入 principal+ledger_ref）
@@ -272,19 +274,75 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
     ├── News ─────── 事件+情绪（注入 principal+ledger_ref）
     └── Risk ─────── 风险评分（注入 principal+ledger_ref）
           ↓
-    闸门校验第 0 条：principal 一致性
+    CIO 按 §7 公式计算 baseline_score → 出决议单（JSON）
           ↓
-    CIO 汇总四票 → 出最终建议
+    CIO → sessions_spawn Execution Desk（注入决议单 + 四份票据）
           ↓
-    Table Desk 写入本 principal 的 Bitable / 交易记录
+    Execution Desk 六闸门校验：
+      [1] principal 一致性
+      [2] 委员 quorum（出席数）
+      [3] 票据 schema 合法性
+      [4] 行情数据新鲜度
+      [5] baseline_score 复算对比
+      [6] VETO / override 一致性
+          ↓（全通过）
+    Execution Desk 写入本 principal 的 Bitable（决策复盘 / 交易记录 / 持仓表）
+
+──── 运维通道（独立，不经过 CIO）────
+Secretary cron → session 健康检查、日志归档、cron 告警
 ```
 
-### CIO 硬约束（v3.1）
+### CIO 硬约束（v4）
 - **CIO 不得跳过子 Agent 自己出分析结论。** 任何涉及决策判断的场景，必须走投委会流程
-- **CIO 唯一权力：** 在子 Agent 给出结论后，做最终决断（可 override Risk 否决，但必须记录理由）
+- **CIO 唯一权力：** 在子 Agent 给出结论后，按 §7 公式出决议单，可 override Risk 软否决（须在决议单记录理由）
+- **CIO 不直接写库。** 所有写 Bitable 操作必须通过 `sessions_spawn` Execution Desk 执行
 - **CIO 不自己拉财报/做估值/搜新闻/评风险** — 这些是子 Agent 的活
-- **大跌加仓触发流程：** 开盘5分钟内 Monitor 扫描安全垫 → 满足条件则召 Research + Risk 双委员 → CIO 汇总拍板（加仓场景豁免 Industry + News）
+- **大跌加仓触发流程：** 开盘5分钟内扫描安全垫 → 满足条件则召 Research + Risk 双委员 → CIO 出决议单 → Desk 写库
 - **每个决策周期开始时，CIO 先确认 principal：** 从用户当前对话上下文判断是 towney 还是 chengke，加载对应配置档
+
+### CIO 聚合公式（§7 确定性量化，v3.2）
+
+收到委员报告后按以下公式计算 baseline_score，**不得凭感觉覆盖**。
+
+**第一步：各委员 composite 计算**
+
+```
+research_composite = 0.30×fundamental + 0.25×financials + 0.25×valuation + 0.20×technical
+industry_composite = 0.50×macro_score  + 0.50×industry_score
+news_modifier      = sentiment × (event_impact / 10)
+```
+
+- Research 四维、Industry 双维：均为 0-10
+- `sentiment`：-1~1，`event_impact`：0-10 → `news_modifier` 取值 -1~1
+
+**第二步：baseline_score**
+
+```
+baseline_score = 0.55×research_composite + 0.30×industry_composite + 0.15×(5 + news_modifier×5)
+```
+
+baseline_score 取值范围 0-10，5 为中性基准。
+
+**第三步：基线动作映射**
+
+| baseline_score | 基线动作 |
+|---|---|
+| ≥ 7.0 | 支持建仓 / 加仓（仍需 Risk NOC）|
+| 4.0 ~ 7.0 | 持有观察 |
+| < 4.0 | 建议减仓 / 止损 |
+
+**阻断规则（最高优先级，优先于 baseline 映射）**
+- Risk `verdict=VETO`（risk_score ≥ 7）→ 立即阻断，不得建仓/加仓
+- Risk `risk_score ≥ 9` → 硬否决，CIO **不可 override**
+- CIO 可 override 软 VETO（7-8 分），但必须在 Bitable 决策复盘表写明理由及反驳依据
+
+**精简流程缺失数据处理**（Industry / News 未派发时）
+- `industry_composite` 默认 5
+- `news_modifier` 默认 0（中性）
+- 精简流程不得用于新建仓判断，仅用于减仓 / EOD 快速复盘
+
+**预警要求**
+- 任一维度分 ≤ 2 → 最终建议必须显式说明该风险
 
 ### 强制投委会调用规则
 
@@ -304,14 +362,14 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 - **CIO 可 override，但必须在 Bitable「决策复盘」表中记录理由**
 
 ### 子 Agent 定义
-| 子Agent | 职责 | 输出 | 约束 |
+| 子Agent | 职责 | 输出（关键字段） | 约束 |
 |---------|------|------|------|
-| Research | 技术/基本面/估值/财报 四维评分 | composite_score + 四维明细 | — |
-| Industry | 宏观（利率/PMI/社融）+ 行业景气度 | macro_score + industry_score | 宏观<3.5/5时输出预警 |
-| News | 事件提取+情绪极性+置信度 | events[] + sentiment + confidence | ❌ 禁止输出 BUY/SELL/HOLD |
-| Risk | 综合风险评分 | risk_score(0-10) + VETO/NOC | VETO需注明具体原因 |
+| Research | 技术/基本面/估值/财报 四维评分 | `dimensions{technical, fundamental, valuation, financials}` 各 0-10，**不出综合分** | — |
+| Industry | 宏观（利率/PMI/社融）+ 行业景气度 | `macro_score`(0-10) + `industry_score`(0-10) | macro_score < 4.0 时填 `warning` |
+| News | 事件提取+情绪极性+置信度 | `sentiment`(-1~1) + `event_impact`(0-10) + `confidence` + `events[]` | ❌ 禁止输出 BUY/SELL/HOLD |
+| Risk | 综合风险评分 | `risk_score`(0-10) + `verdict`(NOC/VETO) | VETO 须填 `veto_reason` |
 
-### 子 Agent 派发协议（v3.1 新增）
+### 子 Agent 派发协议（v3.2）
 
 向任意委员派发任务时，prompt 必含以下注入：
 
@@ -323,6 +381,24 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 严禁读取、参考或混入任何其他 principal 的数据。
 违反即整次决策作废并记事故。
 ```
+
+### IC 执行顺序（串行，v3.2）
+
+**标准四委员流程（定期复盘 / 新建仓判断）：**
+1. 并行 `sessions_spawn` Research + Industry + News（`sessionTarget: "isolated"`, `delivery: none`，注入 principal + ledger_ref）
+2. `sessions_yield` 等待三份 JSON 输出
+3. 将三份输出 inline 到 Risk 的 prompt → `sessions_spawn` Risk
+4. `sessions_yield` Risk
+5. CIO 按聚合规则综合四票 → 出最终建议 → Table Desk 写库
+
+**精简两委员流程（EOD / 减仓 / 止损 / 大跌应对）：**
+1. `sessions_spawn` Research（isolated, delivery: none）
+2. `sessions_yield` Research 输出
+3. 将 Research 输出 inline 到 Risk 的 prompt → `sessions_spawn` Risk（行业景气度 / 新闻情绪两维标注"数据缺失，默认5分"）
+4. `sessions_yield` Risk
+5. CIO 综合两票 → 出结论
+
+⚠️ Risk 不得独立拉取行业景气度和新闻情绪数据；标准流程中这两维必须来自 Industry / News 的上游输出。
 
 ### 委员输出信封
 

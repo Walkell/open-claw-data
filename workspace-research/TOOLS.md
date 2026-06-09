@@ -1,44 +1,54 @@
-# TOOLS.md - Local Notes
+# TOOLS.md - Research Agent
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+## Bitable 调用协议
 
-## What Goes Here
+**每次必走，不可跳过：**
+1. `feishu_bitable_app.list()` → 获取最新完整 app_token（不缓存、不假设）
+2. 用返回的 token 调 `feishu_bitable_app_table_record.list()`
+3. `permission_denied` → 自动走 `feishu_oauth` 续期 → 重新 `list()` → 继续，不放弃
 
-Things like:
+**principal 由 CIO 注入，表引用随之确定：**
 
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
-
-## Examples
-
-```markdown
-### Cameras
-
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
-
-## Why Separate?
-
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
+| principal | Bitable 名称 | 持仓表 | 观察池 |
+|-----------|-------------|--------|--------|
+| towney | InvestmentOS | tblGcWd82BIXTT9W | tblxfCjgr1zkKAbi |
+| chengke | 程珂-投资管理 | tblEsbj5wKnu4Jw4 | tblZtpWCzAXJVvyY |
 
 ---
 
-Add whatever helps you do your job. This is your cheat sheet.
+## 行情数据源
 
-## Related
+### A股 / 港股 实时行情
+```
+主：akshare__get_realtime_data(source=eastmoney_direct)
+备：python3 -c "import urllib.request; r=urllib.request.urlopen(
+      'https://qt.gtimg.cn/q=sh688120,...', timeout=10).read().decode('gbk'); ..."
+```
+港股代码格式：`hk09988`（前缀 hk，不加 .HK）
+港股行情为港币，换算人民币：港币 × 当日汇率（约 0.927，用 web_search 确认当日值）
 
-- [Agent workspace](/concepts/agent-workspace)
+### A股历史 / K线
+```
+akshare__get_hist_data(symbol, source=sina/eastmoney, interval=day/week/month, recent_n=N)
+```
+
+### 财报数据
+```
+akshare__get_income_statement(symbol)      # 利润表
+akshare__get_balance_sheet(symbol)         # 资产负债表
+akshare__get_cash_flow(symbol)             # 现金流量表
+akshare__get_financial_metrics(symbol)     # 关键指标（ROE/PE/PB等）
+```
+
+### 研报 / 估值参考
+```
+web_search / tavily_search："{股票名} 研究报告 估值 2026"
+```
+
+---
+
+## 仓位体系（只读，不推断）
+
+- 每只持仓有独立满仓线，仓位 % = 该标的自身满仓额的百分比，不是总资产
+- 不跨标的对比仓位百分比，不推算总资金金额
+- 实际仓位/成本/止损/止盈 → 只从 Bitable 持仓表读，不用任何记忆中的快照
