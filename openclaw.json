@@ -309,7 +309,7 @@
     "list": [
       {
         "id": "main",
-        "model": "volcengine-plan/deepseek-v4-pro",
+        "model": "deepseek/deepseek-v4-pro",
         "tools": {
           "alsoAllow": [
             "feishu_bitable_app",
@@ -873,8 +873,6 @@
   "channels": {
     "feishu": {
       "enabled": true,
-      "appId": "cli_aa95b5cbc4789cbc",
-      "appSecret": "8hlugsWjfdMEuF9eHTT4hfR1Dp428KEj",
       "domain": "feishu",
       "connectionMode": "websocket",
       "requireMention": true,

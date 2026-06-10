@@ -30,8 +30,7 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {},
-      "timeoutSeconds": 600
+      "state": {}
     },
     {
       "id": "b1795f87-68ae-4aa4-a29e-9edc3041ad58",
@@ -61,8 +60,7 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {},
-      "timeoutSeconds": 300
+      "state": {}
     },
     {
       "id": "8f4f5463-f1cd-4a65-970f-7154313d7af4",
@@ -92,8 +90,7 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {},
-      "timeoutSeconds": 2700
+      "state": {}
     },
     {
       "id": "bfbfdc36-64e3-4e1b-93ce-23be6eb695c4",
@@ -123,8 +120,7 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {},
-      "timeoutSeconds": 3600
+      "state": {}
     },
     {
       "id": "c6ae35a4-e484-4148-815b-dc3182e86858",
@@ -154,8 +150,7 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {},
-      "timeoutSeconds": 3600
+      "state": {}
     },
     {
       "id": "f634514a-b3b6-4295-84c5-cb01e7bd2f02",
@@ -185,8 +180,7 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {},
-      "timeoutSeconds": 2700
+      "state": {}
     },
     {
       "id": "64b5f1d8-3547-4b45-afbc-ade4b0df1611",
@@ -217,8 +211,7 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {},
-      "timeoutSeconds": 1800
+      "state": {}
     },
     {
       "id": "56078609-aee4-4332-9ef5-d952714fe061",
@@ -246,8 +239,7 @@
       "delivery": {
         "mode": "none"
       },
-      "state": {},
-      "timeoutSeconds": 300
+      "state": {}
     },
     {
       "id": "f14657c4-17fa-4d9d-a79d-771ca7df7730",
@@ -277,8 +269,7 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {},
-      "timeoutSeconds": 600
+      "state": {}
     },
     {
       "id": "82452460-7ffa-4eff-9bdb-89e86182c872",
@@ -308,8 +299,7 @@
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
         "accountId": "default"
       },
-      "state": {},
-      "timeoutSeconds": 2700
+      "state": {}
     },
     {
       "id": "bbbeabff-b8ea-47c7-b047-0a1297ad15d5",
@@ -339,8 +329,7 @@
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
         "accountId": "default"
       },
-      "state": {},
-      "timeoutSeconds": 600
+      "state": {}
     },
     {
       "id": "96be9a87-f317-4d9a-88e1-955c4d019af3",
@@ -365,8 +354,7 @@
         "mode": "none"
       },
       "description": "Klaire上午盘监控·每15分·写监控记录表",
-      "state": {},
-      "timeoutSeconds": 300
+      "state": {}
     },
     {
       "id": "00bad0b6-3fc5-4fd2-8a8c-61775e826573",
@@ -391,8 +379,7 @@
         "mode": "none"
       },
       "description": "Klaire下午盘监控·每15分·写监控记录表",
-      "state": {},
-      "timeoutSeconds": 300
+      "state": {}
     },
     {
       "id": "066bd57e-ed9a-4c40-a8a5-4799e14b197d",
@@ -422,8 +409,7 @@
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
         "accountId": "default"
       },
-      "state": {},
-      "timeoutSeconds": 2700
+      "state": {}
     },
     {
       "id": "72ab5829-ca71-49a7-bbb4-7e46440f2298",
@@ -439,10 +425,10 @@
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
-      "timeoutSeconds": 1800,
       "payload": {
         "kind": "agentTurn",
-        "message": "开盘大跌扫描（principal=klaire，5分钟窗口）：\n\n⚠️ 第一步：确认时间窗口\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); ok=(t.hour==9 and 30<=t.minute<=35); print('IN_WINDOW' if ok else 'SKIP')\"\n如果输出 SKIP → 直接 NO_REPLY。\n\n⚠️ 第二步：feishu_bitable_app.list() → 拉 klaire 持仓表 tbl9xYrGkBDZlnYm\n获取所有持仓的代码、止损价、止盈价、仓位%、备注字段。\n\n⚠️ 第三步：拉开盘实时行情\npython3 -c \"import urllib.request; r=urllib.request.urlopen('https://qt.gtimg.cn/q={全持仓代码}',timeout=10).read().decode('gbk'); ...\"\n\n⚠️ 第四步A：错杀加仓条件（全部满足才触发 IC，接第五步）\n- 开盘跌幅 ≥3%\n- 距止损价 ≥5%（当前价 ≥ 止损价×1.05）\n- 距止盈价 ≥30%（当前价 ≤ 止盈价×0.70）\n- 当前仓位未满\n- 备注无「高风险」「清仓」标记\n\n⚠️ 第四步B：大涨止盈提醒（满足即直接通知，不触发 IC）\n- 开盘涨幅 ≥5%\n→ 通知内容：🟢【开盘大涨】{代码} 涨幅{X}% | 现价{P} | 止盈价{Y} | 距止盈{Z}%（负数=已突破）\n\n⚠️ 第五步：有 4A 触发标的 → 精简两委员流程\ncycle_id = klaire-{YYYYMMDD}-{HHMM}-{symbol}\n先 sessions_spawn Research（注入 principal=klaire + 持仓表引用 + cycle_id），delivery: none，isolated。\n等 Research 完成后读文件 workspace/cycles/{cycle_id}/research_output.json。\n将 Research 结果 inline 到 Risk prompt → sessions_spawn Risk（delivery: none，isolated，注入 cycle_id）。\n等 Risk 完成后读文件 workspace/cycles/{cycle_id}/risk_output.json。\nRisk 的行业景气度/新闻情绪标注「数据缺失，默认5分」。\n\n⚠️ 第六步：CIO 按 §7 精简公式出决议单\n精简流程：industry_composite=5（默认），news_modifier=0（中性）\nbaseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\nRisk VETO → BLOCK；Risk NOC + baseline≥7 → 加仓建议（仓位% + 建仓价）；其他 → 观察\n\n输出两份：\n① JSON 决议单：{cycle_id, principal, cio_action, baseline_score, target_symbol, position_change_pct, price_ref, override_reason, quote_timestamp, votes:{research, risk}}\n② 人读加仓建议\n\n推送②至 oc_c19042fb899cda7eeca1bbbd7d981d1a\n如有加仓建议：sessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated；sessions_yield Desk\n⚠️ CIO 不直接写 Bitable，写库由 Desk 执行\n4B 触发标的（大涨）：直接推送大涨通知至 oc_c19042fb899cda7eeca1bbbd7d981d1a，不启动 IC。\n4A 与 4B 均无触发 → NO_REPLY。"
+        "message": "开盘大跌扫描（principal=klaire，5分钟窗口）：\n\n⚠️ 第一步：确认时间窗口\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); ok=(t.hour==9 and 30<=t.minute<=35); print('IN_WINDOW' if ok else 'SKIP')\"\n如果输出 SKIP → 直接 NO_REPLY。\n\n⚠️ 第二步：feishu_bitable_app.list() → 拉 klaire 持仓表 tbl9xYrGkBDZlnYm\n获取所有持仓的代码、止损价、止盈价、仓位%、备注字段。\n\n⚠️ 第三步：拉开盘实时行情\npython3 -c \"import urllib.request; r=urllib.request.urlopen('https://qt.gtimg.cn/q={全持仓代码}',timeout=10).read().decode('gbk'); ...\"\n\n⚠️ 第四步A：错杀加仓条件（全部满足才触发 IC，接第五步）\n- 开盘跌幅 ≥3%\n- 距止损价 ≥5%（当前价 ≥ 止损价×1.05）\n- 距止盈价 ≥30%（当前价 ≤ 止盈价×0.70）\n- 当前仓位未满\n- 备注无「高风险」「清仓」标记\n\n⚠️ 第四步B：大涨止盈提醒（满足即直接通知，不触发 IC）\n- 开盘涨幅 ≥5%\n→ 通知内容：🟢【开盘大涨】{代码} 涨幅{X}% | 现价{P} | 止盈价{Y} | 距止盈{Z}%（负数=已突破）\n\n⚠️ 第五步：有 4A 触发标的 → 精简两委员流程\ncycle_id = klaire-{YYYYMMDD}-{HHMM}-{symbol}\n先 sessions_spawn Research（注入 principal=klaire + 持仓表引用 + cycle_id），delivery: none，isolated。\n等 Research 完成后读文件 workspace/cycles/{cycle_id}/research_output.json。\n将 Research 结果 inline 到 Risk prompt → sessions_spawn Risk（delivery: none，isolated，注入 cycle_id）。\n等 Risk 完成后读文件 workspace/cycles/{cycle_id}/risk_output.json。\nRisk 的行业景气度/新闻情绪标注「数据缺失，默认5分」。\n\n⚠️ 第六步：CIO 按 §7 精简公式出决议单\n精简流程：industry_composite=5（默认），news_modifier=0（中性）\nbaseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\nRisk VETO → BLOCK；Risk NOC + baseline≥7 → 加仓建议（仓位% + 建仓价）；其他 → 观察\n\n输出两份：\n① JSON 决议单：{cycle_id, principal, cio_action, baseline_score, target_symbol, position_change_pct, price_ref, override_reason, quote_timestamp, votes:{research, risk}}\n② 人读加仓建议\n\n推送②至 oc_c19042fb899cda7eeca1bbbd7d981d1a\n如有加仓建议：sessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated；sessions_yield Desk\n⚠️ CIO 不直接写 Bitable，写库由 Desk 执行\n4B 触发标的（大涨）：直接推送大涨通知至 oc_c19042fb899cda7eeca1bbbd7d981d1a，不启动 IC。\n4A 与 4B 均无触发 → NO_REPLY。",
+        "timeoutSeconds": 1800
       },
       "delivery": {
         "mode": "announce",
@@ -480,8 +466,7 @@
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
         "accountId": "default"
       },
-      "state": {},
-      "timeoutSeconds": 3600
+      "state": {}
     },
     {
       "id": "afdbd0ef-a3f5-4e18-81e5-f3e415bf2543",
@@ -511,8 +496,7 @@
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
         "accountId": "default"
       },
-      "state": {},
-      "timeoutSeconds": 3600
+      "state": {}
     }
   ]
 }
