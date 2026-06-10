@@ -309,7 +309,10 @@
     "list": [
       {
         "id": "main",
-        "model": "deepseek/deepseek-v4-pro",
+        "model": {
+          "primary": "volcengine-plan/deepseek-v4-pro",
+          "fallbacks": ["deepseek/deepseek-v4-pro", "glm/glm-5.1"]
+        },
         "tools": {
           "alsoAllow": [
             "feishu_bitable_app",
@@ -360,7 +363,9 @@
           ]
         },
         "models": {
-          "deepseek/deepseek-v4-pro": {}
+          "volcengine-plan/deepseek-v4-pro": {},
+          "deepseek/deepseek-v4-pro": {},
+          "glm/glm-5.1": {}
         }
       },
       {
@@ -368,7 +373,10 @@
         "name": "research",
         "workspace": "/home/ubuntu/.openclaw/workspace-research",
         "agentDir": "/home/ubuntu/.openclaw/agents/research/agent",
-        "model": "volcengine-plan/minimax-m3",
+        "model": {
+          "primary": "volcengine-plan/minimax-m3",
+          "fallbacks": ["deepseek/deepseek-v4-pro", "glm/glm-5.1"]
+        },
         "identity": {
           "name": "Research",
           "emoji": "🔬"
@@ -421,7 +429,10 @@
         "name": "industry",
         "workspace": "/home/ubuntu/.openclaw/workspace-industry",
         "agentDir": "/home/ubuntu/.openclaw/agents/industry/agent",
-        "model": "volcengine-plan/kimi-k2.6",
+        "model": {
+          "primary": "volcengine-plan/kimi-k2.6",
+          "fallbacks": ["deepseek/deepseek-v4-pro", "glm/glm-5.1"]
+        },
         "identity": {
           "name": "Industry",
           "emoji": "🏭"
@@ -478,7 +489,10 @@
         "name": "news",
         "workspace": "/home/ubuntu/.openclaw/workspace-news",
         "agentDir": "/home/ubuntu/.openclaw/agents/news/agent",
-        "model": "volcengine-plan/glm-5.1",
+        "model": {
+          "primary": "volcengine-plan/glm-5.1",
+          "fallbacks": ["glm/glm-5.1", "deepseek/deepseek-v4-pro"]
+        },
         "identity": {
           "name": "News",
           "emoji": "📰"
@@ -584,7 +598,10 @@
         "name": "monitor",
         "workspace": "/home/ubuntu/.openclaw/workspace-monitor",
         "agentDir": "/home/ubuntu/.openclaw/agents/monitor/agent",
-        "model": "volcengine-plan/glm-5.1",
+        "model": {
+          "primary": "volcengine-plan/glm-5.1",
+          "fallbacks": ["glm/glm-5.1", "deepseek/deepseek-v4-pro"]
+        },
         "identity": {
           "name": "Monitor",
           "emoji": "🛡️"
@@ -632,39 +649,14 @@
         }
       },
       {
-        "id": "secretary",
-        "name": "secretary",
-        "workspace": "/home/ubuntu/.openclaw/workspace-secretary",
-        "agentDir": "/home/ubuntu/.openclaw/agents/secretary/agent",
-        "model": "deepseek/deepseek-v4-pro",
-        "identity": {
-          "name": "Secretary",
-          "emoji": "📋"
-        },
-        "tools": {
-          "alsoAllow": [
-            "feishu_im_user_message",
-            "feishu_im_user_get_messages",
-            "feishu_im_user_get_thread_messages",
-            "feishu_im_user_search_messages",
-            "feishu_get_user",
-            "feishu_search_user",
-            "feishu_oauth"
-          ]
-        },
-        "subagents": {
-          "allowAgents": []
-        },
-        "models": {
-          "deepseek/deepseek-v4-pro": {}
-        }
-      },
-      {
         "id": "desk",
         "name": "desk",
         "workspace": "/home/ubuntu/.openclaw/workspace-desk",
         "agentDir": "/home/ubuntu/.openclaw/agents/desk/agent",
-        "model": "volcengine-plan/deepseek-v4-flash",
+        "model": {
+          "primary": "volcengine-plan/deepseek-v4-flash",
+          "fallbacks": ["deepseek/deepseek-v4-pro", "glm/glm-5.1"]
+        },
         "identity": {
           "name": "Desk",
           "emoji": "🗂️"
@@ -715,7 +707,9 @@
           "allowAgents": []
         },
         "models": {
-          "volcengine-plan/deepseek-v4-flash": {}
+          "volcengine-plan/deepseek-v4-flash": {},
+          "deepseek/deepseek-v4-pro": {},
+          "glm/glm-5.1": {}
         }
       }
     ]

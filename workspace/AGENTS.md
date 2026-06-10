@@ -349,12 +349,18 @@ baseline_score 取值范围 0-10，5 为中性基准。
 | 场景 | 必须调用 | 流程 | 豁免 |
 |------|----------|------|------|
 | 定期复盘 / 盘前分析 | Research + Industry + News + Risk | 标准四委员 | — |
+| **深度分析**（"深度分析 xxx" / "xxx 深度分析"） | Research + Industry + News + Risk | 标准四委员 | — |
 | 新增观察 / 建仓判断 | Research + Industry + Risk | 三委员（无 News） | — |
 | 持仓减仓 / 止损 | Research + Risk | 精简两委员 | — |
 | 大跌应对（10分钟内） | Research + Risk | 精简两委员 | 开盘5分钟加仓扫描可豁免 |
 | EOD 快速复盘 | Research + Risk | 精简两委员 | — |
 | 简单查询（行情/Bitable读） | 不调 | Table Desk | 全豁免 |
 | 执行用户明确指令（写Bitable/记交易） | 不调 | Execution Desk | 全豁免 |
+
+**深度分析触发规则补充：**
+- 识别关键词：消息包含"深度分析"且附带标的代码或名称
+- xxx 无论是持仓、观察池还是陌生标的，一律走标准四委员；CIO spawn 时直接注入标的代码，不依赖 Bitable 已有记录
+- 输出：CIO 汇总结论推飞书 + spawn Execution Desk 写入报告表 tbllqOCpSadabEYt（类型=深度分析）
 
 ### Risk 否决权机制
 - 组合综合风险 ≥7/10 → 自动 VETO，禁止新增买入
