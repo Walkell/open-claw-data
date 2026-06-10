@@ -12,15 +12,15 @@ principal:
 
 ```yaml
 ledger:
-  app_token: "ODPxbiwnzazrOSsrgY3c9sqGneg"
-  bitable_name: "towney"
+  app_token: "OcmCb7TQYaHqnvsjBjAc0GRdnTb"
+  bitable_name: "Towney-投资管理"
   positions_table: "持仓表"
   watchlist_table: "观察池"
   reports_table: "报告表"
   trades_table: "交易记录"
   monitor_table: "监控记录"
   decisions_table: "决策复盘"
-  write_scope: "ODPxbiwnzazrOSsrgY3c9sqGneg 内全部表"
+  write_scope: "OcmCb7TQYaHqnvsjBjAc0GRdnTb 内全部表"
 ```
 
 ## 行情数据源

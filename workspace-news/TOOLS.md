@@ -10,8 +10,8 @@
 
 | principal | 持仓表 | 观察池 |
 |-----------|--------|--------|
-| towney | tblGcWd82BIXTT9W（towney）| tblxfCjgr1zkKAbi |
-| klaire | tblEsbj5wKnu4Jw4（Klaire-投资管理）| tblZtpWCzAXJVvyY |
+| towney | tblUeTGMf0IKJ8Pk（towney）| tblaLlSQp8tEcWgJ |
+| klaire | tbl9xYrGkBDZlnYm（Klaire-投资管理）| tblaQY1jOFWOXd1U |
 
 principal 由 CIO 注入，只读对应表，不碰其他 principal 的数据。
 

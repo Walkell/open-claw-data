@@ -76,8 +76,8 @@ web_search / tavily_search
 **历史旧表（迁移完成后可废弃）：**
 | principal | Bitable 名称 | app_token |
 |-----------|-------------|-----------|
-| towney | InvestmentOS | ODPxbiwnzazrOSsrgY3c9sqGneg |
-| klaire | 程珂 - 投资管理 | HYf4bOpq1RRdj6NRP5scjnqQsUnb |
+| towney | InvestmentOS | OcmCb7TQYaHqnvsjBjAc0GRdnTb |
+| klaire | 程珂 - 投资管理 | J5zobSJFwaW4JjsEzLhcTNKTnBc |
 
 表结构参考（通过 app.list() + table.list() 动态获取，此处仅供识别人名）：
 ```

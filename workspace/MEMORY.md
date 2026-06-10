@@ -26,8 +26,8 @@
 
 | 账户 | app_token | 持仓表 | 报告表 | 交易记录 | 观察池 |
 |------|-----------|--------|--------|----------|--------|
-| 投委会 | ODPxbi…Gneg | tblGcWd82BIXTT9W | tblTaIWRcRyZgd04 | tbllEHanR9gTPnJU | tblxfCjgr1zkKAbi |
-| Klaire | HYf4bOp…sUnb | tblEsbj5wKnu4Jw4 | tbl9uqQYP6llgjPA | tbl1PXHGEwGZOoai | tblZtpWCzAXJVvyY |
+| 投委会 | OcmCb7TQYaHqnvsjBjAc0GRdnTb | tblUeTGMf0IKJ8Pk | tbllqOCpSadabEYt | tblUZ9WvrF6FVZTS | tblaLlSQp8tEcWgJ |
+| Klaire | J5zobSJFwaW4JjsEzLhcTNKTnBc | tbl9xYrGkBDZlnYm | tblsyCW1JE0sJnwm | tblVKj7wdGxMI4DQ | tblaQY1jOFWOXd1U |
 | | | | | (还有监控/KPI/执行手册/说明表) | |
 
 ⚠️ 绝对不串账户
@@ -67,11 +67,11 @@
 
 ## 当前持仓
 
-⚠️ 不在此维护静态快照。每次分析/报告前必须从 Bitable `tblGcWd82BIXTT9W` (ODPxbi…Gneg) 拉最新数据。
+⚠️ 不在此维护静态快照。每次分析/报告前必须从 Bitable `tblUeTGMf0IKJ8Pk` (OcmCb7TQYaHqnvsjBjAc0GRdnTb) 拉最新数据。
 快照=过时，唯一事实源=Bitable。
 
 ## 观察池 & 待执行计划
-⚠️ 不在此维护静态快照。观察池以 Bitable `tblxfCjgr1zkKAbi` (ODPxbi…Gneg) 为准，减仓/建仓计划以 Bitable 持仓表 `tblGcWd82BIXTT9W` 备注字段为准。快照=过时，唯一事实源=Bitable。
+⚠️ 不在此维护静态快照。观察池以 Bitable `tblaLlSQp8tEcWgJ` (OcmCb7TQYaHqnvsjBjAc0GRdnTb) 为准，减仓/建仓计划以 Bitable 持仓表 `tblUeTGMf0IKJ8Pk` 备注字段为准。快照=过时，唯一事实源=Bitable。
 
 ## 投委会输出规则（6/9 确立）
 

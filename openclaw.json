@@ -284,7 +284,11 @@
     "defaults": {
       "workspace": "/home/ubuntu/.openclaw/workspace",
       "model": {
-        "primary": "volcengine-plan/deepseek-v4-pro"
+        "primary": "volcengine-plan/deepseek-v4-pro",
+        "fallbacks": [
+          "volcengine-plan/deepseek-v4-flash",
+          "deepseek/deepseek-v4-pro"
+        ]
       },
       "models": {
         "deepseek/deepseek-v4-pro": {},
@@ -305,7 +309,7 @@
     "list": [
       {
         "id": "main",
-        "model": "deepseek/deepseek-v4-pro",
+        "model": "volcengine-plan/deepseek-v4-pro",
         "tools": {
           "alsoAllow": [
             "feishu_bitable_app",
@@ -364,7 +368,7 @@
         "name": "research",
         "workspace": "/home/ubuntu/.openclaw/workspace-research",
         "agentDir": "/home/ubuntu/.openclaw/agents/research/agent",
-        "model": "deepseek/deepseek-v4-pro",
+        "model": "volcengine-plan/minimax-m3",
         "identity": {
           "name": "Research",
           "emoji": "🔬"
@@ -417,7 +421,7 @@
         "name": "industry",
         "workspace": "/home/ubuntu/.openclaw/workspace-industry",
         "agentDir": "/home/ubuntu/.openclaw/agents/industry/agent",
-        "model": "deepseek/deepseek-v4-pro",
+        "model": "volcengine-plan/kimi-k2.6",
         "identity": {
           "name": "Industry",
           "emoji": "🏭"
@@ -474,7 +478,7 @@
         "name": "news",
         "workspace": "/home/ubuntu/.openclaw/workspace-news",
         "agentDir": "/home/ubuntu/.openclaw/agents/news/agent",
-        "model": "deepseek/deepseek-v4-pro",
+        "model": "volcengine-plan/glm-5.1",
         "identity": {
           "name": "News",
           "emoji": "📰"
@@ -527,7 +531,7 @@
         "name": "risk",
         "workspace": "/home/ubuntu/.openclaw/workspace-risk",
         "agentDir": "/home/ubuntu/.openclaw/agents/risk/agent",
-        "model": "deepseek/deepseek-v4-pro",
+        "model": "glm/glm-5.1",
         "identity": {
           "name": "Risk",
           "emoji": "🎯"
@@ -580,7 +584,7 @@
         "name": "monitor",
         "workspace": "/home/ubuntu/.openclaw/workspace-monitor",
         "agentDir": "/home/ubuntu/.openclaw/agents/monitor/agent",
-        "model": "deepseek/deepseek-v4-pro",
+        "model": "volcengine-plan/glm-5.1",
         "identity": {
           "name": "Monitor",
           "emoji": "🛡️"
@@ -625,6 +629,93 @@
             "feishu_wiki_space",
             "feishu_wiki_space_node"
           ]
+        }
+      },
+      {
+        "id": "secretary",
+        "name": "secretary",
+        "workspace": "/home/ubuntu/.openclaw/workspace-secretary",
+        "agentDir": "/home/ubuntu/.openclaw/agents/secretary/agent",
+        "model": "deepseek/deepseek-v4-pro",
+        "identity": {
+          "name": "Secretary",
+          "emoji": "📋"
+        },
+        "tools": {
+          "alsoAllow": [
+            "feishu_im_user_message",
+            "feishu_im_user_get_messages",
+            "feishu_im_user_get_thread_messages",
+            "feishu_im_user_search_messages",
+            "feishu_get_user",
+            "feishu_search_user",
+            "feishu_oauth"
+          ]
+        },
+        "subagents": {
+          "allowAgents": []
+        },
+        "models": {
+          "deepseek/deepseek-v4-pro": {}
+        }
+      },
+      {
+        "id": "desk",
+        "name": "desk",
+        "workspace": "/home/ubuntu/.openclaw/workspace-desk",
+        "agentDir": "/home/ubuntu/.openclaw/agents/desk/agent",
+        "model": "volcengine-plan/deepseek-v4-flash",
+        "identity": {
+          "name": "Desk",
+          "emoji": "🗂️"
+        },
+        "tools": {
+          "alsoAllow": [
+            "feishu_bitable_app",
+            "feishu_bitable_app_table",
+            "feishu_bitable_app_table_field",
+            "feishu_bitable_app_table_record",
+            "feishu_bitable_app_table_view",
+            "feishu_calendar_calendar",
+            "feishu_calendar_event",
+            "feishu_calendar_event_attendee",
+            "feishu_calendar_freebusy",
+            "feishu_chat",
+            "feishu_chat_members",
+            "feishu_create_doc",
+            "feishu_doc_comments",
+            "feishu_doc_media",
+            "feishu_drive_file",
+            "feishu_fetch_doc",
+            "feishu_get_user",
+            "feishu_im_bot_image",
+            "feishu_im_user_fetch_resource",
+            "feishu_im_user_get_messages",
+            "feishu_im_user_get_thread_messages",
+            "feishu_im_user_message",
+            "feishu_im_user_search_messages",
+            "feishu_oauth",
+            "feishu_oauth_batch_auth",
+            "feishu_search_doc_wiki",
+            "feishu_search_user",
+            "feishu_sheet",
+            "feishu_task_comment",
+            "feishu_task_subtask",
+            "feishu_task_task",
+            "feishu_task_agent",
+            "feishu_task_attachment",
+            "feishu_task_tasklist",
+            "feishu_update_doc",
+            "feishu_wiki_space",
+            "feishu_wiki_space_node"
+          ],
+          "profile": "full"
+        },
+        "subagents": {
+          "allowAgents": []
+        },
+        "models": {
+          "volcengine-plan/deepseek-v4-flash": {}
         }
       }
     ]

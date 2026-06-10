@@ -12,7 +12,7 @@ principal:
 
 ```yaml
 ledger:
-  app_token: "HYf4bOpq1RRdj6NRP5scjnqQsUnb"
+  app_token: "J5zobSJFwaW4JjsEzLhcTNKTnBc"
   bitable_name: "Klaire - 投资管理"
   positions_table: "持仓表"
   watchlist_table: "观察池"
@@ -22,7 +22,7 @@ ledger:
   kpi_table: "KPI追踪"
   playbook_table: "执行手册"
   notes_table: "说明"
-  write_scope: "HYf4bOpq1RRdj6NRP5scjnqQsUnb 内全部表"
+  write_scope: "J5zobSJFwaW4JjsEzLhcTNKTnBc 内全部表"
 ```
 
 ## 行情数据源

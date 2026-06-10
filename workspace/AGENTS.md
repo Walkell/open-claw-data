@@ -228,8 +228,8 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 
 | principal | Bitable | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录 | 输出通道 |
 |-----------|---------|--------|--------|----------|--------|----------|----------|
-| towney | towney: `ODPxbiwnzazrOSsrgY3c9sqGneg` | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录+决策复盘 | DM Towney |
-| klaire | Klaire - 投资管理: `HYf4bOpq1RRdj6NRP5scjnqQsUnb` | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录+KPI追踪+执行手册+说明 | 群 oc_c19042fb899cda7eeca1bbbd7d981d1a |
+| towney | towney: `OcmCb7TQYaHqnvsjBjAc0GRdnTb` | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录+决策复盘 | DM Towney |
+| klaire | Klaire - 投资管理: `J5zobSJFwaW4JjsEzLhcTNKTnBc` | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录+KPI追踪+执行手册+说明 | 群 oc_c19042fb899cda7eeca1bbbd7d981d1a |
 
 ### 铁律
 

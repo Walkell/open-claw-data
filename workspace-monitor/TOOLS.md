@@ -9,8 +9,8 @@
 
 | 用途 | principal | 表名 | table_id |
 |------|-----------|------|----------|
-| 读持仓 | towney | 持仓表 | tblGcWd82BIXTT9W |
-| 写监控记录 | towney | 监控记录 | tbl8mYixzl6hztip |
+| 读持仓 | towney | 持仓表 | tblUeTGMf0IKJ8Pk |
+| 写监控记录 | towney | 监控记录 | tblFAfrZs4Rz4AOu |
 
 Monitor 只服务 towney 的 towney（app_token 动态获取，不写死）。
 

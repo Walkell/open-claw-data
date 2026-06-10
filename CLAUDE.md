@@ -42,8 +42,8 @@ Two principals share the agent infrastructure but have **strictly isolated data 
 
 | Principal | Bitable | Delivery |
 |-----------|---------|----------|
-| towney | `towney` (ODPxbi…Gneg) | DM Towney |
-| klaire | Klaire-投资管理 (HYf4bO…sUnb) | Group chat oc_c19042… |
+| towney | `towney` (OcmCb7TQYaHqnvsjBjAc0GRdnTb) | DM Towney |
+| klaire | Klaire-投资管理 (J5zobSJFwaW4JjsEzLhcTNKTnBc) | Group chat oc_c19042fb899cda7eeca1bbbd7d981d1a |
 
 **Cross-principal data access = incident.** Every cycle must confirm principal, every sub-agent dispatch injects `principal` + `ledger_ref`. Cycle IDs carry principal prefix: `towney-20260608-1430-688008`.
 
