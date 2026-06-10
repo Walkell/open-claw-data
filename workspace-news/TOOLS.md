@@ -5,7 +5,7 @@
 读持仓表获取标的列表，然后逐标的搜新闻。
 
 1. `feishu_bitable_app.list()` → 找到 principal 对应 Bitable，取完整 app_token（不缓存、不假设）
-2. table_id 优先用 CIO 注入的值；未注入或遇 NOTEXIST 时调 `feishu_bitable_app_table.list()` 按名查找
+2. table_id 从 context.json 的 `watchlist_table_id` 读取；遇 NOTEXIST 时调 `feishu_bitable_app_table.list()` 按名查找
 3. 用步骤1 token + table_id 读持仓表，提取股票代码列表
 4. `permission_denied` / `NOTEXIST` → `feishu_oauth` 续期 → 重新 `list()` → 继续
 
@@ -14,7 +14,7 @@
 | towney | Towney-投资管理 | tblUeTGMf0IKJ8Pk |
 | klaire | Klaire-投资管理 | tbl9xYrGkBDZlnYm |
 
-principal 和 table_id 由 CIO 注入，只读对应表，不碰其他 principal 的数据。
+principal 和 table_id 从 context.json 读取，只读对应表，不碰其他 principal 的数据。
 
 ---
 

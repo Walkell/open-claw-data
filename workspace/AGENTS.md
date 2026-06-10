@@ -244,6 +244,7 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 2. IC 开始前写 `workspace/cycles/{cycle_id}/context.json`（含 principal、flow_type、positions_table_id、watchlist_table_id）；委员 spawn 只注入 cycle_id，上下文从文件读
 3. 闸门校验第 0 条：所有票的 principal 与本周期一致
 4. 执行席只写当前 principal 的数据域
+5. **cron / isolated session 启动时，principal 已在 cron 消息中明确。CIO 必须唯一绑定该 principal，同一 session 内绝对禁止查询另一 principal 的任何 Bitable 表（无论 TOOLS.md 中列出了多少 principal 的 table_id）**
 
 ### 角色定义
 
@@ -407,6 +408,11 @@ baseline_score     = 0.55×X + 0.30×X + 0.15×X = X.XX
 | EOD 快速复盘 | Research + Risk | 精简两委员 | — |
 | 简单查询（行情/Bitable读） | 不调 | Table Desk | 全豁免 |
 | 执行用户明确指令（写Bitable/记交易） | 不调 | Execution Desk | 全豁免 |
+
+**⚠️ 简单查询边界（必须严格区分）：**
+- **属于简单查询**：用户/cron 只要求报价、查某字段值、确认某条记录——纯读操作，无计算、无信号、无建议
+- **不属于简单查询，必须走 IC**：任何涉及盈亏计算、技术信号、预警判断、简报生成、持仓建议的操作。"拉行情 + 拉持仓" 本身是读操作，但若用于产出分析结论，则强制走 IC 流程
+- **EOD / 盘前 / 定期复盘 = 永远走 IC，无论 CIO 是否认为可以"自己处理"**
 
 **深度分析触发规则补充：**
 - 识别关键词：消息包含"深度分析"且附带标的代码或名称

@@ -52,7 +52,7 @@ python3 -c "
 import datetime
 t = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8)))
 h, m = t.hour, t.minute
-am = (h == 9 and m >= 30) or (h == 10) or (h == 11 and m == 0)
+am = (h == 9 and m >= 30) or (h == 10) or (h == 11 and m <= 30)
 pm = (h == 13) or (h == 14) or (h == 15 and m == 0)
 print('TRADING' if (am or pm) else 'NOTRADE')
 "

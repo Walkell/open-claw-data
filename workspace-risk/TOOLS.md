@@ -14,7 +14,7 @@
 | towney | Towney-投资管理 | tblUeTGMf0IKJ8Pk |
 | klaire | Klaire-投资管理 | tbl9xYrGkBDZlnYm |
 
-principal 和 table_id 由 CIO 注入，只读对应表，不碰其他 principal 的数据。
+principal 和 table_id 从 context.json 读取，只读对应表，不碰其他 principal 的数据。
 
 ---
 
