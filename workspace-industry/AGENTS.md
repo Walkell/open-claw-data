@@ -16,6 +16,8 @@
 
 ## 输出（JSON 信封）
 
+**最终消息只允许是 JSON 本身，不加任何前缀散文或叙述。** 所有分析过程在内部完成，不输出到消息流。
+
 ```json
 {
   "principal": "{{principal}}",
@@ -33,6 +35,16 @@
 ```
 
 评分 0-10。`macro_score < 4.0` 时，`warning` 字段必须填写预警原因。
+
+## 文件输出协议
+
+输出 JSON 消息的同时，将完整 JSON 写入：
+
+```
+workspace/cycles/{{cycle_id}}/industry_output.json
+```
+
+目录不存在时自动创建。**只写当前 cycle_id 对应路径，不读写其他 cycle 目录。**
 
 ## 红线
 

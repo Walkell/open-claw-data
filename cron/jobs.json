@@ -30,7 +30,8 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 600
     },
     {
       "id": "b1795f87-68ae-4aa4-a29e-9edc3041ad58",
@@ -47,7 +48,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Towney 下午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 第一步：判交易时间\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); h,m=t.hour,t.minute; ok=(h==13 or h==14) or (h==15 and m==0); print('TRADING' if ok else 'NOTRADE')\"\n输出 NOTRADE → NO_REPLY。\n\n⚠️ 第二步：拉 Bitable 白名单\nfeishu_bitable_app.list() → 完整 token\n读取持仓表 tblUeTGMf0IKJ8Pk（筛选状态=持有）→ 提取股票代码列表\n读取观察池 tblaLlSQp8tEcWgJ（筛选状态!=已移除）→ 提取股票代码列表\n合并为完整白名单\n\n⚠️ 第三步：仅对白名单标的拉行情\n腾讯财经（主）：python3 -c \"import urllib.request; codes=白名单; r=urllib.request.urlopen('https://qt.gtimg.cn/q='+','.join(codes),timeout=10).read().decode('gbk'); [print(l.split('~')[2],l.split('~')[1],float(l.split('~')[3]),float(l.split('~')[32]),float(l.split('~')[34]),float(l.split('~')[33])) for l in r.strip().split('\\n') if '~' in l]\"\n备选：akshare__get_realtime_data(source=eastmoney_direct)\n涨跌幅只用 API 预计算字段（f[34] 或 change_pct），不自行计算\n\n⚠️ 第四步：写入监控记录表 tblFAfrZs4Rz4AOu\nfield.list 确认字段名 → batch_create 写入\n\n⚠️ 第五步：阈值突破通知\n仅🔴预警时发简短通知至 ou_aa8d3c082f316a8c9e18b9e6e8eeb88b\n其他情况 NO_REPLY\n\n⚠️ 绝对不拉白名单之外的任何标的\n⚠️ 交易时段定义：13:00-15:00（含15:00收盘价）",
+        "message": "Towney 下午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 第一步：判交易时间\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); h,m=t.hour,t.minute; ok=(h==13 or h==14) or (h==15 and m==0); print('TRADING' if ok else 'NOTRADE')\"\n输出 NOTRADE → NO_REPLY。\n\n⚠️ 第二步：拉 Bitable 白名单\nfeishu_bitable_app.list() → 完整 token\n读取持仓表 tblUeTGMf0IKJ8Pk（筛选状态=持有）→ 提取股票代码列表\n读取观察池 tblaLlSQp8tEcWgJ（筛选状态!=已移除）→ 提取股票代码列表\n合并为完整白名单\n\n⚠️ 第三步：仅对白名单标的拉行情\n腾讯财经（主）：python3 -c \"import urllib.request; codes=白名单; r=urllib.request.urlopen('https://qt.gtimg.cn/q='+','.join(codes),timeout=10).read().decode('gbk'); [print(l.split('~')[2],l.split('~')[1],float(l.split('~')[3]),float(l.split('~')[32]),float(l.split('~')[34]),float(l.split('~')[33])) for l in r.strip().split('\\n') if '~' in l]\"\n备选：akshare__get_realtime_data(source=eastmoney_direct)\n涨跌幅只用 API 预计算字段（f[34] 或 change_pct），不自行计算\n\n\n⚠️ 第四步：写入监控记录表 tblFAfrZs4Rz4AOu + 回写快照价\n① field.list 确认字段名 → batch_create 写入监控记录表（含时间戳；表内字段名：「快照价」）\n② batch_update 持仓表 tblUeTGMf0IKJ8Pk：写入「快照价」和「快照时间」字段\n③ batch_update 观察池 tblaLlSQp8tEcWgJ：写入「快照价」和「快照时间」字段\n   ⚠️ 「快照价」「快照时间」字段仅供人工参考，非实时，Agent 决策不得使用。目标建仓价等用户配置字段不受此限制，可直接从 Bitable 读取。\n\n⚠️ 第五步：阈值突破 + 建仓条件 → 按需通知至 ou_aa8d3c082f316a8c9e18b9e6e8eeb88b\nA. 持仓表标的阈值检查（只通知，不触发 IC）：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】{代码} 现价{X} 已触及止损价{Y}，建议立即处置\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】{代码} 现价{X}，距止损仅{Z}%\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】{代码} 现价{X} 已达止盈价{Y}\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】{代码} 今日跌幅{Z}%\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】{代码} 今日涨幅{Z}%，距止盈{W}%\n\nB. 🎯 建仓条件触发（观察池「待建仓」标的）\n   读取观察池每个标的的「目标建仓价」字段（从 Bitable 读，不使用任何记忆中的价格）\n   当前价 ≤ 目标建仓价 → 触发，通知内容：标的名称+代码 | 当前价 | 目标建仓价 | 建议仓位%（从备注读取）\n   当前价 > 目标建仓价 × 1.05 → 不通知\n\n无 A 也无 B → NO_REPLY",
         "model": "deepseek/deepseek-v4-pro",
         "fallbacks": [
           "glm/glm-5.1"
@@ -60,7 +61,8 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 300
     },
     {
       "id": "8f4f5463-f1cd-4a65-970f-7154313d7af4",
@@ -90,7 +92,8 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 2700
     },
     {
       "id": "bfbfdc36-64e3-4e1b-93ce-23be6eb695c4",
@@ -120,7 +123,8 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 3600
     },
     {
       "id": "c6ae35a4-e484-4148-815b-dc3182e86858",
@@ -150,7 +154,8 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 3600
     },
     {
       "id": "f634514a-b3b6-4295-84c5-cb01e7bd2f02",
@@ -180,13 +185,14 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 2700
     },
     {
       "id": "64b5f1d8-3547-4b45-afbc-ade4b0df1611",
       "agentId": "main",
       "name": "towney-opening-bell",
-      "description": "开盘大跌扫描：9:30/9:32/9:34，触发错杀加仓机会",
+      "description": "开盘行情扫描：9:30 触发，大跌→精简两委员加仓建议，大涨→即时通知",
       "enabled": true,
       "createdAtMs": 1780995322393,
       "schedule": {
@@ -198,7 +204,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "开盘大跌扫描（principal=towney，5分钟窗口）：\n\n⚠️ 第一步：确认时间窗口\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); ok=(t.hour==9 and 30<=t.minute<=35); print('IN_WINDOW' if ok else 'SKIP')\"\n如果输出 SKIP → 直接 NO_REPLY。\n\n⚠️ 第二步：feishu_bitable_app.list() → 拉 towney 持仓表 tblUeTGMf0IKJ8Pk\n获取所有持仓的代码、止损价、止盈价、仓位%、备注字段。\n\n⚠️ 第三步：拉开盘实时行情\npython3 -c \"import urllib.request; r=urllib.request.urlopen('https://qt.gtimg.cn/q={全持仓代码}',timeout=10).read().decode('gbk'); ...\"\n\n⚠️ 第四步：逐标的判断错杀加仓条件（全部满足才触发）\n- 开盘跌幅 ≥3%\n- 距止损价 ≥5%（跌穿止损前还有缓冲）\n- 距止盈价 ≥30%（上行空间够大）\n- 当前仓位未满\n- 备注无「高风险」「清仓」标记\n\n⚠️ 第五步：有触发标的 → 精简两委员流程\n先 sessions_spawn Research（注入 principal=towney + 持仓表引用），delivery: none，isolated。\n等 Research 输出后，把 Research 结果 inline 到 Risk prompt → sessions_spawn Risk，delivery: none，isolated。\nRisk 的行业景气度/新闻情绪标注「数据缺失，默认5分」。\n\n⚠️ 第六步：CIO 按 §7 精简公式出决议单\n精简流程缺失处理：industry_composite=5（默认），news_modifier=0（中性）\nbaseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\nRisk VETO → BLOCK；Risk NOC + baseline≥7 → 加仓建议（仓位% + 建仓价）；其他 → 观察\n\n输出两份：\n① JSON 决议单：{cycle_id, principal, cio_action, baseline_score, target_symbol, position_change_pct, price_ref, override_reason, quote_timestamp, votes:{research, risk}}\n② 人读加仓建议\n\n推送②至 feishu:ou_aa8d3c082f316a8c9e18b9e6e8eeb88b\n如有加仓建议：sessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated；sessions_yield Desk\n⚠️ CIO 不直接写 Bitable，写库由 Desk 执行\n无触发标的 → NO_REPLY。",
+        "message": "开盘大跌扫描（principal=towney，5分钟窗口）：\n\n⚠️ 第一步：确认时间窗口\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); ok=(t.hour==9 and 30<=t.minute<=35); print('IN_WINDOW' if ok else 'SKIP')\"\n如果输出 SKIP → 直接 NO_REPLY。\n\n⚠️ 第二步：feishu_bitable_app.list() → 拉 towney 持仓表 tblUeTGMf0IKJ8Pk\n获取所有持仓的代码、止损价、止盈价、仓位%、备注字段。\n\n⚠️ 第三步：拉开盘实时行情\npython3 -c \"import urllib.request; r=urllib.request.urlopen('https://qt.gtimg.cn/q={全持仓代码}',timeout=10).read().decode('gbk'); ...\"\n\n⚠️ 第四步A：错杀加仓条件（全部满足才触发 IC，接第五步）\n- 开盘跌幅 ≥3%\n- 距止损价 ≥5%（当前价 ≥ 止损价×1.05）\n- 距止盈价 ≥30%（当前价 ≤ 止盈价×0.70）\n- 当前仓位未满\n- 备注无「高风险」「清仓」标记\n\n⚠️ 第四步B：大涨止盈提醒（满足即直接通知，不触发 IC）\n- 开盘涨幅 ≥5%\n→ 通知内容：🟢【开盘大涨】{代码} 涨幅{X}% | 现价{P} | 止盈价{Y} | 距止盈{Z}%（负数=已突破）\n\n⚠️ 第五步：有 4A 触发标的 → 精简两委员流程\n先 sessions_spawn Research（注入 principal=towney + 持仓表引用），delivery: none，isolated。\n等 Research 输出后，把 Research 结果 inline 到 Risk prompt → sessions_spawn Risk，delivery: none，isolated。\nRisk 的行业景气度/新闻情绪标注「数据缺失，默认5分」。\n\n⚠️ 第六步：CIO 按 §7 精简公式出决议单\n精简流程缺失处理：industry_composite=5（默认），news_modifier=0（中性）\nbaseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\nRisk VETO → BLOCK；Risk NOC + baseline≥7 → 加仓建议（仓位% + 建仓价）；其他 → 观察\n\n输出两份：\n① JSON 决议单：{cycle_id, principal, cio_action, baseline_score, target_symbol, position_change_pct, price_ref, override_reason, quote_timestamp, votes:{research, risk}}\n② 人读加仓建议\n\n推送②至 feishu:ou_aa8d3c082f316a8c9e18b9e6e8eeb88b\n如有加仓建议：sessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated；sessions_yield Desk\n⚠️ CIO 不直接写 Bitable，写库由 Desk 执行\n4B 触发标的（大涨）：直接推送大涨通知至 feishu:ou_aa8d3c082f316a8c9e18b9e6e8eeb88b，不启动 IC。\n4A 与 4B 均无触发 → NO_REPLY。",
         "model": "deepseek/deepseek-v4-pro",
         "fallbacks": [
           "glm/glm-5.1"
@@ -211,7 +217,8 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 1800
     },
     {
       "id": "56078609-aee4-4332-9ef5-d952714fe061",
@@ -234,12 +241,13 @@
           "glm/glm-5.1"
         ],
         "timeoutSeconds": 600,
-        "message": "Towney 上午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 第一步：判交易时间\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); h,m=t.hour,t.minute; ok=(h==9 and m>=30) or h==10 or (h==11 and m==0); print('TRADING' if ok else 'NOTRADE')\"\n输出 NOTRADE → NO_REPLY。\n\n⚠️ 第二步：拉 Bitable 白名单\nfeishu_bitable_app.list() → 完整 token\n读取持仓表 tblUeTGMf0IKJ8Pk（筛选状态=持有）→ 提取股票代码列表\n读取观察池 tblaLlSQp8tEcWgJ（筛选状态!=已移除）→ 提取股票代码列表\n合并为完整白名单\n\n⚠️ 第三步：仅对白名单标的拉行情\n腾讯财经（主）：python3 -c \"import urllib.request; codes=白名单; r=urllib.request.urlopen('https://qt.gtimg.cn/q='+','.join(codes),timeout=10).read().decode('gbk'); [print(l.split('~')[2],l.split('~')[1],float(l.split('~')[3]),float(l.split('~')[32]),float(l.split('~')[34]),float(l.split('~')[33])) for l in r.strip().split('\\n') if '~' in l]\"\n备选：akshare__get_realtime_data(source=eastmoney_direct)\n涨跌幅只用 API 预计算字段（f[34] 或 change_pct），不自行计算\n\n⚠️ 第四步：写入监控记录表 tblFAfrZs4Rz4AOu\nfield.list 确认字段名 → batch_create 写入\n\n⚠️ 第五步：阈值突破通知\n仅🔴预警时发简短通知至 ou_aa8d3c082f316a8c9e18b9e6e8eeb88b\n其他情况 NO_REPLY\n\n⚠️ 绝对不拉白名单之外的任何标的"
+        "message": "Towney 上午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 第一步：判交易时间\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); h,m=t.hour,t.minute; ok=(h==9 and m>=30) or h==10 or (h==11 and m==0); print('TRADING' if ok else 'NOTRADE')\"\n输出 NOTRADE → NO_REPLY。\n\n⚠️ 第二步：拉 Bitable 白名单\nfeishu_bitable_app.list() → 完整 token\n读取持仓表 tblUeTGMf0IKJ8Pk（筛选状态=持有）→ 提取股票代码列表\n读取观察池 tblaLlSQp8tEcWgJ（筛选状态!=已移除）→ 提取股票代码列表\n合并为完整白名单\n\n⚠️ 第三步：仅对白名单标的拉行情\n腾讯财经（主）：python3 -c \"import urllib.request; codes=白名单; r=urllib.request.urlopen('https://qt.gtimg.cn/q='+','.join(codes),timeout=10).read().decode('gbk'); [print(l.split('~')[2],l.split('~')[1],float(l.split('~')[3]),float(l.split('~')[32]),float(l.split('~')[34]),float(l.split('~')[33])) for l in r.strip().split('\\n') if '~' in l]\"\n备选：akshare__get_realtime_data(source=eastmoney_direct)\n涨跌幅只用 API 预计算字段（f[34] 或 change_pct），不自行计算\n\n\n⚠️ 第四步：写入监控记录表 tblFAfrZs4Rz4AOu + 回写快照价\n① field.list 确认字段名 → batch_create 写入监控记录表（含时间戳；表内字段名：「快照价」）\n② batch_update 持仓表 tblUeTGMf0IKJ8Pk：写入「快照价」和「快照时间」字段\n③ batch_update 观察池 tblaLlSQp8tEcWgJ：写入「快照价」和「快照时间」字段\n   ⚠️ 「快照价」「快照时间」字段仅供人工参考，非实时，Agent 决策不得使用。目标建仓价等用户配置字段不受此限制，可直接从 Bitable 读取。\n\n⚠️ 第五步：阈值突破 + 建仓条件 → 按需通知至 ou_aa8d3c082f316a8c9e18b9e6e8eeb88b\nA. 持仓表标的阈值检查（只通知，不触发 IC）：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】{代码} 现价{X} 已触及止损价{Y}，建议立即处置\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】{代码} 现价{X}，距止损仅{Z}%\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】{代码} 现价{X} 已达止盈价{Y}\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】{代码} 今日跌幅{Z}%\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】{代码} 今日涨幅{Z}%，距止盈{W}%\n\nB. 🎯 建仓条件触发（观察池「待建仓」标的）\n   读取观察池每个标的的「目标建仓价」字段（从 Bitable 读，不使用任何记忆中的价格）\n   当前价 ≤ 目标建仓价 → 触发，通知内容：标的名称+代码 | 当前价 | 目标建仓价 | 建议仓位%（从备注读取）\n   当前价 > 目标建仓价 × 1.05 → 不通知\n\n无 A 也无 B → NO_REPLY"
       },
       "delivery": {
         "mode": "none"
       },
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 300
     },
     {
       "id": "f14657c4-17fa-4d9d-a79d-771ca7df7730",
@@ -269,7 +277,8 @@
         "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
         "accountId": "default"
       },
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 600
     },
     {
       "id": "82452460-7ffa-4eff-9bdb-89e86182c872",
@@ -286,7 +295,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Klaire周一盘前简报（principal=klaire，精简两委员 IC 流程）\n\n主动输出任务清单：1.拉数据 2.周末要闻 3.Research→Risk 串行 4.CIO汇总出决议单 5.推送+spawn Desk写库\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token\n持仓表 tbl9xYrGkBDZlnYm + 观察池 tblaQY1jOFWOXd1U\n\n【第二步】周末要闻\nweb_search：周末全球市场动态 + 半导体/AI行业新闻 + 本周财经日历 + 港股动态\n\n【第三步】精简两委员 IC（串行）\n① sessions_spawn Research，注入：principal=klaire，持仓表引用=tbl9xYrGkBDZlnYm，观察池=tblaQY1jOFWOXd1U，delivery: none，isolated\n② sessions_yield Research → 拿到 JSON 输出\n③ 将 Research 输出 inline 到 Risk prompt，sessions_spawn Risk，注入：principal=klaire，Research结果见上文，行业景气度/新闻情绪标注「数据缺失，默认5分」，delivery: none，isolated\n④ sessions_yield Risk → 拿到 JSON 输出\n\n【第四步】CIO 按 §7 公式出决议单\n精简流程：baseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓；Risk VETO→BLOCK\n\n输出两份内容：\n① JSON 决议单：{cycle_id: \"klaire-{YYYYMMDD}-monday\", principal: \"klaire\", cio_action, baseline_score, override_reason, quote_timestamp, votes:{research, risk}}\n② 人读周一简报：周末要闻摘要 | 上周持仓表现 | 本周开盘展望 | 风险提示 | 操作建议\n\n【第五步】推送简报 + spawn Execution Desk 写库\n推送②简报至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nsessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库（决策复盘表 / 持仓表）\n⚠️ CIO 不直接写任何 Bitable，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送，只推 CIO 汇总结论",
+        "message": "Klaire周一盘前简报（principal=klaire，标准四委员 IC 流程）\n\n主动输出任务清单：1.拉数据 2.周末要闻 3.Research+Industry+News 并行 → Risk 串行 4.CIO汇总出决议单 5.推送+spawn Desk写库\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token\n持仓表 tbl9xYrGkBDZlnYm + 观察池 tblaQY1jOFWOXd1U\n\n【第二步】周末要闻\nweb_search：周末全球市场动态 + 半导体/AI行业新闻 + 本周财经日历 + 港股动态\n\n【第三步】精简两委员 IC（串行）\n① sessions_spawn Research，注入：principal=klaire，持仓表引用=tbl9xYrGkBDZlnYm，观察池=tblaQY1jOFWOXd1U，delivery: none，isolated\n② sessions_yield Research → 拿到 JSON 输出\n③ 将 Research 输出 inline 到 Risk prompt，sessions_spawn Risk，注入：principal=klaire，Research结果见上文，行业景气度/新闻情绪标注「数据缺失，默认5分」，delivery: none，isolated\n④ sessions_yield Risk → 拿到 JSON 输出\n\n【第四步】CIO 按 §7 公式出决议单\n精简流程：baseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓；Risk VETO→BLOCK\n\n输出两份内容：\n① JSON 决议单：{cycle_id: \"klaire-{YYYYMMDD}-monday\", principal: \"klaire\", cio_action, baseline_score, override_reason, quote_timestamp, votes:{research, risk}}\n② 人读周一简报：周末要闻摘要 | 上周持仓表现 | 本周开盘展望 | 风险提示 | 操作建议\n\n【第五步】推送简报 + spawn Execution Desk 写库\n推送②简报至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nsessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库（决策复盘表 / 持仓表）\n⚠️ CIO 不直接写任何 Bitable，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送，只推 CIO 汇总结论",
         "model": "deepseek/deepseek-v4-pro",
         "fallbacks": [
           "glm/glm-5.1"
@@ -299,7 +308,8 @@
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
         "accountId": "default"
       },
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 2700
     },
     {
       "id": "bbbeabff-b8ea-47c7-b047-0a1297ad15d5",
@@ -329,7 +339,8 @@
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
         "accountId": "default"
       },
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 600
     },
     {
       "id": "96be9a87-f317-4d9a-88e1-955c4d019af3",
@@ -347,14 +358,15 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Klaire上午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 第一步：拉 Bitable 白名单\nfeishu_bitable_app.list() → 获取最新完整 token\n用完整 token 读取:\n- 持仓表 tbl9xYrGkBDZlnYm (筛选状态=持有) → 提取股票代码列表\n- 观察池 tblaQY1jOFWOXd1U (筛选状态!=已移除) → 提取股票代码列表\n\n⚠️ 第二步：仅对白名单标的拉行情\n白名单中所有标的用腾讯财经拉行情:\npython3 -c \"import urllib.request; codes=白名单; url='https://qt.gtimg.cn/q='+','.join(codes); ...\"\n\n⚠️ 绝对不拉白名单之外的任何标的。白名单里有什么就分析什么，一个不多一个不少。\n\n⚠️ 第三步：写入Klaire监控记录表\napp_token=完整token, table_id=tblHkc0MfQbe2x37\n写表前先 field.list 确认字段名\nbatch_create 一次性写入\n\n⚠️ 第四步：阈值突破通知\n仅🔴预警时通知 oc_c19042fb899cda7eeca1bbbd7d981d1a\n非预警: NO_REPLY",
+        "message": "Klaire上午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 第一步：拉 Bitable 白名单\nfeishu_bitable_app.list() → 获取最新完整 token\n用完整 token 读取:\n- 持仓表 tbl9xYrGkBDZlnYm (筛选状态=持有) → 提取股票代码列表\n- 观察池 tblaQY1jOFWOXd1U (筛选状态!=已移除) → 提取股票代码列表\n\n⚠️ 第二步：仅对白名单标的拉行情\n白名单中所有标的用腾讯财经拉行情:\npython3 -c \"import urllib.request; codes=白名单; url='https://qt.gtimg.cn/q='+','.join(codes); ...\"\n\n⚠️ 绝对不拉白名单之外的任何标的。白名单里有什么就分析什么，一个不多一个不少。\n\n\n⚠️ 第三步：写入Klaire监控记录表 tblHkc0MfQbe2x37 + 回写快照价\n① 写表前先 field.list 确认字段名，batch_create 一次性写入（含时间戳；表内字段名：「快照价」）\n② batch_update 持仓表 tbl9xYrGkBDZlnYm：写入「快照价」和「快照时间」字段\n③ batch_update 观察池 tblaQY1jOFWOXd1U：写入「快照价」和「快照时间」字段\n   ⚠️ 「快照价」「快照时间」字段仅供人工参考，非实时，Agent 决策不得使用。目标建仓价等用户配置字段不受此限制，可直接从 Bitable 读取。\n\n⚠️ 第四步：阈值突破 + 建仓条件 → 按需通知至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nA. 持仓表标的阈值检查（只通知，不触发 IC）：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】{代码} 现价{X} 已触及止损价{Y}，建议立即处置\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】{代码} 现价{X}，距止损仅{Z}%\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】{代码} 现价{X} 已达止盈价{Y}\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】{代码} 今日跌幅{Z}%\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】{代码} 今日涨幅{Z}%，距止盈{W}%\n\nB. 🎯 建仓条件触发（观察池「待建仓」标的）\n   读取观察池每个标的的「目标建仓价」字段（从 Bitable 读，不使用任何记忆中的价格）\n   当前价 ≤ 目标建仓价 → 触发，通知内容：标的名称+代码 | 当前价 | 目标建仓价 | 建议仓位%（从备注读取）\n   当前价 > 目标建仓价 × 1.05 → 不通知\n\n无 A 也无 B → NO_REPLY",
         "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "none"
       },
       "description": "Klaire上午盘监控·每15分·写监控记录表",
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 300
     },
     {
       "id": "00bad0b6-3fc5-4fd2-8a8c-61775e826573",
@@ -372,14 +384,15 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Klaire下午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 第一步：拉 Bitable 白名单\nfeishu_bitable_app.list() → 获取最新完整 token\n用完整 token 读取持仓表 tbl9xYrGkBDZlnYm (状态=持有) 和观察池 tblaQY1jOFWOXd1U (状态!=已移除)\n提取所有股票代码形成白名单\n\n⚠️ 第二步：仅对白名单标的拉行情\n所有代码用腾讯财经兜底拉实时价\n\n⚠️ 第三步：写入Klaire监控记录表 tblHkc0MfQbe2x37\n写前 field.list 确认字段名，batch_create 写入\n\n⚠️ 第四步：阈值突破通知 - 仅🔴预警时通知 oc_c19042fb899cda7eeca1bbbd7d981d1a，否则 NO_REPLY\n\n⚠️ 白名单之外的一个字不写",
+        "message": "Klaire下午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 第一步：拉 Bitable 白名单\nfeishu_bitable_app.list() → 获取最新完整 token\n用完整 token 读取持仓表 tbl9xYrGkBDZlnYm (状态=持有) 和观察池 tblaQY1jOFWOXd1U (状态!=已移除)\n提取所有股票代码形成白名单\n\n⚠️ 第二步：仅对白名单标的拉行情\n所有代码用腾讯财经兜底拉实时价\n\n\n⚠️ 第三步：写入Klaire监控记录表 tblHkc0MfQbe2x37 + 回写快照价\n① 写表前先 field.list 确认字段名，batch_create 一次性写入（含时间戳；表内字段名：「快照价」）\n② batch_update 持仓表 tbl9xYrGkBDZlnYm：写入「快照价」和「快照时间」字段\n③ batch_update 观察池 tblaQY1jOFWOXd1U：写入「快照价」和「快照时间」字段\n   ⚠️ 「快照价」「快照时间」字段仅供人工参考，非实时，Agent 决策不得使用。目标建仓价等用户配置字段不受此限制，可直接从 Bitable 读取。\n\n⚠️ 第四步：阈值突破 + 建仓条件 → 按需通知至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nA. 持仓表标的阈值检查（只通知，不触发 IC）：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】{代码} 现价{X} 已触及止损价{Y}，建议立即处置\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】{代码} 现价{X}，距止损仅{Z}%\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】{代码} 现价{X} 已达止盈价{Y}\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】{代码} 今日跌幅{Z}%\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】{代码} 今日涨幅{Z}%，距止盈{W}%\n\nB. 🎯 建仓条件触发（观察池「待建仓」标的）\n   读取观察池每个标的的「目标建仓价」字段（从 Bitable 读，不使用任何记忆中的价格）\n   当前价 ≤ 目标建仓价 → 触发，通知内容：标的名称+代码 | 当前价 | 目标建仓价 | 建议仓位%（从备注读取）\n   当前价 > 目标建仓价 × 1.05 → 不通知\n\n无 A 也无 B → NO_REPLY",
         "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "none"
       },
       "description": "Klaire下午盘监控·每15分·写监控记录表",
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 300
     },
     {
       "id": "066bd57e-ed9a-4c40-a8a5-4799e14b197d",
@@ -409,6 +422,34 @@
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
         "accountId": "default"
       },
+      "state": {},
+      "timeoutSeconds": 2700
+    },
+    {
+      "id": "72ab5829-ca71-49a7-bbb4-7e46440f2298",
+      "agentId": "main",
+      "name": "klaire-opening-bell",
+      "description": "开盘行情扫描：Klaire 持仓，5分钟窗口，大跌→精简两委员，大涨→即时通知",
+      "enabled": true,
+      "createdAtMs": 1781059755759,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 9 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "timeoutSeconds": 1800,
+      "payload": {
+        "kind": "agentTurn",
+        "message": "开盘大跌扫描（principal=klaire，5分钟窗口）：\n\n⚠️ 第一步：确认时间窗口\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); ok=(t.hour==9 and 30<=t.minute<=35); print('IN_WINDOW' if ok else 'SKIP')\"\n如果输出 SKIP → 直接 NO_REPLY。\n\n⚠️ 第二步：feishu_bitable_app.list() → 拉 klaire 持仓表 tbl9xYrGkBDZlnYm\n获取所有持仓的代码、止损价、止盈价、仓位%、备注字段。\n\n⚠️ 第三步：拉开盘实时行情\npython3 -c \"import urllib.request; r=urllib.request.urlopen('https://qt.gtimg.cn/q={全持仓代码}',timeout=10).read().decode('gbk'); ...\"\n\n⚠️ 第四步A：错杀加仓条件（全部满足才触发 IC，接第五步）\n- 开盘跌幅 ≥3%\n- 距止损价 ≥5%（当前价 ≥ 止损价×1.05）\n- 距止盈价 ≥30%（当前价 ≤ 止盈价×0.70）\n- 当前仓位未满\n- 备注无「高风险」「清仓」标记\n\n⚠️ 第四步B：大涨止盈提醒（满足即直接通知，不触发 IC）\n- 开盘涨幅 ≥5%\n→ 通知内容：🟢【开盘大涨】{代码} 涨幅{X}% | 现价{P} | 止盈价{Y} | 距止盈{Z}%（负数=已突破）\n\n⚠️ 第五步：有 4A 触发标的 → 精简两委员流程\ncycle_id = klaire-{YYYYMMDD}-{HHMM}-{symbol}\n先 sessions_spawn Research（注入 principal=klaire + 持仓表引用 + cycle_id），delivery: none，isolated。\n等 Research 完成后读文件 workspace/cycles/{cycle_id}/research_output.json。\n将 Research 结果 inline 到 Risk prompt → sessions_spawn Risk（delivery: none，isolated，注入 cycle_id）。\n等 Risk 完成后读文件 workspace/cycles/{cycle_id}/risk_output.json。\nRisk 的行业景气度/新闻情绪标注「数据缺失，默认5分」。\n\n⚠️ 第六步：CIO 按 §7 精简公式出决议单\n精简流程：industry_composite=5（默认），news_modifier=0（中性）\nbaseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\nRisk VETO → BLOCK；Risk NOC + baseline≥7 → 加仓建议（仓位% + 建仓价）；其他 → 观察\n\n输出两份：\n① JSON 决议单：{cycle_id, principal, cio_action, baseline_score, target_symbol, position_change_pct, price_ref, override_reason, quote_timestamp, votes:{research, risk}}\n② 人读加仓建议\n\n推送②至 oc_c19042fb899cda7eeca1bbbd7d981d1a\n如有加仓建议：sessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated；sessions_yield Desk\n⚠️ CIO 不直接写 Bitable，写库由 Desk 执行\n4B 触发标的（大涨）：直接推送大涨通知至 oc_c19042fb899cda7eeca1bbbd7d981d1a，不启动 IC。\n4A 与 4B 均无触发 → NO_REPLY。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
+        "accountId": "assistant"
+      },
       "state": {}
     },
     {
@@ -426,7 +467,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Klaire周终复盘（principal=klaire，精简两委员 IC 流程）\n\n主动输出任务清单：1.拉数据 2.周行情 3.Research→Risk 串行 4.CIO汇总出决议单 5.推送+spawn Desk写库\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token\n持仓表 tbl9xYrGkBDZlnYm + 观察池 tblaQY1jOFWOXd1U\n\n【第二步】周行情\nakshare get_hist_data interval=week recent_n=5，拉全持仓周K线；港股港币×汇率→人民币\n\n【第三步】精简两委员 IC（串行）\n① sessions_spawn Research，注入：principal=klaire，持仓表引用=tbl9xYrGkBDZlnYm，观察池=tblaQY1jOFWOXd1U，delivery: none，isolated\n② sessions_yield Research → 拿到 JSON 输出\n③ 将 Research 输出 inline 到 Risk prompt，sessions_spawn Risk，注入：principal=klaire，Research结果见上文，行业景气度/新闻情绪标注「数据缺失，默认5分」，delivery: none，isolated\n④ sessions_yield Risk → 拿到 JSON 输出\n\n【第四步】CIO 按 §7 公式出决议单\n精简流程：baseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓；Risk VETO→BLOCK\n\n输出两份内容：\n① JSON 决议单：{cycle_id: \"klaire-{YYYYMMDD}-weekly\", principal: \"klaire\", cio_action, baseline_score, override_reason, quote_timestamp, votes:{research, risk}}\n② 人读周报：本周交易汇总 | 周涨跌 | 止损止盈距离 | 关键事件 | 下周策略 | 仓位建议\n\n【第五步】推送周报 + spawn Execution Desk 写库\n推送②周报至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nsessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库（决策复盘表 / 持仓表）\n⚠️ CIO 不直接写任何 Bitable，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送，只推 CIO 汇总结论",
+        "message": "Klaire周终复盘（principal=klaire，标准四委员 IC 流程）\n\n主动输出任务清单：1.拉数据 2.周行情 3.Research+Industry+News 并行 → Risk 串行 4.CIO汇总出决议单 5.推送+spawn Desk写库\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token\n持仓表 tbl9xYrGkBDZlnYm + 观察池 tblaQY1jOFWOXd1U\n\n【第二步】周行情\nakshare get_hist_data interval=week recent_n=5，拉全持仓周K线；港股港币×汇率→人民币\n\n【第三步】精简两委员 IC（串行）\n① sessions_spawn Research，注入：principal=klaire，持仓表引用=tbl9xYrGkBDZlnYm，观察池=tblaQY1jOFWOXd1U，delivery: none，isolated\n② sessions_yield Research → 拿到 JSON 输出\n③ 将 Research 输出 inline 到 Risk prompt，sessions_spawn Risk，注入：principal=klaire，Research结果见上文，行业景气度/新闻情绪标注「数据缺失，默认5分」，delivery: none，isolated\n④ sessions_yield Risk → 拿到 JSON 输出\n\n【第四步】CIO 按 §7 公式出决议单\n精简流程：baseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓；Risk VETO→BLOCK\n\n输出两份内容：\n① JSON 决议单：{cycle_id: \"klaire-{YYYYMMDD}-weekly\", principal: \"klaire\", cio_action, baseline_score, override_reason, quote_timestamp, votes:{research, risk}}\n② 人读周报：本周交易汇总 | 周涨跌 | 止损止盈距离 | 关键事件 | 下周策略 | 仓位建议\n\n【第五步】推送周报 + spawn Execution Desk 写库\n推送②周报至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nsessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库（决策复盘表 / 持仓表）\n⚠️ CIO 不直接写任何 Bitable，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送，只推 CIO 汇总结论",
         "model": "deepseek/deepseek-v4-pro",
         "fallbacks": [
           "glm/glm-5.1"
@@ -439,7 +480,8 @@
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
         "accountId": "default"
       },
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 3600
     },
     {
       "id": "afdbd0ef-a3f5-4e18-81e5-f3e415bf2543",
@@ -456,7 +498,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Klaire月终复盘（principal=klaire，精简两委员 IC 流程）\n\n主动输出任务清单：1.拉数据 2.月行情+财报 3.Research→Risk 串行 4.CIO汇总出决议单 5.推送+spawn Desk写库\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token\n持仓表 tbl9xYrGkBDZlnYm + 观察池 tblaQY1jOFWOXd1U\n\n【第二步】月行情+财报\nakshare get_hist_data interval=month recent_n=6，拉全持仓月K线；港股港币×汇率→人民币\nakshare get_financial_metrics 拉最新财务指标（ROE/PE/PB/负债率）\n\n【第三步】精简两委员 IC（串行）\n① sessions_spawn Research，注入：principal=klaire，持仓表引用=tbl9xYrGkBDZlnYm，观察池=tblaQY1jOFWOXd1U，delivery: none，isolated\n② sessions_yield Research → 拿到 JSON 输出\n③ 将 Research 输出 inline 到 Risk prompt，sessions_spawn Risk，注入：principal=klaire，Research结果见上文，行业景气度/新闻情绪标注「数据缺失，默认5分」，delivery: none，isolated\n④ sessions_yield Risk → 拿到 JSON 输出\n\n【第四步】CIO 按 §7 公式出决议单\n精简流程：baseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓；Risk VETO→BLOCK\n\n输出两份内容：\n① JSON 决议单：{cycle_id: \"klaire-{YYYYMMDD}-monthly\", principal: \"klaire\", cio_action, baseline_score, override_reason, quote_timestamp, votes:{research, risk}}\n② 人读月报：月涨跌幅/振幅/月线 | 盈亏汇总 | 研究+风险综合评估 | 下月展望 | 仓位建议\n\n【第五步】推送月报 + spawn Execution Desk 写库\n推送②月报至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nsessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库（决策复盘表 / 持仓表）\n⚠️ CIO 不直接写任何 Bitable，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送，只推 CIO 汇总结论",
+        "message": "Klaire月终复盘（principal=klaire，标准四委员 IC 流程）\n\n主动输出任务清单：1.拉数据 2.月行情+财报 3.Research+Industry+News 并行 → Risk 串行 4.CIO汇总出决议单 5.推送+spawn Desk写库\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token\n持仓表 tbl9xYrGkBDZlnYm + 观察池 tblaQY1jOFWOXd1U\n\n【第二步】月行情+财报\nakshare get_hist_data interval=month recent_n=6，拉全持仓月K线；港股港币×汇率→人民币\nakshare get_financial_metrics 拉最新财务指标（ROE/PE/PB/负债率）\n\n【第三步】精简两委员 IC（串行）\n① sessions_spawn Research，注入：principal=klaire，持仓表引用=tbl9xYrGkBDZlnYm，观察池=tblaQY1jOFWOXd1U，delivery: none，isolated\n② sessions_yield Research → 拿到 JSON 输出\n③ 将 Research 输出 inline 到 Risk prompt，sessions_spawn Risk，注入：principal=klaire，Research结果见上文，行业景气度/新闻情绪标注「数据缺失，默认5分」，delivery: none，isolated\n④ sessions_yield Risk → 拿到 JSON 输出\n\n【第四步】CIO 按 §7 公式出决议单\n精简流程：baseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓；Risk VETO→BLOCK\n\n输出两份内容：\n① JSON 决议单：{cycle_id: \"klaire-{YYYYMMDD}-monthly\", principal: \"klaire\", cio_action, baseline_score, override_reason, quote_timestamp, votes:{research, risk}}\n② 人读月报：月涨跌幅/振幅/月线 | 盈亏汇总 | 研究+风险综合评估 | 下月展望 | 仓位建议\n\n【第五步】推送月报 + spawn Execution Desk 写库\n推送②月报至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nsessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库（决策复盘表 / 持仓表）\n⚠️ CIO 不直接写任何 Bitable，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送，只推 CIO 汇总结论",
         "model": "deepseek/deepseek-v4-pro",
         "fallbacks": [
           "glm/glm-5.1"
@@ -469,62 +511,8 @@
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
         "accountId": "default"
       },
-      "state": {}
-    },
-    {
-      "id": "24033e3b-eab6-4fc5-a60f-db1439659a2c",
-      "agentId": "main",
-      "name": "klaire-watchlist-scan",
-      "enabled": true,
-      "createdAtMs": 1780487209634,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 11 * * 1-5",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Klaire观察池扫描（每日11:00，从 Bitable 动态拉取，不硬编码）：\n\n⚠️ 第一步：拉 Bitable 白名单\nfeishu_bitable_app.list() → 完整 token\n读取Klaire观察池 tblaQY1jOFWOXd1U (筛选状态!=已移除)\n读取Klaire持仓表 tbl9xYrGkBDZlnYm (状态=持有)\n两个表合并为完整白名单\n\n⚠️ 第二步：对白名单中所有标的拉行情\n\n⚠️ 第三步：分析\n- 持仓表标的：判断是否需要调整止损/止盈/仓位\n- 观察池标的：判断是否进入建仓区间\n- 上穿5%/下穿-5% → 🔴预警并通知\n\n⚠️ 第四步：写入观察池更新当前价(batch_update)\n\n⚠️ 仅异常或进入建仓区间时通知 oc_c19042fb899cda7eeca1bbbd7d981d1a，否则 NO_REPLY\n\n⚠️ 绝对不出现白名单之外的标的",
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {}
-    },
-    {
-      "id": "c12c9f97-69ca-4e25-9127-32342da608e7",
-      "agentId": "main",
-      "name": "towney-builder-reminder",
-      "description": "建仓价格提醒：海光≤260、拓荆≤550、天岳≤120时通知",
-      "enabled": true,
-      "createdAtMs": 1780549300725,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/30 9-14 * * 1-5",
-        "tz": "Asia/Shanghai",
-        "staggerMs": 45000
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Towney 建仓候选扫描（从观察池动态拉取，不硬编码）：\n\n⚠️ 第一步：拉观察池\nfeishu_bitable_app.list() → 完整 token\n读取观察池 tblaLlSQp8tEcWgJ，筛选状态=待建仓（或未持有的候选标的）\n提取：股票代码、建仓目标价（止损价/目标价/备注字段）\n\n⚠️ 第二步：仅对观察池标的拉实时行情\n腾讯财经 qt.gtimg.cn 拉当前价（f[3]）\n涨跌幅用 f[34]\n\n⚠️ 第三步：逐标的对比建仓条件\n读取每个标的的目标建仓价（从 Bitable 观察池对应字段读取，不使用任何记忆中的价格）\n当前价 ≤ 目标建仓价 → 🎯触发！\n当前价 > 目标建仓价 × 1.05 → 已超出建仓区间，不通知\n\n⚠️ 第四步：有触发标的 → 发通知\n通知内容：标的名称+代码 | 当前价 | 目标建仓价 | 建议仓位%（从观察池备注读取）\n发送至 feishu:ou_aa8d3c082f316a8c9e18b9e6e8eeb88b\n\n无触发标的 → NO_REPLY\n⚠️ 绝对不出现观察池之外的标的，不使用任何硬编码价格",
-        "timeoutSeconds": 600,
-        "model": "deepseek/deepseek-v4-pro",
-        "fallbacks": [
-          "glm/glm-5.1"
-        ]
-      },
-      "delivery": {
-        "mode": "announce",
-        "to": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
-        "channel": "feishu",
-        "accountId": "default"
-      },
-      "state": {}
+      "state": {},
+      "timeoutSeconds": 3600
     }
   ]
 }

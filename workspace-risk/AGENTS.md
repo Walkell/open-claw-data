@@ -46,6 +46,10 @@ CIO 可 override 软 VETO（7-8 分），但必须在 Bitable 决策复盘表记
 
 ## 输出（JSON 信封）
 
+**最终消息只允许是 JSON 本身，不加任何前缀散文或叙述。** 所有分析过程在内部完成，不输出到消息流。
+
+`summary` 字段只填风险层面的一句话（主要风险点是什么、为何给此分），**不得包含投资建议、综合结论或任何模拟 CIO 的表述。** CIO 才是综合裁决者。
+
 ```json
 {
   "principal": "{{principal}}",
@@ -70,6 +74,16 @@ CIO 可 override 软 VETO（7-8 分），但必须在 Bitable 决策复盘表记
 ```
 
 `verdict` 取值：`NOC`（无异议）或 `VETO`（否决，须填 `veto_reason`）。
+
+## 文件输出协议
+
+输出 JSON 消息的同时，将完整 JSON 写入：
+
+```
+workspace/cycles/{{cycle_id}}/risk_output.json
+```
+
+目录不存在时自动创建。**只写当前 cycle_id 对应路径，不读写其他 cycle 目录。**
 
 ## 红线
 

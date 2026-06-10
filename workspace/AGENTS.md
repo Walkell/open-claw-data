@@ -346,14 +346,15 @@ baseline_score 取值范围 0-10，5 为中性基准。
 
 ### 强制投委会调用规则
 
-| 场景 | 必须调用 | CIO 动作 | 豁免 |
-|------|----------|----------|------|
-| 新增观察/建仓判断 | Research + Industry + Risk | 汇总三票 | — |
-| 持仓减仓/止损 | Research + Risk | 汇总两票 | — |
-| 大跌应对（10分钟内） | Research + Risk | 汇总 | 开盘5分钟加仓扫描可豁免 |
-| 定期复盘 | 四个全调 | 汇总撰写 | — |
+| 场景 | 必须调用 | 流程 | 豁免 |
+|------|----------|------|------|
+| 定期复盘 / 盘前分析 | Research + Industry + News + Risk | 标准四委员 | — |
+| 新增观察 / 建仓判断 | Research + Industry + Risk | 三委员（无 News） | — |
+| 持仓减仓 / 止损 | Research + Risk | 精简两委员 | — |
+| 大跌应对（10分钟内） | Research + Risk | 精简两委员 | 开盘5分钟加仓扫描可豁免 |
+| EOD 快速复盘 | Research + Risk | 精简两委员 | — |
 | 简单查询（行情/Bitable读） | 不调 | Table Desk | 全豁免 |
-| 执行用户明确指令（写Bitable/记交易） | 不调 | Table Desk | 全豁免 |
+| 执行用户明确指令（写Bitable/记交易） | 不调 | Execution Desk | 全豁免 |
 
 ### Risk 否决权机制
 - 组合综合风险 ≥7/10 → 自动 VETO，禁止新增买入
@@ -382,21 +383,41 @@ baseline_score 取值范围 0-10，5 为中性基准。
 违反即整次决策作废并记事故。
 ```
 
-### IC 执行顺序（串行，v3.2）
+### IC 执行顺序（v3.3 — 文件读取协议）
 
-**标准四委员流程（定期复盘 / 新建仓判断）：**
-1. 并行 `sessions_spawn` Research + Industry + News（`sessionTarget: "isolated"`, `delivery: none`，注入 principal + ledger_ref）
-2. `sessions_yield` 等待三份 JSON 输出
-3. 将三份输出 inline 到 Risk 的 prompt → `sessions_spawn` Risk
-4. `sessions_yield` Risk
-5. CIO 按聚合规则综合四票 → 出最终建议 → Table Desk 写库
+**标准四委员流程（定期复盘 / 盘前分析）：**
+1. 并行 `sessions_spawn` Research + Industry + News（`sessionTarget: "isolated"`, `delivery: none`，注入 principal + ledger_ref + cycle_id）
+2. `sessions_yield` 等待三个 session 完成
+3. **读文件**（不依赖 sessions_history）：
+   - `workspace/cycles/{cycle_id}/research_output.json`
+   - `workspace/cycles/{cycle_id}/industry_output.json`
+   - `workspace/cycles/{cycle_id}/news_output.json`
+4. 将三份文件内容 inline 到 Risk 的 prompt → `sessions_spawn` Risk（注入 cycle_id）
+5. `sessions_yield` Risk
+6. 读文件：`workspace/cycles/{cycle_id}/risk_output.json`
+7. CIO 按 §7 公式综合四票 → 出决议单 → `sessions_spawn` Execution Desk
+
+⚠️ **读文件时只用当前 cycle_id 构造路径**，严禁遍历或读取其他 cycle 目录，防止历史数据污染当前决策。
+
+**三委员流程（新建仓 / 新增观察池标的）：**
+1. 并行 `sessions_spawn` Research + Industry（isolated, delivery: none，注入 principal + ledger_ref + cycle_id）
+2. `sessions_yield` 等待两个 session 完成
+3. 读文件：
+   - `workspace/cycles/{cycle_id}/research_output.json`
+   - `workspace/cycles/{cycle_id}/industry_output.json`
+4. 将两份文件内容 inline 到 Risk 的 prompt → `sessions_spawn` Risk（新闻情绪维度标注"数据缺失，默认5分"，注入 cycle_id）
+5. `sessions_yield` Risk
+6. 读文件：`workspace/cycles/{cycle_id}/risk_output.json`
+7. CIO 按 §7 公式综合三票（news_modifier 默认 0）→ 出决议单 → `sessions_spawn` Execution Desk
 
 **精简两委员流程（EOD / 减仓 / 止损 / 大跌应对）：**
-1. `sessions_spawn` Research（isolated, delivery: none）
-2. `sessions_yield` Research 输出
-3. 将 Research 输出 inline 到 Risk 的 prompt → `sessions_spawn` Risk（行业景气度 / 新闻情绪两维标注"数据缺失，默认5分"）
-4. `sessions_yield` Risk
-5. CIO 综合两票 → 出结论
+1. `sessions_spawn` Research（isolated, delivery: none，注入 cycle_id）
+2. `sessions_yield` Research
+3. 读文件：`workspace/cycles/{cycle_id}/research_output.json`
+4. 将 Research 文件内容 inline 到 Risk 的 prompt → `sessions_spawn` Risk（行业景气度 / 宏观环境 / 新闻情绪三维标注"数据缺失，默认5分"，注入 cycle_id）
+5. `sessions_yield` Risk
+6. 读文件：`workspace/cycles/{cycle_id}/risk_output.json`
+7. CIO 综合两票 → 出结论
 
 ⚠️ Risk 不得独立拉取行业景气度和新闻情绪数据；标准流程中这两维必须来自 Industry / News 的上游输出。
 
