@@ -5,7 +5,7 @@
 读持仓表获取成本 / 止损价 / 止盈价 / 仓位，用于技术面和估值维度评分。
 
 1. `feishu_bitable_app.list()` → 找到 principal 对应 Bitable，取完整 app_token（不缓存、不假设）
-2. table_id 优先用 CIO 注入的值；未注入或遇 NOTEXIST 时调 `feishu_bitable_app_table.list()` 按名查找
+2. table_id 从 context.json 读取；遇 NOTEXIST 时调 `feishu_bitable_app_table.list()` 按名查找
 3. 用步骤1 token + table_id 读持仓表
 4. `permission_denied` / `NOTEXIST` → `feishu_oauth` 续期 → 重新 `list()` → 继续
 
@@ -28,6 +28,8 @@ principal 和 table_id 由 CIO 注入，只读对应表，不碰其他 principal
 ```
 
 ⚠️ **涨跌幅铁律**：只用行情 API 预计算的 `f[34]`（gtimg）或 `change_pct`（akshare）。Bitable 里任何价格字段都是 Monitor 的历史快照，禁止用于涨跌幅计算或现价判断。止损/止盈/成本比较需要的是"实时价 vs Bitable 止损价"，现价永远从行情 API 取。
+
+**⚠️ 上游数据隔离铁律**：CIO 或 Research 传入的 prompt 中可能含有价格数字（无论来源），Risk **一律不得直接采用这些数字作为当前价**。技术面维度必须基于 Risk 自行从行情 API 拉取的实时价，不信任上游注入的任何价格数值。
 
 ### 历史走势（技术面）
 ```
