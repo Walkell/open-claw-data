@@ -1,37 +1,38 @@
 {
   "version": 1,
   "jobs": {
-    "7f3a9c12-b4e8-4d2f-a671-8e5c3f29b0d1": {
-      "updatedAtMs": 1781063827981,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"30 7 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
-      "state": {
-        "nextRunAtMs": 1781134200000,
-        "lastRunAtMs": 1781063752313,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastError": "cron: job interrupted by gateway restart",
-        "lastDurationMs": 75668,
-        "consecutiveErrors": 1,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "unknown",
-        "lastDeliveryError": "cron: job interrupted by gateway restart",
-        "lastFailureNotificationDeliveryStatus": "unknown"
-      }
-    },
     "b1795f87-68ae-4aa4-a29e-9edc3041ad58": {
-      "updatedAtMs": 1780992066115,
+      "updatedAtMs": 1781071729729,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 13-15 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1781067600000,
-        "lastRunAtMs": 1780991746158,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 319957,
-        "lastDeliveryStatus": "delivered",
-        "lastFailureNotificationDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0,
+        "nextRunAtMs": 1781075329729,
+        "lastRunAtMs": 1781071335364,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 394365,
+        "lastDeliveryStatus": "unknown",
+        "lastFailureNotificationDeliveryStatus": "unknown",
+        "consecutiveErrors": 5,
         "consecutiveSkipped": 0,
-        "lastDelivered": true
+        "lastDiagnostics": {
+          "summary": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required",
+          "entries": [
+            {
+              "ts": 1781071729715,
+              "source": "tool",
+              "severity": "warn",
+              "message": "⚠️ ✉️ Message failed"
+            },
+            {
+              "ts": 1781071729727,
+              "source": "delivery",
+              "severity": "error",
+              "message": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required"
+            }
+          ]
+        },
+        "lastDiagnosticSummary": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required",
+        "lastError": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required"
       }
     },
     "8f4f5463-f1cd-4a65-970f-7154313d7af4": {
@@ -181,37 +182,37 @@
       }
     },
     "00bad0b6-3fc5-4fd2-8a8c-61775e826573": {
-      "updatedAtMs": 1780991744114,
+      "updatedAtMs": 1781072382440,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 13-15 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":15000}}",
       "state": {
-        "nextRunAtMs": 1781067606681,
-        "lastRunAtMs": 1780991356158,
+        "nextRunAtMs": 1781075982440,
+        "lastRunAtMs": 1781072254652,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 387956,
+        "lastDurationMs": 127788,
         "lastDeliveryStatus": "not-requested",
         "lastFailureNotificationDeliveryStatus": "not-requested",
-        "consecutiveErrors": 3,
+        "consecutiveErrors": 6,
         "consecutiveSkipped": 0,
         "lastDiagnostics": {
-          "summary": "Request was aborted",
+          "summary": "⚠️ ⏰ Cron failed",
           "entries": [
             {
-              "ts": 1780991744112,
+              "ts": 1781072382437,
               "source": "tool",
               "severity": "error",
-              "message": "Request was aborted"
+              "message": "⚠️ ⏰ Cron failed"
             },
             {
-              "ts": 1780991744112,
+              "ts": 1781072382437,
               "source": "agent-run",
               "severity": "error",
-              "message": "Request was aborted"
+              "message": "⚠️ ⏰ Cron failed"
             }
           ]
         },
-        "lastDiagnosticSummary": "Request was aborted",
-        "lastError": "Request was aborted"
+        "lastDiagnosticSummary": "⚠️ ⏰ Cron failed",
+        "lastError": "⚠️ ⏰ Cron failed"
       }
     },
     "066bd57e-ed9a-4c40-a8a5-4799e14b197d": {

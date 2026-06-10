@@ -284,10 +284,9 @@
     "defaults": {
       "workspace": "/home/ubuntu/.openclaw/workspace",
       "model": {
-        "primary": "volcengine-plan/deepseek-v4-pro",
+        "primary": "deepseek/deepseek-v4-pro",
         "fallbacks": [
-          "volcengine-plan/deepseek-v4-flash",
-          "deepseek/deepseek-v4-pro"
+          "glm/glm-5.1"
         ]
       },
       "models": {
@@ -310,8 +309,10 @@
       {
         "id": "main",
         "model": {
-          "primary": "volcengine-plan/deepseek-v4-pro",
-          "fallbacks": ["deepseek/deepseek-v4-pro", "glm/glm-5.1"]
+          "primary": "deepseek/deepseek-v4-pro",
+          "fallbacks": [
+            "glm/glm-5.1"
+          ]
         },
         "tools": {
           "alsoAllow": [
@@ -363,7 +364,6 @@
           ]
         },
         "models": {
-          "volcengine-plan/deepseek-v4-pro": {},
           "deepseek/deepseek-v4-pro": {},
           "glm/glm-5.1": {}
         }
@@ -374,8 +374,10 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-research",
         "agentDir": "/home/ubuntu/.openclaw/agents/research/agent",
         "model": {
-          "primary": "volcengine-plan/minimax-m3",
-          "fallbacks": ["deepseek/deepseek-v4-pro", "glm/glm-5.1"]
+          "primary": "deepseek/deepseek-v4-pro",
+          "fallbacks": [
+            "glm/glm-5.1"
+          ]
         },
         "identity": {
           "name": "Research",
@@ -430,8 +432,10 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-industry",
         "agentDir": "/home/ubuntu/.openclaw/agents/industry/agent",
         "model": {
-          "primary": "volcengine-plan/kimi-k2.6",
-          "fallbacks": ["deepseek/deepseek-v4-pro", "glm/glm-5.1"]
+          "primary": "deepseek/deepseek-v4-pro",
+          "fallbacks": [
+            "glm/glm-5.1"
+          ]
         },
         "identity": {
           "name": "Industry",
@@ -490,8 +494,10 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-news",
         "agentDir": "/home/ubuntu/.openclaw/agents/news/agent",
         "model": {
-          "primary": "volcengine-plan/glm-5.1",
-          "fallbacks": ["glm/glm-5.1", "deepseek/deepseek-v4-pro"]
+          "primary": "glm/glm-5.1",
+          "fallbacks": [
+            "deepseek/deepseek-v4-pro"
+          ]
         },
         "identity": {
           "name": "News",
@@ -545,7 +551,12 @@
         "name": "risk",
         "workspace": "/home/ubuntu/.openclaw/workspace-risk",
         "agentDir": "/home/ubuntu/.openclaw/agents/risk/agent",
-        "model": "glm/glm-5.1",
+        "model": {
+          "primary": "glm/glm-5.1",
+          "fallbacks": [
+            "deepseek/deepseek-v4-pro"
+          ]
+        },
         "identity": {
           "name": "Risk",
           "emoji": "🎯"
@@ -599,8 +610,10 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-monitor",
         "agentDir": "/home/ubuntu/.openclaw/agents/monitor/agent",
         "model": {
-          "primary": "volcengine-plan/glm-5.1",
-          "fallbacks": ["glm/glm-5.1", "deepseek/deepseek-v4-pro"]
+          "primary": "glm/glm-5.1",
+          "fallbacks": [
+            "deepseek/deepseek-v4-pro"
+          ]
         },
         "identity": {
           "name": "Monitor",
@@ -654,8 +667,10 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-desk",
         "agentDir": "/home/ubuntu/.openclaw/agents/desk/agent",
         "model": {
-          "primary": "volcengine-plan/deepseek-v4-flash",
-          "fallbacks": ["deepseek/deepseek-v4-pro", "glm/glm-5.1"]
+          "primary": "deepseek/deepseek-v4-pro",
+          "fallbacks": [
+            "glm/glm-5.1"
+          ]
         },
         "identity": {
           "name": "Desk",

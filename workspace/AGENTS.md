@@ -455,7 +455,11 @@ baseline_score 取值范围 0-10，5 为中性基准。
 4. 仓位: 每只独立满仓线
 5. Bitable写入: batch 合并后调用，写前必 field.list
 6. 唯一事实源: 各 principal 的 Bitable（见 principal 配置档）
-7. token 不缓存不记忆，每次从 feishu_bitable_app.list() 动态获取
+7. 🔴 Bitable 操作铁律（2026-06-10 确立，违反即事故）：
+   每次调 bitable API 前，第一步必须是 feishu_bitable_app.list()
+   拿到返回的完整 token（如 J5zobSJFwaW4JjsEzLhcTNKTnBc）
+   绝不用截断 token（J5zobS…TnBc）、不用文件中写过的token、不缓存、不记忆
+   这条规则不因任何理由跳过
 8. permission_denied 自动走 feishu_oauth 续期后重试
 ```
 
