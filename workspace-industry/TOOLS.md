@@ -27,15 +27,16 @@ python3 -c "import urllib.request; r=urllib.request.urlopen(
 
 如需了解当前持仓的行业分布，可读持仓表：
 
-1. `feishu_bitable_app.list()` → 获取最新 token（不缓存）
-2. `permission_denied` → `feishu_oauth` 续期 → 重试
+1. `feishu_bitable_app.list()` → 找到 principal 对应 Bitable，取完整 app_token（不缓存）
+2. table_id 优先用 CIO 注入的值；未注入或遇 NOTEXIST 时调 `feishu_bitable_app_table.list()` 按名查找
+3. `permission_denied` / `NOTEXIST` → `feishu_oauth` 续期 → 重试
 
-| principal | 持仓表 |
-|-----------|--------|
-| towney | tblUeTGMf0IKJ8Pk（towney）|
-| klaire | tbl9xYrGkBDZlnYm（Klaire-投资管理）|
+| principal | Bitable 名称 | 持仓表 |
+|-----------|-------------|--------|
+| towney | Towney-投资管理 | tblUeTGMf0IKJ8Pk |
+| klaire | Klaire-投资管理 | tbl9xYrGkBDZlnYm |
 
-principal 由 CIO 注入，只读对应表。
+principal 和 table_id 由 CIO 注入，只读对应表。
 
 ---
 

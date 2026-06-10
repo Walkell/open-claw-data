@@ -12,7 +12,7 @@ principal:
 
 ```yaml
 ledger:
-  app_token: "OcmCb7TQYaHqnvsjBjAc0GRdnTb"
+  app_token: "[通过 feishu_bitable_app.list() 动态获取，禁止硬编码]"
   bitable_name: "Towney-投资管理"
   positions_table: "持仓表"
   watchlist_table: "观察池"
@@ -20,7 +20,7 @@ ledger:
   trades_table: "交易记录"
   monitor_table: "监控记录"
   decisions_table: "决策复盘"
-  write_scope: "OcmCb7TQYaHqnvsjBjAc0GRdnTb 内全部表"
+  write_scope: "Towney-投资管理 内全部表"
 ```
 
 ## 行情数据源

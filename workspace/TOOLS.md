@@ -68,20 +68,14 @@ web_search / tavily_search
 ⚠️ 绝对不串账户！每个 principal 只有自己的数据域
 ⚠️ 2026-06-09 新建 Towney-投资管理 和 Klaire-投资管理，按 InvestmentOS 表结构复制
 
-| principal | Bitable 名称 | app_token | 状态 |
-|-----------|-------------|-----------|------|
-| towney | Towney-投资管理 | OcmCb7TQYaHqnvsjBjAc0GRdnTb | 🆕 新建 |
-| klaire | Klaire-投资管理 | J5zobSJFwaW4JjsEzLhcTNKTnBc | 🆕 新建 |
-
-**历史旧表（迁移完成后可废弃）：**
 | principal | Bitable 名称 | app_token |
 |-----------|-------------|-----------|
-| towney | InvestmentOS | OcmCb7TQYaHqnvsjBjAc0GRdnTb |
-| klaire | 程珂 - 投资管理 | J5zobSJFwaW4JjsEzLhcTNKTnBc |
+| towney | Towney-投资管理 | 通过 feishu_bitable_app.list() 动态获取，禁止硬编码 |
+| klaire | Klaire-投资管理 | 通过 feishu_bitable_app.list() 动态获取，禁止硬编码 |
 
-表结构参考（通过 app.list() + table.list() 动态获取，此处仅供识别人名）：
+表结构参考（table_id 稳定；遇 NOTEXIST 时用 feishu_bitable_app_table.list() 刷新）：
 ```
-towny (Towney-投资管理):
+towney (Towney-投资管理):
   持仓表: tblUeTGMf0IKJ8Pk
   报告表: tbllqOCpSadabEYt
   交易记录: tblUZ9WvrF6FVZTS
@@ -100,17 +94,18 @@ klaire (Klaire-投资管理):
 
 【Bitable 标准调用流程 —— 每次必走，不可跳过】
 1. feishu_bitable_app.list() → 获取最新的完整 app_token
-2. 用步骤1返回的完整 token 调用 table_record.list() 等
-3. 绝不用任何文件中的 token 值，不记忆、不缓存、不推断
+2. 用步骤1返回的完整 token + 上方表结构中对应的 table_id 调用 table_record.list() 等
+3. NOTEXIST → feishu_bitable_app_table.list() 刷新 table_id 后重试
+4. 绝不用任何文件中的 token 值，不记忆、不缓存、不推断
 
 【Token 过期处理 —— 2026-06-05 确立】
 ⚠️ permission_denied 不是权限配置问题，是飞书 user token 有有效期
 ⚠️ token 用久了会过期，过期后调用 Bitable API 返回 permission_denied
-⚠️ 出现 permission_denied 时：
+⚠️ 出现 permission_denied 或 NOTEXIST 时（两者都是 token 问题，NOTEXIST 不代表表真的不存在）：
   a) 自动走一遍 feishu_oauth 重新授权流程
   b) 授权完成后再次 feishu_bitable_app.list() 获取新 token
-  c) 用新 token 继续操作，不再报权限错误放弃
-⚠️ 禁止在 permission_denied 后直接放弃写入（今天均胜的成本就因为 token 过期写错了两次）
+  c) 用新 token 继续操作，不再报错放弃
+⚠️ 禁止在 permission_denied / NOTEXIST 后直接放弃写入（今天均胜的成本就因为 token 过期写错了两次）
 ```
 
 ### 数据获取优先级（按市场）

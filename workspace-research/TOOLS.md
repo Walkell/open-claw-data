@@ -3,15 +3,16 @@
 ## Bitable 调用协议
 
 **每次必走，不可跳过：**
-1. `feishu_bitable_app.list()` → 获取最新完整 app_token（不缓存、不假设）
-2. 用返回的 token 调 `feishu_bitable_app_table_record.list()`
-3. `permission_denied` → 自动走 `feishu_oauth` 续期 → 重新 `list()` → 继续，不放弃
+1. `feishu_bitable_app.list()` → 找到 principal 对应 Bitable，取完整 app_token（不缓存、不假设）
+2. table_id 优先用 CIO 注入的值；未注入或遇 NOTEXIST 时调 `feishu_bitable_app_table.list()` 按名查找
+3. 用步骤1的 app_token + table_id 调 `feishu_bitable_app_table_record.list()`
+4. `permission_denied` / `NOTEXIST` → 自动走 `feishu_oauth` 续期 → 重新 `list()` → 继续，不放弃
 
-**principal 由 CIO 注入，表引用随之确定：**
+**principal 和 table_id 由 CIO 注入：**
 
 | principal | Bitable 名称 | 持仓表 | 观察池 |
 |-----------|-------------|--------|--------|
-| towney | towney | tblUeTGMf0IKJ8Pk | tblaLlSQp8tEcWgJ |
+| towney | Towney-投资管理 | tblUeTGMf0IKJ8Pk | tblaLlSQp8tEcWgJ |
 | klaire | Klaire-投资管理 | tbl9xYrGkBDZlnYm | tblaQY1jOFWOXd1U |
 
 ---

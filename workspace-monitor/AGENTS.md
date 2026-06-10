@@ -6,12 +6,14 @@
 
 拉全持仓实时行情，写监控记录表，判断是否触发预警。
 
+`principal` 由 CIO 注入，只读写对应 principal 的数据，不碰另一方 Bitable。
+
 ## Bitable（每次必走，不可跳过）
 
 1. `feishu_bitable_app.list()` → 获取最新完整 token（不缓存、不假设）
 2. 用返回的 token 读取持仓表，获取当前持仓列表和止损/止盈价
 
-token 过期报 `permission_denied` 时，自动走 `feishu_oauth` 续期后重试，不放弃写入。
+token 过期报 `permission_denied` 或 `NOTEXIST` 时，自动走 `feishu_oauth` 续期 → 重新 `feishu_bitable_app.list()` → 重试，不放弃写入。（NOTEXIST 也是 token 错误，不是表真的不存在）
 
 ## 行情拉取
 

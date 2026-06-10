@@ -3,16 +3,16 @@
 ## Bitable 调用协议
 
 **每次必走，不可跳过：**
-1. `feishu_bitable_app.list()` → 获取最新完整 token（不缓存、不假设）
-2. 读持仓表获取当前持仓列表（代码、止损价、止盈价、仓位、备注）
-3. `permission_denied` → `feishu_oauth` 续期 → 重新 `list()` → 继续，不放弃写入
+1. `feishu_bitable_app.list()` → 找到 principal 对应 Bitable，取完整 app_token（不缓存、不假设）
+2. 用步骤1 token + 下方 table_id 读持仓表，获取当前持仓列表（代码、止损价、止盈价、仓位、备注）
+3. `permission_denied` / `NOTEXIST` → `feishu_oauth` 续期 → 重新 `list()` → 继续，不放弃写入
 
-| 用途 | principal | 表名 | table_id |
-|------|-----------|------|----------|
-| 读持仓 | towney | 持仓表 | tblUeTGMf0IKJ8Pk |
-| 写监控记录 | towney | 监控记录 | tblFAfrZs4Rz4AOu |
+`principal` 由 CIO 注入，只读写对应 principal 的数据，不碰另一方。
 
-Monitor 只服务 towney 的 towney（app_token 动态获取，不写死）。
+| principal | 读持仓 | 写监控记录 |
+|-----------|--------|-----------|
+| towney | tblUeTGMf0IKJ8Pk | tblFAfrZs4Rz4AOu |
+| klaire | tbl9xYrGkBDZlnYm | tblHkc0MfQbe2x37 |
 
 写监控记录前必须先 `feishu_bitable_app_table_field.list()` 确认字段名，再 `batch_create`。
 

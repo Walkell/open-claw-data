@@ -6,7 +6,9 @@
 
 对 CIO 指定的行业做宏观 + 景气度双维分析。数据自行拉取。
 
-`principal` 和账本引用由 CIO 在派发时注入，只读该 principal 的数据域。
+## 启动协议
+
+**第0步（必须最先执行）：** 读取 `workspace/cycles/{cycle_id}/context.json`，从中获取 `principal`、`positions_table_id`、`watchlist_table_id`。只读该 principal 的数据域。
 
 ## 数据拉取顺序
 
@@ -51,3 +53,5 @@ workspace/cycles/{{cycle_id}}/industry_output.json
 - 不输出 BUY / SELL / HOLD
 - 评分必须有数据支撑，来源可查证
 - 不写 Bitable
+- `feishu_bitable_app.list()` 返回的 token 只在本次 session 内使用，不得写入任何文件或记忆（跨 session 复用 = 使用过期 token）
+- `permission_denied` / `NOTEXIST` → 自动走 `feishu_oauth` 续期 → 重新 `feishu_bitable_app.list()` → 重试，禁止直接报错放弃（NOTEXIST 也是 token 问题，不是表真的不存在）

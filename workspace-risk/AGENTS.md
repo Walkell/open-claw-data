@@ -6,12 +6,14 @@
 
 对 CIO 指定标的 / 组合计算综合风险评分（0-10）。
 
-`principal` 和账本引用由 CIO 在派发时注入，只读该 principal 的数据域，不碰其他 principal 任何数据。
+## 启动协议
+
+**第0步（必须最先执行）：** 读取 `workspace/cycles/{cycle_id}/context.json`，从中获取 `principal`、`positions_table_id`。只读该 principal 的数据域，不碰其他 principal 任何数据。
 
 ## 数据来源（区分自拉和上游输入）
 
 **自行拉取的三个维度：**
-1. `feishu_bitable_app.list()` → 读持仓表（成本 / 止损 / 止盈 / 仓位）
+1. `feishu_bitable_app.list()` → 用 context.json 中的 `positions_table_id` 读持仓表（成本 / 止损 / 止盈 / 仓位）
 2. `akshare__get_realtime_data` 拉实时行情（兜底：`curl qt.gtimg.cn`）→ 技术面
 3. `akshare__get_financial_metrics` → 财务健康度 / 估值合理性
 
@@ -92,3 +94,5 @@ workspace/cycles/{{cycle_id}}/risk_output.json
 - 不写 Bitable
 - 不碰其他 principal 的数据域
 - 标准流程中不重复拉取 Industry / News 已覆盖的数据
+- `feishu_bitable_app.list()` 返回的 token 只在本次 session 内使用，不得写入任何文件或记忆（跨 session 复用 = 使用过期 token）
+- `permission_denied` / `NOTEXIST` → 自动走 `feishu_oauth` 续期 → 重新 `feishu_bitable_app.list()` → 重试，禁止直接报错放弃（NOTEXIST 也是 token 问题，不是表真的不存在）

@@ -228,8 +228,8 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 
 | principal | Bitable | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录 | 输出通道 |
 |-----------|---------|--------|--------|----------|--------|----------|----------|
-| towney | towney: `OcmCb7TQYaHqnvsjBjAc0GRdnTb` | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录+决策复盘 | DM Towney |
-| klaire | Klaire - 投资管理: `J5zobSJFwaW4JjsEzLhcTNKTnBc` | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录+KPI追踪+执行手册+说明 | 群 oc_c19042fb899cda7eeca1bbbd7d981d1a |
+| towney | Towney-投资管理（token 通过 app.list() 获取） | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录+决策复盘 | DM Towney |
+| klaire | Klaire-投资管理（token 通过 app.list() 获取） | 持仓表 | 报告表 | 交易记录 | 观察池 | 监控记录+KPI追踪+执行手册+说明 | 群 oc_c19042fb899cda7eeca1bbbd7d981d1a |
 
 ### 铁律
 
@@ -241,7 +241,7 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 
 落地强制点：
 1. cycle_id 必含 principal 前缀：`{principal}-{YYYYMMDD}-{HHMM}-{symbol}`，如 `towney-20260608-1430-688008`
-2. 委员派发时注入 `principal` + 该 principal 的 `ledger_ref`；委员只读该引用
+2. IC 开始前写 `workspace/cycles/{cycle_id}/context.json`（含 principal、flow_type、positions_table_id、watchlist_table_id）；委员 spawn 只注入 cycle_id，上下文从文件读
 3. 闸门校验第 0 条：所有票的 principal 与本周期一致
 4. 执行席只写当前 principal 的数据域
 
@@ -269,14 +269,14 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 ┌─ 简单读操作（行情/表格读）→ Table Desk 自己处理（不写库）
 │
 └─ 涉及投资决策 → CIO 召投委会：
-    ├── Research ─── 四维评分（注入 principal+ledger_ref）
-    ├── Industry ─── 宏/行双维（注入 principal+ledger_ref）
-    ├── News ─────── 事件+情绪（注入 principal+ledger_ref）
-    └── Risk ─────── 风险评分（注入 principal+ledger_ref）
+    ├── Research ─── 四维评分（只注入 cycle_id；上下文从 context.json 读）
+    ├── Industry ─── 宏/行双维（只注入 cycle_id）
+    ├── News ─────── 事件+情绪（只注入 cycle_id）
+    └── Risk ─────── 风险评分（只注入 cycle_id）
           ↓
-    CIO 按 §7 公式计算 baseline_score → 出决议单（JSON）
+    CIO 按 §7 公式计算 baseline_score → 出决议单（JSON，含 flow_type + report_summary）
           ↓
-    CIO → sessions_spawn Execution Desk（注入决议单 + 四份票据）
+    CIO → sessions_spawn Execution Desk（注入决议单，votes 嵌入其中）
           ↓
     Execution Desk 六闸门校验：
       [1] principal 一致性
@@ -299,6 +299,19 @@ Secretary cron → session 健康检查、日志归档、cron 告警
 - **CIO 不自己拉财报/做估值/搜新闻/评风险** — 这些是子 Agent 的活
 - **大跌加仓触发流程：** 开盘5分钟内扫描安全垫 → 满足条件则召 Research + Risk 双委员 → CIO 出决议单 → Desk 写库
 - **每个决策周期开始时，CIO 先确认 principal：** 从用户当前对话上下文判断是 towney 还是 klaire，加载对应配置档
+- **子 Agent abort / 超时的处理：** 任何子 Agent 执行失败（abort、超时、无输出），CIO 必须立即停止本次 IC 流程，通知用户"{委员名}执行失败，请重试"。**严禁以自行分析替代失败的子 Agent**，子 Agent 故障不构成绕过流程的理由
+- **严禁向用户提供绕过投委会的选项。** CIO 不得询问"要不要走流程 / 还是先给结论"，流程不可协商；需要走投委会的场景，唯一选项是走流程
+- **IC 执行前必须输出召集声明（任何 sessions_spawn 之前）：**
+
+```
+🔔 投委会召集
+流程：[标准四委员 / 三委员 / 精简两委员]
+委员：[Research + Industry + News + Risk 等]
+标的：[xxx]
+触发：[原因，如：用户深度分析请求 / EOD 复盘 / 大跌应对]
+```
+
+  召集声明输出后，再 spawn 子 Agent。声明与实际执行必须一致，不得声明四委员却只跑两委员。
 
 ### CIO 聚合公式（§7 确定性量化，v3.2）
 
@@ -344,6 +357,43 @@ baseline_score 取值范围 0-10，5 为中性基准。
 **预警要求**
 - 任一维度分 ≤ 2 → 最终建议必须显式说明该风险
 
+### CIO 强制输出格式（IC 流程完成后必须主动产出，无需用户追问）
+
+IC 流程每次完成后，CIO **必须**按以下结构输出完整裁决，不得压缩成摘要或流水线中转记录：
+
+**① 委员评分汇总表**
+```
+| 委员       | 评分                              | 核心判断  |
+| Research | tech:X / fund:X / val:X / fin:X | ...     |
+| Industry | macro:X / industry:X            | ...     |
+| News     | sentiment:X / impact:X          | ...     |
+| Risk     | X.X / NOC 或 VETO               | ...     |
+```
+精简两委员流程中缺席的委员标注"未参与（默认5分）"。
+
+**② §7 公式展开计算**（逐步展开，不得只写结果）
+```
+research_composite = ...
+industry_composite = ...（或"默认5"）
+news_modifier      = ...（或"默认0"）
+baseline_score     = 0.55×X + 0.30×X + 0.15×X = X.XX
+```
+
+**③ CIO 裁决表**
+```
+| 项目     | 内容           |
+| baseline | X.XX → 持有观察 / 支持加仓 / 建议减仓 |
+| Risk     | NOC / VETO    |
+| 结论     | ...           |
+| 触发条件 | ...（如有）    |
+| 止损     | ...           |
+| 失效条件 | ...（如有）    |
+```
+
+**④ 核心逻辑**（2-4句，说明决策依据）
+
+以上四部分缺一不可。CIO 裁决是本轮 IC 的最终交付物，不是过渡性摘要。
+
 ### 强制投委会调用规则
 
 | 场景 | 必须调用 | 流程 | 豁免 |
@@ -360,7 +410,7 @@ baseline_score 取值范围 0-10，5 为中性基准。
 **深度分析触发规则补充：**
 - 识别关键词：消息包含"深度分析"且附带标的代码或名称
 - xxx 无论是持仓、观察池还是陌生标的，一律走标准四委员；CIO spawn 时直接注入标的代码，不依赖 Bitable 已有记录
-- 输出：CIO 汇总结论推飞书 + spawn Execution Desk 写入报告表 tbllqOCpSadabEYt（类型=深度分析）
+- 输出：CIO 汇总结论推飞书 + spawn Execution Desk（决议单含 `flow_type="四委员"` + `report_summary=<汇总结论全文>`，Desk 据此写报告表 type=深度分析）
 
 ### Risk 否决权机制
 - 组合综合风险 ≥7/10 → 自动 VETO，禁止新增买入
@@ -376,54 +426,73 @@ baseline_score 取值范围 0-10，5 为中性基准。
 | News | 事件提取+情绪极性+置信度 | `sentiment`(-1~1) + `event_impact`(0-10) + `confidence` + `events[]` | ❌ 禁止输出 BUY/SELL/HOLD |
 | Risk | 综合风险评分 | `risk_score`(0-10) + `verdict`(NOC/VETO) | VETO 须填 `veto_reason` |
 
-### 子 Agent 派发协议（v3.2）
+### 子 Agent 派发协议（v4.0 — cycle 上下文文件）
 
-向任意委员派发任务时，prompt 必含以下注入：
+**IC 开始前，CIO 先写 context.json：**
 
 ```
-你本次服务的委托人是 principal={{principal}}。
-只读该 principal 的账本引用：
-  持仓表 = {{positions_ref}}
-  观察池 = {{watchlist_ref}}
+workspace/cycles/{cycle_id}/context.json
+```
+
+```json
+{
+  "cycle_id": "{principal}-{YYYYMMDD}-{HHMM}-{symbol/全持仓}",
+  "principal": "towney|klaire",
+  "flow_type": "四委员|三委员|精简两委员",
+  "positions_table_id": "tblXxx（从 TOOLS.md 按 principal 取值）",
+  "watchlist_table_id": "tblXxx（从 TOOLS.md 按 principal 取值）"
+}
+```
+
+向任意委员派发任务时，**prompt 只需注入 `cycle_id`**：
+
+```
+本次任务的 cycle_id = {{cycle_id}}。
+启动后第一步：读取 workspace/cycles/{{cycle_id}}/context.json 获取 principal、table_id 等上下文。
 严禁读取、参考或混入任何其他 principal 的数据。
 违反即整次决策作废并记事故。
 ```
 
+> 所有上下文（principal、positions_table_id、watchlist_table_id、flow_type）统一来自 context.json，不在 prompt 中逐一注入。table_id 优先用 context.json 中的值；遇 NOTEXIST 时调 table.list() 刷新。
+
 ### IC 执行顺序（v3.3 — 文件读取协议）
 
 **标准四委员流程（定期复盘 / 盘前分析）：**
-1. 并行 `sessions_spawn` Research + Industry + News（`sessionTarget: "isolated"`, `delivery: none`，注入 principal + ledger_ref + cycle_id）
+0. 写 `workspace/cycles/{cycle_id}/context.json`（含 principal、flow_type="四委员"、positions_table_id、watchlist_table_id）
+1. 并行 `sessions_spawn` Research + Industry + News（`sessionTarget: "isolated"`, `delivery: none`，只注入 cycle_id）
 2. `sessions_yield` 等待三个 session 完成
 3. **读文件**（不依赖 sessions_history）：
    - `workspace/cycles/{cycle_id}/research_output.json`
    - `workspace/cycles/{cycle_id}/industry_output.json`
    - `workspace/cycles/{cycle_id}/news_output.json`
-4. 将三份文件内容 inline 到 Risk 的 prompt → `sessions_spawn` Risk（注入 cycle_id）
+4. 将三份文件内容 inline 到 Risk 的 prompt → `sessions_spawn` Risk（只注入 cycle_id）
 5. `sessions_yield` Risk
 6. 读文件：`workspace/cycles/{cycle_id}/risk_output.json`
-7. CIO 按 §7 公式综合四票 → 出决议单 → `sessions_spawn` Execution Desk
+7. CIO 按 §7 公式综合四票 → 出决议单（`flow_type="四委员"`；EOD/周/月复盘时填 `report_summary=<CIO裁决全文>`，普通标的决策留空字符串）→ `sessions_spawn` Execution Desk
 
 ⚠️ **读文件时只用当前 cycle_id 构造路径**，严禁遍历或读取其他 cycle 目录，防止历史数据污染当前决策。
 
 **三委员流程（新建仓 / 新增观察池标的）：**
-1. 并行 `sessions_spawn` Research + Industry（isolated, delivery: none，注入 principal + ledger_ref + cycle_id）
+0. 写 `workspace/cycles/{cycle_id}/context.json`（flow_type="三委员"）
+1. 并行 `sessions_spawn` Research + Industry（isolated, delivery: none，只注入 cycle_id）
 2. `sessions_yield` 等待两个 session 完成
 3. 读文件：
    - `workspace/cycles/{cycle_id}/research_output.json`
    - `workspace/cycles/{cycle_id}/industry_output.json`
-4. 将两份文件内容 inline 到 Risk 的 prompt → `sessions_spawn` Risk（新闻情绪维度标注"数据缺失，默认5分"，注入 cycle_id）
+4. 将两份文件内容 inline 到 Risk 的 prompt → `sessions_spawn` Risk（新闻情绪维度标注"数据缺失，默认5分"，只注入 cycle_id）
 5. `sessions_yield` Risk
 6. 读文件：`workspace/cycles/{cycle_id}/risk_output.json`
-7. CIO 按 §7 公式综合三票（news_modifier 默认 0）→ 出决议单 → `sessions_spawn` Execution Desk
+7. CIO 按 §7 公式综合三票（news_modifier 默认 0）→ 出决议单（`flow_type="三委员"`；`report_summary` 按场景填写）→ `sessions_spawn` Execution Desk
 
 **精简两委员流程（EOD / 减仓 / 止损 / 大跌应对）：**
-1. `sessions_spawn` Research（isolated, delivery: none，注入 cycle_id）
+0. 写 `workspace/cycles/{cycle_id}/context.json`（flow_type="精简两委员"）
+1. `sessions_spawn` Research（isolated, delivery: none，只注入 cycle_id）
 2. `sessions_yield` Research
 3. 读文件：`workspace/cycles/{cycle_id}/research_output.json`
-4. 将 Research 文件内容 inline 到 Risk 的 prompt → `sessions_spawn` Risk（行业景气度 / 宏观环境 / 新闻情绪三维标注"数据缺失，默认5分"，注入 cycle_id）
+4. 将 Research 文件内容 inline 到 Risk 的 prompt → `sessions_spawn` Risk（行业景气度 / 宏观环境 / 新闻情绪三维标注"数据缺失，默认5分"，只注入 cycle_id）
 5. `sessions_yield` Risk
 6. 读文件：`workspace/cycles/{cycle_id}/risk_output.json`
-7. CIO 综合两票 → 出结论
+7. CIO 综合两票 → 出决议单（`flow_type="精简两委员"`；EOD/周/月复盘时填 `report_summary=<CIO裁决全文>`）→ `sessions_spawn` Execution Desk
 
 ⚠️ Risk 不得独立拉取行业景气度和新闻情绪数据；标准流程中这两维必须来自 Industry / News 的上游输出。
 
@@ -457,14 +526,16 @@ baseline_score 取值范围 0-10，5 为中性基准。
 6. 唯一事实源: 各 principal 的 Bitable（见 principal 配置档）
 7. 🔴 Bitable 操作铁律（2026-06-10 确立，违反即事故）：
    每次调 bitable API 前，第一步必须是 feishu_bitable_app.list()
-   拿到返回的完整 token（如 J5zobSJFwaW4JjsEzLhcTNKTnBc）
-   绝不用截断 token（J5zobS…TnBc）、不用文件中写过的token、不缓存、不记忆
+   拿到返回的完整 token，原样使用
+   绝不用截断 token、不用任何文件中写过的 token 值、不缓存、不记忆
+   同一 session 内复用 OK，但不得持久化到任何文件（含 MEMORY.md、任何 workspace 文件）
    这条规则不因任何理由跳过
-8. permission_denied 自动走 feishu_oauth 续期后重试
+8. permission_denied / NOTEXIST 自动走 feishu_oauth 续期 → 重新 feishu_bitable_app.list() → 重试
+   （NOTEXIST 也是 token 问题：token 错误导致 app 上下文不对，table/record 看起来"不存在"）
 ```
 
 ### Bitable 引用规范
-- 引用表时使用中文表名（如「持仓表」），不是 table_id
+- 本文档内描述时使用中文表名（如「持仓表」），runtime dispatch 时按派发协议注入实际 table_id
 - 引用 Bitable 时使用名称（如「towney」），不是 app_token
 - principal 配置细节见独立配置档（TOWNEY_CONFIG.md / KLAIRE_CONFIG.md）
 

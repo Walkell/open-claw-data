@@ -12,8 +12,8 @@ principal:
 
 ```yaml
 ledger:
-  app_token: "J5zobSJFwaW4JjsEzLhcTNKTnBc"
-  bitable_name: "Klaire - 投资管理"
+  app_token: "[通过 feishu_bitable_app.list() 动态获取，禁止硬编码]"
+  bitable_name: "Klaire-投资管理"
   positions_table: "持仓表"
   watchlist_table: "观察池"
   reports_table: "报告表"
@@ -22,7 +22,7 @@ ledger:
   kpi_table: "KPI追踪"
   playbook_table: "执行手册"
   notes_table: "说明"
-  write_scope: "J5zobSJFwaW4JjsEzLhcTNKTnBc 内全部表"
+  write_scope: "Klaire-投资管理 内全部表"
 ```
 
 ## 行情数据源
@@ -37,7 +37,7 @@ market_adapter:
 ## 委员会构成
 
 ```yaml
-active_members: ["research", "industry", "news", "risk"]
+active_members: ["research", "risk"]  # 精简两委员；深度分析例外走四委员
 ```
 
 ## 风险阈值
