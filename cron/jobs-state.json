@@ -2,48 +2,14 @@
   "version": 1,
   "jobs": {
     "b1795f87-68ae-4aa4-a29e-9edc3041ad58": {
-      "updatedAtMs": 1781071729729,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 13-15 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
+      "updatedAtMs": 1781160488476,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 13-14 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1781075329729,
-        "lastRunAtMs": 1781071335364,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 394365,
-        "lastDeliveryStatus": "unknown",
-        "lastFailureNotificationDeliveryStatus": "unknown",
-        "consecutiveErrors": 5,
-        "consecutiveSkipped": 0,
-        "lastDiagnostics": {
-          "summary": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required",
-          "entries": [
-            {
-              "ts": 1781071729715,
-              "source": "tool",
-              "severity": "warn",
-              "message": "⚠️ ✉️ Message failed"
-            },
-            {
-              "ts": 1781071729727,
-              "source": "delivery",
-              "severity": "error",
-              "message": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required"
-            }
-          ]
-        },
-        "lastDiagnosticSummary": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required",
-        "lastError": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required"
-      }
-    },
-    "8f4f5463-f1cd-4a65-970f-7154313d7af4": {
-      "updatedAtMs": 1781001196602,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"30 18 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
-      "state": {
-        "nextRunAtMs": 1781087400000,
-        "lastRunAtMs": 1781001000005,
+        "nextRunAtMs": 1781240400000,
+        "lastRunAtMs": 1781160300005,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 196597,
+        "lastDurationMs": 188471,
         "lastDeliveryStatus": "delivered",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
@@ -51,8 +17,26 @@
         "lastDelivered": true
       }
     },
+    "8f4f5463-f1cd-4a65-970f-7154313d7af4": {
+      "updatedAtMs": 1781149499531,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"30 18 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {
+        "nextRunAtMs": 1781173800000,
+        "lastRunAtMs": 1781101282390,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 182423,
+        "lastDeliveryStatus": "unknown",
+        "lastFailureNotificationDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "consecutiveSkipped": 0,
+        "lastDelivered": false,
+        "lastError": "cron: job interrupted by gateway restart",
+        "lastDeliveryError": "cron: job interrupted by gateway restart"
+      }
+    },
     "bfbfdc36-64e3-4e1b-93ce-23be6eb695c4": {
-      "updatedAtMs": 1780967759512,
+      "updatedAtMs": 1781149508048,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"40 18 * * 5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
         "nextRunAtMs": 1781260800000,
@@ -68,14 +52,14 @@
       }
     },
     "c6ae35a4-e484-4148-815b-dc3182e86858": {
-      "updatedAtMs": 1780967777875,
+      "updatedAtMs": 1781149508112,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"50 18 L * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
         "nextRunAtMs": 1782816600000
       }
     },
     "f634514a-b3b6-4295-84c5-cb01e7bd2f02": {
-      "updatedAtMs": 1780967806299,
+      "updatedAtMs": 1781149508081,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"20 8 * * 1\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
         "nextRunAtMs": 1781482800000,
@@ -91,46 +75,79 @@
       }
     },
     "64b5f1d8-3547-4b45-afbc-ade4b0df1611": {
-      "updatedAtMs": 1780995322393,
+      "updatedAtMs": 1781149507931,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"30 9 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1781141400000
-      }
-    },
-    "56078609-aee4-4332-9ef5-d952714fe061": {
-      "updatedAtMs": 1781063957886,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 9-11 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":30000}}",
-      "state": {
-        "nextRunAtMs": 1781139629482,
-        "lastRunAtMs": 1781063948084,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 9802,
-        "lastDeliveryStatus": "not-requested",
-        "lastFailureNotificationDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0,
+        "nextRunAtMs": 1781227800000,
+        "lastRunAtMs": 1781141400005,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 103748,
+        "lastError": "OutboundDeliveryError: Request failed with status code 400",
+        "lastDiagnostics": {
+          "summary": "OutboundDeliveryError: Request failed with status code 400",
+          "entries": [
+            {
+              "ts": 1781141503751,
+              "source": "delivery",
+              "severity": "error",
+              "message": "OutboundDeliveryError: Request failed with status code 400"
+            }
+          ]
+        },
+        "lastDiagnosticSummary": "OutboundDeliveryError: Request failed with status code 400",
+        "lastDeliveryStatus": "unknown",
+        "lastFailureNotificationDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
         "consecutiveSkipped": 0
       }
     },
+    "56078609-aee4-4332-9ef5-d952714fe061": {
+      "updatedAtMs": 1781161327057,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 9-11 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":30000}}",
+      "state": {
+        "nextRunAtMs": 1781226029482,
+        "lastRunAtMs": 1781161171254,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 155803,
+        "lastDeliveryStatus": "delivered",
+        "lastFailureNotificationDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "consecutiveSkipped": 0,
+        "lastDelivered": true
+      }
+    },
     "f14657c4-17fa-4d9d-a79d-771ca7df7730": {
-      "updatedAtMs": 1781063827983,
+      "updatedAtMs": 1781149499499,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"30 8 * * 2-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1781137800000,
-        "lastRunAtMs": 1781063752305,
+        "nextRunAtMs": 1781224200000,
+        "lastRunAtMs": 1781137800006,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastError": "cron: job interrupted by gateway restart",
-        "lastDurationMs": 75678,
-        "consecutiveErrors": 1,
-        "lastDelivered": false,
+        "lastDurationMs": 497134,
+        "consecutiveErrors": 2,
         "lastDeliveryStatus": "unknown",
-        "lastDeliveryError": "cron: job interrupted by gateway restart",
-        "lastFailureNotificationDeliveryStatus": "unknown"
+        "lastFailureNotificationDeliveryStatus": "unknown",
+        "lastError": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required",
+        "lastDiagnostics": {
+          "summary": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required",
+          "entries": [
+            {
+              "ts": 1781138297138,
+              "source": "delivery",
+              "severity": "error",
+              "message": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required"
+            }
+          ]
+        },
+        "lastDiagnosticSummary": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required",
+        "consecutiveSkipped": 0
       }
     },
     "82452460-7ffa-4eff-9bdb-89e86182c872": {
-      "updatedAtMs": 1780891465654,
+      "updatedAtMs": 1781139093174,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"25 8 * * 1\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
         "nextRunAtMs": 1781483100000,
@@ -146,84 +163,92 @@
       }
     },
     "bbbeabff-b8ea-47c7-b047-0a1297ad15d5": {
-      "updatedAtMs": 1781063827983,
+      "updatedAtMs": 1781139581528,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"35 8 * * 2-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1781138100000,
-        "lastRunAtMs": 1781063752305,
+        "nextRunAtMs": 1781224500000,
+        "lastRunAtMs": 1781138299189,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 75678,
+        "lastDurationMs": 360094,
+        "lastDeliveryStatus": "unknown",
+        "lastFailureNotificationDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "consecutiveSkipped": 0,
+        "lastError": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required",
+        "lastDiagnostics": {
+          "summary": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required",
+          "entries": [
+            {
+              "ts": 1781138659281,
+              "source": "delivery",
+              "severity": "error",
+              "message": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required"
+            }
+          ]
+        },
+        "lastDiagnosticSummary": "OutboundDeliveryError: LarkClient[default]: appId and appSecret are required"
+      }
+    },
+    "96be9a87-f317-4d9a-88e1-955c4d019af3": {
+      "updatedAtMs": 1781149599118,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 9-11 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":15000}}",
+      "state": {
+        "nextRunAtMs": 1781226002094,
+        "lastRunAtMs": 1781149502098,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 97020,
+        "lastDeliveryStatus": "delivered",
+        "lastFailureNotificationDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "consecutiveSkipped": 0,
+        "lastDelivered": true
+      }
+    },
+    "00bad0b6-3fc5-4fd2-8a8c-61775e826573": {
+      "updatedAtMs": 1781160684095,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 13-14 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":15000}}",
+      "state": {
+        "nextRunAtMs": 1781240406681,
+        "lastRunAtMs": 1781160490499,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 193596,
+        "lastDeliveryStatus": "delivered",
+        "lastFailureNotificationDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "consecutiveSkipped": 0,
+        "lastDelivered": true
+      }
+    },
+    "066bd57e-ed9a-4c40-a8a5-4799e14b197d": {
+      "updatedAtMs": 1781139085285,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"45 18 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {
+        "nextRunAtMs": 1781174700000,
+        "lastRunAtMs": 1781101282390,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 182425,
+        "lastDelivered": false,
         "lastDeliveryStatus": "unknown",
         "lastFailureNotificationDeliveryStatus": "unknown",
         "consecutiveErrors": 1,
         "consecutiveSkipped": 0,
-        "lastDelivered": false,
         "lastError": "cron: job interrupted by gateway restart",
         "lastDeliveryError": "cron: job interrupted by gateway restart"
       }
     },
-    "96be9a87-f317-4d9a-88e1-955c4d019af3": {
-      "updatedAtMs": 1781063827984,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 9-11 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":15000}}",
+    "72ab5829-ca71-49a7-bbb4-7e46440f2298": {
+      "updatedAtMs": 1781141754209,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"30 9 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1781139602094,
-        "lastRunAtMs": 1781063752305,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 75679,
-        "lastDeliveryStatus": "unknown",
-        "lastFailureNotificationDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1,
-        "consecutiveSkipped": 0,
-        "lastError": "cron: job interrupted by gateway restart",
-        "lastDelivered": false,
-        "lastDeliveryError": "cron: job interrupted by gateway restart"
-      }
-    },
-    "00bad0b6-3fc5-4fd2-8a8c-61775e826573": {
-      "updatedAtMs": 1781072382440,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 13-15 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":15000}}",
-      "state": {
-        "nextRunAtMs": 1781075982440,
-        "lastRunAtMs": 1781072254652,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 127788,
-        "lastDeliveryStatus": "not-requested",
-        "lastFailureNotificationDeliveryStatus": "not-requested",
-        "consecutiveErrors": 6,
-        "consecutiveSkipped": 0,
-        "lastDiagnostics": {
-          "summary": "⚠️ ⏰ Cron failed",
-          "entries": [
-            {
-              "ts": 1781072382437,
-              "source": "tool",
-              "severity": "error",
-              "message": "⚠️ ⏰ Cron failed"
-            },
-            {
-              "ts": 1781072382437,
-              "source": "agent-run",
-              "severity": "error",
-              "message": "⚠️ ⏰ Cron failed"
-            }
-          ]
-        },
-        "lastDiagnosticSummary": "⚠️ ⏰ Cron failed",
-        "lastError": "⚠️ ⏰ Cron failed"
-      }
-    },
-    "066bd57e-ed9a-4c40-a8a5-4799e14b197d": {
-      "updatedAtMs": 1781002117507,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"45 18 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
-      "state": {
-        "nextRunAtMs": 1781088300000,
-        "lastRunAtMs": 1781001900062,
+        "nextRunAtMs": 1781227800000,
+        "lastRunAtMs": 1781141503753,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 217445,
+        "lastDurationMs": 250456,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "lastFailureNotificationDeliveryStatus": "not-requested",
@@ -231,15 +256,8 @@
         "consecutiveSkipped": 0
       }
     },
-    "72ab5829-ca71-49a7-bbb4-7e46440f2298": {
-      "updatedAtMs": 1781059755759,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"30 9 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
-      "state": {
-        "nextRunAtMs": 1781141400000
-      }
-    },
     "30fe5386-f706-453c-af2f-0e6765b9e376": {
-      "updatedAtMs": 1780891465618,
+      "updatedAtMs": 1781139093130,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"50 18 * * 5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
         "nextRunAtMs": 1781261400000,
@@ -255,7 +273,7 @@
       }
     },
     "afdbd0ef-a3f5-4e18-81e5-f3e415bf2543": {
-      "updatedAtMs": 1780891465691,
+      "updatedAtMs": 1781139097285,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"55 18 L * *\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
         "nextRunAtMs": 1782816900000

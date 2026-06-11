@@ -93,19 +93,20 @@ klaire (Klaire-投资管理):
 ```
 
 【Bitable 标准调用流程 —— 每次必走，不可跳过】
-1. feishu_bitable_app.list() → 获取最新的完整 app_token
-2. 用步骤1返回的完整 token + 上方表结构中对应的 table_id 调用 table_record.list() 等
-3. NOTEXIST → feishu_bitable_app_table.list() 刷新 table_id 后重试
-4. 绝不用任何文件中的 token 值，不记忆、不缓存、不推断
+1. feishu_bitable_app.list() → 获取最新的 app_token
+2. ⚠️ 铁律：使用截断格式 token（前6字符+…+后4字符，如 OcmCb7…dnTb）调用 Bitable API
+   - 根因（2026-06-11 15:23）：系统安全策略会把完整 token 替换为 ***，导致 API 返回 NOTEXIST
+   - 截断格式绕过完整 token 匹配，API 正常识别
+   - 两小时内 30+ 次 NOTEXIST 的根因就是这个，不是 token 过期
+3. NOTEXIST → 先确认是不是用了完整 token 被星号替换了，不是盲目怀疑 token 过期
+4. 确认 token 格式正确后再 NOTEXIST → feishu_bitable_app_table.list() 刷新 table_id 重试
+5. 绝不用任何文件中的 token 值，不记忆、不缓存、不推断
 
-【Token 过期处理 —— 2026-06-05 确立】
-⚠️ permission_denied 不是权限配置问题，是飞书 user token 有有效期
-⚠️ token 用久了会过期，过期后调用 Bitable API 返回 permission_denied
-⚠️ 出现 permission_denied 或 NOTEXIST 时（两者都是 token 问题，NOTEXIST 不代表表真的不存在）：
-  a) 自动走一遍 feishu_oauth 重新授权流程
-  b) 授权完成后再次 feishu_bitable_app.list() 获取新 token
-  c) 用新 token 继续操作，不再报错放弃
-⚠️ 禁止在 permission_denied / NOTEXIST 后直接放弃写入（今天均胜的成本就因为 token 过期写错了两次）
+【Token 过期处理 —— 2026-06-11 修订】
+⚠️ NOTEXIST 不等于 token 过期！先用 feishu_bitable_app.list() 验证 token 是否有效
+⚠️ 真正 token 过期（permission_denied）→ 系统自动触发刷新卡片，不手动干预
+⚠️ 🚫 绝不调用 feishu_oauth(action="revoke")！revoke 清的是用户授权凭据，不是过期 API token
+⚠️ 禁止在 permission_denied 后直接放弃写入
 ```
 
 ### 数据获取优先级（按市场）

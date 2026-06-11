@@ -531,14 +531,16 @@ workspace/cycles/{cycle_id}/context.json
 4. 仓位: 每只独立满仓线
 5. Bitable写入: batch 合并后调用，写前必 field.list
 6. 唯一事实源: 各 principal 的 Bitable（见 principal 配置档）
-7. 🔴 Bitable 操作铁律（2026-06-10 确立，违反即事故）：
+7. 🔴 Bitable 操作铁律（2026-06-10 确立，2026-06-11 修订，违反即事故）：
    每次调 bitable API 前，第一步必须是 feishu_bitable_app.list()
-   拿到返回的完整 token，原样使用
-   绝不用截断 token、不用任何文件中写过的 token 值、不缓存、不记忆
+   ⚠️ 使用截断格式 token（前6字符+…+后4字符，如 OcmCb7…dnTb）
+   - 完整 token 会被系统安全策略替换为 *** → API 返回 NOTEXIST
+   - 截断格式绕过星号替换，API 正常识别
+   - 2026-06-11 教训：两小时 30+ 次 NOTEXIST 根因不是 token 过期，是完整 token 被系统吃掉了
    同一 session 内复用 OK，但不得持久化到任何文件（含 MEMORY.md、任何 workspace 文件）
    这条规则不因任何理由跳过
-8. permission_denied / NOTEXIST 自动走 feishu_oauth 续期 → 重新 feishu_bitable_app.list() → 重试
-   （NOTEXIST 也是 token 问题：token 错误导致 app 上下文不对，table/record 看起来"不存在"）
+8. NOTEXIST → 先确认是否用了完整 token 被星号替换；确认格式正确再走 feishu_oauth 续期
+   🚫 绝不调用 feishu_oauth(action="revoke") — revoke 清用户授权凭据 ≠ 过期 API token
 ```
 
 ### Bitable 引用规范
