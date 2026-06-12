@@ -27,8 +27,8 @@
       "delivery": {
         "mode": "announce",
         "channel": "feishu",
-        "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "arthur"
+        "to": "user:ou_991380df662097f94a368e3ca6f8204e",
+        "accountId": "butler"
       },
       "state": {}
     },
@@ -43,23 +43,11 @@
         "expr": "30 18 * * 1-5",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
-        "message": "EOD复盘 principal=towney flow_type=精简两委员",
-        "model": "volcengine-plan/deepseek-v4-pro",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
-        ],
-        "timeoutSeconds": 1800
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "arthur"
+        "kind": "systemEvent",
+        "text": "🔔 IC 触发：EOD复盘 principal=towney flow_type=精简两委员"
       },
       "state": {}
     },
@@ -74,23 +62,11 @@
         "expr": "40 18 * * 5",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
-        "message": "周报复盘 principal=towney flow_type=四委员",
-        "model": "volcengine-plan/deepseek-v4-pro",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
-        ],
-        "timeoutSeconds": 1800
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "arthur"
+        "kind": "systemEvent",
+        "text": "🔔 IC 触发：周报复盘 principal=towney flow_type=四委员"
       },
       "state": {}
     },
@@ -105,23 +81,11 @@
         "expr": "50 18 L * *",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
-        "message": "月报复盘 principal=towney flow_type=四委员",
-        "model": "volcengine-plan/deepseek-v4-pro",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
-        ],
-        "timeoutSeconds": 1800
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "arthur"
+        "kind": "systemEvent",
+        "text": "🔔 IC 触发：月报复盘 principal=towney flow_type=四委员"
       },
       "state": {}
     },
@@ -136,23 +100,11 @@
         "expr": "20 8 * * 1",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
-        "message": "周一简报 principal=towney flow_type=四委员",
-        "model": "volcengine-plan/deepseek-v4-pro",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
-        ],
-        "timeoutSeconds": 1800
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "arthur"
+        "kind": "systemEvent",
+        "text": "🔔 IC 触发：周一简报 principal=towney flow_type=四委员"
       },
       "state": {}
     },
@@ -168,23 +120,11 @@
         "expr": "30 9 * * 1-5",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
-        "message": "开盘大跌扫描（principal=towney，5分钟窗口）：\n\n⚠️ 第一步：确认时间窗口\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); ok=(t.hour==9 and 30<=t.minute<=35); print('IN_WINDOW' if ok else 'SKIP')\"\n如果输出 SKIP → 直接 NO_REPLY。\n\n⚠️ 第二步：执行 `custom-feishu-auth` SKILL → 续期 + 取 app_token，再读 towney 持仓表 tblUeTGMf0IKJ8Pk\n获取所有持仓的代码、止损价、止盈价、仓位%、备注字段。\n\n⚠️ 第三步：拉开盘实时行情\n使用 `custom-market-data-cn` SKILL 拉全持仓实时行情（双源验证）\n\n⚠️ 第四步A：错杀加仓条件（全部满足才触发 IC，接第五步）\n- 开盘跌幅 ≥3%\n- 距止损价 ≥5%（当前价 ≥ 止损价×1.05）\n- 距止盈价 ≥30%（当前价 ≤ 止盈价×0.70）\n- 当前仓位未满\n- 备注无「高风险」「清仓」标记\n\n⚠️ 第四步B：大涨止盈提醒（满足即直接通知，不触发 IC）\n- 开盘涨幅 ≥5%\n→ 通知内容：🟢【开盘大涨】{代码} 涨幅{X}% | 现价{P} | 止盈价{Y} | 距止盈{Z}%（负数=已突破）\n\n⚠️ 第五步：有 4A 触发标的 → 直接执行精简两委员 IC 流程\ncycle_id = towney-{YYYYMMDD}-{HHMM}-{symbol}\n写 workspace-cio/cycles/{cycle_id}/ic_request.json：\n{\"cycle_id\":\"...\",\"principal\":\"towney\",\"flow_type\":\"精简两委员\",\"symbol\":\"{symbol}\",\"positions_table_id\":\"tblUeTGMf0IKJ8Pk\",\"watchlist_table_id\":\"tblaLlSQp8tEcWgJ\"}\n执行 custom-ic-orchestrate SKILL（flow_type=精简两委员，cycle_id={cycle_id}）\n回复 NO_REPLY。\n\n4B 触发标的（大涨）：读 workspace-cio/TOWNEY_CONFIG.md 「输出通道」字段获取推送地址，直接推送大涨通知，不启动 IC。\n4A 与 4B 均无触发 → NO_REPLY。",
-        "model": "volcengine-plan/deepseek-v4-pro",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
-        ],
-        "timeoutSeconds": 300
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "arthur"
+        "kind": "systemEvent",
+        "text": "🔔 开盘扫描 principal=towney（检查持仓大跌/大涨，条件满足则触发精简两委员IC）"
       },
       "state": {}
     },
@@ -215,8 +155,8 @@
       "delivery": {
         "mode": "announce",
         "channel": "feishu",
-        "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "arthur"
+        "to": "user:ou_991380df662097f94a368e3ca6f8204e",
+        "accountId": "butler"
       },
       "state": {}
     },
@@ -231,23 +171,11 @@
         "expr": "30 8 * * 2-5",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
-        "message": "盘前简报 principal=towney flow_type=四委员",
-        "model": "volcengine-plan/deepseek-v4-pro",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
-        ],
-        "timeoutSeconds": 1800
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "arthur"
+        "kind": "systemEvent",
+        "text": "🔔 IC 触发：盘前简报 principal=towney flow_type=四委员"
       },
       "state": {}
     },
@@ -262,23 +190,11 @@
         "expr": "25 8 * * 1",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
-        "message": "周一简报 principal=klaire flow_type=四委员",
-        "model": "volcengine-plan/deepseek-v4-pro",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
-        ],
-        "timeoutSeconds": 1800
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "arthur"
+        "kind": "systemEvent",
+        "text": "🔔 IC 触发：周一简报 principal=klaire flow_type=四委员"
       },
       "state": {}
     },
@@ -293,23 +209,11 @@
         "expr": "35 8 * * 2-5",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
-        "message": "盘前简报 principal=klaire flow_type=四委员",
-        "model": "volcengine-plan/deepseek-v4-pro",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
-        ],
-        "timeoutSeconds": 1800
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "arthur"
+        "kind": "systemEvent",
+        "text": "🔔 IC 触发：盘前简报 principal=klaire flow_type=四委员"
       },
       "state": {}
     },
@@ -341,7 +245,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "arthur"
+        "accountId": "butler"
       },
       "description": "Klaire上午盘监控·每15分·写监控记录表",
       "state": {}
@@ -374,7 +278,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "arthur"
+        "accountId": "butler"
       },
       "description": "Klaire下午盘监控·每15分·写监控记录表",
       "state": {}
@@ -390,23 +294,11 @@
         "expr": "45 18 * * 1-5",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
-        "message": "EOD复盘 principal=klaire flow_type=精简两委员",
-        "model": "volcengine-plan/deepseek-v4-pro",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
-        ],
-        "timeoutSeconds": 1800
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "arthur"
+        "kind": "systemEvent",
+        "text": "🔔 IC 触发：EOD复盘 principal=klaire flow_type=精简两委员"
       },
       "state": {}
     },
@@ -422,23 +314,11 @@
         "expr": "30 9 * * 1-5",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
-        "message": "开盘大跌扫描（principal=klaire，5分钟窗口）：\n\n⚠️ 第一步：确认时间窗口\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); ok=(t.hour==9 and 30<=t.minute<=35); print('IN_WINDOW' if ok else 'SKIP')\"\n如果输出 SKIP → 直接 NO_REPLY。\n\n⚠️ 第二步：执行 `custom-feishu-auth` SKILL → 续期 + 取 app_token，再读 klaire 持仓表 tbl9xYrGkBDZlnYm\n获取所有持仓的代码、止损价、止盈价、仓位%、备注字段。\n\n⚠️ 第三步：拉开盘实时行情\n使用 `custom-market-data-cn` SKILL 拉全持仓实时行情（双源验证）\n\n⚠️ 第四步A：错杀加仓条件（全部满足才触发 IC，接第五步）\n- 开盘跌幅 ≥3%\n- 距止损价 ≥5%（当前价 ≥ 止损价×1.05）\n- 距止盈价 ≥30%（当前价 ≤ 止盈价×0.70）\n- 当前仓位未满\n- 备注无「高风险」「清仓」标记\n\n⚠️ 第四步B：大涨止盈提醒（满足即直接通知，不触发 IC）\n- 开盘涨幅 ≥5%\n→ 通知内容：🟢【开盘大涨】{代码} 涨幅{X}% | 现价{P} | 止盈价{Y} | 距止盈{Z}%（负数=已突破）\n\n⚠️ 第五步：有 4A 触发标的 → 直接执行精简两委员 IC 流程\ncycle_id = klaire-{YYYYMMDD}-{HHMM}-{symbol}\n写 workspace-cio/cycles/{cycle_id}/ic_request.json：\n{\"cycle_id\":\"...\",\"principal\":\"klaire\",\"flow_type\":\"精简两委员\",\"symbol\":\"{symbol}\",\"positions_table_id\":\"tbl9xYrGkBDZlnYm\",\"watchlist_table_id\":\"tblaQY1jOFWOXd1U\"}\n执行 custom-ic-orchestrate SKILL（flow_type=精简两委员，cycle_id={cycle_id}）\n回复 NO_REPLY。\n\n4B 触发标的（大涨）：读 workspace-cio/KLAIRE_CONFIG.md 「输出通道」字段获取推送地址，直接推送大涨通知，不启动 IC。\n4A 与 4B 均无触发 → NO_REPLY。",
-        "timeoutSeconds": 1800,
-        "model": "volcengine-plan/deepseek-v4-pro",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
-        ]
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "arthur"
+        "kind": "systemEvent",
+        "text": "🔔 开盘扫描 principal=klaire（检查持仓大跌/大涨，条件满足则触发精简两委员IC）"
       },
       "state": {}
     },
@@ -453,23 +333,11 @@
         "expr": "50 18 * * 5",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
-        "message": "周报复盘 principal=klaire flow_type=四委员",
-        "model": "volcengine-plan/deepseek-v4-pro",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
-        ],
-        "timeoutSeconds": 1800
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "arthur"
+        "kind": "systemEvent",
+        "text": "🔔 IC 触发：周报复盘 principal=klaire flow_type=四委员"
       },
       "state": {}
     },
@@ -484,23 +352,11 @@
         "expr": "55 18 L * *",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
-        "message": "月报复盘 principal=klaire flow_type=四委员",
-        "model": "volcengine-plan/deepseek-v4-pro",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
-        ],
-        "timeoutSeconds": 1800
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "arthur"
+        "kind": "systemEvent",
+        "text": "🔔 IC 触发：月报复盘 principal=klaire flow_type=四委员"
       },
       "state": {}
     }
