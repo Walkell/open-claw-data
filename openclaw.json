@@ -282,7 +282,7 @@
   },
   "agents": {
     "defaults": {
-      "workspace": "/home/ubuntu/.openclaw/workspace-cio",
+      "workspace": "/home/ubuntu/.openclaw/workspace-butler",
       "model": {
         "primary": "deepseek/deepseek-v4-pro",
         "fallbacks": [
