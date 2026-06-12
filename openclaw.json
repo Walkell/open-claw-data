@@ -928,13 +928,15 @@
           "name": "Arthur",
           "appId": "cli_aaadc0c90f795be8",
           "appSecret": "SYVdrTlmWibVdeNdNQetNcJpRcFDDPPV",
-          "enabled": false
+          "enabled": false,
+          "agentId": "cio"
         },
         "butler": {
           "name": "Butler",
           "appId": "cli_aaa005a9bd789bea",
           "appSecret": "KSBpcZxL1Xsb8bcxgprQLczJxcVQO0iC",
-          "enabled": true
+          "enabled": true,
+          "agentId": "butler"
         }
       }
     }
