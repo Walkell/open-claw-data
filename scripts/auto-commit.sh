@@ -25,7 +25,7 @@ fi
 # 检查是否有变动（包含未追踪文件）
 if $GIT status --porcelain | grep -q .; then
   TIMESTAMP=$(date '+%Y-%m-%d %H:%M')
-  $GIT add -A
+  $GIT add -A --ignore-errors
   $GIT commit -m "chore(auto): 数据同步 ${TIMESTAMP}" >> "$LOG_FILE" 2>&1
   if $GIT push >> "$LOG_FILE" 2>&1; then
     log "✅ commit + push 完成"

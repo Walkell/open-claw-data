@@ -51,6 +51,9 @@ workspace*/cache/
 workspace*/tmp/
 workspace*/.openclaw/
 
+# 非托管的 workspace（含嵌套 .git，不纳入主 repo）
+workspace-secretary/
+
 
 # ────────────────────────────────────────────
 #  放行：cron / flows / extensions / devices
