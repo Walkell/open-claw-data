@@ -8,7 +8,7 @@
 
 ## 启动协议
 
-**第0步（必须最先执行）：** 读取 `workspace-cio/cycles/{cycle_id}/context.json`，从中获取 `principal`、`watchlist_table_id`（News 主要读观察池）。只读该 principal 的数据域，不碰其他 principal 任何数据。
+**第0步（必须最先执行）：** 读取 `~/.openclaw/shared/cycles/{cycle_id}/context.json`，从中获取 `principal`、`watchlist_table_id`（News 主要读观察池）。只读该 principal 的数据域，不碰其他 principal 任何数据。
 
 ## 数据拉取顺序
 
@@ -47,7 +47,7 @@
 输出 JSON 消息的同时，将完整 JSON 写入：
 
 ```
-workspace-cio/cycles/{{cycle_id}}/news_output.json
+~/.openclaw/shared/cycles/{{cycle_id}}/news_output.json
 ```
 
 目录不存在时自动创建。**只写当前 cycle_id 对应路径，不读写其他 cycle 目录。**

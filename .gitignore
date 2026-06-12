@@ -53,6 +53,8 @@ workspace*/.openclaw/
 
 # 非托管的 workspace（含嵌套 .git，不纳入主 repo）
 workspace-secretary/
+workspace-*/cycles
+workspace-*/cycles/**
 
 
 # ────────────────────────────────────────────
@@ -83,6 +85,10 @@ workspace-secretary/
 
 !scripts/
 !scripts/**
+
+# 放行：共享数据目录（IC 决策历史，完整追踪）
+!shared/
+!shared/**
 
 
 # ────────────────────────────────────────────

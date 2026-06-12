@@ -36,13 +36,13 @@
 
 **cron 触发**：消息直接携带 `flow_type` 和 `principal`，直接写 context.json。
 
-**用户触发**（消息含 cycle_id）：先读 `workspace-cio/cycles/{cycle_id}/ic_request.json`，从中获取 `flow_type`、`principal`、`symbol`，再写 context.json。
+**用户触发**（消息含 cycle_id）：先读 `~/.openclaw/shared/cycles/{cycle_id}/ic_request.json`，从中获取 `flow_type`、`principal`、`symbol`，再写 context.json。
 
 ```
 cycle_id = {principal}-{YYYYMMDD}-{HHMM}-{symbol或场景标识}
 ```
 
-写入 `workspace-cio/cycles/{cycle_id}/context.json`：
+写入 `~/.openclaw/shared/cycles/{cycle_id}/context.json`：
 ```json
 {
   "cycle_id": "...",
@@ -94,10 +94,10 @@ cycle_id：[xxx]
 ### 第四步：读取委员输出文件
 
 ```
-workspace-cio/cycles/{cycle_id}/research_output.json
-workspace-cio/cycles/{cycle_id}/industry_output.json   （四委员 / 三委员）
-workspace-cio/cycles/{cycle_id}/news_output.json        （四委员）
-workspace-cio/cycles/{cycle_id}/risk_output.json
+~/.openclaw/shared/cycles/{cycle_id}/research_output.json
+~/.openclaw/shared/cycles/{cycle_id}/industry_output.json   （四委员 / 三委员）
+~/.openclaw/shared/cycles/{cycle_id}/news_output.json        （四委员）
+~/.openclaw/shared/cycles/{cycle_id}/risk_output.json
 ```
 
 ⚠️ 只读当前 cycle_id 路径。
