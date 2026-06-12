@@ -16,7 +16,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Towney 下午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 核心规则：本 Agent 在 isolated session 中运行，**禁止调用 message 工具发消息**。\n最终回复内容将被 delivery 自动推送给用户，你只需把告警写成正常回复即可。\n\n⚠️ 第一步：拉 Bitable 白名单\n1. feishu_bitable_app.list() → 取完整 app_token\n2. feishu_bitable_app_table_record.list(app_token, table_id=\"tblUeTGMf0IKJ8Pk\", filter过滤状态=持有) → 提取股票代码\n3. feishu_bitable_app_table_record.list(app_token, table_id=\"tblaLlSQp8tEcWgJ\", filter过滤状态!=已移除) → 提取股票代码\n4. 合并为完整白名单\n\n⚠️ 第二步：仅对白名单标的拉行情\n腾讯财经（主）：python3 -c \"import urllib.request; codes=白名单; r=urllib.request.urlopen('https://qt.gtimg.cn/q='+','.join(codes),timeout=10).read().decode('gbk'); [print(l.split('~')[2],l.split('~')[1],float(l.split('~')[3]),float(l.split('~')[32]),float(l.split('~')[34]),float(l.split('~')[33])) for l in r.strip().split('\\\\n') if '~' in l]\"\n备选：akshare__get_realtime_data(source=eastmoney_direct)\n涨跌幅只用 API 预计算字段（f[34] 或 change_pct），不自行计算\n\n⚠️ 第三步：写入监控记录表\nfield.list 确认字段名 → batch_create 写入 tblFAfrZs4Rz4AOu（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池\n\n⚠️ 第四步：阈值检查 + 建仓条件 → 作为最终回复输出（delivery 会自动推送）\nA. 持仓标的阈值检查：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】\nB. 建仓条件触发（观察池「待建仓」标的）\n   读取每个标的的「目标建仓价」，当前价 ≤ 目标建仓价 → 触发通知\n无 A 也无 B → 回复 NO_REPLY",
+        "message": "Towney 下午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 核心规则：本 Agent 在 isolated session 中运行，**禁止调用 message 工具发消息**。\n最终回复内容将被 delivery 自动推送给用户，你只需把告警写成正常回复即可。\n\n⚠️ 第一步：拉 Bitable 白名单\n1. feishu_bitable_app.list() → 取完整 app_token\n2. feishu_bitable_app_table_record.list(app_token, table_id=\"tblUeTGMf0IKJ8Pk\", filter过滤状态=持有) → 提取股票代码\n3. feishu_bitable_app_table_record.list(app_token, table_id=\"tblaLlSQp8tEcWgJ\", filter过滤状态!=已移除) → 提取股票代码\n4. 合并为完整白名单\n\n⚠️ 第二步：仅对白名单标的拉行情\n腾讯财经（主）：python3 -c \"import urllib.request; codes=白名单; r=urllib.request.urlopen('https://qt.gtimg.cn/q='+','.join(codes),timeout=10).read().decode('gbk'); [print(l.split('~')[2],l.split('~')[1],float(l.split('~')[3]),float(l.split('~')[32]),float(l.split('~')[34]),float(l.split('~')[33])) for l in r.strip().split('\\\\n') if '~' in l]\"\n备选：akshare__get_realtime_data(source=eastmoney_direct)\n涨跌幅只用 API 预计算字段（f[34] 或 change_pct），不自行计算\n\n⚠️ 第三步：写入监控记录表\nfield.list 确认字段名 → batch_create 写入 tblFAfrZs4Rz4AOu（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池\n\n⚠️ 第四步：阈值检查 + 建仓条件 → 作为最终回复输出（delivery 会自动推送）\nA. 持仓标的阈值检查：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】\nB. 建仓条件触发（观察池标的）\n   读取每个标的的关注理由，若含「⛔暂缓建仓」或「投委会裁决：暂不建仓」字样 → 跳过不通知\n   读取目标建仓价字段，当前价 ≤ 目标建仓价 → 触发通知\n无 A 也无 B → 回复 NO_REPLY",
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
           "deepseek/deepseek-v4-pro",
@@ -28,7 +28,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "state": {}
     },
@@ -59,7 +59,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "state": {}
     },
@@ -90,7 +90,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "state": {}
     },
@@ -121,7 +121,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "state": {}
     },
@@ -152,7 +152,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "state": {}
     },
@@ -184,7 +184,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "state": {}
     },
@@ -210,13 +210,13 @@
           "glm/glm-5.1"
         ],
         "timeoutSeconds": 600,
-        "message": "Towney 上午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 核心规则：本 Agent 在 isolated session 中运行，**禁止调用 message 工具发消息**。\n最终回复内容将被 delivery 自动推送给用户，你只需把告警写成正常回复即可。\n\n⚠️ 第一步：拉 Bitable 白名单\n1. feishu_bitable_app.list() → 取完整 app_token\n2. feishu_bitable_app_table_record.list(app_token, table_id=\"tblUeTGMf0IKJ8Pk\", filter过滤状态=持有) → 提取股票代码\n3. feishu_bitable_app_table_record.list(app_token, table_id=\"tblaLlSQp8tEcWgJ\", filter过滤状态!=已移除) → 提取股票代码\n4. 合并为完整白名单\n\n⚠️ 第二步：仅对白名单标的拉行情\n腾讯财经（主）：python3 -c \"import urllib.request; codes=白名单; r=urllib.request.urlopen('https://qt.gtimg.cn/q='+','.join(codes),timeout=10).read().decode('gbk'); [print(l.split('~')[2],l.split('~')[1],float(l.split('~')[3]),float(l.split('~')[32]),float(l.split('~')[34]),float(l.split('~')[33])) for l in r.strip().split('\\\\n') if '~' in l]\"\n备选：akshare__get_realtime_data(source=eastmoney_direct)\n涨跌幅只用 API 预计算字段（f[34] 或 change_pct），不自行计算\n\n⚠️ 第三步：写入监控记录表\nfield.list 确认字段名 → batch_create 写入 tblFAfrZs4Rz4AOu（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池\n\n⚠️ 第四步：阈值检查 + 建仓条件 → 作为最终回复输出（delivery 会自动推送）\nA. 持仓标的阈值检查：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】\nB. 建仓条件触发（观察池「待建仓」标的）\n   读取每个标的的「目标建仓价」，当前价 ≤ 目标建仓价 → 触发通知\n无 A 也无 B → 回复 NO_REPLY"
+        "message": "Towney 上午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 核心规则：本 Agent 在 isolated session 中运行，**禁止调用 message 工具发消息**。\n最终回复内容将被 delivery 自动推送给用户，你只需把告警写成正常回复即可。\n\n⚠️ 第一步：拉 Bitable 白名单\n1. feishu_bitable_app.list() → 取完整 app_token\n2. feishu_bitable_app_table_record.list(app_token, table_id=\"tblUeTGMf0IKJ8Pk\", filter过滤状态=持有) → 提取股票代码\n3. feishu_bitable_app_table_record.list(app_token, table_id=\"tblaLlSQp8tEcWgJ\", filter过滤状态!=已移除) → 提取股票代码\n4. 合并为完整白名单\n\n⚠️ 第二步：仅对白名单标的拉行情\n腾讯财经（主）：python3 -c \"import urllib.request; codes=白名单; r=urllib.request.urlopen('https://qt.gtimg.cn/q='+','.join(codes),timeout=10).read().decode('gbk'); [print(l.split('~')[2],l.split('~')[1],float(l.split('~')[3]),float(l.split('~')[32]),float(l.split('~')[34]),float(l.split('~')[33])) for l in r.strip().split('\\\\n') if '~' in l]\"\n备选：akshare__get_realtime_data(source=eastmoney_direct)\n涨跌幅只用 API 预计算字段（f[34] 或 change_pct），不自行计算\n\n⚠️ 第三步：写入监控记录表\nfield.list 确认字段名 → batch_create 写入 tblFAfrZs4Rz4AOu（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池\n\n⚠️ 第四步：阈值检查 + 建仓条件 → 作为最终回复输出（delivery 会自动推送）\nA. 持仓标的阈值检查：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】\nB. 建仓条件触发（观察池标的）\n   读取每个标的的关注理由，若含「⛔暂缓建仓」或「投委会裁决：暂不建仓」字样 → 跳过不通知\n   读取目标建仓价字段，当前价 ≤ 目标建仓价 → 触发通知\n无 A 也无 B → 回复 NO_REPLY"
       },
       "delivery": {
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "state": {}
     },
@@ -247,7 +247,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "user:ou_439c681182efb97b616539b94762f343",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "state": {}
     },
@@ -278,7 +278,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "state": {}
     },
@@ -309,7 +309,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "state": {}
     },
@@ -341,7 +341,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "description": "Klaire上午盘监控·每15分·写监控记录表",
       "state": {}
@@ -374,7 +374,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "description": "Klaire下午盘监控·每15分·写监控记录表",
       "state": {}
@@ -406,7 +406,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "state": {}
     },
@@ -433,7 +433,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "state": {}
     },
@@ -464,7 +464,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "state": {}
     },
@@ -495,7 +495,7 @@
         "mode": "announce",
         "channel": "feishu",
         "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "assistant"
+        "accountId": "arthur"
       },
       "state": {}
     }

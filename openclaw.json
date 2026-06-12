@@ -44,9 +44,9 @@
         "source": "file",
         "path": "~/.openclaw/secrets/volcengine-plan-secrets.json"
       },
-      "lark2-secrets": {
+      "arthur-secrets": {
         "source": "file",
-        "path": "~/.openclaw/credentials/lark2.secrets.json"
+        "path": "~/.openclaw/credentials/arthur.secrets.json"
       }
     }
   },
@@ -366,7 +366,8 @@
         "models": {
           "deepseek/deepseek-v4-pro": {},
           "glm/glm-5.1": {}
-        }
+        },
+        "thinkingDefault": "medium"
       },
       {
         "id": "research",
@@ -374,9 +375,9 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-research",
         "agentDir": "/home/ubuntu/.openclaw/agents/research/agent",
         "model": {
-          "primary": "deepseek/deepseek-v4-pro",
+          "primary": "glm/glm-5.1",
           "fallbacks": [
-            "glm/glm-5.1"
+            "deepseek/deepseek-v4-pro"
           ]
         },
         "identity": {
@@ -424,7 +425,8 @@
             "feishu_wiki_space_node"
           ],
           "profile": "full"
-        }
+        },
+        "thinkingDefault": "high"
       },
       {
         "id": "industry",
@@ -486,7 +488,8 @@
             "web_fetch"
           ],
           "profile": "full"
-        }
+        },
+        "thinkingDefault": "medium"
       },
       {
         "id": "news",
@@ -544,7 +547,8 @@
             "feishu_wiki_space_node"
           ],
           "profile": "full"
-        }
+        },
+        "thinkingDefault": "high"
       },
       {
         "id": "risk",
@@ -602,7 +606,8 @@
             "feishu_wiki_space_node"
           ],
           "profile": "full"
-        }
+        },
+        "thinkingDefault": "adaptive"
       },
       {
         "id": "monitor",
@@ -659,7 +664,8 @@
             "feishu_wiki_space",
             "feishu_wiki_space_node"
           ]
-        }
+        },
+        "thinkingDefault": "medium"
       },
       {
         "id": "desk",
@@ -725,7 +731,8 @@
           "volcengine-plan/deepseek-v4-flash": {},
           "deepseek/deepseek-v4-pro": {},
           "glm/glm-5.1": {}
-        }
+        },
+        "thinkingDefault": "medium"
       }
     ]
   },
@@ -895,10 +902,16 @@
         }
       },
       "accounts": {
-        "assistant": {
+        "arthur": {
           "name": "Arthur",
           "appId": "cli_aaadc0c90f795be8",
           "appSecret": "SYVdrTlmWibVdeNdNQetNcJpRcFDDPPV",
+          "enabled": true
+        },
+        "butler": {
+          "name": "Butler",
+          "appId": "cli_aaa005a9bd789bea",
+          "appSecret": "KSBpcZxL1Xsb8bcxgprQLczJxcVQO0iC",
           "enabled": true
         }
       }
