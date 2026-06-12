@@ -1,0 +1,76 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260613-0027-weekly",
+  "data": {
+    "symbol": "PORTFOLIO",
+    "risk_score": 4.2,
+    "verdict": "VETO",
+    "veto_reason": "三项结构性否决触发：(1)天孚通信(最大仓位15.95%)现价280.95已跌破止损线285.26(-1.51%)，VETO任何加仓；(2)黄金ETF距止损线仅1.87%(≤3%阈值)，VETO加仓；(3)AI/半导体硬件链集中度72.1%远超40%红线，VETO任何AI方向新增仓位。整体风险评分4.2未触发评分否决(阈值7)，但结构性风险突出",
+    "dimensions": {
+      "financial_health": {
+        "score": 2.6,
+        "note": "组合加权财务健康度优良。第一梯队：澜起(D/E6%/CR18.74/净利率41%)、天孚(D/E20%/CR4.67/净利率36%)；第二梯队：海光(D/E33%/CR3.27/营收+51%)；关注项：华海清科(D/E73%)、沪电(D/E81%/CR1.36+经营现金流-64%)；风险项：通富微电(D/E154%/CR0.88<1/净利率2.1%/ROE0.69%)已处财务压力区但仓位仅1.62%。akshare Q1-2025财报自拉验证，沪深ETF无信用风险",
+        "source": "self"
+      },
+      "valuation": {
+        "score": 5.8,
+        "note": "估值是组合最大风险维度。高价成长股(海光/通富PE>70x估值3分)经本周回调仍偏贵(4分)；中价标的(天孚除权后/澜起/华海/沪电)PE 25-50x区间缺乏安全边际；仅阿里(PE10x/PB1.5x)、中证500/创业板50ETF处历史中低位具吸引力。本周回调主要反映估值压缩而非基本面破坏，但估值消化仍不充分",
+        "source": "self"
+      },
+      "industry_cycle": {
+        "score": 3.6,
+        "note": "AI算力链景气度6.4/10(上游Industry报告)。支撑：PMI电信/算力服务55%+高景气，AI资本开支持续，国产替代加速。压制：制造业新订单49.9/新出口48.6低于荣枯线，社融4月增量显著回落，信用脉冲偏弱。景气仍处扩张期但边际放缓",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 5.9,
+        "note": "13持仓中9只位于MA20下方，11只MACD空头排列。最大风险信号：天孚通信(15.95%仓位)止损线已破位(-1.51%)；澜起(-6.06%/周)、通富(-14.39%/周)技术形态恶化。仅华海清科/海光/沪电展露修复意愿。黄金ETF周-6.4%/RSI30.5超卖但均线压制重。gtimg单源验证(周六休市，研究端东财/新浪不可用)",
+        "source": "self"
+      },
+      "macro": {
+        "score": 4.8,
+        "note": "宏观环境5.2/10(上游Industry报告)。5月制造业PMI 50.0中性，生产51.2扩张但新订单49.9不足；非制造业50.1小幅扩张。LPR 1年3.0%/5年3.5%利率偏支持，但4月社融增量6245亿较Q1显著回落；人民币6.86汇率压力不大。'流动性支持但需求/信用不足'的中性偏谨慎环境",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 2.1,
+        "note": "组合新闻情绪-0.05×事件影响4=2.1风险分(上游News报告)。偏多：通富微电质押清零+定增提交注册双重利好，天孚通信受新易盛H股IPO消息提振。偏空：科创板主力两日净流出67亿，PCB/铜缆赛道资金离场。无监管处罚/商誉减值/核心管理层异常等极端事件",
+        "source": "news_agent"
+      }
+    },
+    "stop_loss_proximity": {
+      "breached": [
+        {"symbol": "300394", "name": "天孚通信", "price": 280.95, "stop_loss": 285.26, "distance_pct": -1.51, "weight_pct": 15.95}
+      ],
+      "within_3pct": [
+        {"symbol": "518880", "name": "黄金ETF", "price": 8.659, "stop_loss": 8.5, "distance_pct": 1.87, "weight_pct": 1.75}
+      ],
+      "safe": [
+        {"symbol": "688008", "name": "澜起科技", "distance_pct": 7.09},
+        {"symbol": "688041", "name": "海光信息", "distance_pct": 9.80},
+        {"symbol": "688120", "name": "华海清科", "distance_pct": 17.20},
+        {"symbol": "002463", "name": "沪电股份", "distance_pct": 19.24},
+        {"symbol": "002156", "name": "通富微电", "distance_pct": 14.44},
+        {"symbol": "09988", "name": "阿里巴巴", "distance_pct": 10.20},
+        {"symbol": "159949", "name": "创业板50ETF", "distance_pct": 9.12},
+        {"symbol": "510500", "name": "中证500ETF", "distance_pct": 9.89},
+        {"symbol": "513300", "name": "纳斯达克ETF", "distance_pct": 13.87},
+        {"symbol": "513650", "name": "标普500ETF", "distance_pct": 9.06}
+      ]
+    },
+    "ai_concentration": {
+      "ai_weight_pct": 72.1,
+      "threshold_pct": 40,
+      "positions": ["300394天孚15.95%", "688041海光15.13%", "688120华海13.92%", "688008澜起12.15%", "002463沪电3.43%", "002156通富1.62%", "588090科创芯片ETF9.93%"],
+      "veto_triggered": true
+    },
+    "data_quality": {
+      "market_data_source": "gtimg单源(周六休市，东财/新浪不可用)",
+      "financials_source": "akshare stock_financial_analysis_indicator Q1-2025",
+      "bitable_source": "Towney-投资管理持仓表",
+      "caveat": "周末行情为6/12周五收盘快照；财务数据为Q1-2025季报非年报"
+    },
+    "summary": "组合综合风险评分4.2/10，评分层面未触发否决(阈值7)，但触发三项结构性否决：(1)天孚通信(最大仓位15.95%)已破止损线-1.51%，VETO加仓；(2)黄金ETF距止损仅1.87%，VETO加仓；(3)AI赛道集中度72.1%远超40%红线，VETO任何AI方向新增仓位。财务健康度整体扎实(2.6分)，估值偏贵(5.8分)为最大风险维度，技术面整体偏弱(5.9分)但未系统性崩溃。通富微电财务指标亮红灯(D/E154%/CR0.88)但仓位仅1.62%影响有限。建议CIO优先处理天孚止损破位问题"
+  }
+}
