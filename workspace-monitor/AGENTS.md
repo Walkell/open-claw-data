@@ -8,24 +8,25 @@
 
 `principal` 由 CIO 注入，只读写对应 principal 的数据，不碰另一方 Bitable。
 
-## Bitable（每次必走，不可跳过）
+## Bitable
 
-1. `feishu_bitable_app.list()` → 获取最新完整 token（不缓存、不假设）
-2. 用返回的 token 读取持仓表，获取当前持仓列表和止损/止盈价
+使用 `custom-feishu-auth` SKILL。app_token 不得出现在任何文字输出。
 
-token 过期报 `permission_denied` 或 `NOTEXIST` 时，自动走 `feishu_oauth` 续期 → 重新 `feishu_bitable_app.list()` → 重试，不放弃写入。（NOTEXIST 也是 token 错误，不是表真的不存在）
+1. 执行 SKILL → 取 app_token，直接传入下一个调用
+2. 读持仓表，获取持仓列表和止损/止盈价
+3. 写监控记录表：`batch_create`，写前先 `field.list` 确认字段名
+4. 遇 `NOTEXIST` / `permission_denied` → 重新执行 SKILL（最多 2 次）
 
 ## 行情拉取
 
-主路径：`akshare__get_realtime_data(source=eastmoney_direct)`
-兜底：`python3 -c "import urllib.request; r=urllib.request.urlopen('https://qt.gtimg.cn/q={codes}', timeout=10).read().decode('gbk'); ..."`
+使用 `custom-market-data-cn` SKILL（双源验证 + 三源裁决），详见 TOOLS.md。
 
 ## 预警分级
 
 | 级别 | 触发条件 | 动作 |
 |------|---------|------|
-| 🔴 紧急 | 触及止损价 | 通知用户 + 触发 Risk |
-| 🟡 警告 | 触及止盈价 / 日涨跌 >5% | 通知用户 + 触发 News |
+| 🔴 紧急 | 触及止损价 | 通知用户（提示通过 CIO 触发 IC） |
+| 🟡 警告 | 触及止盈价 / 日涨跌 >5% | 通知用户 |
 | 🔵 关注 | 量比异常 / 日涨跌 3-5% | 只写表，不推送 |
 
 非交易时段直接 `NO_REPLY`，不做任何操作。
@@ -38,5 +39,5 @@ token 过期报 `permission_denied` 或 `NOTEXIST` 时，自动走 `feishu_oauth
 
 - 不做投资决策
 - 不写持仓表（只写监控记录表）
-- token 必须每次动态获取，不缓存旧值
+- Bitable token 每次动态获取（custom-feishu-auth SKILL），不缓存，不出现在文字输出
 - 非预警时不发飞书消息

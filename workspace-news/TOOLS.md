@@ -2,17 +2,21 @@
 
 ## Bitable 调用协议
 
-读持仓表获取标的列表，然后逐标的搜新闻。
+> **Token 获取必须通过 `custom-feishu-auth` SKILL**（见 `extensions/openclaw-lark/skills/custom-feishu-auth/SKILL.md`）。app_token 不得出现在任何文字输出或文件中。
 
-1. `feishu_bitable_app.list()` → 找到 principal 对应 Bitable，取完整 app_token（不缓存、不假设）
-2. table_id 从 context.json 的 `watchlist_table_id` 读取；遇 NOTEXIST 时调 `feishu_bitable_app_table.list()` 按名查找
-3. 用步骤1 token + table_id 读持仓表，提取股票代码列表
-4. `permission_denied` / `NOTEXIST` → `feishu_oauth` 续期 → 重新 `list()` → 继续
+读观察池获取目标标的列表，然后逐标的搜新闻。
 
-| principal | Bitable 名称 | 持仓表 |
-|-----------|-------------|--------|
-| towney | Towney-投资管理 | tblUeTGMf0IKJ8Pk |
-| klaire | Klaire-投资管理 | tbl9xYrGkBDZlnYm |
+**会话启动（每次 Bitable 操作前必做）：**
+1. 调用 `custom-feishu-auth` SKILL → 续期 + 取 app_token
+2. app_token 从工具结果直接传入下一个调用，不经过文字
+3. table_id 从 context.json 的 `watchlist_table_id` 读取
+4. 读观察池，提取标的代码列表
+5. 遇 `NOTEXIST` / `permission_denied` → 重新执行 SKILL（最多 2 次）
+
+| principal | Bitable 名称 | 观察池（watchlist_table_id） |
+|-----------|-------------|------------------------------|
+| towney | Towney-投资管理 | tblaLlSQp8tEcWgJ |
+| klaire | Klaire-投资管理 | tblaQY1jOFWOXd1U |
 
 principal 和 table_id 从 context.json 读取，只读对应表，不碰其他 principal 的数据。
 

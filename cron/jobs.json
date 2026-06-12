@@ -3,7 +3,7 @@
   "jobs": [
     {
       "id": "b1795f87-68ae-4aa4-a29e-9edc3041ad58",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "towney-afternoon-check-pm",
       "enabled": true,
       "createdAtMs": 1780372310529,
@@ -16,7 +16,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Towney 下午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 核心规则：本 Agent 在 isolated session 中运行，**禁止调用 message 工具发消息**。\n最终回复内容将被 delivery 自动推送给用户，你只需把告警写成正常回复即可。\n\n⚠️ 第一步：拉 Bitable 白名单\n1. feishu_bitable_app.list() → 取完整 app_token\n2. feishu_bitable_app_table_record.list(app_token, table_id=\"tblUeTGMf0IKJ8Pk\", filter过滤状态=持有) → 提取股票代码\n3. feishu_bitable_app_table_record.list(app_token, table_id=\"tblaLlSQp8tEcWgJ\", filter过滤状态!=已移除) → 提取股票代码\n4. 合并为完整白名单\n\n⚠️ 第二步：仅对白名单标的拉行情\n腾讯财经（主）：python3 -c \"import urllib.request; codes=白名单; r=urllib.request.urlopen('https://qt.gtimg.cn/q='+','.join(codes),timeout=10).read().decode('gbk'); [print(l.split('~')[2],l.split('~')[1],float(l.split('~')[3]),float(l.split('~')[32]),float(l.split('~')[34]),float(l.split('~')[33])) for l in r.strip().split('\\\\n') if '~' in l]\"\n备选：akshare__get_realtime_data(source=eastmoney_direct)\n涨跌幅只用 API 预计算字段（f[34] 或 change_pct），不自行计算\n\n⚠️ 第三步：写入监控记录表\nfield.list 确认字段名 → batch_create 写入 tblFAfrZs4Rz4AOu（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池\n\n⚠️ 第四步：阈值检查 + 建仓条件 → 作为最终回复输出（delivery 会自动推送）\nA. 持仓标的阈值检查：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】\nB. 建仓条件触发（观察池标的）\n   读取每个标的的关注理由，若含「⛔暂缓建仓」或「投委会裁决：暂不建仓」字样 → 跳过不通知\n   读取目标建仓价字段，当前价 ≤ 目标建仓价 → 触发通知\n无 A 也无 B → 回复 NO_REPLY",
+        "message": "Towney 下午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 核心规则：本 Agent 在 isolated session 中运行，**禁止调用 message 工具发消息**。\n最终回复内容将被 delivery 自动推送给用户，你只需把告警写成正常回复即可。\n\n⚠️ 第一步：拉 Bitable 白名单\n1. 执行 `custom-feishu-auth` SKILL → 续期 + 取 app_token\n2. feishu_bitable_app_table_record.list(app_token, table_id=\"tblUeTGMf0IKJ8Pk\", filter过滤状态=持有) → 提取股票代码\n3. feishu_bitable_app_table_record.list(app_token, table_id=\"tblaLlSQp8tEcWgJ\", filter过滤状态!=已移除) → 提取股票代码\n4. 合并为完整白名单\n\n⚠️ 第二步：仅对白名单标的拉行情\n使用 `custom-market-data-cn` SKILL 拉实时行情（双源验证 + 三源裁决）\n涨跌幅只用 SKILL 输出的 `change_pct` 字段，不自行计算\n\n⚠️ 第三步：写入监控记录表\nfield.list 确认字段名 → batch_create 写入 tblFAfrZs4Rz4AOu（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池\n\n⚠️ 第四步：阈值检查 + 建仓条件 → 作为最终回复输出（delivery 会自动推送）\nA. 持仓标的阈值检查：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】\nB. 建仓条件触发（观察池「待建仓」标的）\n   读取每个标的的「目标建仓价」，当前价 ≤ 目标建仓价 → 触发通知\n无 A 也无 B → 回复 NO_REPLY",
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
           "deepseek/deepseek-v4-pro",
@@ -34,7 +34,7 @@
     },
     {
       "id": "8f4f5463-f1cd-4a65-970f-7154313d7af4",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "towney-eod-review",
       "enabled": true,
       "createdAtMs": 1780372318481,
@@ -47,7 +47,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "🔒 Principal 锁定：towney（本 session 唯一绑定，禁止读 klaire 任何 Bitable 表）\n立即输出此行：「🔒 本 session principal = towney，klaire 数据不可见」\n\n⚠️ 核心规则：本 Agent 在 isolated session 中运行，**禁止调用 message 工具发消息**。\n最终回复内容将被 delivery 自动推送给用户，你只需把简报写成正常回复即可。\n\nTowney 日终复盘（principal=towney，精简两委员 IC 流程）\n\n主动输出任务清单：1.拉数据 2.收盘行情 3.Research→Risk 串行 4.CIO汇总 5.推送+写表\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token\n持仓表 + 交易记录\n⚠️ 持仓表只读元数据字段：成本价/止损价/止盈价/仓位%/备注。禁止读取或使用任何价格快照字段。\n→ 完成后立即输出：✅ 【检查点1】Bitable 已拉取，principal=towney，持仓 {{N}} 条，token 新鲜\n\n【第二步】收盘行情\n腾讯财经 qt.gtimg.cn 拉全持仓收盘价；港股港币×汇率→人民币。\n→ 完成后立即输出：✅ 【检查点2】收盘行情已拉取，{N} 只标的，quote_timestamp={时间}\n\n【第三步】精简两委员 IC（串行）⛔ 不得跳过，CIO 不得自行替代\n生成 cycle_id = towney-{YYYYMMDD}-{HHMM}-eod\n写 context.json：{cycle_id, principal:\"towney\", flow_type:\"精简两委员\", positions_table_id:\"tblUeTGMf0IKJ8Pk\", watchlist_table_id:\"tblaLlSQp8tEcWgJ\"}\n→ spawn 前必须先输出：🔔 【IC召集】精简两委员，cycle_id={cycle_id}，即将 spawn Research\n① sessions_spawn Research，只注入：cycle_id，delivery: none，isolated\n② sessions_yield Research → 读文件 workspace/cycles/{cycle_id}/research_output.json\n→ 输出：✅ 【检查点3a】Research yield 完成，文件已读取，{N} 只标的分析\n③ 将 research_output.json 内容 inline 到 Risk prompt，sessions_spawn Risk，只注入：cycle_id（行业景气度/新闻情绪标注「数据缺失，默认5分」），delivery: none，isolated\n④ sessions_yield Risk → 读文件 workspace/cycles/{cycle_id}/risk_output.json\n→ 输出：✅ 【检查点3b】Risk yield 完成，risk_score={X}，verdict={X}\n\n【第四步】CIO 按 §7 公式出决议单\n精简流程缺失处理：industry_composite=5（默认），news_modifier=0（中性）\nbaseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓 确定基线动作\nRisk VETO → cio_action=BLOCK，硬否决(≥9) CIO 不可 override\n\n输出两份内容：\n① JSON 决议单（供 Desk 使用）：{cycle_id, principal, flow_type:\"精简两委员\", cio_action, baseline_score, override_reason, report_summary:\"<CIO裁决全文>\", quote_timestamp, votes:{research:{...}, risk:{...}, industry:null, news:null}}\n② 人读收盘简报：今日涨跌/收盘价 | 距止损止盈距离 | 预警标的 | 明日策略\n→ 完成后立即输出：✅ 【检查点4】决议单已生成，cycle_id={cycle_id}，baseline_score={X}，cio_action={X}\n\n【第五步】推送简报 + spawn Execution Desk 写库\n⚠️ 不要调用 message 工具！简报作为最终回复输出，delivery 会自动推送。\nsessions_spawn Execution Desk（agentId=desk），注入①决议单 JSON，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库：决策复盘表 / 报告表（日终复盘）/ 交易记录（如有买卖指令）/ 持仓表（如有仓位变更）\n⚠️ CIO 不直接调用任何 batch_create / batch_update，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送，只推 CIO 汇总结论\n→ 完成后输出：✅ 【检查点5】简报已推送，Execution Desk yield 完成，本 session 结束",
+        "message": "EOD复盘 principal=towney flow_type=精简两委员",
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
           "deepseek/deepseek-v4-pro",
@@ -65,7 +65,7 @@
     },
     {
       "id": "bfbfdc36-64e3-4e1b-93ce-23be6eb695c4",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "towney-weekly-review",
       "enabled": true,
       "createdAtMs": 1780372463664,
@@ -78,7 +78,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "🔒 Principal 锁定：towney（本 session 唯一绑定，禁止读 klaire 任何 Bitable 表）\n立即输出此行：「🔒 本 session principal = towney，klaire 数据不可见」\n\nTowney 周终复盘（principal=towney，标准四委员 IC 流程）\n\n主动输出任务清单：1.拉数据 2.周行情 3.Research+Industry+News并行→Risk串行 4.CIO汇总 5.推送+写表\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token\n持仓表 + 交易记录\n⚠️ 持仓表只读元数据字段：成本价/止损价/止盈价/仓位%/备注。禁止读取或使用任何价格快照字段（当前价/市值等 Monitor 写入的字段），这些字段不得传入子 Agent。\n→ 完成后立即输出：✅ 【检查点1】Bitable 已拉取，principal=towney，持仓 {{N}} 条，token 新鲜\n\n【第二步】周行情\nakshare get_hist_data interval=week recent_n=5，拉全持仓周K线\n→ 完成后立即输出：✅ 【检查点2】周行情已拉取，{N} 只标的周K线，quote_timestamp={时间}\n\n【第三步】标准四委员 IC（串行）⛔ 不得跳过，CIO 不得自行替代\n生成 cycle_id = towney-{YYYYMMDD}-{HHMM}-weekly\n写 context.json：{cycle_id, principal:\"towney\", flow_type:\"标准四委员\", positions_table_id:\"tblUeTGMf0IKJ8Pk\", watchlist_table_id:\"tblaLlSQp8tEcWgJ\"}\n→ spawn 前必须先输出：🔔 【IC召集】标准四委员，cycle_id={cycle_id}，即将并行 spawn Research+Industry+News\n① 并行 sessions_spawn Research + Industry + News，各自只注入：cycle_id，delivery: none，isolated\n② sessions_yield 三份 → 读文件：workspace/cycles/{cycle_id}/research_output.json、industry_output.json、news_output.json\n→ 输出：✅ 【检查点3a】Research+Industry+News yield 完成，三份文件已读取\n③ 将三份文件内容 inline 到 Risk prompt（行业景气度取 Industry.industry_score，新闻情绪取 News.sentiment，宏观取 Industry.macro_score），sessions_spawn Risk，只注入：cycle_id，delivery: none，isolated\n④ sessions_yield Risk → 读文件 workspace/cycles/{cycle_id}/risk_output.json\n→ 输出：✅ 【检查点3b】Risk yield 完成，risk_score={X}，verdict={X}\n\n【第四步】CIO 按 §7 公式出决议单\nresearch_composite = 0.30×fundamental + 0.25×financials + 0.25×valuation + 0.20×technical\nindustry_composite = 0.50×macro_score + 0.50×industry_score\nnews_modifier = sentiment × (event_impact/10)\nbaseline_score = 0.55×rc + 0.30×ic + 0.15×(5+nm×5)\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓；Risk VETO → BLOCK\n\n输出两份内容：\n① JSON 决议单（供 Desk）：{cycle_id, principal, flow_type:\"标准四委员\", cio_action, baseline_score, override_reason, report_summary:\"<CIO裁决全文>\", quote_timestamp, votes:{research, industry, news, risk}}\n② 人读周报：本周交易汇总 | 周涨跌 | 止损止盈距离 | 关键事件 | 下周策略 | 仓位建议\n→ 完成后立即输出：✅ 【检查点4】决议单已生成，cycle_id={cycle_id}，baseline_score={X}，cio_action={X}\n\n【第五步】推送周报 + spawn Execution Desk 写库\n推送②周报至 feishu:ou_aa8d3c082f316a8c9e18b9e6e8eeb88b\nsessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库：决策复盘表 / 报告表（周终复盘）\n⚠️ CIO 不直接写 Bitable，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送\n→ 完成后输出：✅ 【检查点5】简报已推送，Execution Desk yield 完成，本 session 结束",
+        "message": "周报复盘 principal=towney flow_type=四委员",
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
           "deepseek/deepseek-v4-pro",
@@ -96,7 +96,7 @@
     },
     {
       "id": "c6ae35a4-e484-4148-815b-dc3182e86858",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "towney-monthly-review",
       "enabled": true,
       "createdAtMs": 1780372546868,
@@ -109,7 +109,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "🔒 Principal 锁定：towney（本 session 唯一绑定，禁止读 klaire 任何 Bitable 表）\n立即输出此行：「🔒 本 session principal = towney，klaire 数据不可见」\n\nTowney 月终复盘（principal=towney，标准四委员 IC 流程）\n\n主动输出任务清单：1.拉数据 2.月行情+财报 3.Research+Industry+News并行→Risk串行 4.CIO汇总 5.推送+写表\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token\n持仓表 + 交易记录\n⚠️ 持仓表只读元数据字段：成本价/止损价/止盈价/仓位%/备注。禁止读取或使用任何价格快照字段（当前价/市值等 Monitor 写入的字段），这些字段不得传入子 Agent。\n→ 完成后立即输出：✅ 【检查点1】Bitable 已拉取，principal=towney，持仓 {{N}} 条，token 新鲜\n\n【第二步】月行情+财报\nakshare get_hist_data interval=month recent_n=6，拉全持仓月K线\nakshare get_financial_metrics 拉最新财务指标\n→ 完成后立即输出：✅ 【检查点2】月行情+财报已拉取，{N} 只标的，quote_timestamp={时间}\n\n【第三步】标准四委员 IC（串行）⛔ 不得跳过，CIO 不得自行替代\n生成 cycle_id = towney-{YYYYMMDD}-{HHMM}-monthly\n写 context.json：{cycle_id, principal:\"towney\", flow_type:\"标准四委员\", positions_table_id:\"tblUeTGMf0IKJ8Pk\", watchlist_table_id:\"tblaLlSQp8tEcWgJ\"}\n→ spawn 前必须先输出：🔔 【IC召集】标准四委员，cycle_id={cycle_id}，即将并行 spawn Research+Industry+News\n① 并行 sessions_spawn Research + Industry + News，各自只注入：cycle_id，delivery: none，isolated\n② sessions_yield 三份 → 读文件：workspace/cycles/{cycle_id}/research_output.json、industry_output.json、news_output.json\n→ 输出：✅ 【检查点3a】Research+Industry+News yield 完成，三份文件已读取\n③ 将三份文件内容 inline 到 Risk prompt（行业景气度取 Industry.industry_score，新闻情绪取 News.sentiment，宏观取 Industry.macro_score），sessions_spawn Risk，只注入：cycle_id，delivery: none，isolated\n④ sessions_yield Risk → 读文件 workspace/cycles/{cycle_id}/risk_output.json\n→ 输出：✅ 【检查点3b】Risk yield 完成，risk_score={X}，verdict={X}\n\n【第四步】CIO 按 §7 公式出决议单\nresearch_composite = 0.30×fundamental + 0.25×financials + 0.25×valuation + 0.20×technical\nindustry_composite = 0.50×macro_score + 0.50×industry_score\nnews_modifier = sentiment × (event_impact/10)\nbaseline_score = 0.55×rc + 0.30×ic + 0.15×(5+nm×5)\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓；Risk VETO → BLOCK\n\n输出两份内容：\n① JSON 决议单：{cycle_id, principal, flow_type:\"标准四委员\", cio_action, baseline_score, override_reason, report_summary:\"<CIO裁决全文>\", quote_timestamp, votes:{research, industry, news, risk}}\n② 人读月报：月涨跌幅/振幅/月线 | 盈亏汇总 | 四委员综合评估 | 下月展望 | 仓位建议\n→ 完成后立即输出：✅ 【检查点4】决议单已生成，cycle_id={cycle_id}，baseline_score={X}，cio_action={X}\n\n【第五步】推送月报 + spawn Execution Desk 写库\n推送②月报至 feishu:ou_aa8d3c082f316a8c9e18b9e6e8eeb88b\nsessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库：决策复盘表 / 报告表（月终复盘）\n⚠️ CIO 不直接写 Bitable，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送\n→ 完成后输出：✅ 【检查点5】简报已推送，Execution Desk yield 完成，本 session 结束",
+        "message": "月报复盘 principal=towney flow_type=四委员",
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
           "deepseek/deepseek-v4-pro",
@@ -127,7 +127,7 @@
     },
     {
       "id": "f634514a-b3b6-4295-84c5-cb01e7bd2f02",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "towney-monday-briefing",
       "enabled": true,
       "createdAtMs": 1780372847991,
@@ -140,7 +140,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "🔒 Principal 锁定：towney（本 session 唯一绑定，禁止读 klaire 任何 Bitable 表）\n立即输出此行：「🔒 本 session principal = towney，klaire 数据不可见」\n\nTowney 周一盘前简报（principal=towney，标准四委员 IC 流程）\n\n主动输出任务清单：1.拉数据 2.周末要闻 3.Research+Industry+News并行→Risk串行 4.CIO汇总 5.推送+写表\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token，持仓表\n⚠️ 持仓表只读元数据字段：成本价/止损价/止盈价/仓位%/备注。禁止读取或使用任何价格快照字段（当前价/市值等 Monitor 写入的字段），这些字段不得传入子 Agent。\n→ 完成后立即输出：✅ 【检查点1】Bitable 已拉取，principal=towney，持仓 {{N}} 条，token 新鲜\n\n【第二步】周末要闻\nweb_search：周末全球市场动态 + 半导体/AI行业新闻 + 本周财经日历\n→ 完成后立即输出：✅ 【检查点2】周末要闻已拉取，quote_timestamp={时间}\n\n【第三步】标准四委员 IC（串行）⛔ 不得跳过，CIO 不得自行替代\n生成 cycle_id = towney-{YYYYMMDD}-{HHMM}-monday\n写 context.json：{cycle_id, principal:\"towney\", flow_type:\"标准四委员\", positions_table_id:\"tblUeTGMf0IKJ8Pk\", watchlist_table_id:\"tblaLlSQp8tEcWgJ\"}\n→ spawn 前必须先输出：🔔 【IC召集】标准四委员，cycle_id={cycle_id}，即将并行 spawn Research+Industry+News\n① 并行 sessions_spawn Research + Industry + News，各自只注入：cycle_id，delivery: none，isolated\n② sessions_yield 三份 → 读文件：workspace/cycles/{cycle_id}/research_output.json、industry_output.json、news_output.json\n→ 输出：✅ 【检查点3a】Research+Industry+News yield 完成，三份文件已读取\n③ 将三份文件内容 inline 到 Risk prompt（行业景气度取 Industry.industry_score，新闻情绪取 News.sentiment，宏观取 Industry.macro_score），sessions_spawn Risk，只注入：cycle_id，delivery: none，isolated\n④ sessions_yield Risk → 读文件 workspace/cycles/{cycle_id}/risk_output.json\n→ 输出：✅ 【检查点3b】Risk yield 完成，risk_score={X}，verdict={X}\n\n【第四步】CIO 按 §7 公式出决议单\nresearch_composite = 0.30×fundamental + 0.25×financials + 0.25×valuation + 0.20×technical\nindustry_composite = 0.50×macro_score + 0.50×industry_score\nnews_modifier = sentiment × (event_impact/10)\nbaseline_score = 0.55×rc + 0.30×ic + 0.15×(5+nm×5)\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓；Risk VETO → BLOCK\n\n输出两份内容：\n① JSON 决议单：{cycle_id, principal, flow_type:\"标准四委员\", cio_action, baseline_score, override_reason, report_summary:\"<CIO裁决全文>\", quote_timestamp, votes:{research, industry, news, risk}}\n② 人读周一简报：周末要闻摘要 | 上周持仓表现 | 本周开盘展望 | 风险提示 | 操作建议\n→ 完成后立即输出：✅ 【检查点4】决议单已生成，cycle_id={cycle_id}，baseline_score={X}，cio_action={X}\n\n【第五步】推送简报 + spawn Execution Desk 写库\n推送②简报至 feishu:ou_aa8d3c082f316a8c9e18b9e6e8eeb88b\nsessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库：决策复盘表 / 报告表（周一简报）\n⚠️ CIO 不直接写 Bitable，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送\n→ 完成后输出：✅ 【检查点5】简报已推送，Execution Desk yield 完成，本 session 结束",
+        "message": "周一简报 principal=towney flow_type=四委员",
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
           "deepseek/deepseek-v4-pro",
@@ -158,7 +158,7 @@
     },
     {
       "id": "64b5f1d8-3547-4b45-afbc-ade4b0df1611",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "towney-opening-bell",
       "description": "开盘行情扫描：9:30 触发，大跌→精简两委员加仓建议，大涨→即时通知",
       "enabled": true,
@@ -172,7 +172,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "开盘大跌扫描（principal=towney，5分钟窗口）：\n\n⚠️ 第一步：确认时间窗口\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); ok=(t.hour==9 and 30<=t.minute<=35); print('IN_WINDOW' if ok else 'SKIP')\"\n如果输出 SKIP → 直接 NO_REPLY。\n\n⚠️ 第二步：feishu_bitable_app.list() → 拉 towney 持仓表 tblUeTGMf0IKJ8Pk\n获取所有持仓的代码、止损价、止盈价、仓位%、备注字段。\n\n⚠️ 第三步：拉开盘实时行情\npython3 -c \"import urllib.request; r=urllib.request.urlopen('https://qt.gtimg.cn/q={全持仓代码}',timeout=10).read().decode('gbk'); ...\"\n\n⚠️ 第四步A：错杀加仓条件（全部满足才触发 IC，接第五步）\n- 开盘跌幅 ≥3%\n- 距止损价 ≥5%（当前价 ≥ 止损价×1.05）\n- 距止盈价 ≥30%（当前价 ≤ 止盈价×0.70）\n- 当前仓位未满\n- 备注无「高风险」「清仓」标记\n\n⚠️ 第四步B：大涨止盈提醒（满足即直接通知，不触发 IC）\n- 开盘涨幅 ≥5%\n→ 通知内容：🟢【开盘大涨】{代码} 涨幅{X}% | 现价{P} | 止盈价{Y} | 距止盈{Z}%（负数=已突破）\n\n⚠️ 第五步：有 4A 触发标的 → 精简两委员流程\ncycle_id = towney-{YYYYMMDD}-{HHMM}-{symbol}\n写 context.json：{cycle_id, principal:\"towney\", flow_type:\"精简两委员\", positions_table_id:\"tblUeTGMf0IKJ8Pk\", watchlist_table_id:\"tblaLlSQp8tEcWgJ\"}\n先 sessions_spawn Research（只注入 cycle_id），delivery: none，isolated。\n等 Research 完成后读文件 workspace/cycles/{cycle_id}/research_output.json。\n将 Research 结果 inline 到 Risk prompt → sessions_spawn Risk（delivery: none，isolated，只注入 cycle_id）。\n等 Risk 完成后读文件 workspace/cycles/{cycle_id}/risk_output.json。\nRisk 的行业景气度/新闻情绪标注「数据缺失，默认5分」。\n\n⚠️ 第六步：CIO 按 §7 精简公式出决议单\n精简流程缺失处理：industry_composite=5（默认），news_modifier=0（中性）\nbaseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\nRisk VETO → BLOCK；Risk NOC + baseline≥7 → 加仓建议（仓位% + 建仓价）；其他 → 观察\n\n输出两份：\n① JSON 决议单：{cycle_id, principal, flow_type:\"精简两委员\", cio_action, baseline_score, target_symbol, position_change_pct, price_ref, override_reason, report_summary:\"\", quote_timestamp, votes:{research, risk, industry:null, news:null}}\n② 人读加仓建议\n\n推送②至 feishu:ou_aa8d3c082f316a8c9e18b9e6e8eeb88b\n如有加仓建议：sessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated；sessions_yield Desk\n⚠️ CIO 不直接写 Bitable，写库由 Desk 执行\n4B 触发标的（大涨）：直接推送大涨通知至 feishu:ou_aa8d3c082f316a8c9e18b9e6e8eeb88b，不启动 IC。\n4A 与 4B 均无触发 → NO_REPLY。",
+        "message": "开盘大跌扫描（principal=towney，5分钟窗口）：\n\n⚠️ 第一步：确认时间窗口\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); ok=(t.hour==9 and 30<=t.minute<=35); print('IN_WINDOW' if ok else 'SKIP')\"\n如果输出 SKIP → 直接 NO_REPLY。\n\n⚠️ 第二步：执行 `custom-feishu-auth` SKILL → 续期 + 取 app_token，再读 towney 持仓表 tblUeTGMf0IKJ8Pk\n获取所有持仓的代码、止损价、止盈价、仓位%、备注字段。\n\n⚠️ 第三步：拉开盘实时行情\n使用 `custom-market-data-cn` SKILL 拉全持仓实时行情（双源验证）\n\n⚠️ 第四步A：错杀加仓条件（全部满足才触发 IC，接第五步）\n- 开盘跌幅 ≥3%\n- 距止损价 ≥5%（当前价 ≥ 止损价×1.05）\n- 距止盈价 ≥30%（当前价 ≤ 止盈价×0.70）\n- 当前仓位未满\n- 备注无「高风险」「清仓」标记\n\n⚠️ 第四步B：大涨止盈提醒（满足即直接通知，不触发 IC）\n- 开盘涨幅 ≥5%\n→ 通知内容：🟢【开盘大涨】{代码} 涨幅{X}% | 现价{P} | 止盈价{Y} | 距止盈{Z}%（负数=已突破）\n\n⚠️ 第五步：有 4A 触发标的 → 直接执行精简两委员 IC 流程\ncycle_id = towney-{YYYYMMDD}-{HHMM}-{symbol}\n写 workspace-cio/cycles/{cycle_id}/ic_request.json：\n{\"cycle_id\":\"...\",\"principal\":\"towney\",\"flow_type\":\"精简两委员\",\"symbol\":\"{symbol}\",\"positions_table_id\":\"tblUeTGMf0IKJ8Pk\",\"watchlist_table_id\":\"tblaLlSQp8tEcWgJ\"}\n执行 custom-ic-orchestrate SKILL（flow_type=精简两委员，cycle_id={cycle_id}）\n回复 NO_REPLY。\n\n4B 触发标的（大涨）：读 workspace-cio/TOWNEY_CONFIG.md 「输出通道」字段获取推送地址，直接推送大涨通知，不启动 IC。\n4A 与 4B 均无触发 → NO_REPLY。",
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
           "deepseek/deepseek-v4-pro",
@@ -190,7 +190,7 @@
     },
     {
       "id": "56078609-aee4-4332-9ef5-d952714fe061",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "towney-morning-check",
       "enabled": true,
       "createdAtMs": 1780486379546,
@@ -210,7 +210,7 @@
           "glm/glm-5.1"
         ],
         "timeoutSeconds": 600,
-        "message": "Towney 上午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 核心规则：本 Agent 在 isolated session 中运行，**禁止调用 message 工具发消息**。\n最终回复内容将被 delivery 自动推送给用户，你只需把告警写成正常回复即可。\n\n⚠️ 第一步：拉 Bitable 白名单\n1. feishu_bitable_app.list() → 取完整 app_token\n2. feishu_bitable_app_table_record.list(app_token, table_id=\"tblUeTGMf0IKJ8Pk\", filter过滤状态=持有) → 提取股票代码\n3. feishu_bitable_app_table_record.list(app_token, table_id=\"tblaLlSQp8tEcWgJ\", filter过滤状态!=已移除) → 提取股票代码\n4. 合并为完整白名单\n\n⚠️ 第二步：仅对白名单标的拉行情\n腾讯财经（主）：python3 -c \"import urllib.request; codes=白名单; r=urllib.request.urlopen('https://qt.gtimg.cn/q='+','.join(codes),timeout=10).read().decode('gbk'); [print(l.split('~')[2],l.split('~')[1],float(l.split('~')[3]),float(l.split('~')[32]),float(l.split('~')[34]),float(l.split('~')[33])) for l in r.strip().split('\\\\n') if '~' in l]\"\n备选：akshare__get_realtime_data(source=eastmoney_direct)\n涨跌幅只用 API 预计算字段（f[34] 或 change_pct），不自行计算\n\n⚠️ 第三步：写入监控记录表\nfield.list 确认字段名 → batch_create 写入 tblFAfrZs4Rz4AOu（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池\n\n⚠️ 第四步：阈值检查 + 建仓条件 → 作为最终回复输出（delivery 会自动推送）\nA. 持仓标的阈值检查：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】\nB. 建仓条件触发（观察池标的）\n   读取每个标的的关注理由，若含「⛔暂缓建仓」或「投委会裁决：暂不建仓」字样 → 跳过不通知\n   读取目标建仓价字段，当前价 ≤ 目标建仓价 → 触发通知\n无 A 也无 B → 回复 NO_REPLY"
+        "message": "Towney 上午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 核心规则：本 Agent 在 isolated session 中运行，**禁止调用 message 工具发消息**。\n最终回复内容将被 delivery 自动推送给用户，你只需把告警写成正常回复即可。\n\n⚠️ 第一步：拉 Bitable 白名单\n1. 执行 `custom-feishu-auth` SKILL → 续期 + 取 app_token\n2. feishu_bitable_app_table_record.list(app_token, table_id=\"tblUeTGMf0IKJ8Pk\", filter过滤状态=持有) → 提取股票代码\n3. feishu_bitable_app_table_record.list(app_token, table_id=\"tblaLlSQp8tEcWgJ\", filter过滤状态!=已移除) → 提取股票代码\n4. 合并为完整白名单\n\n⚠️ 第二步：仅对白名单标的拉行情\n使用 `custom-market-data-cn` SKILL 拉实时行情（双源验证 + 三源裁决）\n涨跌幅只用 SKILL 输出的 `change_pct` 字段，不自行计算\n\n⚠️ 第三步：写入监控记录表\nfield.list 确认字段名 → batch_create 写入 tblFAfrZs4Rz4AOu（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池\n\n⚠️ 第四步：阈值检查 + 建仓条件 → 作为最终回复输出（delivery 会自动推送）\nA. 持仓标的阈值检查：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】\nB. 建仓条件触发（观察池「待建仓」标的）\n   读取每个标的的「目标建仓价」，当前价 ≤ 目标建仓价 → 触发通知\n无 A 也无 B → 回复 NO_REPLY"
       },
       "delivery": {
         "mode": "announce",
@@ -222,7 +222,7 @@
     },
     {
       "id": "f14657c4-17fa-4d9d-a79d-771ca7df7730",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "towney-pre-market",
       "enabled": true,
       "createdAtMs": 1780988885207,
@@ -235,7 +235,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "🔒 Principal 锁定：towney（本 session 唯一绑定，禁止读 klaire 任何 Bitable 表）\n立即输出此行：「🔒 本 session principal = towney，klaire 数据不可见」\n\n⚠️ 核心规则：本 Agent 在 isolated session 中运行，**禁止调用 message 工具发消息**。\n最终回复内容将被 delivery 自动推送给用户，你只需把简报写成正常回复即可。\n\nTowney 盘前简报（principal=towney，标准四委员 IC 流程）\n\n主动输出任务清单：1.拉持仓 2.隔夜/盘前数据 3.四委员并行→Risk串行 4.CIO汇总 5.推送+写表\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token\n持仓表 tblUeTGMf0IKJ8Pk + 观察池 tblaLlSQp8tEcWgJ\n⚠️ 持仓表只读元数据字段：成本价/止损价/止盈价/仓位%/备注。禁止读取或使用任何价格快照字段。\n→ 完成后立即输出：✅ 【检查点1】Bitable 已拉取，principal=towney，持仓 {N} 条，观察池 {N} 条\n\n【第二步】隔夜/盘前数据\n⚠️ 美股数据优先级：Yahoo Finance API（curl + User-Agent: Mozilla/5.0）→ 挂了用 web_search 兜底\n   港股优先 qt.gtimg.cn，挂了用 akshare__get_realtime_data 兜底\n① curl Yahoo Finance：^DJI、^GSPC、^IXIC、^SOX（URL: https://query1.finance.yahoo.com/v8/finance/chart/{SYMBOL}?interval=1d&range=5d），取 regularMarketPrice + previousClose，算涨跌幅\n   若 503/429 → 等 5s 重试 1 次 → 仍失败 → web_search \"US stock market close {昨日日期}\" 兜底，提取道指/标普/纳指/费半涨跌%\n② curl Yahoo Finance：XINA50.FGI（A50期货）、USDCNY=X（人民币汇率）→ 失败用 web_search 兜底\n③ curl qt.gtimg.cn 拉全持仓昨收价（⚠️ 盘前无实时价，以昨收为基准，在简报中标注\"昨收\"）→ 502 挂了用 akshare__get_realtime_data(eastmoney_direct) 兜底\n④ web_search：今日财经日历+隔夜重大新闻（补充背景）\n→ 完成后立即输出：✅ 【检查点2】盘前数据已拉取，美股来源={Yahoo|web_search}，道指{涨跌%}/标普{涨跌%}/纳指{涨跌%}/费半{涨跌%}，A50={X}，{N}只标的昨收价，quote_timestamp={时间}\n\n【第三步】标准四委员 IC ⛔ 不得跳过，CIO 不得自行替代\n生成 cycle_id = towney-{YYYYMMDD}-{HHMM}-premkt\n写 workspace/cycles/{cycle_id}/context.json：{cycle_id, principal:\"towney\", flow_type:\"四委员\", positions_table_id:\"tblUeTGMf0IKJ8Pk\", watchlist_table_id:\"tblaLlSQp8tEcWgJ\"}\n→ spawn 前必须先输出：🔔 【IC召集】标准四委员，cycle_id={cycle_id}，即将并行 spawn Research+Industry+News\n① 并行 sessions_spawn Research + Industry + News，只注入：cycle_id，delivery: none，isolated\n② sessions_yield 三个 session → 读文件：\n   workspace/cycles/{cycle_id}/research_output.json\n   workspace/cycles/{cycle_id}/industry_output.json\n   workspace/cycles/{cycle_id}/news_output.json\n→ 输出：✅ 【检查点3a】三委员 yield 完成，research/industry/news 文件已读取\n③ 将三份文件内容 inline 到 Risk prompt → sessions_spawn Risk，只注入：cycle_id，delivery: none，isolated\n④ sessions_yield Risk → 读文件 workspace/cycles/{cycle_id}/risk_output.json\n→ 输出：✅ 【检查点3b】Risk yield 完成，risk_score={X}，verdict={X}\n\n【第四步】CIO 按 §7 公式出决议单\nbaseline_score = 0.55×research_composite + 0.30×industry_composite + 0.15×(5+news_modifier×5)\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓 确定基线动作\nRisk VETO → cio_action=BLOCK，硬否决(≥9) CIO 不可 override\n\n输出两份内容：\n① JSON 决议单（供 Desk 使用）：{cycle_id, principal:\"towney\", flow_type:\"四委员\", cio_action, baseline_score, override_reason, report_summary:\"<CIO盘前简报全文>\", quote_timestamp, votes:{research:{...}, industry:{...}, news:{...}, risk:{...}}}\n② 人读盘前简报：昨收行情表 | 今日关注标的 | 风险提示 | 开盘策略\n→ 完成后立即输出：✅ 【检查点4】决议单已生成，cycle_id={cycle_id}，baseline_score={X}，cio_action={X}\n\n【第五步】推送简报 + spawn Execution Desk 写库\n⚠️ 不要调用 message 工具！简报作为最终回复输出，delivery 会自动推送。\nsessions_spawn Execution Desk（agentId=desk），注入①决议单 JSON，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库：决策复盘表 / 报告表（type=盘前简报）\n⚠️ CIO 不直接调用任何 batch_create / batch_update，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送，只推 CIO 汇总结论\n→ 完成后输出：✅ 【检查点5】简报已推送，Execution Desk yield 完成，本 session 结束",
+        "message": "盘前简报 principal=towney flow_type=四委员",
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
           "deepseek/deepseek-v4-pro",
@@ -253,7 +253,7 @@
     },
     {
       "id": "82452460-7ffa-4eff-9bdb-89e86182c872",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "klaire-monday-briefing",
       "enabled": true,
       "createdAtMs": 1780487209239,
@@ -266,7 +266,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "🔒 Principal 锁定：klaire（本 session 唯一绑定，禁止读 towney 任何 Bitable 表）\n立即输出此行：「🔒 本 session principal = klaire，towney 数据不可见」\n\nKlaire周一盘前简报（principal=klaire，精简两委员 IC 流程）\n\n主动输出任务清单：1.拉数据 2.周末要闻 3.Research→Risk 串行 4.CIO汇总出决议单 5.推送+spawn Desk写库\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token\n持仓表 + 观察池\n⚠️ 持仓表只读元数据字段：成本价/止损价/止盈价/仓位%/备注。禁止读取或使用任何价格快照字段（当前价/市值等 Monitor 写入的字段），这些字段不得传入子 Agent。\n→ 完成后立即输出：✅ 【检查点1】Bitable 已拉取，principal=klaire，持仓 {{N}} 条，token 新鲜\n\n【第二步】周末要闻\nweb_search：周末全球市场动态 + 半导体/AI行业新闻 + 本周财经日历 + 港股动态\n→ 完成后立即输出：✅ 【检查点2】周末要闻已拉取，quote_timestamp={时间}\n\n【第三步】精简两委员 IC（串行）⛔ 不得跳过，CIO 不得自行替代\n生成 cycle_id = klaire-{YYYYMMDD}-{HHMM}-monday\n写 context.json：{cycle_id, principal:\"klaire\", flow_type:\"精简两委员\", positions_table_id:\"tbl9xYrGkBDZlnYm\", watchlist_table_id:\"tblaQY1jOFWOXd1U\"}\n→ spawn 前必须先输出：🔔 【IC召集】精简两委员，cycle_id={cycle_id}，即将 spawn Research\n① sessions_spawn Research，只注入：cycle_id，delivery: none，isolated\n② sessions_yield Research → 读文件 workspace/cycles/{cycle_id}/research_output.json\n→ 输出：✅ 【检查点3a】Research yield 完成，文件已读取，{N} 只标的分析\n③ 将 research_output.json 内容 inline 到 Risk prompt，sessions_spawn Risk，只注入：cycle_id（行业景气度/新闻情绪标注「数据缺失，默认5分」），delivery: none，isolated\n④ sessions_yield Risk → 读文件 workspace/cycles/{cycle_id}/risk_output.json\n→ 输出：✅ 【检查点3b】Risk yield 完成，risk_score={X}，verdict={X}\n\n【第四步】CIO 按 §7 公式出决议单\n精简流程：baseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓；Risk VETO→BLOCK\n\n输出两份内容：\n① JSON 决议单：{cycle_id: \"klaire-{YYYYMMDD}-{HHMM}-monday\", principal: \"klaire\", flow_type: \"精简两委员\", cio_action, baseline_score, override_reason, report_summary: \"<CIO裁决全文>\", quote_timestamp, votes:{research, risk, industry:null, news:null}}\n② 人读周一简报：周末要闻摘要 | 上周持仓表现 | 本周开盘展望 | 风险提示 | 操作建议\n→ 完成后立即输出：✅ 【检查点4】决议单已生成，cycle_id={cycle_id}，baseline_score={X}，cio_action={X}\n\n【第五步】推送简报 + spawn Execution Desk 写库\n推送②简报至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nsessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库（决策复盘表 / 报告表 / 持仓表（如有仓位变更））\n⚠️ CIO 不直接写任何 Bitable，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送，只推 CIO 汇总结论\n→ 完成后输出：✅ 【检查点5】简报已推送，Execution Desk yield 完成，本 session 结束",
+        "message": "周一简报 principal=klaire flow_type=四委员",
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
           "deepseek/deepseek-v4-pro",
@@ -284,7 +284,7 @@
     },
     {
       "id": "bbbeabff-b8ea-47c7-b047-0a1297ad15d5",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "klaire-pre-market",
       "enabled": true,
       "createdAtMs": 1780487209473,
@@ -297,7 +297,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "🔒 Principal 锁定：klaire（本 session 唯一绑定，禁止读 towney 任何 Bitable 表）\n立即输出此行：「🔒 本 session principal = klaire，towney 数据不可见」\n\nKlaire 盘前简报（principal=klaire，精简两委员 IC 流程）\n\n主动输出任务清单：1.拉持仓 2.隔夜/盘前数据 3.Research→Risk 串行 4.CIO汇总 5.推送+写表\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 找到「Klaire-投资管理」→ 完整 token\n持仓表 tbl9xYrGkBDZlnYm + 观察池 tblaQY1jOFWOXd1U\n⚠️ 持仓表只读元数据字段：成本价/止损价/止盈价/仓位%/备注。禁止读取或使用任何价格快照字段。\n→ 完成后立即输出：✅ 【检查点1】Bitable 已拉取，principal=klaire，持仓 {N} 条，观察池 {N} 条\n\n【第二步】隔夜/盘前数据\n⚠️ 美股数据优先级：Yahoo Finance API（curl + User-Agent: Mozilla/5.0）→ 挂了用 web_search 兜底\n   港股优先 qt.gtimg.cn，挂了用 akshare__get_realtime_data 兜底\n① curl Yahoo Finance：^DJI、^GSPC、^IXIC、^SOX（URL: https://query1.finance.yahoo.com/v8/finance/chart/{SYMBOL}?interval=1d&range=5d），取 regularMarketPrice + previousClose，算涨跌幅\n   若 503/429 → 等 5s 重试 1 次 → 仍失败 → web_search \"US stock market close {昨日日期}\" 兜底，提取道指/标普/纳指/费半涨跌%\n② curl Yahoo Finance：XINA50.FGI（A50期货）、USDCNY=X（人民币汇率）→ 失败用 web_search 兜底\n③ curl qt.gtimg.cn 拉全持仓昨收价（⚠️ 盘前无实时价，以昨收为基准，在简报中标注\"昨收\"）→ 502 挂了用 akshare__get_realtime_data(eastmoney_direct) 兜底\n④ web_search：今日财经日历+隔夜重大新闻（补充背景）\n→ 完成后立即输出：✅ 【检查点2】盘前数据已拉取，美股来源={Yahoo|web_search}，道指{涨跌%}/标普{涨跌%}/纳指{涨跌%}/费半{涨跌%}，A50={X}，{N}只标的昨收价，quote_timestamp={时间}\n\n【第三步】精简两委员 IC（串行）⛔ 不得跳过，CIO 不得自行替代\n生成 cycle_id = klaire-{YYYYMMDD}-{HHMM}-premkt\n写 workspace/cycles/{cycle_id}/context.json：{cycle_id, principal:\"klaire\", flow_type:\"精简两委员\", positions_table_id:\"tbl9xYrGkBDZlnYm\", watchlist_table_id:\"tblaQY1jOFWOXd1U\"}\n→ spawn 前必须先输出：🔔 【IC召集】精简两委员，cycle_id={cycle_id}，即将 spawn Research\n① sessions_spawn Research，只注入：cycle_id，delivery: none，isolated\n② sessions_yield Research → 读文件 workspace/cycles/{cycle_id}/research_output.json\n→ 输出：✅ 【检查点3a】Research yield 完成，文件已读取，{N} 只标的分析\n③ 将 research_output.json 内容 inline 到 Risk prompt，sessions_spawn Risk，只注入：cycle_id（行业景气度/新闻情绪标注「数据缺失，默认5分」），delivery: none，isolated\n④ sessions_yield Risk → 读文件 workspace/cycles/{cycle_id}/risk_output.json\n→ 输出：✅ 【检查点3b】Risk yield 完成，risk_score={X}，verdict={X}\n\n【第四步】CIO 按 §7 公式出决议单\n精简流程：baseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓；Risk VETO→BLOCK，硬否决(≥9) CIO 不可 override\n\n输出两份内容：\n① JSON 决议单（供 Desk 使用）：{cycle_id, principal:\"klaire\", flow_type:\"精简两委员\", cio_action, baseline_score, override_reason, report_summary:\"<CIO盘前简报全文>\", quote_timestamp, votes:{research:{...}, risk:{...}, industry:null, news:null}}\n② 人读盘前简报：昨收行情表 | 今日关注标的 | 风险提示 | 开盘策略\n→ 完成后立即输出：✅ 【检查点4】决议单已生成，cycle_id={cycle_id}，baseline_score={X}，cio_action={X}\n\n【第五步】推送简报 + spawn Execution Desk 写库\n推送②人读简报至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nsessions_spawn Execution Desk（agentId=desk），注入①决议单 JSON，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库：决策复盘表 / 报告表（type=盘前简报）\n⚠️ CIO 不直接调用任何 batch_create / batch_update，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送，只推 CIO 汇总结论\n→ 完成后输出：✅ 【检查点5】简报已推送，Execution Desk yield 完成，本 session 结束",
+        "message": "盘前简报 principal=klaire flow_type=四委员",
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
           "deepseek/deepseek-v4-pro",
@@ -315,7 +315,7 @@
     },
     {
       "id": "96be9a87-f317-4d9a-88e1-955c4d019af3",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "klaire-intraday-monitor",
       "enabled": true,
       "createdAtMs": 1780487209499,
@@ -329,7 +329,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Klaire上午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 第一步：拉 Bitable 白名单\nfeishu_bitable_app.list() → 获取最新完整 token\n用完整 token 读取:\n- 持仓表 tbl9xYrGkBDZlnYm (筛选状态=持有) → 提取股票代码列表\n- 观察池 tblaQY1jOFWOXd1U (筛选状态!=已移除) → 提取股票代码列表\n\n⚠️ 绝对不拉白名单之外的任何标的。白名单里有什么就分析什么，一个不多一个不少。\n\n⚠️ 第二步：仅对白名单标的拉行情\n白名单中所有标的用腾讯财经拉行情:\npython3 -c \"import urllib.request; codes=白名单; url='https://qt.gtimg.cn/q='+','.join(codes); ...\"\n涨跌幅只用 API 预计算字段（f[34] 或 change_pct），不自行计算\n\n⚠️ 第三步：写入Klaire监控记录表\n写表前先 field.list 确认字段名，batch_create 一次性写入 tblHkc0MfQbe2x37（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池（持仓表不含快照价字段）\n\n⚠️ 第四步：阈值突破 + 建仓条件 → 按需通知至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nA. 持仓表标的阈值检查（只通知，不触发 IC）：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】{代码} 现价{X} 已触及止损价{Y}，建议立即处置\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】{代码} 现价{X}，距止损仅{Z}%\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】{代码} 现价{X} 已达止盈价{Y}\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】{代码} 今日跌幅{Z}%\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】{代码} 今日涨幅{Z}%，距止盈{W}%\n\nB. 🎯 建仓条件触发（观察池「待建仓」标的）\n   读取观察池每个标的的「目标建仓价」字段（从 Bitable 读，不使用任何记忆中的价格）\n   当前价 ≤ 目标建仓价 → 触发，通知内容：标的名称+代码 | 当前价 | 目标建仓价 | 建议仓位%（从备注读取）\n   当前价 > 目标建仓价 × 1.05 → 不通知\n\n无 A 也无 B → NO_REPLY",
+        "message": "Klaire上午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 第一步：拉 Bitable 白名单\n执行 `custom-feishu-auth` SKILL → 续期 + 取 app_token\n用完整 token 读取:\n- 持仓表 tbl9xYrGkBDZlnYm (筛选状态=持有) → 提取股票代码列表\n- 观察池 tblaQY1jOFWOXd1U (筛选状态!=已移除) → 提取股票代码列表\n\n⚠️ 绝对不拉白名单之外的任何标的。白名单里有什么就分析什么，一个不多一个不少。\n\n⚠️ 第二步：仅对白名单标的拉行情\n使用 `custom-market-data-cn` SKILL 拉实时行情（双源验证 + 三源裁决）\n涨跌幅只用 SKILL 输出的 `change_pct` 字段，不自行计算\n\n⚠️ 第三步：写入Klaire监控记录表\n写表前先 field.list 确认字段名，batch_create 一次性写入 tblHkc0MfQbe2x37（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池（持仓表不含快照价字段）\n\n⚠️ 第四步：阈值突破 + 建仓条件 → 按需通知至 klaire 推送渠道（地址见 workspace-cio/KLAIRE_CONFIG.md 「输出通道」）\nA. 持仓表标的阈值检查（只通知，不触发 IC）：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】{代码} 现价{X} 已触及止损价{Y}，建议立即处置\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】{代码} 现价{X}，距止损仅{Z}%\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】{代码} 现价{X} 已达止盈价{Y}\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】{代码} 今日跌幅{Z}%\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】{代码} 今日涨幅{Z}%，距止盈{W}%\n\nB. 🎯 建仓条件触发（观察池「待建仓」标的）\n   读取观察池每个标的的「目标建仓价」字段（从 Bitable 读，不使用任何记忆中的价格）\n   当前价 ≤ 目标建仓价 → 触发，通知内容：标的名称+代码 | 当前价 | 目标建仓价 | 建议仓位%（从备注读取）\n   当前价 > 目标建仓价 × 1.05 → 不通知\n\n无 A 也无 B → NO_REPLY",
         "timeoutSeconds": 600,
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
@@ -348,7 +348,7 @@
     },
     {
       "id": "00bad0b6-3fc5-4fd2-8a8c-61775e826573",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "klaire-afternoon-monitor-pm",
       "enabled": true,
       "createdAtMs": 1780487209524,
@@ -362,7 +362,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Klaire下午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 第一步：拉 Bitable 白名单\nfeishu_bitable_app.list() → 获取最新完整 token\n用完整 token 读取持仓表 tbl9xYrGkBDZlnYm (状态=持有) 和观察池 tblaQY1jOFWOXd1U (状态!=已移除)\n提取所有股票代码形成白名单\n\n⚠️ 第一步：仅对白名单标的拉行情\n所有代码用腾讯财经兜底拉实时价\n涨跌幅只用 API 预计算字段（f[34] 或 change_pct），不自行计算\n\n⚠️ 第一步：写入Klaire监控记录表\n写表前先 field.list 确认字段名，batch_create 一次性写入 tblHkc0MfQbe2x37（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池（持仓表不含快照价字段）\n\n⚠️ 第一步：阈值突破 + 建仓条件 → 按需通知至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nA. 持仓表标的阈值检查（只通知，不触发 IC）：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】{代码} 现价{X} 已触及止损价{Y}，建议立即处置\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】{代码} 现价{X}，距止损仅{Z}%\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】{代码} 现价{X} 已达止盈价{Y}\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】{代码} 今日跌幅{Z}%\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】{代码} 今日涨幅{Z}%，距止盈{W}%\n\nB. 🎯 建仓条件触发（观察池「待建仓」标的）\n   读取观察池每个标的的「目标建仓价」字段（从 Bitable 读，不使用任何记忆中的价格）\n   当前价 ≤ 目标建仓价 → 触发，通知内容：标的名称+代码 | 当前价 | 目标建仓价 | 建议仓位%（从备注读取）\n   当前价 > 目标建仓价 × 1.05 → 不通知\n\n无 A 也无 B → NO_REPLY",
+        "message": "Klaire下午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 第一步：拉 Bitable 白名单\n执行 `custom-feishu-auth` SKILL → 续期 + 取 app_token\n用完整 token 读取持仓表 tbl9xYrGkBDZlnYm (状态=持有) 和观察池 tblaQY1jOFWOXd1U (状态!=已移除)\n提取所有股票代码形成白名单\n\n⚠️ 第二步：仅对白名单标的拉行情\n使用 `custom-market-data-cn` SKILL 拉实时行情（双源验证 + 三源裁决）\n涨跌幅只用 SKILL 输出的 `change_pct` 字段，不自行计算\n\n⚠️ 第三步：写入Klaire监控记录表\n写表前先 field.list 确认字段名，batch_create 一次性写入 tblHkc0MfQbe2x37（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池（持仓表不含快照价字段）\n\n⚠️ 第四步：阈值突破 + 建仓条件 → 按需通知至 klaire 推送渠道（地址见 workspace-cio/KLAIRE_CONFIG.md 「输出通道」）\nA. 持仓表标的阈值检查（只通知，不触发 IC）：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】{代码} 现价{X} 已触及止损价{Y}，建议立即处置\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】{代码} 现价{X}，距止损仅{Z}%\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】{代码} 现价{X} 已达止盈价{Y}\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】{代码} 今日跌幅{Z}%\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】{代码} 今日涨幅{Z}%，距止盈{W}%\n\nB. 🎯 建仓条件触发（观察池「待建仓」标的）\n   读取观察池每个标的的「目标建仓价」字段（从 Bitable 读，不使用任何记忆中的价格）\n   当前价 ≤ 目标建仓价 → 触发，通知内容：标的名称+代码 | 当前价 | 目标建仓价 | 建议仓位%（从备注读取）\n   当前价 > 目标建仓价 × 1.05 → 不通知\n\n无 A 也无 B → NO_REPLY",
         "timeoutSeconds": 600,
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
@@ -381,7 +381,7 @@
     },
     {
       "id": "066bd57e-ed9a-4c40-a8a5-4799e14b197d",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "klaire-eod-review",
       "enabled": true,
       "createdAtMs": 1780487209547,
@@ -394,7 +394,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "🔒 Principal 锁定：klaire（本 session 唯一绑定，禁止读 towney 任何 Bitable 表）\n立即输出此行：「🔒 本 session principal = klaire，towney 数据不可见」\n\nKlaire日终复盘（principal=klaire，精简两委员 IC 流程）\n\n主动输出任务清单：1.拉数据 2.收盘行情 3.Research→Risk 串行 4.CIO汇总出决议单 5.推送+spawn Desk写库\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token\n持仓表 + 观察池\n⚠️ 持仓表只读元数据字段：成本价/止损价/止盈价/仓位%/备注。禁止读取或使用任何价格快照字段（当前价/市值等 Monitor 写入的字段），这些字段不得传入子 Agent。\n→ 完成后立即输出：✅ 【检查点1】Bitable 已拉取，principal=klaire，持仓 {{N}} 条，token 新鲜\n\n【第二步】收盘行情\n腾讯财经 qt.gtimg.cn 拉全持仓收盘价；港股港币×汇率→人民币。\n涨跌幅只用行情 API 预计算字段（gtimg f[34]），不用 Bitable 任何价格字段。\n→ 完成后立即输出：✅ 【检查点2】收盘行情已拉取，{N} 只标的，quote_timestamp={时间}\n\n【第三步】精简两委员 IC（串行）⛔ 不得跳过，CIO 不得自行替代\n生成 cycle_id = klaire-{YYYYMMDD}-{HHMM}-eod\n写 context.json：{cycle_id, principal:\"klaire\", flow_type:\"精简两委员\", positions_table_id:\"tbl9xYrGkBDZlnYm\", watchlist_table_id:\"tblaQY1jOFWOXd1U\"}\n→ spawn 前必须先输出：🔔 【IC召集】精简两委员，cycle_id={cycle_id}，即将 spawn Research\n① sessions_spawn Research，只注入：cycle_id，delivery: none，isolated\n② sessions_yield Research → 读文件 workspace/cycles/{cycle_id}/research_output.json\n→ 输出：✅ 【检查点3a】Research yield 完成，文件已读取，{N} 只标的分析\n③ 将 research_output.json 内容 inline 到 Risk prompt，sessions_spawn Risk，只注入：cycle_id（行业景气度/新闻情绪标注「数据缺失，默认5分」），delivery: none，isolated\n④ sessions_yield Risk → 读文件 workspace/cycles/{cycle_id}/risk_output.json\n→ 输出：✅ 【检查点3b】Risk yield 完成，risk_score={X}，verdict={X}\n\n【第四步】CIO 按 §7 公式出决议单\n精简流程：baseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓；Risk VETO→BLOCK\n\n输出两份内容：\n① JSON 决议单：{cycle_id: \"klaire-{YYYYMMDD}-{HHMM}-eod\", principal: \"klaire\", flow_type: \"精简两委员\", cio_action, baseline_score, override_reason, report_summary: \"<CIO裁决全文>\", quote_timestamp, votes:{research, risk, industry:null, news:null}}\n② 人读收盘简报：今日涨跌/收盘价 | 距止损止盈距离 | 预警标的 | 明日策略\n→ 完成后立即输出：✅ 【检查点4】决议单已生成，cycle_id={cycle_id}，baseline_score={X}，cio_action={X}\n\n【第五步】推送简报 + spawn Execution Desk 写库\n推送②人读简报至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nsessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库（决策复盘表 / 报告表（日终复盘）/ 交易记录（如有买卖指令）/ 持仓表（如有仓位变更））\n⚠️ CIO 不直接写任何 Bitable，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送，只推 CIO 汇总结论\n→ 完成后输出：✅ 【检查点5】简报已推送，Execution Desk yield 完成，本 session 结束",
+        "message": "EOD复盘 principal=klaire flow_type=精简两委员",
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
           "deepseek/deepseek-v4-pro",
@@ -412,7 +412,7 @@
     },
     {
       "id": "72ab5829-ca71-49a7-bbb4-7e46440f2298",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "klaire-opening-bell",
       "description": "开盘行情扫描：Klaire 持仓，5分钟窗口，大跌→精简两委员，大涨→即时通知",
       "enabled": true,
@@ -426,8 +426,13 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "开盘大跌扫描（principal=klaire，5分钟窗口）：\n\n⚠️ 第一步：确认时间窗口\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); ok=(t.hour==9 and 30<=t.minute<=35); print('IN_WINDOW' if ok else 'SKIP')\"\n如果输出 SKIP → 直接 NO_REPLY。\n\n⚠️ 第二步：feishu_bitable_app.list() → 拉 klaire 持仓表 tbl9xYrGkBDZlnYm\n获取所有持仓的代码、止损价、止盈价、仓位%、备注字段。\n\n⚠️ 第三步：拉开盘实时行情\npython3 -c \"import urllib.request; r=urllib.request.urlopen('https://qt.gtimg.cn/q={全持仓代码}',timeout=10).read().decode('gbk'); ...\"\n\n⚠️ 第四步A：错杀加仓条件（全部满足才触发 IC，接第五步）\n- 开盘跌幅 ≥3%\n- 距止损价 ≥5%（当前价 ≥ 止损价×1.05）\n- 距止盈价 ≥30%（当前价 ≤ 止盈价×0.70）\n- 当前仓位未满\n- 备注无「高风险」「清仓」标记\n\n⚠️ 第四步B：大涨止盈提醒（满足即直接通知，不触发 IC）\n- 开盘涨幅 ≥5%\n→ 通知内容：🟢【开盘大涨】{代码} 涨幅{X}% | 现价{P} | 止盈价{Y} | 距止盈{Z}%（负数=已突破）\n\n⚠️ 第五步：有 4A 触发标的 → 精简两委员流程\ncycle_id = klaire-{YYYYMMDD}-{HHMM}-{symbol}\n写 context.json：{cycle_id, principal:\"klaire\", flow_type:\"精简两委员\", positions_table_id:\"tbl9xYrGkBDZlnYm\", watchlist_table_id:\"tblaQY1jOFWOXd1U\"}\n先 sessions_spawn Research（只注入 cycle_id），delivery: none，isolated。\n等 Research 完成后读文件 workspace/cycles/{cycle_id}/research_output.json。\n将 Research 结果 inline 到 Risk prompt → sessions_spawn Risk（delivery: none，isolated，只注入 cycle_id）。\n等 Risk 完成后读文件 workspace/cycles/{cycle_id}/risk_output.json。\nRisk 的行业景气度/新闻情绪标注「数据缺失，默认5分」。\n\n⚠️ 第六步：CIO 按 §7 精简公式出决议单\n精简流程：industry_composite=5（默认），news_modifier=0（中性）\nbaseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\nRisk VETO → BLOCK；Risk NOC + baseline≥7 → 加仓建议（仓位% + 建仓价）；其他 → 观察\n\n输出两份：\n① JSON 决议单：{cycle_id, principal, flow_type:\"精简两委员\", cio_action, baseline_score, target_symbol, position_change_pct, price_ref, override_reason, report_summary:\"\", quote_timestamp, votes:{research, risk, industry:null, news:null}}\n② 人读加仓建议\n\n推送②至 oc_c19042fb899cda7eeca1bbbd7d981d1a\n如有加仓建议：sessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated；sessions_yield Desk\n⚠️ CIO 不直接写 Bitable，写库由 Desk 执行\n4B 触发标的（大涨）：直接推送大涨通知至 oc_c19042fb899cda7eeca1bbbd7d981d1a，不启动 IC。\n4A 与 4B 均无触发 → NO_REPLY。",
-        "timeoutSeconds": 1800
+        "message": "开盘大跌扫描（principal=klaire，5分钟窗口）：\n\n⚠️ 第一步：确认时间窗口\npython3 -c \"import datetime; t=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))); ok=(t.hour==9 and 30<=t.minute<=35); print('IN_WINDOW' if ok else 'SKIP')\"\n如果输出 SKIP → 直接 NO_REPLY。\n\n⚠️ 第二步：执行 `custom-feishu-auth` SKILL → 续期 + 取 app_token，再读 klaire 持仓表 tbl9xYrGkBDZlnYm\n获取所有持仓的代码、止损价、止盈价、仓位%、备注字段。\n\n⚠️ 第三步：拉开盘实时行情\n使用 `custom-market-data-cn` SKILL 拉全持仓实时行情（双源验证）\n\n⚠️ 第四步A：错杀加仓条件（全部满足才触发 IC，接第五步）\n- 开盘跌幅 ≥3%\n- 距止损价 ≥5%（当前价 ≥ 止损价×1.05）\n- 距止盈价 ≥30%（当前价 ≤ 止盈价×0.70）\n- 当前仓位未满\n- 备注无「高风险」「清仓」标记\n\n⚠️ 第四步B：大涨止盈提醒（满足即直接通知，不触发 IC）\n- 开盘涨幅 ≥5%\n→ 通知内容：🟢【开盘大涨】{代码} 涨幅{X}% | 现价{P} | 止盈价{Y} | 距止盈{Z}%（负数=已突破）\n\n⚠️ 第五步：有 4A 触发标的 → 直接执行精简两委员 IC 流程\ncycle_id = klaire-{YYYYMMDD}-{HHMM}-{symbol}\n写 workspace-cio/cycles/{cycle_id}/ic_request.json：\n{\"cycle_id\":\"...\",\"principal\":\"klaire\",\"flow_type\":\"精简两委员\",\"symbol\":\"{symbol}\",\"positions_table_id\":\"tbl9xYrGkBDZlnYm\",\"watchlist_table_id\":\"tblaQY1jOFWOXd1U\"}\n执行 custom-ic-orchestrate SKILL（flow_type=精简两委员，cycle_id={cycle_id}）\n回复 NO_REPLY。\n\n4B 触发标的（大涨）：读 workspace-cio/KLAIRE_CONFIG.md 「输出通道」字段获取推送地址，直接推送大涨通知，不启动 IC。\n4A 与 4B 均无触发 → NO_REPLY。",
+        "timeoutSeconds": 1800,
+        "model": "volcengine-plan/deepseek-v4-pro",
+        "fallbacks": [
+          "deepseek/deepseek-v4-pro",
+          "glm/glm-5.1"
+        ]
       },
       "delivery": {
         "mode": "announce",
@@ -439,7 +444,7 @@
     },
     {
       "id": "30fe5386-f706-453c-af2f-0e6765b9e376",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "klaire-weekly-review",
       "enabled": true,
       "createdAtMs": 1780487209572,
@@ -452,7 +457,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "🔒 Principal 锁定：klaire（本 session 唯一绑定，禁止读 towney 任何 Bitable 表）\n立即输出此行：「🔒 本 session principal = klaire，towney 数据不可见」\n\nKlaire周终复盘（principal=klaire，精简两委员 IC 流程）\n\n主动输出任务清单：1.拉数据 2.周行情 3.Research→Risk 串行 4.CIO汇总出决议单 5.推送+spawn Desk写库\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token\n持仓表 + 观察池\n⚠️ 持仓表只读元数据字段：成本价/止损价/止盈价/仓位%/备注。禁止读取或使用任何价格快照字段（当前价/市值等 Monitor 写入的字段），这些字段不得传入子 Agent。\n→ 完成后立即输出：✅ 【检查点1】Bitable 已拉取，principal=klaire，持仓 {{N}} 条，token 新鲜\n\n【第二步】周行情\nakshare get_hist_data interval=week recent_n=5，拉全持仓周K线；港股港币×汇率→人民币\n→ 完成后立即输出：✅ 【检查点2】周行情已拉取，{N} 只标的周K线，quote_timestamp={时间}\n\n【第三步】精简两委员 IC（串行）⛔ 不得跳过，CIO 不得自行替代\n生成 cycle_id = klaire-{YYYYMMDD}-{HHMM}-weekly\n写 context.json：{cycle_id, principal:\"klaire\", flow_type:\"精简两委员\", positions_table_id:\"tbl9xYrGkBDZlnYm\", watchlist_table_id:\"tblaQY1jOFWOXd1U\"}\n→ spawn 前必须先输出：🔔 【IC召集】精简两委员，cycle_id={cycle_id}，即将 spawn Research\n① sessions_spawn Research，只注入：cycle_id，delivery: none，isolated\n② sessions_yield Research → 读文件 workspace/cycles/{cycle_id}/research_output.json\n→ 输出：✅ 【检查点3a】Research yield 完成，文件已读取，{N} 只标的分析\n③ 将 research_output.json 内容 inline 到 Risk prompt，sessions_spawn Risk，只注入：cycle_id（行业景气度/新闻情绪标注「数据缺失，默认5分」），delivery: none，isolated\n④ sessions_yield Risk → 读文件 workspace/cycles/{cycle_id}/risk_output.json\n→ 输出：✅ 【检查点3b】Risk yield 完成，risk_score={X}，verdict={X}\n\n【第四步】CIO 按 §7 公式出决议单\n精简流程：baseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓；Risk VETO→BLOCK\n\n输出两份内容：\n① JSON 决议单：{cycle_id: \"klaire-{YYYYMMDD}-{HHMM}-weekly\", principal: \"klaire\", flow_type: \"精简两委员\", cio_action, baseline_score, override_reason, report_summary: \"<CIO裁决全文>\", quote_timestamp, votes:{research, risk, industry:null, news:null}}\n② 人读周报：本周交易汇总 | 周涨跌 | 止损止盈距离 | 关键事件 | 下周策略 | 仓位建议\n→ 完成后立即输出：✅ 【检查点4】决议单已生成，cycle_id={cycle_id}，baseline_score={X}，cio_action={X}\n\n【第五步】推送周报 + spawn Execution Desk 写库\n推送②周报至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nsessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库（决策复盘表 / 报告表 / 持仓表（如有仓位变更））\n⚠️ CIO 不直接写任何 Bitable，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送，只推 CIO 汇总结论\n→ 完成后输出：✅ 【检查点5】简报已推送，Execution Desk yield 完成，本 session 结束",
+        "message": "周报复盘 principal=klaire flow_type=四委员",
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
           "deepseek/deepseek-v4-pro",
@@ -470,7 +475,7 @@
     },
     {
       "id": "afdbd0ef-a3f5-4e18-81e5-f3e415bf2543",
-      "agentId": "main",
+      "agentId": "butler",
       "name": "klaire-monthly-review",
       "enabled": true,
       "createdAtMs": 1780487209598,
@@ -483,7 +488,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "🔒 Principal 锁定：klaire（本 session 唯一绑定，禁止读 towney 任何 Bitable 表）\n立即输出此行：「🔒 本 session principal = klaire，towney 数据不可见」\n\nKlaire月终复盘（principal=klaire，精简两委员 IC 流程）\n\n主动输出任务清单：1.拉数据 2.月行情+财报 3.Research→Risk 串行 4.CIO汇总出决议单 5.推送+spawn Desk写库\n\n【第一步】拉 Bitable\nfeishu_bitable_app.list() → 完整 token\n持仓表 + 观察池\n⚠️ 持仓表只读元数据字段：成本价/止损价/止盈价/仓位%/备注。禁止读取或使用任何价格快照字段（当前价/市值等 Monitor 写入的字段），这些字段不得传入子 Agent。\n→ 完成后立即输出：✅ 【检查点1】Bitable 已拉取，principal=klaire，持仓 {{N}} 条，token 新鲜\n\n【第二步】月行情+财报\nakshare get_hist_data interval=month recent_n=6，拉全持仓月K线；港股港币×汇率→人民币\nakshare get_financial_metrics 拉最新财务指标（ROE/PE/PB/负债率）\n→ 完成后立即输出：✅ 【检查点2】月行情+财报已拉取，{N} 只标的，quote_timestamp={时间}\n\n【第三步】精简两委员 IC（串行）⛔ 不得跳过，CIO 不得自行替代\n生成 cycle_id = klaire-{YYYYMMDD}-{HHMM}-monthly\n写 context.json：{cycle_id, principal:\"klaire\", flow_type:\"精简两委员\", positions_table_id:\"tbl9xYrGkBDZlnYm\", watchlist_table_id:\"tblaQY1jOFWOXd1U\"}\n→ spawn 前必须先输出：🔔 【IC召集】精简两委员，cycle_id={cycle_id}，即将 spawn Research\n① sessions_spawn Research，只注入：cycle_id，delivery: none，isolated\n② sessions_yield Research → 读文件 workspace/cycles/{cycle_id}/research_output.json\n→ 输出：✅ 【检查点3a】Research yield 完成，文件已读取，{N} 只标的分析\n③ 将 research_output.json 内容 inline 到 Risk prompt，sessions_spawn Risk，只注入：cycle_id（行业景气度/新闻情绪标注「数据缺失，默认5分」），delivery: none，isolated\n④ sessions_yield Risk → 读文件 workspace/cycles/{cycle_id}/risk_output.json\n→ 输出：✅ 【检查点3b】Risk yield 完成，risk_score={X}，verdict={X}\n\n【第四步】CIO 按 §7 公式出决议单\n精简流程：baseline_score = 0.55×research_composite + 0.30×5 + 0.15×5\n按 baseline≥7→支持加仓 / 4~7→持有 / <4→减仓；Risk VETO→BLOCK\n\n输出两份内容：\n① JSON 决议单：{cycle_id: \"klaire-{YYYYMMDD}-{HHMM}-monthly\", principal: \"klaire\", flow_type: \"精简两委员\", cio_action, baseline_score, override_reason, report_summary: \"<CIO裁决全文>\", quote_timestamp, votes:{research, risk, industry:null, news:null}}\n② 人读月报：月涨跌幅/振幅/月线 | 盈亏汇总 | 研究+风险综合评估 | 下月展望 | 仓位建议\n→ 完成后立即输出：✅ 【检查点4】决议单已生成，cycle_id={cycle_id}，baseline_score={X}，cio_action={X}\n\n【第五步】推送月报 + spawn Execution Desk 写库\n推送②月报至 oc_c19042fb899cda7eeca1bbbd7d981d1a\nsessions_spawn Execution Desk（agentId=desk），注入①决议单，delivery: none，isolated\nsessions_yield Desk → Desk 完成六闸门校验后写库（决策复盘表 / 报告表 / 持仓表（如有仓位变更））\n⚠️ CIO 不直接写任何 Bitable，写库一律由 Desk 执行\n⚠️ 子 Agent 原始 JSON 不推送，只推 CIO 汇总结论\n→ 完成后输出：✅ 【检查点5】简报已推送，Execution Desk yield 完成，本 session 结束",
+        "message": "月报复盘 principal=klaire flow_type=四委员",
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
           "deepseek/deepseek-v4-pro",

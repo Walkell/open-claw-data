@@ -2,11 +2,14 @@
 
 ## Bitable 调用协议
 
-**每次必走，不可跳过：**
-1. `feishu_bitable_app.list()` → 找到 principal 对应 Bitable，取完整 app_token（不缓存、不假设）
-2. table_id 从 context.json 的 `positions_table_id` / `watchlist_table_id` 读取；遇 NOTEXIST 时调 `feishu_bitable_app_table.list()` 按名查找
-3. 用步骤1的 app_token + table_id 调 `feishu_bitable_app_table_record.list()`
-4. `permission_denied` / `NOTEXIST` → 自动走 `feishu_oauth` 续期 → 重新 `list()` → 继续，不放弃
+> **Token 获取必须通过 `custom-feishu-auth` SKILL**（见 `extensions/openclaw-lark/skills/custom-feishu-auth/SKILL.md`）。app_token 不得出现在任何文字输出或文件中。
+
+**会话启动（每次 Bitable 操作前必做）：**
+1. 调用 `custom-feishu-auth` SKILL → 续期 + 取 app_token
+2. app_token 从工具结果直接传入下一个调用，不经过文字
+3. table_id 从 context.json 的 `positions_table_id` / `watchlist_table_id` 读取
+4. `feishu_bitable_app_table_record.list()` 读取数据
+5. 遇 `NOTEXIST` / `permission_denied` → 重新执行 SKILL（最多 2 次）
 
 **principal 和 table_id 从 context.json 读取（备用参考）：**
 
@@ -20,22 +23,15 @@
 ## 行情数据源
 
 ### A股 / 港股 实时行情
-```
-主：akshare__get_realtime_data(source=eastmoney_direct)
-备：python3 -c "import urllib.request; r=urllib.request.urlopen(
-      'https://qt.gtimg.cn/q=sh688120,...', timeout=10).read().decode('gbk'); ..."
-```
+
+**必须使用 `custom-market-data-cn` SKILL**（见 `extensions/openclaw-lark/skills/market-data-cn/SKILL.md`）。该 SKILL 强制双源验证（akshare + gtimg）+ 三源裁决，禁止用 web_search 获取行情价格。
+
 港股代码格式：`hk09988`（前缀 hk，不加 .HK）
 港股行情为港币，换算人民币：港币 × 当日汇率（约 0.927，用 web_search 确认当日值）
 
 ### ⚠️ 涨跌幅铁律（违反 = 数据污染，整票作废）
 
-**涨跌幅必须直接取自行情 API 的预计算字段，绝对禁止自行计算。**
-
-| 来源 | 今日涨跌幅字段 | 昨收字段 |
-|------|--------------|--------|
-| gtimg（备路径） | `f[34]`（百分比，已含±号）| `f[33]` |
-| akshare__get_realtime_data | `change_pct` 或 `涨跌幅` | `昨收` |
+**涨跌幅必须直接取自行情 API 的预计算字段，绝对禁止自行计算。** `custom-market-data-cn` SKILL 内部已处理此规则，直接用 SKILL 输出的 `change_pct` 字段即可。
 
 **Bitable 持仓表只含元数据字段：**
 

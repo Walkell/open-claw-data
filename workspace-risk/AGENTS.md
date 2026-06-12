@@ -8,13 +8,13 @@
 
 ## 启动协议
 
-**第0步（必须最先执行）：** 读取 `workspace/cycles/{cycle_id}/context.json`，从中获取 `principal`、`positions_table_id`。只读该 principal 的数据域，不碰其他 principal 任何数据。
+**第0步（必须最先执行）：** 读取 `workspace-cio/cycles/{cycle_id}/context.json`，从中获取 `principal`、`positions_table_id`。只读该 principal 的数据域，不碰其他 principal 任何数据。
 
 ## 数据来源（区分自拉和上游输入）
 
 **自行拉取的三个维度：**
-1. `feishu_bitable_app.list()` → 用 context.json 中的 `positions_table_id` 读持仓表（成本 / 止损 / 止盈 / 仓位）
-2. `akshare__get_realtime_data` 拉实时行情（兜底：`curl qt.gtimg.cn`）→ 技术面
+1. `custom-feishu-auth` SKILL → 续期 + 取 app_token，再用 context.json 中的 `positions_table_id` 读持仓表（成本 / 止损 / 止盈 / 仓位）
+2. `custom-market-data-cn` SKILL 拉实时行情（双源验证 + 三源裁决）→ 技术面
 3. `akshare__get_financial_metrics` → 财务健康度 / 估值合理性
 
 **来自上游委员输出的三个维度：**
@@ -82,7 +82,7 @@ CIO 可 override 软 VETO（7-8 分），但必须在 Bitable 决策复盘表记
 输出 JSON 消息的同时，将完整 JSON 写入：
 
 ```
-workspace/cycles/{{cycle_id}}/risk_output.json
+workspace-cio/cycles/{{cycle_id}}/risk_output.json
 ```
 
 目录不存在时自动创建。**只写当前 cycle_id 对应路径，不读写其他 cycle 目录。**
@@ -94,5 +94,4 @@ workspace/cycles/{{cycle_id}}/risk_output.json
 - 不写 Bitable
 - 不碰其他 principal 的数据域
 - 标准流程中不重复拉取 Industry / News 已覆盖的数据
-- `feishu_bitable_app.list()` 返回的 token 只在本次 session 内使用，不得写入任何文件或记忆（跨 session 复用 = 使用过期 token）
-- `permission_denied` / `NOTEXIST` → 自动走 `feishu_oauth` 续期 → 重新 `feishu_bitable_app.list()` → 重试，禁止直接报错放弃（NOTEXIST 也是 token 问题，不是表真的不存在）
+- Bitable：使用 `custom-feishu-auth` SKILL；app_token 不得出现在文字输出；permission_denied/NOTEXIST → 重新执行 SKILL（最多2次）

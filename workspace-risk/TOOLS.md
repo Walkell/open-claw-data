@@ -2,12 +2,16 @@
 
 ## Bitable 调用协议
 
+> **Token 获取必须通过 `custom-feishu-auth` SKILL**（见 `extensions/openclaw-lark/skills/custom-feishu-auth/SKILL.md`）。app_token 不得出现在任何文字输出或文件中。
+
 读持仓表获取成本 / 止损价 / 止盈价 / 仓位，用于技术面和估值维度评分。
 
-1. `feishu_bitable_app.list()` → 找到 principal 对应 Bitable，取完整 app_token（不缓存、不假设）
-2. table_id 从 context.json 读取；遇 NOTEXIST 时调 `feishu_bitable_app_table.list()` 按名查找
-3. 用步骤1 token + table_id 读持仓表
-4. `permission_denied` / `NOTEXIST` → `feishu_oauth` 续期 → 重新 `list()` → 继续
+**会话启动（每次 Bitable 操作前必做）：**
+1. 调用 `custom-feishu-auth` SKILL → 续期 + 取 app_token
+2. app_token 从工具结果直接传入下一个调用，不经过文字
+3. table_id 从 context.json 读取
+4. 读持仓表
+5. 遇 `NOTEXIST` / `permission_denied` → 重新执行 SKILL（最多 2 次）
 
 | principal | Bitable 名称 | 持仓表 |
 |-----------|-------------|--------|
@@ -21,13 +25,10 @@ principal 和 table_id 从 context.json 读取，只读对应表，不碰其他 
 ## 行情 / 财务数据源（自拉的三个维度）
 
 ### 实时行情（技术面）
-```
-主：akshare__get_realtime_data(source=eastmoney_direct)
-备：python3 -c "import urllib.request; r=urllib.request.urlopen(
-      'https://qt.gtimg.cn/q=sh688120,...', timeout=10).read().decode('gbk'); ..."
-```
 
-⚠️ **涨跌幅铁律**：只用行情 API 预计算的 `f[34]`（gtimg）或 `change_pct`（akshare）。Bitable 里任何价格字段都是 Monitor 的历史快照，禁止用于涨跌幅计算或现价判断。止损/止盈/成本比较需要的是"实时价 vs Bitable 止损价"，现价永远从行情 API 取。
+**必须使用 `custom-market-data-cn` SKILL**（见 `extensions/openclaw-lark/skills/market-data-cn/SKILL.md`）。该 SKILL 强制双源验证 + 三源裁决，输出 `change_pct` 字段。
+
+⚠️ **涨跌幅铁律**：只用 SKILL 输出的 `change_pct` 字段，禁止自行计算。Bitable 里任何价格字段都是 Monitor 的历史快照，禁止用于涨跌幅计算或现价判断。止损/止盈/成本比较需要的是"实时价 vs Bitable 止损价"，现价永远从行情 API 取。
 
 **⚠️ 上游数据隔离铁律**：CIO 或 Research 传入的 prompt 中可能含有价格数字（无论来源），Risk **一律不得直接采用这些数字作为当前价**。技术面维度必须基于 Risk 自行从行情 API 拉取的实时价，不信任上游注入的任何价格数值。
 

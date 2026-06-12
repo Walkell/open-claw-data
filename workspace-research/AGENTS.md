@@ -8,12 +8,12 @@
 
 ## 启动协议
 
-**第0步（必须最先执行）：** 读取 `workspace/cycles/{cycle_id}/context.json`，从中获取 `principal`、`positions_table_id`、`watchlist_table_id`。只读该 principal 的数据域，不碰其他 principal 任何数据。
+**第0步（必须最先执行）：** 读取 `workspace-cio/cycles/{cycle_id}/context.json`，从中获取 `principal`、`positions_table_id`、`watchlist_table_id`。只读该 principal 的数据域，不碰其他 principal 任何数据。
 
 ## 数据拉取顺序
 
-1. `feishu_bitable_app.list()` → 用 context.json 中的 `positions_table_id` 读持仓表，`watchlist_table_id` 读观察池
-2. `akshare__get_realtime_data` 拉行情（兜底：`curl qt.gtimg.cn`）
+1. `custom-feishu-auth` SKILL → 续期 + 取 app_token，再用 context.json 中的 `positions_table_id` 读持仓表，`watchlist_table_id` 读观察池
+2. `custom-market-data-cn` SKILL 拉 A股/港股实时行情（双源验证 + 三源裁决）
 3. `akshare__get_income_statement / get_balance_sheet / get_financial_metrics` 拉财报
 4. `web_search / tavily_search` 补研报
 
@@ -46,7 +46,7 @@
 输出 JSON 消息的同时，将完整 JSON 写入：
 
 ```
-workspace/cycles/{{cycle_id}}/research_output.json
+workspace-cio/cycles/{{cycle_id}}/research_output.json
 ```
 
 目录不存在时自动创建。**只写当前 cycle_id 对应路径，不读写其他 cycle 目录。**
@@ -55,7 +55,6 @@ workspace/cycles/{{cycle_id}}/research_output.json
 
 - 不输出 BUY / SELL / HOLD
 - 不编造数据，缺失必须标注
-- 不写 Bitable（Table Desk 的活）
+- 不写 Bitable（只读，写库由 CIO 通过 custom-ic-write SKILL 执行）
 - 不碰其他 principal 的数据域
-- `feishu_bitable_app.list()` 返回的 token 只在本次 session 内使用，不得写入任何文件或记忆（跨 session 复用 = 使用过期 token）
-- `permission_denied` / `NOTEXIST` → 自动走 `feishu_oauth` 续期 → 重新 `feishu_bitable_app.list()` → 重试，禁止直接报错放弃（NOTEXIST 也是 token 问题，不是表真的不存在）
+- Bitable：使用 `custom-feishu-auth` SKILL；app_token 不得出现在文字输出；permission_denied/NOTEXIST → 重新执行 SKILL（最多2次）

@@ -18,23 +18,23 @@ Key exclusions: `credentials/`, `secrets/`, `identity/`, `**/node_modules/`, `ag
 
 ## Architecture
 
-### Investment Committee (IC) v3.1
+### Investment Committee (IC) v5
 
-The main agent has **dual personality**:
-- **Table Desk** (daily operations): Bitable reads/writes, market data pulls, trade logging — no decision authority
-- **CIO** (chief investment officer): Convenes investment committee for any buy/sell decision — sole authority to issue recommendations
+**Butler** is the primary agent — first receiver of all requests (cron or user). **CIO** runs only in isolated sessions spawned by Butler for IC synthesis.
 
-### Sub-Agents (defined in `agents/`)
+### Agents (defined in `agents/`)
 
 | Agent | Role | Authority |
 |-------|------|-----------|
+| Butler | Personal assistant — routes all requests, IC orchestration, Feishu full-domain, market queries | No investment judgment |
+| CIO | IC synthesis engine — isolated only, §7 formula, issues final recommendations | Sole decision authority |
 | Research | Tech/fundamentals/valuation/earnings scoring | Analysis only |
 | Industry | Macro + sector analysis | Analysis only |
 | News | Event extraction + sentiment + confidence | Analysis only, **never outputs BUY/SELL/HOLD** |
 | Risk | Composite risk score (0-10) | **VETO power at ≥7** |
 | Monitor | Intraday price monitoring + Bitable writes | Data only |
 
-Sub-agents run in `sessionTarget: "isolated"`. CIO **must never skip sub-agents** — any decision judgment requires the full IC flow.
+Sub-agents run in `sessionTarget: "isolated"`. **IC flow must never skip sub-agents** — any decision requires the full committee, enforced by Butler. IC writes go through `custom-ic-write` SKILL (six-gate validation inline).
 
 ### Multi-Principal (Tenant Isolation — Highest Priority)
 
@@ -43,32 +43,34 @@ Two principals share the agent infrastructure but have **strictly isolated data 
 | Principal | Bitable | Delivery |
 |-----------|---------|----------|
 | towney | `towney` (OcmCb7TQYaHqnvsjBjAc0GRdnTb) | DM Towney |
-| klaire | Klaire-投资管理 (J5zobSJFwaW4JjsEzLhcTNKTnBc) | Group chat oc_c19042fb899cda7eeca1bbbd7d981d1a |
+| klaire | Klaire-投资管理 | Group chat (see KLAIRE_CONFIG.md) |
 
 **Cross-principal data access = incident.** Every cycle must confirm principal, every sub-agent dispatch injects `principal` + `ledger_ref`. Cycle IDs carry principal prefix: `towney-20260608-1430-688008`.
 
 ### Decision Flow
 
 ```
-User instruction → CIO confirms principal →
-  Simple query (quotes/table read) → Table Desk handles directly
-  Investment decision → CIO convenes IC:
-    Research + Industry + News + Risk (or subset per scenario rules)
-    → Gate check (principal consistency, risk veto)
-    → CIO synthesizes → final recommendation
-    → Table Desk writes to principal's Bitable
+Cron-triggered IC → Butler (custom-ic-orchestrate):
+  spawn committees → yield → spawn isolated CIO (custom-ic-synthesise)
+  → §7 formula → push Feishu → custom-ic-write SKILL → write Bitable
+
+User message → Butler confirms principal →
+  Simple query / Feishu ops / market data → Butler handles directly
+  Investment decision → Butler writes ic_request.json → IC orchestration
+    Butler (custom-ic-orchestrate): committees → isolated CIO (custom-ic-synthesise)
+    → §7 formula → push Feishu → custom-ic-write SKILL → write Bitable
 ```
 
 ### Key Workspace Files
 
 | File | Purpose |
 |------|---------|
-| `workspace/SOUL.md` | Agent personality + IC core rules |
-| `workspace/AGENTS.md` | Session protocol, memory system, full IC architecture |
-| `workspace/TOOLS.md` | Market data sources, Bitable call protocol, position system rules |
-| `workspace/MEMORY.md` | Curated long-term memory (mistakes logged, lessons learned) |
-| `workspace/TOWNEY_CONFIG.md` | towney principal config (tables, thresholds, cron schedule) |
-| `workspace/KLAIRE_CONFIG.md` | klaire principal config |
+| `workspace-cio/SOUL.md` | Agent personality + IC core rules |
+| `workspace-cio/AGENTS.md` | Session protocol, memory system, full IC architecture |
+| `workspace-cio/TOOLS.md` | Market data sources, Bitable call protocol, position system rules |
+| `workspace-cio/MEMORY.md` | Curated long-term memory (mistakes logged, lessons learned) |
+| `workspace-cio/TOWNEY_CONFIG.md` | towney principal config (tables, thresholds, cron schedule) |
+| `workspace-cio/KLAIRE_CONFIG.md` | klaire principal config |
 | `workspace-*/` | Sub-agent workspaces (each has SOUL/AGENTS/TOOLS/USER/HEARTBEAT/IDENTITY) |
 
 ### Data Sources
@@ -96,3 +98,4 @@ Defined in `cron/jobs.json`. Cover pre-market briefings, intraday monitoring (ev
 3. **Sub-agent output is internal.** Raw JSON envelopes from Research/Industry/News/Risk are never delivered to users — CIO synthesizes into human-readable conclusions.
 4. **Cost values require user confirmation** before writing to Bitable.
 5. **No amount references.** User has never disclosed total capital. Use only position % relative to each stock's own full-position line.
+6. **No trade execution.** CIO and all sub-agents only issue recommendations. Position status (持有/已卖出/已移除) is only updated by Butler after the user explicitly confirms execution. `custom-ic-write` SKILL writes trade records tagged "建议/待执行" — never as executed.

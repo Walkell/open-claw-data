@@ -16,20 +16,21 @@ tavily_search：补充英文来源（半导体/AI 等全球化行业）
 ```
 
 ### 实时指数 / 期货
-```
-python3 -c "import urllib.request; r=urllib.request.urlopen(
-  'https://qt.gtimg.cn/q=sh000001,sz399006,...', timeout=10).read().decode('gbk'); ..."
-```
+
+**使用 `custom-market-data-cn` SKILL**（见 `extensions/openclaw-lark/skills/market-data-cn/SKILL.md`）拉取指数实时行情（sh000001、sz399006 等 A股指数代码同样适用）。
 
 ---
 
 ## Bitable（辅助查持仓行业分布，非必须）
 
+> **Token 获取必须通过 `custom-feishu-auth` SKILL**（见 `extensions/openclaw-lark/skills/custom-feishu-auth/SKILL.md`）。
+
 如需了解当前持仓的行业分布，可读持仓表：
 
-1. `feishu_bitable_app.list()` → 找到 principal 对应 Bitable，取完整 app_token（不缓存）
-2. table_id 从 context.json 的 `positions_table_id` 读取；遇 NOTEXIST 时调 `feishu_bitable_app_table.list()` 按名查找
-3. `permission_denied` / `NOTEXIST` → `feishu_oauth` 续期 → 重试
+1. 调用 `custom-feishu-auth` SKILL → 续期 + 取 app_token
+2. app_token 从工具结果直接传入下一个调用，不经过文字
+3. table_id 从 context.json 的 `positions_table_id` 读取
+4. 遇 `NOTEXIST` / `permission_denied` → 重新执行 SKILL（最多 2 次）
 
 | principal | Bitable 名称 | 持仓表 |
 |-----------|-------------|--------|
