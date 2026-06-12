@@ -39,34 +39,10 @@
 
 
 # ────────────────────────────────────────────
-#  放行：主工作区定义文档
+#  放行：所有 workspace-* 目录（新增 Agent 自动纳管）
 # ────────────────────────────────────────────
-!workspace/
-!workspace/SOUL.md
-!workspace/AGENTS.md
-!workspace/TOOLS.md
-!workspace/MEMORY.md
-!workspace/HEARTBEAT.md
-!workspace/USER.md
-
-# 主工作区下的自建 skills
-!workspace/skills/
-!workspace/skills/**
-
-
-# ────────────────────────────────────────────
-#  放行：各委员/角色工作区
-# ────────────────────────────────────────────
-!workspace-industry/
-!workspace-industry/**
-!workspace-monitor/
-!workspace-monitor/**
-!workspace-news/
-!workspace-news/**
-!workspace-research/
-!workspace-research/**
-!workspace-risk/
-!workspace-risk/**
+!workspace-*/
+!workspace-*/**
 
 # 各 workspace 内排除运行时产物
 workspace*/memory/
