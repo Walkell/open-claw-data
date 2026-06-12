@@ -928,7 +928,7 @@
           "name": "Arthur",
           "appId": "cli_aaadc0c90f795be8",
           "appSecret": "SYVdrTlmWibVdeNdNQetNcJpRcFDDPPV",
-          "enabled": true
+          "enabled": false
         },
         "butler": {
           "name": "Butler",
