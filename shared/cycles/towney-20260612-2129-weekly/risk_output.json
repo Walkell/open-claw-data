@@ -1,0 +1,77 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260612-2129-weekly",
+  "data": {
+    "symbol": "portfolio",
+    "risk_score": 5,
+    "verdict": "VETO",
+    "veto_reason": "三条独立否决触发：(1) AI赛道集中度约71%远超40%红线，VETO任何AI方向新增仓位；(2) 黄金ETF距止损线1.84%(≤3%)，VETO该标的加仓；(3) 天孚通信已跌破调整后止损线285.26(现价280.95)，属于止损触发级风险。组合加权风险分5.2未达7分自动否决线，但上述特定条件独立生效。",
+    "dimensions": {
+      "financial_health": {
+        "score": 4,
+        "note": "核心持仓财务稳健：澜起科技(负债率4.6%/净利率30.3%)、天孚通信(ROE 8.34%/净利率38.2%)、华海清科(净利率29.7%)质量优良。通富微电为组合财务短板(负债率57.7%/净利率2.2%/ROE 0.7%)，沪电股份负债率41.4%需关注。ETF无个股财务风险。",
+        "source": "self",
+        "details": "akshare stock_financial_analysis_indicator 最新季报"
+      },
+      "valuation": {
+        "score": 6,
+        "note": "多个AI持仓浮盈丰厚（天孚+94%/澜起+54%/创业板50ETF+60%），估值普遍处于高位。通富微电PE约72x偏贵；新近建仓的海光/沪电/通富成本偏高且已浮亏。AI赛道整体估值溢价显著，若行业景气不及预期则估值回调空间大。",
+        "source": "self",
+        "details": "结合Bitable盈亏比例与Research价格数据综合评估"
+      },
+      "industry_cycle": {
+        "score": 3,
+        "note": "Industry报告加权行业景气分7.3/10（按持仓权重加权）：AI PCB(8分)、AI光模块(8分)、AI芯片(7分)、半导体设备(7分)均处高景气区间，行业景气为组合最大正面因素。港股互联网(5分)、黄金(5分)偏中性。高景气意味着行业维度风险较低。",
+        "source": "industry_agent",
+        "details": "从Industry per-industry score加权计算，非直接字段"
+      },
+      "technical": {
+        "score": 7,
+        "note": "13只持仓中11只MACD空头、9只20日均线下方，技术面广谱走弱。天孚通信周跌-13.8%、通富微电周跌-14.39%为重灾区；黄金ETF RSI 30.52超卖放量下跌。仅沪电股份站稳MA20(RSI 52.97)和华海清科相对抗跌。下周需关注MA20争夺。",
+        "source": "self",
+        "details": "Tencent gtimg实时行情 + Research技术指标综合"
+      },
+      "macro": {
+        "score": 6,
+        "note": "下周(6/16-20)美联储新主席沃什首次主持FOMC会议面临加息压力为最大宏观风险；中东美伊协议罗生门+以色列强硬表态增加地缘不确定性；全球央行(美/欧/捷克)重新转向加息抑制风险资产。中美半导体博弈持续但间接利好国产替代。",
+        "source": "industry_agent",
+        "details": "Industry与News报告宏观分析综合推导，非直接字段"
+      },
+      "news_sentiment": {
+        "score": 6,
+        "note": "News报告整体情绪'中性偏空(短期)'。关键风险事件：美联储FOMC鹰派可能(高影响)、美伊协议反复(中高)、科创板/通信板块主力资金两日净流出超160亿(中)。个股层面沪电(海外机构调研+同业定增)和通富(定增推进)有正面催化但被板块beta压制。sentiment≈-0.3, event_impact≈7, 换算风险分6。",
+        "source": "news_agent",
+        "details": "sentiment=-0.3 × event_impact=7 → raw=-2.1 → risk_score=(10+2.1)/2≈6"
+      }
+    },
+    "portfolio_risks": {
+      "ai_concentration": {
+        "pct": 71.14,
+        "positions": [
+          {"symbol": "688120", "name": "华海清科", "weight": 13.92},
+          {"symbol": "588090", "name": "科创芯片ETF", "weight": 9.93},
+          {"symbol": "688008", "name": "澜起科技", "weight": 12.15},
+          {"symbol": "300394", "name": "天孚通信", "weight": 15.95},
+          {"symbol": "688041", "name": "海光信息", "weight": 15.14},
+          {"symbol": "002156", "name": "通富微电", "weight": 1.62},
+          {"symbol": "002463", "name": "沪电股份", "weight": 3.43}
+        ],
+        "threshold": 40,
+        "veto": true
+      },
+      "stoploss_proximity": [
+        {"symbol": "300394", "name": "天孚通信", "current": 280.95, "stop": 285.26, "distance_pct": -1.51, "status": "BREACHED"},
+        {"symbol": "518880", "name": "黄金ETF", "current": 8.659, "stop": 8.5, "distance_pct": 1.84, "status": "WITHIN_3PCT"}
+      ],
+      "top_drawdown_weekly": [
+        {"symbol": "002156", "name": "通富微电", "weekly_change_pct": -14.39},
+        {"symbol": "300394", "name": "天孚通信", "weekly_change_pct": -13.80},
+        {"symbol": "09988", "name": "阿里巴巴", "weekly_change_pct": -9.97},
+        {"symbol": "518880", "name": "黄金ETF", "weekly_change_pct": -6.40},
+        {"symbol": "002463", "name": "沪电股份", "weekly_change_pct": -6.02}
+      ]
+    },
+    "summary": "组合核心风险：(1)AI赛道集中度71%远超40%红线，结构脆弱；(2)天孚通信已破止损线、黄金ETF距止损1.84%；(3)技术面广谱走弱(11/13 MACD空头)，下周美联储新主席首次FOMC构成重大宏观不确定性。行业景气(加权7.3/10)为唯一强正面因素。加权风险分5.2/10未触发自动否决，但三条独立否决条件已生效。"
+  }
+}

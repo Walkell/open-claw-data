@@ -1,0 +1,243 @@
+{
+  "committee": "Research",
+  "cycle_id": "towney-20260612-1840-weekly",
+  "holdings_review": [
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "market": "A股",
+      "current_price": 184.00,
+      "technical_indicators": {
+        "ma5": 181.32,
+        "ma20": 189.97,
+        "ma60": 153.02,
+        "macd": "DIF +4.34，零轴上方但本周向下收敛",
+        "rsi": 31.5,
+        "volume_trend": "近5日均量较前5日放大37%，抛压释放"
+      },
+      "trend": "震荡偏弱",
+      "support_levels": [181.32, 153.02, 137.82],
+      "resistance_levels": [189.97, 212.74],
+      "weekly_change": "+3.96%",
+      "signal": "neutral",
+      "notes": "今日-1.47%回踩，价格已跌破MA20但仍站稳MA5与MA60之上；RSI 31.5接近超卖；放量下跌需观察是否在MA60附近构筑二次支撑；中期上行趋势未破。"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创50ETF",
+      "market": "A股",
+      "current_price": 1.713,
+      "technical_indicators": {
+        "ma5": 1.695,
+        "ma20": 1.788,
+        "ma60": 1.582,
+        "macd": "DIF接近零轴，多空均衡",
+        "rsi": 29.6,
+        "volume_trend": "近5日均量缩水33%，地量盘整"
+      },
+      "trend": "震荡",
+      "support_levels": [1.695, 1.582, 1.537],
+      "resistance_levels": [1.788, 1.953],
+      "weekly_change": "-0.29%",
+      "signal": "neutral",
+      "notes": "今日+0.23%小阳，站上MA5但未收复MA20；RSI 29.6超卖区；缩量+超卖暗示下行动能衰竭，但未见放量反转；仓位偏重需警惕宽基ETF补跌风险。"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "market": "A股",
+      "current_price": 224.88,
+      "technical_indicators": {
+        "ma5": 229.06,
+        "ma20": 249.49,
+        "ma60": 193.27,
+        "macd": "DIF +2.93零轴上方但本周快速收敛",
+        "rsi": 28.6,
+        "volume_trend": "近5日均量缩水28%，回调缩量"
+      },
+      "trend": "回调",
+      "support_levels": [193.27, 169.90],
+      "resistance_levels": [229.06, 249.49, 284.08],
+      "weekly_change": "-6.06%",
+      "signal": "neutral",
+      "notes": "今日-1.67%延续回调，已跌破MA5与MA20；RSI 28.6深度超卖；缩量回调显示主力筹码相对稳固，MA60(193)为关键中期支撑。"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "market": "A股",
+      "current_price": 280.95,
+      "technical_indicators": {
+        "ma5": 297.56,
+        "ma20": 298.02,
+        "ma60": 257.76,
+        "macd": "DIF +13.49仍居高位但加速回落",
+        "rsi": 49.5,
+        "volume_trend": "近5日均量缩水13%，温和缩量"
+      },
+      "trend": "下降",
+      "support_levels": [257.76, 219.14],
+      "resistance_levels": [297.56, 354.77],
+      "weekly_change": "-13.80%",
+      "signal": "bearish",
+      "notes": "今日-4.44%加速下跌，MA5与MA20粘合形成压力带；价格快速逼近MA60支撑258；周跌幅在持仓中第二大；浮盈安全垫快速消耗，距止损仅3%；CPO板块共振走弱。"
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "market": "A股",
+      "current_price": 1.855,
+      "technical_indicators": {
+        "ma5": 1.871,
+        "ma20": 1.920,
+        "ma60": 1.761,
+        "macd": "DIF接近零轴，方向不明",
+        "rsi": 43.1,
+        "volume_trend": "近5日均量微缩6%，平稳"
+      },
+      "trend": "震荡偏弱",
+      "support_levels": [1.761, 1.759],
+      "resistance_levels": [1.871, 1.920, 2.017],
+      "weekly_change": "-3.74%",
+      "signal": "neutral",
+      "notes": "今日+0.38%小幅反弹但仍位于MA5/MA20下方；RSI 43.1中性偏弱；MA60(1.76)与30日低点1.76重合形成关键防线，跌破则趋势恶化。"
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "market": "A股",
+      "current_price": 8.242,
+      "technical_indicators": {
+        "ma5": 8.176,
+        "ma20": 8.469,
+        "ma60": 8.277,
+        "macd": "DIF -0.11零轴下方",
+        "rsi": 30.6,
+        "volume_trend": "近5日均量缩水16%"
+      },
+      "trend": "震荡偏弱",
+      "support_levels": [8.068],
+      "resistance_levels": [8.277, 8.469, 9.009],
+      "weekly_change": "-1.19%",
+      "signal": "neutral",
+      "notes": "今日+1.34%反弹，已收复MA5但受阻于MA60(8.28)；RSI 30.6超卖；30日低点8.07形成箱体下沿；中盘股相对走弱。"
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "market": "美股(QDII)",
+      "current_price": 2.619,
+      "technical_indicators": {
+        "ma5": 2.616,
+        "ma20": 2.656,
+        "ma60": 2.406,
+        "macd": "DIF +0.03零轴附近",
+        "rsi": 45.7,
+        "volume_trend": "近5日均量微缩6%"
+      },
+      "trend": "震荡",
+      "support_levels": [2.406, 2.385],
+      "resistance_levels": [2.656, 2.865],
+      "weekly_change": "-2.53%",
+      "signal": "neutral",
+      "notes": "今日+1.35%技术性反弹，站上MA5；RSI中性；MA60(2.41)中期支撑稳固；方向跟随隔夜美股+人民币汇率。"
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "market": "美股(QDII)",
+      "current_price": 1.854,
+      "technical_indicators": {
+        "ma5": 1.860,
+        "ma20": 1.881,
+        "ma60": 1.788,
+        "macd": "DIF +0.01零轴附近",
+        "rsi": 40.8,
+        "volume_trend": "近5日均量缩水21%"
+      },
+      "trend": "震荡",
+      "support_levels": [1.788, 1.789],
+      "resistance_levels": [1.860, 1.881, 1.959],
+      "weekly_change": "-2.42%",
+      "signal": "neutral",
+      "notes": "今日+0.49%窄幅整理，位于MA5/MA20下方；RSI 40.8中性偏弱；MA60(1.79)与30日低点1.79高度重合形成关键支撑。"
+    },
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "market": "A股",
+      "current_price": 8.659,
+      "technical_indicators": {
+        "ma5": 8.772,
+        "ma20": 9.229,
+        "ma60": 9.643,
+        "macd": "DIF -0.23明确零轴下方且发散",
+        "rsi": 28.1,
+        "volume_trend": "近5日均量放大63%，恐慌性放量"
+      },
+      "trend": "下降",
+      "support_levels": [8.506],
+      "resistance_levels": [8.772, 9.229, 9.643, 9.909],
+      "weekly_change": "-6.40%",
+      "signal": "bearish",
+      "notes": "今日+1.80%超跌反弹，但价格全面位于三条均线下方且MA60斜率向下；MACD空头排列；放量下跌后小阳难以确认反转；30日低点8.506即昨日触及的止损位再次成为决战支撑；仓位偏重叠加趋势走坏，技术面最危险标的之一。"
+    },
+    {
+      "symbol": "09988",
+      "name": "阿里巴巴",
+      "market": "港股",
+      "current_price": 110.20,
+      "technical_indicators": {
+        "ma5": 113.40,
+        "ma20": 123.50,
+        "ma60": 127.48,
+        "macd": "DIF -4.49深度空头",
+        "rsi": 30.7,
+        "volume_trend": "近5日均量放大20%"
+      },
+      "trend": "下降",
+      "support_levels": [107.40],
+      "resistance_levels": [113.40, 123.50, 127.48, 140.90],
+      "weekly_change": "-9.97%",
+      "signal": "bearish",
+      "notes": "今日+2.61%技术性反弹，但全面跌破三条均线，MA60斜率向下；MACD严重空头；周跌幅近-10%为持仓最深；放量下跌+反弹缩量未现，趋势性破位；已击穿原止损线后继续下挫。"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "market": "A股",
+      "current_price": 280.00,
+      "technical_indicators": {
+        "ma5": 276.50,
+        "ma20": 296.74,
+        "ma60": 271.88,
+        "macd": "DIF -7.44零轴下方",
+        "rsi": 33.9,
+        "volume_trend": "近5日均量放大32%"
+      },
+      "trend": "震荡偏弱",
+      "support_levels": [271.88, 259.70],
+      "resistance_levels": [296.74, 349.19],
+      "weekly_change": "+2.17%",
+      "signal": "neutral",
+      "notes": "今日-3.39%回调但周线仍正收益+2.17%；价格站上MA5与MA60但受阻于MA20；RSI 33.9偏低；MA60(271.88)与30日低点259.70构成双支撑；放量下跌需观察明日能否企稳。"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "market": "A股",
+      "current_price": 57.22,
+      "technical_indicators": {
+        "ma5": 61.09,
+        "ma20": 64.73,
+        "ma60": 53.63,
+        "macd": "DIF +1.05零轴上方但快速回落",
+        "rsi": 36.9,
+        "volume_trend": "近5日均量缩水29%"
+      },
+      "trend": "下降",
+      "support_levels": [53.63, 49.42],
+      "resistance_levels": [61.09, 64.73, 75.31],
+      "weekly_change": "-14.39%",
+      "signal": "bearish",
+      "notes": "今日-4.78%跌幅最大；周跌-14.39%在持仓中最深；

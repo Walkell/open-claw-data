@@ -1,0 +1,508 @@
+{
+  "committee": "Research",
+  "cycle_id": "towney-20260612-1943-eod",
+  "principal": "towney",
+  "flow_type": "精简两委员",
+  "data_quality": {
+    "bitable_read": "ok",
+    "market_data_source": "tencent_gtimg_qfq + tencent_realtime",
+    "validation": "现价 gtimg 实时双源一致；MA/MACD/RSI 基于 qfq 复权日线计算；天孚通信(6/12除权10送4)与华海清科(6/10除权10转4派4)已使用前复权",
+    "data_date": "2026-06-12 EOD"
+  },
+  "analysis": {
+    "positions": [
+      {
+        "symbol": "688120",
+        "name": "华海清科",
+        "market": "A股",
+        "current_price": 184.0,
+        "change_pct": -1.47,
+        "volume": 19278338,
+        "cost": 147.1,
+        "stop_loss": 157,
+        "take_profit": 214.17,
+        "pnl_pct": 23.9,
+        "position_pct": 13.92,
+        "technical": {
+          "ma5": 181.32,
+          "ma20": 189.97,
+          "ma60": 153.02,
+          "macd_status": "DIF 5.00 / DEA 7.58 / 柱-2.57，0轴上空头",
+          "rsi14": 31.5,
+          "trend": "短期回踩，中期偏多",
+          "vs_ma5_pct": 1.5,
+          "vs_ma20_pct": -3.1,
+          "vs_ma60_pct": 20.3,
+          "stop_loss_buffer_pct": 17.2
+        },
+        "key_observations": [
+          "现价站上MA5但跌破MA20，进入短线整理",
+          "RSI 31.5 接近超卖，存在技术性反弹诉求",
+          "止损位157距现价17.2%，安全垫充足",
+          "60日线153.02大幅上行，中期趋势仍未破坏"
+        ]
+      },
+      {
+        "symbol": "588090",
+        "name": "科创芯片ETF",
+        "market": "A股",
+        "current_price": 1.713,
+        "change_pct": 0.23,
+        "volume": 713078,
+        "cost": 1.621,
+        "stop_loss": null,
+        "take_profit": null,
+        "pnl_pct": 5.8,
+        "position_pct": 9.93,
+        "technical": {
+          "ma5": 1.696,
+          "ma20": 1.789,
+          "ma60": 1.582,
+          "macd_status": "DIF 0.009 / DEA 0.033 / 柱-0.024，零轴附近空头",
+          "rsi14": 30.0,
+          "trend": "短期下行通道，未脱离",
+          "vs_ma5_pct": 1.0,
+          "vs_ma20_pct": -4.2,
+          "vs_ma60_pct": 8.3
+        },
+        "key_observations": [
+          "RSI 30 临界超卖，下行动能衰减",
+          "未设止损止盈，风险敞口暴露",
+          "MA20 1.789 是关键阻力位，需放量突破"
+        ]
+      },
+      {
+        "symbol": "688008",
+        "name": "澜起科技",
+        "market": "A股",
+        "current_price": 224.88,
+        "change_pct": -1.67,
+        "volume": 63745414,
+        "cost": 155.23,
+        "stop_loss": 210,
+        "take_profit": 280,
+        "pnl_pct": 54.21,
+        "position_pct": 12.15,
+        "technical": {
+          "ma5": 229.06,
+          "ma20": 249.49,
+          "ma60": 193.27,
+          "macd_status": "DIF 4.54 / DEA 11.37 / 柱-6.82，0轴上空头放大",
+          "rsi14": 28.6,
+          "trend": "中期回调，深度超卖",
+          "vs_ma5_pct": -1.8,
+          "vs_ma20_pct": -9.9,
+          "vs_ma60_pct": 16.4,
+          "stop_loss_buffer_pct": 6.6
+        },
+        "key_observations": [
+          "RSI 28.6 深度超卖区，技术性反弹概率高",
+          "距止损210仅6.6%，安全垫已收窄",
+          "MACD柱-6.82仍在扩大，下跌动能未止",
+          "60日线193仍上行；浮盈54%安全垫充足"
+        ]
+      },
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "market": "A股",
+        "current_price": 280.95,
+        "change_pct": -4.44,
+        "volume": 474289,
+        "cost": 167.94,
+        "stop_loss": 285.26,
+        "take_profit": 385.08,
+        "pnl_pct": 94.1,
+        "position_pct": 15.95,
+        "technical": {
+          "ma5": 297.56,
+          "ma20": 298.02,
+          "ma60": 257.76,
+          "macd_status": "DIF 11.71 / DEA 16.88 / 柱-5.17，0轴上空头",
+          "rsi14": 49.5,
+          "trend": "高位回调，破位",
+          "vs_ma5_pct": -5.6,
+          "vs_ma20_pct": -5.7,
+          "vs_ma60_pct": 9.0,
+          "stop_loss_buffer_pct": -1.5
+        },
+        "key_observations": [
+          "现价280.95已跌破止损位285.26约1.5%，触发止损纪律",
+          "今日6/12除权(10送4)首日跌4.44%(qfq后)，技术形态破位",
+          "MA5/MA20几乎重合在298附近，构成密集压力",
+          "60日线257.76或为下一支撑参考",
+          "浮盈94%安全垫极厚，但止损纪律应执行"
+        ]
+      },
+      {
+        "symbol": "159949",
+        "name": "创业板50ETF",
+        "market": "A股",
+        "current_price": 1.855,
+        "change_pct": 0.38,
+        "volume": 8323885,
+        "cost": 1.203,
+        "stop_loss": 1.7,
+        "take_profit": 2.5,
+        "pnl_pct": 60.18,
+        "position_pct": 3.18,
+        "technical": {
+          "ma5": 1.871,
+          "ma20": 1.92,
+          "ma60": 1.761,
+          "macd_status": "DIF 0.018 / DEA 0.040 / 柱-0.022，零轴空头",
+          "rsi14": 43.1,
+          "trend": "短中期均线压制",
+          "vs_ma5_pct": -0.9,
+          "vs_ma20_pct": -3.4,
+          "vs_ma60_pct": 5.3,
+          "stop_loss_buffer_pct": 9.2
+        },
+        "key_observations": [
+          "RSI 43.1 中性偏弱，未到超卖",
+          "60日线1.761支撑较好，止损1.7位置合理",
+          "浮盈60%、仓位仅3.18%，整体风险可控"
+        ]
+      },
+      {
+        "symbol": "510500",
+        "name": "中证500ETF",
+        "market": "A股",
+        "current_price": 8.242,
+        "change_pct": 1.34,
+        "volume": 3133578,
+        "cost": 8.302,
+        "stop_loss": 7.5,
+        "take_profit": 9.5,
+        "pnl_pct": 0.45,
+        "position_pct": 4.01,
+        "technical": {
+          "ma5": 8.177,
+          "ma20": 8.469,
+          "ma60": 8.277,
+          "macd_status": "DIF -0.086 / DEA -0.035 / 柱-0.051，0轴下空头",
+          "rsi14": 30.7,
+          "trend": "弱反弹，未确认底部",
+          "vs_ma5_pct": 0.8,
+          "vs_ma20_pct": -2.7,
+          "vs_ma60_pct": -0.4,
+          "stop_loss_buffer_pct": 9.0
+        },
+        "key_observations": [
+          "今日反弹+1.34%，站上MA5但仍处MA60下方",
+          "RSI 30.7 接近超卖，反弹具备动能",
+          "MACD仍在零轴下方，趋势未扭转",
+          "成本线8.302需站稳；MA20 8.469为关键阻力"
+        ]
+      },
+      {
+        "symbol": "513300",
+        "name": "纳斯达克ETF",
+        "market": "A股QDII",
+        "current_price": 2.619,
+        "change_pct": 1.35,
+        "volume": 3108976,
+        "cost": 2.235,
+        "stop_loss": 2.3,
+        "take_profit": 3.5,
+        "pnl_pct": 20.22,
+        "position_pct": 5.06,
+        "technical": {
+          "ma5": 2.616,
+          "ma20": 2.656,
+          "ma60": 2.406,
+          "macd_status": "DIF 0.046 / DEA 0.074 / 柱-0.028，0轴上空头",
+          "rsi14": 45.7,
+          "trend": "震荡整理",
+          "vs_ma5_pct": 0.1,
+          "vs_ma20_pct": -1.4,
+          "vs_ma60_pct": 8.9,
+          "stop_loss_buffer_pct": 12.2
+        },
+        "key_observations": [
+          "今日跟随美股反弹+1.35%",
+          "MA60 2.406稳健向上，中期上升通道完好",
+          "止损2.3距现价12.2%，安全",
+          "浮盈20.2%形成保护"
+        ]
+      },
+      {
+        "symbol": "513650",
+        "name": "标普500ETF",
+        "market": "A股QDII",
+        "current_price": 1.854,
+        "change_pct": 0.49,
+        "volume": 2080914,
+        "cost": 1.654,
+        "stop_loss": 1.7,
+        "take_profit": 2.2,
+        "pnl_pct": 14.87,
+        "position_pct": 1.43,
+        "technical": {
+          "ma5": 1.86,
+          "ma20": 1.881,
+          "ma60": 1.788,
+          "macd_status": "DIF 0.014 / DEA 0.026 / 柱-0.012，0轴上轻微空头",
+          "rsi14": 40.8,
+          "trend": "横盘整理",
+          "vs_ma5_pct": -0.3,
+          "vs_ma20_pct": -1.4,
+          "vs_ma60_pct": 3.7,
+          "stop_loss_buffer_pct": 8.3
+        },
+        "key_observations": [
+          "震荡区间窄幅运行",
+          "MA60 1.788上方运行，趋势温和向上",
+          "仓位仅1.43%，风险敞口很小"
+        ]
+      },
+      {
+        "symbol": "518880",
+        "name": "黄金ETF",
+        "market": "A股",
+        "current_price": 8.659,
+        "change_pct": 1.8,
+        "volume": 4367407,
+        "cost": 9.2,
+        "stop_loss": 8.5,
+        "take_profit": 10.5,
+        "pnl_pct": 0.57,
+        "position_pct": 1.75,
+        "technical": {
+          "ma5": 8.772,
+          "ma20": 9.229,
+          "ma60": 9.643,
+          "macd_status": "DIF -0.266 / DEA -0.204 / 柱-0.062，0轴下空头",
+          "rsi14": 28.0,
+          "trend": "深度回调反抽",
+          "vs_ma5_pct": -1.3,
+          "vs_ma20_pct": -6.2,
+          "vs_ma60_pct": -10.2,
+          "stop_loss_buffer_pct": 1.8
+        },
+        "key_observations": [
+          "今日反抽+1.80%但仍在均线系统下方",
+          "现价8.659距止损8.50仅1.8%，距离极近",
+          "RSI 28 深度超卖，反弹动能存在",
+          "已减仓至1.75%，风险敞口已大幅收敛"
+        ]
+      },
+      {
+        "symbol": "09988",
+        "name": "阿里巴巴-W",
+        "market": "港股",
+        "current_price_hkd": 110.2,
+        "change_pct": 2.61,
+        "volume": 74743889,
+        "cost_cny": 130.638,
+        "stop_loss_cny": 100,
+        "take_profit_cny": 155,
+        "pnl_pct": -13.15,
+        "position_pct": 1.28,
+        "technical": {
+          "ma5": 112.99,
+          "ma20": 122.63,
+          "ma60": 126.5,
+          "macd_status": "DIF -4.63 / DEA -2.98 / 柱-1.65，0轴下空头",
+          "rsi14": 31.5,
+          "trend": "中期下行，超卖反抽",
+          "vs_ma5_pct": -2.5,
+          "vs_ma20_pct": -10.1,
+          "vs_ma60_pct": -12.9
+        },
+        "key_observations": [
+          "港股今日反抽+2.61%但仍处MA20/MA60下方",
+          "RSI 31.5 接近超卖",
+          "已减仓至1.28%，风险敞口大幅缩减",
+          "止损100港币(已折算)距现价仍有约10%空间"
+        ]
+      },
+      {
+        "symbol": "688041",
+        "name": "海光信息",
+        "market": "A股",
+        "current_price": 280.0,
+        "change_pct": -3.39,
+        "volume": 49320293,
+        "cost": 267.318,
+        "stop_loss": 255,
+        "take_profit": 400,
+        "pnl_pct": -0.52,
+        "position_pct": 15.14,
+        "technical": {
+          "ma5": 276.5,
+          "ma20": 296.74,
+          "ma60": 271.88,
+          "macd_status": "DIF -4.84 / DEA -1.33 / 柱-3.51，0轴下死叉扩大",
+          "rsi14": 33.9,
+          "trend": "破位下跌",
+          "vs_ma5_pct": 1.3,
+          "vs_ma20_pct": -5.6,
+          "vs_ma60_pct": 3.0,
+          "stop_loss_buffer_pct": 8.9
+        },
+        "key_observations": [
+          "跌破MA20，MACD死叉扩大",
+          "RSI 33.9 偏弱但未超卖",
+          "已建仓~267.3，浮亏0.5%接近成本",
+          "止损255距现价8.9%，缓冲尚可"
+        ]
+      },
+      {
+        "symbol": "002156",
+        "name": "通富微电",
+        "market": "A股",
+        "current_price": 57.22,
+        "change_pct": -4.78,
+        "volume": 1455416,
+        "cost": 60.115,
+        "stop_loss": 50,
+        "take_profit": 78,
+        "pnl_pct": -4.81,
+        "position_pct": 1.62,
+        "technical": {
+          "ma5": 61.09,
+          "ma20": 64.73,
+          "ma60": 53.63,
+          "macd_status": "DIF 1.30 / DEA 2.94 / 柱-1.64，0轴上空头扩大",
+          "rsi14": 36.9,
+          "trend": "破位下跌",
+          "vs_ma5_pct": -6.3,
+          "vs_ma20_pct": -11.6,
+          "vs_ma60_pct": 6.7,
+          "stop_loss_buffer_pct": 12.6
+        },
+        "key_observations": [
+          "今日大跌-4.78%，跌破MA5/MA20",
+          "MACD死叉扩大，下行动能强",
+          "RSI 36.9 偏弱",
+          "距止损50还有12.6%空间",
+          "仓位仅1.62%试探仓，风险可控"
+        ]
+      },
+      {
+        "symbol": "002463",
+        "name": "沪电股份",
+        "market": "A股",
+        "current_price": 125.2,
+        "change_pct": -1.35,
+        "volume": 739443,
+        "cost": 126.995,
+        "stop_loss": 105,
+        "take_profit": 165,
+        "pnl_pct": -1.41,
+        "position_pct": 3.43,
+        "technical": {
+          "ma5": 132.16,
+          "ma20": 124.78,
+          "ma60": 103.44,
+          "macd_status": "DIF 7.12 / DEA 8.36 / 柱-1.24，0轴上空头",
+          "rsi14": 51.6,
+          "trend": "高位整理，靠近MA20支撑",
+          "vs_ma5_pct": -5.3,
+          "vs_ma20_pct": 0.3,
+          "vs_ma60_pct": 21.0,
+          "stop_loss_buffer_pct": 16.1
+        },
+        "key_observations": [
+          "现价125.20基本贴MA20 124.78支撑",
+          "RSI 51.6 中性",
+          "60日线103.44大幅上行，中期趋势完好",
+          "止损105距现价16.1%，安全垫充足",
+          "刚建仓3.43%，浮亏1.4%可接受"
+        ]
+      }
+    ],
+    "watchlist": [
+      {
+        "symbol": "002125",
+        "name": "湘潭电化",
+        "current_price": 18.06,
+        "change_pct": -1.42,
+        "volume": 860225,
+        "key_observations": [
+          "快照价18.78下跌至18.06，仍高于关注理由建仓线14元",
+          "继续观望"
+        ]
+      },
+      {
+        "symbol": "300762",
+        "name": "上海瀚讯",
+        "current_price": 36.66,
+        "change_pct": -3.22,
+        "volume": 395968,
+        "key_observations": [
+          "从快照37.48下跌至36.66",
+          "距建仓目标30元还有18%下行空间"
+        ]
+      },
+      {
+        "symbol": "688276",
+        "name": "百克生物",
+        "current_price": 14.54,
+        "change_pct": 0.35,
+        "volume": 2913247,
+        "key_observations": [
+          "状态已移除，无需跟踪"
+        ]
+      },
+      {
+        "symbol": "688072",
+        "name": "拓荆科技",
+        "current_price": 645.18,
+        "change_pct": -1.54,
+        "volume": 15491884,
+        "key_observations": [
+          "快照613.88上行至645.18，反向走强",
+          "建仓线550尚远，继续观望"
+        ]
+      },
+      {
+        "symbol": "688234",
+        "name": "天岳先进",
+        "current_price": 123.7,
+        "change_pct": -1.77,
+        "volume": 20403708,
+        "key_observations": [
+          "快照123.8基本持平",
+          "6/12投委会暂不建仓",
+          "等120-125企稳缩量或MACD金叉再议"
+        ]
+      },
+      {
+        "symbol": "000988",
+        "name": "华工科技",
+        "current_price": 151.01,
+        "change_pct": 0.51,
+        "volume": 627813,
+        "key_observations": [
+          "快照149.29微涨至151.01",
+          "建仓线140尚有7%空间，继续观望"
+        ]
+      },
+      {
+        "symbol": "563530",
+        "name": "卫星ETF易方达",
+        "current_price": 1.325,
+        "change_pct": 0.53,
+        "volume": 1198984,
+        "key_observations": [
+          "快照1.327基本持平",
+          "建仓线1.20，距现价9.4%下行空间"
+        ]
+      },
+      {
+        "symbol": "159227",
+        "name": "航空航天ETF华夏",
+        "current_price": 1.148,
+        "change_pct": 4.46,
+        "volume": 6195077,
+        "key_observations": [
+          "从快照1.101大涨至1.148(+4.27%)，板块爆发",
+          "建仓线1.00已远离，需重新评估"
+        ]
+      }
+    ],
+    "summary": "【6月12日EOD技术面总结】Towney组合13只持仓全景：\n• 严重风险：天孚通信(300394)现价280.95已跌破止损285.26约1.5%，触发止损纪律(浮盈94%安全垫极厚但纪律应执行)；黄金ETF(518880)距止损仅1.8%；澜起科技(688008)距止损6.6%。\n• 整体技术面：组合显著超卖，11/13只标的RSI<50，6只RSI<35(688008/688120/588090/510500/518880/300394+9988港股反抽)；美股ETF板块今日跟随美股反弹偏强(513300+1.35%/513650+0.49%/510500+1.34%)。\n• 趋势分化：核心持仓688120(华海清科)、688008(澜起科技)中长期(MA60)均线趋势完好，浮盈安全垫充足；高位股300394(天孚通信)、688041(海光信息)破位明显；002156(通富微电)-4.78%继续走弱。\n• 新建仓002463(沪电股份)、688041(海光信息)目前浮亏可控，止损位安全。\n• 观察池：159227(航空航天ETF)异动+4.46%突破快照价，需重新评估建仓策略；其他标的未触及建仓信号。\n• 数据校验：现价均通过 gtimg 实时双源验证，A股 MA/MACD/RSI 基于前复权日线(已处理华海清科6/10、天孚通信6/12两次除权除息)。"
+  }
+}

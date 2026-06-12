@@ -1,0 +1,7 @@
+{
+  "principal": "towney",
+  "flow_type": "四委员",
+  "cycle_id": "towney-20260612-1840-weekly",
+  "trigger": "cron-weekly-review",
+  "timestamp": "2026-06-12T18:40:00+08:00"
+}

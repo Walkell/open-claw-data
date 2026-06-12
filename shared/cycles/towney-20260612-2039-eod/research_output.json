@@ -1,0 +1,323 @@
+{
+  "cycle_id": "towney-20260612-2039-eod",
+  "analyst": "Research",
+  "principal": "towney",
+  "data_verification": "DOUBLE-SOURCE VERIFIED: akshare(eastmoney) + tencent gtimg, all 20 symbols diff <0.1%",
+  "market_overview": "A股全线反弹但科技股结构性分化。上证指数 4031.51 (+1.12%) 收复 4000；沪深300 4777.32 (+1.16%)；深证成指 14963.41 (+0.75%)；创业板指 3830.35 (+0.50%)。涨幅领先的是传统大盘+军工航天 (159227 +4.46% 异动)，但 AI 算力链严重分化：天孚通信 -4.44%、海光信息 -3.39%、通富微电 -4.78%、华工科技仅 +0.51%。光模块/PCB/封测同步走弱。黄金ETF +1.80% 避险情绪抬头。港股阿里巴巴 +2.61% 反弹但仍弱于 MA5。整体：大盘强但 AI 链弱，组合风险敞口集中在 AI 算力侧需高度警觉。",
+  "indices_snapshot": {
+    "上证指数": {
+      "price": 4031.51,
+      "change_pct": 1.12
+    },
+    "沪深300": {
+      "price": 4777.32,
+      "change_pct": 1.16
+    },
+    "深证成指": {
+      "price": 14963.41,
+      "change_pct": 0.75
+    },
+    "创业板指": {
+      "price": 3830.35,
+      "change_pct": 0.5
+    }
+  },
+  "positions_analysis": [
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "market": "A股",
+      "current_price": 184.0,
+      "change_pct": -1.47,
+      "technical_summary": "除权后复权成本147.10浮盈+25.2%。今日小阴-1.47%，盘中振幅大(198.89→183.20)资金分歧。MA5(181.32)已站上，MA10(179.19)短期支撑，MA20(189.97)上方压制。10日涨+5.36%仍处中期上升通道。距止损157+17.2%缓冲，距止盈214.17需+16.4%。",
+      "key_levels": {
+        "support": 179.19,
+        "resistance": 198.89
+      },
+      "trend": "震荡",
+      "score": 7
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "market": "A股",
+      "current_price": 1.713,
+      "change_pct": 0.23,
+      "technical_summary": "微涨+0.23%。在科创相关持仓集体下跌的背景下相对抗跌(ETF篮子分散对冲)。MA5(1.760)上方压制，价格仍处5日均线下方表明短期回调未结束。",
+      "key_levels": {
+        "support": 1.7,
+        "resistance": 1.779
+      },
+      "trend": "震荡",
+      "score": 5
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "market": "A股",
+      "current_price": 224.88,
+      "change_pct": -1.67,
+      "technical_summary": "继续阴跌-1.67%，10日跌-3.19%。MA5(229.06)→MA10(236.76)→MA20(249.49)完整空头排列。20日低点221.00即将考验，距止损210仅+6.6%。盈亏比+44.9%仍丰厚，但需警惕跌破221后下探210。",
+      "key_levels": {
+        "support": 221.0,
+        "resistance": 236.76
+      },
+      "trend": "下降",
+      "score": 4
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "market": "A股",
+      "current_price": 280.95,
+      "change_pct": -4.44,
+      "technical_summary": "⚠️大幅下挫-4.44%收最低280.95，MA5(297.56)、MA20(298.02)全破，MA10(314.30)远在上方。10日跌-8.14%趋势恶化最严重。除权后复权止损285.26已击穿(盘中最低280.95<285.26)，触发止损警报。",
+      "key_levels": {
+        "support": 270.0,
+        "resistance": 297.56
+      },
+      "trend": "下降",
+      "score": 2
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "market": "A股",
+      "current_price": 1.855,
+      "change_pct": 0.38,
+      "technical_summary": "微涨+0.38%与创业板指+0.50%同步。MA5(1.897)稍上方压制。距止损1.70+9.1%缓冲。盈亏比+54.2%健康。",
+      "key_levels": {
+        "support": 1.851,
+        "resistance": 1.899
+      },
+      "trend": "震荡",
+      "score": 6
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "market": "A股",
+      "current_price": 8.242,
+      "change_pct": 1.34,
+      "technical_summary": "中盘股反弹+1.34%受益大盘普涨。MA5(8.297)微上方压制，但仍在上升通道。盈亏比+0.45%接近成本。",
+      "key_levels": {
+        "support": 8.211,
+        "resistance": 8.37
+      },
+      "trend": "上升",
+      "score": 6
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "market": "A股",
+      "current_price": 2.619,
+      "change_pct": 1.35,
+      "technical_summary": "美股映射资产反弹+1.35%。MA5(2.671)仍在上方压制。盈亏比+17.2%。距止损2.30缓冲+13.9%。",
+      "key_levels": {
+        "support": 2.612,
+        "resistance": 2.687
+      },
+      "trend": "震荡偏强",
+      "score": 6
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "market": "A股",
+      "current_price": 1.854,
+      "change_pct": 0.49,
+      "technical_summary": "美股均衡映射+0.49%弱于纳指ETF。MA5(1.875)上方压制。盈亏比+12.1%。距止损1.70+9.1%。",
+      "key_levels": {
+        "support": 1.852,
+        "resistance": 1.881
+      },
+      "trend": "震荡",
+      "score": 6
+    },
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "market": "A股",
+      "current_price": 8.659,
+      "change_pct": 1.8,
+      "technical_summary": "✅避险情绪抬升+1.80%，MA5(8.670)即将突破。在AI链整体走弱背景下提供组合对冲。盈亏比-5.9%仍浮亏，距止损8.50缓冲仅+1.9%偏紧。",
+      "key_levels": {
+        "support": 8.5,
+        "resistance": 8.715
+      },
+      "trend": "上升",
+      "score": 6
+    },
+    {
+      "symbol": "09988",
+      "name": "阿里巴巴",
+      "market": "港股",
+      "current_price": 110.2,
+      "change_pct": 2.61,
+      "technical_summary": "港股反弹+2.61%表现领先。但MA5(113.40)、MA20(123.50)仍层层压制。10日跌-10.26%中期趋势仍弱。20日低点106.10接近，距止损100(港币)缓冲+9.3%。除净后反弹试探，需观察能否站上113.40。",
+      "key_levels": {
+        "support": 106.1,
+        "resistance": 113.4
+      },
+      "trend": "弱反弹",
+      "score": 5
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "market": "A股",
+      "current_price": 280.0,
+      "change_pct": -3.39,
+      "technical_summary": "⚠️继续下挫-3.39%收最低280.00，跌破MA10(278.72)和成本267.318区域。MA5(276.50)即将失守，MA20(296.74)远在上方。盈亏比从持平转为-2.6%。距止损255缓冲+9.8%，安全边际收窄。20日低点255.84已逼近止损位。新建仓后立即承压。",
+      "key_levels": {
+        "support": 276.5,
+        "resistance": 296.74
+      },
+      "trend": "下降",
+      "score": 3
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "market": "A股",
+      "current_price": 57.22,
+      "change_pct": -4.78,
+      "technical_summary": "⚠️大幅下挫-4.78%跌至20日低点54.93附近(盘中低57.08)。完整空头排列：MA5(61.09)→MA10(63.88)→MA20(64.73)→现价57.22。10日跌-6.79%。已进入6/12投委会预设的54-58加仓区间。距止损50缓冲+14.4%。RSI接近超卖，但MACD仍空头。",
+      "key_levels": {
+        "support": 54.93,
+        "resistance": 61.09
+      },
+      "trend": "下降(接近超卖)",
+      "score": 4
+    },
+    {
+      "symbol": "002463",
+      "name": "沪电股份",
+      "market": "A股",
+      "current_price": 125.2,
+      "change_pct": -1.35,
+      "technical_summary": "新建仓即承压-1.35%。跌破MA20(124.78)微弱撑住。MA5(132.16)→MA10(131.81)在上方。20日低点98.30，10日涨+2.20%中期趋势仍正。距止损105缓冲+16.1%，安全边际充足。",
+      "key_levels": {
+        "support": 124.78,
+        "resistance": 131.81
+      },
+      "trend": "震荡偏弱",
+      "score": 5
+    }
+  ],
+  "watchlist_analysis": [
+    {
+      "symbol": "002125",
+      "name": "湘潭电化",
+      "market": "A股",
+      "current_price": 18.06,
+      "change_pct": -1.42,
+      "priority": "高",
+      "status": "已入池",
+      "technical_summary": "高位回调-1.42%。MA5(17.54)支撑稳，MA20(15.50)中期均线大幅上移。10日涨+20.92%短期严重过热。距观察池目标价20仅+10.7%，仍高于建仓线14(39倍PE高估)。短期不具建仓性价比，等回调至14以下重新评估。",
+      "key_levels": {
+        "support": 17.54,
+        "resistance": 19.37
+      },
+      "trend": "上升(过热)",
+      "score": 5
+    },
+    {
+      "symbol": "300762",
+      "name": "上海瀚讯",
+      "market": "A股",
+      "current_price": 36.66,
+      "change_pct": -3.22,
+      "priority": "中",
+      "status": "观察中",
+      "technical_summary": "回调-3.22%。MA5(36.87)微下方，MA20(37.32)接近。10日涨+13.85%已脱离前期低位。距建仓线30仍有距离且公司未扭亏，继续观察。",
+      "key_levels": {
+        "support": 36.4,
+        "resistance": 39.25
+      },
+      "trend": "震荡",
+      "score": 5
+    },
+    {
+      "symbol": "688072",
+      "name": "拓荆科技",
+      "market": "A股",
+      "current_price": 645.18,
+      "change_pct": -1.54,
+      "priority": "中",
+      "status": "观察中",
+      "technical_summary": "高位回调-1.54%，MA5(616.78)站上，MA20(622.83)形成支撑。10日涨+10.66%仍处上升通道。距建仓线550仍有+17%距离，估值偏贵。",
+      "key_levels": {
+        "support": 616.78,
+        "resistance": 699.0
+      },
+      "trend": "上升",
+      "score": 6
+    },
+    {
+      "symbol": "688234",
+      "name": "天岳先进",
+      "market": "A股",
+      "current_price": 123.7,
+      "change_pct": -1.77,
+      "priority": "中",
+      "status": "观察中",
+      "technical_summary": "继续阴跌-1.77%。MA5(126.70)→MA20(142.50)空头排列。10日跌-9.03%。已跌至20日低点119.89附近，距止损115缓冲仅+7.6%。投委会预设120-125企稳条件未达，MACD金叉信号未出现，继续观望。",
+      "key_levels": {
+        "support": 119.89,
+        "resistance": 126.7
+      },
+      "trend": "下降",
+      "score": 3
+    },
+    {
+      "symbol": "000988",
+      "name": "华工科技",
+      "market": "A股",
+      "current_price": 151.01,
+      "change_pct": 0.51,
+      "priority": "高",
+      "status": "观察中",
+      "technical_summary": "AI光模块链中相对抗跌+0.51%。MA5(150.78)站上，MA20(155.58)上方压制。10日涨+5.73%。距建仓线140仍+7.9%，未达入场点位。Q1净利+55.8%订单排满全年基本面优质但PE93倍偏贵。",
+      "key_levels": {
+        "support": 150.78,
+        "resistance": 155.58
+      },
+      "trend": "震荡",
+      "score": 6
+    },
+    {
+      "symbol": "563530",
+      "name": "卫星ETF易方达",
+      "market": "A股",
+      "current_price": 1.325,
+      "change_pct": 0.53,
+      "priority": "中",
+      "status": "观察中",
+      "technical_summary": "小涨+0.53%。卫星产业链走稳但未爆发。MA5(1.342)上方压制。距建仓线1.20仍有+10.4%距离，未达入场。",
+      "key_levels": {
+        "support": 1.32,
+        "resistance": 1.365
+      },
+      "trend": "震荡",
+      "score": 5
+    },
+    {
+      "symbol": "159227",
+      "name": "航空航天ETF华夏",
+      "market": "A股",
+      "current_price": 1.148,
+      "change_pct": 4.46,
+      "priority": "中",
+      "status": "观察中",
+      "technical_summary": "🚀异动大涨+4.46%！明显强于大盘。MA5(1.116)、MA20已被一举突破，10日涨幅显著。距建仓线1.00已涨+14.8%超出，错过最佳入场点。需等回调或重新评估上车点。商业航天主题催化爆发。",
+      "key_levels": {
+        "support": 1.116,
+        "resistance": 1.171
+      },
+      "trend": "上升(强势)",
+      "score": 7
+    }
+  ]
+}

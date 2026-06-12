@@ -1,0 +1,249 @@
+{
+  "principal": "klaire",
+  "agent": "risk",
+  "cycle_id": "klaire-20260612-2121-eod",
+  "data": {
+    "scope": "EOD 风险评估 · 持仓7只 + 观察池3只（去重）",
+    "as_of": "2026-06-12 收盘",
+    "data_source": "✅ 行情双源验证(gtimg+eastmoney push2) · 财务指标 eastmoney push2 · 持仓 Bitable",
+    "portfolio_alerts": [
+      {
+        "type": "AI_CONCENTRATION",
+        "level": "WARNING",
+        "detail": "AI赛道集中度 41.3%（双环传动+均胜电子/总持仓），超过40%阈值",
+        "action": "VETO 任何AI方向新增仓位"
+      }
+    ],
+    "positions": [
+      {
+        "symbol": "002472",
+        "name": "双环传动",
+        "risk_score": 3.8,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "position_info": {
+          "cost": 40.693,
+          "stop_loss": 38.0,
+          "take_profit": 46.5,
+          "qty": 400,
+          "current_price": 41.0,
+          "stop_loss_distance_pct": 7.3,
+          "pnl_pct": 0.0075
+        },
+        "dimensions": {
+          "financial_health": { "score": 3, "note": "PE(TTM)27x, 盈利稳健, 毛利与现金流良好, 龙头属性。API直接拉取验证。", "source": "self" },
+          "valuation": { "score": 4, "note": "PE 27-30x, PB 3.38, 与机器人主题成长性匹配, MA60附近有安全垫。", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "technical": { "score": 5, "note": "MA20下方MA60上方, 60日位置59%, 短中期均线纠缠, 趋势中性偏弱待企稳。行情自拉验证。", "source": "self" },
+          "macro": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "news_sentiment": { "score": 0, "note": "精简流程，News未参与，默认0", "source": "news_agent" }
+        },
+        "summary": "基本面稳健，估值与成长性匹配。技术面中性偏弱，距止损7.3%安全。AI赛道持仓集中度触及40%预警线。"
+      },
+      {
+        "symbol": "600808",
+        "name": "马钢股份",
+        "risk_score": 6.2,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "position_info": {
+          "cost": 3.863,
+          "stop_loss": 2.7,
+          "take_profit": 3.5,
+          "qty": 1000,
+          "current_price": 2.83,
+          "stop_loss_distance_pct": 4.6,
+          "pnl_pct": -0.2674
+        },
+        "dimensions": {
+          "financial_health": { "score": 9, "note": "PE(TTM)-974.67（TTM亏损态）, 财报质量差, 行业产能过剩。API直接拉取确认。", "source": "self" },
+          "valuation": { "score": 6, "note": "PB 0.91破净提供安全垫, 但ROE极低, PE无意义。理论安全但盈利能力缺失。", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "technical": { "score": 8, "note": "空头排列(MA5<MA10<MA20<MA60), 60日位置仅10%, 弱反弹未确认。行情自拉验证。", "source": "self" },
+          "macro": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "news_sentiment": { "score": 0, "note": "精简流程，News未参与，默认0", "source": "news_agent" }
+        },
+        "summary": "持仓巨亏-26.7%, 财务面最差（TTM亏损）, 技术面极弱。虽risk_score未达7分VETO线, 但综合风险偏高。已减仓至1000股, 按既定计划执行。"
+      },
+      {
+        "symbol": "588080",
+        "name": "科创50ETF",
+        "risk_score": 4.1,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "position_info": {
+          "cost": 1.72,
+          "stop_loss": 1.55,
+          "take_profit": 1.98,
+          "qty": 9500,
+          "current_price": 1.701,
+          "stop_loss_distance_pct": 8.9,
+          "pnl_pct": -0.011
+        },
+        "dimensions": {
+          "financial_health": { "score": 4, "note": "ETF无单体财报, 按权重综合给中性风险分。", "source": "self" },
+          "valuation": { "score": 4, "note": "指数估值历史中位偏低, 安全边际尚可。", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "technical": { "score": 5, "note": "MA60上方但短期空头排列, 60日位置64%。行情自拉验证。", "source": "self" },
+          "macro": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "news_sentiment": { "score": 0, "note": "精简流程，News未参与，默认0", "source": "news_agent" }
+        },
+        "summary": "宽基ETF, 估值中性偏低, 距止损8.9%安全。补仓后成本1.72, 止损1.55、目标1.98有效。"
+      },
+      {
+        "symbol": "159540",
+        "name": "信创ETF",
+        "risk_score": 4.1,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "position_info": {
+          "cost": 2.203,
+          "stop_loss": 1.85,
+          "take_profit": 2.3,
+          "qty": 2000,
+          "current_price": 1.991,
+          "stop_loss_distance_pct": 7.1,
+          "pnl_pct": -0.0962
+        },
+        "dimensions": {
+          "financial_health": { "score": 4, "note": "ETF不适用单体财报, 按权重综合给中性风险分。", "source": "self" },
+          "valuation": { "score": 4, "note": "指数级估值合理, 无个股泡沫。", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "technical": { "score": 5, "note": "MA60上方但短期空头排列, 60日位置63%。行情自拉验证。", "source": "self" },
+          "macro": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "news_sentiment": { "score": 0, "note": "精简流程，News未参与，默认0", "source": "news_agent" }
+        },
+        "summary": "信创主线ETF, 估值合理, 距止损7.1%安全。持仓-9.6%但未破位, 等主题催化。"
+      },
+      {
+        "symbol": "600699",
+        "name": "均胜电子",
+        "risk_score": 4.7,
+        "verdict": "VETO",
+        "veto_reason": "已破止损价（现价23.86 < 止损24）, 触发止损距离≤3%否决规则，禁止该标的任何加仓",
+        "position_info": {
+          "cost": 24.89,
+          "stop_loss": 24.0,
+          "take_profit": 33.0,
+          "qty": 200,
+          "current_price": 23.86,
+          "stop_loss_distance_pct": -0.59,
+          "pnl_pct": -0.0414
+        },
+        "dimensions": {
+          "financial_health": { "score": 4, "note": "PE(TTM)26x, 营收稳定, 利润弹性中等。API直接拉取确认。", "source": "self" },
+          "valuation": { "score": 4, "note": "PE 23-26x, PB 2.15, 估值合理无明显泡沫。", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "technical": { "score": 9, "note": "已破止损价24（现价23.86）, 60日位置仅11%, 空头排列, 20d-21%深跌。行情自拉验证。", "source": "self" },
+          "macro": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "news_sentiment": { "score": 0, "note": "精简流程，News未参与，默认0", "source": "news_agent" }
+        },
+        "summary": "基本面与估值尚可, 但技术面极弱且已破止损线。VETO: 现价23.86低于止损24, 禁止任何加仓。按既定计划反弹至预设减仓位先减仓。"
+      },
+      {
+        "symbol": "002011",
+        "name": "盾安环境",
+        "risk_score": 3.9,
+        "verdict": "VETO",
+        "veto_reason": "距止损线仅2.4%（现价10.76 vs 止损10.5）, 触发≤3%否决规则，禁止该标的任何加仓",
+        "position_info": {
+          "cost": 11.415,
+          "stop_loss": 10.5,
+          "take_profit": 15.0,
+          "qty": 200,
+          "current_price": 10.76,
+          "stop_loss_distance_pct": 2.4,
+          "pnl_pct": -0.0574
+        },
+        "dimensions": {
+          "financial_health": { "score": 3, "note": "PE(TTM)11x低估值, 盈利稳定, 热管理收入占比提升中。API直接拉取确认。", "source": "self" },
+          "valuation": { "score": 2, "note": "PE 11-15x, PB 1.69, 板块中明显折价, 安全边际较高。", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "technical": { "score": 8, "note": "60日位置仅5%（年内深底附近）, 空头排列, 20d-16.4%, 下影线买盘但未确认反转。距止损仅2.4%。行情自拉验证。", "source": "self" },
+          "macro": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "news_sentiment": { "score": 0, "note": "精简流程，News未参与，默认0", "source": "news_agent" }
+        },
+        "summary": "基本面与估值双重支撑（低PE/PB）, 但技术面极弱且距止损仅0.26元。VETO: 距止损≤3%, 禁止任何加仓。需贴身管理, 触及止损10.5须果断执行。"
+      },
+      {
+        "symbol": "603298",
+        "name": "杭叉集团",
+        "risk_score": 3.8,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "position_info": {
+          "cost": 25.2,
+          "stop_loss": 23.0,
+          "take_profit": 31.0,
+          "qty": 200,
+          "current_price": 24.65,
+          "stop_loss_distance_pct": 6.7,
+          "pnl_pct": -0.0218
+        },
+        "dimensions": {
+          "financial_health": { "score": 3, "note": "PE(TTM)14x合理偏低, 现金流稳定, ROE中上, 具备分红属性。API直接拉取确认。", "source": "self" },
+          "valuation": { "score": 3, "note": "PE 14-17x, PB 2.80, 制造业龙头中合理偏低。", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "technical": { "score": 6, "note": "今日大涨+6.57%, 但仍在MA60下方, 60日位置25%, 单日反弹尚未确认趋势反转。行情自拉验证。", "source": "self" },
+          "macro": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "news_sentiment": { "score": 0, "note": "精简流程，News未参与，默认0", "source": "news_agent" }
+        },
+        "summary": "基本面稳健, 估值合理偏低, 机动池防御配置。今日大幅反弹快速收窄浮亏, 距止损6.7%安全。技术突破短压需明日确认。"
+      }
+    ],
+    "watchlist": [
+      {
+        "symbol": "002126",
+        "name": "银轮股份",
+        "status": "观察中",
+        "risk_score": 5.1,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": { "score": 5, "note": "Q1营收+24%但净利仅+0.8%（增收不增利）, 财报质量待观察。API拉取PE(TTM)=41.69。", "source": "self" },
+          "valuation": { "score": 7, "note": "PE 42-47x偏高, PB 5.42, 需Q2利润率修复消化。API拉取确认。", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "technical": { "score": 6, "note": "MA60下方, 空头排列, 60日位置35%, 尚未到目标建仓区。行情自拉验证。", "source": "self" },
+          "macro": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "news_sentiment": { "score": 0, "note": "精简流程，News未参与，默认0", "source": "news_agent" }
+        },
+        "summary": "估值偏高是主要风险, 增收不增利需Q2验证。技术未到位, 等建仓信号。"
+      },
+      {
+        "symbol": "000988",
+        "name": "华工科技",
+        "status": "观察中",
+        "risk_score": 4.9,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": { "score": 4, "note": "扣非增速20%, 毛利率~20%偏低, 订单端强但盈利质量一般。API拉取PE(TTM)=89.35。", "source": "self" },
+          "valuation": { "score": 9, "note": "PE 60-89x极高, PB 13.27, 毛利率与高估值严重不匹配。API拉取确认。", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "technical": { "score": 4, "note": "MA60上方, 20d+12.9%动量未消, 60日位置71%, 近期回调健康。行情自拉验证。", "source": "self" },
+          "macro": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "news_sentiment": { "score": 0, "note": "精简流程，News未参与，默认0", "source": "news_agent" }
+        },
+        "summary": "赛道贝塔强但估值极高是核心风险, PB 13.27。技术面仍强, 但未到建仓区, 等回调。"
+      },
+      {
+        "symbol": "002125",
+        "name": "湘潭电化",
+        "status": "观察中",
+        "risk_score": 4.2,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": { "score": 4, "note": "Q1+88%净利增速, 趋势改善, 但需Q2/H1验证持续性。API拉取PE(TTM)=42.51。", "source": "self" },
+          "valuation": { "score": 6, "note": "PE 32-42x, PB 3.41, 主题溢价已部分体现, 性价比一般。API拉取确认。", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "technical": { "score": 3, "note": "多头排列, MA60上方, 60日位置90%, 动量极强但已远离目标建仓价。行情自拉验证。", "source": "self" },
+          "macro": { "score": 5, "note": "精简流程，Industry未参与，默认5", "source": "industry_agent" },
+          "news_sentiment": { "score": 0, "note": "精简流程，News未参与，默认0", "source": "news_agent" }
+        },
+        "summary": "基本面趋势改善, 动量极强但已远离目标建仓价。建仓窗口已过, 等回调或放弃。"
+      }
+    ],
+    "summary": "持仓7只整体风险可控, 2只触发止损距离VETO: ①均胜电子(600699)已破止损价24(现价23.86), 任何加仓否决; ②盾安环境(002011)距止损10.5仅2.4%, 任何加仓否决。马钢股份(600808)财务面最差(TTM亏损,risk_score 6.2接近预警)但已减仓至最低仓, 按计划执行。组合级警告: AI赛道集中度41.3%(双环+均胜/总持仓), 超过40%阈值, 否决任何AI方向新增仓位。其余持仓(科创50ETF/信创ETF/杭叉)风险评分均低于5, 无需干预。观察池3只均未触发VETO但华工估值极高(PB 13.27)需等大幅回调。"
+  }
+}
