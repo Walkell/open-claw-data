@@ -516,7 +516,7 @@
           ],
           "profile": "full"
         },
-        "thinkingDefault": "medium",
+        "thinkingDefault": "high",
         "models": {
           "volcengine-plan/deepseek-v4-pro": {},
           "deepseek/deepseek-v4-pro": {}
@@ -583,7 +583,7 @@
           ],
           "profile": "full"
         },
-        "thinkingDefault": "medium",
+        "thinkingDefault": "high",
         "models": {
           "volcengine-plan/deepseek-v4-pro": {},
           "glm/glm-5.1": {}
