@@ -465,9 +465,9 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-research",
         "agentDir": "/home/ubuntu/.openclaw/agents/research/agent",
         "model": {
-          "primary": "volcengine-plan/minimax-m3",
+          "primary": "volcengine-plan/deepseek-v4-pro",
           "fallbacks": [
-            "glm/glm-5.1"
+            "deepseek/deepseek-v4-pro"
           ]
         },
         "identity": {
@@ -518,8 +518,8 @@
         },
         "thinkingDefault": "medium",
         "models": {
-          "volcengine-plan/minimax-m3": {},
-          "glm/glm-5.1": {}
+          "volcengine-plan/deepseek-v4-pro": {},
+          "deepseek/deepseek-v4-pro": {}
         }
       },
       {
@@ -528,9 +528,9 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-industry",
         "agentDir": "/home/ubuntu/.openclaw/agents/industry/agent",
         "model": {
-          "primary": "volcengine-plan/kimi-k2.6",
+          "primary": "volcengine-plan/deepseek-v4-pro",
           "fallbacks": [
-            "deepseek/deepseek-v4-pro"
+            "glm/glm-5.1"
           ]
         },
         "identity": {
@@ -585,8 +585,8 @@
         },
         "thinkingDefault": "medium",
         "models": {
-          "volcengine-plan/kimi-k2.6": {},
-          "deepseek/deepseek-v4-pro": {}
+          "volcengine-plan/deepseek-v4-pro": {},
+          "glm/glm-5.1": {}
         }
       },
       {
@@ -595,9 +595,9 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-news",
         "agentDir": "/home/ubuntu/.openclaw/agents/news/agent",
         "model": {
-          "primary": "volcengine-plan/doubao-seed-2.0-pro",
+          "primary": "glm/glm-5.1",
           "fallbacks": [
-            "glm/glm-5.1"
+            "deepseek/deepseek-v4-pro"
           ]
         },
         "identity": {
@@ -648,8 +648,8 @@
         },
         "thinkingDefault": "high",
         "models": {
-          "volcengine-plan/doubao-seed-2.0-pro": {},
-          "glm/glm-5.1": {}
+          "glm/glm-5.1": {},
+          "deepseek/deepseek-v4-pro": {}
         }
       },
       {
