@@ -721,9 +721,9 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-monitor",
         "agentDir": "/home/ubuntu/.openclaw/agents/monitor/agent",
         "model": {
-          "primary": "glm/glm-5.1",
+          "primary": "volcengine-plan/minimax-m3",
           "fallbacks": [
-            "deepseek/deepseek-v4-pro"
+            "glm/glm-5.1"
           ]
         },
         "identity": {
@@ -771,7 +771,11 @@
             "feishu_wiki_space_node"
           ]
         },
-        "thinkingDefault": "medium"
+        "thinkingDefault": "medium",
+        "models": {
+          "volcengine-plan/minimax-m3": {},
+          "glm/glm-5.1": {}
+        }
       }
     ]
   },
