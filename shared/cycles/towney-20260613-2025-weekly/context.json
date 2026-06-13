@@ -1,0 +1,33 @@
+{
+  "cycle_id": "towney-20260613-2025-weekly",
+  "principal": "towney",
+  "flow_type": "四委员",
+  "scenario": "周总结",
+  "positions_table_id": "tblUeTGMf0IKJ8Pk",
+  "watchlist_table_id": "tblaLlSQp8tEcWgJ",
+  "market_context": {
+    "date": "2026-06-12",
+    "indices": {
+      "SP500": {"close": 7431.46, "weekly_change": "+0.35%"},
+      "NASDAQ": {"close": 25888.84, "weekly_change": "-0.16%"},
+      "SOX": {"close": 13371.47, "weekly_change": "+3.60%"},
+      "DJI": {"close": 51202.26, "weekly_change": "+0.82%"},
+      "VIX": {"close": 17.68, "weekly_change": "-6.55%"}
+    }
+  },
+  "positions": [
+    {"code": "688120", "name": "华海清科", "weight": 0.1392},
+    {"code": "588090", "name": "科创芯片ETF", "weight": 0.0993},
+    {"code": "688008", "name": "澜起科技", "weight": 0.1215},
+    {"code": "300394", "name": "天孚通信", "weight": 0.1595},
+    {"code": "159949", "name": "创业板50ETF", "weight": 0.0318},
+    {"code": "510500", "name": "中证500ETF", "weight": 0.0401},
+    {"code": "513300", "name": "纳斯达克ETF", "weight": 0.0506},
+    {"code": "513650", "name": "标普500ETF", "weight": 0.0143},
+    {"code": "518880", "name": "黄金ETF", "weight": 0.0175},
+    {"code": "09988", "name": "阿里巴巴", "weight": 0.0128},
+    {"code": "688041", "name": "海光信息", "weight": 0.1514},
+    {"code": "002156", "name": "通富微电", "weight": 0.0162},
+    {"code": "002463", "name": "沪电股份", "weight": 0.0343}
+  ]
+}
