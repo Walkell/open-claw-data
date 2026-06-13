@@ -13,18 +13,35 @@
             "apiKey": "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"
           }
         }
+      },
+      "memory-lancedb": {
+        "enabled": true,
+        "config": {
+          "embedding": {
+            "apiKey": "${ZHIPU_API_KEY}",
+            "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
+            "model": "embedding-3",
+            "dimensions": 2048
+          },
+          "autoRecall": true,
+          "autoCapture": false
+        }
       }
     },
     "allow": [
       "deepseek",
       "memory-core",
+      "memory-lancedb",
       "openclaw-lark"
     ],
-    "bundledDiscovery": "compat"
+    "bundledDiscovery": "compat",
+    "slots": {
+      "memory": "memory-lancedb"
+    }
   },
   "meta": {
     "lastTouchedVersion": "2026.5.28",
-    "lastTouchedAt": "2026-06-02T17:11:00.883Z"
+    "lastTouchedAt": "2026-06-13T02:55:57.886Z"
   },
   "secrets": {
     "providers": {
