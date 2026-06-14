@@ -392,7 +392,12 @@
           "deepseek/deepseek-v4-pro": {},
           "glm/glm-5.1": {}
         },
-        "thinkingDefault": "high"
+        "thinkingDefault": "high",
+        "heartbeat": {
+          "every": "30m",
+          "skipWhenBusy": true,
+          "lightContext": true
+        }
       },
       {
         "id": "cio",
@@ -457,7 +462,12 @@
           "deepseek/deepseek-v4-pro": {},
           "volcengine-plan/deepseek-v4-pro": {}
         },
-        "thinkingDefault": "high"
+        "thinkingDefault": "high",
+        "heartbeat": {
+          "every": "30m",
+          "skipWhenBusy": true,
+          "lightContext": true
+        }
       },
       {
         "id": "research",
@@ -520,6 +530,11 @@
         "models": {
           "volcengine-plan/deepseek-v4-pro": {},
           "deepseek/deepseek-v4-pro": {}
+        },
+        "heartbeat": {
+          "every": "30m",
+          "skipWhenBusy": true,
+          "lightContext": true
         }
       },
       {
@@ -587,6 +602,11 @@
         "models": {
           "volcengine-plan/deepseek-v4-pro": {},
           "glm/glm-5.1": {}
+        },
+        "heartbeat": {
+          "every": "30m",
+          "skipWhenBusy": true,
+          "lightContext": true
         }
       },
       {
@@ -650,6 +670,11 @@
         "models": {
           "glm/glm-5.1": {},
           "deepseek/deepseek-v4-pro": {}
+        },
+        "heartbeat": {
+          "every": "30m",
+          "skipWhenBusy": true,
+          "lightContext": true
         }
       },
       {
@@ -713,6 +738,11 @@
         "models": {
           "glm/glm-5.1": {},
           "volcengine-plan/kimi-k2.6": {}
+        },
+        "heartbeat": {
+          "every": "30m",
+          "skipWhenBusy": true,
+          "lightContext": true
         }
       },
       {
@@ -775,6 +805,11 @@
         "models": {
           "glm/glm-5.1": {},
           "deepseek/deepseek-v4-pro": {}
+        },
+        "heartbeat": {
+          "every": "30m",
+          "skipWhenBusy": true,
+          "lightContext": true
         }
       }
     ]
