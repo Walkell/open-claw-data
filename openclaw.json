@@ -108,19 +108,8 @@
               "text",
               "image"
             ],
-            "contextWindow": 128000,
-            "maxTokens": 16384
-          },
-          {
-            "id": "glm-5.2",
-            "name": "GLM-5.2",
-            "reasoning": true,
-            "input": [
-              "text",
-              "image"
-            ],
-            "contextWindow": 128000,
-            "maxTokens": 16384
+            "contextWindow": 200000,
+            "maxTokens": 128000
           }
         ]
       },
@@ -330,8 +319,7 @@
         "volcengine-plan/minimax-m3": {},
         "volcengine-plan/kimi-k2.6": {},
         "volcengine-plan/deepseek-v4-flash": {},
-        "volcengine-plan/deepseek-v4-pro": {},
-        "glm/glm-5.2": {}
+        "volcengine-plan/deepseek-v4-pro": {}
       }
     },
     "list": [
@@ -938,6 +926,10 @@
       "akshare": {
         "transport": "streamable-http",
         "url": "http://127.0.0.1:8081/mcp"
+      },
+      "zhipu-search": {
+        "url": "https://open.bigmodel.cn/api/mcp-broker/proxy/web-search/mcp?Authorization=dae8968eb8bb4a308fd0e4d9935d198e.Gyr1NxT79WdyIGDa",
+        "transport": "streamable-http"
       }
     }
   },
