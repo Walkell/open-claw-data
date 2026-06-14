@@ -17,10 +17,9 @@
       "payload": {
         "kind": "agentTurn",
         "message": "监控任务 principal=towney",
-        "model": "volcengine-plan/deepseek-v4-pro",
+        "model": "glm/glm-5.1",
         "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
+          "deepseek/deepseek-v4-pro"
         ],
         "timeoutSeconds": 600
       },
@@ -144,10 +143,9 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "volcengine-plan/deepseek-v4-pro",
+        "model": "glm/glm-5.1",
         "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
+          "deepseek/deepseek-v4-pro"
         ],
         "timeoutSeconds": 600,
         "message": "监控任务 principal=towney"
@@ -235,10 +233,9 @@
         "kind": "agentTurn",
         "message": "监控任务 principal=klaire",
         "timeoutSeconds": 600,
-        "model": "volcengine-plan/deepseek-v4-pro",
+        "model": "glm/glm-5.1",
         "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
+          "deepseek/deepseek-v4-pro"
         ]
       },
       "delivery": {
@@ -268,10 +265,9 @@
         "kind": "agentTurn",
         "message": "监控任务 principal=klaire",
         "timeoutSeconds": 600,
-        "model": "volcengine-plan/deepseek-v4-pro",
+        "model": "glm/glm-5.1",
         "fallbacks": [
-          "deepseek/deepseek-v4-pro",
-          "glm/glm-5.1"
+          "deepseek/deepseek-v4-pro"
         ]
       },
       "delivery": {
