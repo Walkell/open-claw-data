@@ -17,13 +17,13 @@ description: |
 ## 第一步：读取委员输出文件
 
 ```
-workspace-cio/cycles/{cycle_id}/research_output.json
-workspace-cio/cycles/{cycle_id}/industry_output.json   （四委员 / 三委员，否则默认5）
-workspace-cio/cycles/{cycle_id}/news_output.json        （四委员，否则默认0）
-workspace-cio/cycles/{cycle_id}/risk_output.json
+~/.openclaw/shared/cycles/{cycle_id}/research_output.json
+~/.openclaw/shared/cycles/{cycle_id}/industry_output.json   （四委员 / 三委员，否则默认5）
+~/.openclaw/shared/cycles/{cycle_id}/news_output.json        （四委员，否则默认0）
+~/.openclaw/shared/cycles/{cycle_id}/risk_output.json
 ```
 
-同时读取 `workspace-cio/cycles/{cycle_id}/context.json` 确认 principal 和 flow_type。
+同时读取 `~/.openclaw/shared/cycles/{cycle_id}/context.json` 确认 principal 和 flow_type。
 
 ---
 

@@ -56,8 +56,8 @@ risk_thresholds:
 | towney-pre-market | 每早 8:30（二-五） | DM Towney | butler |
 | towney-monday-briefing | 每周一 8:20 | DM Towney | butler |
 | towney-opening-bell | 每日 9:30（周一-五） | DM Towney | butler |
-| towney-morning-check | 每15分钟 9-11 | 写表 | butler |
-| towney-afternoon-check-pm | 每15分钟 13-14 | 写表 | butler |
+| towney-morning-check | 每15分钟 9-11 | 写表 | monitor |
+| towney-afternoon-check-pm | 每15分钟 13-15 | 写表 | monitor |
 | towney-eod-review | 收盘 18:30 | DM Towney | butler |
 | towney-weekly-review | 每周五 18:40 | DM Towney | butler |
 | towney-monthly-review | 每月末 18:50 | DM Towney | butler |

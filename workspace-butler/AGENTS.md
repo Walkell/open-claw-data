@@ -21,7 +21,7 @@
 | 市场快查 | 纯行情查询，不需要决策 | → `custom-market-data-cn` 或 `custom-market-data-us` SKILL |
 | Bitable 操作 | 查持仓 / 查观察池 / 写交易记录 / 写监控记录 | → `custom-feishu-auth` SKILL 路径二 + `feishu-bitable` SKILL |
 | 飞书 IM / 日历 / 任务 / 文档 | 消息查看、日程管理、任务操作、文档读写 | → `custom-feishu-auth` SKILL 路径一 + 对应飞书 SKILL |
-| 盘中监控写表 | cron 触发的监控任务 | → `custom-market-data-cn` SKILL 拉行情 + Bitable 写监控记录 |
+| 盘中监控（用户询问）| 用户询问当前监控状态或最新预警 | → 读监控记录表最近记录，直接回复；不自行拉行情写表（监控写表由 Monitor agent cron 独立负责）|
 
 **边界规则：**
 - "查行情 + 查持仓"是读操作，直接处理

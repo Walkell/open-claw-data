@@ -21,13 +21,13 @@ description: |
 
 **cron 触发**：消息直接含 `flow_type` 和 `principal`，直接写 context.json。
 
-**用户触发**（消息只含 cycle_id）：先读 `workspace-cio/cycles/{cycle_id}/ic_request.json`，从中获取 `flow_type`、`principal`、`symbol`，再写 context.json。
+**用户触发**（消息只含 cycle_id）：先读 `~/.openclaw/shared/cycles/{cycle_id}/ic_request.json`，从中获取 `flow_type`、`principal`、`symbol`，再写 context.json。
 
 ```
 cycle_id = {principal}-{YYYYMMDD}-{HHMM}-{场景}
 ```
 
-写 `workspace-cio/cycles/{cycle_id}/context.json`（principal / flow_type / table_id）。
+写 `~/.openclaw/shared/cycles/{cycle_id}/context.json`（principal / flow_type / table_id）。
 
 输出：`🔔 Butler IC 启动，flow_type={X}，principal={X}，cycle_id={X}`
 
@@ -66,10 +66,10 @@ cycle_id = {principal}-{YYYYMMDD}-{HHMM}-{场景}
 ### 第三步：读取输出文件
 
 ```
-workspace-cio/cycles/{cycle_id}/research_output.json
-workspace-cio/cycles/{cycle_id}/industry_output.json
-workspace-cio/cycles/{cycle_id}/news_output.json
-workspace-cio/cycles/{cycle_id}/risk_output.json
+~/.openclaw/shared/cycles/{cycle_id}/research_output.json
+~/.openclaw/shared/cycles/{cycle_id}/industry_output.json
+~/.openclaw/shared/cycles/{cycle_id}/news_output.json
+~/.openclaw/shared/cycles/{cycle_id}/risk_output.json
 ```
 
 ---

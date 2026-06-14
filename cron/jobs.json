@@ -3,20 +3,20 @@
   "jobs": [
     {
       "id": "b1795f87-68ae-4aa4-a29e-9edc3041ad58",
-      "agentId": "butler",
+      "agentId": "monitor",
       "name": "towney-afternoon-check-pm",
       "enabled": true,
       "createdAtMs": 1780372310529,
       "schedule": {
         "kind": "cron",
-        "expr": "*/15 13-14 * * 1-5",
+        "expr": "*/15 13-15 * * 1-5",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Towney 下午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 核心规则：本 Agent 在 isolated session 中运行，**禁止调用 message 工具发消息**。\n最终回复内容将被 delivery 自动推送给用户，你只需把告警写成正常回复即可。\n\n⚠️ 第一步：拉 Bitable 白名单\n1. 执行 `custom-feishu-auth` SKILL → 续期 + 取 app_token\n2. feishu_bitable_app_table_record.list(app_token, table_id=\"tblUeTGMf0IKJ8Pk\", filter过滤状态=持有) → 提取股票代码\n3. feishu_bitable_app_table_record.list(app_token, table_id=\"tblaLlSQp8tEcWgJ\", filter过滤状态!=已移除) → 提取股票代码\n4. 合并为完整白名单\n\n⚠️ 第二步：仅对白名单标的拉行情\n使用 `custom-market-data-cn` SKILL 拉实时行情（双源验证 + 三源裁决）\n涨跌幅只用 SKILL 输出的 `change_pct` 字段，不自行计算\n\n⚠️ 第三步：写入监控记录表\nfield.list 确认字段名 → batch_create 写入 tblFAfrZs4Rz4AOu（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池\n\n⚠️ 第四步：阈值检查 + 建仓条件 → 作为最终回复输出（delivery 会自动推送）\nA. 持仓标的阈值检查：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】\nB. 建仓条件触发（观察池「待建仓」标的）\n   读取每个标的的「目标建仓价」，当前价 ≤ 目标建仓价 → 触发通知\n无 A 也无 B → 回复 NO_REPLY",
+        "message": "监控任务 principal=towney",
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
           "deepseek/deepseek-v4-pro",
@@ -130,7 +130,7 @@
     },
     {
       "id": "56078609-aee4-4332-9ef5-d952714fe061",
-      "agentId": "butler",
+      "agentId": "monitor",
       "name": "towney-morning-check",
       "enabled": true,
       "createdAtMs": 1780486379546,
@@ -150,7 +150,7 @@
           "glm/glm-5.1"
         ],
         "timeoutSeconds": 600,
-        "message": "Towney 上午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 核心规则：本 Agent 在 isolated session 中运行，**禁止调用 message 工具发消息**。\n最终回复内容将被 delivery 自动推送给用户，你只需把告警写成正常回复即可。\n\n⚠️ 第一步：拉 Bitable 白名单\n1. 执行 `custom-feishu-auth` SKILL → 续期 + 取 app_token\n2. feishu_bitable_app_table_record.list(app_token, table_id=\"tblUeTGMf0IKJ8Pk\", filter过滤状态=持有) → 提取股票代码\n3. feishu_bitable_app_table_record.list(app_token, table_id=\"tblaLlSQp8tEcWgJ\", filter过滤状态!=已移除) → 提取股票代码\n4. 合并为完整白名单\n\n⚠️ 第二步：仅对白名单标的拉行情\n使用 `custom-market-data-cn` SKILL 拉实时行情（双源验证 + 三源裁决）\n涨跌幅只用 SKILL 输出的 `change_pct` 字段，不自行计算\n\n⚠️ 第三步：写入监控记录表\nfield.list 确认字段名 → batch_create 写入 tblFAfrZs4Rz4AOu（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池\n\n⚠️ 第四步：阈值检查 + 建仓条件 → 作为最终回复输出（delivery 会自动推送）\nA. 持仓标的阈值检查：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】\nB. 建仓条件触发（观察池「待建仓」标的）\n   读取每个标的的「目标建仓价」，当前价 ≤ 目标建仓价 → 触发通知\n无 A 也无 B → 回复 NO_REPLY"
+        "message": "监控任务 principal=towney"
       },
       "delivery": {
         "mode": "announce",
@@ -219,7 +219,7 @@
     },
     {
       "id": "96be9a87-f317-4d9a-88e1-955c4d019af3",
-      "agentId": "butler",
+      "agentId": "monitor",
       "name": "klaire-intraday-monitor",
       "enabled": true,
       "createdAtMs": 1780487209499,
@@ -233,7 +233,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Klaire上午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 第一步：拉 Bitable 白名单\n执行 `custom-feishu-auth` SKILL → 续期 + 取 app_token\n用完整 token 读取:\n- 持仓表 tbl9xYrGkBDZlnYm (筛选状态=持有) → 提取股票代码列表\n- 观察池 tblaQY1jOFWOXd1U (筛选状态!=已移除) → 提取股票代码列表\n\n⚠️ 绝对不拉白名单之外的任何标的。白名单里有什么就分析什么，一个不多一个不少。\n\n⚠️ 第二步：仅对白名单标的拉行情\n使用 `custom-market-data-cn` SKILL 拉实时行情（双源验证 + 三源裁决）\n涨跌幅只用 SKILL 输出的 `change_pct` 字段，不自行计算\n\n⚠️ 第三步：写入Klaire监控记录表\n写表前先 field.list 确认字段名，batch_create 一次性写入 tblHkc0MfQbe2x37（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池（持仓表不含快照价字段）\n\n⚠️ 第四步：阈值突破 + 建仓条件 → 按需通知至 klaire 推送渠道（地址见 workspace-cio/KLAIRE_CONFIG.md 「输出通道」）\nA. 持仓表标的阈值检查（只通知，不触发 IC）：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】{代码} 现价{X} 已触及止损价{Y}，建议立即处置\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】{代码} 现价{X}，距止损仅{Z}%\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】{代码} 现价{X} 已达止盈价{Y}\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】{代码} 今日跌幅{Z}%\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】{代码} 今日涨幅{Z}%，距止盈{W}%\n\nB. 🎯 建仓条件触发（观察池「待建仓」标的）\n   读取观察池每个标的的「目标建仓价」字段（从 Bitable 读，不使用任何记忆中的价格）\n   当前价 ≤ 目标建仓价 → 触发，通知内容：标的名称+代码 | 当前价 | 目标建仓价 | 建议仓位%（从备注读取）\n   当前价 > 目标建仓价 × 1.05 → 不通知\n\n无 A 也无 B → NO_REPLY",
+        "message": "监控任务 principal=klaire",
         "timeoutSeconds": 600,
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [
@@ -252,13 +252,13 @@
     },
     {
       "id": "00bad0b6-3fc5-4fd2-8a8c-61775e826573",
-      "agentId": "butler",
+      "agentId": "monitor",
       "name": "klaire-afternoon-monitor-pm",
       "enabled": true,
       "createdAtMs": 1780487209524,
       "schedule": {
         "kind": "cron",
-        "expr": "*/15 13-14 * * 1-5",
+        "expr": "*/15 13-15 * * 1-5",
         "tz": "Asia/Shanghai",
         "staggerMs": 15000
       },
@@ -266,7 +266,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Klaire下午盘监控（从 Bitable 动态拉取标的，不硬编码）：\n\n⚠️ 第一步：拉 Bitable 白名单\n执行 `custom-feishu-auth` SKILL → 续期 + 取 app_token\n用完整 token 读取持仓表 tbl9xYrGkBDZlnYm (状态=持有) 和观察池 tblaQY1jOFWOXd1U (状态!=已移除)\n提取所有股票代码形成白名单\n\n⚠️ 第二步：仅对白名单标的拉行情\n使用 `custom-market-data-cn` SKILL 拉实时行情（双源验证 + 三源裁决）\n涨跌幅只用 SKILL 输出的 `change_pct` 字段，不自行计算\n\n⚠️ 第三步：写入Klaire监控记录表\n写表前先 field.list 确认字段名，batch_create 一次性写入 tblHkc0MfQbe2x37（含时间戳、快照价）\n⚠️ 只写监控记录表，不回写持仓表或观察池（持仓表不含快照价字段）\n\n⚠️ 第四步：阈值突破 + 建仓条件 → 按需通知至 klaire 推送渠道（地址见 workspace-cio/KLAIRE_CONFIG.md 「输出通道」）\nA. 持仓表标的阈值检查（只通知，不触发 IC）：\n   🚨 止损触及：当前价 ≤ 止损价 → 【止损告警】{代码} 现价{X} 已触及止损价{Y}，建议立即处置\n   ⚠️ 接近止损：当前价 ≤ 止损价×1.05 且 > 止损价 → 【接近止损】{代码} 现价{X}，距止损仅{Z}%\n   🎯 止盈触及：当前价 ≥ 止盈价 → 【止盈提醒】{代码} 现价{X} 已达止盈价{Y}\n   🔴 大跌：涨跌幅 ≤ -5% → 【大跌预警】{代码} 今日跌幅{Z}%\n   🟢 大涨：涨跌幅 ≥ +7% → 【大涨提醒】{代码} 今日涨幅{Z}%，距止盈{W}%\n\nB. 🎯 建仓条件触发（观察池「待建仓」标的）\n   读取观察池每个标的的「目标建仓价」字段（从 Bitable 读，不使用任何记忆中的价格）\n   当前价 ≤ 目标建仓价 → 触发，通知内容：标的名称+代码 | 当前价 | 目标建仓价 | 建议仓位%（从备注读取）\n   当前价 > 目标建仓价 × 1.05 → 不通知\n\n无 A 也无 B → NO_REPLY",
+        "message": "监控任务 principal=klaire",
         "timeoutSeconds": 600,
         "model": "volcengine-plan/deepseek-v4-pro",
         "fallbacks": [

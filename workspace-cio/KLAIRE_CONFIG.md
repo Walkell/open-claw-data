@@ -56,8 +56,8 @@ risk_thresholds:
 | klaire-pre-market | 每早 8:35（二-五） | 群 | butler |
 | klaire-monday-briefing | 每周一 8:25 | 群 | butler |
 | klaire-opening-bell | 每日 9:30（周一-五） | 群 | butler |
-| klaire-intraday-monitor | 每15分 9-11 | 写表 | butler |
-| klaire-afternoon-monitor-pm | 每15分 13-14 | 写表 | butler |
+| klaire-intraday-monitor | 每15分 9-11 | 写表 | monitor |
+| klaire-afternoon-monitor-pm | 每15分 13-15 | 写表 | monitor |
 | klaire-eod-review | 收盘 18:45 | 群 | butler |
 | klaire-weekly-review | 每周五 18:50 | 群 | butler |
 | klaire-monthly-review | 每月末 18:55 | 群 | butler |
