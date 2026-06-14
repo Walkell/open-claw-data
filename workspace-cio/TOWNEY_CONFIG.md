@@ -29,6 +29,14 @@ ledger:
 active_members: ["research", "industry", "news", "risk"]
 ```
 
+## 盈利目标
+
+```yaml
+profit_target:
+  annual_return: "30%"  # 2026年度年化收益目标
+  set_date: "2026-06-15"
+```
+
 ## 风险阈值
 
 ```yaml
