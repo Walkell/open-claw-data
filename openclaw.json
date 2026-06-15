@@ -41,7 +41,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.5.28",
-    "lastTouchedAt": "2026-06-13T02:55:57.886Z"
+    "lastTouchedAt": "2026-06-15T12:49:53.270Z"
   },
   "secrets": {
     "providers": {
@@ -345,9 +345,28 @@
             "glm/glm-5.2"
           ]
         },
+        "models": {
+          "deepseek/deepseek-v4-pro": {},
+          "glm/glm-5.1": {}
+        },
+        "thinkingDefault": "high",
+        "heartbeat": {
+          "every": "30m",
+          "lightContext": true,
+          "skipWhenBusy": true
+        },
         "identity": {
           "name": "Butler",
           "emoji": "🤵"
+        },
+        "subagents": {
+          "allowAgents": [
+            "research",
+            "industry",
+            "news",
+            "risk",
+            "cio"
+          ]
         },
         "tools": {
           "alsoAllow": [
@@ -389,25 +408,6 @@
             "feishu_wiki_space",
             "feishu_wiki_space_node"
           ]
-        },
-        "subagents": {
-          "allowAgents": [
-            "research",
-            "industry",
-            "news",
-            "risk",
-            "cio"
-          ]
-        },
-        "models": {
-          "deepseek/deepseek-v4-pro": {},
-          "glm/glm-5.1": {}
-        },
-        "thinkingDefault": "high",
-        "heartbeat": {
-          "every": "30m",
-          "skipWhenBusy": true,
-          "lightContext": true
         }
       },
       {
@@ -421,9 +421,22 @@
             "deepseek/deepseek-v4-pro"
           ]
         },
+        "models": {
+          "deepseek/deepseek-v4-pro": {},
+          "volcengine-plan/deepseek-v4-pro": {}
+        },
+        "thinkingDefault": "high",
+        "heartbeat": {
+          "every": "30m",
+          "lightContext": true,
+          "skipWhenBusy": true
+        },
         "identity": {
           "name": "CIO",
           "emoji": "🏛️"
+        },
+        "subagents": {
+          "allowAgents": []
         },
         "tools": {
           "alsoAllow": [
@@ -465,19 +478,6 @@
             "feishu_wiki_space",
             "feishu_wiki_space_node"
           ]
-        },
-        "subagents": {
-          "allowAgents": []
-        },
-        "models": {
-          "deepseek/deepseek-v4-pro": {},
-          "volcengine-plan/deepseek-v4-pro": {}
-        },
-        "thinkingDefault": "high",
-        "heartbeat": {
-          "every": "30m",
-          "skipWhenBusy": true,
-          "lightContext": true
         }
       },
       {
@@ -491,11 +491,22 @@
             "deepseek/deepseek-v4-pro"
           ]
         },
+        "models": {
+          "volcengine-plan/deepseek-v4-pro": {},
+          "deepseek/deepseek-v4-pro": {}
+        },
+        "thinkingDefault": "high",
+        "heartbeat": {
+          "every": "30m",
+          "lightContext": true,
+          "skipWhenBusy": true
+        },
         "identity": {
           "name": "Research",
           "emoji": "🔬"
         },
         "tools": {
+          "profile": "full",
           "alsoAllow": [
             "feishu_bitable_app",
             "feishu_bitable_app_table",
@@ -534,18 +545,7 @@
             "feishu_update_doc",
             "feishu_wiki_space",
             "feishu_wiki_space_node"
-          ],
-          "profile": "full"
-        },
-        "thinkingDefault": "high",
-        "models": {
-          "volcengine-plan/deepseek-v4-pro": {},
-          "deepseek/deepseek-v4-pro": {}
-        },
-        "heartbeat": {
-          "every": "30m",
-          "skipWhenBusy": true,
-          "lightContext": true
+          ]
         }
       },
       {
@@ -559,11 +559,22 @@
             "glm/glm-5.1"
           ]
         },
+        "models": {
+          "volcengine-plan/deepseek-v4-pro": {},
+          "glm/glm-5.1": {}
+        },
+        "thinkingDefault": "high",
+        "heartbeat": {
+          "every": "30m",
+          "lightContext": true,
+          "skipWhenBusy": true
+        },
         "identity": {
           "name": "Industry",
           "emoji": "🏭"
         },
         "tools": {
+          "profile": "full",
           "alsoAllow": [
             "feishu_bitable_app",
             "feishu_bitable_app_table",
@@ -606,18 +617,7 @@
             "tavily_search",
             "tavily_extract",
             "web_fetch"
-          ],
-          "profile": "full"
-        },
-        "thinkingDefault": "high",
-        "models": {
-          "volcengine-plan/deepseek-v4-pro": {},
-          "glm/glm-5.1": {}
-        },
-        "heartbeat": {
-          "every": "30m",
-          "skipWhenBusy": true,
-          "lightContext": true
+          ]
         }
       },
       {
@@ -631,11 +631,22 @@
             "deepseek/deepseek-v4-pro"
           ]
         },
+        "models": {
+          "glm/glm-5.1": {},
+          "deepseek/deepseek-v4-pro": {}
+        },
+        "thinkingDefault": "high",
+        "heartbeat": {
+          "every": "30m",
+          "lightContext": true,
+          "skipWhenBusy": true
+        },
         "identity": {
           "name": "News",
           "emoji": "📰"
         },
         "tools": {
+          "profile": "full",
           "alsoAllow": [
             "feishu_bitable_app",
             "feishu_bitable_app_table",
@@ -674,18 +685,7 @@
             "feishu_update_doc",
             "feishu_wiki_space",
             "feishu_wiki_space_node"
-          ],
-          "profile": "full"
-        },
-        "thinkingDefault": "high",
-        "models": {
-          "glm/glm-5.1": {},
-          "deepseek/deepseek-v4-pro": {}
-        },
-        "heartbeat": {
-          "every": "30m",
-          "skipWhenBusy": true,
-          "lightContext": true
+          ]
         }
       },
       {
@@ -694,17 +694,28 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-risk",
         "agentDir": "/home/ubuntu/.openclaw/agents/risk/agent",
         "model": {
-          "primary": "deepseek/deepseek-v4-pro",
+          "primary": "glm/glm-5.1",
           "fallbacks": [
-            "volcengine-plan/kimi-k2.6",
-            "glm/glm-5.1"
+            "volcengine-plan/minimax-m3",
+            "deepseek/deepseek-v4-pro"
           ]
+        },
+        "models": {
+          "glm/glm-5.1": {},
+          "volcengine-plan/kimi-k2.6": {}
+        },
+        "thinkingDefault": "high",
+        "heartbeat": {
+          "every": "30m",
+          "lightContext": true,
+          "skipWhenBusy": true
         },
         "identity": {
           "name": "Risk",
           "emoji": "🎯"
         },
         "tools": {
+          "profile": "full",
           "alsoAllow": [
             "feishu_bitable_app",
             "feishu_bitable_app_table",
@@ -743,18 +754,7 @@
             "feishu_update_doc",
             "feishu_wiki_space",
             "feishu_wiki_space_node"
-          ],
-          "profile": "full"
-        },
-        "thinkingDefault": "high",
-        "models": {
-          "glm/glm-5.1": {},
-          "volcengine-plan/kimi-k2.6": {}
-        },
-        "heartbeat": {
-          "every": "30m",
-          "skipWhenBusy": true,
-          "lightContext": true
+          ]
         }
       },
       {
@@ -763,10 +763,20 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-monitor",
         "agentDir": "/home/ubuntu/.openclaw/agents/monitor/agent",
         "model": {
-          "primary": "glm/glm-5.1",
+          "primary": "volcengine-plan/minimax-m3",
           "fallbacks": [
             "deepseek/deepseek-v4-pro"
           ]
+        },
+        "models": {
+          "glm/glm-5.1": {},
+          "deepseek/deepseek-v4-pro": {}
+        },
+        "thinkingDefault": "medium",
+        "heartbeat": {
+          "every": "30m",
+          "lightContext": true,
+          "skipWhenBusy": true
         },
         "identity": {
           "name": "Monitor",
@@ -812,16 +822,6 @@
             "feishu_wiki_space",
             "feishu_wiki_space_node"
           ]
-        },
-        "thinkingDefault": "medium",
-        "models": {
-          "glm/glm-5.1": {},
-          "deepseek/deepseek-v4-pro": {}
-        },
-        "heartbeat": {
-          "every": "30m",
-          "skipWhenBusy": true,
-          "lightContext": true
         }
       }
     ]
