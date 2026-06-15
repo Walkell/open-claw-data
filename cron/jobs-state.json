@@ -3,9 +3,8 @@
   "jobs": {
     "b1795f87-68ae-4aa4-a29e-9edc3041ad58": {
       "updatedAtMs": 1781453311344,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 13-15 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
+      "scheduleIdentity": "{\"version\":1,\"enabled\":false,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 13-15 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1781499600000,
         "lastRunAtMs": 1781420388226,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
@@ -87,41 +86,40 @@
       }
     },
     "56078609-aee4-4332-9ef5-d952714fe061": {
-      "updatedAtMs": 1781490315915,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 9-11 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":30000}}",
+      "updatedAtMs": 1781491914154,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":false,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 9-11 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":30000}}",
       "state": {
-        "nextRunAtMs": 1781491215915,
-        "lastRunAtMs": 1781490304308,
+        "lastRunAtMs": 1781491806685,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 11607,
+        "lastDurationMs": 107469,
         "lastDeliveryStatus": "not-delivered",
         "lastFailureNotificationDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 4,
+        "consecutiveErrors": 5,
         "consecutiveSkipped": 0,
         "lastDelivered": false,
         "lastDiagnostics": {
-          "summary": "[1305][该模型当前访问量过大，请您稍后再试][20260615102512d1718ef121664a79]",
+          "summary": "[1305][该模型当前访问量过大，请您稍后再试][2026061510515144232e718fe841f5]",
           "entries": [
             {
-              "ts": 1781490315912,
+              "ts": 1781491914151,
               "source": "tool",
               "severity": "error",
-              "message": "[1305][该模型当前访问量过大，请您稍后再试][20260615102512d1718ef121664a79]"
+              "message": "[1305][该模型当前访问量过大，请您稍后再试][2026061510515144232e718fe841f5]"
             },
             {
-              "ts": 1781490315913,
+              "ts": 1781491914151,
               "source": "agent-run",
               "severity": "error",
-              "message": "[1305][该模型当前访问量过大，请您稍后再试][20260615102512d1718ef121664a79]"
+              "message": "[1305][该模型当前访问量过大，请您稍后再试][2026061510515144232e718fe841f5]"
             }
           ]
         },
-        "lastDiagnosticSummary": "[1305][该模型当前访问量过大，请您稍后再试][20260615102512d1718ef121664a79]",
-        "lastDeliveryError": "[1305][该模型当前访问量过大，请您稍后再试][20260615102512d1718ef121664a79]",
+        "lastDiagnosticSummary": "[1305][该模型当前访问量过大，请您稍后再试][2026061510515144232e718fe841f5]",
+        "lastDeliveryError": "[1305][该模型当前访问量过大，请您稍后再试][2026061510515144232e718fe841f5]",
         "lastFailureNotificationDelivered": false,
-        "lastFailureNotificationDeliveryError": "[1305][该模型当前访问量过大，请您稍后再试][20260615102512d1718ef121664a79]",
-        "lastError": "[1305][该模型当前访问量过大，请您稍后再试][20260615102512d1718ef121664a79]"
+        "lastFailureNotificationDeliveryError": "[1305][该模型当前访问量过大，请您稍后再试][2026061510515144232e718fe841f5]",
+        "lastError": "[1305][该模型当前访问量过大，请您稍后再试][2026061510515144232e718fe841f5]"
       }
     },
     "f14657c4-17fa-4d9d-a79d-771ca7df7730": {
@@ -172,23 +170,22 @@
       }
     },
     "96be9a87-f317-4d9a-88e1-955c4d019af3": {
-      "updatedAtMs": 1781490302256,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 9-11 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":15000}}",
+      "updatedAtMs": 1781491804625,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":false,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 9-11 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":15000}}",
       "state": {
-        "nextRunAtMs": 1781491202256,
-        "lastRunAtMs": 1781489702099,
+        "lastRunAtMs": 1781491202261,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 600157,
+        "lastDurationMs": 602364,
         "lastDeliveryStatus": "unknown",
         "lastFailureNotificationDeliveryStatus": "unknown",
-        "consecutiveErrors": 4,
+        "consecutiveErrors": 5,
         "consecutiveSkipped": 0,
         "lastDiagnostics": {
           "summary": "cron: job execution timed out (last phase: model-call-started)",
           "entries": [
             {
-              "ts": 1781490302256,
+              "ts": 1781491804625,
               "source": "cron-setup",
               "severity": "error",
               "message": "cron: job execution timed out (last phase: model-call-started)"
@@ -196,15 +193,14 @@
           ]
         },
         "lastDiagnosticSummary": "cron: job execution timed out (last phase: model-call-started)",
-        "lastError": "cron: job execution timed out (last phase: model-call-started)",
-        "lastErrorReason": "timeout"
+        "lastErrorReason": "timeout",
+        "lastError": "cron: job execution timed out (last phase: model-call-started)"
       }
     },
     "00bad0b6-3fc5-4fd2-8a8c-61775e826573": {
       "updatedAtMs": 1781453311384,
-      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 13-15 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":15000}}",
+      "scheduleIdentity": "{\"version\":1,\"enabled\":false,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 13-15 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":15000}}",
       "state": {
-        "nextRunAtMs": 1781499606681,
         "lastRunAtMs": 1781420408902,
         "lastRunStatus": "ok",
         "lastStatus": "ok",

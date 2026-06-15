@@ -5,7 +5,7 @@
       "id": "b1795f87-68ae-4aa4-a29e-9edc3041ad58",
       "agentId": "monitor",
       "name": "towney-afternoon-monitor",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1780372310529,
       "schedule": {
         "kind": "cron",
@@ -131,7 +131,7 @@
       "id": "56078609-aee4-4332-9ef5-d952714fe061",
       "agentId": "monitor",
       "name": "towney-morning-monitor",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1780486379546,
       "schedule": {
         "kind": "cron",
@@ -219,7 +219,7 @@
       "id": "96be9a87-f317-4d9a-88e1-955c4d019af3",
       "agentId": "monitor",
       "name": "klaire-morning-monitor",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1780487209499,
       "schedule": {
         "kind": "cron",
@@ -251,7 +251,7 @@
       "id": "00bad0b6-3fc5-4fd2-8a8c-61775e826573",
       "agentId": "monitor",
       "name": "klaire-afternoon-monitor",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1780487209524,
       "schedule": {
         "kind": "cron",
