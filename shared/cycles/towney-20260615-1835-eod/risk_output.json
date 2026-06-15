@@ -1,0 +1,67 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260615-1835-eod",
+  "data": {
+    "symbol": "全持仓",
+    "risk_score": 4.80,
+    "verdict": "NOC",
+    "veto_reason": "",
+    "dimensions": {
+      "financial_health": {
+        "score": 4.27,
+        "note": "加权平均：澜起/天孚财务极优(fin_health=2)，通富微电偏弱(负债率64.9%/毛利率13.3%=7)，海光/沪电/华海清科中等(现金流弱)。ETF持仓默认5分。阿里巴巴8.5%距止损无立即威胁。",
+        "source": "self"
+      },
+      "valuation": {
+        "score": 6.10,
+        "note": "加权平均：核心科技仓估值极高(天孚PE120x=8,海光PE249x=9,澜起PE82x=6)，显著拉高组合估值风险。ETF/阿里巴巴估值中性偏低。整体组合估值偏高但增长支撑部分合理。",
+        "source": "self"
+      },
+      "industry_cycle": {
+        "score": 5,
+        "note": "数据缺失，默认5分。精简两委员流程，Industry未派发。",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 3.00,
+        "note": "加权平均：今日普涨(12涨1跌)，半导体/AI主线全面爆发。澜起+6.77%/天孚+8.57%/华海清科+8.33%强势多头。通富微电+7.55%从低点反弹。阿里巴巴唯一下跌-0.82%趋势偏弱。除阿里外技术面均为低风险。⚠️仅腾讯gtimg单源可用(东方财富/网易/同花顺/新浪均不可用)。",
+        "source": "self"
+      },
+      "macro": {
+        "score": 5,
+        "note": "数据缺失，默认5分。精简两委员流程，Industry未派发。",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 5,
+        "note": "数据缺失，默认5分。精简两委员流程，News未派发。",
+        "source": "news_agent"
+      }
+    },
+    "summary": "组合加权风险评分4.80(NOC)。核心风险来自估值维度(6.10)：天孚(PE120x)、海光(PE249x)估值极度昂贵，是组合最大风险敞口。次要风险为AI赛道集中度58.2%(触发VETO任何AI新增仓位)和通富微电财务质量(负债率64.9%/毛利率13.3%)。无个股距止损线≤3%。整体组合风险可控，但估值偏高和赛道过度集中需持续关注。",
+    "portfolio_details": {
+      "data_quality": "⚠️ 单源未验证 - 仅腾讯gtimg可用（东方财富/网易/同花顺/新浪均不可用），价格数据未经交叉验证",
+      "ai_concentration": 0.582,
+      "ai_concentration_veto": true,
+      "position_count": 13,
+      "up_positions": 12,
+      "down_positions": 1,
+      "individual_risk_scores": {
+        "688120-华海清科": { "risk_score": 4.70, "weight": 0.1392, "key_risk": "利润增速仅+6%与PE71x不匹配,经营现金流极弱" },
+        "688008-澜起科技": { "risk_score": 4.15, "weight": 0.1215, "key_risk": "PE82x高估值,利润增速放缓至61%需持续超预期" },
+        "300394-天孚通信": { "risk_score": 4.40, "weight": 0.1595, "key_risk": "PE120x极度昂贵,PB39.6x,估值已充分反映预期" },
+        "688041-海光信息": { "risk_score": 5.75, "weight": 0.1514, "key_risk": "PE249x全组合最贵,ROE仅11.7%偏低,经营现金流极弱" },
+        "002463-沪电股份": { "risk_score": 4.95, "weight": 0.0343, "key_risk": "三雷(经营现金流-64%/应收64.76亿/存货49亿/有息负债57亿),负债率48.6%" },
+        "002156-通富微电": { "risk_score": 5.75, "weight": 0.0162, "key_risk": "负债率64.9%+毛利率13.3%行业最弱,PE71x对低毛利封测偏贵" },
+        "588090-科创芯片ETF": { "risk_score": 4.70, "weight": 0.0993, "key_risk": "ETF分散度好,风险可控" },
+        "159949-创业板50ETF": { "risk_score": 4.70, "weight": 0.0318, "key_risk": "宽基ETF,风险分散" },
+        "510500-中证500ETF": { "risk_score": 4.85, "weight": 0.0401, "key_risk": "中盘宽基,收益贡献有限" },
+        "513300-纳斯达克ETF": { "risk_score": 4.70, "weight": 0.0506, "key_risk": "美股科技配置,AI驱动" },
+        "513650-标普500ETF": { "risk_score": 4.85, "weight": 0.0143, "key_risk": "仓位极低1.4%,影响有限" },
+        "518880-黄金ETF": { "risk_score": 5.00, "weight": 0.0175, "key_risk": "成本线附近挣扎,方向不明" },
+        "09988-阿里巴巴": { "risk_score": 5.10, "weight": 0.0128, "key_risk": "唯一下跌标的-16%,仓位已降至1.28%,距止损8.5%安全" }
+      }
+    }
+  }
+}

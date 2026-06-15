@@ -1,0 +1,7 @@
+{
+  "principal": "klaire",
+  "flow_type": "精简两委员",
+  "cycle_id": "klaire-20260615-1045-eod",
+  "trigger_time": "2026-06-15T18:45:00+08:00",
+  "trigger_type": "cron-eod"
+}
