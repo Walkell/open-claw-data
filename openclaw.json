@@ -340,9 +340,9 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-butler",
         "agentDir": "/home/ubuntu/.openclaw/agents/butler/agent",
         "model": {
-          "primary": "glm/glm-5.2",
+          "primary": "deepseek/deepseek-v4-pro",
           "fallbacks": [
-            "deepseek/deepseek-v4-pro"
+            "glm/glm-5.2"
           ]
         },
         "identity": {
@@ -762,8 +762,9 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-monitor",
         "agentDir": "/home/ubuntu/.openclaw/agents/monitor/agent",
         "model": {
-          "primary": "glm/glm-5.1",
+          "primary": "volcengine-plan/glm-5.1",
           "fallbacks": [
+            "glm/glm-5.1",
             "deepseek/deepseek-v4-pro"
           ]
         },

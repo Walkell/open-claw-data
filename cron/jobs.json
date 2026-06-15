@@ -355,6 +355,162 @@
         "text": "🔔 IC 触发：月报复盘 principal=klaire flow_type=四委员"
       },
       "state": {}
+    },
+    {
+      "id": "480e4256-823a-4873-b38b-0ed53349b8d7",
+      "agentId": "monitor",
+      "name": "towney-monitor-am-h9",
+      "enabled": true,
+      "createdAtMs": 1781493622225,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30,50 9 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "监控任务 principal=towney",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_991380df662097f94a368e3ca6f8204e",
+        "accountId": "butler"
+      },
+      "state": {}
+    },
+    {
+      "id": "488eacd7-30ea-4cf9-8e99-142a35d22263",
+      "agentId": "monitor",
+      "name": "towney-monitor-am-h10-11",
+      "enabled": true,
+      "createdAtMs": 1781493622471,
+      "schedule": {
+        "kind": "cron",
+        "expr": "10,30,50 10-11 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "监控任务 principal=towney",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_991380df662097f94a368e3ca6f8204e",
+        "accountId": "butler"
+      },
+      "state": {}
+    },
+    {
+      "id": "8d836966-631b-448a-a3e9-4899e2f0170c",
+      "agentId": "monitor",
+      "name": "towney-monitor-pm",
+      "enabled": true,
+      "createdAtMs": 1781493622498,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0,20,40 13-14 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "监控任务 principal=towney",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_991380df662097f94a368e3ca6f8204e",
+        "accountId": "butler"
+      },
+      "state": {}
+    },
+    {
+      "id": "8c4c648d-6451-4ebb-aa96-7ef4150d058e",
+      "agentId": "monitor",
+      "name": "klaire-monitor-am-h9",
+      "enabled": true,
+      "createdAtMs": 1781493622529,
+      "schedule": {
+        "kind": "cron",
+        "expr": "20,40 9 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "监控任务 principal=klaire",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
+        "accountId": "butler"
+      },
+      "state": {}
+    },
+    {
+      "id": "fa0575b8-0645-4ce8-ba45-be17fa9c3654",
+      "agentId": "monitor",
+      "name": "klaire-monitor-am-h10-11",
+      "enabled": true,
+      "createdAtMs": 1781493622557,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0,20,40 10-11 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "监控任务 principal=klaire",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
+        "accountId": "butler"
+      },
+      "state": {}
+    },
+    {
+      "id": "6aaa7f37-a026-42be-92c2-daa17232b8d3",
+      "agentId": "monitor",
+      "name": "klaire-monitor-pm",
+      "enabled": true,
+      "createdAtMs": 1781493622585,
+      "schedule": {
+        "kind": "cron",
+        "expr": "10,30,50 13-14 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "监控任务 principal=klaire",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
+        "accountId": "butler"
+      },
+      "state": {}
     }
   ]
 }
