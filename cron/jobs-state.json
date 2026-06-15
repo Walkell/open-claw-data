@@ -87,41 +87,41 @@
       }
     },
     "56078609-aee4-4332-9ef5-d952714fe061": {
-      "updatedAtMs": 1781487931467,
+      "updatedAtMs": 1781490315915,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 9-11 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":30000}}",
       "state": {
-        "nextRunAtMs": 1781488829482,
-        "lastRunAtMs": 1781487929486,
+        "nextRunAtMs": 1781491215915,
+        "lastRunAtMs": 1781490304308,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 1981,
+        "lastDurationMs": 11607,
         "lastDeliveryStatus": "not-delivered",
         "lastFailureNotificationDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 2,
+        "consecutiveErrors": 4,
         "consecutiveSkipped": 0,
         "lastDelivered": false,
         "lastDiagnostics": {
-          "summary": "[1305][该模型当前访问量过大，请您稍后再试][20260615094531619b9b0b0cf74b5f]",
+          "summary": "[1305][该模型当前访问量过大，请您稍后再试][20260615102512d1718ef121664a79]",
           "entries": [
             {
-              "ts": 1781487931465,
+              "ts": 1781490315912,
               "source": "tool",
               "severity": "error",
-              "message": "[1305][该模型当前访问量过大，请您稍后再试][20260615094531619b9b0b0cf74b5f]"
+              "message": "[1305][该模型当前访问量过大，请您稍后再试][20260615102512d1718ef121664a79]"
             },
             {
-              "ts": 1781487931465,
+              "ts": 1781490315913,
               "source": "agent-run",
               "severity": "error",
-              "message": "[1305][该模型当前访问量过大，请您稍后再试][20260615094531619b9b0b0cf74b5f]"
+              "message": "[1305][该模型当前访问量过大，请您稍后再试][20260615102512d1718ef121664a79]"
             }
           ]
         },
-        "lastDiagnosticSummary": "[1305][该模型当前访问量过大，请您稍后再试][20260615094531619b9b0b0cf74b5f]",
-        "lastDeliveryError": "[1305][该模型当前访问量过大，请您稍后再试][20260615094531619b9b0b0cf74b5f]",
+        "lastDiagnosticSummary": "[1305][该模型当前访问量过大，请您稍后再试][20260615102512d1718ef121664a79]",
+        "lastDeliveryError": "[1305][该模型当前访问量过大，请您稍后再试][20260615102512d1718ef121664a79]",
         "lastFailureNotificationDelivered": false,
-        "lastFailureNotificationDeliveryError": "[1305][该模型当前访问量过大，请您稍后再试][20260615094531619b9b0b0cf74b5f]",
-        "lastError": "[1305][该模型当前访问量过大，请您稍后再试][20260615094531619b9b0b0cf74b5f]"
+        "lastFailureNotificationDeliveryError": "[1305][该模型当前访问量过大，请您稍后再试][20260615102512d1718ef121664a79]",
+        "lastError": "[1305][该模型当前访问量过大，请您稍后再试][20260615102512d1718ef121664a79]"
       }
     },
     "f14657c4-17fa-4d9d-a79d-771ca7df7730": {
@@ -172,41 +172,32 @@
       }
     },
     "96be9a87-f317-4d9a-88e1-955c4d019af3": {
-      "updatedAtMs": 1781487912170,
+      "updatedAtMs": 1781490302256,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"*/15 9-11 * * 1-5\",\"tz\":\"Asia/Shanghai\",\"staggerMs\":15000}}",
       "state": {
-        "nextRunAtMs": 1781488802094,
-        "lastRunAtMs": 1781487902098,
+        "nextRunAtMs": 1781491202256,
+        "lastRunAtMs": 1781489702099,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 10072,
-        "lastDeliveryStatus": "not-delivered",
-        "lastFailureNotificationDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 2,
+        "lastDurationMs": 600157,
+        "lastDeliveryStatus": "unknown",
+        "lastFailureNotificationDeliveryStatus": "unknown",
+        "consecutiveErrors": 4,
         "consecutiveSkipped": 0,
-        "lastDelivered": false,
         "lastDiagnostics": {
-          "summary": "[1305][该模型当前访问量过大，请您稍后再试][202606150945061f328489125d4998]",
+          "summary": "cron: job execution timed out (last phase: model-call-started)",
           "entries": [
             {
-              "ts": 1781487912167,
-              "source": "tool",
+              "ts": 1781490302256,
+              "source": "cron-setup",
               "severity": "error",
-              "message": "[1305][该模型当前访问量过大，请您稍后再试][202606150945061f328489125d4998]"
-            },
-            {
-              "ts": 1781487912168,
-              "source": "agent-run",
-              "severity": "error",
-              "message": "[1305][该模型当前访问量过大，请您稍后再试][202606150945061f328489125d4998]"
+              "message": "cron: job execution timed out (last phase: model-call-started)"
             }
           ]
         },
-        "lastDiagnosticSummary": "[1305][该模型当前访问量过大，请您稍后再试][202606150945061f328489125d4998]",
-        "lastDeliveryError": "[1305][该模型当前访问量过大，请您稍后再试][202606150945061f328489125d4998]",
-        "lastFailureNotificationDelivered": false,
-        "lastFailureNotificationDeliveryError": "[1305][该模型当前访问量过大，请您稍后再试][202606150945061f328489125d4998]",
-        "runningAtMs": 1781488802096
+        "lastDiagnosticSummary": "cron: job execution timed out (last phase: model-call-started)",
+        "lastError": "cron: job execution timed out (last phase: model-call-started)",
+        "lastErrorReason": "timeout"
       }
     },
     "00bad0b6-3fc5-4fd2-8a8c-61775e826573": {
