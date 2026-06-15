@@ -24,10 +24,8 @@ description: |
 调用任何飞书非 Bitable API 之前执行：
 
 ```
-feishu_oauth()   ← 不传 action，默认续期
+feishu_oauth()   ← 正确且完整的续期调用，不需要传任何参数
 ```
-
-> ⚠️ 绝不传 `action="revoke"` — revoke 清除用户授权凭据，不是刷新 token。
 
 续期完成后直接调用目标工具（feishu_calendar_event、feishu_im_user_get_messages 等），无需其他操作。
 

@@ -10,7 +10,7 @@
 | IM / Calendar / Task / Doc | 路径一：feishu_oauth 续期即可，工具以用户身份调用，无需 app_token | `custom-feishu-auth` + 对应飞书 SKILL |
 
 > app_token **不得出现在任何文字输出中**。  
-> 🚫 绝不调用 `feishu_oauth(action="revoke")`。
+> `feishu_oauth` 唯一正确调用：`feishu_oauth()`，不传任何参数。
 
 ---
 

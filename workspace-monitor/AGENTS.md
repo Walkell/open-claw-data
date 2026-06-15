@@ -16,8 +16,11 @@
 从配置档获取：
 - `bitable_name`（如 "Towney-投资管理"）
 - `positions_table`、`watchlist_table`、`monitor_table` 的**表名**（不是 ID，ID 动态获取）
+- **principal=klaire 时额外读取**：配置档「输出通道」中的群 `chat_id`，用于 Step 7 直接调 feishu_im 推送
 
-> 推送目标无需读取——cron 的 delivery 字段已配置好，Monitor 只需输出文本，不得主动调用 feishu message 工具。
+> **推送机制因 principal 而异（见 Step 7）：**
+> - Towney：session 体输出预警文本，cron delivery 自动推至 Towney DM
+> - Klaire：session 体**必须永远 NO_REPLY**，预警通过 feishu_im 工具直接推群——防止 Klaire 监控内容经 session 体泄露至 Towney DM
 
 ---
 
@@ -234,9 +237,9 @@
 
 ## 第7步：汇总输出
 
-将所有触发项按级别排序（🔴 → 🟡 → 🔵）整合为一条回复，不添加额外分析。
+将所有触发项按级别排序（🔴 → 🟡 → 🔵）整合为一条消息，不添加额外分析。
 
-**有触发项时输出格式：**
+消息格式：
 ```
 📊 {principal} 盘中监控 {HH:MM}
 
@@ -246,12 +249,19 @@
 持仓快照已写入监控记录（{N}条）
 ```
 
-**无任何触发项时（包括所有触发项均被去重过滤后）：**
-```
-NO_REPLY
-```
+### principal=towney
 
-`NO_REPLY` 时 delivery 不推送，静默结束。
+- **有触发项**：输出上述格式文本作为 session 体，cron delivery 自动推至 Towney DM
+- **无触发项**（含全被去重）：输出 `NO_REPLY`，delivery 不推送
+
+### principal=klaire ⚠️
+
+**session 体无论如何必须输出 `NO_REPLY`**——防止内容经 session 回写泄露至 Towney DM。
+
+- **有触发项**：
+  1. 调用 `feishu_im_chat_message.create`，向启动时从 KLAIRE_CONFIG.md 读取的群 `chat_id` 发送上述格式消息
+  2. session 体输出 `NO_REPLY`
+- **无触发项**（含全被去重）：直接输出 `NO_REPLY`，不调 feishu_im
 
 ---
 
@@ -269,6 +279,7 @@ NO_REPLY
 - 不修改持仓表、观察池（只写监控记录）
 - 止损/止盈/成本价数字不得被 Monitor 改写，只读
 - `app_token` 不得出现在任何文字输出
-- `permission_denied` / `NOTEXIST` → 重新执行 `custom-feishu-auth` SKILL（最多 2 次）
+- **鉴权唯一入口：`custom-feishu-auth` SKILL**。遇到 `permission_denied` / `NOTEXIST` / token 报错，唯一正确动作是重新执行此 SKILL（最多 2 次），不得自行调用 `feishu_oauth` 或任何其他鉴权工具
+- **`feishu_oauth` 唯一正确调用：`feishu_oauth()`，不传任何参数**——这是续期的完整形式，不需要传任何参数
 - 不碰另一 principal 的任何数据
 - 行情数据严禁使用 web_search / tavily_search（遵守 `custom-market-data-cn` SKILL 红线）

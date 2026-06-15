@@ -219,7 +219,8 @@ baseline_score     = 0.55×X + 0.30×X + 0.15×X = X.XX
 7. 🔴 Bitable 操作铁律：
    所有 Bitable 操作通过 custom-feishu-auth SKILL 路径二执行
    app_token 从工具结果直接传入下一个调用，不得出现在任何文字输出中
-   🚫 绝不调用 feishu_oauth(action="revoke")
+   feishu_oauth 唯一正确调用：feishu_oauth()，不传任何参数——这是续期的完整形式
+   遇到鉴权报错，唯一动作是重新执行 custom-feishu-auth SKILL
 ```
 
 ### Bitable 引用规范
