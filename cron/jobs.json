@@ -435,11 +435,11 @@
       "state": {}
     },
     {
-      "id": "8c4c648d-6451-4ebb-aa96-7ef4150d058e",
+      "id": "d811c4b9-4ba6-41da-bae3-8291ed27597c",
       "agentId": "monitor",
       "name": "klaire-monitor-am-h9",
       "enabled": true,
-      "createdAtMs": 1781493622529,
+      "createdAtMs": 1781497249914,
       "schedule": {
         "kind": "cron",
         "expr": "20,40 9 * * 1-5",
@@ -455,17 +455,16 @@
       "delivery": {
         "mode": "announce",
         "channel": "feishu",
-        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "butler"
+        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a"
       },
       "state": {}
     },
     {
-      "id": "fa0575b8-0645-4ce8-ba45-be17fa9c3654",
+      "id": "f10ecdba-06c7-4b59-b4d6-6bf98b07e97f",
       "agentId": "monitor",
       "name": "klaire-monitor-am-h10-11",
       "enabled": true,
-      "createdAtMs": 1781493622557,
+      "createdAtMs": 1781497250004,
       "schedule": {
         "kind": "cron",
         "expr": "0,20,40 10-11 * * 1-5",
@@ -481,17 +480,16 @@
       "delivery": {
         "mode": "announce",
         "channel": "feishu",
-        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "butler"
+        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a"
       },
       "state": {}
     },
     {
-      "id": "6aaa7f37-a026-42be-92c2-daa17232b8d3",
+      "id": "de6d3f4a-4cff-4422-9606-223594c45b77",
       "agentId": "monitor",
       "name": "klaire-monitor-pm",
       "enabled": true,
-      "createdAtMs": 1781493622585,
+      "createdAtMs": 1781497250031,
       "schedule": {
         "kind": "cron",
         "expr": "10,30,50 13-14 * * 1-5",
@@ -507,8 +505,7 @@
       "delivery": {
         "mode": "announce",
         "channel": "feishu",
-        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "butler"
+        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a"
       },
       "state": {}
     }
