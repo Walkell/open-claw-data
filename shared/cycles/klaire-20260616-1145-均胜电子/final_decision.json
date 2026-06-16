@@ -1,0 +1,54 @@
+{
+  "cycle_id": "klaire-20260616-1145-均胜电子",
+  "principal": "klaire",
+  "flow_type": "四委员",
+  "decision_time": 1758509040000,
+  "symbol": "600699",
+  "symbol_name": "均胜电子",
+  "current_price": 25.20,
+  "cost_price": 24.89,
+  "stop_loss": 24.00,
+  "committee_scores": {
+    "research": {
+      "composite": 4.85,
+      "dimensions": {
+        "technical": 3,
+        "fundamental": 5,
+        "valuation": 5,
+        "financials": 6
+      }
+    },
+    "industry": {
+      "composite": 5.75,
+      "macro_score": 5.2,
+      "industry_score": 6.3
+    },
+    "news": {
+      "modifier": 0.225,
+      "sentiment": 0.45,
+      "event_impact": 5,
+      "confidence": 0.75
+    },
+    "risk": {
+      "risk_score": 4.5,
+      "verdict": "NOC",
+      "veto_reason": ""
+    }
+  },
+  "baseline_score": 5.31,
+  "baseline_action": "持有观察",
+  "formula_calculation": {
+    "research_composite": "0.30×5 + 0.25×6 + 0.25×5 + 0.20×3 = 4.85",
+    "industry_composite": "0.50×5.2 + 0.50×6.3 = 5.75",
+    "news_modifier": "0.45 × (5/10) = 0.225",
+    "baseline_score": "0.55×4.85 + 0.30×5.75 + 0.15×(5 + 0.225×5) = 5.31"
+  },
+  "cio_action": "持有观察",
+  "cio_conclusion": "持有观察，不建仓不补仓",
+  "trigger_condition": "若Q2营收数据回暖+技术面企稳（收盘站上MA20），可重新评估",
+  "stop_loss": "维持24.00",
+  "invalidation_condition": "跌破24止损线执行止损；Q2营收连续两季下滑需重新评估基本面",
+  "core_logic": "均胜电子技术面超跌（60日回撤26%+RSI进入超卖区）但中期空头趋势未改；基本面FY2025利润高增39%但2026Q1营收意外下滑5%，增长拐点未确认。近期新闻面偏正面（实控人增持+Intel合作+25亿收购+光模块量产），短期有博弈性反弹可能，但估值PE 28倍不算便宜。综合baseline 5.31分处于持有观察区间，不满足建仓/加仓条件（需≥7.0）。AI赛道集中度已达45.1%超40%红线，即使评分达标也触发VETO。建议耐心等待Q2财报验证营收拐点。",
+  "annual_target_check": "当前持仓成本24.89，需涨至32.36才能实现30%年化（距现价+28%）。若Q2营收持续下滑，应评估是否调整止盈至更保守水平。",
+  "report_summary": "均胜电子 IC 综合裁决：baseline 5.31 → 持有观察。技术面超卖+基本面边际改善形成博弈窗口，但增长拐点未确认，中期趋势偏空，不满足建仓条件。Risk NOC，AI集中度45.1%超阈值。建议等待Q2财报确认营收拐点后重新评估。"
+}
