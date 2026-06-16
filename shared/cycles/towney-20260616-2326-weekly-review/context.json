@@ -1,0 +1,24 @@
+{
+  "cycle_id": "towney-20260616-2326-weekly-review",
+  "principal": "towney",
+  "flow_type": "四委员",
+  "principal_display_name": "Towney",
+  "profit_target": "30%",
+  "risk_thresholds": {
+    "veto": 7,
+    "hard_veto": 9
+  },
+  "ledger": {
+    "bitable_name": "Towney-投资管理",
+    "positions_table": "持仓表",
+    "watchlist_table": "观察池",
+    "reports_table": "报告表",
+    "trades_table": "交易记录",
+    "monitor_table": "监控记录",
+    "decisions_table": "决策复盘"
+  },
+  "output_channels": {
+    "group_chat": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
+    "dm": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b"
+  }
+}

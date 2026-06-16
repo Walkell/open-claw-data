@@ -18,8 +18,8 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：EOD复盘 principal=towney flow_type=精简两委员"
       },
-      "state": {},
-      "sessionKey": "agent:corona:cron:towney"
+      "sessionKey": "agent:corona:cron:towney",
+      "state": {}
     },
     {
       "id": "bfbfdc36-64e3-4e1b-93ce-23be6eb695c4",
@@ -38,8 +38,8 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：周报复盘 principal=towney flow_type=四委员"
       },
-      "state": {},
-      "sessionKey": "agent:corona:cron:towney"
+      "sessionKey": "agent:corona:cron:towney",
+      "state": {}
     },
     {
       "id": "c6ae35a4-e484-4148-815b-dc3182e86858",
@@ -58,8 +58,8 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：月报复盘 principal=towney flow_type=四委员"
       },
-      "state": {},
-      "sessionKey": "agent:corona:cron:towney"
+      "sessionKey": "agent:corona:cron:towney",
+      "state": {}
     },
     {
       "id": "f634514a-b3b6-4295-84c5-cb01e7bd2f02",
@@ -78,8 +78,8 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：周一简报 principal=towney flow_type=四委员"
       },
-      "state": {},
-      "sessionKey": "agent:corona:cron:towney"
+      "sessionKey": "agent:corona:cron:towney",
+      "state": {}
     },
     {
       "id": "64b5f1d8-3547-4b45-afbc-ade4b0df1611",
@@ -99,8 +99,8 @@
         "kind": "systemEvent",
         "text": "🔔 开盘扫描 principal=towney（检查持仓大跌/大涨，条件满足则触发精简两委员IC）"
       },
-      "state": {},
-      "sessionKey": "agent:corona:cron:towney"
+      "sessionKey": "agent:corona:cron:towney",
+      "state": {}
     },
     {
       "id": "f14657c4-17fa-4d9d-a79d-771ca7df7730",
@@ -119,8 +119,8 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：盘前简报 principal=towney flow_type=四委员"
       },
-      "state": {},
-      "sessionKey": "agent:corona:cron:towney"
+      "sessionKey": "agent:corona:cron:towney",
+      "state": {}
     },
     {
       "id": "82452460-7ffa-4eff-9bdb-89e86182c872",
@@ -139,8 +139,8 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：周一简报 principal=klaire flow_type=四委员"
       },
-      "state": {},
-      "sessionKey": "agent:corona:cron:klaire"
+      "sessionKey": "agent:corona:cron:klaire",
+      "state": {}
     },
     {
       "id": "bbbeabff-b8ea-47c7-b047-0a1297ad15d5",
@@ -159,8 +159,8 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：盘前简报 principal=klaire flow_type=四委员"
       },
-      "state": {},
-      "sessionKey": "agent:corona:cron:klaire"
+      "sessionKey": "agent:corona:cron:klaire",
+      "state": {}
     },
     {
       "id": "066bd57e-ed9a-4c40-a8a5-4799e14b197d",
@@ -179,8 +179,8 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：EOD复盘 principal=klaire flow_type=精简两委员"
       },
-      "state": {},
-      "sessionKey": "agent:corona:cron:klaire"
+      "sessionKey": "agent:corona:cron:klaire",
+      "state": {}
     },
     {
       "id": "72ab5829-ca71-49a7-bbb4-7e46440f2298",
@@ -200,8 +200,8 @@
         "kind": "systemEvent",
         "text": "🔔 开盘扫描 principal=klaire（检查持仓大跌/大涨，条件满足则触发精简两委员IC）"
       },
-      "state": {},
-      "sessionKey": "agent:corona:cron:klaire"
+      "sessionKey": "agent:corona:cron:klaire",
+      "state": {}
     },
     {
       "id": "30fe5386-f706-453c-af2f-0e6765b9e376",
@@ -220,8 +220,8 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：周报复盘 principal=klaire flow_type=四委员"
       },
-      "state": {},
-      "sessionKey": "agent:corona:cron:klaire"
+      "sessionKey": "agent:corona:cron:klaire",
+      "state": {}
     },
     {
       "id": "afdbd0ef-a3f5-4e18-81e5-f3e415bf2543",
@@ -240,8 +240,8 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：月报复盘 principal=klaire flow_type=四委员"
       },
-      "state": {},
-      "sessionKey": "agent:corona:cron:klaire"
+      "sessionKey": "agent:corona:cron:klaire",
+      "state": {}
     },
     {
       "id": "86944409-250b-4fc9-8722-6052ae193ac4",
