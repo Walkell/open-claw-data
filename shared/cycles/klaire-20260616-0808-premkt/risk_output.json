@@ -1,0 +1,139 @@
+{
+  "principal": "klaire",
+  "agent": "risk",
+  "cycle_id": "klaire-20260616-0808-premkt",
+  "data": {
+    "market_data_note": "⚠️ 单源未验证 - 仅腾讯gtimg可用（网易502、同花顺404、新浪403），数据为6/15收盘价，未经交叉验证",
+    "positions": [
+      {
+        "code": "002472",
+        "name": "双环传动",
+        "risk_score": 3.0,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": { "score": 3.0, "note": "ROE 13.69%，负债率43.33%健康，OCF同比+170%大幅改善，货币资金18亿充裕", "source": "self" },
+          "valuation": { "score": 4.0, "note": "PE约27倍，齿轮/减速器赛道成长溢价合理但已反映较多预期，安全边际一般", "source": "self" },
+          "industry_cycle": { "score": 1.8, "note": "机器人赛道高景气8.2/10，Optimus+智元催化持续，RV减速器批量供货", "source": "industry_agent" },
+          "technical": { "score": 3.0, "note": "现价42.81站稳MA60上方，距止损38有11.2%缓冲。逼近前高45阻力，短期超买", "source": "self" },
+          "macro": { "score": 3.0, "note": "科技/机器人宏观顺风，政策持续加码", "source": "industry_agent" },
+          "news_sentiment": { "score": 3.0, "note": "情绪0.3偏正面，板块资金流入积极，无公司层面重大风险事件", "source": "news_agent" }
+        },
+        "key_risks": ["估值已反映较多预期，前高45附近阻力", "短期技术面超买", "距止盈46.5空间有限"]
+      },
+      {
+        "code": "600808",
+        "name": "马钢股份",
+        "risk_score": 6.5,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": { "score": 6.5, "note": "Q1刚扭亏EPS 0.01，净利润4236万对钢企微不足道，持续盈利能力存疑", "source": "self" },
+          "valuation": { "score": 7.0, "note": "微利状态PE失真（年化~70倍），PB低但反映资产质量担忧而非低估", "source": "self" },
+          "industry_cycle": { "score": 5.7, "note": "钢铁行业周期底部弱复苏4.3/10，五大钢材社库同比+22%，需求偏弱", "source": "industry_agent" },
+          "technical": { "score": 7.0, "note": "现价2.80距止损2.70仅3.6%，深度套亏-27.5%，趋势极度弱势，反弹无量能支撑", "source": "self" },
+          "macro": { "score": 6.5, "note": "钢铁板块宏观逆风，PPI传导缓慢，供需格局未见根本改善", "source": "industry_agent" },
+          "news_sentiment": { "score": 6.0, "note": "情绪-0.2偏负面，6/8单日跌5.28%，短期需求走弱拖累", "source": "news_agent" }
+        },
+        "key_risks": ["距止损仅3.6%，随时可能触发强制卖出", "持续盈利能力存疑，微利状态", "钢铁行业供需偏弱，库存高企", "距年化30%目标几乎不可能"]
+      },
+      {
+        "code": "588080",
+        "name": "科创50ETF",
+        "risk_score": 3.7,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": { "score": 5.0, "note": "ETF产品无独立财报，跟踪误差小流动性好，中性评分", "source": "self" },
+          "valuation": { "score": 4.0, "note": "科创50指数PE约40-45倍处于历史中位，科技成长估值合理非显著低估", "source": "self" },
+          "industry_cycle": { "score": 2.0, "note": "半导体+硬科技高景气8.0/10，大基金三期+自主可控政策加码", "source": "industry_agent" },
+          "technical": { "score": 3.0, "note": "现价1.788已突破成本1.72，距止损1.55有13.3%缓冲，量能充沛趋势转多", "source": "self" },
+          "macro": { "score": 3.0, "note": "科技/半导体宏观顺风，政策驱动方向明确", "source": "industry_agent" },
+          "news_sentiment": { "score": 4.5, "note": "情绪0.1轻微正面，无重大政策变化，跟随大盘波动", "source": "news_agent" }
+        },
+        "key_risks": ["PE处历史中位非低估", "ETF依赖指数行情，个股暴雷风险虽低但系统性下跌无法回避"]
+      },
+      {
+        "code": "159540",
+        "name": "信创ETF",
+        "risk_score": 4.2,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": { "score": 5.0, "note": "ETF产品无独立财报，底层信创公司盈利分化大，部分仍处投入期", "source": "self" },
+          "valuation": { "score": 5.0, "note": "信创板块PE偏高，业绩兑现节奏不确定，当前估值不便宜但政策溢价合理", "source": "self" },
+          "industry_cycle": { "score": 2.2, "note": "信创主线景气7.8/10，党政信创替换加速，政策面最强赛道之一", "source": "industry_agent" },
+          "technical": { "score": 5.0, "note": "现价2.086仍在成本2.203下方(-5.3%)，趋势未确认反转，距止损1.85有11.3%", "source": "self" },
+          "macro": { "score": 3.0, "note": "信创/国产替代宏观强支持，信息安全法+信创目录+政府采购三重驱动", "source": "industry_agent" },
+          "news_sentiment": { "score": 4.0, "note": "情绪0.15轻微正面，无新增重大政策催化但方向不变", "source": "news_agent" }
+        },
+        "key_risks": ["仍在成本线下方-5.3%", "业绩兑现节奏不确定，估值偏高", "板块β属性强，缺乏个股alpha"]
+      },
+      {
+        "code": "600699",
+        "name": "均胜电子",
+        "risk_score": 3.8,
+        "verdict": "VETO",
+        "veto_reason": "距止损线2.6%（≤3%），VETO该标的任何加仓。现价24.65距止损24仅0.65元，随时可能触发强制卖出。",
+        "dimensions": {
+          "financial_health": { "score": 3.0, "note": "营收611.83亿(+9.5%)，OCF 53.98亿(+17.3%)强劲，研发投入32.89亿前瞻布局，整体财务稳健", "source": "self" },
+          "valuation": { "score": 4.0, "note": "P/S约0.56倍合理偏低，营收规模大但净利率偏低，估值修复需盈利持续改善", "source": "self" },
+          "industry_cycle": { "score": 2.8, "note": "汽车电子+智能驾驶景气7.2/10，人形机器人新增长极，实控人增持释放信心", "source": "industry_agent" },
+          "technical": { "score": 7.0, "note": "现价24.65紧贴成本24.89，距止损24仅2.6%⚠️。反弹力度一般趋势偏弱，风险收益比不佳", "source": "self" },
+          "macro": { "score": 3.5, "note": "汽车电子/智能驾驶宏观中性偏正面，行业M&A加速整合", "source": "industry_agent" },
+          "news_sentiment": { "score": 2.5, "note": "情绪0.4强正面，董事长增持648万元是重大信心信号，Q1利润+18%印证改善", "source": "news_agent" }
+        },
+        "key_risks": ["⚠️ 距止损仅2.6%（≤3%阈值），VETO加仓", "若跌破24触发强制卖出损失扩大", "短期借款54.62亿偏高"]
+      },
+      {
+        "code": "002011",
+        "name": "盾安环境",
+        "risk_score": 4.0,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": { "score": 4.0, "note": "ROE 16.17%良好，负债率降至44.89%，货币资金34亿充裕。但Q1净利率从8.19%降至6.37%边际走弱，存货+37.8%", "source": "self" },
+          "valuation": { "score": 4.0, "note": "PE约11倍合理偏低，下行空间有限但上行催化不足，适合防御性配置", "source": "self" },
+          "industry_cycle": { "score": 3.2, "note": "冷配+热管理景气6.8/10，汽零热管理高增，液冷有望成为第三增长曲线", "source": "industry_agent" },
+          "technical": { "score": 5.0, "note": "现价11.17在成本11.415下方(-2.1%)，距止损10.5有6.0%缓冲，趋势未确认反转", "source": "self" },
+          "macro": { "score": 4.0, "note": "家电/热管理宏观中性，新能源热管理受益电动车渗透率提升", "source": "industry_agent" },
+          "news_sentiment": { "score": 3.5, "note": "情绪0.2正面，机构集中看多，多家基金增持，核电+冷链多题材叠加", "source": "news_agent" }
+        },
+        "key_risks": ["Q1盈利能力边际走弱（净利率下降）", "存货22.56亿(+37.8%)需关注去化", "成长性不足，年化30%目标难度大"]
+      },
+      {
+        "code": "603298",
+        "name": "杭叉集团",
+        "risk_score": 3.2,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": { "score": 2.0, "note": "ROE 20.43%持仓最高，负债率仅38.44%最低，货币资金43.38亿充裕，财务最稳健标的", "source": "self" },
+          "valuation": { "score": 3.0, "note": "PE约14倍，工业装备龙头明显偏低，对比国际同行折价显著，具备估值修复空间", "source": "self" },
+          "industry_cycle": { "score": 3.7, "note": "工程机械景气6.3/10平稳运行，智能物流+AGV布局打开第二增长曲线", "source": "industry_agent" },
+          "technical": { "score": 4.0, "note": "现价25.19几乎等于成本25.20（-0.0%），距止损23有8.7%缓冲，趋势中性偏稳", "source": "self" },
+          "macro": { "score": 4.5, "note": "工程机械宏观中性偏弱，叉车与制造业PMI高度相关，当前制造业景气中性", "source": "industry_agent" },
+          "news_sentiment": { "score": 2.5, "note": "情绪0.35正面，管理层密集增持（董事长+董秘），H1净利双位数增长", "source": "news_agent" }
+        },
+        "key_risks": ["叉车行业与制造业PMI高度相关，经济下行压力大", "弹性不足，防御属性强但攻击性弱"]
+      }
+    ],
+    "portfolio_checks": {
+      "ai_concentration": {
+        "ai_market_value": 34461,
+        "total_market_value": 44533,
+        "ai_pct": 77.4,
+        "threshold": 40,
+        "result": "VETO",
+        "note": "AI/科技赛道集中度77.4%远超40%阈值。含002472(机器人)+588080(半导体)+159540(信创)+600699(汽车电子/机器人)。VETO任何AI方向新增仓位。"
+      },
+      "stop_loss_proximity": [
+        { "code": "600699", "name": "均胜电子", "distance_pct": 2.6, "result": "VETO（≤3%）" },
+        { "code": "600808", "name": "马钢股份", "distance_pct": 3.6, "result": "警告（≤5%）" }
+      ]
+    },
+    "overall_risk_score": 3.7,
+    "overall_verdict": "NOC",
+    "summary": "组合整体风险评分3.7/10属中等偏低，但存在两项硬性VETO：(1) AI/科技赛道集中度77.4%远超40%阈值，禁止任何AI方向新增仓位；(2) 均胜电子距止损仅2.6%（≤3%），VETO该标的任何加仓。马钢股份风险最高（6.5分），距止损3.6%濒临触发，Q1微利状态持续盈利能力存疑。杭叉集团风险最低（3.2分），基本面最稳健。数据来源仅gtimg单源可用，未经交叉验证。"
+  }
+}
