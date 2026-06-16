@@ -1,0 +1,375 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260617-0014-eod",
+  "date": "2026-06-16",
+  "data": {
+    "symbol": "all",
+    "symbol_name": "全持仓组合",
+    "overall_risk_score": 6.6,
+    "verdict": "VETO",
+    "veto_reason": "AI/半导体赛道集中度72.1%（占投资仓81.2%），远超40%上限。VETO任何AI/半导体方向新增仓位。现有持仓持有/减仓/止盈不受此VETO限制。",
+    "data_quality": {
+      "market_data_source": "gtimg单源（网易502/新浪403/同花顺404/东财502），A股12标的收盘价与Research输出完全一致，数据可信",
+      "upstream_dimensions": "精简两委员流程，行业景气度/宏观环境/新闻情绪三维默认5分",
+      "missing_dimensions_count": 3,
+      "note": "3/6维度为默认值（>2），组合级评分参考价值有限，建议标准四委员流程复盘"
+    },
+    "portfolio_metrics": {
+      "total_invested_pct": 88.85,
+      "total_holdings": 13,
+      "profitable_count": 11,
+      "losing_count": 2,
+      "ai_semiconductor_pct": 72.14,
+      "ai_concentration_ratio": 81.2,
+      "ai_concentration_limit": 40,
+      "max_single_position_pct": 15.95,
+      "max_single_position_name": "天孚通信",
+      "positions_above_15pct": ["天孚通信(15.95%)", "海光信息(15.14%)"]
+    },
+    "dimensions": {
+      "financial_health": { "score": 3.4, "note": "组合整体基本面稳健，澜起/天孚/海光基本面强劲；通富毛利率偏低、沪电现金流隐患", "source": "self" },
+      "valuation": { "score": 4.3, "note": "天孚浮盈+93%估值偏贵，通富PE72x，其余中等", "source": "self" },
+      "industry_cycle": { "score": 5.0, "note": "数据缺失(Industry未参与)，默认5", "source": "default" },
+      "technical": { "score": 4.1, "note": "多数持仓从6月初低点反弹中，阿里巴巴持续下跌破均线，黄金ETF距止损5%", "source": "self" },
+      "macro": { "score": 5.0, "note": "数据缺失(Industry未参与)，默认5", "source": "default" },
+      "news_sentiment": { "score": 5.0, "note": "数据缺失(News未参与)，默认5", "source": "default" }
+    },
+    "holdings": [
+      {
+        "symbol": "688120",
+        "name": "华海清科",
+        "risk_score": 4.0,
+        "verdict": "NOC",
+        "price": 201.18,
+        "cost": 147.10,
+        "stop_loss": 157,
+        "take_profit": 214.17,
+        "pos_pct": 13.92,
+        "pnl_pct": 36.8,
+        "stop_loss_distance_pct": 22.0,
+        "dimensions": {
+          "financial_health": { "score": 3, "note": "半导体设备龙头，ROE稳健", "source": "self" },
+          "valuation": { "score": 4, "note": "PE~40x合理偏上", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "默认5", "source": "default" },
+          "technical": { "score": 3, "note": "167.71低点反弹+20%，站稳均线", "source": "self" },
+          "macro": { "score": 5, "note": "默认5", "source": "default" },
+          "news_sentiment": { "score": 5, "note": "默认5", "source": "default" }
+        },
+        "note": "浮盈+36.8%，仓位13.9%合理，不宜追高加仓"
+      },
+      {
+        "symbol": "588090",
+        "name": "科创芯片ETF",
+        "risk_score": 4.4,
+        "verdict": "NOC",
+        "price": 1.802,
+        "cost": 1.621,
+        "stop_loss": null,
+        "take_profit": null,
+        "pos_pct": 9.93,
+        "pnl_pct": 11.2,
+        "stop_loss_distance_pct": null,
+        "dimensions": {
+          "financial_health": { "score": 4, "note": "ETF跟踪指数", "source": "self" },
+          "valuation": { "score": 4, "note": "芯片ETF估值中等", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "默认5", "source": "default" },
+          "technical": { "score": 4, "note": "反弹力度弱于个股", "source": "self" },
+          "macro": { "score": 5, "note": "默认5", "source": "default" },
+          "news_sentiment": { "score": 5, "note": "默认5", "source": "default" }
+        },
+        "note": "Research建议置换红利+军工，待CIO裁决。⚠️无止损线建议补设"
+      },
+      {
+        "symbol": "688008",
+        "name": "澜起科技",
+        "risk_score": 3.9,
+        "verdict": "NOC",
+        "price": 244.17,
+        "cost": 155.23,
+        "stop_loss": 210,
+        "take_profit": 280,
+        "pos_pct": 12.15,
+        "pnl_pct": 57.3,
+        "stop_loss_distance_pct": 14.0,
+        "dimensions": {
+          "financial_health": { "score": 2, "note": "DDR5龙头，ROE>20%", "source": "self" },
+          "valuation": { "score": 4, "note": "PE偏高但增长支撑", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "默认5", "source": "default" },
+          "technical": { "score": 4, "note": "6/5暴跌-7.81%后反弹+9.1%，波动大", "source": "self" },
+          "macro": { "score": 5, "note": "默认5", "source": "default" },
+          "news_sentiment": { "score": 5, "note": "默认5", "source": "default" }
+        },
+        "note": "浮盈+57.3%丰厚，仓位12.2%适中"
+      },
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "risk_score": 4.5,
+        "verdict": "NOC",
+        "price": 324.71,
+        "cost": 167.94,
+        "stop_loss": 285.26,
+        "take_profit": 385.08,
+        "pos_pct": 15.95,
+        "pnl_pct": 93.3,
+        "stop_loss_distance_pct": 12.1,
+        "dimensions": {
+          "financial_health": { "score": 2, "note": "光通信龙头，高毛利高ROE", "source": "self" },
+          "valuation": { "score": 6, "note": "浮盈+93%估值偏贵", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "默认5", "source": "default" },
+          "technical": { "score": 5, "note": "高位巨幅波动-20.8%后反弹", "source": "self" },
+          "macro": { "score": 5, "note": "默认5", "source": "default" },
+          "news_sentiment": { "score": 5, "note": "默认5", "source": "default" }
+        },
+        "note": "最大持仓+最大浮盈，建议分批止盈锁定利润。仓位15.95%偏重"
+      },
+      {
+        "symbol": "159949",
+        "name": "创业板50ETF",
+        "risk_score": 4.1,
+        "verdict": "NOC",
+        "price": 1.986,
+        "cost": 1.203,
+        "stop_loss": 1.7,
+        "take_profit": 2.5,
+        "pos_pct": 3.18,
+        "pnl_pct": 65.1,
+        "stop_loss_distance_pct": 14.4,
+        "dimensions": {
+          "financial_health": { "score": 4, "note": "宽基ETF", "source": "self" },
+          "valuation": { "score": 3, "note": "创业板估值合理", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "默认5", "source": "default" },
+          "technical": { "score": 3, "note": "稳步反弹", "source": "self" },
+          "macro": { "score": 5, "note": "默认5", "source": "default" },
+          "news_sentiment": { "score": 5, "note": "默认5", "source": "default" }
+        },
+        "note": "底仓配置合理，浮盈+65.1%"
+      },
+      {
+        "symbol": "510500",
+        "name": "中证500ETF",
+        "risk_score": 4.0,
+        "verdict": "NOC",
+        "price": 8.632,
+        "cost": 8.302,
+        "stop_loss": 7.5,
+        "take_profit": 9.5,
+        "pos_pct": 4.01,
+        "pnl_pct": 4.0,
+        "stop_loss_distance_pct": 13.1,
+        "dimensions": {
+          "financial_health": { "score": 4, "note": "500只成分股分散", "source": "self" },
+          "valuation": { "score": 2, "note": "历史低估值区间", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "默认5", "source": "default" },
+          "technical": { "score": 4, "note": "稳步反弹，浮盈仅+4%", "source": "self" },
+          "macro": { "score": 5, "note": "默认5", "source": "default" },
+          "news_sentiment": { "score": 5, "note": "默认5", "source": "default" }
+        },
+        "note": "分散配置保留，表现平淡但风险低"
+      },
+      {
+        "symbol": "513300",
+        "name": "纳斯达克ETF",
+        "risk_score": 4.2,
+        "verdict": "NOC",
+        "price": 2.761,
+        "cost": 2.235,
+        "stop_loss": 2.3,
+        "take_profit": 3.5,
+        "pos_pct": 5.06,
+        "pnl_pct": 23.5,
+        "stop_loss_distance_pct": 16.7,
+        "dimensions": {
+          "financial_health": { "score": 3, "note": "纳斯达克100指数", "source": "self" },
+          "valuation": { "score": 5, "note": "美股估值偏高PE~30x+", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "默认5", "source": "default" },
+          "technical": { "score": 3, "note": "上升趋势完好", "source": "self" },
+          "macro": { "score": 5, "note": "默认5", "source": "default" },
+          "news_sentiment": { "score": 5, "note": "默认5", "source": "default" }
+        },
+        "note": "浮盈+23.5%，仓位5.1%合理"
+      },
+      {
+        "symbol": "513650",
+        "name": "标普500ETF",
+        "risk_score": 4.2,
+        "verdict": "NOC",
+        "price": 1.921,
+        "cost": 1.654,
+        "stop_loss": 1.7,
+        "take_profit": 2.2,
+        "pos_pct": 1.43,
+        "pnl_pct": 16.1,
+        "stop_loss_distance_pct": 11.5,
+        "dimensions": {
+          "financial_health": { "score": 3, "note": "标普500宽基", "source": "self" },
+          "valuation": { "score": 5, "note": "美股估值偏高", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "默认5", "source": "default" },
+          "technical": { "score": 3, "note": "低波动稳步上升", "source": "self" },
+          "macro": { "score": 5, "note": "默认5", "source": "default" },
+          "news_sentiment": { "score": 5, "note": "默认5", "source": "default" }
+        },
+        "note": "仓位仅1.4%，均衡配置"
+      },
+      {
+        "symbol": "518880",
+        "name": "黄金ETF",
+        "risk_score": 4.5,
+        "verdict": "NOC",
+        "price": 8.949,
+        "cost": 9.20,
+        "stop_loss": 8.5,
+        "take_profit": 10.5,
+        "pos_pct": 1.75,
+        "pnl_pct": -2.7,
+        "stop_loss_distance_pct": 5.0,
+        "dimensions": {
+          "financial_health": { "score": 3, "note": "商品ETF无信用风险", "source": "self" },
+          "valuation": { "score": 4, "note": "黄金高位回调后中性", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "默认5", "source": "default" },
+          "technical": { "score": 6, "note": "9.281→8.506(-8.3%)→8.949，距止损8.5仅5%", "source": "self" },
+          "macro": { "score": 5, "note": "默认5", "source": "default" },
+          "news_sentiment": { "score": 5, "note": "默认5", "source": "default" }
+        },
+        "note": "⚠️距止损8.5仅5%，仓位已降至1.75%风险可控，关注是否继续下探"
+      },
+      {
+        "symbol": "09988",
+        "name": "阿里巴巴",
+        "risk_score": 5.0,
+        "verdict": "NOC",
+        "price": 107.0,
+        "cost": 130.638,
+        "stop_loss": 100,
+        "take_profit": 155,
+        "pos_pct": 1.28,
+        "pnl_pct": -18.1,
+        "stop_loss_distance_pct": 6.5,
+        "dimensions": {
+          "financial_health": { "score": 4, "note": "盈利但增长放缓", "source": "self" },
+          "valuation": { "score": 4, "note": "PE低但价值陷阱风险", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "默认5", "source": "default" },
+          "technical": { "score": 8, "note": "持续下跌破所有均线，距止损100仅6.5%", "source": "self" },
+          "macro": { "score": 5, "note": "默认5", "source": "default" },
+          "news_sentiment": { "score": 5, "note": "默认5", "source": "default" }
+        },
+        "note": "⚠️组合最大亏损标的，技术面最差(8分)。Research建议减仓，Risk同意。距止损6.5%尚超3%阈值，不触发auto-veto，但趋势恶化应密切关注"
+      },
+      {
+        "symbol": "688041",
+        "name": "海光信息",
+        "risk_score": 4.4,
+        "verdict": "NOC",
+        "price": 294.31,
+        "cost": 267.318,
+        "stop_loss": 255,
+        "take_profit": 400,
+        "pos_pct": 15.14,
+        "pnl_pct": 10.1,
+        "stop_loss_distance_pct": 13.4,
+        "dimensions": {
+          "financial_health": { "score": 3, "note": "国产CPU龙头，高增长", "source": "self" },
+          "valuation": { "score": 5, "note": "PE偏高战略溢价", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "默认5", "source": "default" },
+          "technical": { "score": 4, "note": "305.80→280→294.31高波动，仓位偏重", "source": "self" },
+          "macro": { "score": 5, "note": "默认5", "source": "default" },
+          "news_sentiment": { "score": 5, "note": "默认5", "source": "default" }
+        },
+        "note": "仓位15.14%偏重，不宜加仓。浮盈+10.1%"
+      },
+      {
+        "symbol": "002156",
+        "name": "通富微电",
+        "risk_score": 5.2,
+        "verdict": "NOC",
+        "price": 62.93,
+        "cost": 60.115,
+        "stop_loss": 50,
+        "take_profit": 78,
+        "pos_pct": 1.62,
+        "pnl_pct": 4.7,
+        "stop_loss_distance_pct": 20.5,
+        "dimensions": {
+          "financial_health": { "score": 5, "note": "Q1利润+225%但毛利率13.3%偏低", "source": "self" },
+          "valuation": { "score": 6, "note": "PE~72x偏贵", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "默认5", "source": "default" },
+          "technical": { "score": 5, "note": "70.22→57.22(-18.5%)→62.93高波动", "source": "self" },
+          "macro": { "score": 5, "note": "默认5", "source": "default" },
+          "news_sentiment": { "score": 5, "note": "默认5", "source": "default" }
+        },
+        "note": "仓位仅1.62%风险可控。CIO此前计划54-56加仓至5%，当前仍在反弹中"
+      },
+      {
+        "symbol": "002463",
+        "name": "沪电股份",
+        "risk_score": 4.3,
+        "verdict": "NOC",
+        "price": 140.64,
+        "cost": 126.995,
+        "stop_loss": 105,
+        "take_profit": 165,
+        "pos_pct": 3.43,
+        "pnl_pct": 10.7,
+        "stop_loss_distance_pct": 25.3,
+        "dimensions": {
+          "financial_health": { "score": 4, "note": "营收+53.9%/利润+63.4% ROE25.3%，但现金流-64%+应收+存货双高", "source": "self" },
+          "valuation": { "score": 4, "note": "增长支撑但现金流隐患", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "默认5", "source": "default" },
+          "technical": { "score": 3, "note": "突破前高+5.14%走势强劲", "source": "self" },
+          "macro": { "score": 5, "note": "默认5", "source": "default" },
+          "news_sentiment": { "score": 5, "note": "默认5", "source": "default" }
+        },
+        "note": "⚠️现金流/应收/存货三雷需持续监控。技术面最强，距止损25.3%安全"
+      }
+    ],
+    "key_risks": [
+      {
+        "severity": "critical",
+        "title": "AI/半导体赛道极度集中",
+        "detail": "AI/半导体相关持仓占总仓位72.1%（占投资仓81.2%），远超40%风控上限。涵盖华海清科(13.9%)、海光信息(15.1%)、天孚通信(16.0%)、澜起科技(12.2%)、科创芯片ETF(9.9%)、沪电股份(3.4%)、通富微电(1.6%)。一旦半导体周期拐头或政策利空，组合将遭遇系统性回撤。",
+        "action": "禁止任何AI/半导体方向新增仓位。建议适度止盈天孚通信，将释放资金配置至非AI方向（红利/军工/消费等）以分散风险。"
+      },
+      {
+        "severity": "high",
+        "title": "阿里巴巴持续下跌逼近止损",
+        "detail": "09988现价107.0 HKD，距止损价100仅6.5%。持续下跌趋势，跌破所有均线，浮亏-18.1%。Research已建议减仓。",
+        "action": "执行Research减仓建议。如跌破100止损线应立即止损不留存。"
+      },
+      {
+        "severity": "medium",
+        "title": "天孚通信浮盈近翻倍+最大持仓",
+        "detail": "浮盈+93.3%为组合最大盈利，但同时是最大持仓(15.95%)。近期经历-20.8%回撤后反弹，高位巨幅波动。",
+        "action": "建议分批止盈锁定利润，降低单一持仓集中度。"
+      },
+      {
+        "severity": "medium",
+        "title": "黄金ETF距止损仅5%",
+        "detail": "518880现价8.949，止损价8.5，距离仅5%。黄金近期-8.3%大幅回调。",
+        "action": "仓位已降至1.75%风险可控。如继续下探触及8.5止损线应执行纪律。"
+      },
+      {
+        "severity": "medium",
+        "title": "沪电股份三雷隐患",
+        "detail": "经营现金流-64%、应收64.76亿、存货49亿、有息负债57亿。虽营收/利润高增长，但现金流质量恶化。",
+        "action": "持续监控季报现金流。若三雷持续恶化应考虑减仓。"
+      },
+      {
+        "severity": "low",
+        "title": "6月初系统性波动",
+        "detail": "6/5暴跌导致多个持仓单日跌幅>7%，6/3-6/12期间多标的回撤>15%。虽已反弹，但暴露组合对系统性冲击的脆弱性。",
+        "action": "维持合理仓位（当前88.85%），保留现金缓冲。"
+      }
+    ],
+    "risk_mitigation": [
+      "【首要】将AI/半导体集中度从72%逐步降至50%以下：通过止盈天孚/澜起部分仓位，转配红利、军工、消费等非相关方向",
+      "【执行】跟进Research对阿里巴巴的减仓建议，防止止损线被破",
+      "【监控】天孚通信分批止盈，首笔可考虑在324附近减1/3",
+      "【监控】黄金ETF 8.5止损线纪律执行",
+      "【监控】沪电股份Q2现金流是否继续恶化",
+      "【建议】588090科创芯片ETF补设止损线",
+      "【结构】下次IC建议走标准四委员流程，补充行业/新闻/宏观维度数据"
+    ],
+    "risk_reasoning": "组合加权基础风险4.24（六维加权），叠加AI集中度惩罚+1.6（72%远超40%）、波动率惩罚+0.5（6月多标的回撤>15%）、个股集中惩罚+0.3（两个>15%持仓），综合风险6.6。VETO触发于AI集中度规则（非综合分≥7），仅限AI方向新增。13个持仓中无个体触发risk≥7的软VETO，最高个体风险为通富微电5.2（PE贵+波动大但仓位极低）和阿里巴巴5.0（持续下跌但仓位仅1.28%）。组合整体浮盈健康（11/13盈利），最大风险在于赛道集中而非个体质量。"
+  }
+}

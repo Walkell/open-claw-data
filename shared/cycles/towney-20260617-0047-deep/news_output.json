@@ -1,0 +1,207 @@
+{
+  "cycle_id": "towney-20260617-0047-deep",
+  "principal": "towney",
+  "agent": "news",
+  "data_date": "2026-06-16",
+  "headlines": [
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "sentiment": "positive",
+      "sentiment_score": 8,
+      "event_impact": 8,
+      "confidence": 0.85,
+      "key_events": [
+        "6/16 英伟达CEO黄仁勋宣布Vera Rubin服务器全面投产，CPO技术发展分水岭，天孚通信被彭博点名为CPO核心受益标的",
+        "6/16 英伟达250亿美元投资级债券发行获三倍认购(850亿美元)，AI算力主线再添催化",
+        "6/16 算力网纳入国家基建'六张网'，直接投资达万亿量级",
+        "6/16 天孚通信涨6.45%，成交额184.60亿元，主力净流入6.62亿，连续2日被增仓",
+        "6/16 全球AI大模型调用量连续八周上涨，中国模型包揽前四（DeepSeek/MiniMax/腾讯）",
+        "Q1 2026: 营收13.30亿(+40.82%)，归母净利4.92亿(+45.79%)"
+      ],
+      "summary": "多重利好叠加：英伟达Vera Rubin投产CPO技术分水岭+算力网万亿基建+全球AI调用暴涨。天孚通信作为CPO光引擎核心供应商被国际机构点名，基本面Q1高增长(营收+41%/净利+46%)。短期涨幅较大需注意波动，但中期AI算力基建景气度极高。"
+    },
+    {
+      "symbol": "002463",
+      "name": "沪电股份",
+      "sentiment": "positive",
+      "sentiment_score": 8,
+      "event_impact": 7,
+      "confidence": 0.82,
+      "key_events": [
+        "6/16 沪电股份涨停，股价创历史新高",
+        "6/16 公告：数据通讯领域PCB高端材料供应偏紧，公司已提前参与新一代高端材料验证确保优先配额",
+        "6/16 在常州金坛设立全资子公司，搭建CoWoP前沿技术与mSAP先进工艺平台，布局光铜融合",
+        "6/16 接受华宝基金等机构调研",
+        "6/16 A股年内13家PCB企业宣布扩产，PCB概念股掀涨停潮",
+        "英伟达Vera Rubin/Rubin Ultra推动PCB高阶材料需求"
+      ],
+      "summary": "PCB高端材料供应紧张+英伟达Rubin推动结构性增长+公司提前布局CoWoP。基本面强劲(Q1营收+53.9%/净利+63.4%)，股价创新高反映市场认可。需关注经营现金流-64%和应收/存货高企的风险，但短期景气度极高。"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "sentiment": "positive",
+      "sentiment_score": 7,
+      "event_impact": 6,
+      "confidence": 0.78,
+      "key_events": [
+        "6/16 海光信息跌1.67%，成交额82.54亿元，主力净流出",
+        "6/15 发布2025年年度权益分派：每10股派1.5元(含税)，股权登记日6/22，除权除息日6/23",
+        "中科曙光与中国电子信息产业集团战略合作，国产算力生态整合",
+        "Anthropic断供事件利好国产AI芯片替代逻辑",
+        "美国资管巨头申报多个中国股票杠杆ETF，外资看好中国AI算力",
+        "市场讨论'两万亿发展人工智能'政策预期"
+      ],
+      "summary": "短期回调但中期逻辑不变：国产替代+AI算力国产化+政策支持。权益分派实施在即。Anthropic断供和中科曙光-中国电子战略合作强化国产替代叙事。短期资金面偏弱需观察。"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "sentiment": "positive",
+      "sentiment_score": 7,
+      "event_impact": 5,
+      "confidence": 0.80,
+      "key_events": [
+        "6/16 涨1.70%，成交额130.98亿元",
+        "外资密集调研AI产业链，澜起科技获百余外资机构调研",
+        "机构预测Q2净利润7亿+，AI时代运力价值重估",
+        "存储芯片景气上行，DDR5渗透率持续提升",
+        "TrendForce上调2Q26存储预期"
+      ],
+      "summary": "DDR5内存接口芯片龙头，AI推理带动运力需求重估。外资密集调研显示机构关注度高。存储周期上行叠加AI放量，基本面预期良好。"
+    },
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "sentiment": "positive",
+      "sentiment_score": 6,
+      "event_impact": 4,
+      "confidence": 0.75,
+      "key_events": [
+        "6/16 涨0.93%，成交额29.73亿元",
+        "半导体设备板块新赛道受关注",
+        "获国内首台全自动板级CMP量产",
+        "全球封装大洗牌：台积电CoPoS变局带动国产设备需求",
+        "国产存储龙头(长鑫/长江存储)上市及扩产计划利好上游设备"
+      ],
+      "summary": "CMP设备国产龙头，受益于国产存储扩产和先进封装趋势。短期无重大催化事件，但中期国产替代逻辑坚实。板块情绪偏暖。"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "sentiment": "positive",
+      "sentiment_score": 7,
+      "event_impact": 5,
+      "confidence": 0.78,
+      "key_events": [
+        "6/16 涨2.26%，成交额78.21亿元，近3日主力资金净流入",
+        "6/15 涨7.55%，开源证券给出'买入'评级",
+        "6/16 接待甬元私募等26家机构调研",
+        "大力开发扇出型、圆片级、倒装焊等先进封装技术并扩产",
+        "控股股东解除质押430万股，质押清零",
+        "全球封装大洗牌：台积电CoPoS变局与中国半导体机遇"
+      ],
+      "summary": "AMD核心封装合作伙伴，先进封装技术布局全面。机构调研密集+控股股东质押清零是积极信号。存储和AI双轮驱动，基本面预期改善。"
+    },
+    {
+      "symbol": "09988",
+      "name": "阿里巴巴",
+      "sentiment": "neutral",
+      "sentiment_score": 5,
+      "event_impact": 3,
+      "confidence": 0.70,
+      "key_events": [
+        "全球AI大模型调用量中国居首，阿里云AI推理需求受益",
+        "中概股整体政策环境稳定，无新增利空",
+        "美国资管巨头申报中国股票杠杆ETF，中概股关注度提升"
+      ],
+      "summary": "持仓较小(1.28%)且接近止损线(距止损3.1%)。近期无重大利空，AI云需求增长是正面因素，但缺乏强力催化剂。整体中性。"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "sentiment": "positive",
+      "sentiment_score": 7,
+      "event_impact": 5,
+      "confidence": 0.80,
+      "key_events": [
+        "科创芯片设计ETF聚焦科创板芯片设计，锚定产业链核心",
+        "存储芯片景气上行，产业布局价值凸显",
+        "国产AI芯片替代逻辑强化(Anthropic断供)"
+      ],
+      "summary": "科创芯片ETF受益于半导体国产替代+AI算力需求+存储周期上行。成分股覆盖海光/澜起/中微等核心标的，整体景气度高。"
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "sentiment": "positive",
+      "sentiment_score": 6,
+      "event_impact": 3,
+      "confidence": 0.72,
+      "key_events": [
+        "创业板AI概念股活跃，光模块/CPO板块大涨带动创业板情绪"
+      ],
+      "summary": "创业板整体受AI算力概念带动情绪偏暖，无特别重大事件。"
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "sentiment": "neutral",
+      "sentiment_score": 5,
+      "event_impact": 2,
+      "confidence": 0.68,
+      "key_events": [
+        "中证500分散持仓，受宏观情绪影响为主"
+      ],
+      "summary": "500只成分股高度分散，无个股层面重大事件。跟随大盘走势。"
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "sentiment": "positive",
+      "sentiment_score": 7,
+      "event_impact": 5,
+      "confidence": 0.80,
+      "key_events": [
+        "英伟达Vera Rubin投产+250亿美元发债获三倍认购",
+        "美股科技七巨头持续强势",
+        "全球AI资本开支超预期增长(四大云厂商超6000亿美元)"
+      ],
+      "summary": "英伟达强力催化+全球AI Capex暴增。纳斯达克核心成分股直接受益于AI基建浪潮。"
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "sentiment": "positive",
+      "sentiment_score": 6,
+      "event_impact": 3,
+      "confidence": 0.72,
+      "key_events": [
+        "美股整体稳健，AI驱动科技股领涨"
+      ],
+      "summary": "标普500受科技股带动整体偏暖，无重大风险事件。"
+    },
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "sentiment": "neutral",
+      "sentiment_score": 5,
+      "event_impact": 2,
+      "confidence": 0.65,
+      "key_events": [
+        "黄金价格近期波动，无重大催化",
+        "已大幅减仓至1.75%仓位"
+      ],
+      "summary": "黄金ETF低仓位运行，近期无重大事件影响。地缘风险和降息预期为主要变量。"
+    }
+  ],
+  "macro_background": {
+    "us_market": "英伟达Vera Rubin全面投产+CPO技术分水岭+250亿美元发债三倍认购。全球AI资本开支超预期(四大云厂商超6000亿美元)。美股科技股强势。",
+    "china_policy": "算力网纳入国家基建'六张网'，直接投资万亿量级。'十五五'规划东数西算深入推进。AI大模型调用量连续八周上涨，中国模型包揽前四。",
+    "industry": "CPO概念延续强势，PCB高端材料供不应求，半导体设备/存储国产替代加速，外资密集调研A股AI产业链。"
+  },
+  "overall_sentiment": "强烈正面。多重利好共振：英伟达Vera Rubin投产(CPO分水岭)+算力网万亿基建+全球AI调用暴涨+外资看多中国AI算力。核心持仓(天孚通信/沪电股份/澜起科技/海光信息)均处于高景气赛道，基本面强劲。需注意短期涨幅较大带来的波动风险。",
+  "overall_sentiment_score": 7.5,
+  "confidence": 0.80
+}
