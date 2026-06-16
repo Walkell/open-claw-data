@@ -263,11 +263,18 @@
       }
     },
     "86944409-250b-4fc9-8722-6052ae193ac4": {
-      "updatedAtMs": 1781498082404,
+      "updatedAtMs": 1781574600007,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"30,50 9 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1781573400000,
-        "runningAtMs": 1781573400002
+        "nextRunAtMs": 1781659800000,
+        "lastRunAtMs": 1781574600005,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 2,
+        "lastDeliveryStatus": "not-requested",
+        "lastFailureNotificationDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "consecutiveSkipped": 0
       }
     },
     "a255a46e-8bee-4cfc-b5c7-6ae7f4082aca": {
@@ -293,11 +300,11 @@
       }
     },
     "5b8507c5-b4d5-4000-8481-2f8709c7c27f": {
-      "updatedAtMs": 1781572800008,
+      "updatedAtMs": 1781574000007,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"20,40 9 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1781574000000,
-        "lastRunAtMs": 1781572800005,
+        "nextRunAtMs": 1781659200000,
+        "lastRunAtMs": 1781574000004,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
         "lastDurationMs": 3,
@@ -308,14 +315,14 @@
       }
     },
     "4bc6f4c2-bb66-46fb-be16-7dff1907eab9": {
-      "updatedAtMs": 1781498319347,
+      "updatedAtMs": 1781575200007,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0,20,40 10-11 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1781575200000,
-        "lastRunAtMs": 1781498286246,
+        "nextRunAtMs": 1781576400000,
+        "lastRunAtMs": 1781575200004,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 33101,
+        "lastDurationMs": 3,
         "lastDeliveryStatus": "not-requested",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
