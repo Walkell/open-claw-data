@@ -1,0 +1,10 @@
+{
+  "cycle_id": "klaire-20260616-0800-morning_briefing",
+  "principal": "klaire",
+  "principal_open_id": "ou_fd609e5b8a2880d7bae935f25afb6f2f",
+  "flow_type": "四委员",
+  "trigger_time": "2026-06-16T08:00:00+08:00",
+  "trigger_type": "cron",
+  "scene": "盘前简报",
+  "table_id": null
+}
