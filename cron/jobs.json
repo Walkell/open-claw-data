@@ -110,7 +110,7 @@
       "createdAtMs": 1780988885207,
       "schedule": {
         "kind": "cron",
-        "expr": "0 5 * * 2-5",
+        "expr": "18 0 * * 2-5",
         "tz": "Asia/Shanghai"
       },
       "sessionTarget": "main",

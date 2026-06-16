@@ -1,0 +1,10 @@
+{
+  "cycle_id": "towney-20260617-0014-eod",
+  "principal": "towney",
+  "flow_type": "精简两委员",
+  "symbol": "all",
+  "symbol_name": "全持仓",
+  "positions_table_id": "tblUeTGMf0IKJ8Pk",
+  "watchlist_table_id": "tblaLlSQp8tEcWgJ",
+  "trigger": "手动补跑 EOD复盘"
+}
