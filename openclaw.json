@@ -41,7 +41,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.5.28",
-    "lastTouchedAt": "2026-06-15T12:49:53.270Z"
+    "lastTouchedAt": "2026-06-16T02:24:53.219Z"
   },
   "secrets": {
     "providers": {
@@ -763,9 +763,9 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-monitor",
         "agentDir": "/home/ubuntu/.openclaw/agents/monitor/agent",
         "model": {
-          "primary": "volcengine-plan/minimax-m3",
+          "primary": "glm/glm-5.1",
           "fallbacks": [
-            "deepseek/deepseek-v4-pro"
+            "volcengine-plan/minimax-m3"
           ]
         },
         "models": {
