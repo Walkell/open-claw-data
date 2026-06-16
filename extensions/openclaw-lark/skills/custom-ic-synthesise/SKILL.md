@@ -87,7 +87,7 @@ baseline_score     = 0.55×X + 0.30×X + 0.15×X = X.XX
 
 ## 第四步：推送飞书 + 写库
 
-1. 从 context.json 确认 principal，读对应配置档获取推送渠道（TOWNEY_CONFIG.md / KLAIRE_CONFIG.md 的「输出通道」字段），将四部分裁决推送飞书
+1. 从 context.json 确认 principal，读对应配置档获取推送渠道（CONFIG_TOWNEY.md / CONFIG_KLAIRE.md 的「输出通道」字段），将四部分裁决推送飞书
 2. 执行 `custom-ic-write` SKILL（传入 cycle_id + 决议单，含 flow_type + report_summary）
 
 ✅ 检查点：输出 `CIO 综合完成，cycle_id={cycle_id}，已推飞书，写库完成`

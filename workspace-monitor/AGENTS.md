@@ -10,8 +10,8 @@
 
 从 cron 消息中读取 `principal`（值为 `towney` 或 `klaire`），然后读取对应配置档：
 
-- principal=towney → `~/.openclaw/workspace-cio/TOWNEY_CONFIG.md`
-- principal=klaire → `~/.openclaw/workspace-cio/KLAIRE_CONFIG.md`
+- principal=towney → `~/.openclaw/workspace-cio/CONFIG_TOWNEY.md`
+- principal=klaire → `~/.openclaw/workspace-cio/CONFIG_KLAIRE.md`
 
 从配置档获取：
 - `bitable_name`（如 "Towney-投资管理"）
@@ -259,7 +259,7 @@
 **session 体无论如何必须输出 `NO_REPLY`**——防止内容经 session 回写泄露至 Towney DM。
 
 - **有触发项**：
-  1. 调用 `feishu_im_chat_message.create`，向启动时从 KLAIRE_CONFIG.md 读取的群 `chat_id` 发送上述格式消息
+  1. 调用 `feishu_im_chat_message.create`，向启动时从 CONFIG_KLAIRE.md 读取的群 `chat_id` 发送上述格式消息
   2. session 体输出 `NO_REPLY`
 - **无触发项**（含全被去重）：直接输出 `NO_REPLY`，不调 feishu_im
 
@@ -279,7 +279,6 @@
 - 不修改持仓表、观察池（只写监控记录）
 - 止损/止盈/成本价数字不得被 Monitor 改写，只读
 - `app_token` 不得出现在任何文字输出
-- **鉴权唯一入口：`custom-feishu-auth` SKILL**。遇到 `permission_denied` / `NOTEXIST` / token 报错，唯一正确动作是重新执行此 SKILL（最多 2 次），不得自行调用 `feishu_oauth` 或任何其他鉴权工具
-- **`feishu_oauth` 唯一正确调用：`feishu_oauth()`，不传任何参数**——这是续期的完整形式，不需要传任何参数
+- **鉴权唯一入口：`custom-feishu-auth` SKILL**。遇到 `permission_denied` / `NOTEXIST` / token 报错，唯一正确动作是重新执行此 SKILL（最多 2 次）——auto-auth 在后台自动处理授权，Monitor 不调用任何 auth 相关工具
 - 不碰另一 principal 的任何数据
 - 行情数据严禁使用 web_search / tavily_search（遵守 `custom-market-data-cn` SKILL 红线）

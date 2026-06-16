@@ -2,38 +2,8 @@
   "version": 1,
   "jobs": [
     {
-      "id": "b1795f87-68ae-4aa4-a29e-9edc3041ad58",
-      "agentId": "monitor",
-      "name": "towney-afternoon-monitor",
-      "enabled": false,
-      "createdAtMs": 1780372310529,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/15 13-15 * * 1-5",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "监控任务 principal=towney",
-        "model": "glm/glm-5.1",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro"
-        ],
-        "timeoutSeconds": 600
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "user:ou_991380df662097f94a368e3ca6f8204e",
-        "accountId": "butler"
-      },
-      "state": {}
-    },
-    {
       "id": "8f4f5463-f1cd-4a65-970f-7154313d7af4",
-      "agentId": "butler",
+      "agentId": "corona",
       "name": "towney-eod-review",
       "enabled": true,
       "createdAtMs": 1780372318481,
@@ -48,11 +18,12 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：EOD复盘 principal=towney flow_type=精简两委员"
       },
-      "state": {}
+      "state": {},
+      "sessionKey": "agent:corona:cron:towney"
     },
     {
       "id": "bfbfdc36-64e3-4e1b-93ce-23be6eb695c4",
-      "agentId": "butler",
+      "agentId": "corona",
       "name": "towney-weekly-review",
       "enabled": true,
       "createdAtMs": 1780372463664,
@@ -67,11 +38,12 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：周报复盘 principal=towney flow_type=四委员"
       },
-      "state": {}
+      "state": {},
+      "sessionKey": "agent:corona:cron:towney"
     },
     {
       "id": "c6ae35a4-e484-4148-815b-dc3182e86858",
-      "agentId": "butler",
+      "agentId": "corona",
       "name": "towney-monthly-review",
       "enabled": true,
       "createdAtMs": 1780372546868,
@@ -86,11 +58,12 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：月报复盘 principal=towney flow_type=四委员"
       },
-      "state": {}
+      "state": {},
+      "sessionKey": "agent:corona:cron:towney"
     },
     {
       "id": "f634514a-b3b6-4295-84c5-cb01e7bd2f02",
-      "agentId": "butler",
+      "agentId": "corona",
       "name": "towney-monday-briefing",
       "enabled": true,
       "createdAtMs": 1780372847991,
@@ -105,11 +78,12 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：周一简报 principal=towney flow_type=四委员"
       },
-      "state": {}
+      "state": {},
+      "sessionKey": "agent:corona:cron:towney"
     },
     {
       "id": "64b5f1d8-3547-4b45-afbc-ade4b0df1611",
-      "agentId": "butler",
+      "agentId": "corona",
       "name": "towney-opening-bell",
       "description": "开盘行情扫描：9:23 触发，大跌→精简两委员加仓建议，大涨→即时通知",
       "enabled": true,
@@ -125,42 +99,12 @@
         "kind": "systemEvent",
         "text": "🔔 开盘扫描 principal=towney（检查持仓大跌/大涨，条件满足则触发精简两委员IC）"
       },
-      "state": {}
-    },
-    {
-      "id": "56078609-aee4-4332-9ef5-d952714fe061",
-      "agentId": "monitor",
-      "name": "towney-morning-monitor",
-      "enabled": false,
-      "createdAtMs": 1780486379546,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/15 9-11 * * 1-5",
-        "tz": "Asia/Shanghai",
-        "staggerMs": 30000
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "glm/glm-5.1",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro"
-        ],
-        "timeoutSeconds": 600,
-        "message": "监控任务 principal=towney"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "user:ou_991380df662097f94a368e3ca6f8204e",
-        "accountId": "butler"
-      },
-      "state": {}
+      "state": {},
+      "sessionKey": "agent:corona:cron:towney"
     },
     {
       "id": "f14657c4-17fa-4d9d-a79d-771ca7df7730",
-      "agentId": "butler",
+      "agentId": "corona",
       "name": "towney-pre-market",
       "enabled": true,
       "createdAtMs": 1780988885207,
@@ -175,11 +119,12 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：盘前简报 principal=towney flow_type=四委员"
       },
-      "state": {}
+      "state": {},
+      "sessionKey": "agent:corona:cron:towney"
     },
     {
       "id": "82452460-7ffa-4eff-9bdb-89e86182c872",
-      "agentId": "butler",
+      "agentId": "corona",
       "name": "klaire-monday-briefing",
       "enabled": true,
       "createdAtMs": 1780487209239,
@@ -194,11 +139,12 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：周一简报 principal=klaire flow_type=四委员"
       },
-      "state": {}
+      "state": {},
+      "sessionKey": "agent:corona:cron:klaire"
     },
     {
       "id": "bbbeabff-b8ea-47c7-b047-0a1297ad15d5",
-      "agentId": "butler",
+      "agentId": "corona",
       "name": "klaire-pre-market",
       "enabled": true,
       "createdAtMs": 1780487209473,
@@ -213,75 +159,12 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：盘前简报 principal=klaire flow_type=四委员"
       },
-      "state": {}
-    },
-    {
-      "id": "96be9a87-f317-4d9a-88e1-955c4d019af3",
-      "agentId": "monitor",
-      "name": "klaire-morning-monitor",
-      "enabled": false,
-      "createdAtMs": 1780487209499,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/15 9-11 * * 1-5",
-        "tz": "Asia/Shanghai",
-        "staggerMs": 15000
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "监控任务 principal=klaire",
-        "timeoutSeconds": 600,
-        "model": "glm/glm-5.1",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro"
-        ]
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "butler"
-      },
-      "description": "Klaire上午盘监控·每15分·写监控记录表",
-      "state": {}
-    },
-    {
-      "id": "00bad0b6-3fc5-4fd2-8a8c-61775e826573",
-      "agentId": "monitor",
-      "name": "klaire-afternoon-monitor",
-      "enabled": false,
-      "createdAtMs": 1780487209524,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/15 13-15 * * 1-5",
-        "tz": "Asia/Shanghai",
-        "staggerMs": 15000
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "监控任务 principal=klaire",
-        "timeoutSeconds": 600,
-        "model": "glm/glm-5.1",
-        "fallbacks": [
-          "deepseek/deepseek-v4-pro"
-        ]
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
-        "accountId": "butler"
-      },
-      "description": "Klaire下午盘监控·每15分·写监控记录表",
-      "state": {}
+      "state": {},
+      "sessionKey": "agent:corona:cron:klaire"
     },
     {
       "id": "066bd57e-ed9a-4c40-a8a5-4799e14b197d",
-      "agentId": "butler",
+      "agentId": "corona",
       "name": "klaire-eod-review",
       "enabled": true,
       "createdAtMs": 1780487209547,
@@ -296,11 +179,12 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：EOD复盘 principal=klaire flow_type=精简两委员"
       },
-      "state": {}
+      "state": {},
+      "sessionKey": "agent:corona:cron:klaire"
     },
     {
       "id": "72ab5829-ca71-49a7-bbb4-7e46440f2298",
-      "agentId": "butler",
+      "agentId": "corona",
       "name": "klaire-opening-bell",
       "description": "开盘行情扫描：Klaire 持仓，大跌→精简两委员，大涨→即时通知",
       "enabled": true,
@@ -316,11 +200,12 @@
         "kind": "systemEvent",
         "text": "🔔 开盘扫描 principal=klaire（检查持仓大跌/大涨，条件满足则触发精简两委员IC）"
       },
-      "state": {}
+      "state": {},
+      "sessionKey": "agent:corona:cron:klaire"
     },
     {
       "id": "30fe5386-f706-453c-af2f-0e6765b9e376",
-      "agentId": "butler",
+      "agentId": "corona",
       "name": "klaire-weekly-review",
       "enabled": true,
       "createdAtMs": 1780487209572,
@@ -335,11 +220,12 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：周报复盘 principal=klaire flow_type=四委员"
       },
-      "state": {}
+      "state": {},
+      "sessionKey": "agent:corona:cron:klaire"
     },
     {
       "id": "afdbd0ef-a3f5-4e18-81e5-f3e415bf2543",
-      "agentId": "butler",
+      "agentId": "corona",
       "name": "klaire-monthly-review",
       "enabled": true,
       "createdAtMs": 1780487209598,
@@ -354,12 +240,13 @@
         "kind": "systemEvent",
         "text": "🔔 IC 触发：月报复盘 principal=klaire flow_type=四委员"
       },
-      "state": {}
+      "state": {},
+      "sessionKey": "agent:corona:cron:klaire"
     },
     {
       "id": "86944409-250b-4fc9-8722-6052ae193ac4",
-      "agentId": "butler",
-      "sessionKey": "agent:butler:feishu:direct:ou_991380df662097f94a368e3ca6f8204e",
+      "agentId": "corona",
+      "sessionKey": "agent:corona:cron:towney",
       "name": "towney-monitor-am-0930",
       "enabled": true,
       "createdAtMs": 1781498082404,
@@ -378,8 +265,8 @@
     },
     {
       "id": "a255a46e-8bee-4cfc-b5c7-6ae7f4082aca",
-      "agentId": "butler",
-      "sessionKey": "agent:butler:feishu:direct:ou_991380df662097f94a368e3ca6f8204e",
+      "agentId": "corona",
+      "sessionKey": "agent:corona:cron:towney",
       "name": "towney-monitor-am-h10-11",
       "enabled": true,
       "createdAtMs": 1781498082501,
@@ -398,8 +285,8 @@
     },
     {
       "id": "65d4dcfe-f437-49b8-ba64-d35ed4bd43fe",
-      "agentId": "butler",
-      "sessionKey": "agent:butler:feishu:direct:ou_991380df662097f94a368e3ca6f8204e",
+      "agentId": "corona",
+      "sessionKey": "agent:corona:cron:towney",
       "name": "towney-monitor-pm",
       "enabled": true,
       "createdAtMs": 1781498082526,
@@ -418,8 +305,8 @@
     },
     {
       "id": "5b8507c5-b4d5-4000-8481-2f8709c7c27f",
-      "agentId": "butler",
-      "sessionKey": "agent:butler:feishu:direct:ou_991380df662097f94a368e3ca6f8204e",
+      "agentId": "corona",
+      "sessionKey": "agent:corona:cron:klaire",
       "name": "klaire-monitor-am-0920",
       "enabled": true,
       "createdAtMs": 1781498082552,
@@ -438,8 +325,8 @@
     },
     {
       "id": "4bc6f4c2-bb66-46fb-be16-7dff1907eab9",
-      "agentId": "butler",
-      "sessionKey": "agent:butler:feishu:direct:ou_991380df662097f94a368e3ca6f8204e",
+      "agentId": "corona",
+      "sessionKey": "agent:corona:cron:klaire",
       "name": "klaire-monitor-am-h10-11",
       "enabled": true,
       "createdAtMs": 1781498082579,
@@ -458,8 +345,8 @@
     },
     {
       "id": "611a2148-db4b-4b09-9a1c-60ff48625578",
-      "agentId": "butler",
-      "sessionKey": "agent:butler:feishu:direct:ou_991380df662097f94a368e3ca6f8204e",
+      "agentId": "corona",
+      "sessionKey": "agent:corona:cron:klaire",
       "name": "klaire-monitor-pm",
       "enabled": true,
       "createdAtMs": 1781498082605,

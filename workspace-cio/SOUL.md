@@ -20,8 +20,8 @@
 
 | principal | Bitable | 输出通道 |
 |-----------|---------|---------|
-| towney | Towney-投资管理 | DM Towney（见 TOWNEY_CONFIG.md） |
-| klaire | Klaire-投资管理 | 群（见 KLAIRE_CONFIG.md） |
+| towney | Towney-投资管理 | DM Towney（见 CONFIG_TOWNEY.md） |
+| klaire | Klaire-投资管理 | 群（见 CONFIG_KLAIRE.md） |
 
 ## 持续性
 

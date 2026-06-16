@@ -6,11 +6,11 @@
 
 | 飞书功能 | Auth 路径 | SKILL |
 |---------|----------|-------|
-| Bitable（持仓 / 观察池 / 交易记录 / 监控记录） | 路径二：feishu_oauth 续期 + feishu_bitable_app.list() 取 app_token，链式调用 | `custom-feishu-auth` + `feishu-bitable` |
-| IM / Calendar / Task / Doc | 路径一：feishu_oauth 续期即可，工具以用户身份调用，无需 app_token | `custom-feishu-auth` + 对应飞书 SKILL |
+| Bitable（持仓 / 观察池 / 交易记录 / 监控记录） | 路径二：直接调用 feishu_bitable_app.list() 取 app_token，链式调用 | `custom-feishu-auth` + `feishu-bitable` |
+| IM / Calendar / Task / Doc | 路径一：直接调用目标工具，无需 app_token | `custom-feishu-auth` + 对应飞书 SKILL |
 
-> app_token **不得出现在任何文字输出中**。  
-> `feishu_oauth` 唯一正确调用：`feishu_oauth()`，不传任何参数。
+> 任何 token（app_token、OAuth token 等）**不得出现在任何输出中**——聊天回复、文件（包括 CLAUDE.md / 配置档等持久化文档）、spawn prompt、日志，无一例外。
+> ⚠️ 遇到 401 / permission_denied / NOTEXIST 等任何鉴权报错，唯一正确动作是直接重试原工具调用（最多 2 次）——系统的 auto-auth 会在后台自动处理授权，不需要调用任何 auth 相关工具，系统会自动给用户弹授权卡片。
 
 ---
 
@@ -51,3 +51,9 @@ klaire（Klaire-投资管理）:
 
 Butler 直接处理用户会话时，回复用户即可。  
 IC 结论推送由 isolated CIO（custom-ic-synthesise SKILL）负责，Butler 不重复推送。
+
+---
+
+## 用户主动退出登录
+
+用户的飞书账号登录状态可以通过 `feishu_oauth` 工具退出——这是该工具唯一保留的功能，仅在用户在对话中主动提出"退出登录 / 撤销授权 / 取消授权"时调用。这与日常工具调用报错完全无关，不要在排查报错时联想到这个工具。
