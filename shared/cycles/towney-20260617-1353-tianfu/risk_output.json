@@ -1,0 +1,44 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260617-1353-tianfu",
+  "data": {
+    "symbol": "300394",
+    "risk_score": 5.3,
+    "verdict": "NOC",
+    "veto_reason": "",
+    "dimensions": {
+      "financial_health": {
+        "score": 2.5,
+        "note": "ROE 42%/负债率14%/毛利率56.6%/净利率37%/营收+41%/利润+46%，财务质量优秀，风险低",
+        "source": "self"
+      },
+      "valuation": {
+        "score": 9.0,
+        "note": "PE(TTM)~163x / PB~65x，PEG远超1，严重透支未来增长；按30%年化目标，当前估值需3年+业绩消化",
+        "source": "self"
+      },
+      "industry_cycle": {
+        "score": 5.0,
+        "note": "数据缺失，默认5分（精简两委员流程）",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 6.0,
+        "note": "除权后V型反弹（6/12低280.95→6/17高329.97）三日涨15.6%未确认企稳；现价站上MA20(306)但MACD未金叉；距止损285.26约12%安全垫尚可",
+        "source": "self"
+      },
+      "macro": {
+        "score": 5.0,
+        "note": "数据缺失，默认5分（精简两委员流程）",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 5.0,
+        "note": "数据缺失，默认5分（精简两委员流程）",
+        "source": "news_agent"
+      }
+    },
+    "summary": "核心风险在估值端：PE 163x / PB 65x 严重透支，即使维持45%+利润增速也需要3年以上消化；技术面除权后V型反弹未确认企稳叠加高波动；AI赛道集中度56.5%偏高。减仓方向合理，不构成硬否决（risk_score 5.3 < 7），建议分步执行以锁定浮盈。"
+  }
+}
