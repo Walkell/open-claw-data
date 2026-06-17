@@ -1,0 +1,163 @@
+{
+  "committee": "risk",
+  "principal": "klaire",
+  "agent": "risk",
+  "cycle_id": "klaire-20260617-0815-premarket",
+  "analysis_date": "2026-06-17",
+  "risk_thresholds": {
+    "veto": 7,
+    "hard_veto": 9
+  },
+  "overall_risk_score": 5.0,
+  "verdict": "CAUTION",
+  "veto_list": [
+    {
+      "symbol": "600808",
+      "name": "马钢股份",
+      "veto_type": "stop_loss_proximity",
+      "rule": "距止损线 ≤3% → VETO 该标的任何加仓",
+      "detail": "现价2.78距止损2.7仅2.9%，且浮亏28%，risk_score=6.6接近VETO阈值",
+      "scope": "禁止加仓，不影响减仓/止损执行"
+    }
+  ],
+  "cautions": [
+    "600808 马钢股份 risk_score=6.6，距VETO阈值(7)仅0.4分，且距止损2.9%",
+    "002011 盾安环境 距止损4.3%，技术面全线破位RSI=25.5超卖",
+    "600699 均胜电子 已触发止损24后反弹，距止损3.5%，方向未明",
+    "AI相关方向集中度约43%（科创50ETF+信创ETF+盾安环境液冷），接近40%红线，CIO新增AI方向仓位需谨慎评估"
+  ],
+  "risk_assessments": [
+    {
+      "symbol": "600808",
+      "name": "马钢股份",
+      "risk_score": 6.6,
+      "verdict": "VETO",
+      "veto_reason": "距止损线2.9%(≤3%)，自动VETO任何加仓操作",
+      "stop_loss_distance_pct": 2.9,
+      "dimensions": {
+        "financial_health": { "score": 7.5, "note": "持续亏损，PE为负(-957)，2025年报亏损，行业周期底部", "source": "self" },
+        "valuation": { "score": 8.0, "note": "PB接近破净，浮亏28%，基本面恶化", "source": "self" },
+        "industry_cycle": { "score": 5.0, "note": "钢铁行业5.0分，产能过剩需求疲软，PPI正增长传导尚需时间", "source": "industry_agent" },
+        "technical": { "score": 8.0, "note": "全线破位，RSI=29.9超卖，技术评分2/10", "source": "self" },
+        "macro": { "score": 4.5, "note": "宏观5.5分中性偏积极，但钢铁板块受益有限", "source": "industry_agent" },
+        "news_sentiment": { "score": 5.2, "note": "sentiment=-0.1，无重大催化，已减仓至1000股", "source": "news_agent" }
+      },
+      "summary": "多重风险叠加：基本面亏损+技术破位+距止损2.9%。建议执行止损退出，禁止任何加仓。"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "risk_score": 5.1,
+      "verdict": "NOC",
+      "veto_reason": "",
+      "stop_loss_distance_pct": 3.5,
+      "dimensions": {
+        "financial_health": { "score": 5.0, "note": "Q1营收-5.22%但利润稳健，汽车安全业务扭亏", "source": "self" },
+        "valuation": { "score": 6.0, "note": "PE(TTM)=27.61合理，但接近成本线", "source": "self" },
+        "industry_cycle": { "score": 3.5, "note": "汽车电子6.5分，边际改善，智驾+机器人概念", "source": "industry_agent" },
+        "technical": { "score": 7.0, "note": "全线破位，RSI=25.7超卖，已触发止损24后反弹", "source": "self" },
+        "macro": { "score": 4.5, "note": "宏观5.5分，汽车ETF-1.76%板块承压", "source": "industry_agent" },
+        "news_sentiment": { "score": 4.0, "note": "董事长6/12增持27万股，正面信号，sentiment=0.35", "source": "news_agent" }
+      },
+      "summary": "技术面弱势但董事长增持提供支撑，已触发止损后反弹，需观察能否站稳24元上方。"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "risk_score": 4.9,
+      "verdict": "NOC",
+      "veto_reason": "",
+      "stop_loss_distance_pct": 7.1,
+      "dimensions": {
+        "financial_health": { "score": 4.5, "note": "Q1业绩好于预期，ROE良好，叉车出口增长", "source": "self" },
+        "valuation": { "score": 5.0, "note": "PE(TTM)=14.46估值合理偏低", "source": "self" },
+        "industry_cycle": { "score": 4.5, "note": "工程机械5.5分中性，缺乏强催化", "source": "industry_agent" },
+        "technical": { "score": 7.0, "note": "全线破位，量比0.40极度缩量，弱势反弹", "source": "self" },
+        "macro": { "score": 4.5, "note": "宏观5.5分，制造业PMI走弱影响预期", "source": "industry_agent" },
+        "news_sentiment": { "score": 4.0, "note": "董事长6/12增持10万股，正面信号，sentiment=0.3", "source": "news_agent" }
+      },
+      "summary": "技术面弱势但基本面稳健+董事长增持正面，距止损7.1%尚有安全垫，风险可控。"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "risk_score": 4.9,
+      "verdict": "NOC",
+      "veto_reason": "",
+      "stop_loss_distance_pct": 4.3,
+      "dimensions": {
+        "financial_health": { "score": 5.0, "note": "Q1增收不增利，但液冷业务进入规模化应用", "source": "self" },
+        "valuation": { "score": 5.0, "note": "PE(TTM)=11.16估值偏低，浮亏3.9%", "source": "self" },
+        "industry_cycle": { "score": 3.0, "note": "热管理/液冷7.0分，AI算力带动数据中心液冷需求", "source": "industry_agent" },
+        "technical": { "score": 7.0, "note": "全线破位，RSI=25.5深度超卖，距止损仅4.3%", "source": "self" },
+        "macro": { "score": 4.5, "note": "宏观5.5分中性偏积极", "source": "industry_agent" },
+        "news_sentiment": { "score": 4.5, "note": "液冷新增长点+重启分红，sentiment=0.25", "source": "news_agent" }
+      },
+      "summary": "技术面超卖是主要风险，但液冷概念+低估值提供缓冲。距止损4.3%需密切关注。"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "risk_score": 4.8,
+      "verdict": "NOC",
+      "veto_reason": "",
+      "stop_loss_distance_pct": 13.2,
+      "dimensions": {
+        "financial_health": { "score": 4.5, "note": "指数基金，成分股整体盈利改善中", "source": "self" },
+        "valuation": { "score": 6.0, "note": "浮亏4.9%，距止损1.85有13.2%安全垫", "source": "self" },
+        "industry_cycle": { "score": 3.5, "note": "信创6.5分，国产替代推进但短期缺催化", "source": "industry_agent" },
+        "technical": { "score": 5.0, "note": "站上所有均线，MACD即将金叉，中性", "source": "self" },
+        "macro": { "score": 4.5, "note": "宏观5.5分，Intel 18A量产有间接映射", "source": "industry_agent" },
+        "news_sentiment": { "score": 4.8, "note": "AI/科技热度延续，间接正面传导，sentiment=0.1", "source": "news_agent" }
+      },
+      "summary": "技术面企稳+政策预期，距止损较远，风险中等偏低。"
+    },
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "risk_score": 4.3,
+      "verdict": "NOC",
+      "veto_reason": "",
+      "stop_loss_distance_pct": 11.3,
+      "dimensions": {
+        "financial_health": { "score": 4.0, "note": "Q1营收+1.49%稳健，新能源齿轮+减速器双轮驱动", "source": "self" },
+        "valuation": { "score": 5.0, "note": "PE(TTM)=28.32中位，浮盈+0.75%", "source": "self" },
+        "industry_cycle": { "score": 2.5, "note": "机器人/减速器7.5分，行业景气度最高方向之一", "source": "industry_agent" },
+        "technical": { "score": 5.0, "note": "站上MA60中期趋势偏多，短期回调量缩", "source": "self" },
+        "macro": { "score": 4.5, "note": "宏观5.5分中性偏积极", "source": "industry_agent" },
+        "news_sentiment": { "score": 5.0, "note": "近7天无重大事件，sentiment=0.15微正面", "source": "news_agent" }
+      },
+      "summary": "行业景气度高+基本面稳健+距止损安全，组合中风险最低的个股持仓。"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "risk_score": 4.4,
+      "verdict": "NOC",
+      "veto_reason": "",
+      "stop_loss_distance_pct": 13.8,
+      "dimensions": {
+        "financial_health": { "score": 4.5, "note": "覆盖半导体/AI/生物医药，成分股盈利改善中", "source": "self" },
+        "valuation": { "score": 5.0, "note": "浮盈+4.5%，距止盈1.98有10.2%空间", "source": "self" },
+        "industry_cycle": { "score": 3.0, "note": "科创板/半导体7.0分，硬科技景气上行", "source": "industry_agent" },
+        "technical": { "score": 4.0, "note": "站上所有均线，MACD即将金叉，趋势良好", "source": "self" },
+        "macro": { "score": 4.5, "note": "宏观5.5分，美联储FOMC决议为短期变量", "source": "industry_agent" },
+        "news_sentiment": { "score": 5.0, "note": "无个股层面事件，sentiment=0中性", "source": "news_agent" }
+      },
+      "summary": "技术面最佳持仓，硬科技景气支撑，距止损13.8%安全垫充足。"
+    }
+  ],
+  "portfolio_risk": {
+    "overall_score": 5.0,
+    "position_count": 7,
+    "danger_zone_count": 2,
+    "danger_zone_positions": ["600808 马钢股份", "002011 盾安环境"],
+    "stop_loss_breach_count": 1,
+    "stop_loss_breach_positions": ["600699 均胜电子（已反弹收回）"],
+    "ai_sector_concentration_pct": 42.8,
+    "ai_sector_concentration_note": "科创50ETF+信创ETF+盾安环境（液冷）合计约42.8%，接近40%红线。信创ETF非纯AI标的，实际AI集中度约33%。建议CIO对AI方向新增仓位保持审慎。",
+    "total_market_value_approx": 44336,
+    "largest_loss_position": "600808 马钢股份（浮亏28%）"
+  },
+  "summary": "组合整体风险中等(5.0/10)。马钢股份(6.6分)多重风险叠加且距止损仅2.9%，触发加仓VETO，建议尽快止损退出。盾安环境和均胜电子技术面弱势但各有正面催化（液冷/董事长增持）。科创50ETF和双环传动为组合中相对稳健的持仓。AI方向集中度接近红线，CIO新增AI仓位需审慎。"
+}
