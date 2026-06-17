@@ -1,0 +1,44 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260617-1426-baba",
+  "data": {
+    "symbol": "09988",
+    "risk_score": 4,
+    "verdict": "VETO",
+    "veto_reason": "止损价100 CNY已实质性跌破（现价106.40 HKD≈98.72 CNY，跌破1.3%）。均线全面空头排列（MA20=119.05 / MA60=125.16），60日跌幅-21.4%处于年内新低。技术面1分、财务利润环比-26.5%、ROE仅9.9%，叠加行业/宏观/新闻三维数据缺失。止损触发为硬性操作信号，继续持有风险不可控。",
+    "dimensions": {
+      "financial_health": {
+        "score": 4,
+        "note": "ROE 9.91%偏低，净利润环比-26.5%明显下滑，但经营现金流充裕（每股3.98），自由现金流覆盖回购，资产负债健康",
+        "source": "self"
+      },
+      "valuation": {
+        "score": 5,
+        "note": "PE 17.5x历史低位，PB 1.70x合理，但下行趋势中低估值不构成持有理由——便宜有便宜的原因",
+        "source": "self"
+      },
+      "industry_cycle": {
+        "score": 5,
+        "note": "数据缺失，默认5分（Industry委员未参与精简流程）",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 1,
+        "note": "均线全面空头排列（现价106.4 << MA20 119.05 << MA60 125.16），60日跌幅-21.4%，连续创新低，止损100 CNY已实质性跌破至~98.72 CNY，成交量萎缩无抄底迹象",
+        "source": "self"
+      },
+      "macro": {
+        "score": 5,
+        "note": "数据缺失，默认5分（Industry委员未参与精简流程）",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 5,
+        "note": "数据缺失，默认5分（News委员未参与精简流程）",
+        "source": "news_agent"
+      }
+    },
+    "summary": "止损线已实质性跌破，技术面处于全面空头排列的年内新低，继续持有的最大风险是止损纪律失效导致亏损进一步扩大。"
+  }
+}
