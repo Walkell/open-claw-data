@@ -1,0 +1,255 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260618-eod",
+  "data": {
+    "portfolio_risk": {
+      "ai_concentration_pct": 51.85,
+      "ai_concentration_veto": true,
+      "total_position_pct": 67.28,
+      "data_quality": "⚠️ 单源验证（腾讯gtimg），网易502/新浪403/东方财富502均不可用",
+      "highest_risk_positions": ["天孚通信(6.2)", "沪电股份(5.85)", "海光信息(5.65)"]
+    },
+    "positions": [
+      {
+        "symbol": "688120",
+        "name": "华海清科",
+        "risk_score": 5.5,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "price": 222.31,
+        "stoploss": 157,
+        "stoploss_distance_pct": 29.4,
+        "dimensions": {
+          "financial_health": { "score": 6, "note": "半导体设备商，营收增长稳定但周期性明显，已减仓46.4%锁利", "source": "self" },
+          "valuation": { "score": 7, "note": "已触发止盈线214.17，现价222.31超过止盈，估值偏高", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "technical": { "score": 4, "note": "今日+10.5%强势涨停级反弹，远超止损线29.4%，技术面强", "source": "self" },
+          "macro": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "news_sentiment": { "score": 5, "note": "数据缺失，默认5分", "source": "news_agent" }
+        }
+      },
+      {
+        "symbol": "588090",
+        "name": "科创芯片ETF",
+        "risk_score": 4.85,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "price": 1.884,
+        "stoploss": null,
+        "stoploss_distance_pct": null,
+        "dimensions": {
+          "financial_health": { "score": 5, "note": "ETF跟踪科创芯片指数，无个体财务风险", "source": "self" },
+          "valuation": { "score": 5, "note": "ETF市价与NAV基本匹配", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "technical": { "score": 4, "note": "今日+4.55%，技术面偏强", "source": "self" },
+          "macro": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "news_sentiment": { "score": 5, "note": "数据缺失，默认5分", "source": "news_agent" }
+        }
+      },
+      {
+        "symbol": "688008",
+        "name": "澜起科技",
+        "risk_score": 4.8,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "price": 262.5,
+        "stoploss": 210,
+        "stoploss_distance_pct": 20.0,
+        "dimensions": {
+          "financial_health": { "score": 4, "note": "DDR5接口芯片龙头，Q1现金流强劲，基本面优秀", "source": "self" },
+          "valuation": { "score": 6, "note": "PE偏高但增速部分支撑，距止盈280仅6.7%", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "technical": { "score": 4, "note": "今日+7.51%强势，距止损线20%安全", "source": "self" },
+          "macro": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "news_sentiment": { "score": 5, "note": "数据缺失，默认5分", "source": "news_agent" }
+        }
+      },
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "risk_score": 6.2,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "price": 329.33,
+        "stoploss": 285.26,
+        "stoploss_distance_pct": 13.4,
+        "dimensions": {
+          "financial_health": { "score": 6, "note": "光通信器件营收增长，但PE 130x意味着极高预期，业绩不及预期即暴跌", "source": "self" },
+          "valuation": { "score": 9, "note": "PE 130x极度高估，6/17已减仓28.5%@325.8", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "technical": { "score": 6, "note": "Research标注技术面恶化，距止损13.4%尚有缓冲但趋势转弱", "source": "self" },
+          "macro": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "news_sentiment": { "score": 5, "note": "数据缺失，默认5分", "source": "news_agent" }
+        }
+      },
+      {
+        "symbol": "159949",
+        "name": "创业板50ETF",
+        "risk_score": 4.85,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "price": 2.012,
+        "stoploss": 1.7,
+        "stoploss_distance_pct": 15.5,
+        "dimensions": {
+          "financial_health": { "score": 5, "note": "宽基ETF，无个体财务风险", "source": "self" },
+          "valuation": { "score": 5, "note": "ETF", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "technical": { "score": 4, "note": "今日+1.31%，距止损15.5%安全", "source": "self" },
+          "macro": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "news_sentiment": { "score": 5, "note": "数据缺失，默认5分", "source": "news_agent" }
+        }
+      },
+      {
+        "symbol": "510500",
+        "name": "中证500ETF",
+        "risk_score": 4.85,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "price": 8.763,
+        "stoploss": 7.5,
+        "stoploss_distance_pct": 14.4,
+        "dimensions": {
+          "financial_health": { "score": 5, "note": "宽基ETF，500只分散", "source": "self" },
+          "valuation": { "score": 5, "note": "ETF", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "technical": { "score": 4, "note": "今日+1.52%，距止损14.4%安全", "source": "self" },
+          "macro": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "news_sentiment": { "score": 5, "note": "数据缺失，默认5分", "source": "news_agent" }
+        }
+      },
+      {
+        "symbol": "513300",
+        "name": "纳斯达克ETF",
+        "risk_score": 4.85,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "price": 2.761,
+        "stoploss": 2.3,
+        "stoploss_distance_pct": 16.7,
+        "dimensions": {
+          "financial_health": { "score": 5, "note": "跟踪纳斯达克100指数", "source": "self" },
+          "valuation": { "score": 5, "note": "ETF", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "technical": { "score": 4, "note": "今日0.0%（美股休市），距止损16.7%安全", "source": "self" },
+          "macro": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "news_sentiment": { "score": 5, "note": "数据缺失，默认5分", "source": "news_agent" }
+        }
+      },
+      {
+        "symbol": "513650",
+        "name": "标普500ETF",
+        "risk_score": 5.0,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "price": 1.919,
+        "stoploss": 1.7,
+        "stoploss_distance_pct": 11.4,
+        "dimensions": {
+          "financial_health": { "score": 5, "note": "跟踪标普500指数", "source": "self" },
+          "valuation": { "score": 5, "note": "ETF", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "technical": { "score": 5, "note": "今日-0.1%持平，距止损11.4%尚可", "source": "self" },
+          "macro": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "news_sentiment": { "score": 5, "note": "数据缺失，默认5分", "source": "news_agent" }
+        }
+      },
+      {
+        "symbol": "518880",
+        "name": "黄金ETF",
+        "risk_score": 5.3,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "price": 8.957,
+        "stoploss": 8.5,
+        "stoploss_distance_pct": 5.1,
+        "dimensions": {
+          "financial_health": { "score": 5, "note": "跟踪黄金现货价格", "source": "self" },
+          "valuation": { "score": 5, "note": "ETF，跟踪金价", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "technical": { "score": 7, "note": "距止损8.5仅5.1%，6/17盘中跌至8.671距止损仅2%，止损逼近风险显著", "source": "self" },
+          "macro": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "news_sentiment": { "score": 5, "note": "数据缺失，默认5分", "source": "news_agent" }
+        }
+      },
+      {
+        "symbol": "688041",
+        "name": "海光信息",
+        "risk_score": 5.65,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "price": 308.22,
+        "stoploss": 255,
+        "stoploss_distance_pct": 17.3,
+        "dimensions": {
+          "financial_health": { "score": 5, "note": "AI芯片营收增长，但PE 257x意味着市场已定价极高预期", "source": "self" },
+          "valuation": { "score": 9, "note": "PE 257x极度高估，6/17已减仓50%@307.94锁利", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "technical": { "score": 4, "note": "今日+4.73%，距止损17.3%安全", "source": "self" },
+          "macro": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "news_sentiment": { "score": 5, "note": "数据缺失，默认5分", "source": "news_agent" }
+        }
+      },
+      {
+        "symbol": "002156",
+        "name": "通富微电",
+        "risk_score": 5.1,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "price": 67.22,
+        "stoploss": 50,
+        "stoploss_distance_pct": 25.6,
+        "dimensions": {
+          "financial_health": { "score": 5, "note": "Q1利润+225%但毛利率13.3%偏低，现金流69.9亿", "source": "self" },
+          "valuation": { "score": 7, "note": "PE 72x偏贵", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "technical": { "score": 3, "note": "今日+6.82%反弹，距止损25.6%安全", "source": "self" },
+          "macro": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "news_sentiment": { "score": 5, "note": "数据缺失，默认5分", "source": "news_agent" }
+        }
+      },
+      {
+        "symbol": "002463",
+        "name": "沪电股份",
+        "risk_score": 5.85,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "price": 146.55,
+        "stoploss": 105,
+        "stoploss_distance_pct": 28.4,
+        "dimensions": {
+          "financial_health": { "score": 7, "note": "Research标注'三雷恶化'，多项基本面指标恶化中", "source": "self" },
+          "valuation": { "score": 6, "note": "PE适中但基本面恶化趋势令估值承压", "source": "self" },
+          "industry_cycle": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "technical": { "score": 6, "note": "Research标注跌破MA20，今日+4.2%反弹但趋势仍偏弱", "source": "self" },
+          "macro": { "score": 5, "note": "数据缺失，默认5分", "source": "industry_agent" },
+          "news_sentiment": { "score": 5, "note": "数据缺失，默认5分", "source": "news_agent" }
+        }
+      }
+    ],
+    "portfolio_flags": [
+      {
+        "flag": "AI_CONCENTRATION_VETO",
+        "description": "AI赛道集中度51.85%（>40%阈值），否决任何AI方向新增仓位",
+        "affected_positions": ["海光信息", "澜起科技", "天孚通信", "华海清科", "沪电股份", "科创芯片ETF"]
+      },
+      {
+        "flag": "STOPLOSS_WARNING",
+        "description": "黄金ETF距止损仅5.1%，6/17盘中曾测试距止损2%（8.671），密切关注",
+        "affected_positions": ["黄金ETF"]
+      },
+      {
+        "flag": "VALUATION_EXTREME",
+        "description": "天孚通信PE 130x、海光信息PE 257x处于极度高估区间，任何业绩不及预期将引发剧烈回调",
+        "affected_positions": ["天孚通信", "海光信息"]
+      },
+      {
+        "flag": "DETERIORATION",
+        "description": "沪电股份'三雷恶化'+跌破MA20，Research此前给出Risk VETO 7.1，需持续监控",
+        "affected_positions": ["沪电股份"]
+      }
+    ],
+    "summary": "组合AI赛道集中度51.85%触发否决线（>40%），禁止AI方向新增仓位；天孚通信PE 130x与海光信息PE 257x构成极端估值风险；黄金ETF距止损5.1%需密切监控；无个股触发risk_score≥7硬否决，但天孚通信6.2分接近阈值。"
+  }
+}
