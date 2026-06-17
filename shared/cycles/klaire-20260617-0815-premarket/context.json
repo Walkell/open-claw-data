@@ -1,0 +1,12 @@
+{
+  "cycle_id": "klaire-20260617-0815-premarket",
+  "principal": "klaire",
+  "flow_type": "四委员",
+  "positions_table_id": "tbl9xYrGkBDZlnYm",
+  "watchlist_table_id": "tblaQY1jOFWOXd1U",
+  "reports_table_name": "报告表",
+  "trades_table_name": "交易记录",
+  "monitor_table_id": "tblHkc0MfQbe2x37",
+  "scenario": "盘前简报",
+  "bitable_name": "Klaire-投资管理"
+}
