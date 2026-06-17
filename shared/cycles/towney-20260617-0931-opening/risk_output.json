@@ -1,0 +1,218 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260617-0931-opening",
+  "data": {
+    "symbol": "688120,588090,688008,300394,159949,510500,513300,513650,518880,688041,002156,002463,09988",
+    "risk_score": 5.8,
+    "verdict": "NOC",
+    "veto_reason": "",
+    "dimensions": {
+      "financial_health": {
+        "score": 5.5,
+        "note": "分化严重：澜起科技(ROE 17.3%/负债4.2%/OpCF强劲)和天孚通信(ROE 36.6%/负债14.5%)财务质量优秀；但华海清科经营现金流/净利润从Q1-24的83%骤降至Q1-26的3.2%构成严重恶化信号；海光信息OpCF/Profit仅7.7%(Q1-26)且持续走弱；通富微电负债率64.9%偏高+毛利率偏低；沪电股份负债率48.6%且OpCF趋势性下滑(从102%降至41%)。组合整体财务健康度中等。",
+        "source": "self"
+      },
+      "valuation": {
+        "score": 7.5,
+        "note": "估值风险偏高。海光信息FY2025 PE≈187x(营收+57%但利润增速33%不足以消化)、澜起科技≈132x、天孚通信≈124x，三者均为'估值严重透支'状态。华海清科≈65x(利润增速仅6%)、通富微电≈71x(封测厂PE过高)、沪电股份≈73x(增长63%部分可消化)。ETF类估值合理。组合加权估值处于历史高分位，任何业绩miss将触发戴维斯双杀。",
+        "source": "self"
+      },
+      "industry_cycle": {
+        "score": 5.5,
+        "note": "半导体/芯片+光通信+PCB合计占仓70.4%，集中度风险显著。板块内部分化明显：算力+1.60%和先进封装+3.21%逆势走强，但光通信-1.01%和科创50-1.39%领跌。半导体设备受长鑫IPO+900亿订单催化偏强，但传统芯片和光通信方向承压。行业整体中性偏弱，结构性机会存在但系统性风险不可忽视。",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 5.5,
+        "note": "技术面分化。强势：沪电股份(MA20↑/MA60↑/20日+39.8%/创历史新高)、天孚通信(MA20↑/MA60↑/20日+25.5%)、华海清科(MA20↑/MA60↑)。弱势：海光信息(MA20↓/-8.3% 20日/289关键位)、通富微电(MA20↓)、澜起科技(MA20↓/-4.6% 20日/波动剧烈)。阿里巴巴港股持续破位。整体技术面中性偏弱，无一致性方向。",
+        "source": "self"
+      },
+      "macro": {
+        "score": 5.0,
+        "note": "上证4080(-0.29%)/深成指15633(-0.27%)/创业板4073(-0.73%)/科创50 1734(-1.39%)全线微跌。VIX从22.22回落至16.41恐慌缓解。S&P500和Nasdaq持平，隔夜美股无方向性信号。中东局势缓和利好风险偏好但利空黄金。宏观环境整体中性。",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 4.8,
+        "note": "近7天组合重大利好密集(sentiment=0.65, impact=8/10)：算力网纳入国家基建六张网、英伟达Vera Rubin推动PCB/CPO价值量翻倍、Anthropic断供强化国产算力逻辑、590亿PCB扩产潮。利好集中覆盖PCB/CPO/设备/封测四方向。风险提示：湘潭电化送样验证中、阿里巴巴浮亏持续、台积电CoPoS对通富微电竞争压力。",
+        "source": "news_agent"
+      }
+    },
+    "summary": "组合核心风险：①AI赛道集中度70.4%远超40%阈值，行业系统性回调将冲击组合70%+仓位；②多只核心标的估值处于历史极端高位（海光信息/澜起科技/天孚通信PE>120x）；③华海清科经营现金流骤降（Q1-26 OpCF/Profit仅3.2% vs Q1-24的83%）和海光信息现金流持续薄弱构成财务质量恶化预警；④阿里巴巴距止损仅7.5%为组合最脆弱环节。积极因素：新闻面强烈偏多（算力网/英伟达Rubin/Anthropic断供三重催化共振），沪电股份和天孚通信技术面强势领涨。",
+    "position_risks": [
+      {
+        "symbol": "688120",
+        "name": "华海清科",
+        "price": 198.68,
+        "cost": 147.1,
+        "pnl_pct": 35.1,
+        "stop_loss": 157.0,
+        "sl_distance_pct": 21.0,
+        "weight_pct": 13.9,
+        "risk_level": "medium",
+        "risk_note": "经营现金流恶化是最大隐患(OpCF/Profit 3.2%)，利润增速降至6%难以支撑65x+PE。CMP设备龙头地位稳固但估值无安全边际。"
+      },
+      {
+        "symbol": "588090",
+        "name": "科创芯片ETF",
+        "price": 1.792,
+        "cost": 1.621,
+        "pnl_pct": 10.5,
+        "stop_loss": null,
+        "sl_distance_pct": null,
+        "weight_pct": 9.9,
+        "risk_level": "low",
+        "risk_note": "被动配置工具，无个股风险。Research建议置换红利+军工逻辑合理，可考虑执行。"
+      },
+      {
+        "symbol": "688008",
+        "name": "澜起科技",
+        "price": 244.84,
+        "cost": 155.23,
+        "pnl_pct": 57.7,
+        "stop_loss": 210.0,
+        "sl_distance_pct": 14.2,
+        "weight_pct": 12.2,
+        "risk_level": "medium",
+        "risk_note": "基本面极优(零负债/ROE 17.3%)但估值132x已严重透支。Q1增速放缓(Rev+19.5% vs FY+49.9%)，技术面MA20下方运行，筹码松动信号明显。"
+      },
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "price": 321.4,
+        "cost": 167.94,
+        "pnl_pct": 91.4,
+        "stop_loss": 285.26,
+        "sl_distance_pct": 11.2,
+        "weight_pct": 16.0,
+        "risk_level": "medium",
+        "risk_note": "浮盈91%+极度丰厚，估值124x已price-in大量乐观预期。任何业绩miss将引发剧烈回调。Research建议部分止盈锁定利润建议合理。"
+      },
+      {
+        "symbol": "159949",
+        "name": "创业板50ETF",
+        "price": 1.983,
+        "cost": 1.203,
+        "pnl_pct": 64.8,
+        "stop_loss": 1.7,
+        "sl_distance_pct": 14.3,
+        "weight_pct": 3.2,
+        "risk_level": "low",
+        "risk_note": "浮盈丰厚，仓位低(3.2%)，成长股敞口配置合理，维持无风险。"
+      },
+      {
+        "symbol": "510500",
+        "name": "中证500ETF",
+        "price": 8.65,
+        "cost": 8.302,
+        "pnl_pct": 4.2,
+        "stop_loss": 7.5,
+        "sl_distance_pct": 13.3,
+        "weight_pct": 4.0,
+        "risk_level": "low",
+        "risk_note": "大盘底仓，估值合理偏低，仓位低(4%)，风险可控。"
+      },
+      {
+        "symbol": "513300",
+        "name": "纳斯达克ETF",
+        "price": 2.734,
+        "cost": 2.235,
+        "pnl_pct": 22.3,
+        "stop_loss": 2.3,
+        "sl_distance_pct": 15.9,
+        "weight_pct": 5.1,
+        "risk_level": "low",
+        "risk_note": "浮盈20%+安全垫充足，全球科技龙头配置，风险可控。需关注美国宏观不确定性。"
+      },
+      {
+        "symbol": "513650",
+        "name": "标普500ETF",
+        "price": 1.913,
+        "cost": 1.654,
+        "pnl_pct": 15.7,
+        "stop_loss": 1.7,
+        "sl_distance_pct": 11.1,
+        "weight_pct": 1.4,
+        "risk_level": "low",
+        "risk_note": "仓位极低(1.4%)，美股均衡配置，风险极低。Research加仓建议可考虑。"
+      },
+      {
+        "symbol": "518880",
+        "name": "黄金ETF",
+        "price": 8.979,
+        "cost": 9.2,
+        "pnl_pct": -2.4,
+        "stop_loss": 8.5,
+        "sl_distance_pct": 5.3,
+        "weight_pct": 1.8,
+        "risk_level": "low",
+        "risk_note": "浮亏轻微(-2.4%)，仓位已从56%大幅降至1.8%，仓位极低。距止损5.3%有一定缓冲。中东缓和利空但VIX回落也降低避险需求。回补至5-8%建议可考虑。"
+      },
+      {
+        "symbol": "688041",
+        "name": "海光信息",
+        "price": 291.3,
+        "cost": 267.318,
+        "pnl_pct": 9.0,
+        "stop_loss": 255.0,
+        "sl_distance_pct": 12.5,
+        "weight_pct": 15.1,
+        "risk_level": "high",
+        "risk_note": "三重风险叠加：①估值187x严重透支；②经营现金流极度薄弱(OpCF/Profit 7.7%)；③技术面MA20下方运行(-8.3% 20日)。Anthropic断供+金融展催化提供情绪支撑但基本面改善尚需验证。仓位15.1%偏高。"
+      },
+      {
+        "symbol": "002156",
+        "name": "通富微电",
+        "price": 64.71,
+        "cost": 60.115,
+        "pnl_pct": 7.6,
+        "stop_loss": 50.0,
+        "sl_distance_pct": 22.7,
+        "weight_pct": 1.6,
+        "risk_level": "medium",
+        "risk_note": "负债率64.9%+毛利率偏低+单客户依赖是硬伤。71x PE对封测厂偏贵。但仓位仅1.6%且先进封装概念+台积电CoPoS国产替代逻辑有支撑。CIO等54-56加仓策略谨慎。"
+      },
+      {
+        "symbol": "002463",
+        "name": "沪电股份",
+        "price": 145.39,
+        "cost": 126.995,
+        "pnl_pct": 14.5,
+        "stop_loss": 105.0,
+        "sl_distance_pct": 27.8,
+        "weight_pct": 1.7,
+        "risk_level": "medium",
+        "risk_note": "技术面最强(创历史新高/MA20↑/MA60↑/20日+39.8%)，英伟达Rubin+590亿PCB扩产潮双重催化。但估值73x+三雷(应收/存货/负债)需持续监控。仓位仅1.7%偏低，浮盈安全垫充足。"
+      },
+      {
+        "symbol": "09988",
+        "name": "阿里巴巴",
+        "price": 108.1,
+        "cost": 130.638,
+        "pnl_pct": -17.3,
+        "stop_loss": 100.0,
+        "sl_distance_pct": 7.5,
+        "weight_pct": 1.3,
+        "risk_level": "high",
+        "risk_note": "持仓风险最高标的：浮亏-17.3%+距止损仅7.5%+技术面持续恶化+基本面增长乏力。仓位已降至1.3%较低降低暴露，但港股通科技板块承压未解除。严格止损不可动摇。"
+      }
+    ],
+    "manoeuvre_risk": {
+      "ai_concentration_veto": "AI/半导体赛道集中度70.4%远超40%阈值，根据否决规则自动VETO任何AI方向新增仓位（包括海光信息、沪电股份、通富微电、华海清科、澜起科技、天孚通信、科创芯片ETF的加仓操作）。",
+      "stop_loss_alerts": [
+        "阿里巴巴(09988)距止损7.5%，虽未触发3%加仓否决线但处于高危区间，需密切监控",
+        "黄金ETF(518880)距止损5.3%，距3%否决线有缓冲但需关注中东局势演变"
+      ],
+      "concentration_warnings": [
+        "半导体+光通信+PCB三板块合计占仓70.4%，任何板块级黑天鹅将重创组合",
+        "天孚通信(16.0%)+海光信息(15.1%)+华海清科(13.9%)三者合计45%，单一个股集中度偏高"
+      ],
+      "cash_flow_deterioration": [
+        "华海清科：OpCF/Profit从83%(Q1-24)骤降至3.2%(Q1-26)，需紧急关注是否出现应收账款恶化或存货积压",
+        "海光信息：OpCF/Profit从353%(Q1-25)持续降至7.7%(Q1-26)，现金流恶化趋势明确",
+        "沪电股份：OpCF/Profit从187%(Q1-25)降至41%(Q1-26)，虽仍在正值区间但趋势不利"
+      ]
+    }
+  }
+}

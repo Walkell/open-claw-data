@@ -365,7 +365,8 @@
             "industry",
             "news",
             "risk",
-            "cio"
+            "cio",
+            "monitor"
           ]
         },
         "tools": {
