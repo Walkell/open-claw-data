@@ -1,0 +1,44 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260617-1351-688120",
+  "data": {
+    "symbol": "688120",
+    "risk_score": 6.0,
+    "verdict": "NOC",
+    "veto_reason": "",
+    "dimensions": {
+      "financial_health": {
+        "score": 7,
+        "note": "净利润同比-56.47%，营收同比-0.48%，净利率仅5.95%，经营现金流近乎枯竭，利润增速连续5季下滑，财务质量恶化明显",
+        "source": "self"
+      },
+      "valuation": {
+        "score": 8,
+        "note": "PE_TTM 110x / PB 9.92x / PEG 3.23，在利润大幅下滑背景下估值极度偏高，远高于行业均值",
+        "source": "self"
+      },
+      "industry_cycle": {
+        "score": 5,
+        "note": "数据缺失，默认5分（精简两委员流程，Industry未派发）",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 4,
+        "note": "今日+9.42%放量突破止盈线214.17，收盘220.13站稳上方，距止损157达28.7%安全；但价格偏离MA120达55%，短期超买风险存在",
+        "source": "self"
+      },
+      "macro": {
+        "score": 5,
+        "note": "数据缺失，默认5分（精简两委员流程，宏观环境未覆盖）",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 5,
+        "note": "数据缺失，默认5分（精简两委员流程，News未派发）",
+        "source": "news_agent"
+      }
+    },
+    "summary": "财务面恶化（利润-56%）与估值偏高（PE 110x）是主要风险来源，技术面强势（+9.4%突破止盈线）对冲部分风险，综合风险评分6.0；注意持仓组合AI赛道集中度70.4%远超40%红线，任何AI方向新增仓位将触发否决"
+  }
+}
