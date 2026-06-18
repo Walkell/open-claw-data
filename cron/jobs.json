@@ -295,11 +295,17 @@
         "expr": "0,20,40 13-14 * * 1-5",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "main",
+      "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
-        "kind": "systemEvent",
-        "text": "🔔 盘中监控触发 principal=towney 检查持仓异动并推送"
+        "kind": "agentTurn",
+        "message": "🔔 盘中监控触发 principal=towney 检查持仓异动并推送到群 oc_c19042fb899cda7eeca1bbbd7d981d1a"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
+        "bestEffort": true
       },
       "state": {}
     },
