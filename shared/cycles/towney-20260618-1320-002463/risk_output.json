@@ -1,0 +1,58 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260618-1320-002463",
+  "data": {
+    "symbol": "002463",
+    "risk_score": 5.6,
+    "verdict": "NOC",
+    "veto_reason": "",
+    "concentration_detail": {
+      "ai_semi_total_pct": 51.86,
+      "ai_threshold": 40,
+      "hu_dian_is_ai": true,
+      "ai_positions": [
+        { "name": "澜起科技", "code": "688008", "pct": 12.15, "category": "AI/内存接口" },
+        { "name": "天孚通信", "code": "300394", "pct": 11.41, "category": "AI/光模块" },
+        { "name": "科创芯片ETF", "code": "588090", "pct": 9.93, "category": "半导体ETF" },
+        { "name": "华海清科", "code": "688120", "pct": 7.46, "category": "半导体设备" },
+        { "name": "海光信息", "code": "688041", "pct": 7.57, "category": "AI GPU/CPU" },
+        { "name": "沪电股份", "code": "002463", "pct": 1.72, "category": "AI服务器PCB" },
+        { "name": "通富微电", "code": "002156", "pct": 1.62, "category": "半导体封测" }
+      ],
+      "non_ai_total_pct": 15.43,
+      "cash_pct": 32.72,
+      "concentration_veto_active": true,
+      "note": "AI/半导体赛道集中度51.86%远超40%阈值, 沪电股份计入AI赛道(AI服务器PCB龙头), 任何AI方向新增/加仓均触发VETO"
+    },
+    "concentration_weighted_pnl": {
+      "hu_dian_unrealized_pct": 16.47,
+      "hu_dian_contribution_to_portfolio": 0.28,
+      "note": "沪电仓位仅1.72%, 对组合P&L影响有限; AI大盘股(澜起+72%/天孚+94%)贡献主要AI浮盈"
+    },
+    "take_profit_triggered": true,
+    "take_profit_detail": {
+      "current_price": 147.91,
+      "take_profit": 143.62,
+      "excess_pct": 2.99,
+      "stop_loss": 122.45,
+      "stop_loss_distance_pct": 17.21,
+      "recommendation": "止盈参考位已触发(现价超止盈+3%), 技术面严重超买(布林上轨/60日百分位100%/量比3.24/ATR7.69%), 建议分批减仓锁利; AI集中度>40%禁止加仓"
+    },
+    "dimensions": {
+      "financial_health": { "score": 3.5, "note": "营收+54%/利润+63%高增长, 毛利率35%净利率20%优秀; Q1经营CF5.11亿同比-64%需警惕; 资产负债表缺失无法评估杠杆", "source": "self" },
+      "valuation": { "score": 7.5, "note": "TTM PE 66x处于60日100%分位极端区间, PB 3.26x偏贵, PEG 1.4仅合理, 市值2854亿已price-in乐观预期, 安全边际不足", "source": "self" },
+      "industry_cycle": { "score": 5, "note": "数据缺失(精简两委员, Industry未派发), 默认5分", "source": "industry_agent" },
+      "technical": { "score": 8, "note": "严重超买: 紧贴布林上轨149.37, 60日百分位100%, 量比3.24放量冲顶, ATR 7.69%极高波动, 现价147.91已超止盈位143.62约3%, 存在回调风险", "source": "self" },
+      "macro": { "score": 5, "note": "数据缺失(精简两委员, Industry未派发), 默认5分", "source": "industry_agent" },
+      "news_sentiment": { "score": 5, "note": "数据缺失(精简两委员, News未派发), 默认5分", "source": "news_agent" }
+    },
+    "data_quality": {
+      "price_source": "⚠️ 单源(gtimg 147.91); 网易502/新浪403/东财502均失败; Research此前双源验证148.42(gtimg+东财), 差异0.34%属正常盘中波动",
+      "financial_source": "Sina财报(akshare) 单源; 资产负债表不可用",
+      "missing_dimensions": 3,
+      "note": "6维中3维默认5分, 评分仅供参考, 建议标准四委员流程复核"
+    },
+    "summary": "风险评分5.6(中等): 估值极端(PE百分位100%)与技术面严重超买(布林上轨/量比3.24/止盈已触发+3%)是主要风险点; 基本面强劲但Q1现金流-64%存隐患。AI/半导体集中度51.9%超40%阈值, 沪电计入AI赛道, 任何加仓触发VETO。止盈已触发, 建议分批减仓。3/6维度数据缺失, 评分置信度有限。"
+  }
+}
