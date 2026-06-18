@@ -91,6 +91,30 @@ cycle_id：[xxx]
 
 **子 Agent 失败处理**：任何委员 abort / 超时 / 无输出 → 立即停止，输出 `"{委员名}执行失败，IC 中止"`，通知用户。严禁自行替代。
 
+### 3.5：委员输出规范（spawn 时注入到 prompt）
+
+spawn 时，prompt 除 `cycle_id` 外，附带以下字段要求（逐委员不同）：
+
+**Research 委员（output 格式要求）**：对每个持仓标的，`dimensions.technical` 必须额外包含：
+- `atr_pct`：ATR(14) / 当前价
+- `bollinger_upper`：布林带上轨(2σ)价格
+- `ma20`：20 日均线价格
+- `ma60_high`：近 60 日最高价
+- `pe_percentile`：当前 PE 在近 2 年 PE 区间的分位数（%）
+- `vol_ratio`：量比（当日成交量/5日均量）
+
+`holdings` 数据顶部加 `data_quality` 字段，注明数据源可用性（🟢全部可用 / ⚠部分受限 / 🔴严重受限）。
+
+**Industry 委员（output 格式要求）**：输出必须含 `data_quality` 字段注释数据源可用性。
+
+**News 委员（output 格式要求）**：输出必须含 `data_quality` 字段注释数据源可用性。
+
+**Risk 委员（output 格式要求）**：risk_score 和 verdict 之外，额外输出：
+- `concentration_detail`：{赛道名: {当前占比%, 阈值%, 级别:🟢/🟡/🟠/🔴, 超标原因}}
+- `concentration_weighted_pnl`：该赛道加权浮盈%（用于浮盈修正规则）
+
+---
+
 ### 第四步：读取委员输出文件
 
 ```
