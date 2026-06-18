@@ -1,0 +1,76 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260618-1229-588090",
+  "data": {
+    "symbol": "588090",
+    "risk_score": 6.0,
+    "verdict": "VETO",
+    "veto_reason": "AI/半导体赛道有效集中度46.9%（含588090底层~50%半导体暴露4.97%），超过40%上限，否决任何对588090的加仓/新增。现有9.93%仓位可持有，但技术面严重超买（RSI 68.82、量比9.20、偏离MA20 +33.91%），短期回调风险大。",
+    "dimensions": {
+      "financial_health": {
+        "score": 7,
+        "note": "底层公司受益于半导体上行周期，海光/澜起/中微营收高增长；寒武纪仍亏损，部分设备公司研发投入高企影响短期利润。行业整体现金流改善中。PE 36x反映部分增长预期已计入。",
+        "source": "self"
+      },
+      "valuation": {
+        "score": 6,
+        "note": "ETF整体PE约36倍，科技指数中等偏高。近20日+12.23%导致估值快速扩张，安全边际收窄。对比科创50历史泡沫期(40-60x)尚有距离，但在当前利率环境下不算便宜。",
+        "source": "self"
+      },
+      "industry_cycle": {
+        "score": 5,
+        "note": "数据缺失，默认5分（精简两委员流程，Industry未派发）",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 7,
+        "note": "价格1.953远超MA20(+33.91%)，RSI 68.82逼近超买区，量比9.20为潜在放量见顶信号。布林带上轨突破，ATR 2.99%波动加剧。强势多头但追高风险极高，短期技术性回调概率大。⚠️ 行情仅gtimg单源。",
+        "source": "self"
+      },
+      "macro": {
+        "score": 5,
+        "note": "数据缺失，默认5分（精简两委员流程，Industry未派发）",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 5,
+        "note": "数据缺失，默认5分（精简两委员流程，News未派发）",
+        "source": "news_agent"
+      }
+    },
+    "concentration_detail": {
+      "ai_semi_effective_exposure_pct": 46.90,
+      "threshold_pct": 40,
+      "exceeded": true,
+      "methodology": "ETF按底层半导体/AI芯片权重折算有效暴露（588090约50%计入），纳斯达克ETF(513300)的AI/semi暴露未计入主统计（如计入约+1.5pp至48.4%）",
+      "positions": [
+        { "symbol": "688008", "name": "澜起科技", "position_pct": 12.15, "effective_pct": 12.15, "sector": "内存接口芯片", "pnl_pct": 72.3 },
+        { "symbol": "300394", "name": "天孚通信", "position_pct": 11.41, "effective_pct": 11.41, "sector": "光通信/AI数据中心", "pnl_pct": 94.1 },
+        { "symbol": "588090", "name": "科创芯片ETF", "position_pct": 9.93, "effective_pct": 4.97, "sector": "ETF(~50%半导体)", "pnl_pct": 20.5 },
+        { "symbol": "688041", "name": "海光信息", "position_pct": 7.57, "effective_pct": 7.57, "sector": "CPU/GPU", "pnl_pct": 23.1 },
+        { "symbol": "688120", "name": "华海清科", "position_pct": 7.46, "effective_pct": 7.46, "sector": "半导体设备", "pnl_pct": 53.1 },
+        { "symbol": "002463", "name": "沪电股份", "position_pct": 1.72, "effective_pct": 1.72, "sector": "AI服务器PCB", "pnl_pct": 16.7 },
+        { "symbol": "002156", "name": "通富微电", "position_pct": 1.62, "effective_pct": 1.62, "sector": "半导体封测", "pnl_pct": 13.8 }
+      ],
+      "concentration_veto_triggered": true
+    },
+    "concentration_weighted_pnl": {
+      "total_ai_semi_position_pct": 46.90,
+      "weighted_pnl_sum_pct": 27.78,
+      "average_pnl_pct": 59.2,
+      "note": "AI/半导体赛道整体浮盈丰厚（加权平均+59.2%），但高集中度+高浮盈意味着板块回调时组合冲击极大"
+    },
+    "stop_loss_check": {
+      "has_stop_loss": false,
+      "note": "588090未设置止损位，距止损线检查不适用。建议设定止损参考（如MA20 1.4585或成本价1.621下方）。",
+      "veto_triggered": false
+    },
+    "data_quality": {
+      "price_source": "⚠️ 单源（gtimg），akshare超时/网易502/同花顺404/新浪403，价格未经交叉验证",
+      "upstream_missing": 3,
+      "upstream_note": "行业景气度/宏观环境/新闻情绪三维均数据缺失（精简两委员流程），各默认5分"
+    },
+    "summary": "AI/半导体赛道有效集中度46.9%超40%红线，触发集中度否决；技术面严重超买（RSI近70、量比9.2、偏离均线34%），短期回调风险大。"
+  }
+}
