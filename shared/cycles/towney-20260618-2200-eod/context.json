@@ -1,0 +1,26 @@
+{
+  "principal": "towney",
+  "flow_type": "精简两委员",
+  "cycle_id": "towney-20260618-2200-eod",
+  "table_id": {
+    "positions_table": "持仓表",
+    "watchlist_table": "观察池",
+    "monitor_table": "监控记录",
+    "decisions_table": "决策复盘",
+    "trades_table": "交易记录",
+    "reports_table": "报告表"
+  },
+  "profit_target": {
+    "annual_return": "30%",
+    "set_date": "2026-06-15"
+  },
+  "risk_thresholds": {
+    "veto": 7,
+    "hard_veto": 9
+  },
+  "channels": {
+    "group": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
+    "dm": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
+    "shared_group": true
+  }
+}
