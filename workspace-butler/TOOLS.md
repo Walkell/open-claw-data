@@ -34,6 +34,7 @@ klaire（Klaire-投资管理）:
   持仓表:    tbl9xYrGkBDZlnYm
   观察池:    tblaQY1jOFWOXd1U
   监控记录:  tblHkc0MfQbe2x37
+  绩效回溯:  tblYxTAbhf9LxxPH
 ```
 
 遇 NOTEXIST → 重新执行 `custom-feishu-auth` SKILL（最多 2 次）。
