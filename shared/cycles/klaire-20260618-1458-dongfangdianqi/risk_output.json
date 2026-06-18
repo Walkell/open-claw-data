@@ -1,0 +1,60 @@
+{
+  "principal": "klaire",
+  "agent": "risk",
+  "cycle_id": "klaire-20260618-1458-dongfangdianqi",
+  "data": {
+    "symbol": "600875",
+    "name": "东方电气",
+    "risk_score": 6.2,
+    "verdict": "NOC",
+    "veto_reason": "",
+    "dimensions": {
+      "financial_health": {
+        "score": 6,
+        "note": "盈利能力改善显著（Q1净利润+40%），ROE年化改善，毛利率净利率稳中有升。但资产负债率近70%偏高，经营现金流Q1季节性为负，应收账款周转偏长，扣非利润增速远低于净利润增速存在非经常性损益贡献。央企信用背书是加分项。",
+        "source": "self"
+      },
+      "valuation": {
+        "score": 8,
+        "note": "估值处历史低位区间，安全边际充足。PE(TTM)~26.4x(gtimg实时)/~18x(研报口径)，PB~2.4x，PS~1.3x，均为行业折价。同行业可比公司中东方电气PE显著低于上海电气(87.8x)、汇川技术(40.7x)。PE历史分位约27%，下行空间有限，性价比突出。",
+        "source": "self"
+      },
+      "industry_cycle": {
+        "score": 7,
+        "note": "东方电气为核电设备三巨头之一，手握华龙一号/CAP1400三代核电技术。15th五规划核电审批有望加速，海水直接制氢海试突破（纯度99.999%），光热/风电多赛道布局。央企恳谈会释放央地合作信号。但板块资金流向科创/创业板，传统电力ETF-3.5%。行业中长期确定性高。",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 4,
+        "note": "技术面偏弱。现价32.56低于MA20(33.24,-2.0%)和MA60(37.0,-12.0%)，处于下降通道。RSI(14)=39.2弱势区，MACD尚未金叉。6月中旬从29.49低点反弹+10.4%但量能未持续放大（量比1.05）。近5日强力反弹但上影线长振幅大，MA20构成近端阻力。60日高点到低点跌幅-32.7%，当前处于超跌反弹初期。⚠️ 行情仅腾讯gtimg单源可用。",
+        "source": "self"
+      },
+      "macro": {
+        "score": 6.5,
+        "note": "VIX 18.44短期波动加大，S&P500回调，上证震荡。央行中性偏松，美伊和解油价暴跌利好制造业成本。15th五规划期开启，央企核电审批有望加速，四川战略腹地投资超万亿。宏观对电力设备行业偏友好，但海外波动传导风险需关注。",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 5,
+        "note": "News委员未参与本cycle，新闻情绪数据缺失，默认5分。",
+        "source": "none"
+      }
+    },
+    "summary": "风险评分6.2，低于7分VETO线。主要风险点：技术面处于下降通道（低于MA20/MA60），资产负债率偏高（~70%），经营现金流季节性波动，短期尚未确认底部反转；但估值安全边际充足（PE历史低位），核电/氢能/光热多赛道景气度高，财务基本面改善趋势明确。",
+    "concentration_detail": "当前Klaire组合AI/科技赛道集中度82.8%（双环传动32.1%+科创50ETF19.1%+信创ETF19.6%+均胜电子12.1%），远超40%警戒线。东方电气属于核电/电力设备赛道（非AI），新增该标的不会恶化AI集中度，反而有助于分散化（增加传统制造/能源设备敞口）。AI集中度超标已触发持续VETO任何AI方向新增仓位，但不影响本次东方电气的评估。",
+    "concentration_weighted_pnl": {
+      "total_market_value": 40918,
+      "ai_tech_pct": 82.8,
+      "ai_tech_mv": 33884,
+      "non_ai_mv": 7034,
+      "triggered_veto": false,
+      "note": "东方电气属于核电/电力设备赛道，不在AI赛道范畴，不触发AI集中度VETO规则。"
+    },
+    "data_quality": {
+      "price_source": "仅腾讯gtimg单源可用（东方财富502/网易502/同花顺404/新浪403），未经交叉验证",
+      "financial_source": "Research委员akshare同花顺财报+gtimg实时PE(26.4x)",
+      "technical_source": "腾讯gtimg K线(60日，前复权)",
+      "reliability": "medium（行情单源需注意）"
+    }
+  }
+}
