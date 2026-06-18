@@ -1,0 +1,261 @@
+{
+  "principal": "towney",
+  "agent": "news",
+  "cycle_id": "towney-20260619-0018-ic",
+  "data": {
+    "symbol": "PORTFOLIO+WATCHLIST",
+    "sentiment": 0.55,
+    "event_impact": 6,
+    "confidence": 0.75,
+    "events": [
+      { "date": "2026-06-18", "title": "华海清科40亿定增获上交所受理，加码半导体装备研发", "impact": "正面：产能扩张信号，利好长期竞争力" },
+      { "date": "2026-06-18", "title": "澜起科技成功送样DDR5第六子代RCD芯片，积极推进PCIe 7.0 Retimer", "impact": "重大正面：技术领先地位巩固，DDR5升级周期受益" },
+      { "date": "2026-06-18", "title": "海光信息涨6.42%，与用友网络战略合作，国产算力生态扩张", "impact": "正面：国产算力龙头地位强化，生态伙伴扩展" },
+      { "date": "2026-06-18", "title": "天孚通信/光模块行业供需紧俏，CPO概念高开高走，创业板指涨1.53%创新高", "impact": "正面：行业高景气延续，AI光通信需求旺盛" },
+      { "date": "2026-06-18", "title": "沪电股份PCB超级行情持续，公募扎堆持仓超120亿，国产光通信芯片量产突破", "impact": "正面：AI服务器PCB龙头逻辑不变，产能排至2027年" },
+      { "date": "2026-06-17", "title": "通富微电获晶圆级封装发明专利，玻璃基板元年+AI先进封装千亿替代", "impact": "正面：先进封装技术突破，新赛道打开" },
+      { "date": "2026-06-18", "title": "美伊达成14点谅解备忘录，3000亿美元重建基金，地缘风险缓和", "impact": "中性偏正：全球风险偏好提升，但细节待定" },
+      { "date": "2026-06-18", "title": "华工科技TGV玻璃通孔装备定型+3.2T光模块产能布局+第三代半导体10套装备", "impact": "正面：多技术赛道并行推进" },
+      { "date": "2026-06-17", "title": "天岳先进港股涨超11%，AI算力拉动SiC需求，800V HVDC提速", "impact": "正面：SiC需求边际改善信号" },
+      { "date": "2026-06-18", "title": "上海瀚讯涨5.25%，卫星通信+实践三十一号卫星发射成功", "impact": "正面：商业航天/卫星互联网主题催化" }
+    ],
+    "positions_news": [
+      {
+        "symbol": "688120",
+        "name": "华海清科",
+        "sentiment": "正面",
+        "sentiment_score": 7,
+        "key_news": [
+          { "title": "华海清科公布不超过40亿元定增预案，加码半导体装备研发", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "定增申请获上交所受理", "source": "新浪财经", "date": "2026-06-17", "sentiment": "正面" },
+          { "title": "英特尔18A-P制程量产加剧代工竞争", "source": "新浪财经", "date": "2026-06-18", "sentiment": "中性" }
+        ],
+        "insider_trading": "香港中央结算增持4.81%，天津科海投资减持，招商银行减持。整体北向资金净增持。",
+        "analyst_rating": "最近60天内有多份研究报告发布评级，综合评级偏正面"
+      },
+      {
+        "symbol": "688008",
+        "name": "澜起科技",
+        "sentiment": "正面",
+        "sentiment_score": 8,
+        "key_news": [
+          { "title": "成功送样DDR5第六子代RCD芯片", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "正在积极推进PCIe 7.0 Retimer芯片", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "公司是DDR5 RCD芯片国际标准牵头制定者", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "与国际主流内存模组厂商保持良好合作关系", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" }
+        ],
+        "insider_trading": "香港中央结算减持（11.98%→仍为第一大流通股东），中信证券/工商银行减持。多机构减持但持股集中度仍高。",
+        "analyst_rating": "最近60天内有多份研究报告，综合评级偏正面，DDR5升级+CXL双引擎"
+      },
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "sentiment": "正面",
+        "sentiment_score": 8,
+        "key_news": [
+          { "title": "光模块供需紧俏，行业高景气度延续", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "CPO概念早盘高开高走", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "光模块升级背后被忽视的环节正在爆发", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "权重行业通信/半导体大涨，创业板指涨1.53%创新高", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" }
+        ],
+        "insider_trading": "香港中央结算增持至7.13%，MORGAN STANLEY新进1.04%，UBS AG新进。外资集体加仓。",
+        "analyst_rating": "综合评级高度正面，光通信龙头+CPO放量"
+      },
+      {
+        "symbol": "688041",
+        "name": "海光信息",
+        "sentiment": "正面",
+        "sentiment_score": 8,
+        "key_news": [
+          { "title": "与用友网络达成战略合作，共筑国产算力与企业数智化", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "科创板AI上市通道打通，国产算力芯片进入资本驱动新阶段", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "海光信息涨6.42%，成交额174.75亿元", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "DCU率先完成GLM-5.2适配", "source": "股吧", "date": "2026-06-17", "sentiment": "正面" }
+        ],
+        "insider_trading": "香港中央结算增持至2.17%，中信证券新进。股权稳定，大股东未减持。",
+        "analyst_rating": "综合评级高度正面，国产算力核心标的"
+      },
+      {
+        "symbol": "002156",
+        "name": "通富微电",
+        "sentiment": "正面",
+        "sentiment_score": 6,
+        "key_news": [
+          { "title": "获得发明专利授权：晶圆级封装方法", "source": "新浪财经", "date": "2026-06-17", "sentiment": "正面" },
+          { "title": "2026玻璃基板元年！AI先进封装解锁千亿替代新赛道", "source": "新浪财经", "date": "2026-06-17", "sentiment": "正面" },
+          { "title": "接待甬元私募等26家机构调研", "source": "新浪财经", "date": "2026-06-16", "sentiment": "正面" },
+          { "title": "控股股东解除质押430万股", "source": "新浪财经", "date": "2026-06-10", "sentiment": "中性" }
+        ],
+        "insider_trading": "控股股东南通华达微减持，国家集成电路基金减持，香港中央结算减持。多家机构减持，但交通银行/国泰海通增持。整体偏负面。",
+        "analyst_rating": "开源证券给出买入评级（6/15涨7.55%），先进封装逻辑受认可"
+      },
+      {
+        "symbol": "588090",
+        "name": "科创芯片ETF",
+        "sentiment": "正面",
+        "sentiment_score": 7,
+        "key_news": [
+          { "title": "芯片板块飙升，寒武纪创新高，科创芯片设计ETF天弘涨超", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "国产芯片ETF格局生变，同指数博弈下费率与机制成分化", "source": "新浪财经", "date": "2026-06-18", "sentiment": "中性" }
+        ],
+        "insider_trading": "N/A（ETF）",
+        "analyst_rating": "N/A（ETF）"
+      },
+      {
+        "symbol": "159949",
+        "name": "创业板50ETF",
+        "sentiment": "正面",
+        "sentiment_score": 7,
+        "key_news": [
+          { "title": "创业板指涨1.53%创新高，权重通信/半导体大涨", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" }
+        ],
+        "insider_trading": "N/A（ETF）",
+        "analyst_rating": "N/A（ETF）"
+      },
+      {
+        "symbol": "513300",
+        "name": "纳斯达克ETF",
+        "sentiment": "中性",
+        "sentiment_score": 5,
+        "key_news": [
+          { "title": "SpaceX两日累计跌14%，地缘缓和但AI估值高企", "source": "7x24", "date": "2026-06-18", "sentiment": "中性" },
+          { "title": "美伊谅解备忘录签署，地缘风险下降", "source": "7x24", "date": "2026-06-18", "sentiment": "正面" }
+        ],
+        "insider_trading": "N/A（ETF）",
+        "analyst_rating": "N/A（ETF）"
+      },
+      {
+        "symbol": "510500",
+        "name": "中证500ETF",
+        "sentiment": "正面",
+        "sentiment_score": 6,
+        "key_news": [
+          { "title": "沪指收复4100点，科创50涨超4%，市场情绪向好", "source": "新浪财经", "date": "2026-06-17", "sentiment": "正面" }
+        ],
+        "insider_trading": "N/A（ETF）",
+        "analyst_rating": "N/A（ETF）"
+      },
+      {
+        "symbol": "513650",
+        "name": "标普500ETF",
+        "sentiment": "中性",
+        "sentiment_score": 5,
+        "key_news": [
+          { "title": "美伊达成谅解备忘录，风险偏好提升；但SPACEX大跌拖累科技情绪", "source": "7x24", "date": "2026-06-18", "sentiment": "中性" }
+        ],
+        "insider_trading": "N/A（ETF）",
+        "analyst_rating": "N/A（ETF）"
+      },
+      {
+        "symbol": "518880",
+        "name": "黄金ETF",
+        "sentiment": "负面",
+        "sentiment_score": 3,
+        "key_news": [
+          { "title": "美伊达成和解协议，地缘风险大幅下降，避险资产承压", "source": "7x24", "date": "2026-06-18", "sentiment": "负面" }
+        ],
+        "insider_trading": "N/A（ETF）",
+        "analyst_rating": "N/A（ETF）"
+      }
+    ],
+    "watchlist_news": [
+      {
+        "symbol": "002125",
+        "name": "湘潭电化",
+        "sentiment": "中性",
+        "sentiment_score": 5,
+        "key_news": [
+          { "title": "送样锰基材料处验证阶段，营收及前景存不确定性", "source": "新浪财经", "date": "2026-06-16", "sentiment": "中性" },
+          { "title": "电解二氧化锰用于一次电池，与国瓷材料暂无业务往来", "source": "新浪财经", "date": "2026-06-16", "sentiment": "中性" },
+          { "title": "固态电池板块大幅高开，千亿市值龙头半年报业绩预告翻倍", "source": "新浪财经", "date": "2026-06-16", "sentiment": "正面" }
+        ],
+        "insider_trading": "罗怀周/蒋如宁增持，章娉娉减持，香港中央结算减持。内部人分歧。",
+        "analyst_rating": "60天内有研究报告，锰基材料+电池上游逻辑"
+      },
+      {
+        "symbol": "000988",
+        "name": "华工科技",
+        "sentiment": "正面",
+        "sentiment_score": 7,
+        "key_news": [
+          { "title": "TGV玻璃通孔激光加工智能装备完成整机定型", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "已开发覆盖前后道制程10套装备面向第三代化合物半导体", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "已提前布局光芯片产能，供应可满足需求", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "3D打印完成板块布局，与散热厂商开展合作测试", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" }
+        ],
+        "insider_trading": "香港中央结算增持至3.93%，UBS AG新进，BARCLAYS新进。外资集体加仓。",
+        "analyst_rating": "60天内有研究报告，CPO+光芯片+第三代半导体多赛道"
+      },
+      {
+        "symbol": "002463",
+        "name": "沪电股份",
+        "sentiment": "正面",
+        "sentiment_score": 8,
+        "key_news": [
+          { "title": "6月18日接受机构调研，中欧基金/国海证券参与", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "国产高速光通信芯片量产突破，光纤产能排至2027年", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "公募扎堆PCB：沪电股份/胜宏科技持仓超120亿", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "PCB超级行情滚烫，7牛股月内套现9亿", "source": "新浪财经", "date": "2026-06-17", "sentiment": "中性" }
+        ],
+        "insider_trading": "香港中央结算增持至10.08%，平安银行增持，富国基金新进。机构资金持续流入。",
+        "analyst_rating": "综合评级高度正面，AI服务器PCB核心标的"
+      },
+      {
+        "symbol": "688072",
+        "name": "拓荆科技",
+        "sentiment": "正面",
+        "sentiment_score": 6,
+        "key_news": [
+          { "title": "全球半导体设备龙头同创新高，AI扩产周期设备先行逻辑持续", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "从科创板芯片产业链看科创半导体ETF华夏的价值", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" }
+        ],
+        "insider_trading": "国家集成电路基金减持16.50%，中微半导体减持，但香港中央结算增持至4.27%。多家银行系新进。机构分歧。",
+        "analyst_rating": "60天内有研究报告，半导体薄膜设备龙头"
+      },
+      {
+        "symbol": "688234",
+        "name": "天岳先进",
+        "sentiment": "正面",
+        "sentiment_score": 7,
+        "key_news": [
+          { "title": "港股天岳先进涨超11%，AI算力拉动SiC需求", "source": "新浪财经", "date": "2026-06-17", "sentiment": "正面" },
+          { "title": "800V HVDC供电架构有望提速SiC adoption", "source": "新浪财经", "date": "2026-06-17", "sentiment": "正面" },
+          { "title": "第三代半导体：一边龙头倒下一边多点落地", "source": "新浪财经", "date": "2026-06-17", "sentiment": "中性" },
+          { "title": "大宗交易折价17.15%", "source": "新浪财经", "date": "2026-06-17", "sentiment": "中性" }
+        ],
+        "insider_trading": "HKSCC大幅增持至11.33%，广发证券新进。北向资金大幅加仓。",
+        "analyst_rating": "60天内有研究报告，SiC衬底+AI算力新应用场景"
+      },
+      {
+        "symbol": "300762",
+        "name": "上海瀚讯",
+        "sentiment": "正面",
+        "sentiment_score": 7,
+        "key_news": [
+          { "title": "上海瀚讯涨5.25%，成交额22.56亿元", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" },
+          { "title": "卫星通信指数涨超2.7%，卫星ETF活跃", "source": "新浪财经", "date": "2026-06-17", "sentiment": "正面" },
+          { "title": "圆满成功！我国成功发射实践三十一号卫星", "source": "新浪财经", "date": "2026-06-17", "sentiment": "正面" },
+          { "title": "国家发改委召开民企座谈会，吸引社会资本参与'六张网'基建", "source": "新浪财经", "date": "2026-06-18", "sentiment": "正面" }
+        ],
+        "insider_trading": "中信建投/招商银行增持，香港中央结算减持。机构整体偏增持。",
+        "analyst_rating": "60天内有研究报告，军工通信+卫星互联网"
+      }
+    ],
+    "macro_news": {
+      "major_policies": [
+        "美伊达成14点谅解备忘录：3000亿美元重建基金、解除制裁、霍尔木兹海峡免费通行60天、最终协议60天内谈判",
+        "国家发改委召开民营企业座谈会，推进'六张网'基建，吸引社会资本参与",
+        "韩国完整重申中韩建交联合公报涉台表述（一个中国），中韩关系改善信号",
+        "生态环境部审议通过《生态保护'十五五'规划》",
+        "日本讨论修改宪法第九条，地缘不确定性增加"
+      ],
+      "economic_data": [
+        "美国30年期抵押贷款利率降至6.47%（房地美6/18数据）",
+        "比亚迪推动子品牌自负盈亏，汽车行业竞争加剧"
+      ],
+      "global_markets": "美伊和解协议签署，全球地缘风险大幅下降。SPACEX两日跌14%，AI估值分歧加大。美股科技股表现分化。乌克兰获10亿美元盟友援助。德国国防部长谈北约能力缺口。",
+      "market_sentiment": "A股6/18科创50涨3.60%领涨，半导体/AI硬件涨停潮。沪指收复4100点。光模块/CPO/PCB超级周期持续。芯片板块飙升，寒武纪创新高。市场整体情绪极度乐观，资金持续流入科技硬件板块。地缘风险缓和+AI产业景气双轮驱动。"
+    },
+    "summary": "消息面整体偏正面（sentiment=0.55）。核心持仓全面受益于AI硬件超级周期：澜起科技DDR5 Gen6 RCD送样+PCIe 7.0推进（技术领先）；海光信息国产算力生态扩张+涨6.42%（龙头强化）；天孚通信光模块行业高景气延续（供需紧俏）；华海清科40亿定增扩产（产能扩张）。通富微电先进封装新赛道打开但机构减持。观察池中沪电股份PCB超级行情持续（公募持仓120亿+），华工科技TGV/光芯片/三代半导体多赛道推进，天岳先进SiC需求边际改善（港股涨11%+HVDC催化）。宏观层面：美伊和解地缘风险大降利空黄金ETF，A股科技板块情绪极度乐观，科创50领涨。主要风险点：通富微电/拓荆科技机构减持趋势，黄金避险逻辑弱化。"
+  }
+}
