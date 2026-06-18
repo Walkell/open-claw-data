@@ -715,7 +715,24 @@
             "feishu_task_tasklist",
             "feishu_update_doc",
             "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "feishu_wiki_space_node",
+            "web_search",
+            "tavily_search",
+            "tavily_extract",
+            "web_fetch",
+            "akshare__get_balance_sheet",
+            "akshare__get_cash_flow",
+            "akshare__get_financial_metrics",
+            "akshare__get_hist_data",
+            "akshare__get_income_statement",
+            "akshare__get_inner_trade_data",
+            "akshare__get_news_data",
+            "akshare__get_realtime_data",
+            "akshare__get_time_info",
+            "zhipu-search__websearchpro",
+            "zhipu-search__websearchquark",
+            "zhipu-search__websearchsogou",
+            "zhipu-search__websearchstd"
           ]
         }
       },
