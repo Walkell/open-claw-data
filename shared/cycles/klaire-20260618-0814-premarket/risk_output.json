@@ -1,0 +1,231 @@
+{
+  "cycle_id": "klaire-20260618-0814-premarket",
+  "principal": "klaire",
+  "agent": "risk",
+  "generated_at": "2026-06-18T08:36:00+08:00",
+  "per_stock_risk": {
+    "002472": {
+      "name": "双环传动",
+      "risk_score": 36,
+      "risk_level": "🟡中",
+      "stop_loss_distance_pct": 9.0,
+      "dimensions": {
+        "technical": { "risk": 50, "note": "跌破MA5/MA10/MA20三线，仅MA60支撑。缩量回调，中期趋势未破。", "source": "research" },
+        "fundamental": { "risk": 30, "note": "2025净利+23.2%，ROE 13.36%。利润增速远超营收，盈利能力提升。", "source": "research" },
+        "valuation": { "risk": 40, "note": "PE 27.96x，PB 3.44x，成长股估值合理，PEG≈1.2。", "source": "research" },
+        "industry": { "risk": 20, "note": "机器人减速器+新能源齿轮，sector_score 8.0强势上行。三重催化驱动。", "source": "industry" },
+        "macro": { "risk": 45, "note": "macro_score 5.5，美伊和解+降息预期利好，但美联储鹰派。", "source": "industry" },
+        "news_sentiment": { "risk": 35, "note": "sentiment 0.3偏正面，机器人ETF资金流入+Optimus量产预期。汽车板块资金流出是拖累。", "source": "news" }
+      },
+      "weighted_breakdown": "财务25%×30 + 估值20%×40 + 行业15%×20 + 技术15%×50 + 宏观15%×45 + 情绪10%×35 = 36.25",
+      "veto_triggered": false,
+      "summary": "短期技术调整带来一定风险，但基本面稳健+行业景气度高，整体风险可控。MA60(39.95)是关键支撑。"
+    },
+    "600808": {
+      "name": "马钢股份",
+      "risk_score": 69,
+      "risk_level": "🟠偏高",
+      "stop_loss_distance_pct": 1.1,
+      "dimensions": {
+        "technical": { "risk": 80, "note": "极弱空头排列，全部均线下方。vsMA60 -21.9%。60日跌幅35%。", "source": "research" },
+        "fundamental": { "risk": 80, "note": "2025亏损2.09亿，ROE -0.88%。营收-5.3%，净利润暴跌95.5%。", "source": "research" },
+        "valuation": { "risk": 70, "note": "PE为负(亏损)，PB 0.87破净。亏损状态下无估值锚。", "source": "research" },
+        "industry": { "risk": 65, "note": "钢铁sector_score 3.5底部震荡。主力净流出，散户情绪极度悲观。", "source": "industry" },
+        "macro": { "risk": 45, "note": "macro_score 5.5，PPI正增长传导预期但市场反应滞后。", "source": "industry" },
+        "news_sentiment": { "risk": 60, "note": "sentiment -0.2偏空，板块资金持续流出，缺乏催化剂。", "source": "news" }
+      },
+      "weighted_breakdown": "财务25%×80 + 估值20%×70 + 行业15%×65 + 技术15%×80 + 宏观15%×45 + 情绪10%×60 = 68.5",
+      "veto_triggered": true,
+      "veto_reason": "距止损线仅1.1%(≤3%)，自动VETO任何加仓。risk_score 69接近VETO阈值(70)。",
+      "summary": "基本面极弱+技术面极弱+紧贴止损线。亏损扩大，行业底部。随时触发止损，建议执行止损而非等待。"
+    },
+    "588080": {
+      "name": "科创50ETF",
+      "risk_score": 37,
+      "risk_level": "🟡中",
+      "stop_loss_distance_pct": 17.4,
+      "dimensions": {
+        "technical": { "risk": 20, "note": "强势多头排列，站上所有均线。vsMA60+17.9%。", "source": "research" },
+        "fundamental": { "risk": 50, "note": "ETF无独立财报，底层科创50成分股2025整体盈利改善。", "source": "research" },
+        "valuation": { "risk": 40, "note": "ETF无PE/PB，指数估值处于历史中位。", "source": "research" },
+        "industry": { "risk": 35, "note": "科创板sector_score 6.5震荡上行，AI/半导体驱动。", "source": "industry" },
+        "macro": { "risk": 45, "note": "macro_score 5.5，科创板扩容至AI领域政策利好。", "source": "industry" },
+        "news_sentiment": { "risk": 10, "note": "sentiment 0.8强烈正面，ETF获1.5亿净流入+半导体全线爆发+科创板改革。", "source": "news" }
+      },
+      "weighted_breakdown": "财务25%×50 + 估值20%×40 + 行业15%×35 + 技术15%×20 + 宏观15%×45 + 情绪10%×10 = 36.5",
+      "veto_triggered": false,
+      "summary": "核心受益于半导体/AI主线，技术面强势+资金大幅流入+政策利好。距止损安全。短期注意涨幅过大后的回调风险。"
+    },
+    "159540": {
+      "name": "信创ETF",
+      "risk_score": 37,
+      "risk_level": "🟡中",
+      "stop_loss_distance_pct": 16.2,
+      "dimensions": {
+        "technical": { "risk": 20, "note": "强势多头排列，站上所有均线。vsMA60+16.8%。", "source": "research" },
+        "fundamental": { "risk": 50, "note": "ETF无独立财报，底层信创标的2025整体营收增长良好。", "source": "research" },
+        "valuation": { "risk": 40, "note": "ETF无PE/PB，信创板块当前热度较高。", "source": "research" },
+        "industry": { "risk": 30, "note": "信创sector_score 7.0稳步上行，国产替代+AI算力双轮驱动。", "source": "industry" },
+        "macro": { "risk": 45, "note": "macro_score 5.5，信创+国产替代政策持续加码。", "source": "industry" },
+        "news_sentiment": { "risk": 20, "note": "sentiment 0.6正面，HarmonyOS 7 Beta+半导体设备强势。", "source": "news" }
+      },
+      "weighted_breakdown": "财务25%×50 + 估值20%×40 + 行业15%×30 + 技术15%×20 + 宏观15%×45 + 情绪10%×20 = 36.75",
+      "veto_triggered": false,
+      "summary": "信创主线清晰，技术面强势+政策面利好。距止损安全。接近前高压力位2.272，短期注意获利回吐。"
+    },
+    "600699": {
+      "name": "均胜电子",
+      "risk_score": 40,
+      "risk_level": "🟡中",
+      "stop_loss_distance_pct": 3.4,
+      "dimensions": {
+        "technical": { "risk": 60, "note": "弱势反弹，仅站上MA5。MA20/MA60在26.9构成强阻力。20日趋势-0.39。", "source": "research" },
+        "fundamental": { "risk": 30, "note": "2025净利+39.2%，ROE 9.42%。汽车安全+智驾+机器人布局。利润弹性大。", "source": "research" },
+        "valuation": { "risk": 40, "note": "PE 27.57x，PB 2.23x。利润高增下PEG<1，估值合理。", "source": "research" },
+        "industry": { "risk": 25, "note": "汽车安全sector_score 7.5景气上行。光模块量产+并购整合。", "source": "industry" },
+        "macro": { "risk": 45, "note": "macro_score 5.5，智能驾驶政策+汽车零部件国产替代。", "source": "industry" },
+        "news_sentiment": { "risk": 45, "note": "sentiment 0.1中性，董事长增持+并购vs连续资金流出。多空交织。", "source": "news" }
+      },
+      "weighted_breakdown": "财务25%×30 + 估值20%×40 + 行业15%×25 + 技术15%×60 + 宏观15%×45 + 情绪10%×45 = 39.5",
+      "veto_triggered": false,
+      "veto_reason": "",
+      "summary": "基本面良好但技术面偏弱，距止损3.4%接近警戒线(3%)。MA20/MA60双阻力26.9是关键突破位。关注能否放量突破。"
+    },
+    "002011": {
+      "name": "盾安环境",
+      "risk_score": 43,
+      "risk_level": "🟡中",
+      "stop_loss_distance_pct": 2.7,
+      "dimensions": {
+        "technical": { "risk": 70, "note": "持续下跌，全部均线下方。20日趋势-0.13加速下行。量比0.79缩量。", "source": "research" },
+        "fundamental": { "risk": 40, "note": "ROE 17.72%优秀但增速放缓(净利+3.2%)。热管理+液冷+核电概念。", "source": "research" },
+        "valuation": { "risk": 30, "note": "PE 10.98x，PB 1.70x。估值合理偏低，是持仓中最低PE。", "source": "research" },
+        "industry": { "risk": 40, "note": "热管理sector_score 6.0稳健增长，但市场关注度低。", "source": "industry" },
+        "macro": { "risk": 45, "note": "macro_score 5.5，数据中心液冷+核电政策利好。", "source": "industry" },
+        "news_sentiment": { "risk": 40, "note": "sentiment 0.2中性偏正面，缺乏重大催化剂，近一周无显著新闻。", "source": "news" }
+      },
+      "weighted_breakdown": "财务25%×40 + 估值20%×30 + 行业15%×40 + 技术15%×70 + 宏观15%×45 + 情绪10%×40 = 43.25",
+      "veto_triggered": true,
+      "veto_reason": "距止损线仅2.7%(≤3%)，自动VETO任何加仓。持续下跌趋势未止。",
+      "summary": "估值低+基本面尚可，但技术面持续恶化+距止损仅2.7%。市场关注度极低。止损风险高于估值吸引力。"
+    },
+    "603298": {
+      "name": "杭叉集团",
+      "risk_score": 36,
+      "risk_level": "🟡中",
+      "stop_loss_distance_pct": 7.4,
+      "dimensions": {
+        "technical": { "risk": 50, "note": "震荡偏弱，站上MA5/MA10但MA20/MA60压制。5日趋势转正，有企稳迹象。", "source": "research" },
+        "fundamental": { "risk": 30, "note": "ROE 20.34%优秀，2025净利+8.8%稳健。叉车龙头+物流人形机器人。", "source": "research" },
+        "valuation": { "risk": 30, "note": "PE 14.59x，PB 2.83x。估值合理偏低，制造业龙头溢价不足。", "source": "research" },
+        "industry": { "risk": 30, "note": "叉车sector_score 7.0稳健上行，物流人形机器人+董事长增持。", "source": "industry" },
+        "macro": { "risk": 45, "note": "macro_score 5.5，工程机械+机器人双政策加持。", "source": "industry" },
+        "news_sentiment": { "risk": 35, "note": "sentiment 0.3中性偏正面，高管增持+业绩稳健，无重大催化剂。", "source": "news" }
+      },
+      "weighted_breakdown": "财务25%×30 + 估值20%×30 + 行业15%×30 + 技术15%×50 + 宏观15%×45 + 情绪10%×35 = 35.75",
+      "veto_triggered": false,
+      "summary": "财务稳健+估值低+行业景气，短期技术面偏弱但企稳迹象明显。距止损7.4%相对安全。风险可控。"
+    }
+  },
+  "portfolio_risk": {
+    "overall_risk_score": 39,
+    "risk_level": "🟡中",
+    "total_market_value": 42099,
+    "position_weights": {
+      "002472_双环传动": { "weight_pct": 29.8, "risk_score": 36, "contribution": 10.7 },
+      "600808_马钢股份": { "weight_pct": 6.5, "risk_score": 69, "contribution": 4.5 },
+      "588080_科创50ETF": { "weight_pct": 24.5, "risk_score": 37, "contribution": 9.1 },
+      "159540_信创ETF": { "weight_pct": 10.5, "risk_score": 37, "contribution": 3.9 },
+      "600699_均胜电子": { "weight_pct": 11.8, "risk_score": 40, "contribution": 4.7 },
+      "002011_盾安环境": { "weight_pct": 5.1, "risk_score": 43, "contribution": 2.2 },
+      "603298_杭叉集团": { "weight_pct": 11.8, "risk_score": 36, "contribution": 4.2 }
+    },
+    "primary_risk_sources": [
+      {
+        "source": "600808 马钢股份",
+        "description": "亏损股+紧贴止损线+行业底部，是组合最大风险来源。虽仓位仅6.5%但风险贡献11.5%。",
+        "urgency": "紧急"
+      },
+      {
+        "source": "002011 盾安环境 + 600699 均胜电子",
+        "description": "两只标的距止损线分别为2.7%和3.4%，均处于止损警戒区。技术面持续走弱。",
+        "urgency": "高"
+      },
+      {
+        "source": "科技赛道集中度",
+        "description": "科创50ETF(24.5%)+信创ETF(10.5%)+双环传动机器人(29.8%)+均胜光模块(11.8%)，科技成长合计约76%。若市场风格切换，回撤风险大。",
+        "urgency": "中"
+      },
+      {
+        "source": "美联储鹰派预期",
+        "description": "新主席Warsh首秀鹰派，市场押注10月前加息25bp。全球流动性收紧对成长股估值有压制。",
+        "urgency": "中"
+      }
+    ],
+    "ai_sector_concentration": {
+      "strict_ai_pct": 35.0,
+      "ai_adjacent_pct": 76.6,
+      "threshold": 40.0,
+      "veto_triggered": false,
+      "note": "严格AI赛道(科创50ETF+信创ETF)占比35%，未触发40%否决线。但若计入机器人(双环)+光模块(均胜)等AI相邻赛道，集中度高达76.6%，需警惕科技板块系统性回调风险。"
+    }
+  },
+  "risk_alerts": [
+    {
+      "symbol": "600808",
+      "name": "马钢股份",
+      "alert_level": "🔴 高危",
+      "alert_type": "止损触发",
+      "detail": "现价2.73距止损2.70仅1.1%。2025亏损2.09亿，ROE -0.88%。全部均线下方。VETO任何加仓。建议执行止损。",
+      "action_priority": 1
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "alert_level": "🔴 高危",
+      "alert_type": "止损警戒",
+      "detail": "现价10.79距止损10.50仅2.7%。持续下跌全部均线下方。VETO任何加仓。关注是否触破止损。",
+      "action_priority": 2
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "alert_level": "🟡 关注",
+      "alert_type": "止损警戒",
+      "detail": "现价24.84距止损24.00为3.4%，接近3%警戒线。MA20/MA60双阻力26.9。若反弹失败可能快速触及止损。",
+      "action_priority": 3
+    },
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "alert_level": "🟡 关注",
+      "alert_type": "技术回调",
+      "detail": "跌破短期三线(MA5/10/20)，缩量回调中。MA60(39.95)是关键支撑，跌破则趋势转弱。",
+      "action_priority": 4
+    },
+    {
+      "symbol": "PORTFOLIO",
+      "name": "组合集中度",
+      "alert_level": "🟡 关注",
+      "alert_type": "赛道集中",
+      "detail": "科技成长合计约76.6%(含AI相邻)。若美联储加息预期升温或市场风格切换，组合回撤风险较大。",
+      "action_priority": 5
+    }
+  ],
+  "verdict": {
+    "action": "reduce",
+    "message": "组合整体风险🟡中(39/100)，但存在两个止损触发标的(马钢1.1%、盾安2.7%)和一个接近警戒线标的(均胜3.4%)。建议优先处理：①马钢股份执行止损，基本面极弱且随时触破止损线；②盾安环境密切关注，若跌破10.50应严格执行止损；③均胜电子关注MA20/MA60阻力突破情况。科技赛道集中度偏高，若加仓应考虑非科技方向以平衡组合。两只ETF(科创50+信创)表现强势是组合收益主力，继续持有。",
+    "veto_flags": {
+      "600808": "VETO加仓 - 距止损1.1%",
+      "002011": "VETO加仓 - 距止损2.7%",
+      "ai_concentration": "未触发(35%<40%)，但AI相邻赛道集中度76.6%需警惕"
+    }
+  },
+  "risk_thresholds": {
+    "veto_threshold": 70,
+    "hard_veto_threshold": 90,
+    "stop_loss_veto_distance_pct": 3.0,
+    "ai_concentration_veto_pct": 40.0,
+    "source": "CONFIG_KLAIRE.md risk_thresholds (veto=7/hard_veto=9 on 0-10 scale)"
+  }
+}
