@@ -742,15 +742,14 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-risk",
         "agentDir": "/home/ubuntu/.openclaw/agents/risk/agent",
         "model": {
-          "primary": "glm/glm-5.1",
+          "primary": "volcengine-plan/glm-5.1",
           "fallbacks": [
             "volcengine-plan/minimax-m3",
             "deepseek/deepseek-v4-pro"
           ]
         },
         "models": {
-          "glm/glm-5.1": {},
-          "volcengine-plan/kimi-k2.6": {}
+          "volcengine-plan/glm-5.1": {}
         },
         "thinkingDefault": "high",
         "heartbeat": {
