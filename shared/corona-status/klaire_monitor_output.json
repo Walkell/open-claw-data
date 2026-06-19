@@ -1,0 +1,65 @@
+{
+  "principal": "klaire",
+  "timestamp": "2026-06-19T14:13:48.849403+08:00",
+  "data_date": "2026-06-18 (端午节休市，数据为6/18收盘)",
+  "market_summary": "上证4090.48(-0.43%) 深成指16030.7(+0.94%) 科创50 1911.51(+3.84%)",
+  "alerts": [
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "price": 43.78,
+      "change_pct": 4.84,
+      "alert_type": "✅正常",
+      "message": "现价43.78，距止损13.2%，距止盈6.2%"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "price": 1.953,
+      "change_pct": 3.99,
+      "alert_type": "🎯接近止盈",
+      "message": "现价1.953，距止盈(1.98)仅1.4%"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "price": 2.287,
+      "change_pct": 3.58,
+      "alert_type": "🎯接近止盈",
+      "message": "现价2.287，距止盈(2.3)仅0.6%"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "price": 24.67,
+      "change_pct": -0.68,
+      "alert_type": "🚨接近止损",
+      "message": "现价24.67，距止损(24)仅2.7%"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "price": 10.51,
+      "change_pct": -2.59,
+      "alert_type": "🚨接近止损",
+      "message": "现价10.51，距止损(10.5)仅0.10%，极度接近"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "price": 24.66,
+      "change_pct": -0.76,
+      "alert_type": "✅正常",
+      "message": "现价24.66，距止损6.7%"
+    },
+    {
+      "symbol": "600875",
+      "name": "东方电气",
+      "price": 32.56,
+      "change_pct": 2.68,
+      "alert_type": "🔵建仓触发",
+      "message": "现价32.56已达目标建仓价33.00"
+    }
+  ],
+  "has_alerts": true
+}
