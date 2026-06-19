@@ -1,68 +1,161 @@
 {
   "principal": "klaire",
-  "timestamp": "2026-06-19T09:40:00+08:00",
-  "has_alert": true,
-  "data_source": "腾讯gtimg单源（网易502/同花顺404/新浪403）",
+  "checked_at": "2026-06-19T10:40:00+08:00",
+  "data_source": "⚠️ 单源未验证 - 仅腾讯gtimg可用（网易502/同花顺404/新浪403）",
+  "indices": {
+    "上证指数": {
+      "price": 4090.48,
+      "change_pct": -0.43
+    },
+    "深证成指": {
+      "price": 16030.7,
+      "change_pct": 0.94
+    },
+    "科创50": {
+      "price": 1911.51,
+      "change_pct": 3.84
+    }
+  },
   "alerts": [
     {
-      "level": "warning",
-      "type": "near_stop_loss",
-      "symbol": "002011",
-      "name": "盾安环境",
-      "price": 10.51,
-      "change_pct": -2.59,
-      "stop_loss": 10.5,
-      "take_profit": 15,
-      "cost": 11.415,
-      "distance_to_stop_pct": 0.1,
-      "message": "⚠️ 接近止损：盾安环境 现价 10.51，距止损（10.50）仅 0.1%，极度危险"
+      "symbol": "002472",
+      "name": "双环传动",
+      "current_price": 43.78,
+      "change_pct": 4.84,
+      "cost_price": 40.693,
+      "stop_loss": 38.0,
+      "stop_profit": 46.5,
+      "vol_ratio": 1.56,
+      "alert_level": "🔵",
+      "alert_reason": "IC审查建议：已约245个交易日未经IC审查"
     },
     {
-      "level": "warning",
-      "type": "near_stop_loss",
-      "symbol": "600699",
-      "name": "均胜电子",
-      "price": 24.67,
-      "change_pct": -0.68,
-      "stop_loss": 24,
-      "take_profit": 33,
-      "cost": 24.89,
-      "distance_to_stop_pct": 2.7,
-      "message": "⚠️ 接近止损：均胜电子 现价 24.67，距止损（24.00）仅 2.7%"
-    },
-    {
-      "level": "warning",
-      "type": "near_take_profit",
-      "symbol": "159540",
-      "name": "信创ETF",
-      "price": 2.287,
-      "change_pct": 3.58,
-      "stop_loss": 1.85,
-      "take_profit": 2.3,
-      "cost": 2.203,
-      "distance_to_profit_pct": 0.6,
-      "message": "🎯 接近止盈：信创ETF 现价 2.287，距止盈（2.30）仅 0.6%"
-    },
-    {
-      "level": "warning",
-      "type": "near_take_profit",
       "symbol": "588080",
       "name": "科创50ETF",
-      "price": 1.953,
+      "current_price": 1.953,
       "change_pct": 3.99,
+      "cost_price": 1.65,
       "stop_loss": 1.55,
-      "take_profit": 1.98,
-      "cost": 1.65,
-      "distance_to_profit_pct": 1.4,
-      "message": "🎯 接近止盈：科创50ETF 现价 1.953，距止盈（1.98）仅 1.4%"
+      "stop_profit": 1.98,
+      "vol_ratio": 1.52,
+      "alert_level": "🟡",
+      "alert_reason": "接近止盈：距止盈(1.98)仅1.4%"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "current_price": 1.953,
+      "change_pct": 3.99,
+      "cost_price": 1.65,
+      "stop_loss": 1.55,
+      "stop_profit": 1.98,
+      "vol_ratio": 1.52,
+      "alert_level": "🔵",
+      "alert_reason": "追踪止损提醒：浮盈18.4%，浮盈保护率仅-33.0%，止损线已滞后"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "current_price": 1.953,
+      "change_pct": 3.99,
+      "cost_price": 1.65,
+      "stop_loss": 1.55,
+      "stop_profit": 1.98,
+      "vol_ratio": 1.52,
+      "alert_level": "🔵",
+      "alert_reason": "IC审查建议：已约245个交易日未经IC审查"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "current_price": 2.287,
+      "change_pct": 3.58,
+      "cost_price": 2.203,
+      "stop_loss": 1.85,
+      "stop_profit": 2.3,
+      "vol_ratio": 2.0,
+      "alert_level": "🟡",
+      "alert_reason": "接近止盈：距止盈(2.3)仅0.6%"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "current_price": 2.287,
+      "change_pct": 3.58,
+      "cost_price": 2.203,
+      "stop_loss": 1.85,
+      "stop_profit": 2.3,
+      "vol_ratio": 2.0,
+      "alert_level": "🔵",
+      "alert_reason": "IC审查建议：已约245个交易日未经IC审查"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "current_price": 24.67,
+      "change_pct": -0.68,
+      "cost_price": 24.89,
+      "stop_loss": 24.0,
+      "stop_profit": 33.0,
+      "vol_ratio": 0.96,
+      "alert_level": "🟡",
+      "alert_reason": "接近止损：距止损(24.0)仅2.7%"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "current_price": 24.67,
+      "change_pct": -0.68,
+      "cost_price": 24.89,
+      "stop_loss": 24.0,
+      "stop_profit": 33.0,
+      "vol_ratio": 0.96,
+      "alert_level": "🔵",
+      "alert_reason": "IC审查建议：已约245个交易日未经IC审查"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "current_price": 10.51,
+      "change_pct": -2.59,
+      "cost_price": 11.415,
+      "stop_loss": 10.5,
+      "stop_profit": 15.0,
+      "vol_ratio": 0.99,
+      "alert_level": "🟡",
+      "alert_reason": "接近止损：距止损(10.5)仅0.1%"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "current_price": 10.51,
+      "change_pct": -2.59,
+      "cost_price": 11.415,
+      "stop_loss": 10.5,
+      "stop_profit": 15.0,
+      "vol_ratio": 0.99,
+      "alert_level": "🔵",
+      "alert_reason": "IC审查建议：已约245个交易日未经IC审查"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "current_price": 24.66,
+      "change_pct": -0.76,
+      "cost_price": 25.2,
+      "stop_loss": 23.0,
+      "stop_profit": 31.0,
+      "vol_ratio": 0.62,
+      "alert_level": "🔵",
+      "alert_reason": "IC审查建议：已约245个交易日未经IC审查"
     }
   ],
-  "all_positions_summary": [
-    {"symbol": "002472", "name": "双环传动", "price": 43.78, "change_pct": 4.84, "status": "normal", "stop_loss": 38, "take_profit": 46.5, "cost": 40.693, "dist_to_stop": 13.2, "dist_to_profit": 6.2, "volume_ratio": 1.56},
-    {"symbol": "588080", "name": "科创50ETF", "price": 1.953, "change_pct": 3.99, "status": "near_take_profit", "stop_loss": 1.55, "take_profit": 1.98, "cost": 1.65, "dist_to_stop": 20.6, "dist_to_profit": 1.4, "volume_ratio": 1.52},
-    {"symbol": "159540", "name": "信创ETF", "price": 2.287, "change_pct": 3.58, "status": "near_take_profit", "stop_loss": 1.85, "take_profit": 2.3, "cost": 2.203, "dist_to_stop": 19.1, "dist_to_profit": 0.6, "volume_ratio": 2.00},
-    {"symbol": "600699", "name": "均胜电子", "price": 24.67, "change_pct": -0.68, "status": "near_stop_loss", "stop_loss": 24, "take_profit": 33, "cost": 24.89, "dist_to_stop": 2.7, "dist_to_profit": 33.8, "volume_ratio": 0.96},
-    {"symbol": "002011", "name": "盾安环境", "price": 10.51, "change_pct": -2.59, "status": "near_stop_loss", "stop_loss": 10.5, "take_profit": 15, "cost": 11.415, "dist_to_stop": 0.1, "dist_to_profit": 42.8, "volume_ratio": 0.99},
-    {"symbol": "603298", "name": "杭叉集团", "price": 24.66, "change_pct": -0.76, "status": "normal", "stop_loss": 23, "take_profit": 31, "cost": 25.2, "dist_to_stop": 6.7, "dist_to_profit": 25.7, "volume_ratio": 0.62}
-  ]
+  "check_c_skipped": "本时段历史数据不足（仅1条），跳过下行趋势检查",
+  "summary": {
+    "total_positions": 6,
+    "alert_positions": 6,
+    "red_alerts": 0,
+    "yellow_alerts": 4,
+    "blue_alerts": 7
+  }
 }
