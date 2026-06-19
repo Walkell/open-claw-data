@@ -99,14 +99,14 @@
       }
     },
     "bbbeabff-b8ea-47c7-b047-0a1297ad15d5": {
-      "updatedAtMs": 1781740800012,
+      "updatedAtMs": 1781827200009,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 8 * * 2-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1781827200000,
-        "lastRunAtMs": 1781740800003,
+        "nextRunAtMs": 1782172800000,
+        "lastRunAtMs": 1781827200003,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9,
+        "lastDurationMs": 6,
         "lastDeliveryStatus": "not-requested",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
