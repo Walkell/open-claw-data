@@ -1,0 +1,25 @@
+{
+  "principal": "towney",
+  "display_name": "Towney",
+  "flow_type": "精简两委员",
+  "cycle_id": "towney-20260619-2200-eod",
+  "table_id": {
+    "app_token": "[通过 feishu_bitable_app.list() 动态获取]",
+    "bitable_name": "Towney-投资管理",
+    "positions_table": "持仓表",
+    "watchlist_table": "观察池",
+    "monitor_table": "监控记录",
+    "reports_table": "报告表",
+    "trades_table": "交易记录",
+    "decisions_table": "决策复盘"
+  },
+  "profit_target": "30%",
+  "risk_thresholds": {
+    "veto": 7,
+    "hard_veto": 9
+  },
+  "output_channels": {
+    "group": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
+    "dm": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b"
+  }
+}
