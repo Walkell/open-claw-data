@@ -1,0 +1,130 @@
+{
+  "principal": "klaire",
+  "timestamp": "2026-06-19T09:20:00+08:00",
+  "data_source": "腾讯gtimg (单源, akshare/网易/同花顺/新浪均不可用)",
+  "market_overview": {
+    "上证指数": { "price": 4090.48, "change_pct": -0.43 },
+    "深证成指": { "price": 16030.70, "change_pct": 0.94 },
+    "科创50": { "price": 1911.51, "change_pct": 3.84 }
+  },
+  "alerts": [
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "type": ["near_stop_loss"],
+      "severity": "critical",
+      "message": "距止损仅0.1%，现价10.51几乎触及止损价10.50",
+      "current_price": 10.51,
+      "change_pct": -2.59,
+      "stop_loss": 10.50,
+      "take_profit": 15.0,
+      "cost": 11.415,
+      "volume_ratio": 0.99,
+      "distance_to_stop_pct": 0.10
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "type": ["price_surge", "near_take_profit"],
+      "severity": "warning",
+      "message": "今日涨幅+3.99%，距止盈价1.98仅1.4%",
+      "current_price": 1.953,
+      "change_pct": 3.99,
+      "stop_loss": 1.55,
+      "take_profit": 1.98,
+      "cost": 1.65,
+      "volume_ratio": 1.52,
+      "distance_to_profit_pct": 1.38
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "type": ["price_surge", "near_take_profit"],
+      "severity": "warning",
+      "message": "今日涨幅+3.58%，距止盈价2.30仅0.6%",
+      "current_price": 2.287,
+      "change_pct": 3.58,
+      "stop_loss": 1.85,
+      "take_profit": 2.30,
+      "cost": 2.203,
+      "volume_ratio": 2.00,
+      "distance_to_profit_pct": 0.57
+    },
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "type": ["price_surge"],
+      "severity": "info",
+      "message": "今日涨幅+4.84%",
+      "current_price": 43.78,
+      "change_pct": 4.84,
+      "stop_loss": 38.0,
+      "take_profit": 46.5,
+      "cost": 40.693,
+      "volume_ratio": 1.56,
+      "distance_to_profit_pct": 6.22
+    },
+    {
+      "symbol": "600875",
+      "name": "东方电气",
+      "type": ["watchlist_trigger"],
+      "severity": "info",
+      "message": "建仓条件触发：现价32.56已达目标建仓价33.00",
+      "current_price": 32.56,
+      "change_pct": 2.68,
+      "target_buy_price": 33.0,
+      "volume_ratio": 1.47
+    }
+  ],
+  "all_positions_summary": [
+    {
+      "symbol": "002472", "name": "双环传动", "current_price": 43.78, "change_pct": 4.84,
+      "stop_loss": 38.0, "take_profit": 46.5, "cost": 40.693, "volume_ratio": 1.56,
+      "distance_to_stop_pct": 13.20, "distance_to_profit_pct": 6.22, "status": "正常"
+    },
+    {
+      "symbol": "588080", "name": "科创50ETF", "current_price": 1.953, "change_pct": 3.99,
+      "stop_loss": 1.55, "take_profit": 1.98, "cost": 1.65, "volume_ratio": 1.52,
+      "distance_to_stop_pct": 20.64, "distance_to_profit_pct": 1.38, "status": "接近止盈"
+    },
+    {
+      "symbol": "159540", "name": "信创ETF", "current_price": 2.287, "change_pct": 3.58,
+      "stop_loss": 1.85, "take_profit": 2.30, "cost": 2.203, "volume_ratio": 2.00,
+      "distance_to_stop_pct": 19.11, "distance_to_profit_pct": 0.57, "status": "接近止盈"
+    },
+    {
+      "symbol": "600699", "name": "均胜电子", "current_price": 24.67, "change_pct": -0.68,
+      "stop_loss": 24.0, "take_profit": 33.0, "cost": 24.89, "volume_ratio": 0.96,
+      "distance_to_stop_pct": 2.72, "distance_to_profit_pct": 33.68, "status": "正常"
+    },
+    {
+      "symbol": "002011", "name": "盾安环境", "current_price": 10.51, "change_pct": -2.59,
+      "stop_loss": 10.50, "take_profit": 15.0, "cost": 11.415, "volume_ratio": 0.99,
+      "distance_to_stop_pct": 0.10, "distance_to_profit_pct": 42.72, "status": "接近止损"
+    },
+    {
+      "symbol": "603298", "name": "杭叉集团", "current_price": 24.66, "change_pct": -0.76,
+      "stop_loss": 23.0, "take_profit": 31.0, "cost": 25.2, "volume_ratio": 0.62,
+      "distance_to_stop_pct": 6.73, "distance_to_profit_pct": 25.72, "status": "正常"
+    }
+  ],
+  "watchlist_summary": [
+    {
+      "symbol": "002126", "name": "银轮股份", "current_price": 52.73, "change_pct": -1.33,
+      "target_buy_price": null, "status": "观察中"
+    },
+    {
+      "symbol": "000988", "name": "华工科技", "current_price": 177.55, "change_pct": 4.13,
+      "target_buy_price": null, "status": "观察中"
+    },
+    {
+      "symbol": "002125", "name": "湘潭电化", "current_price": 19.12, "change_pct": 0.05,
+      "target_buy_price": 16.0, "status": "观察中"
+    },
+    {
+      "symbol": "600875", "name": "东方电气", "current_price": 32.56, "change_pct": 2.68,
+      "target_buy_price": 33.0, "status": "已入池, 建仓条件触发"
+    }
+  ],
+  "push_text": "📊 Klaire 盘中监控 09:20\n\n🟡 接近止损：盾安环境(002011) 现价 10.51，距止损价 10.50 仅 0.1%，请立即关注\n🟡 接近止盈：科创50ETF(588080) 现价 1.953(+3.99%)，距止盈 1.98 仅 1.4%\n🟡 接近止盈：信创ETF(159540) 现价 2.287(+3.58%)，距止盈 2.30 仅 0.6%\n🔵 大涨提醒：双环传动(002472) 今日涨幅 +4.84%\n🔵 建仓条件触发：东方电气(600875) 现价 32.56 已达目标建仓价\n\n---\n大盘：上证 4090(-0.43%)，深成指 16031(+0.94%)，科创50 1912(+3.84%)领涨\n⚠️ 数据质量：仅腾讯源可用，未经交叉验证"
+}
