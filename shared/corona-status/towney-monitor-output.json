@@ -1,21 +1,55 @@
 {
   "principal": "towney",
-  "time": "2026-06-19T13:20:00+08:00",
-  "has_alerts": false,
-  "market_status": "休市日（端午节），A股全天休市。上证收盘4090.48(-0.43%) 科创50 1911.51(+3.84%) 数据来自6/18收盘",
-  "alerts": [],
-  "all_positions": [
-    {"symbol": "688120", "name": "华海清科", "price": 226.86, "change_pct": 2.05, "status": "正常（6/18收盘数据）"},
-    {"symbol": "588090", "name": "科创芯片ETF", "price": 1.961, "change_pct": 4.09, "status": "正常（6/18收盘数据）"},
-    {"symbol": "688008", "name": "澜起科技", "price": 269.90, "change_pct": 2.82, "status": "正常（6/18收盘数据）"},
-    {"symbol": "300394", "name": "天孚通信", "price": 336.60, "change_pct": 2.21, "status": "正常（6/18收盘数据）"},
-    {"symbol": "159949", "name": "创业板50ETF", "price": 2.058, "change_pct": 2.29, "status": "正常（6/18收盘数据）"},
-    {"symbol": "510500", "name": "中证500ETF", "price": 8.828, "change_pct": 0.74, "status": "正常（6/18收盘数据）"},
-    {"symbol": "513300", "name": "纳斯达克ETF", "price": 2.752, "change_pct": -0.33, "status": "正常（6/18收盘数据）"},
-    {"symbol": "513650", "name": "标普500ETF", "price": 1.908, "change_pct": -0.57, "status": "正常（6/18收盘数据）"},
-    {"symbol": "518880", "name": "黄金ETF", "price": 8.908, "change_pct": -0.55, "status": "正常（6/18收盘数据）"},
-    {"symbol": "688041", "name": "海光信息", "price": 328.00, "change_pct": 6.42, "status": "正常（6/18收盘数据）"},
-    {"symbol": "002156", "name": "通富微电", "price": 68.27, "change_pct": 1.56, "status": "正常（6/18收盘数据）"}
+  "timestamp": "2026-06-19T14:46:00+08:00",
+  "market_summary": {
+    "上证": "4090.48 (-0.43%)",
+    "深成指": "16030.70 (+0.94%)",
+    "科创50": "1911.51 (+3.84%)"
+  },
+  "alerts": [
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "price": 226.86,
+      "change_pct": 2.05,
+      "position_pct": 0.0746,
+      "profit_pct": 0.542,
+      "alert_type": "🟡 止盈触及",
+      "detail": "现价226.86已达止盈价214.17(+5.9%)，浮盈+54.2%，可考虑告知Butler决策"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "price": 1.961,
+      "change_pct": 4.09,
+      "position_pct": 0.0735,
+      "profit_pct": 0.210,
+      "alert_type": "🟡 止盈触及",
+      "detail": "现价1.961已达止盈价1.90(+3.2%)，浮盈+21.0%，可考虑告知Butler决策"
+    },
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "price": 8.908,
+      "change_pct": -0.55,
+      "position_pct": 0.0175,
+      "profit_pct": -0.032,
+      "alert_type": "🟡 接近止损",
+      "detail": "现价8.908距止损8.50仅4.6%，浮亏-3.2%，请关注"
+    }
   ],
-  "summary": "端午节休市，A股全天休市，无盘中监控数据。所有价格为6/18收盘快照。下个交易日恢复监控。"
+  "normal_holdings": [
+    {"symbol": "688008", "name": "澜起科技", "price": 269.90, "change_pct": 2.82, "remark": "距止盈280仅3.7%，浮盈+73.9%"},
+    {"symbol": "300394", "name": "天孚通信", "price": 336.60, "change_pct": 2.21, "remark": "浮盈+100.4%"},
+    {"symbol": "159949", "name": "创业板50ETF", "price": 2.058, "change_pct": 2.29, "remark": "浮盈+71.1%"},
+    {"symbol": "510500", "name": "中证500ETF", "price": 8.828, "change_pct": 0.74, "remark": "正常"},
+    {"symbol": "513300", "name": "纳斯达克ETF", "price": 2.752, "change_pct": -0.33, "remark": "正常"},
+    {"symbol": "513650", "name": "标普500ETF", "price": 1.908, "change_pct": -0.57, "remark": "正常"},
+    {"symbol": "688041", "name": "海光信息", "price": 328.00, "change_pct": 6.42, "remark": "放量上涨+6.42%，接近7%阈值"},
+    {"symbol": "002156", "name": "通富微电", "price": 68.27, "change_pct": 1.56, "remark": "正常"}
+  ],
+  "has_alerts": true,
+  "alert_count": 3,
+  "data_quality": "⚠️ 单源未验证 - 仅腾讯gtimg可用（网易502/同花顺404/新浪403）",
+  "records_written": 19
 }

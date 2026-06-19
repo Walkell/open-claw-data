@@ -1,0 +1,165 @@
+{
+  "principal": "towney",
+  "timestamp": "2026-06-19T14:20:00+08:00",
+  "has_alert": true,
+  "summary": "2止盈触及+1接近止损+5追踪止损提醒+9 IC陈旧+1放量上涨",
+  "alerts": [
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "price": 226.86,
+      "change_pct": 2.05,
+      "alert_type": "止盈触及",
+      "detail": "现价226.86已达止盈价214.17(+5.9%)，6/17已减仓46.4%锁利"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "price": 1.961,
+      "change_pct": 4.09,
+      "alert_type": "止盈触及",
+      "detail": "现价1.961已超越止盈价1.90(+3.2%)，量比12.27放量大涨"
+    },
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "price": 8.908,
+      "change_pct": -0.55,
+      "alert_type": "接近止损",
+      "detail": "现价8.908距止损价8.50仅4.6%"
+    },
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "price": 226.86,
+      "change_pct": 2.05,
+      "alert_type": "追踪止损提醒",
+      "detail": "浮盈54.2%，浮盈保护率仅12.4%（触及止损将损失87.6%浮盈），止损线已滞后"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "price": 1.961,
+      "change_pct": 4.09,
+      "alert_type": "追踪止损提醒",
+      "detail": "止损价1.52在本金线(1.621)以下，触及止损连本金都无法保全"
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "price": 2.752,
+      "change_pct": -0.33,
+      "alert_type": "追踪止损提醒",
+      "detail": "浮盈23.1%，浮盈保护率仅12.6%（触及止损将损失87.4%浮盈），止损线已滞后"
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "price": 1.908,
+      "change_pct": -0.57,
+      "alert_type": "追踪止损提醒",
+      "detail": "浮盈15.4%，浮盈保护率仅18.1%（触及止损将损失81.9%浮盈），止损线已滞后"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "price": 328.0,
+      "change_pct": 6.42,
+      "alert_type": "追踪止损提醒",
+      "detail": "止损价255在本金线(267.318)以下，触及止损连本金都无法保全"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "price": 328.0,
+      "change_pct": 6.42,
+      "alert_type": "放量上涨提醒",
+      "detail": "量比2.31，涨幅6.42%，注意追高风险"
+    },
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "price": 226.86,
+      "change_pct": 2.05,
+      "alert_type": "IC陈旧提醒",
+      "detail": "已约260个交易日未经IC审查（上次2025-06-18）"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "price": 269.9,
+      "change_pct": 2.82,
+      "alert_type": "IC陈旧提醒",
+      "detail": "已约260个交易日未经IC审查（上次2025-06-18）"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "price": 336.6,
+      "change_pct": 2.21,
+      "alert_type": "IC陈旧提醒",
+      "detail": "已约260个交易日未经IC审查（上次2025-06-18）"
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "price": 2.058,
+      "change_pct": 2.29,
+      "alert_type": "IC陈旧提醒",
+      "detail": "已约260个交易日未经IC审查（上次2025-06-18）"
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "price": 8.828,
+      "change_pct": 0.74,
+      "alert_type": "IC陈旧提醒",
+      "detail": "已约260个交易日未经IC审查（上次2025-06-18）"
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "price": 2.752,
+      "change_pct": -0.33,
+      "alert_type": "IC陈旧提醒",
+      "detail": "已约260个交易日未经IC审查（上次2025-06-18）"
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "price": 1.908,
+      "change_pct": -0.57,
+      "alert_type": "IC陈旧提醒",
+      "detail": "已约260个交易日未经IC审查（上次2025-06-18）"
+    },
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "price": 8.908,
+      "change_pct": -0.55,
+      "alert_type": "IC陈旧提醒",
+      "detail": "已约260个交易日未经IC审查（上次2025-06-18）"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "price": 328.0,
+      "change_pct": 6.42,
+      "alert_type": "IC陈旧提醒",
+      "detail": "已约260个交易日未经IC审查（上次2025-06-18）"
+    }
+  ],
+  "all_positions": [
+    {"symbol": "688120", "name": "华海清科", "price": 226.86, "change_pct": 2.05, "position_pct": 7.46, "status": "alert"},
+    {"symbol": "588090", "name": "科创芯片ETF", "price": 1.961, "change_pct": 4.09, "position_pct": 7.35, "status": "alert"},
+    {"symbol": "688008", "name": "澜起科技", "price": 269.9, "change_pct": 2.82, "position_pct": 12.15, "status": "alert"},
+    {"symbol": "300394", "name": "天孚通信", "price": 336.6, "change_pct": 2.21, "position_pct": 11.41, "status": "alert"},
+    {"symbol": "159949", "name": "创业板50ETF", "price": 2.058, "change_pct": 2.29, "position_pct": 3.18, "status": "alert"},
+    {"symbol": "510500", "name": "中证500ETF", "price": 8.828, "change_pct": 0.74, "position_pct": 4.01, "status": "alert"},
+    {"symbol": "513300", "name": "纳斯达克ETF", "price": 2.752, "change_pct": -0.33, "position_pct": 5.06, "status": "alert"},
+    {"symbol": "513650", "name": "标普500ETF", "price": 1.908, "change_pct": -0.57, "position_pct": 1.43, "status": "alert"},
+    {"symbol": "518880", "name": "黄金ETF", "price": 8.908, "change_pct": -0.55, "position_pct": 1.75, "status": "alert"},
+    {"symbol": "688041", "name": "海光信息", "price": 328.0, "change_pct": 6.42, "position_pct": 7.57, "status": "alert"},
+    {"symbol": "002156", "name": "通富微电", "price": 68.27, "change_pct": 1.56, "position_pct": 1.62, "status": "normal"}
+  ]
+}

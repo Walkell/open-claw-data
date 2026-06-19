@@ -1,161 +1,132 @@
 {
   "principal": "klaire",
-  "checked_at": "2026-06-19T10:40:00+08:00",
-  "data_source": "⚠️ 单源未验证 - 仅腾讯gtimg可用（网易502/同花顺404/新浪403）",
+  "timestamp": "2026-06-19T14:50:00+08:00",
+  "data_source": "腾讯gtimg (单源)",
+  "data_quality": "⚠️ 单源未验证 — 行情数据时间戳为2026-06-18 16:14（疑为端午节休市，数据为6/18收盘价）",
   "indices": {
-    "上证指数": {
-      "price": 4090.48,
-      "change_pct": -0.43
-    },
-    "深证成指": {
-      "price": 16030.7,
-      "change_pct": 0.94
-    },
-    "科创50": {
-      "price": 1911.51,
-      "change_pct": 3.84
-    }
+    "上证指数": { "price": 4090.48, "change_pct": -0.43 },
+    "深证成指": { "price": 16030.7, "change_pct": 0.94 },
+    "科创50": { "price": 1911.51, "change_pct": 3.84 }
   },
-  "alerts": [
+  "positions": [
     {
-      "symbol": "002472",
+      "code": "002472",
       "name": "双环传动",
-      "current_price": 43.78,
+      "price": 43.78,
       "change_pct": 4.84,
-      "cost_price": 40.693,
+      "volume_ratio": 1.56,
+      "cost": 40.693,
       "stop_loss": 38.0,
-      "stop_profit": 46.5,
-      "vol_ratio": 1.56,
-      "alert_level": "🔵",
-      "alert_reason": "IC审查建议：已约245个交易日未经IC审查"
+      "take_profit": 46.5,
+      "ic_date": "2025-06-24",
+      "status": "OK",
+      "alerts": [],
+      "details": "距止损13.2% | 距止盈5.8% | 浮盈7.6%"
     },
     {
-      "symbol": "588080",
+      "code": "588080",
       "name": "科创50ETF",
-      "current_price": 1.953,
+      "price": 1.953,
       "change_pct": 3.99,
-      "cost_price": 1.65,
+      "volume_ratio": 1.52,
+      "cost": 1.65,
       "stop_loss": 1.55,
-      "stop_profit": 1.98,
-      "vol_ratio": 1.52,
-      "alert_level": "🟡",
-      "alert_reason": "接近止盈：距止盈(1.98)仅1.4%"
+      "take_profit": 1.98,
+      "ic_date": "2025-06-24",
+      "status": "WARNING_HIGH",
+      "alerts": ["🟡 止盈触及：距1.98仅1.4%"],
+      "details": "距止盈1.4% | 浮盈18.4% | 止损1.55在本金1.65以下",
+      "dedup_blue": ["追踪止损提醒(已存在)", "IC陈旧提醒(已存在)"]
     },
     {
-      "symbol": "588080",
-      "name": "科创50ETF",
-      "current_price": 1.953,
-      "change_pct": 3.99,
-      "cost_price": 1.65,
-      "stop_loss": 1.55,
-      "stop_profit": 1.98,
-      "vol_ratio": 1.52,
-      "alert_level": "🔵",
-      "alert_reason": "追踪止损提醒：浮盈18.4%，浮盈保护率仅-33.0%，止损线已滞后"
-    },
-    {
-      "symbol": "588080",
-      "name": "科创50ETF",
-      "current_price": 1.953,
-      "change_pct": 3.99,
-      "cost_price": 1.65,
-      "stop_loss": 1.55,
-      "stop_profit": 1.98,
-      "vol_ratio": 1.52,
-      "alert_level": "🔵",
-      "alert_reason": "IC审查建议：已约245个交易日未经IC审查"
-    },
-    {
-      "symbol": "159540",
+      "code": "159540",
       "name": "信创ETF",
-      "current_price": 2.287,
+      "price": 2.287,
       "change_pct": 3.58,
-      "cost_price": 2.203,
+      "volume_ratio": 2.00,
+      "cost": 2.203,
       "stop_loss": 1.85,
-      "stop_profit": 2.3,
-      "vol_ratio": 2.0,
-      "alert_level": "🟡",
-      "alert_reason": "接近止盈：距止盈(2.3)仅0.6%"
+      "take_profit": 2.30,
+      "ic_date": "2025-06-24",
+      "status": "WARNING_HIGH",
+      "alerts": ["🟡 止盈触及：距2.30仅0.6%"],
+      "details": "距止盈0.6% | 浮盈3.8%",
+      "dedup_blue": ["IC陈旧提醒(已存在)"]
     },
     {
-      "symbol": "159540",
-      "name": "信创ETF",
-      "current_price": 2.287,
-      "change_pct": 3.58,
-      "cost_price": 2.203,
-      "stop_loss": 1.85,
-      "stop_profit": 2.3,
-      "vol_ratio": 2.0,
-      "alert_level": "🔵",
-      "alert_reason": "IC审查建议：已约245个交易日未经IC审查"
-    },
-    {
-      "symbol": "600699",
+      "code": "600699",
       "name": "均胜电子",
-      "current_price": 24.67,
+      "price": 24.67,
       "change_pct": -0.68,
-      "cost_price": 24.89,
+      "volume_ratio": 0.96,
+      "cost": 24.89,
       "stop_loss": 24.0,
-      "stop_profit": 33.0,
-      "vol_ratio": 0.96,
-      "alert_level": "🟡",
-      "alert_reason": "接近止损：距止损(24.0)仅2.7%"
+      "take_profit": 33.0,
+      "ic_date": "2025-06-24",
+      "status": "WARNING",
+      "alerts": ["🟡 接近止损：距24.00仅2.7%"],
+      "details": "距止损2.7% | 浮亏0.9%",
+      "dedup_blue": ["IC陈旧提醒(已存在)"]
     },
     {
-      "symbol": "600699",
-      "name": "均胜电子",
-      "current_price": 24.67,
-      "change_pct": -0.68,
-      "cost_price": 24.89,
-      "stop_loss": 24.0,
-      "stop_profit": 33.0,
-      "vol_ratio": 0.96,
-      "alert_level": "🔵",
-      "alert_reason": "IC审查建议：已约245个交易日未经IC审查"
-    },
-    {
-      "symbol": "002011",
+      "code": "002011",
       "name": "盾安环境",
-      "current_price": 10.51,
+      "price": 10.51,
       "change_pct": -2.59,
-      "cost_price": 11.415,
+      "volume_ratio": 0.99,
+      "cost": 11.415,
       "stop_loss": 10.5,
-      "stop_profit": 15.0,
-      "vol_ratio": 0.99,
-      "alert_level": "🟡",
-      "alert_reason": "接近止损：距止损(10.5)仅0.1%"
+      "take_profit": 15.0,
+      "ic_date": "2025-06-24",
+      "status": "WARNING",
+      "alerts": ["🟡 接近止损：距10.50仅0.1% 极度接近！"],
+      "details": "距止损0.1%！极度危险 | 浮亏7.9%",
+      "dedup_blue": ["IC陈旧提醒(已存在)"]
     },
     {
-      "symbol": "002011",
-      "name": "盾安环境",
-      "current_price": 10.51,
-      "change_pct": -2.59,
-      "cost_price": 11.415,
-      "stop_loss": 10.5,
-      "stop_profit": 15.0,
-      "vol_ratio": 0.99,
-      "alert_level": "🔵",
-      "alert_reason": "IC审查建议：已约245个交易日未经IC审查"
-    },
-    {
-      "symbol": "603298",
+      "code": "603298",
       "name": "杭叉集团",
-      "current_price": 24.66,
+      "price": 24.66,
       "change_pct": -0.76,
-      "cost_price": 25.2,
+      "volume_ratio": 0.62,
+      "cost": 25.2,
       "stop_loss": 23.0,
-      "stop_profit": 31.0,
-      "vol_ratio": 0.62,
-      "alert_level": "🔵",
-      "alert_reason": "IC审查建议：已约245个交易日未经IC审查"
+      "take_profit": 31.0,
+      "ic_date": "2025-06-24",
+      "status": "OK",
+      "alerts": [],
+      "details": "距止损6.7% | 浮亏2.1%",
+      "dedup_blue": ["IC陈旧提醒(已存在)"]
     }
   ],
-  "check_c_skipped": "本时段历史数据不足（仅1条），跳过下行趋势检查",
-  "summary": {
-    "total_positions": 6,
-    "alert_positions": 6,
-    "red_alerts": 0,
-    "yellow_alerts": 4,
-    "blue_alerts": 7
-  }
+  "watchlist": [
+    {
+      "code": "002125",
+      "name": "湘潭电化",
+      "price": 19.12,
+      "target_build_price": 16.0,
+      "status": "OK",
+      "alert": null
+    },
+    {
+      "code": "600875",
+      "name": "东方电气",
+      "price": 32.56,
+      "target_build_price": 33.0,
+      "status": "INFO_DEDUPED",
+      "alert": "🔵 建仓条件触发（今日已推送，去重跳过）"
+    }
+  ],
+  "monitor_records_written": 8,
+  "monitor_record_ids": {
+    "002472": "recvmYeF7BxBOv",
+    "588080": "recvmYeF7BsEfp",
+    "159540": "recvmYeF7B6uao",
+    "600699": "recvmYeF7B4U7l",
+    "002011": "recvmYeF7BrquW",
+    "603298": "recvmYeF7BJoBg",
+    "002125": "recvmYeF7BTlgF",
+    "600875": "recvmYeF7Bc0yc"
+  },
+  "push_message": "📊 Klaire 盘中监控 14:50\n\n🟡 止盈触及：159540 现价 2.287，距止盈 2.30 仅 0.6%，可考虑告知 Butler 决策\n🟡 止盈触及：588080 现价 1.953，距止盈 1.98 仅 1.4%，可考虑告知 Butler 决策\n🟡 接近止损：600699 现价 24.67，距止损（24.00）仅 2.7%，请关注\n🟡 接近止损：002011 现价 10.51，距止损（10.50）仅 0.1%，极度接近！请立即关注\n\n---\n持仓快照已写入监控记录（8条）\n⚠️ 数据源：腾讯gtimg单源，数据时间为6/18收盘"
 }
