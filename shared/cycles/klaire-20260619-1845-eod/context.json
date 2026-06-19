@@ -1,0 +1,9 @@
+{
+  "cycle_id": "klaire-20260619-1845-eod",
+  "principal": "klaire",
+  "flow_type": "精简两委员",
+  "positions_table_id": "tbl9xYrGkBDZlnYm",
+  "watchlist_table_id": "tblaQY1jOFWOXd1U",
+  "trigger": "cron-eod",
+  "timestamp": "2026-06-19T18:45:00+08:00"
+}

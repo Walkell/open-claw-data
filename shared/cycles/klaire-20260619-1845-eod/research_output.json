@@ -1,0 +1,457 @@
+{
+  "meta": {
+    "cycle_id": "klaire-20260619-1845-eod",
+    "principal": "klaire",
+    "flow_type": "精简两委员",
+    "generated_at": "2026-06-19T18:45:00+08:00",
+    "data_date": "2026-06-18",
+    "note": "EOD复盘研究，数据截至2026-06-18收盘，市场数据通过腾讯gtimg获取，PE及基本面数据部分为估算值"
+  },
+  "data_quality": {
+    "level": "⚠️ 部分受限",
+    "status": "amber",
+    "price_source": "✅ 腾讯gtimg (qt.gtimg.cn) 单源可用",
+    "price_verification": "⚠️ 单源未验证 — 东方财富/网易/同花顺/新浪均不可用(502/403/404)",
+    "historical_data": "✅ 腾讯ifzq K线数据 (web.ifzq.gtimg.cn) 可用，120天数据完整",
+    "pe_data": "⚠️ PE值来自gtimg实时字段，PE分位数为基于行业经验的估算值（东方财富基本面API不可用）",
+    "news_data": "✅ 通过亿牛网(eniu.com)+新浪财经获取，覆盖主要标的",
+    "search_api": "❌ Tavily/Web Search API均达到速率限制(432)",
+    "overall": "⚠️ 可执行IC分析，但PE分位数/量比等衍生指标精确度受限，建议Risk委员打分时考虑数据质量因素",
+    "sources_available": [
+      "gtimg实时行情",
+      "ifzq K线历史",
+      "eniu.com新闻"
+    ],
+    "sources_unavailable": [
+      "东方财富push2",
+      "网易财经",
+      "同花顺",
+      "新浪财经",
+      "Tavily搜索",
+      "Web搜索"
+    ]
+  },
+  "portfolio_summary": {
+    "total_positions": 6,
+    "active_holdings": 6,
+    "total_cost": 38819.4,
+    "total_market_value": 40918.5,
+    "total_pnl_pct": 5.41,
+    "total_pnl_amount": 2099.1,
+    "winners": 3,
+    "losers": 3,
+    "stop_loss_danger": 2,
+    "near_target": 2,
+    "risk_summary": "2个标的接近止损(盾安环境0.1%, 均胜电子2.7%)，2个标的接近止盈(科创50ETF 1.4%, 信创ETF 0.6%)，需重点关注盾安环境"
+  },
+  "holdings": {
+    "002472": {
+      "name": "双环传动",
+      "symbol": "002472",
+      "market": "SZ",
+      "sector": "机器人减速器/新能源齿轮",
+      "shares": 300,
+      "cost": 40.693,
+      "stop_loss": 38.0,
+      "take_profit": 46.5,
+      "status": "持有",
+      "current": {
+        "price": 43.78,
+        "change_pct": 4.84,
+        "open": 41.6,
+        "high": 44.85,
+        "low": 41.44,
+        "pre_close": 41.76,
+        "volume": 534782,
+        "volume_ratio": 1.43,
+        "amplitude": 8.17,
+        "market_cap_yi": 327.71,
+        "data_date": "2026-06-18"
+      },
+      "pnl": {
+        "unrealized_pct": 7.59,
+        "unrealized_amount": 926.1,
+        "distance_to_stop_pct": 13.2,
+        "distance_to_target_pct": 6.21
+      },
+      "technical": {
+        "ma20": 42.223,
+        "ma60_high": 46.12,
+        "bollinger_upper": 45.842,
+        "bollinger_lower": 38.603,
+        "atr": 2.564,
+        "atr_pct": 5.86,
+        "pe_ttm": 29.31,
+        "pe_percentile": 25,
+        "vol_ratio": 1.43
+      },
+      "fundamental": {
+        "pe_ttm": 29.31,
+        "pe_percentile": 25,
+        "revenue_growth": "+1.49%",
+        "profit_growth": "+2.93%",
+        "latest_quarter": "2026Q1",
+        "key_metrics": "Q1营收20.95亿(+1.49%), 净利2.84亿(+2.93%)"
+      },
+      "news": {
+        "recent_headlines": [
+          "双环传动：为全资子公司江苏双环提供8.7亿元融资担保 (2026-06-01)",
+          "双环传动：Q1净利2.84亿同比+2.93% (2026-04-23)",
+          "双环传动大宗交易折价成交450万股，成交额1.71亿 (2026-04-10)"
+        ],
+        "sentiment": "neutral",
+        "risk_flags": [
+          "大股东担保额较大(17.53亿占净资产17.5%)",
+          "Q1增速放缓"
+        ]
+      },
+      "verdict": {
+        "price_vs_ma20": "above",
+        "price_vs_bb_upper": "below",
+        "atr_risk": "moderate",
+        "stop_loss_safe": true,
+        "summary": "强势反弹，放量突破MA20/布林中轨，距止盈46.5剩6.2%，趋势向好但Q1增速放缓需关注"
+      }
+    },
+    "588080": {
+      "name": "科创50ETF",
+      "symbol": "588080",
+      "market": "SH",
+      "sector": "科创板指数ETF",
+      "shares": 4000,
+      "cost": 1.65,
+      "stop_loss": 1.55,
+      "take_profit": 1.98,
+      "status": "持有",
+      "current": {
+        "price": 1.953,
+        "change_pct": 3.99,
+        "open": 1.876,
+        "high": 1.976,
+        "low": 1.871,
+        "pre_close": 1.878,
+        "volume": 11204849,
+        "volume_ratio": 1.37,
+        "amplitude": 5.59,
+        "data_date": "2026-06-18"
+      },
+      "pnl": {
+        "unrealized_pct": 18.36,
+        "unrealized_amount": 1212.0,
+        "distance_to_stop_pct": 20.63,
+        "distance_to_target_pct": 1.38
+      },
+      "technical": {
+        "ma20": 1.787,
+        "ma60_high": 1.976,
+        "bollinger_upper": 1.967,
+        "bollinger_lower": 1.606,
+        "atr": 0.081,
+        "atr_pct": 4.15,
+        "pe_ttm": null,
+        "pe_percentile": null,
+        "vol_ratio": 1.37
+      },
+      "fundamental": {
+        "pe_ttm": null,
+        "pe_percentile": null,
+        "note": "ETF无PE，跟踪科创50指数",
+        "index_level": null
+      },
+      "news": {
+        "recent_headlines": [
+          "科创50指数连续放量上涨，半导体/AI主线驱动",
+          "科创板做市商制度持续推进"
+        ],
+        "sentiment": "positive",
+        "risk_flags": [
+          "接近60日高点1.976，短期可能回调"
+        ]
+      },
+      "verdict": {
+        "price_vs_ma20": "above",
+        "price_vs_bb_upper": "near",
+        "atr_risk": "moderate",
+        "stop_loss_safe": true,
+        "summary": "强势上涨趋势，距止盈1.98仅剩1.4%，盈利+18.36%优秀，关注能否突破前高1.976"
+      }
+    },
+    "159540": {
+      "name": "信创ETF",
+      "symbol": "159540",
+      "market": "SZ",
+      "sector": "信创/国产替代ETF",
+      "shares": 3500,
+      "cost": 2.203,
+      "stop_loss": 1.85,
+      "take_profit": 2.3,
+      "status": "持有",
+      "current": {
+        "price": 2.287,
+        "change_pct": 3.58,
+        "open": 2.206,
+        "high": 2.315,
+        "low": 2.186,
+        "pre_close": 2.208,
+        "volume": 296187,
+        "volume_ratio": 1.63,
+        "amplitude": 5.84,
+        "data_date": "2026-06-18"
+      },
+      "pnl": {
+        "unrealized_pct": 3.81,
+        "unrealized_amount": 294.0,
+        "distance_to_stop_pct": 19.11,
+        "distance_to_target_pct": 0.57
+      },
+      "technical": {
+        "ma20": 2.094,
+        "ma60_high": 2.315,
+        "bollinger_upper": 2.291,
+        "bollinger_lower": 1.897,
+        "atr": 0.098,
+        "atr_pct": 4.26,
+        "pe_ttm": null,
+        "pe_percentile": null,
+        "vol_ratio": 1.63
+      },
+      "fundamental": {
+        "pe_ttm": null,
+        "pe_percentile": null,
+        "note": "ETF无PE，跟踪信创产业指数"
+      },
+      "news": {
+        "recent_headlines": [
+          "信创产业政策持续推进，国产替代加速",
+          "信创ETF连续放量上攻，量比1.63"
+        ],
+        "sentiment": "positive",
+        "risk_flags": [
+          "接近布林上轨2.291和60日高2.315"
+        ]
+      },
+      "verdict": {
+        "price_vs_ma20": "above",
+        "price_vs_bb_upper": "near",
+        "atr_risk": "moderate",
+        "stop_loss_safe": true,
+        "summary": "信创主线强势，距止盈2.30仅0.6%，转盈+3.81%，接近前高谨慎追涨"
+      }
+    },
+    "600699": {
+      "name": "均胜电子",
+      "symbol": "600699",
+      "market": "SH",
+      "sector": "汽车安全+电子/固态电池/机器人",
+      "shares": 200,
+      "cost": 24.89,
+      "stop_loss": 24.0,
+      "take_profit": 33.0,
+      "status": "持有",
+      "current": {
+        "price": 24.67,
+        "change_pct": -0.68,
+        "open": 24.56,
+        "high": 25.12,
+        "low": 24.54,
+        "pre_close": 24.84,
+        "volume": 321580,
+        "volume_ratio": 0.97,
+        "amplitude": 2.33,
+        "market_cap_yi": 334.29,
+        "data_date": "2026-06-18"
+      },
+      "pnl": {
+        "unrealized_pct": -0.88,
+        "unrealized_amount": -44.0,
+        "distance_to_stop_pct": 2.72,
+        "distance_to_target_pct": 33.77
+      },
+      "technical": {
+        "ma20": 26.636,
+        "ma60_high": 32.952,
+        "bollinger_upper": 31.668,
+        "bollinger_lower": 21.604,
+        "atr": 1.093,
+        "atr_pct": 4.43,
+        "pe_ttm": 27.38,
+        "pe_percentile": 50,
+        "vol_ratio": 0.97
+      },
+      "fundamental": {
+        "pe_ttm": 27.38,
+        "pe_percentile": 50,
+        "revenue_growth": "-5.22%",
+        "profit_growth": "+18.11%",
+        "latest_quarter": "2026Q1",
+        "key_metrics": "Q1营收138.15亿(-5.22%), 净利4.02亿(+18.11%), 参股光模块已量产"
+      },
+      "news": {
+        "recent_headlines": [
+          "均胜电子：参股公司光模块业务已进入量产阶段 (2026-06-16)",
+          "均胜电子等成立新能源公司，注册资本1亿元 (2026-05-27)",
+          "均胜电子与恩力动力成立固态电池合资公司 (2026-05-06)",
+          "均胜电子Q1净利4.02亿同比+18.11% (2026-04-27)"
+        ],
+        "sentiment": "positive",
+        "risk_flags": [
+          "营收连续下滑",
+          "股价在MA20/MA60下方运行",
+          "接近止损位24仅差2.7%"
+        ]
+      },
+      "verdict": {
+        "price_vs_ma20": "below",
+        "price_vs_bb_upper": "below",
+        "atr_risk": "moderate",
+        "stop_loss_safe": false,
+        "summary": "弱势震荡，位于MA20/60下方，距止损24仅2.7%。光模块+固态电池概念未反映在股价，需警惕破止损风险"
+      }
+    },
+    "002011": {
+      "name": "盾安环境",
+      "symbol": "002011",
+      "market": "SZ",
+      "sector": "制冷/热管理/新能源车零部件",
+      "shares": 200,
+      "cost": 11.415,
+      "stop_loss": 10.5,
+      "take_profit": 15.0,
+      "status": "持有",
+      "current": {
+        "price": 10.51,
+        "change_pct": -2.59,
+        "open": 10.77,
+        "high": 10.78,
+        "low": 10.44,
+        "pre_close": 10.79,
+        "volume": 145203,
+        "volume_ratio": 0.98,
+        "amplitude": 3.15,
+        "market_cap_yi": 111.36,
+        "data_date": "2026-06-18"
+      },
+      "pnl": {
+        "unrealized_pct": -7.93,
+        "unrealized_amount": -181.0,
+        "distance_to_stop_pct": 0.1,
+        "distance_to_target_pct": 42.72
+      },
+      "technical": {
+        "ma20": 11.628,
+        "ma60_high": 13.23,
+        "bollinger_upper": 13.307,
+        "bollinger_lower": 9.948,
+        "atr": 0.405,
+        "atr_pct": 3.85,
+        "pe_ttm": 10.69,
+        "pe_percentile": 20,
+        "vol_ratio": 0.98
+      },
+      "fundamental": {
+        "pe_ttm": 10.69,
+        "pe_percentile": 20,
+        "revenue_growth": "+0.11%",
+        "profit_growth": "+33.43%",
+        "latest_quarter": "2025Q3",
+        "key_metrics": "Q3净利2.33亿(+33.43%), 拟50亿投建智能智造总部基地"
+      },
+      "news": {
+        "recent_headlines": [
+          "盾安环境：紫金投资减持计划完成，减持0.9862% (2025-12)",
+          "盾安环境：拟50亿投建智能智造总部基地项目 (2025-09)",
+          "盾安环境：Q3净利2.33亿同比+33.43% (2025-10)"
+        ],
+        "sentiment": "neutral",
+        "risk_flags": [
+          "距止损10.50仅0.1%，极度危险",
+          "股价持续走弱跌破MA20",
+          "紫金投资持续减持"
+        ]
+      },
+      "verdict": {
+        "price_vs_ma20": "below",
+        "price_vs_bb_upper": "below",
+        "atr_risk": "low",
+        "stop_loss_safe": false,
+        "summary": "⚠️ 极度危险！现价10.51距止损10.50仅0.01元(0.1%)，持续下行趋势，布林下轨9.95为最后支撑，需立即决策是否减仓/止损"
+      }
+    },
+    "603298": {
+      "name": "杭叉集团",
+      "symbol": "603298",
+      "market": "SH",
+      "sector": "叉车龙头/机器人/物流自动化",
+      "shares": 200,
+      "cost": 25.2,
+      "stop_loss": 23.0,
+      "take_profit": 31.0,
+      "status": "持有",
+      "current": {
+        "price": 24.66,
+        "change_pct": -0.76,
+        "open": 24.95,
+        "high": 25.04,
+        "low": 24.53,
+        "pre_close": 24.85,
+        "volume": 46999,
+        "volume_ratio": 0.7,
+        "amplitude": 2.05,
+        "market_cap_yi": 323.0,
+        "data_date": "2026-06-18"
+      },
+      "pnl": {
+        "unrealized_pct": -2.14,
+        "unrealized_amount": -108.0,
+        "distance_to_stop_pct": 6.73,
+        "distance_to_target_pct": 25.71
+      },
+      "technical": {
+        "ma20": 25.114,
+        "ma60_high": 29.78,
+        "bollinger_upper": 27.004,
+        "bollinger_lower": 23.224,
+        "atr": 1.001,
+        "atr_pct": 4.06,
+        "pe_ttm": 14.48,
+        "pe_percentile": 30,
+        "vol_ratio": 0.7
+      },
+      "fundamental": {
+        "pe_ttm": 14.48,
+        "pe_percentile": 30,
+        "revenue_growth": "+10.35%",
+        "profit_growth": "+9.17%",
+        "latest_quarter": "2026Q1",
+        "key_metrics": "Q1营收49.17亿(+10.35%), 净利4.72亿(+9.17%), 董事长/董秘增持"
+      },
+      "news": {
+        "recent_headlines": [
+          "杭叉集团：董事长赵礼敏增持10万股 (2026-06-12)",
+          "杭叉集团：董事会秘书江韵增持0.0008%股份 (2026-06-11)",
+          "杭叉集团等成立机器人公司 (2026-06-08)",
+          "杭叉集团Q1净利4.72亿同比+9.17% (2026-04-23)"
+        ],
+        "sentiment": "positive",
+        "risk_flags": [
+          "股价跌破MA20",
+          "缩量弱势(量比0.70)",
+          "距布林下轨23.22不远"
+        ]
+      },
+      "verdict": {
+        "price_vs_ma20": "below",
+        "price_vs_bb_upper": "below",
+        "atr_risk": "moderate",
+        "stop_loss_safe": true,
+        "summary": "缩量弱势调整，董事长增持信号积极但技术面偏弱，距止损23还有6.7%缓冲，持股观察"
+      }
+    }
+  },
+  "market_context": {
+    "data_date": "2026-06-18",
+    "note": "市场呈现结构性分化：科创板/信创/机器人主线强势，传统汽车零部件/制冷偏弱。科创50指数领涨(+3.99%当日)，受半导体/AI驱动。双环传动放量突破(+4.84%)显示机器人主线热度。均胜电子、盾安环境逆势走弱，反映资金从传统赛道向科技成长切换。",
+    "sector_rotation": "科技成长(科创50/信创/机器人) > 传统制造(叉车/制冷/汽车零部件)",
+    "key_risk": "盾安环境距止损仅0.1%，为组合最大风险点"
+  }
+}

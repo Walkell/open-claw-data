@@ -1,0 +1,12 @@
+{
+  "principal": "klaire",
+  "flow_type": "四委员",
+  "cycle_id": "klaire-20260619-1830-weekly-review",
+  "scenario": "周报复盘",
+  "trigger_time": "2026-06-19T18:30:00+08:00",
+  "table_ids": {
+    "positions": "tbl9xYrGkBDZlnYm",
+    "watchlist": "tblaQY1jOFWOXd1U",
+    "monitor_logs": "tblHkc0MfQbe2x37"
+  }
+}
