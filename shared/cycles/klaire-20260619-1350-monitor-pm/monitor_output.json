@@ -1,0 +1,114 @@
+{
+  "principal": "klaire",
+  "monitor_time": "2026-06-19T13:50:00+08:00",
+  "market_status": "休市（端午节）",
+  "data_source": "腾讯gtimg单源（东方财富502/新浪403/网易502均不可用）",
+  "data_timestamp": "2026-06-18 16:14 (昨日收盘价)",
+  "data_validation": "⚠️ 单源未验证，数据为昨日收盘快照，非实时",
+  "positions_checked": 6,
+  "watchlist_checked": 4,
+  "records_written": false,
+  "records_not_written_reason": "今日为端午节休市日，行情数据为昨日收盘价（未变化），写入会造成重复快照",
+  "alerts": [
+    {
+      "level": "🟡",
+      "code": "002011",
+      "name": "盾安环境",
+      "type": "接近止损",
+      "detail": "现价10.51距止损10.50仅0.1%，极度危险",
+      "klaire_safe_detail": "现价极度接近止损线，建议告知Butler确认"
+    },
+    {
+      "level": "🟡",
+      "code": "600699",
+      "name": "均胜电子",
+      "type": "接近止损",
+      "detail": "现价24.67距止损24.00仅2.7%",
+      "klaire_safe_detail": "现价接近止损线，建议关注"
+    },
+    {
+      "level": "🔵",
+      "code": "588080",
+      "name": "科创50ETF",
+      "type": "追踪止损提醒",
+      "detail": "浮盈率18.4%>15%，但止损1.55低于成本1.65，止损在本金线下",
+      "klaire_safe_detail": "止损设置可能已滞后于当前行情，建议IC审查",
+      "dedup_applies": true,
+      "dedup_status": "昨日已触发，若今日记录已存在则跳过"
+    },
+    {
+      "level": "🔵",
+      "code": "002472",
+      "name": "双环传动",
+      "type": "IC陈旧提醒",
+      "detail": "IC日期2025-06-25，距今约256个交易日（远超10日阈值）",
+      "klaire_safe_detail": "已较长时间未经IC审查，建议告知Butler触发IC复盘",
+      "dedup_applies": true
+    },
+    {
+      "level": "🔵",
+      "code": "588080",
+      "name": "科创50ETF",
+      "type": "IC陈旧提醒",
+      "detail": "IC日期2025-06-25，距今约256个交易日",
+      "klaire_safe_detail": "已较长时间未经IC审查，建议告知Butler触发IC复盘",
+      "dedup_applies": true
+    },
+    {
+      "level": "🔵",
+      "code": "159540",
+      "name": "信创ETF",
+      "type": "IC陈旧提醒",
+      "detail": "IC日期2025-06-25，距今约256个交易日",
+      "klaire_safe_detail": "已较长时间未经IC审查，建议告知Butler触发IC复盘",
+      "dedup_applies": true
+    },
+    {
+      "level": "🔵",
+      "code": "600699",
+      "name": "均胜电子",
+      "type": "IC陈旧提醒",
+      "detail": "IC日期2025-06-25，距今约256个交易日",
+      "klaire_safe_detail": "已较长时间未经IC审查，建议告知Butler触发IC复盘",
+      "dedup_applies": true
+    },
+    {
+      "level": "🔵",
+      "code": "002011",
+      "name": "盾安环境",
+      "type": "IC陈旧提醒",
+      "detail": "IC日期2025-06-25，距今约256个交易日",
+      "klaire_safe_detail": "已较长时间未经IC审查，建议告知Butler触发IC复盘",
+      "dedup_applies": true
+    },
+    {
+      "level": "🔵",
+      "code": "603298",
+      "name": "杭叉集团",
+      "type": "IC陈旧提醒",
+      "detail": "IC日期2025-06-25，距今约256个交易日",
+      "klaire_safe_detail": "已较长时间未经IC审查，建议告知Butler触发IC复盘",
+      "dedup_applies": true
+    },
+    {
+      "level": "🔵",
+      "code": "600875",
+      "name": "东方电气",
+      "type": "建仓触发",
+      "detail": "现价32.56≤目标建仓价33.00（观察池标的）",
+      "klaire_safe_detail": "现价已达目标建仓价，建议告知Butler确认",
+      "dedup_applies": true
+    }
+  ],
+  "normal": [
+    {"code": "002472", "name": "双环传动", "price": 43.78, "change_pct": 4.84, "note": "距止损13.2%，距止盈6.2%，正常"},
+    {"code": "159540", "name": "信创ETF", "price": 2.287, "change_pct": 3.58, "note": "距止盈0.6%，接近但未触发"},
+    {"code": "603298", "name": "杭叉集团", "price": 24.66, "change_pct": -0.76, "note": "距止损6.7%，正常"}
+  ],
+  "skipped_checks": {
+    "check_C_downward_trend": "休市日无PM时段数据，跳过",
+    "check_E_volume_anomaly": "量比为昨日收盘值，无实时意义，跳过"
+  },
+  "summary": "今日为端午节休市，行情数据为6/18收盘快照（未变化）。关键风险：盾安环境(002011)现价10.51极度接近止损10.50（0.1%），均胜电子(600699)距止损2.7%。科创50ETF(588080)止损线滞后于行情。全部持仓IC审查日期陈旧（约256个交易日）。因无新交易数据，未写入监控记录，session输出NO_REPLY。",
+  "session_output": "NO_REPLY"
+}
