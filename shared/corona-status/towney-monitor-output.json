@@ -1,0 +1,21 @@
+{
+  "principal": "towney",
+  "time": "2026-06-19T13:20:00+08:00",
+  "has_alerts": false,
+  "market_status": "休市日（端午节），A股全天休市。上证收盘4090.48(-0.43%) 科创50 1911.51(+3.84%) 数据来自6/18收盘",
+  "alerts": [],
+  "all_positions": [
+    {"symbol": "688120", "name": "华海清科", "price": 226.86, "change_pct": 2.05, "status": "正常（6/18收盘数据）"},
+    {"symbol": "588090", "name": "科创芯片ETF", "price": 1.961, "change_pct": 4.09, "status": "正常（6/18收盘数据）"},
+    {"symbol": "688008", "name": "澜起科技", "price": 269.90, "change_pct": 2.82, "status": "正常（6/18收盘数据）"},
+    {"symbol": "300394", "name": "天孚通信", "price": 336.60, "change_pct": 2.21, "status": "正常（6/18收盘数据）"},
+    {"symbol": "159949", "name": "创业板50ETF", "price": 2.058, "change_pct": 2.29, "status": "正常（6/18收盘数据）"},
+    {"symbol": "510500", "name": "中证500ETF", "price": 8.828, "change_pct": 0.74, "status": "正常（6/18收盘数据）"},
+    {"symbol": "513300", "name": "纳斯达克ETF", "price": 2.752, "change_pct": -0.33, "status": "正常（6/18收盘数据）"},
+    {"symbol": "513650", "name": "标普500ETF", "price": 1.908, "change_pct": -0.57, "status": "正常（6/18收盘数据）"},
+    {"symbol": "518880", "name": "黄金ETF", "price": 8.908, "change_pct": -0.55, "status": "正常（6/18收盘数据）"},
+    {"symbol": "688041", "name": "海光信息", "price": 328.00, "change_pct": 6.42, "status": "正常（6/18收盘数据）"},
+    {"symbol": "002156", "name": "通富微电", "price": 68.27, "change_pct": 1.56, "status": "正常（6/18收盘数据）"}
+  ],
+  "summary": "端午节休市，A股全天休市，无盘中监控数据。所有价格为6/18收盘快照。下个交易日恢复监控。"
+}
