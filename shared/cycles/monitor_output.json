@@ -1,0 +1,89 @@
+{
+  "principal": "klaire",
+  "timestamp": "2026-06-19T11:20:00+08:00",
+  "has_alerts": true,
+  "alerts": [
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "price": 10.51,
+      "change_pct": -2.59,
+      "alert_type": "接近止损",
+      "message": "🟡 接近止损：002011 盾安环境 现价 10.51，距止损（10.50）仅 0.1%，请关注",
+      "severity": "warning"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "price": 24.67,
+      "change_pct": -0.68,
+      "alert_type": "接近止损",
+      "message": "🟡 接近止损：600699 均胜电子 现价 24.67，距止损（24.00）仅 2.7%，请关注",
+      "severity": "warning"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "price": 1.953,
+      "change_pct": 3.99,
+      "alert_type": "止损线审查",
+      "message": "🔵 止损线审查：588080 科创50ETF 止损设置可能已滞后于当前行情，建议 IC 审查",
+      "severity": "info"
+    },
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "price": 43.78,
+      "change_pct": 4.84,
+      "alert_type": "IC陈旧",
+      "message": "🔵 IC 审查建议：002472 双环传动 已约244个交易日未经IC审查，建议IC复盘",
+      "severity": "info"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "price": 1.953,
+      "change_pct": 3.99,
+      "alert_type": "IC陈旧",
+      "message": "🔵 IC 审查建议：588080 科创50ETF 已约244个交易日未经IC审查，建议IC复盘",
+      "severity": "info"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "price": 2.287,
+      "change_pct": 3.58,
+      "alert_type": "IC陈旧",
+      "message": "🔵 IC 审查建议：159540 信创ETF 已约244个交易日未经IC审查，建议IC复盘",
+      "severity": "info"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "price": 24.67,
+      "change_pct": -0.68,
+      "alert_type": "IC陈旧",
+      "message": "🔵 IC 审查建议：600699 均胜电子 已约244个交易日未经IC审查，建议IC复盘",
+      "severity": "info"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "price": 10.51,
+      "change_pct": -2.59,
+      "alert_type": "IC陈旧",
+      "message": "🔵 IC 审查建议：002011 盾安环境 已约244个交易日未经IC审查，建议IC复盘",
+      "severity": "info"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "price": 24.66,
+      "change_pct": -0.76,
+      "alert_type": "IC陈旧",
+      "message": "🔵 IC 审查建议：603298 杭叉集团 已约244个交易日未经IC审查，建议IC复盘",
+      "severity": "info"
+    }
+  ],
+  "summary": "2只持仓接近止损（盾安环境0.1%极度危险、均胜电子2.7%），1只止损线滞后（科创50ETF），全部6只持仓IC审查已陈旧约244个交易日。数据来源：腾讯单源（网易502/新浪403/同花顺404）。"
+}
