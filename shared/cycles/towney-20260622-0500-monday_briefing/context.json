@@ -1,0 +1,19 @@
+{
+  "cycle_id": "towney-20260622-0500-monday_briefing",
+  "principal": "towney",
+  "flow_type": "四委员",
+  "app_token": "OcmCb7TQYaHqnvsjBjAc0GRdnTb",
+  "bitable_name": "Towney-投资管理",
+  "positions_table_id": "tblUeTGMf0IKJ8Pk",
+  "watchlist_table_id": "tblaLlSQp8tEcWgJ",
+  "monitor_table_id": "tblFAfrZs4Rz4AOu",
+  "reports_table_id": "tbllqOCpSadabEYt",
+  "trades_table_id": "tblUZ9WvrF6FVZTS",
+  "decisions_table_id": "tbl7TR8G43GCN057",
+  "profit_target": "年化30%",
+  "risk_veto": 7,
+  "risk_hard_veto": 9,
+  "output_channel_group": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
+  "output_channel_dm": "ou_aa8d3c082f316a8c9e18b9e6e8eeb88b",
+  "scene": "monday_briefing"
+}
