@@ -1,0 +1,210 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260621-2250-weekly-review",
+  "risk_score": 6.9,
+  "verdict": "CAUTION",
+  "risk_basis": {
+    "risk_thresholds": {
+      "veto": 7,
+      "hard_veto": 9
+    },
+    "concentration_thresholds_used": {
+      "ai_track_redline_pct": 40,
+      "single_subsector_observation_line_pct": 20,
+      "note": "配置档仅给出Risk否决分数阈值；赛道集中度采用Risk红线：AI方向集中度>40%触发AI方向新增仓位否决；细分赛道20%为观察线。"
+    },
+    "data_quality": "⚠️部分受限：行情/K线主要为腾讯gtimg单源；美股底层指数不可验证；财务/PE多项数据质量较弱；新闻搜索受配额限制，主要依赖新浪财经/第一财经页面抓取。"
+  },
+  "concentration_detail": {
+    "AI/半导体/光通信合计": {
+      "当前占比%": 47.56,
+      "阈值%": 40,
+      "级别": "🔴",
+      "超标原因": "华海清科、科创芯片ETF、澜起科技、天孚通信、海光信息、通富微电合计47.56%，超过AI方向40%红线7.56个百分点；主要风险来自同一AI硬件/半导体贝塔、高估值与获利了结共振。"
+    },
+    "半导体设计": {
+      "当前占比%": 19.72,
+      "阈值%": 20,
+      "级别": "🟠",
+      "超标原因": "接近单一细分赛道20%观察线；澜起科技12.15%为最大单票，叠加海光信息7.57%，二者均处于高估值高波动区间。"
+    },
+    "光通信": {
+      "当前占比%": 11.41,
+      "阈值%": 20,
+      "级别": "🟡",
+      "超标原因": "未超细分赛道观察线，但由天孚通信单票构成，浮盈约100%且ATR约7.55%，回撤弹性大。"
+    },
+    "半导体设备": {
+      "当前占比%": 7.46,
+      "阈值%": 20,
+      "级别": "🟡",
+      "超标原因": "未超细分赛道观察线；华海清科已超过止盈位且RSI超买，定增摊薄与半导体减持潮带来短期压力。"
+    },
+    "半导体ETF": {
+      "当前占比%": 7.35,
+      "阈值%": 20,
+      "级别": "🟡",
+      "超标原因": "未超细分赛道观察线，但与个股半导体持仓高度相关，且已突破减仓观察位/止盈参考位，增加组合对同一赛道的相关性暴露。"
+    },
+    "宽基ETF": {
+      "当前占比%": 7.19,
+      "阈值%": 20,
+      "级别": "🟢",
+      "超标原因": "未超观察线；分散度较好，但创业板50ETF科技权重较高，与AI/半导体行情仍有一定相关性。"
+    },
+    "海外ETF": {
+      "当前占比%": 6.49,
+      "阈值%": 20,
+      "级别": "🟢",
+      "超标原因": "未超观察线；主要风险是美股底层指数数据本次不可验证，以及人民币汇率和海外科技估值波动。"
+    },
+    "贵金属": {
+      "当前占比%": 1.75,
+      "阈值%": 20,
+      "级别": "🟢",
+      "超标原因": "仓位很低，分散组合风险；但黄金ETF当前弱势，距离止损约4.6%。"
+    },
+    "半导体封测": {
+      "当前占比%": 1.62,
+      "阈值%": 20,
+      "级别": "🟢",
+      "超标原因": "仓位轻，单标的风险对组合影响有限；估值与客户集中度仍需跟踪。"
+    }
+  },
+  "concentration_weighted_pnl": {
+    "AI/半导体/光通信合计": {
+      "当前占比%": 47.56,
+      "加权浮盈%": 58.8,
+      "calculation_basis": "按Research报告现价估算浮盈加权：华海清科+54.2%、科创芯片ETF+21.0%、澜起科技+73.9%、天孚通信+100.4%、海光信息+22.7%、通富微电+13.6%。"
+    }
+  },
+  "risk_flags": {
+    "688120 华海清科": {
+      "position_pct": 7.46,
+      "stop_loss_distance%": 30.8,
+      "take_profit_distance%": -5.6,
+      "valuation_risk": "高：PE/PB数据质量存疑但显示极端昂贵；已超过止盈价约5.6%。",
+      "technical_risk": "高：RSI 72.3、突破布林上轨、5日涨幅约21.5%，短线回撤风险上升。",
+      "event_risk": "中高：40亿元定增获受理，长期利好产能但短期摊薄EPS；半导体减持潮压制情绪。",
+      "flag_level": "🟠"
+    },
+    "588090 科创芯片ETF": {
+      "position_pct": 7.35,
+      "stop_loss_distance%": 22.5,
+      "take_profit_distance%": -3.1,
+      "valuation_risk": "中高：板块估值不低，ETF与个股半导体暴露高度重叠。",
+      "technical_risk": "中高：价格接近布林上轨，5日涨幅约14.75%，已越过1.90观察/止盈参考位。",
+      "event_risk": "中：半导体减持潮可能对ETF成分股形成情绪压力。",
+      "flag_level": "🟠"
+    },
+    "688008 澜起科技": {
+      "position_pct": 12.15,
+      "stop_loss_distance%": 22.2,
+      "take_profit_distance%": 3.7,
+      "valuation_risk": "高：PE/PB字段失真但绝对估值处于高风险区，且为组合最大单票。",
+      "technical_risk": "中高：距止盈约3.7%，5日涨幅约18%，高位波动风险明显。",
+      "event_risk": "中：DDR5第六子代RCD送样与PCIe/CXL推进偏利好，但半导体减持潮对短线估值有压力。",
+      "flag_level": "🟠"
+    },
+    "300394 天孚通信": {
+      "position_pct": 11.41,
+      "stop_loss_distance%": 15.3,
+      "take_profit_distance%": 14.4,
+      "valuation_risk": "高：静态估值极高，浮盈约100%使获利了结敏感度上升。",
+      "technical_risk": "中高：ATR约7.55%，20日涨幅约40%，高波动下回撤幅度可能较大。",
+      "event_risk": "中：光模块/CPO景气度强，但赛道拥挤与同行融资/扩产可能加剧波动。",
+      "flag_level": "🟠"
+    },
+    "159949 创业板50ETF": {
+      "position_pct": 3.18,
+      "stop_loss_distance%": 17.4,
+      "take_profit_distance%": 21.5,
+      "valuation_risk": "中：创业板整体估值偏高，科技权重与组合AI暴露有相关性。",
+      "technical_risk": "中：触及布林上轨附近且量比偏低，上攻动能边际减弱。",
+      "event_risk": "中低：宽基分散度高于个股，但受科技主线情绪影响。",
+      "flag_level": "🟡"
+    },
+    "510500 中证500ETF": {
+      "position_pct": 4.01,
+      "stop_loss_distance%": 15.0,
+      "take_profit_distance%": 7.6,
+      "valuation_risk": "中：中盘股估值不便宜但分散度较好。",
+      "technical_risk": "中：接近布林上轨，量比0.63显示缩量上行。",
+      "event_risk": "中低：宏观复苏偏弱可能压制中盘盈利弹性。",
+      "flag_level": "🟡"
+    },
+    "688041 海光信息": {
+      "position_pct": 7.57,
+      "stop_loss_distance%": 22.3,
+      "take_profit_distance%": 22.0,
+      "valuation_risk": "高：国产CPU/DCU稀缺性带来高溢价，PE/PB显示估值安全边际低。",
+      "technical_risk": "中：多头排列但高位波动；已减仓后仓位风险下降。",
+      "event_risk": "中：CPU+DCU与GLM-5.2适配偏利好；半导体减持潮构成短期压力。",
+      "flag_level": "🟡"
+    },
+    "002156 通富微电": {
+      "position_pct": 1.62,
+      "stop_loss_distance%": 26.8,
+      "take_profit_distance%": 14.3,
+      "valuation_risk": "中高：PE/PB偏高，毛利率偏低，AMD客户集中度高。",
+      "technical_risk": "中：反弹后动能转弱，MACD微负，仓位轻降低组合影响。",
+      "event_risk": "中：机构调研、专利与先进封装主题偏利好，但盈利质量仍需验证。",
+      "flag_level": "🟡"
+    },
+    "513300 纳斯达克ETF": {
+      "position_pct": 5.06,
+      "stop_loss_distance%": 16.4,
+      "take_profit_distance%": 27.2,
+      "valuation_risk": "中：美股科技估值偏高。",
+      "technical_risk": "中：ETF自身走势多头，但底层纳指数据本次不可验证。",
+      "event_risk": "中：美联储政策、汇率和中美科技摩擦风险。",
+      "flag_level": "🟡"
+    },
+    "513650 标普500ETF": {
+      "position_pct": 1.43,
+      "stop_loss_distance%": 10.9,
+      "take_profit_distance%": 15.3,
+      "valuation_risk": "中：标普500估值中等偏高。",
+      "technical_risk": "中低：动能偏弱但仓位很低；底层指数不可验证。",
+      "event_risk": "中：海外利率、汇率与美股估值波动。",
+      "flag_level": "🟡"
+    },
+    "518880 黄金ETF": {
+      "position_pct": 1.75,
+      "stop_loss_distance%": 4.6,
+      "take_profit_distance%": 17.9,
+      "valuation_risk": "中：黄金处历史高位区间，PE/PB不适用。",
+      "technical_risk": "中高：现价低于MA20/MA60，RSI约35，距离止损约4.6%，为组合内最接近止损的持仓。",
+      "event_risk": "中：美元、美债利率与避险需求变化影响较大。",
+      "flag_level": "🟠"
+    }
+  },
+  "portfolio_risk_assessment": {
+    "concentration": {
+      "score": 8.0,
+      "assessment": "组合最大风险是AI/半导体/光通信相关暴露达到47.56%，超过AI方向40%红线；虽然近期已对华海清科、天孚通信、海光信息、沪电股份等锁利降仓，但剩余组合仍高度依赖同一景气主线。"
+    },
+    "valuation": {
+      "score": 7.5,
+      "assessment": "核心个股估值普遍处于高风险区，PE/PB数据虽有质量问题但方向一致指向高估值；半导体减持潮与高浮盈共振时，估值压缩会放大回撤。"
+    },
+    "liquidity": {
+      "score": 4.5,
+      "assessment": "ETF与大中市值科技龙头流动性总体可接受；主要流动性风险不是成交困难，而是高波动赛道在下跌时的价格冲击和科创/创业板个股波动。"
+    },
+    "macro": {
+      "score": 5.5,
+      "assessment": "宏观为中性偏风险：AI硬件与高技术制造景气较强，但固定资产投资、制造业投资和消费数据偏弱，经济K形分化使组合对AI单一引擎依赖提高。"
+    },
+    "news_event": {
+      "score": 5.8,
+      "assessment": "新闻情绪总体偏正面（News sentiment=0.55、event_impact=6），但半导体减持潮、华海定增摊薄和海外指数数据不可验证构成短期事件风险。"
+    },
+    "stop_loss_take_profit": {
+      "score": 5.8,
+      "assessment": "暂无持仓距离止损≤3%的加仓否决触发项；黄金ETF距离止损约4.6%最接近。华海清科、科创芯片ETF已高于止盈/观察位，澜起科技距止盈约3.7%，止盈附近波动风险集中。"
+    }
+  },
+  "overall_summary": "组合未出现硬性止损危机，但AI/半导体/光通信集中度已超过40%红线，叠加核心持仓高估值、高浮盈与半导体减持潮，整体风险等级为CAUTION，主要风险是同一科技主线拥挤交易导致的同步回撤。"
+}
