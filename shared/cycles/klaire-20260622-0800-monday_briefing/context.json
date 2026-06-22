@@ -1,0 +1,14 @@
+{
+  "principal": "klaire",
+  "flow_type": "四委员",
+  "cycle_id": "klaire-20260622-0800-monday_briefing",
+  "table_ids": {
+    "positions": "持仓表",
+    "watchlist": "观察池",
+    "monitor": "监控记录"
+  },
+  "channel": {
+    "chat_id": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
+    "is_shared": true
+  }
+}

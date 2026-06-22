@@ -1,0 +1,178 @@
+{
+  "committee": "research",
+  "principal": "klaire",
+  "cycle_id": "klaire-20260622-0800-monday_briefing",
+  "timestamp": "2026-06-22T08:05:57+08:00",
+  "data_source_date": "2026-06-18",
+  "market_overview": {
+    "shanghai_index": {
+      "latest": 4090.48,
+      "trend": "neutral",
+      "ma_status": "MA5(4084) MA10(4040) MA20(4067)"
+    },
+    "shenzhen_index": {
+      "latest": 16030.7,
+      "trend": "neutral",
+      "ma_status": "MA5(15616) MA10(15329) MA20(15505)"
+    },
+    "star50_index": {
+      "latest": 1911.51,
+      "trend": "neutral",
+      "ma_status": "MA5(1784) MA10(1716) MA20(1747)"
+    }
+  },
+  "holdings_analysis": [
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "latest_price": 43.78,
+      "price_change_pct": 4.84,
+      "ma_analysis": "MA5=42.33, MA10=42.82, MA20=42.22, 均线交织",
+      "volume_analysis": "量比5日=1.43, 趋势=contracting",
+      "technical_signals": [
+        "MACD空头",
+        "RSI=64.6偏强"
+      ],
+      "support_resistance": {
+        "support": 38.69,
+        "resistance": 46.12
+      },
+      "short_term_outlook": "bullish",
+      "risk_flags": []
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "latest_price": 1.953,
+      "price_change_pct": 3.99,
+      "ma_analysis": "MA5=1.82, MA10=1.76, MA20=1.79, 均线交织",
+      "volume_analysis": "量比5日=1.37, 趋势=contracting",
+      "technical_signals": [
+        "MACD多头",
+        "RSI=62.6偏强",
+        "KDJ高位(93.7)"
+      ],
+      "support_resistance": {
+        "support": 1.61,
+        "resistance": 1.98
+      },
+      "short_term_outlook": "bullish",
+      "risk_flags": []
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "latest_price": 2.287,
+      "price_change_pct": 3.58,
+      "ma_analysis": "MA5=2.13, MA10=2.06, MA20=2.09, 均线交织",
+      "volume_analysis": "量比5日=1.63, 趋势=expanding",
+      "technical_signals": [
+        "MACD多头",
+        "RSI=64.9偏强",
+        "KDJ高位(93.5)",
+        "放量"
+      ],
+      "support_resistance": {
+        "support": 1.89,
+        "resistance": 2.31
+      },
+      "short_term_outlook": "bullish",
+      "risk_flags": []
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "latest_price": 24.67,
+      "price_change_pct": -0.68,
+      "ma_analysis": "MA5=24.58, MA10=24.82, MA20=26.70, 均线交织",
+      "volume_analysis": "量比5日=0.97, 趋势=contracting",
+      "technical_signals": [
+        "MACD空头",
+        "RSI=38.3偏弱"
+      ],
+      "support_resistance": {
+        "support": 23.44,
+        "resistance": 33.13
+      },
+      "short_term_outlook": "bearish",
+      "risk_flags": [
+        "跌破MA20"
+      ]
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "latest_price": 10.51,
+      "price_change_pct": -2.59,
+      "ma_analysis": "MA5=10.84, MA10=10.87, MA20=11.63, 空头排列",
+      "volume_analysis": "量比5日=0.98, 趋势=contracting",
+      "technical_signals": [
+        "MACD空头",
+        "RSI=19.6超卖",
+        "KDJ低位(8.6)"
+      ],
+      "support_resistance": {
+        "support": 10.43,
+        "resistance": 13.2
+      },
+      "short_term_outlook": "bearish",
+      "risk_flags": [
+        "逼近支撑10.43",
+        "跌破MA20",
+        "均线死叉"
+      ]
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "latest_price": 24.66,
+      "price_change_pct": -0.76,
+      "ma_analysis": "MA5=24.80, MA10=24.53, MA20=25.21, 均线交织",
+      "volume_analysis": "量比5日=0.7, 趋势=stable",
+      "technical_signals": [
+        "MACD多头",
+        "RSI=43.1中性",
+        "MA5金叉MA10"
+      ],
+      "support_resistance": {
+        "support": 23.02,
+        "resistance": 28.0
+      },
+      "short_term_outlook": "neutral",
+      "risk_flags": [
+        "跌破MA20"
+      ]
+    }
+  ],
+  "watchlist_highlights": [
+    {
+      "symbol": "002126",
+      "name": "银轮股份",
+      "latest_price": 52.73,
+      "setup_quality": "站上MA20, MACD金叉, RSI=57.8, 支撑46.2/压力60.0",
+      "technical_readiness": "ready"
+    },
+    {
+      "symbol": "000988",
+      "name": "华工科技",
+      "latest_price": 177.55,
+      "setup_quality": "站上MA20, MACD多头, RSI=67.0, 支撑141.22/压力181.57",
+      "technical_readiness": "ready"
+    },
+    {
+      "symbol": "002125",
+      "name": "湘潭电化",
+      "latest_price": 19.12,
+      "setup_quality": "站上MA20, MACD多头, RSI=70.5, 支撑13.65/压力20.86",
+      "technical_readiness": "ready"
+    },
+    {
+      "symbol": "600875",
+      "name": "东方电气",
+      "latest_price": 32.56,
+      "setup_quality": "低于MA20, MACD金叉, RSI=39.2, 支撑29.06/压力37.25",
+      "technical_readiness": "watching"
+    }
+  ],
+  "summary": "大盘分化：上证4090(-0.43%)缩量偏弱，科创50领涨1912(+3.84%)强势。持仓：双环+4.84%、科创50ETF+3.99%、信创ETF+3.58%多头排列偏多；均胜-0.68%MACD空头、杭叉-0.76%均线交织；盾安-2.59%放量下跌逼近止损10.50需警惕。观察池：东方电气MACD金叉接近建仓，华工科技+4.13%突破可关注。"
+}
