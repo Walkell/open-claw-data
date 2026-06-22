@@ -1092,8 +1092,11 @@
         "url": "http://127.0.0.1:8081/mcp"
       },
       "zhipu-search": {
-        "url": "https://open.bigmodel.cn/api/mcp-broker/proxy/web-search/mcp",
-        "transport": "streamable-http"
+        "command": "python3",
+        "args": [
+          "/home/ubuntu/.openclaw/scripts/zhipu_search_mcp.py"
+        ],
+        "transport": null
       }
     }
   },
