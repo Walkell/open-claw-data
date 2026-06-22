@@ -1,8 +1,8 @@
 {
   "principal": "klaire",
   "status": "running",
-  "cycle_id": "klaire-20260622-1310-monitor-pm",
-  "step": "盘中监控启动，spawn Monitor Agent",
-  "started_at": "2026-06-22T13:10:00+08:00",
-  "updated_at": "2026-06-22T13:10:00+08:00"
+  "cycle_id": "klaire-20260622-1350-monitor-pm",
+  "step": "盘中监控启动，Klaire PM 监控 13:50",
+  "started_at": "2026-06-22T13:50:00+08:00",
+  "updated_at": "2026-06-22T13:50:00+08:00"
 }

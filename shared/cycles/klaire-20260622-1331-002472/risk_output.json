@@ -1,0 +1,76 @@
+{
+  "principal": "klaire",
+  "agent": "risk",
+  "cycle_id": "klaire-20260622-1331-002472",
+  "data": {
+    "symbol": "002472",
+    "name": "双环传动",
+    "scene": "加仓评估",
+    "risk_score": 75,
+    "verdict": "HALT",
+    "veto_reason": "汽车零部件/机器人传动赛道集中度约47.89%，已超过40%阈值；双环传动属于该赛道，加仓会进一步提高集中度。",
+    "dimensions": {
+      "financial_health": {
+        "score": 25,
+        "note": "Research嵌入数据：现金流优、负债率约43.3%-43.98%、ROE约11.7%，财务健康风险偏低；本环境无akshare财务工具，未能自拉复核。",
+        "source": "research_embedded"
+      },
+      "valuation": {
+        "score": 45,
+        "note": "PE约27.64，处于约45.2%分位，合理但不便宜；估值安全边际中等。",
+        "source": "research_embedded"
+      },
+      "industry_cycle": {
+        "score": 30,
+        "note": "Industry给出行业景气8.0/10，人形机器人与减速器国产化逻辑强，但量产节奏和竞争加剧仍有不确定性。",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 65,
+        "note": "腾讯gtimg单源显示现价约41.55，日跌约5.09%，跌破MA20且放量；距止损38约8.54%，未触发≤3%止损加仓否决。行情交叉验证失败，数据质量降级。",
+        "source": "self_market_single_source"
+      },
+      "macro": {
+        "score": 40,
+        "note": "Industry给出宏观6.5/10，A股分化但机器人政策利好，宏观风险中性偏低。",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 50,
+        "note": "本轮未提供News委员输出，按数据缺失默认50分。",
+        "source": "missing_default"
+      },
+      "concentration": {
+        "score": 95,
+        "note": "汽车零部件/机器人传动赛道集中度约47.89%，超过40%阈值，是本次加仓评估的主导风险。",
+        "source": "self_positions_and_market"
+      }
+    },
+    "base_risk_score_ex_concentration": 41,
+    "concentration_adjustment": 34,
+    "concentration_detail": {
+      "汽车零部件/机器人传动": {
+        "当前占比%": 47.89,
+        "阈值%": 40.0,
+        "级别": "🔴",
+        "超标原因": "按持仓表和本次实时价估算，双环传动、均胜电子、盾安环境合计市值约19199元，占活跃持仓总市值约40092元的47.89%；CIO此前深度分析指出该赛道集中度48.21%，本次复算结论一致，已高于40%集中度上限。"
+      }
+    },
+    "concentration_weighted_pnl": {
+      "汽车零部件/机器人传动": -1.39,
+      "calculation_note": "按赛道内双环传动、均胜电子、盾安环境的当前市值与成本加权估算；价格为腾讯gtimg单源，未通过双源验证。"
+    },
+    "position_snapshot": {
+      "shares": 300,
+      "cost_price": 40.693,
+      "stop_loss": 38.0,
+      "take_profit": 46.5,
+      "add_price": 38.5,
+      "current_price": 41.55,
+      "current_change_pct": -5.09,
+      "distance_to_stop_loss_pct": 8.54,
+      "data_quality": "single_source_gtimg_only; netease_502; eastmoney_502; 10jqka_404; sina_403"
+    },
+    "summary": "个股基本面风险可控但技术面走弱，核心风险是汽车零部件/机器人传动赛道集中度约48%已明显超过40%阈值，因此加仓评估触发HALT。"
+  }
+}
