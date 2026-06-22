@@ -1088,7 +1088,7 @@
         "url": "http://127.0.0.1:8081/mcp"
       },
       "zhipu-search": {
-        "url": "https://open.bigmodel.cn/api/mcp-broker/proxy/web-search/mcp?Authorization=dae8968eb8bb4a308fd0e4d9935d198e.Gyr1NxT79WdyIGDa",
+        "url": "https://open.bigmodel.cn/api/mcp-broker/proxy/web-search/mcp?Authorization=d5683d2e895b45ccadc7086359b584d4.osL5cmblVOOKIUVK",
         "transport": "streamable-http"
       }
     }

@@ -7,7 +7,7 @@
       "models": [
         {
           "id": "glm-5.2",
-          "name": "GLM-5.1",
+          "name": "GLM-5.2",
           "reasoning": true,
           "input": [
             "text",
