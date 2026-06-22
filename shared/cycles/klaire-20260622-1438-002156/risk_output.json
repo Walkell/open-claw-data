@@ -1,0 +1,69 @@
+{
+  "principal": "klaire",
+  "agent": "risk",
+  "cycle_id": "klaire-20260622-1438-002156",
+  "data": {
+    "symbol": "002156",
+    "name": "通富微电",
+    "sector": "半导体/集成电路封测/先进封装",
+    "risk_score": 64,
+    "risk_score_scale": "0-100",
+    "verdict": "CAUTION",
+    "veto_reason": "",
+    "market_snapshot": {
+      "price": 71.25,
+      "change_pct": 4.37,
+      "source_note": "Risk自行拉取腾讯行情；网易502、同花顺404、新浪403，未能形成双源校验，因此技术面评分保守上调风险。"
+    },
+    "concentration_detail": {
+      "target_sector": "半导体/封测",
+      "direct_existing_positions_in_sector": [],
+      "direct_sector_market_value_before_new_position": 0,
+      "portfolio_market_value_estimate_from_positions_table": 37649.6,
+      "direct_sector_weight_before_new_position_pct": 0.0,
+      "note": "Klaire当前持仓表中未发现通富微电同赛道的直接持仓；科创50ETF/信创ETF可能含有半导体或硬科技间接暴露，但持仓表无法拆解ETF成分，未纳入直接集中度。"
+    },
+    "concentration_weighted_pnl": {
+      "target_sector": "半导体/封测",
+      "weighted_float_pnl_pct": 0.0,
+      "calculation_basis": "直接同赛道持仓为空，按0%计；ETF隐含行业权重缺失，未估算。"
+    },
+    "valuation_judgement": {
+      "classification": "更接近透支未来的泡沫化定价，但仍有强基本面支撑",
+      "reason": "营收与净利高增、AMD/Intel生态绑定、先进封装景气度构成基本面支撑；但PE约75x、股价处于近2年99.6%分位、5日涨幅约24%、ATR约6.2%且板块集体拉升，说明短线价格已显著预支未来业绩兑现，对业绩增速和行业景气持续性容错率较低。"
+    },
+    "dimensions": {
+      "financial_health": {
+        "score": 55,
+        "note": "ROE约7%偏低、负债率约65%偏高、净利率约4.4%仍薄；经营现金流与净利改善降低部分财务风险。",
+        "source": "research_agent"
+      },
+      "valuation": {
+        "score": 76,
+        "note": "PE约75x绝对估值高；相对长电/华天更低但行业整体估值泡沫化，安全边际不足。",
+        "source": "research_agent"
+      },
+      "industry_cycle": {
+        "score": 30,
+        "note": "封测/先进封装高景气、Chiplet和AI封装需求明确，行业基本面风险较低；但板块同步大涨带来拥挤风险。",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 82,
+        "note": "5日暴涨约24%、近2年99.6%分位、ATR约6.2%且当日继续上涨，短线超买和波动风险高。",
+        "source": "self"
+      },
+      "macro": {
+        "score": 45,
+        "note": "流动性与成交额支持风险偏好，但私募仓位高位与天量成交提示拥挤交易风险。",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 35,
+        "note": "定增过会与封测板块拉升偏正面，暂无重大负面；News因搜索配额超限，数据质量偏低。",
+        "source": "news_agent"
+      }
+    },
+    "summary": "主要风险来自短线极端拥挤与高估值预支，基本面强度能解释方向但不足以完全覆盖当前价格的波动与估值回撤风险。"
+  }
+}
