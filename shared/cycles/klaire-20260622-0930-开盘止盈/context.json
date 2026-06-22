@@ -1,0 +1,19 @@
+{
+  "principal": "klaire",
+  "flow_type": "精简两委员",
+  "trigger": "开盘扫描止盈触发",
+  "trigger_detail": "信创ETF(159540)触及止盈2.30 + 科创50ETF(588080)距止盈0.8%",
+  "positions": [
+    {"symbol": "588080", "name": "科创50ETF", "shares": 4000, "cost": 1.65, "stop": 1.55, "target": 1.98, "current": 1.965, "pnl_pct": 19.09},
+    {"symbol": "159540", "name": "信创ETF", "shares": 3500, "cost": 2.203, "stop": 1.85, "target": 2.30, "current": 2.310, "pnl_pct": 4.86},
+    {"symbol": "002472", "name": "双环传动", "shares": 300, "cost": 40.693, "stop": 38, "target": 46.5, "current": 43.23, "pnl_pct": 6.23},
+    {"symbol": "600699", "name": "均胜电子", "shares": 200, "cost": 24.89, "stop": 24, "target": 33, "current": 24.34, "pnl_pct": -2.21},
+    {"symbol": "002011", "name": "盾安环境", "shares": 200, "cost": 11.415, "stop": 10.5, "target": 15, "current": 10.51, "pnl_pct": -7.93},
+    {"symbol": "603298", "name": "杭叉集团", "shares": 200, "cost": 25.2, "stop": 23, "target": 31, "current": 24.44, "pnl_pct": -3.02}
+  ],
+  "focus_symbols": ["159540", "588080"],
+  "focus_reason": "信创ETF触及止盈2.30需决策卖出; 科创50ETF距止盈1.98仅0.8%需关注",
+  "data_quality": "仅腾讯gtimg单源",
+  "table_id": "tbl9xYrGkBDZlnYm",
+  "bitable_name": "Klaire-投资管理"
+}
