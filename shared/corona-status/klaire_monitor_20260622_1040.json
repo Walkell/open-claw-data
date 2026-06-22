@@ -1,0 +1,190 @@
+{
+  "principal": "klaire",
+  "timestamp": "2026-06-22T10:40:00+08:00",
+  "data_source": "单源-腾讯gtimg（网易502/同花顺404/新浪403 均不可用，未经交叉验证）",
+  "has_alerts": true,
+  "alerts": [
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "price": 23.52,
+      "change_pct": -4.66,
+      "alert_type": "跌破止损",
+      "severity": "critical",
+      "detail": "🔴 止损触及：现价23.52已跌破止损价24.00，请立即处理"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "price": 10.15,
+      "change_pct": -3.43,
+      "alert_type": "跌破止损",
+      "severity": "critical",
+      "detail": "🔴 止损触及：现价10.15已跌破止损价10.50，请立即处理"
+    },
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "price": 41.80,
+      "change_pct": -4.52,
+      "alert_type": "放量下跌",
+      "severity": "warning",
+      "detail": "🟡 放量下跌：量比3.25，跌幅-4.52%，抛压较强"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "price": 2.300,
+      "change_pct": 0.57,
+      "alert_type": "止盈触及",
+      "severity": "warning",
+      "detail": "🟡 止盈触及：现价2.300已达止盈价2.30，可考虑告知Butler决策"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "price": 24.07,
+      "change_pct": -2.39,
+      "alert_type": "接近止损",
+      "severity": "warning",
+      "detail": "🟡 接近止损：现价24.07，距止损23.00仅4.45%（止损价×1.05=24.15），请关注"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "price": 24.07,
+      "change_pct": -2.39,
+      "alert_type": "缩量异常",
+      "severity": "info",
+      "detail": "🔵 缩量异常：量比仅0.18，流动性偏低"
+    }
+  ],
+  "positions_snapshot": [
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "price": 41.80,
+      "change_pct": -4.52,
+      "vol_ratio": 3.25,
+      "stop_loss": 38.0,
+      "take_profit": 46.5,
+      "cost": 40.693,
+      "distance_to_stoploss_pct": 9.10,
+      "status": "持有"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "price": 1.948,
+      "change_pct": -0.26,
+      "vol_ratio": 2.94,
+      "stop_loss": 1.55,
+      "take_profit": 1.98,
+      "cost": 1.65,
+      "distance_to_stoploss_pct": 20.43,
+      "distance_to_takeprofit_pct": 1.64,
+      "status": "持有"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "price": 2.300,
+      "change_pct": 0.57,
+      "vol_ratio": 11.75,
+      "stop_loss": 1.85,
+      "take_profit": 2.3,
+      "cost": 2.203,
+      "distance_to_stoploss_pct": 19.57,
+      "status": "持有"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "price": 23.52,
+      "change_pct": -4.66,
+      "vol_ratio": 1.85,
+      "stop_loss": 24.0,
+      "take_profit": 33.0,
+      "cost": 24.89,
+      "distance_to_stoploss_pct": -2.0,
+      "status": "持有-BREACHED"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "price": 10.15,
+      "change_pct": -3.43,
+      "vol_ratio": 0.83,
+      "stop_loss": 10.5,
+      "take_profit": 15.0,
+      "cost": 11.415,
+      "distance_to_stoploss_pct": -3.34,
+      "status": "持有-BREACHED"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "price": 24.07,
+      "change_pct": -2.39,
+      "vol_ratio": 0.18,
+      "stop_loss": 23.0,
+      "take_profit": 31.0,
+      "cost": 25.2,
+      "distance_to_stoploss_pct": 4.45,
+      "status": "持有"
+    }
+  ],
+  "watchlist_snapshot": [
+    {
+      "symbol": "002126",
+      "name": "银轮股份",
+      "price": 49.27,
+      "change_pct": -6.56,
+      "vol_ratio": 2.40,
+      "target_price": 60,
+      "status": "观察中"
+    },
+    {
+      "symbol": "000988",
+      "name": "华工科技",
+      "price": 173.61,
+      "change_pct": -2.22,
+      "vol_ratio": 5.22,
+      "target_price": 170,
+      "status": "观察中"
+    },
+    {
+      "symbol": "002125",
+      "name": "湘潭电化",
+      "price": 18.02,
+      "change_pct": -5.75,
+      "vol_ratio": 9.09,
+      "target_buy_price": 16,
+      "status": "观察中"
+    },
+    {
+      "symbol": "600875",
+      "name": "东方电气",
+      "price": 32.45,
+      "change_pct": -0.34,
+      "vol_ratio": 1.85,
+      "target_buy_price": 33,
+      "status": "已入池-建仓条件已触发(今日已去重)"
+    }
+  ],
+  "health_checks_performed": {
+    "A_price_threshold": "完成",
+    "B_trailing_stop": "完成（588080触发：浮盈18%但止损在成本线以下）",
+    "C_trend_detection": "跳过（今日AM时段仅1条历史记录，不足3条）",
+    "D_ic_staleness": "完成（全部6只持仓IC日期均陈旧，已被今日早班去重）",
+    "E_volume_anomaly": "完成（002472放量下跌触发，603298缩量异常触发）"
+  },
+  "dedup_info": {
+    "IC陈旧提醒": "全部6只持仓今日09:00批次已标记，本轮去重跳过",
+    "追踪止损提醒": "588080今日09:00批次已标记，本轮去重跳过",
+    "建仓触发": "600875今日09:00批次已标记，本轮去重跳过",
+    "缩量异常提醒": "603298本轮新触发，已更新预警类型"
+  },
+  "monitor_records_written": 10,
+  "summary": "📊 Klaire 盘中监控 10:40\n\n🔴 止损触及：600699 现价23.52已跌破止损24.00\n🔴 止损触及：002011 现价10.15已跌破止损10.50\n🟡 放量下跌：002472 量比3.25，跌幅-4.52%，抛压较强\n🟡 止盈触及：159540 现价2.300已达止盈价2.30\n🟡 接近止损：603298 现价24.07，距止损23.00仅4.45%\n🔵 缩量异常：603298 量比仅0.18，流动性偏低\n\n---\n持仓快照已写入监控记录（10条）\n行情数据：⚠️ 单源-腾讯（网易/同花顺/新浪均不可用）"
+}
