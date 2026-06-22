@@ -1,0 +1,120 @@
+{
+  "principal": "klaire",
+  "agent": "risk",
+  "cycle_id": "klaire-20260622-1340-002011",
+  "flow_type": "精简两委员",
+  "scene": "止损评估",
+  "data_quality": {
+    "positions_source": "Klaire-投资管理/持仓表，仅读取principal=klaire",
+    "market_data": "腾讯gtimg单源可用；akshare/eastmoney连接失败，网易502，同花顺404，新浪403；两只标的现价数据未能双源验证",
+    "industry_news": "精简两委员：Industry/News未参与，行业/宏观默认5分，新闻情绪默认0"
+  },
+  "portfolio_context": {
+    "total_position_value_estimated": 37493.74,
+    "valuation_method": "002011/600699用本次实时价；其他持仓用Bitable盈亏比例快照估算",
+    "concentration_detail": {
+      "汽车零部件/智能汽车链": {
+        "当前占比%": 50.86,
+        "阈值%": 40,
+        "级别": "🔴",
+        "超标原因": "双环传动、均胜电子、盾安环境合计约50.86%，超过40%赛道集中度阈值；其中两只已跌破止损，赛道内风险相关性上升。"
+      },
+      "AI/科技成长": {
+        "当前占比%": 36.0,
+        "阈值%": 40,
+        "级别": "🟡",
+        "超标原因": "科创50ETF、信创ETF合计约36.00%，未超过AI方向40%红线，但接近阈值且加权浮亏较深。"
+      },
+      "高端制造装备": {
+        "当前占比%": 45.95,
+        "阈值%": 40,
+        "级别": "🟠",
+        "超标原因": "双环传动、杭叉集团合计约45.95%，高于40%参考阈值；双环单票权重较高。"
+      },
+      "单票-双环传动": {
+        "当前占比%": 32.8,
+        "阈值%": 25,
+        "级别": "🟠",
+        "超标原因": "单票占比约32.80%，超过25%单票参考阈值，是组合波动主要来源。"
+      },
+      "单票-均胜电子": {
+        "当前占比%": 12.52,
+        "阈值%": 25,
+        "级别": "🟢",
+        "超标原因": "单票未超阈值，但已跌破止损，风险来自价格行为而非单票集中度。"
+      },
+      "单票-盾安环境": {
+        "当前占比%": 5.53,
+        "阈值%": 25,
+        "级别": "🟢",
+        "超标原因": "单票未超阈值，但已跌破止损，风险来自价格行为而非单票集中度。"
+      }
+    },
+    "concentration_weighted_pnl": {
+      "汽车零部件/智能汽车链": -1.92,
+      "AI/科技成长": -5.5,
+      "高端制造装备": -0.09
+    }
+  },
+  "symbols": [
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "risk_score": 84,
+      "verdict": "HALT",
+      "current_price": 10.36,
+      "cost_price": 11.415,
+      "stop_loss": 10.5,
+      "take_profit": 15.0,
+      "position_shares": 200,
+      "breach_stop_loss_pct": -1.33,
+      "floating_pnl_pct_realtime": -9.24,
+      "risk_drivers": [
+        "现价10.36低于止损10.50，已触发止损纪律；距止损线为-1.33%。",
+        "Research显示5日连阴、60日新低、均线全面空头、MACD死叉，技术风险为主要风险源。",
+        "基本面和估值并非失控，但紫金减持与营收放缓使反弹确定性不足。",
+        "所属汽车零部件/智能汽车链组合占比约50.86%，已超过40%赛道集中度阈值。"
+      ],
+      "dimension_scores": {
+        "financial_health": { "risk_score": 45, "note": "Research给财务6/10：利润增长但营收放缓，财务风险中性偏低。" },
+        "valuation": { "risk_score": 45, "note": "PE_TTM约14.18、PEG有安全边际，但下跌趋势显示估值支撑暂未生效。" },
+        "industry_cycle": { "risk_score": 50, "note": "精简流程Industry未参与，默认5分。" },
+        "technical": { "risk_score": 95, "note": "跌破止损且技术面极端弱势。" },
+        "macro": { "risk_score": 50, "note": "精简流程Industry未参与，默认5分。" },
+        "news_sentiment": { "risk_score": 50, "note": "精简流程News未参与，默认中性。" },
+        "concentration": { "risk_score": 80, "note": "汽车零部件/智能汽车链占比约50.86%，超过40%阈值。" }
+      },
+      "risk_control_advice": "应立即执行止损退出，不建议等待加仓或下调止损；若存在交易执行约束，可采用当日分批卖出，但风控口径为停止新增风险暴露并退出该止损仓位。"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "risk_score": 88,
+      "verdict": "HALT",
+      "current_price": 23.48,
+      "cost_price": 24.89,
+      "stop_loss": 24.0,
+      "take_profit": 33.0,
+      "position_shares": 200,
+      "breach_stop_loss_pct": -2.17,
+      "floating_pnl_pct_realtime": -5.66,
+      "risk_drivers": [
+        "现价23.48低于止损24.00，已触发止损纪律；距止损线为-2.17%。",
+        "Research显示放量暴跌、量比2.94、均线空头、MACD死叉加速、连续主力净流出，技术风险高于盾安环境。",
+        "基本面质量较好，但Q1营收下滑且市场未给基本面溢价，短期价格风险压倒基本面支撑。",
+        "所属汽车零部件/智能汽车链组合占比约50.86%，已超过40%赛道集中度阈值。"
+      ],
+      "dimension_scores": {
+        "financial_health": { "risk_score": 35, "note": "Research给财务7/10：利润增长、ROE改善，财务风险较低。" },
+        "valuation": { "risk_score": 50, "note": "PE_TTM约22.68，合理但非显著低估。" },
+        "industry_cycle": { "risk_score": 50, "note": "精简流程Industry未参与，默认5分。" },
+        "technical": { "risk_score": 98, "note": "跌破止损且放量暴跌、主力连续净流出。" },
+        "macro": { "risk_score": 50, "note": "精简流程Industry未参与，默认5分。" },
+        "news_sentiment": { "risk_score": 50, "note": "精简流程News未参与，默认中性。" },
+        "concentration": { "risk_score": 80, "note": "汽车零部件/智能汽车链占比约50.86%，超过40%阈值。" }
+      },
+      "risk_control_advice": "应立即执行止损退出；放量破位和连续资金流出使反弹等待的风险收益不对称，不建议为摊薄成本而补仓或放宽24.00止损线。"
+    }
+  ],
+  "overall_risk_control_advice": "两只标的均已跌破预设止损线，且技术面均处极端弱势；风控结论为立即止损退出两只止损仓位。若CIO选择不立即卖出，至少应禁止加仓、设定当日/次日最迟退出时限，并记录override理由。"
+}
