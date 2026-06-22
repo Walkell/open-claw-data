@@ -1,0 +1,90 @@
+{
+  "principal": "klaire",
+  "agent": "risk",
+  "cycle_id": "klaire-20260622-1434-002837",
+  "data": {
+    "symbol": "002837",
+    "name": "英维克",
+    "scene": "深度分析——数据中心液冷龙头",
+    "risk_score": 73,
+    "risk_score_scale": "0-100",
+    "verdict": "HALT",
+    "canonical_verdict": "VETO",
+    "veto_reason": "估值与盈利兑现严重脱节：现价约77.38元对应PE约204倍、PB约29.9倍，Q1归母净利同比-81.97%、经营现金流为-3.86亿元且应收周转天数升至234天；叠加强势放量后的超买波动和卖方目标价40元所隐含的约48%下行风险，新增买入风险达到否决阈值。",
+    "market_data_quality": {
+      "current_price": 77.38,
+      "change_pct": 4.05,
+      "volume_ratio": 6.32,
+      "source_status": "仅腾讯gtimg单源成功；东方财富/网易/同花顺/新浪未形成有效双源验证。价格与上游Research给出的约77.35基本一致，但仍标注单源风险。"
+    },
+    "dimensions": {
+      "financial_health": {
+        "score_0_10": 8.5,
+        "score_0_100": 85,
+        "note": "营收高增但利润质量急剧恶化：2026Q1营收+26.03%，归母净利仅865.76万元、同比-81.97%；经营现金流-3.86亿元，OCF/营收-32.87%；应收账款周转天数234天，资产负债率55.1%。",
+        "source": "self+research"
+      },
+      "valuation": {
+        "score_0_10": 9.5,
+        "score_0_100": 95,
+        "note": "PE约204倍、PB约29.93倍，市值约875-986亿元对应最近年度归母净利约5.22亿元；若按30-50倍合理化估值，需要约17.5-33亿元净利支撑，相当于当前利润的约3.4-6.3倍。",
+        "source": "self+research"
+      },
+      "industry_cycle": {
+        "score_0_10": 3.5,
+        "score_0_100": 35,
+        "note": "行业景气度高，液冷受AI算力功耗升级驱动，但Industry明确业绩爆发点偏2027-2028，当前处于需求先行、业绩滞后阶段。",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score_0_10": 7.5,
+        "score_0_100": 75,
+        "note": "现价77.38，日内涨幅约4.05%、量比约6.32，强势突破但逼近上轨且波动放大；当前位置更偏情绪和资金定价，回撤弹性高。",
+        "source": "self+research"
+      },
+      "macro": {
+        "score_0_10": 4.5,
+        "score_0_100": 45,
+        "note": "AI算力资本开支仍提供中期需求支撑，但液冷订单兑现、客户集中和资本开支节奏存在宏观/产业周期不确定性。",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score_0_10": 8.0,
+        "score_0_100": 80,
+        "note": "龙虎榜资金抢筹与TOP3认证偏利好，但摩根大通维持减持且目标价40元，西部证券下调盈利预测21.85%，董秘否认英伟达大额订单传闻，Q1净利大幅下滑。",
+        "source": "news_agent"
+      }
+    },
+    "concentration_detail": {
+      "positions_basis": "读取Klaire持仓表：双环传动、科创50ETF、信创ETF、均胜电子、盾安环境、杭叉集团；马钢股份持仓数为0不计入。盾安/均胜虽已裁决止损待执行，但表内仍显示持有，故同时给出含/不含口径。",
+      "total_market_value_estimate": 37649.60,
+      "direct_ai_compute_or_storage_weight": 0.0,
+      "liquid_cooling_direct_weight": 0.0,
+      "related_thermal_management_proxy_weight": 5.72,
+      "broad_tech_indirect_weight": 35.85,
+      "position_weights": [
+        {"symbol": "002472", "name": "双环传动", "weight_pct": 32.67, "pnl_pct": 0.75, "theme": "机器人/汽车零部件"},
+        {"symbol": "588080", "name": "科创50ETF", "weight_pct": 17.34, "pnl_pct": -1.10, "theme": "科创宽基，含半导体/AI间接敞口"},
+        {"symbol": "159540", "name": "信创ETF", "weight_pct": 18.51, "pnl_pct": -9.62, "theme": "信创"},
+        {"symbol": "600699", "name": "均胜电子", "weight_pct": 12.67, "pnl_pct": -4.14, "theme": "汽车电子，止损待执行"},
+        {"symbol": "002011", "name": "盾安环境", "weight_pct": 5.72, "pnl_pct": -5.74, "theme": "制冷/热管理 proxy，止损待执行"},
+        {"symbol": "603298", "name": "杭叉集团", "weight_pct": 13.09, "pnl_pct": -2.18, "theme": "工程机械/叉车"}
+      ],
+      "post_trade_constraint": "由于未给出拟建仓金额，无法计算英维克加入后的精确集中度；按当前持仓，AI算力/液冷直接持仓为0%，含科创50ETF与盾安热管理proxy约23.06%。若将科创50ETF、信创ETF均视作广义科技敞口，则已有约35.85%；新增英维克超过约4.15个百分点将使广义科技集中度突破40%。"
+    },
+    "concentration_weighted_pnl": {
+      "market_value_weighted_pnl_all_current_positions_pct": -2.86,
+      "market_value_weighted_pnl_excluding_pending_stop_loss_pct": -2.47,
+      "note": "当前组合加权盈亏为负，说明新增高波动高估值标的会放大回撤敏感性；盾安/均胜待止损执行前，组合风险预算仍被亏损仓占用。"
+    },
+    "market_vs_fundamental_disconnect": {
+      "jpm_target_price": 40.0,
+      "current_price_used": 77.38,
+      "premium_to_target_pct": 93.45,
+      "downside_to_target_pct": -48.31,
+      "assessment": "脱节程度高。40元目标价与77元现价的差距不是普通估值分歧，而是两套定价框架的冲突：卖方目标价更贴近当前盈利、下调预测和订单未兑现；市场现价主要定价2027-2028液冷渗透率、AI算力资本开支和英伟达生态认证的期权价值。若未来2年利润不能从约5亿元级别提升至约18-33亿元区间，当前估值将面临PE压缩与盈利下修的双重风险。",
+      "risk_interpretation": "当前价格对利好兑现要求极高，任何大额订单证伪、毛利率继续下滑、现金流恶化或行业竞争加剧，都可能触发从主题定价向基本面定价的快速切换。"
+    },
+    "summary": "英维克的主要风险是估值已提前透支2027-2028液冷景气，但当前利润、现金流和订单证据尚不足以支撑约204倍PE与接近千亿市值。"
+  }
+}

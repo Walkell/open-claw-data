@@ -1,0 +1,101 @@
+{
+  "principal": "klaire",
+  "agent": "risk",
+  "cycle_id": "klaire-20260622-1420-ZG-BJ-JM",
+  "scene": "新增观察池评估",
+  "data": {
+    "symbol": "002049",
+    "name": "紫光国微",
+    "risk_score": 60,
+    "risk_score_scale": "0-100; higher means higher risk",
+    "verdict": "CAUTION",
+    "veto_reason": "",
+    "market_data": {
+      "price": 82.03,
+      "change_pct": 2.04,
+      "volume_ratio": "4.77",
+      "source_quality": "单源未验证：腾讯gtimg可用；网易502、同花顺404、新浪403；未采用上游prompt中的价格作为当前价"
+    },
+    "position_context": {
+      "existing_semiconductor_or_special_chip_position": 0,
+      "existing_ai_compute_position": 0,
+      "existing_auto_parts_weight_estimate": 0.5106,
+      "note": "按持仓表成本价、持仓数和盈亏比例估算市值权重；盾安环境/均胜电子仍处持有状态，若执行止损，汽车零部件集中度将下降。"
+    },
+    "concentration_detail": {
+      "current_sector_weights_estimated": {
+        "auto_parts": 51.06,
+        "broad_tech_etf": 17.34,
+        "xinchuang_etf": 18.51,
+        "industrial_equipment": 13.09,
+        "semiconductor_special_chip": 0
+      },
+      "after_add_ziguang_scenarios_post_trade_weight": {
+        "add_5pct_portfolio": {
+          "semiconductor_special_chip": 5.0,
+          "auto_parts_diluted": 48.53,
+          "comment": "新增赛道集中度低，未触及40%阈值；汽车零部件仍偏高。"
+        },
+        "add_8pct_portfolio": {
+          "semiconductor_special_chip": 8.0,
+          "auto_parts_diluted": 46.98,
+          "comment": "半导体/特种芯片集中度仍安全；组合仍受汽车零部件持仓拖累。"
+        },
+        "add_10pct_portfolio": {
+          "semiconductor_special_chip": 10.0,
+          "auto_parts_diluted": 45.95,
+          "comment": "半导体/特种芯片仍未触及40%阈值，但单一新票不宜过快上至高仓位。"
+        }
+      },
+      "risk_judgement": "紫光国微属于半导体/特种芯片赛道，Klaire该赛道当前0持仓，新增观察池不构成集中度风险；真正的组合集中度风险仍来自汽车零部件既有持仓。"
+    },
+    "concentration_weighted_pnl": {
+      "sector": "semiconductor_special_chip",
+      "current_weighted_pnl_pct": 0.0,
+      "after_watchlist_add_only_weighted_pnl_pct": 0.0,
+      "after_new_position_initial_weighted_pnl_pct": 0.0,
+      "note": "该赛道当前无持仓；加入观察池不产生浮盈亏；若新建仓，初始加权浮盈按0%计。"
+    },
+    "risk_dimensions": {
+      "financial_health": {
+        "risk_score": 55,
+        "note": "营收与净利高增、毛利率约53%，但ROE约9.6%偏低且部分利润来自公允价值变动，财务质量需折价。"
+      },
+      "valuation": {
+        "risk_score": 62,
+        "note": "PE约42倍、PB约5倍，PEG视角尚可但已反映较多乐观预期，板块存在估值透支风险。"
+      },
+      "industry_cycle": {
+        "risk_score": 45,
+        "note": "特种芯片/FPGA国产替代确定性较强，行业景气度较好；但半导体板块阶段性拥挤。"
+      },
+      "technical": {
+        "risk_score": 65,
+        "note": "现价82.03、涨幅2.04%、量比4.77；短线强势但近期急涨后存在回撤风险，且行情仅单源验证。"
+      },
+      "macro_and_policy": {
+        "risk_score": 55,
+        "note": "国产替代和军工资质具政策支撑，但产业资本减持和高估值环境压制风险偏好。"
+      },
+      "news_sentiment": {
+        "risk_score": 50,
+        "note": "News委员默认0，按中性处理。"
+      }
+    },
+    "watchlist_recommendation": {
+      "should_add_to_watchlist": true,
+      "recommendation": "可加入观察池，但以CAUTION标记，不建议追高触发买入；等待回撤或放量确认。",
+      "suggested_observation_price_range": {
+        "primary_range": "76.0-80.0",
+        "deep_value_range": "72.0-75.0",
+        "invalid_or_reassess_above": "若继续拉升至85以上且无业绩/订单新催化，风险收益比下降，应重新评估。"
+      },
+      "risk_controls": [
+        "观察池阶段重点跟踪扣非利润增速与非经常性收益占比，避免只看表观净利高增。",
+        "若未来实际建仓，建议单票初始权重不高于5%-8%，避免在半导体估值拥挤期一次性重仓。",
+        "若汽车零部件持仓未按CIO裁决降仓，组合层面仍应优先处理既有集中度风险。"
+      ]
+    },
+    "summary": "紫光国微基本面和赛道地位较强、组合新增集中度风险低，但估值已不便宜且短线急涨后回撤风险偏高，观察池可入但需CAUTION。"
+  }
+}
