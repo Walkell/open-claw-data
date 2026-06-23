@@ -307,7 +307,7 @@
       "model": {
         "primary": "deepseek/deepseek-v4-pro",
         "fallbacks": [
-          "glm/glm-5.2"
+          "volcengine-plan/glm-5.2"
         ]
       },
       "models": {
@@ -335,7 +335,7 @@
         "model": {
           "primary": "deepseek/deepseek-v4-pro",
           "fallbacks": [
-            "glm/glm-5.2"
+            "volcengine-plan/glm-5.2"
           ]
         },
         "models": {
@@ -566,7 +566,7 @@
         "model": {
           "primary": "volcengine-plan/deepseek-v4-pro",
           "fallbacks": [
-            "glm/glm-5.2"
+            "volcengine-plan/glm-5.2"
           ]
         },
         "models": {
@@ -649,7 +649,7 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-news",
         "agentDir": "/home/ubuntu/.openclaw/agents/news/agent",
         "model": {
-          "primary": "glm/glm-5.2",
+          "primary": "volcengine-plan/glm-5.2",
           "fallbacks": [
             "deepseek/deepseek-v4-pro"
           ]
@@ -802,7 +802,7 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-monitor",
         "agentDir": "/home/ubuntu/.openclaw/agents/monitor/agent",
         "model": {
-          "primary": "glm/glm-5.2",
+          "primary": "volcengine-plan/glm-5.2",
           "fallbacks": [
             "volcengine-plan/minimax-m3"
           ]
@@ -871,7 +871,7 @@
         "model": {
           "primary": "deepseek/deepseek-v4-pro",
           "fallbacks": [
-            "glm/glm-5.2"
+            "volcengine-plan/glm-5.2"
           ]
         },
         "identity": {
