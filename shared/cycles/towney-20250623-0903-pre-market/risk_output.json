@@ -1,0 +1,77 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20250623-0903-pre-market",
+  "data": {
+    "scope": "组合层风险审查 + 11个持仓标的六维评分（pre-market全量复盘）",
+    "risk_score": 6.2,
+    "verdict": "CAUTION",
+    "headline": "组合处于浮盈高位+多标的极端超买状态。AI算力链广义集中度41.49%已突破软VETO线(40%)1.49pct；黄金距止损2.5%构成单标的硬VETO。整体允许止盈/减仓/调仓动作，禁止任何AI/半导体方向新增加仓。",
+    "concentration_detail": {
+      "AI算力链(广义)": {"constituents": ["688041","688008","300394","688120","002156","588090"], "current_pct": 41.49, "threshold_pct": 40.0, "level": "🟠", "rule_hit": "AGENTS.md硬规则：AI赛道集中度>40% → VETO任何AI方向新增", "note": "突破软VETO线1.49pct。结构性原因：天孚通信+94.1%浮盈被动膨胀至11.41%+海光信息满仓未减。CIO止盈/减仓动作落地后预计自然回落至38%以下。"},
+      "半导体大类(狭义)": {"constituents": ["688120","688041","688008","002156","588090"], "current_pct": 30.08, "threshold_pct": 60.0, "level": "🟢", "rule_hit": "未触发60%硬阈值", "note": "半导体狭义30.08%处于安全区间下半部"},
+      "光通信单赛道": {"constituents": ["300394"], "current_pct": 11.41, "threshold_pct": 30.0, "level": "🟢", "rule_hit": "未触发", "note": "单标的浮盈被动膨胀，MACD死叉提示动能衰减"},
+      "AI芯片(海光+澜起)": {"constituents": ["688041","688008"], "current_pct": 13.65, "threshold_pct": 30.0, "level": "🟢", "rule_hit": "未触发", "note": "国产CPU/DCU+内存接口芯片细分龙头组合"},
+      "美股ETF合计": {"constituents": ["513300","513650"], "current_pct": 6.49, "threshold_pct": 15.0, "level": "🟢", "rule_hit": "未触发", "note": "美股配置整体偏低"},
+      "宽基ETF合计": {"constituents": ["159949","510500"], "current_pct": 7.19, "threshold_pct": 20.0, "level": "🟢", "rule_hit": "未触发", "note": "A股宽基底仓合理"},
+      "防御资产(黄金)": {"constituents": ["518880"], "current_pct": 1.75, "threshold_pct": 10.0, "level": "🟢", "rule_hit": "占比未超，但标的本身因距止损≤3%触发rule_3", "note": "已大幅减仓至1.75%"},
+      "组合现金/未配置": {"constituents": [], "current_pct": 42.39, "threshold_pct": null, "level": "🟢", "rule_hit": "无", "note": "11个持仓合计57.61%，剩余42.39%现金，CIO弹性资金充足"}
+    },
+    "concentration_weighted_pnl": {
+      "AI算力链(广义)": 19.27,
+      "半导体大类(狭义)": 8.53,
+      "光通信单赛道": 10.74,
+      "AI芯片(海光+澜起)": 3.26,
+      "半导体设备(华海清科)": 1.51,
+      "半导体封测(通富微电)": 0.30,
+      "美股ETF合计": 1.24,
+      "宽基ETF合计": 1.93,
+      "防御资产(黄金)": 0.01,
+      "组合总加权浮盈": 19.41,
+      "note": "组合加权浮盈19.41%。光通信单标的贡献10.74%(占总浮盈55.3%)，回吐风险敞口最大。光通信+AI芯片合计14.00%加权浮盈集中度极高，必须主动锁利。"
+    },
+    "floating_profit_rules": {
+      "rule_1_locked_profit_protection": {
+        "name": "浮盈保护规则", "trigger": "单标的浮盈>50% 且 RSI>70 或 60日分位>95%",
+        "hits": [
+          {"symbol": "688008", "pnl": 54.21, "rsi": 66.9, "percentile": 94.7, "action": "CIO 6/22已减仓一半@280.05，规则验证有效"},
+          {"symbol": "300394", "pnl": 94.1, "rsi": 54.7, "percentile": 71.1, "action": "未严格触发但MACD死叉，建议追踪止盈挂钩MA20≈314"}
+        ]
+      },
+      "rule_2_extreme_overbought": {
+        "name": "极端超买规则", "trigger": "RSI>80 或 60日分位≥98% 或 突破布林上轨",
+        "hits": [
+          {"symbol": "688120", "rsi": 84.7, "percentile": 98.1, "boll_break": true, "action": "三条件全中→STRONG SELL"},
+          {"symbol": "588090", "rsi": 74.1, "percentile": 98.2, "boll_touch": true, "action": "已突破止盈1.90，触发减仓/置换"},
+          {"symbol": "510500", "rsi": 68.9, "percentile": 97.4, "boll_touch": true, "action": "浮盈仅0.45%不构成减仓基础，禁止追高"},
+          {"symbol": "159949", "rsi": 64.1, "percentile": 100, "boll_touch": true, "action": "创60日新高+量比1.63放量，建议挂跟踪止盈"}
+        ]
+      },
+      "rule_3_stop_loss_proximity": {
+        "name": "止损临近规则", "trigger": "现价距止损≤3%硬阈值",
+        "hits": [
+          {"symbol": "518880", "current": 8.72, "stop_loss": 8.50, "distance_pct": 2.52, "action": "🔴 距止损2.52%<3% → HARD VETO 任何加仓；MACD死叉+跌破MA20/MA60趋势向下"}
+        ]
+      },
+      "rule_4_macd_divergence": {
+        "name": "MACD动能衰减规则", "trigger": "MACD死叉/量价背离",
+        "hits": [
+          {"symbol": "300394", "signal": "MACD死叉+ATR 7.71%高波动", "action": "重仓+高浮盈双重风险，建议跟踪止盈MA20"},
+          {"symbol": "513300", "signal": "MACD死叉+量比0.54", "action": "短期动能不足"},
+          {"symbol": "513650", "signal": "MACD死叉", "action": "仓位1.43%影响有限"},
+          {"symbol": "518880", "signal": "MACD死叉空头排列", "action": "见rule_3"}
+        ]
+      }
+    },
+    "six_gates_check": {
+      "gate_1_concentration_AI_40pct": {"rule": "AI赛道集中度>40% → VETO任何AI方向新增", "status": "🟠 ALERT", "current": 41.49, "threshold": 40.0, "action": "VETO任何AI/半导体方向新增加仓"},
+      "gate_2_stop_loss_3pct": {"rule": "距止损线≤3% → VETO该标的任何加仓", "status": "🔴 HIT", "hit_symbol": "518880", "distance_pct": 2.52, "action": "HARD VETO 黄金ETF任何加仓"},
+      "gate_3_position_single_30pct": {"rule": "单赛道持仓≤30%", "status": "🟢 PASS", "max_single_sector": 13.65, "note": "AI芯片13.65%最高"},
+      "gate_4_semi_total_60pct": {"rule": "半导体大类总占比≤60%", "status": "🟢 PASS", "current": 30.08},
+      "gate_5_individual_position_15pct": {"rule": "单标的持仓≤15%", "status": "🟢 PASS", "max_single_stock": 11.41, "max_symbol": "300394", "note": "天孚通信11.41%接近警戒线"},
+      "gate_6_data_quality": {"rule": "数据缺失维度≤2个", "status": "🟡 WARN", "issues": ["Tavily配额耗尽432", "akshare财务未启用，PE/PB依赖gtimg", "ETF类5个无个股新闻"], "action": "维度缺失补5分默认值，不影响整体评分"}
+    },
+    "symbol_risk_scores": [
+      {"symbol": "688120", "name": "华海清科", "risk_score": 7.2, "verdict": "VETO_NEW_BUY", "position_pct": 7.46, "pnl_pct": 20.3, "dimensions": {"financial_health": {"score": 6, "note": "PE 15.34合理，定增扩产资本开支大", "source": "self"}, "valuation": {"score": 6, "note": "PE分位59%中位偏上", "source": "self"}, "industry_cycle": {"score": 8.0, "note": "CMP国产替代+HBM扩产", "source": "industry_agent"}, "technical": {"score": 8, "note": "RSI 84.7+突破布林上轨+60日98.1%三重极端超买", "source": "self"}, "macro": {"score": 5.5, "note": "宏观中性偏积极", "source": "industry_agent"}, "news_sentiment": {"score": 7, "note": "定增缩水5%二次修订，监管敏感期偏负面", "source": "news_agent"}}, "summary": "技术面极端超买+定增缩水负面催化，建议止盈减仓。"},
+      {"symbol": "588090", "name": "科创芯片ETF", "risk_score": 6.8, "verdict": "VETO_NEW_BUY", "position_pct": 7.35, "pnl_pct": 5.8, "dimensions": {"financial_health": {"score": 5, "note": "ETF默认", "source": "self"}, "valuation": {"score": 6, "note": "已突破止盈1.90+分位98.2%极端", "source": "self"}, "industry_cycle": {"score": 7.5, "note": "科创芯片AI+国产替代", "source": "industry_agent"}, "technical": {"score": 7, "note": "RSI 74.1超买+分位98.2%", "source": "self"}, "macro": {"score": 5.5, "note": "中性", "source": "industry_agent"}, "news_sentiment": {"score": 5, "note": "成分股多空交织", "source": "news_agent"}}, "summary": "已突破止盈+极端超买，建议置换红利/军工或减仓。"},
+      {"symbol": "688008", "name": "澜起科技", "risk_score": 5.4, "verdict": "NOC", "position_pct": 6.08, "pnl_pct": 54.21, "dimensions": {"financial_health": {"score": 7, "note": "PE 16.42极具性价比", "source": "self"}, "valuation": {"score": 8, "note": "PE 16.42显著低于同业40-60x", "source": "self"}, "industry_cycle": {"score": 8.0, "note": "DDR5+AI服务器", "source": "industry_agent"}, "technical": {"score":
