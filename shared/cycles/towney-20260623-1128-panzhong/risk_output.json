@@ -2,69 +2,99 @@
   "principal": "towney",
   "agent": "risk",
   "cycle_id": "towney-20260623-1128-panzhong",
-  "data_quality": "⚠️ 单源未验证（仅腾讯gtimg可用，东方财富/网易/同花顺/新浪均502/403/404）；浮盈与持仓数据双源（Bitable + Research）一致",
+  "data_quality": "行情单源未验证：仅腾讯gtimg可用，东方财富/网易/同花顺/新浪均502/403/404；持仓与浮盈数据 Bitable 与 Research 双源一致",
   "data": {
     "symbol": "portfolio",
     "risk_score": 6.2,
     "verdict": "CONDITIONAL",
-    "veto_reason": "AI芯片/光通信赛道集中度 41.49% 已触发 AGENTS.md 铁律（>40% VETO 新增）；黄金ETF距止损仅1.08% 硬否决该标的任何加仓；华海清科与科创芯片ETF已突破止盈位但 6/22 CIO 减仓审批未执行 → 触发执行纪律 VETO 信号",
+    "veto_reason": "AI芯片/光通信赛道集中度 41.49% 触发铁律(>40% VETO 新增AI方向)；黄金ETF距止损仅1.08% 硬否决该标的任何加仓；华海清科/科创芯片ETF 突破止盈位但6/22 CIO 减仓审批未执行 → 执行纪律警报",
     "dimensions": {
-      "technical_risk":    { "score": 4.71, "weight": 0.20, "note": "加权技术分 5.29/10（Research）；天孚通信3、华海清科4、黄金ETF2 拖低；澜起/海光/通富/创业板50/中证500 多头排列但 RSI 接近超买", "source": "self" },
-      "fundamental_risk":  { "score": 3.16, "weight": 0.20, "note": "加权基本面+财务 6.84/10；半导体设计端/光通信 Q1 业绩强劲，估值PE分位普遍 85%-100% 偏高但财务质量整体良好", "source": "self+research" },
-      "concentration_risk":{ "score": 8.0,  "weight": 0.25, "note": "AI芯片+光通信+科创芯片ETF 合计 41.49% 占总资产，已突破 40% 铁律阈值；单标的天孚通信 11.41% > 10% 内控线；半导体设计端 22.73% 高度集中", "source": "self" },
-      "macro_risk":        { "score": 4.5,  "weight": 0.15, "note": "Industry 宏观 5.5/10 反向；中性偏多但市场普跌格局，资金从高位成长股流出", "source": "industry_agent" },
-      "event_risk":        { "score": 6.5,  "weight": 0.20, "note": "黄金ETF距止损1.08%(硬VETO标的)；华海清科+8.6%突破止盈/科创芯片ETF+4.23%突破止盈，6/22 CIO 减仓建议未执行；今日澜起-4.86%/天孚-3.50%/创业板50-2.41% 显示高位资金兑现", "source": "self" },
-      "news_risk":         { "score": 0,    "weight": 0,    "note": "News 委员本轮未参与，权重已重新分配至其他五维", "source": "n/a" }
+      "technical_risk": {
+        "score": 4.71,
+        "weight": 0.2,
+        "note": "加权技术分5.29/10；天孚通信3、华海清科4、黄金ETF2拖低；澜起/海光/通富多头排列但RSI接近超买",
+        "source": "self+research"
+      },
+      "fundamental_risk": {
+        "score": 3.16,
+        "weight": 0.2,
+        "note": "加权基本面+财务6.84/10；半导体设计/光通信Q1业绩强劲，但估值PE分位85%-100%偏高",
+        "source": "self+research"
+      },
+      "concentration_risk": {
+        "score": 8.0,
+        "weight": 0.25,
+        "note": "AI芯片+光通信+科创芯片ETF合计41.49%占总资产触发铁律；天孚通信单标的11.41%超10%内控线",
+        "source": "self"
+      },
+      "macro_risk": {
+        "score": 4.5,
+        "weight": 0.15,
+        "note": "Industry宏观5.5/10反向；中性偏多但市场普跌，资金从高位成长股流出",
+        "source": "industry_agent"
+      },
+      "event_risk": {
+        "score": 6.5,
+        "weight": 0.2,
+        "note": "黄金ETF距止损1.08%(VETO标的)；华海清科+8.6%/科创芯片ETF+4.23%突破止盈未减仓；澜起-4.86%/天孚-3.50%日内重挫",
+        "source": "self"
+      },
+      "news_risk": {
+        "score": 0,
+        "weight": 0,
+        "note": "News委员本轮未参与，权重已重新分配",
+        "source": "n/a"
+      }
     },
-    "weighted_score_calc": "4.71×0.20 + 3.16×0.20 + 8.0×0.25 + 4.5×0.15 + 6.5×0.20 = 0.942 + 0.632 + 2.000 + 0.675 + 1.300 = 5.55，集中度铁律惩罚 +0.65 → 6.2",
+    "weighted_score_calc": "4.71x0.20 + 3.16x0.20 + 8.0x0.25 + 4.5x0.15 + 6.5x0.20 = 5.55；集中度铁律惩罚 +0.65 = 6.2",
     "concentration_detail": {
-      "AI芯片/光通信(半导体设计+设备+光模块+科创芯片ETF)": {
+      "AI芯片_光通信合计": {
         "current_pct": 41.49,
         "threshold_pct": 40.0,
-        "level": "🔴",
-        "reason": "AGENTS.md 铁律 'AI赛道集中度>40% VETO 任何AI方向新增'，当前已超阈值 1.49pp"
+        "level": "RED",
+        "reason": "触发铁律 AI赛道>40% VETO新增；超阈值1.49pp"
       },
-      "半导体设计端(澜起+海光+通富+华海清科)": {
+      "半导体设计端_4标的": {
         "current_pct": 22.73,
         "threshold_pct": 25.0,
-        "level": "🟡",
-        "reason": "未超阈值但已逼近；4只标的同向波动风险高"
+        "level": "YELLOW",
+        "reason": "未超但已逼近；同向波动风险高"
       },
-      "光通信(天孚通信单标的)": {
+      "光通信_天孚单标的": {
         "current_pct": 11.41,
         "threshold_pct": 10.0,
-        "level": "🟠",
-        "reason": "单标的占比超10%内控线，且ATR%达11.97% 波动剧烈"
+        "level": "ORANGE",
+        "reason": "单标的超10%内控线；ATR%11.97波动剧烈"
       },
-      "美股ETF(纳斯达克+标普500)": {
+      "美股ETF": {
         "current_pct": 6.49,
         "threshold_pct": 15.0,
-        "level": "🟢",
+        "level": "GREEN",
         "reason": "合规"
       },
-      "宽基A股ETF(创业板50+中证500)": {
+      "宽基A股ETF": {
         "current_pct": 7.19,
         "threshold_pct": 15.0,
-        "level": "🟢",
+        "level": "GREEN",
         "reason": "合规"
       },
       "黄金ETF": {
         "current_pct": 1.75,
         "threshold_pct": 5.0,
-        "level": "🟢",
-        "reason": "占比已大幅降低，但绝对止损风险高"
+        "level": "GREEN",
+        "reason": "占比已低但距止损1.08%极险"
       }
     },
     "concentration_weighted_pnl": {
-      "AI芯片/光通信合计_加权浮盈_pct": 51.4,
+      "AI芯片光通信合计_加权浮盈_pct": 51.4,
       "半导体设计端_加权浮盈_pct": 45.6,
-      "光通信(天孚)_浮盈_pct": 86.6,
+      "光通信_天孚_浮盈_pct": 86.6,
       "科创芯片ETF_浮盈_pct": 22.0,
       "宽基A股ETF_加权浮盈_pct": 35.3,
       "美股ETF_加权浮盈_pct": 18.8,
       "黄金ETF_浮亏_pct": -6.7,
-      "组合加权浮盈_pct": 44.8,
-      "浮盈修正适用性": "AI赛道加权浮盈 51.4% 高于 50% 阈值 → 可在 CIO 综合时启用'浮盈保护减仓'豁免，但仅限减仓方向，禁止用于豁免新增加仓的集中度VETO"
+      "组合总加权浮盈_pct": 44.8,
+      "浮盈修正适用性": "AI赛道加权浮盈51.4%超过50%阈值 -> CIO可启用浮盈保护减仓豁免，但仅适用减仓方向；禁止用于豁免新增加仓的集中度VETO"
     },
     "holdings_assessment": [
       {
@@ -74,20 +104,20 @@
         "day_change_pct": -0.33,
         "position_pct": 7.46,
         "pnl_pct": 57.6,
-        "break_even": 147.10,
-        "stop_loss_distance_pct": 33.00,
-        "take_profit_distance_pct": 8.60,
+        "break_even": 147.1,
+        "stop_loss_distance_pct": 33.0,
+        "take_profit_distance_pct": 8.6,
         "downside_risk_pct": -33.0,
         "upside_potential_pct": 8.6,
         "individual_risk": 6.0,
         "verdict": "REDUCE",
-        "note": "已突破止盈位 +8.6%，6/22 CIO 已审批减至3.0%但未执行；技术面MACD死叉空头，RSI47偏弱；建议立即执行减仓至 3.0%，锁定57.6%浮盈"
+        "note": "突破止盈+8.6%，6/22 CIO审批减至3.0%未执行；MACD死叉空头RSI47偏弱；建议立即减至3.0%锁57.6%浮盈"
       },
       {
         "symbol": "300394",
         "name": "天孚通信",
-        "current_price": 314.70,
-        "day_change_pct": -3.50,
+        "current_price": 314.7,
+        "day_change_pct": -3.5,
         "position_pct": 11.41,
         "pnl_pct": 86.6,
         "break_even": 167.94,
@@ -97,7 +127,7 @@
         "upside_potential_pct": 22.36,
         "individual_risk": 7.5,
         "verdict": "CONDITIONAL_REDUCE",
-        "note": "单标的仓位11.41%超10%内控线；ATR%11.97极高；今日-3.50%，距止损9.35%缓冲不薄；RSI36.9接近超卖、MACD死叉；建议止盈一半锁定浮盈到 6%-7% 仓位"
+        "note": "单标的11.41%超10%内控线；ATR%11.97极高；今日-3.50%距止损9.35%缓冲薄；RSI36.9超卖+MACD死叉；建议止盈一半至6-7%仓位"
       },
       {
         "symbol": "688008",
@@ -113,7 +143,7 @@
         "upside_potential_pct": 5.09,
         "individual_risk": 6.5,
         "verdict": "WATCH_REDUCE",
-        "note": "今日-4.86%重挫；PE分位97.6%极度高估；移动止盈挂钩MA20≈250触发风险；建议在反弹至 280 上方再分批减至 3%-4%"
+        "note": "今日-4.86%重挫；PE分位97.6%极度高估；MA20≈250移动止盈触发风险；建议反弹至280上方再分批减至3-4%"
       },
       {
         "symbol": "688041",
@@ -129,7 +159,7 @@
         "upside_potential_pct": 24.44,
         "individual_risk": 5.5,
         "verdict": "HOLD",
-        "note": "今日除权(XD)，技术面多头排列、RSI69.2接近超买；估值PE分位85.1%偏贵；仓位7.57%合理；持有不动，跌破MA20=297触发减仓信号"
+        "note": "今日除权XD；多头排列RSI69.2接近超买；PE分位85.1%偏贵；仓位合理；跌破MA20=297触发减仓"
       },
       {
         "symbol": "002156",
@@ -145,7 +175,7 @@
         "upside_potential_pct": 11.44,
         "individual_risk": 5.0,
         "verdict": "HOLD",
-        "note": "仓位低风险可控；技术面多头排列；财务质量偏低但已计入定价；持有等加仓信号"
+        "note": "仓位低风险可控；多头排列；财务偏低已计入定价；持有等54-56加仓信号"
       },
       {
         "symbol": "588090",
@@ -161,7 +191,7 @@
         "upside_potential_pct": 4.23,
         "individual_risk": 6.5,
         "verdict": "REDUCE",
-        "note": "已突破止盈位 +4.23%，6/22 CIO 已审批减至3.5%但未执行；PE分位100%；RSI74.1超买；建议立即执行减仓至 3.5%-4.0%"
+        "note": "突破止盈+4.23%，6/22 CIO审批减至3.5%未执行；PE分位100%；RSI74.1超买；建议立即减至3.5-4.0%"
       },
       {
         "symbol": "159949",
@@ -172,13 +202,85 @@
         "pnl_pct": 70.6,
         "break_even": 1.203,
         "stop_loss_distance_pct": 17.52,
-        "take_profit_distance_pct": -21.30,
+        "take_profit_distance_pct": -21.3,
         "downside_risk_pct": -17.52,
-        "upside_potential_pct": 21.30,
+        "upside_potential_pct": 21.3,
         "individual_risk": 5.5,
         "verdict": "PARTIAL_TAKE_PROFIT",
-        "note": "浮盈70.6%丰厚；今日-2.41%；建议在2.1上方分批止盈30%-40%，落袋后剩余仓位让利润奔跑"
+        "note": "浮盈70.6%丰厚；今日-2.41%；建议2.1上方分批止盈30-40%落袋"
       },
       {
         "symbol": "510500",
-        "name": "中证500ETF
+        "name": "中证500ETF",
+        "current_price": 8.935,
+        "day_change_pct": -0.8,
+        "position_pct": 4.01,
+        "pnl_pct": 7.3,
+        "break_even": 8.302,
+        "stop_loss_distance_pct": 16.06,
+        "take_profit_distance_pct": -6.32,
+        "downside_risk_pct": -16.06,
+        "upside_potential_pct": 6.32,
+        "individual_risk": 4.5,
+        "verdict": "HOLD",
+        "note": "中证500分散度高；多头排列；估值PE分位99.9%属指数特性；持有"
+      },
+      {
+        "symbol": "513300",
+        "name": "纳斯达克ETF",
+        "current_price": 2.69,
+        "day_change_pct": -2.04,
+        "position_pct": 5.06,
+        "pnl_pct": 20.3,
+        "break_even": 2.235,
+        "stop_loss_distance_pct": 14.5,
+        "take_profit_distance_pct": -30.11,
+        "downside_risk_pct": -14.5,
+        "upside_potential_pct": 30.11,
+        "individual_risk": 5.0,
+        "verdict": "HOLD",
+        "note": "DIF下穿DEA短期偏弱；多头排列保持；估值合理；持有"
+      },
+      {
+        "symbol": "513650",
+        "name": "标普500ETF",
+        "current_price": 1.88,
+        "day_change_pct": -1.52,
+        "position_pct": 1.43,
+        "pnl_pct": 13.7,
+        "break_even": 1.654,
+        "stop_loss_distance_pct": 9.57,
+        "take_profit_distance_pct": -17.02,
+        "downside_risk_pct": -9.57,
+        "upside_potential_pct": 17.02,
+        "individual_risk": 4.5,
+        "verdict": "HOLD",
+        "note": "仓位极低；持有"
+      },
+      {
+        "symbol": "518880",
+        "name": "黄金ETF",
+        "current_price": 8.593,
+        "day_change_pct": -1.41,
+        "position_pct": 1.75,
+        "pnl_pct": -6.7,
+        "break_even": 9.2,
+        "stop_loss_distance_pct": 1.08,
+        "take_profit_distance_pct": -22.19,
+        "downside_risk_pct": -1.08,
+        "upside_potential_pct": 22.19,
+        "individual_risk": 9.0,
+        "verdict": "VETO_ADD_PREPARE_STOP",
+        "note": "距止损仅1.08%触发铁律(距止损≤3%VETO加仓)；技术面RSI32.4空头排列；建议盘中破8.5立即止损或主动减半"
+      }
+    ],
+    "portfolio_var": {
+      "single_day_VaR95_naive_pct": 5.92,
+      "single_day_VaR95_correlation_adj_pct": 4.14,
+      "extreme_drawdown_5sigma_pct": 12.43,
+      "method": "基于Research ATR%加权 * 1.645 (95% normal) + 同行业相关性0.7调整",
+      "interpretation": "95%置信度单日组合损失约4.14%(占总资产)；极端5sigma情景最大单日回撤约12.43%；考虑到AI赛道集中度高，相关性骤升场景下回撤可能放大至15-18%"
+    },
+    "summary": "组合 risk_score 6.2 (CONDITIONAL)，介于软VETO区间(7-8)之下但已逼近警戒。核心风险三重：(1)集中度铁律已触发——AI/光通信/半导体合计41.49%占总资产超过40%阈值，必须VETO所有AI方向新增加仓；(2)黄金ETF距止损仅1.08%进入紧急区间，需盘中破8.5立即止损或主动减半，禁止任何加仓；(3)执行纪律警报——6/22 CIO已审批华海清科减至3.0%、科创芯片ETF减至3.5%但未执行，今日两标的仍突破止盈位，建议CIO本轮裁决强制执行减仓避免浮盈回吐。组合加权浮盈44.8%处于丰厚区间，AI赛道单赛道加权浮盈51.4%可启用浮盈保护减仓豁免做主动止盈，但豁免仅适用减仓方向，禁止用于豁免新增加仓的VETO。"
+  }
+}
