@@ -1,0 +1,77 @@
+{
+  "principal": "klaire",
+  "agent": "research",
+  "cycle_id": "klaire-20260624-1207-杭叉深度",
+  "data": {
+    "symbol": "603298",
+    "data_quality": {
+      "realtime": {
+        "source": "腾讯gtimg",
+        "status": "单源可用",
+        "note": "东方财富(502)、网易财经(502)不可用；仅腾讯gtimg单源验证。K线数据来自akshare stock_zh_a_daily（150日，前复权）"
+      },
+      "price": 23.96,
+      "change_pct": -3.35,
+      "pe_ttm": 14.07,
+      "vol_ratio": 0.26,
+      "week52_high": 31.83,
+      "week52_low": 22.31
+    },
+    "dimensions": {
+      "technical": {
+        "score": 3,
+        "note": "空头趋势明确：价格运行于MA20(24.81)和MA60(25.68)下方，MA20/MA60死叉持续。布林带下轨(23.54)附近运行，价格位于布林带16.5%低位。MACD DIF/DEA均为负值但BAR刚翻红(0.084)，出现微弱底背离雏形。RSI(14)=45.6中性偏弱，未进入超卖区。量比0.26极端缩量，市场参与度极低。今日-3.35%放量下跌（相对近期均量），空方主导。距止损价23.00仅4%空间，风险敞口收窄。整体处于下降通道中段偏低位，有初步止跌迹象但未确认反转。",
+        "atr_pct": 4.64,
+        "bollinger_upper": 26.07,
+        "bollinger_lower": 23.54,
+        "bollinger_mid": 24.81,
+        "bollinger_position_pct": 16.5,
+        "ma20": 24.81,
+        "ma60": 25.68,
+        "ma60_high": 29.22,
+        "ma60_low": 23.13,
+        "pe_percentile": "14.07 (TTM，52周区间22.31-31.83，当前处于低位区间)",
+        "vol_ratio": 0.26,
+        "macd_dif": -0.407,
+        "macd_dea": -0.449,
+        "macd_bar": 0.084,
+        "rsi_14": 45.63,
+        "high_20d": 27.03,
+        "low_20d": 23.02,
+        "high_60d": 29.71,
+        "low_60d": 23.02,
+        "support_resistance": {
+          "supports": [
+            {"level": 23.54, "type": "布林带下轨(20)"},
+            {"level": 23.13, "type": "近60日最低收盘价"},
+            {"level": 23.02, "type": "近60日最低价(日内)"},
+            {"level": 22.31, "type": "52周最低价"}
+          ],
+          "resistances": [
+            {"level": 24.81, "type": "MA20 / 布林中轨(重合)"},
+            {"level": 25.68, "type": "MA60"},
+            {"level": 27.03, "type": "近20日最高价"},
+            {"level": 29.71, "type": "近60日最高价"}
+          ]
+        },
+        "trend": {
+          "primary": "空头",
+          "secondary": "下降通道中段偏低位，MACD BAR刚翻红出现微弱底背离雏形",
+          "ma_cross": "死叉（MA20 24.81 < MA60 25.68）",
+          "reversal_signal": "MACD BAR由负转正(0.084)，为潜在转折信号但力度极弱，需放量阳线确认",
+          "volume_signal": "极端缩量（量比0.26），市场交投清淡，方向选择在即"
+        },
+        "position_context": {
+          "cost": 25.20,
+          "shares": 200,
+          "stop_loss": 23.00,
+          "take_profit": 31.00,
+          "unrealized_pnl_pct": -4.92,
+          "distance_to_stop_pct": 4.01,
+          "note": "浮亏4.92%，距止损仅4.01%。价格已跌破成本价，若继续下行至23.00将触发止损。止损位低于布林下轨(23.54)和60日最低(23.02)，存在一定缓冲但空间有限。"
+        }
+      }
+    },
+    "summary": "杭叉集团(603298)技术面处于明确空头趋势：价格运行于MA20/MA60下方且死叉持续，布林带低位运行。MACD BAR刚翻红(0.084)为唯一积极信号但力度极弱。RSI中性偏弱(45.6)，量比0.26极端缩量。今日-3.35%下跌，空方主导。持仓浮亏4.92%，距止损23.00仅4.01%空间。支撑关注布林下轨23.54和60日低点23.02，压力关注MA20(24.81)和MA60(25.68)。需放量站上MA20才能确认短期止跌，否则将继续探底。"
+  }
+}
