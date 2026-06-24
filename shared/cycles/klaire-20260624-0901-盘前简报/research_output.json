@@ -1,0 +1,108 @@
+{
+  "principal": "klaire",
+  "agent": "research",
+  "cycle_id": "klaire-20260624-0901-盘前简报",
+  "data_quality": "⚠部分受限",
+  "data_quality_note": "gtimg单源可用（价格/涨跌幅/量比）；东方财富API 502、网易502、同花顺404、新浪K线仅用于历史数据。PE分位数以近500日价格分位估算（EPS相对稳定假设）。涨跌幅来自gtimg预计算字段。",
+  "data": {
+    "holdings": [
+      {
+        "symbol": "002472",
+        "name": "双环传动",
+        "dimensions": {
+          "technical": {
+            "score": 4.5,
+            "note": "跌破MA20(41.95)，MACD死叉(BAR=-0.371)，量比0.92缩量下跌。RSI 51.7中性。价格位于布林带中轨下方，距下轨(38.49)约5.1%。近500日价格分位77.6%偏高。ATR 6.61%高波动，短线偏弱。",
+            "atr_pct": 6.61,
+            "bollinger_upper": 45.42,
+            "ma20": 41.95,
+            "ma60_high": 46.12,
+            "pe_percentile": 77.6,
+            "vol_ratio": 0.92
+          }
+        }
+      },
+      {
+        "symbol": "588080",
+        "name": "科创50ETF",
+        "dimensions": {
+          "technical": {
+            "score": 7.0,
+            "note": "站稳MA20(1.80)上方，MACD金叉持续(BAR=0.040)。RSI 69.1接近超买区。价格逼近布林上轨(2.00)，距上轨仅2.2%。量比1.21温和放量。近5日连阳后首阴回调-1.71%，趋势仍偏多但短期超买需消化。",
+            "atr_pct": 4.20,
+            "bollinger_upper": 2.00,
+            "ma20": 1.80,
+            "ma60_high": 2.02,
+            "pe_percentile": null,
+            "vol_ratio": 1.21
+          }
+        }
+      },
+      {
+        "symbol": "159540",
+        "name": "信创ETF",
+        "dimensions": {
+          "technical": {
+            "score": 7.0,
+            "note": "站稳MA20(2.11)上方，MACD金叉持续(BAR=0.050)。RSI 66.4偏强。价格逼近布林上轨(2.34)，距上轨仅2.1%。量比0.99平量。近5日连阳后首阴-2.76%回吐，趋势偏多但短期超买。",
+            "atr_pct": 4.31,
+            "bollinger_upper": 2.34,
+            "ma20": 2.11,
+            "ma60_high": 2.36,
+            "pe_percentile": null,
+            "vol_ratio": 0.99
+          }
+        }
+      },
+      {
+        "symbol": "600699",
+        "name": "均胜电子",
+        "dimensions": {
+          "technical": {
+            "score": 3.0,
+            "note": "深度跌破MA20(25.88)，MACD死叉扩大(BAR=-0.417)。RSI 29.3接近超卖区。价格逼近布林下轨(21.54)，距下轨6.3%。量比1.25放量下跌，近3日累计跌幅约7.6%。短线严重偏弱，但RSI超卖区域可能触发技术反弹。",
+            "atr_pct": 5.00,
+            "bollinger_upper": 30.23,
+            "ma20": 25.88,
+            "ma60_high": 33.13,
+            "pe_percentile": 62.4,
+            "vol_ratio": 1.25
+          }
+        }
+      },
+      {
+        "symbol": "002011",
+        "name": "盾安环境",
+        "dimensions": {
+          "technical": {
+            "score": 2.5,
+            "note": "深度跌破MA20(11.39)，MACD死叉持续(BAR=-0.160)。RSI 22.3进入超卖区。价格逼近布林下轨(9.78)，距下轨6.4%。量比1.34放量。近500日价格分位仅12.6%，处于2年低位区间。超卖严重但无企稳信号，空头主导。",
+            "atr_pct": 4.03,
+            "bollinger_upper": 13.01,
+            "ma20": 11.39,
+            "ma60_high": 13.23,
+            "pe_percentile": 12.6,
+            "vol_ratio": 1.34
+          }
+        }
+      },
+      {
+        "symbol": "603298",
+        "name": "杭叉集团",
+        "dimensions": {
+          "technical": {
+            "score": 5.0,
+            "note": "微幅跌破MA20(25.02)，MACD出现底背离(BAR=0.225转正，DIF仍低于DEA)。RSI 49.4中性。价格位于布林带中轨附近。量比1.42放量，昨日长上影线(高25.85低24.60)显示多空分歧。MACD底背离是潜在转多信号，但需确认站稳MA20。",
+            "atr_pct": 4.43,
+            "bollinger_upper": 26.76,
+            "ma20": 25.02,
+            "ma60_high": 30.18,
+            "pe_percentile": 66.2,
+            "vol_ratio": 1.39
+          }
+        }
+      }
+    ],
+    "summary": "Klaire持仓6只（不含已卖出马钢股份）。技术面整体偏弱：仅科创50ETF和信创ETF维持多头趋势但短期超买；双环传动MACD死叉+跌破MA20转弱；均胜电子和盾安环境深度超卖、RSI进入超卖区但无企稳信号；杭叉集团MACD底背离是唯一积极信号但需确认。数据源方面：gtimg单源可用，东方财富/网易/同花顺均不可用，PE分位数以价格分位估算。"
+  }
+}
