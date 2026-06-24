@@ -1,0 +1,82 @@
+{
+  "principal": "klaire",
+  "check_time": "2026-06-24T13:30:00+08:00",
+  "has_alerts": true,
+  "data_quality": "single-source-tencent",
+  "alerts": [
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "price": 40.48,
+      "change_pct": -0.20,
+      "alert_type": "止损触及",
+      "alert_detail": "现价40.48 < 止损价40.81，已跌破止损线",
+      "severity": "high"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "price": 22.84,
+      "change_pct": -0.65,
+      "alert_type": "止损触及",
+      "alert_detail": "现价22.84 < 止损价24.00，持续位于止损线下方（备注：已破止损不补，反弹24先出）",
+      "severity": "high"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "price": 10.31,
+      "change_pct": -1.34,
+      "alert_type": "止损触及",
+      "alert_detail": "现价10.31 < 止损价10.50，已跌破止损线",
+      "severity": "high"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "price": 2.039,
+      "change_pct": 4.24,
+      "alert_type": "止盈触及",
+      "alert_detail": "现价2.039 ≥ 止盈价1.98，达成止盈条件，可考虑告知 Butler 决策",
+      "severity": "medium"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "price": 2.368,
+      "change_pct": 3.36,
+      "alert_type": "止盈触及",
+      "alert_detail": "现价2.368 ≥ 止盈价2.30，达成止盈条件，可考虑告知 Butler 决策",
+      "severity": "medium"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "price": 23.97,
+      "change_pct": -3.31,
+      "alert_type": "接近止损",
+      "alert_detail": "现价23.97 距止损价23仅4.05%，跌幅-3.31%，请关注",
+      "severity": "medium"
+    },
+    {
+      "symbol": "002125",
+      "name": "湘潭电化（观察池）",
+      "price": 15.60,
+      "change_pct": -6.08,
+      "alert_type": "建仓触发+大跌",
+      "alert_detail": "现价15.60已达目标建仓价16（跌破后），同时今日跌幅-6.08%（>±5%），建议告知 Butler 确认是否启动建仓",
+      "severity": "medium"
+    },
+    {
+      "symbol": "600875",
+      "name": "东方电气（观察池）",
+      "price": 30.49,
+      "change_pct": -1.13,
+      "alert_type": "建仓触发",
+      "alert_detail": "现价30.49已跌破目标建仓价33，可关注是否满足前置条件（MACD金叉+RSI>50+站稳MA20两日）",
+      "severity": "low"
+    }
+  ],
+  "summary": "klaire 持仓6只标的中3只跌破止损线（002472双环传动、600699均胜电子、002011盾安环境），2只达成止盈（588080科创50ETF +4.24%、159540信创ETF +3.36%），1只接近止损（603298杭叉集团 -3.31%）。观察池2只触发建仓条件：002125湘潭电化跌至15.60（目标16）伴-6.08%大跌，600875东方电气跌至30.49（目标33）。数据为腾讯单源未交叉验证（其他备源HTTP 502不可用）。建议告知 Butler 优先处理3只止损触发及2只止盈标的。",
+  "data_source_note": "腾讯 gtimg 单源；akshare/网易/同花顺/新浪在本时刻均不可用（502/403/404/DNS）"
+}

@@ -1,0 +1,163 @@
+{
+  "cycle_id": "towney-20260624-1333-rebalance",
+  "committee_member": "Industry",
+  "data_quality": "⚠️ Tavily配额超限(432)，web_search同样受限；行业数据来自新浪财经(2026-06-24)文章+腾讯gtimg实时行情；宏观/黄金/美股数据依赖有限源，部分依赖早报摘要推断",
+  "sector_analysis": {
+    "半导体设备": {
+      "trend": "上升",
+      "strength": "强",
+      "policy_tailwind": "利好：台积电7nm以下涨价5-10%拉动设备需求；华海清科定增37.95亿扩产；国产替代政策持续加码；科创半导体设备ETF冲击7连涨",
+      "fund_flow": "净流入",
+      "related_holdings": ["688120"],
+      "score": 8
+    },
+    "半导体芯片（整体）": {
+      "trend": "上升",
+      "strength": "强",
+      "policy_tailwind": "利好：全球芯片牛行情，算力通胀主线明确；但估值处于历史最高水平，杠杆资金散户化特征明显，需警惕过热回调",
+      "fund_flow": "净流入",
+      "related_holdings": ["588090"],
+      "score": 7
+    },
+    "半导体设计（内存接口/存储）": {
+      "trend": "上升",
+      "strength": "强",
+      "policy_tailwind": "利好：存储芯片爆发（美光+7%、海力士杠杆ETF年内10倍）；DDR5渗透率持续提升；长川科技H1净利润翻倍印证行业高景气",
+      "fund_flow": "净流入",
+      "related_holdings": ["688008"],
+      "score": 8
+    },
+    "光通信/光器件": {
+      "trend": "上升",
+      "strength": "强",
+      "policy_tailwind": "利好：AI算力持续拉动800G/1.6T光模块需求；英伟达液冷方案推动数据中心升级；光通信产业链持续受益于算力基建",
+      "fund_flow": "净流入",
+      "related_holdings": ["300394"],
+      "score": 8
+    },
+    "半导体-国产CPU/GPU": {
+      "trend": "上升",
+      "strength": "强",
+      "policy_tailwind": "利好：国产算力为中国银河明确推荐方向；信创+国产替代双轮驱动；AI推理需求爆发拉动国产GPU需求",
+      "fund_flow": "净流入",
+      "related_holdings": ["688041"],
+      "score": 8
+    },
+    "半导体封测": {
+      "trend": "上升",
+      "strength": "强",
+      "policy_tailwind": "利好：2026年全球先进封装市场预计581亿美元（中商产业研究院）；Chiplet/3D封装为AI芯片关键路径；通富微电今日+8.45%领涨",
+      "fund_flow": "净流入",
+      "related_holdings": ["002156"],
+      "score": 8
+    },
+    "创业板权重": {
+      "trend": "上升",
+      "strength": "中",
+      "policy_tailwind": "利好：上周创业板50涨10.95%，估值仍有10-12.5%优势；科技成长风格主导市场",
+      "fund_flow": "净流入",
+      "related_holdings": ["159949"],
+      "score": 7
+    },
+    "中盘宽基": {
+      "trend": "震荡",
+      "strength": "中",
+      "policy_tailwind": "中性：市场风格偏科技成长，中盘股相对滞涨；私募仓位创9周新高(81.55%)支撑整体水位",
+      "fund_flow": "平衡",
+      "related_holdings": ["510500"],
+      "score": 6
+    },
+    "美股纳斯达克": {
+      "trend": "震荡",
+      "strength": "中",
+      "policy_tailwind": "中性偏空：美股科技巨头突发利空（SpaceX、谷歌重挫市值蒸发超5000亿美元）；但AI数据中心扩建基本面仍强劲；分歧加剧",
+      "fund_flow": "平衡",
+      "related_holdings": ["513300"],
+      "score": 6
+    },
+    "美股标普500": {
+      "trend": "震荡",
+      "strength": "弱",
+      "policy_tailwind": "中性：美股整体高位震荡，科技板块分歧加大；非科技板块缺乏明确催化",
+      "fund_flow": "平衡",
+      "related_holdings": ["513650"],
+      "score": 5.5
+    },
+    "黄金": {
+      "trend": "震荡偏弱",
+      "strength": "弱",
+      "policy_tailwind": "中性偏空：几内亚叫停原金出口（供给端利好）；但美国解除伊朗石油制裁→风险偏好回升→避险需求下降；黄金ETF今日-0.49%",
+      "fund_flow": "净流出",
+      "related_holdings": ["518880"],
+      "score": 5
+    }
+  },
+  "holdings_industry_view": {
+    "688120": {
+      "sector": "半导体设备",
+      "competitive_position": "国内CMP设备绝对龙头，国内首台全自动板级CMP量测设备；定增37.95亿扩产；科创半导体材料设备指数权重股（前十大权重72.71%）",
+      "sector_score": 8,
+      "conclusion": "行业高景气+国产替代双驱动，建议维持或小幅加仓"
+    },
+    "588090": {
+      "sector": "半导体芯片（整体）",
+      "competitive_position": "跟踪科创芯片指数，覆盖半导体全产业链；受益于全球芯片牛市但估值处于历史最高水平",
+      "sector_score": 7,
+      "conclusion": "行业景气但估值偏高，建议持有但控制仓位，警惕过热回调"
+    },
+    "688008": {
+      "sector": "半导体设计（内存接口）",
+      "competitive_position": "DDR5内存接口芯片全球龙头（与Rambus、瑞萨三足鼎立）；存储周期上行+AI服务器拉动DDR5渗透",
+      "sector_score": 8,
+      "conclusion": "存储景气上行明确受益，建议维持或小幅加仓"
+    },
+    "300394": {
+      "sector": "光通信/光器件",
+      "competitive_position": "光器件平台型龙头，800G/1.6T光模块核心供应商；深度受益AI算力基建；持仓盈利+85.7%",
+      "sector_score": 8,
+      "conclusion": "行业高景气持续，但累计涨幅巨大，建议持有观察，不宜追高"
+    },
+    "159949": {
+      "sector": "创业板权重",
+      "competitive_position": "创业板50指数基金，覆盖新能源+医药+科技权重股；估值仍有性价比优势",
+      "sector_score": 7,
+      "conclusion": "科技成长风格受益，建议维持"
+    },
+    "510500": {
+      "sector": "中盘宽基",
+      "competitive_position": "中证500指数基金，中盘股代表；当前市场风格偏向科技大盘成长，中盘相对滞涨",
+      "sector_score": 6,
+      "conclusion": "行业维度中性，非当前主线风格，建议维持或小幅减仓腾挪至半导体"
+    },
+    "513300": {
+      "sector": "美股纳斯达克",
+      "competitive_position": "纳斯达克100指数基金；美股科技巨头近期出现利空（SpaceX/谷歌重挫），分歧加大",
+      "sector_score": 6,
+      "conclusion": "美股科技高位震荡，行业维度建议观望或小幅减仓"
+    },
+    "513650": {
+      "sector": "美股标普500",
+      "competitive_position": "标普500指数基金；美股整体高位，非科技板块缺乏催化",
+      "sector_score": 5.5,
+      "conclusion": "行业维度偏弱，建议小幅减仓或维持低配"
+    },
+    "518880": {
+      "sector": "黄金",
+      "competitive_position": "黄金ETF；避险属性，但当前风险偏好回升（股市走强+伊朗石油制裁解除）压制金价；持仓亏损-7.6%",
+      "sector_score": 5,
+      "conclusion": "行业维度偏空，风险偏好回升不利黄金，建议减仓或清仓"
+    },
+    "688041": {
+      "sector": "半导体-国产CPU/GPU",
+      "competitive_position": "国产x86 CPU龙头（海光DCU对标英伟达A100）；信创+AI推理双轮驱动；国产算力核心标的",
+      "sector_score": 8,
+      "conclusion": "国产替代+AI算力双主线加持，建议维持或小幅加仓"
+    },
+    "002156": {
+      "sector": "半导体封测",
+      "competitive_position": "国内先进封装龙头，深度绑定AMD；Chiplet/3D封装受益AI芯片需求爆发；今日+8.45%领涨持仓",
+      "sector_score": 8,
+      "conclusion": "先进封装景气上行明确受益，建议维持或小幅加仓"
+    }
+  }
+}
