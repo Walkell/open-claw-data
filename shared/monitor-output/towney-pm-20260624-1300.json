@@ -1,0 +1,99 @@
+{
+  "principal": "towney",
+  "timestamp": "2026-06-24T13:00:00+08:00",
+  "alerts": [
+    {
+      "level": "🟡",
+      "symbol": "688120",
+      "name": "华海清科",
+      "alert_type": "止盈触及",
+      "current_price": 243.89,
+      "change_pct": 5.58,
+      "reason": "现价243.89已达止盈价214.17（超13.9%）",
+      "dedupe": false
+    },
+    {
+      "level": "🔵",
+      "symbol": "688120",
+      "name": "华海清科",
+      "alert_type": "追踪止损提醒",
+      "current_price": 243.89,
+      "change_pct": 5.58,
+      "reason": "浮盈65.8%，浮盈保护率仅10.2%（触及止损将损失90%浮盈），止损滞后",
+      "dedupe": true
+    },
+    {
+      "level": "🟡",
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "alert_type": "止盈触及",
+      "current_price": 2.02,
+      "change_pct": 2.69,
+      "reason": "现价2.02已达止盈价1.9（超6.3%）",
+      "dedupe": false
+    },
+    {
+      "level": "🔵",
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "alert_type": "追踪止损提醒",
+      "current_price": 2.02,
+      "change_pct": 2.69,
+      "reason": "浮盈24.6%，浮盈保护率仅-25.3%（触及止损将损失100%浮盈），止损滞后",
+      "dedupe": true
+    },
+    {
+      "level": "🔵",
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "alert_type": "追踪止损提醒",
+      "current_price": 2.666,
+      "change_pct": 0.34,
+      "reason": "浮盈19.3%，浮盈保护率仅15.1%（触及止损将损失85%浮盈），止损滞后",
+      "dedupe": true
+    },
+    {
+      "level": "🔴",
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "alert_type": "止损触及",
+      "current_price": 8.453,
+      "change_pct": -0.98,
+      "reason": "现价8.453已跌破止损价8.5，请立即处理",
+      "dedupe": false
+    },
+    {
+      "level": "🔵",
+      "symbol": "688041",
+      "name": "海光信息",
+      "alert_type": "追踪止损提醒",
+      "current_price": 322.43,
+      "change_pct": 1.71,
+      "reason": "浮盈20.6%，浮盈保护率仅-22.4%（触及止损将损失100%浮盈），止损滞后",
+      "dedupe": true
+    },
+    {
+      "level": "🔵",
+      "symbol": "002156",
+      "name": "通富微电",
+      "alert_type": "大涨提醒",
+      "current_price": 73.57,
+      "change_pct": 7.53,
+      "reason": "今日涨幅7.53%",
+      "dedupe": true
+    },
+    {
+      "level": "🔵",
+      "symbol": "002156",
+      "name": "通富微电",
+      "alert_type": "追踪止损提醒",
+      "current_price": 73.57,
+      "change_pct": 7.53,
+      "reason": "浮盈22.4%，浮盈保护率仅-75.2%（触及止损将损失100%浮盈），止损滞后",
+      "dedupe": true
+    }
+  ],
+  "has_alerts": true,
+  "summary": "扫描11个持仓，触发 9 条预警。🟡华海清科(688120)止盈触及；🔵华海清科(688120)追踪止损提醒；🟡科创芯片ETF(588090)止盈触及；🔵科创芯片ETF(588090)追踪止损提醒；🔵纳斯达克ETF(513300)追踪止损提醒；🔴黄金ETF(518880)止损触及；🔵海光信息(688041)追踪止损提醒；🔵通富微电(002156)大涨提醒；🔵通富微电(002156)追踪止损提醒",
+  "data_source_note": "gtimg 单源（双次稳定验证；网易/同花顺/新浪/东方财富 API 当前不可用）"
+}
