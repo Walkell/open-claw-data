@@ -15,14 +15,10 @@
         }
       },
       "memory-lancedb": {
-        "enabled": true,
+        "enabled": false,
         "config": {
           "embedding": {
-            "apiKey": {
-              "source": "file",
-              "provider": "glm-secrets",
-              "id": "/glm/apiKey"
-            },
+            "apiKey": "${ZHIPU_API_KEY}",
             "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
             "model": "embedding-3",
             "dimensions": 2048

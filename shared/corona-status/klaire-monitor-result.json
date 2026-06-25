@@ -1,0 +1,112 @@
+{
+  "principal": "klaire",
+  "monitor_time": "2026-06-25T11:18:00+08:00",
+  "data_source": "双源验证（东方财富 + 腾讯 gtimg）",
+  "has_alerts": true,
+  "alerts": [
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "alert_type": "🔴 止损触及",
+      "detail": "现价 39.41 已跌破止损价 40.81（成本 40.693，浮亏约 -3.16%），请立即处理",
+      "current_price": 39.41,
+      "change_pct": -1.60,
+      "stop_loss": 40.81,
+      "vol_ratio": 1.62,
+      "severity": "urgent"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "alert_type": "🔴 止损触及",
+      "detail": "现价 22.22 已跌破止损价 24.00（成本 24.89，浮亏约 -10.7%），请立即处理",
+      "current_price": 22.22,
+      "change_pct": -2.37,
+      "stop_loss": 24.00,
+      "vol_ratio": 1.45,
+      "severity": "urgent"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF易方达",
+      "alert_type": "🟡 止盈触及",
+      "detail": "现价 2.109 已突破止盈价 1.98（成本 1.65，浮盈约 +27.8%），可考虑告知 Butler 决策",
+      "current_price": 2.109,
+      "change_pct": 3.59,
+      "take_profit": 1.98,
+      "vol_ratio": 1.32,
+      "severity": "warning"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF易方达",
+      "alert_type": "🟡 止盈触及",
+      "detail": "现价 2.502 已突破止盈价 2.30（成本 1.774，浮盈约 +41.0%），今日 +4.64% 放量上行",
+      "current_price": 2.502,
+      "change_pct": 4.64,
+      "take_profit": 2.30,
+      "vol_ratio": 1.47,
+      "severity": "warning"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "alert_type": "🟡 接近止损 + 放量反弹",
+      "detail": "现价 10.74 距止损价 10.50 仅 2.23%；今日反弹 +4.37%、量比 2.09，量价配合好转",
+      "current_price": 10.74,
+      "change_pct": 4.37,
+      "stop_loss": 10.50,
+      "vol_ratio": 2.09,
+      "severity": "warning"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "alert_type": "🟡 接近止损",
+      "detail": "现价 24.11 距止损价 23.00 仅 4.60%，今日 +1.30%，量比 1.00 流动性正常",
+      "current_price": 24.11,
+      "change_pct": 1.30,
+      "stop_loss": 23.00,
+      "vol_ratio": 1.00,
+      "severity": "warning"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电（观察池）",
+      "alert_type": "🔵 关注：放量上涨",
+      "detail": "现价 77.68 较目标建仓价 55 仍高出约 41%，今日 +4.07%、量比 1.88 放量上行，远离建仓窗口",
+      "current_price": 77.68,
+      "change_pct": 4.07,
+      "target_entry": 55.00,
+      "vol_ratio": 1.88,
+      "severity": "info"
+    },
+    {
+      "symbol": "002125",
+      "name": "湘潭电化（观察池）",
+      "alert_type": "🔵 关注：向建仓区间靠近",
+      "detail": "现价 15.19 已低于目标建仓价 16，今日 -3.61%、量比 0.80（缩量回调）；尚未确认建仓信号，建议告知 Butler 评估",
+      "current_price": 15.19,
+      "change_pct": -3.61,
+      "target_entry": 16.00,
+      "vol_ratio": 0.80,
+      "severity": "info"
+    }
+  ],
+  "no_alert_positions": [],
+  "watchlist_snapshot": [
+    {"symbol": "600875", "name": "东方电气", "price": 30.13, "change_pct": -0.82, "target_entry": 33.00, "note": "现价已低于建仓触发价 33，但需 MACD 金叉 + RSI>50 + 站稳 MA20 两日，技术前置条件未在快照内判定"},
+    {"symbol": "002049", "name": "紫光国微", "price": 83.81, "change_pct": 0.20, "target_entry": 78.00, "note": "未达建仓价"},
+    {"symbol": "002126", "name": "银轮股份", "price": null, "change_pct": null, "target_entry": null, "note": "无目标建仓价，未拉行情"},
+    {"symbol": "000988", "name": "华工科技", "price": null, "change_pct": null, "target_entry": null, "note": "无目标建仓价，未拉行情"}
+  ],
+  "positions_snapshot": [
+    {"symbol": "002472", "name": "双环传动",   "price": 39.41,  "change_pct": -1.60, "vol_ratio": 1.62},
+    {"symbol": "588080", "name": "科创50ETF",  "price": 2.109,  "change_pct": 3.59,  "vol_ratio": 1.32},
+    {"symbol": "159540", "name": "信创ETF",    "price": 2.502,  "change_pct": 4.64,  "vol_ratio": 1.47},
+    {"symbol": "600699", "name": "均胜电子",   "price": 22.22,  "change_pct": -2.37, "vol_ratio": 1.45},
+    {"symbol": "002011", "name": "盾安环境",   "price": 10.74,  "change_pct": 4.37,  "vol_ratio": 2.09},
+    {"symbol": "603298", "name": "杭叉集团",   "price": 24.11,  "change_pct": 1.30,  "vol_ratio": 1.00}
+  ],
+  "summary": "盘面分化明显：科技/ETF 类全线大涨（信创 ETF +4.64%、科创50 ETF +3.59%、通富微电 +4.07%、盾安环境 +4.37%），两只 ETF 均触及止盈线，建议告知 Butler 评估锁利。另一面，双环传动跌破止损（现价 39.41 < 40.81）、均胜电子持续低于止损（22.22 < 24.00），两只 🔴 紧急级标的需要立即决策；杭叉集团接近止损但量能未恶化。观察池湘潭电化跌入目标建仓区间下方（15.19 < 16.00），但前置技术信号未在本次快照内核实。"
+}
