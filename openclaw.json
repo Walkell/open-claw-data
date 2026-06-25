@@ -1167,7 +1167,6 @@
         "url": "http://127.0.0.1:8081/mcp"
       },
       "zhipu-search": {
-        "transport": "stdio",
         "command": "python3",
         "args": [
           "/home/ubuntu/.openclaw/scripts/zhipu_search_mcp.py"

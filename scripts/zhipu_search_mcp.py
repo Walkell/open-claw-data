@@ -35,7 +35,22 @@ def handle_request(req):
     method = req.get("method", "")
     req_id = req.get("id", 1)
 
-    if method == "tools/list":
+    if method == "initialize":
+        send({
+            "jsonrpc": "2.0",
+            "id": req_id,
+            "result": {
+                "protocolVersion": "2024-11-05",
+                "serverInfo": {"name": "zhipu-search", "version": "1.0.0"},
+                "capabilities": {"tools": {}}
+            }
+        })
+
+    elif method == "notifications/initialized":
+        # client notification, no response
+        return
+
+    elif method == "tools/list":
         send({
             "jsonrpc": "2.0",
             "id": req_id,
@@ -197,15 +212,8 @@ def handle_request(req):
         })
 
 def main():
-    send({
-        "jsonrpc": "2.0",
-        "id": None,
-        "result": {
-            "protocolVersion": "2024-11-05",
-            "serverInfo": {"name": "zhipu-search", "version": "1.0.0"},
-            "capabilities": {"tools": {}}
-        }
-    })
+    # MCP servers MUST NOT send anything before receiving initialize.
+    # Just wait for client requests.
     for line in sys.stdin:
         try:
             req = json.loads(line)
