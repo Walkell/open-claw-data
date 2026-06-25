@@ -1,0 +1,79 @@
+{
+  "principal": "klaire",
+  "agent": "news",
+  "cycle_id": "klaire-20260625-0837-premarket",
+  "data_quality": {
+    "status": "degraded",
+    "available_sources": [],
+    "failed_sources": [
+      {"source": "tavily_search", "error": "API 432 配额超限"},
+      {"source": "web_search (Tavily backend)", "error": "API 432 配额超限"},
+      {"source": "web_fetch eastmoney 搜索页", "error": "JS 渲染页面，静态提取无新闻条目"}
+    ],
+    "note": "所有外部新闻检索源均不可用，无法核实近 7 天个股事件。本次输出仅基于持仓表备注字段的已知上下文，sentiment/event_impact 全部保守置 0，confidence 调低至 0.2，不编造任何未经查证的新闻。",
+    "fallback_strategy": "下游 Risk/CIO 应忽略本委员的 sentiment 信号，主要采纳技术面与基本面委员的输出"
+  },
+  "positions": [
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.2,
+      "events": [],
+      "summary": "外部新闻源全部不可用，无法核实近 7 天事件。持仓表备注：机器人减速器+新能源齿轮龙头，加仓 38.5（前低+MA60 支撑），目标 45 先减半。"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.2,
+      "events": [],
+      "summary": "外部新闻源全部不可用，无法核实近 7 天事件。持仓表备注：原 7200 份 + 6/11 补仓 2300 份@1.685，新成本 1.72，止损 1.55 不变；当前 4000 份在手。"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.2,
+      "events": [],
+      "summary": "外部新闻源全部不可用，无法核实近 7 天事件。持仓表备注：6/23 已卖 1800 股@2.328 锁利，剩 1700 股，新成本 1.774，加仓/止损同设 1.85，目标 2.3。"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.2,
+      "events": [],
+      "summary": "外部新闻源全部不可用，无法核实近 7 天事件。持仓表备注：已破止损 24 不补仓，反弹 24 先出，目标 33；当前 200 股，新成本 24.89，盈亏 -4.14%。"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.2,
+      "events": [],
+      "summary": "外部新闻源全部不可用，无法核实近 7 天事件。持仓表备注：观察池触发建仓，加仓 9.8（深跌安全垫），止损 10.5，目标 15；当前 200 股，盈亏 -5.74%。"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.2,
+      "events": [],
+      "summary": "外部新闻源全部不可用，无法核实近 7 天事件。持仓表备注：6/8 建仓@25.2 机动池防御，弱势不补，止损 23，加仓 21 深跌，目标 31；当前 200 股，盈亏 -2.18%。"
+    }
+  ],
+  "macro": {
+    "sentiment": 0,
+    "event_impact": 0,
+    "confidence": 0.1,
+    "summary": "宏观/行业背景数据源同样不可用（Tavily 配额超限、东方财富搜索页 JS 渲染失败），未能获取美股隔夜 / 费半 / A股政策面信息。建议技术面委员主导本次开盘前判断。"
+  },
+  "summary": "数据源不可用：Tavily/web_search 全部 API 配额超限，东方财富网搜索页静态提取无内容。按红线不编造新闻，所有标的 sentiment 与 event_impact 均置 0，confidence 调低至 0.2。下游请将本委员输出视为弱信号或忽略。"
+}
