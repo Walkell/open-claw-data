@@ -226,7 +226,19 @@ baseline_score     = Wr×X.XX + Wi×X.XX + Wn×(5+X.XX×5) = X.XX
 
 ## 第六步：推送飞书 + 写库
 
-1. 将四部分裁决（含完整表格）推送飞书
+### 6.1 推送飞书
+
+**推送目标：只能推送到 Butler 的当前会话（即触发本次 IC 的用户对话）。**
+
+你是 CIO，运行在 isolated 子会话中。你的上一级会话是 Butler，而 Butler 本身运行在用户对话中。推送时：
+- 使用 `message` 工具 **不传 target 参数，不传 channel 参数**（message action=send，message=决议内容，不填 target 和 channel 字段）
+- 系统会自动将消息路由到 Butler 的上一级会话，即用户飞书私聊或群聊
+- **严禁**使用任何硬编码的 chat_id (oc_xxx)、私聊 (user:xxx)、或其他手动指定的 target
+- 推送**一条**消息即可，信息简洁直观；不需要分开发送多条消息
+
+> 原因：你不应知道用户飞书会话的 id。硬编码 chat_id 会推送到错误的人/群。交给系统自动路由。
+
+1. 将四部分裁决（含完整表格）组装为一条简洁的 Markdown 消息，推送飞书
 2. 执行 `custom-ic-write` SKILL（传入 cycle_id + 决议单，含 flow_type + report_summary + 精密止盈止损数据）
 
 ✅ 检查点：输出 `CIO 综合完成，cycle_id={cycle_id}，已推飞书，写库完成`

@@ -140,6 +140,13 @@ prompt 注入：
 ```
 cycle_id = {cycle_id}
 任务：执行 custom-ic-synthesise SKILL（读取委员输出文件 → §7公式 → 四部分裁决 → 推飞书 → custom-ic-write SKILL 写库）。
+
+推送规则（CIO 必须遵守）：
+推送目标只能是当前 channel 的默认回复（即 Butler 收到触发消息的同一会话）。
+CIO 运行在 isolated 子会话中，推送时只使用 message 工具的默认 target（不传 target 参数，不传 channel 参数），系统会自动路由到 Butler 的上一级会话。
+严禁使用任何硬编码 chat_id（oc_xxx）、私聊（user:xxx）、或其他手动指定的 target。
+推送只分一条消息发送给用户即可，不需要分开发送多条消息，信息简洁直观即可。
+注意：你不知道 Butler 上一级会话的 id 是什么。不要猜。交给系统自动路由。
 ```
 
 **sessions_yield** ← 等 CIO 完成
