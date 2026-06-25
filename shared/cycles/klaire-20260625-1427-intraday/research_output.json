@@ -1,0 +1,124 @@
+{
+  "principal": "klaire",
+  "agent": "research",
+  "cycle_id": "klaire-20260625-1427-intraday",
+  "data_quality": "单源(gtimg)",
+  "data_quality_note": "2026-06-25 14:27 盘中。实时行情：仅腾讯gtimg单源可用，东方财富/同花顺/网易/新浪全不可用。K线数据：akshare东方财富源(002472/600699/002011/159540/603298)，gtimg源(588080)。",
+  "holdings": [
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "dimensions": {
+        "technical": {
+          "score": 3,
+          "note": "跌破MA20(41.56)和MA60(40.29)双均线，布林下轨(38.12)附近仅17.2%分位，短期趋势下行。已跌破止损价40.81（现价39.30，止损距-3.7%），浮亏-3.42%。量能正常(量比0.91)，ATR偏高(6.62%)反映高波动。PE分位46.8%中等。无反弹信号，止损已触发未执行。",
+          "atr_pct": 6.62,
+          "bollinger_upper": 45.01,
+          "ma20": 41.56,
+          "ma60_high": 45.03,
+          "pe_percentile": 46.8,
+          "vol_ratio": 0.91
+        },
+        "fundamental": { "score": 0, "note": "盘中精简分析跳过" },
+        "valuation": { "score": 0, "note": "盘中精简分析跳过" },
+        "financials": { "score": 0, "note": "盘中精简分析跳过" }
+      }
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "dimensions": {
+        "technical": {
+          "score": 7,
+          "note": "站上MA20(1.81)和MA60(1.65)双均线，强势突破布林上轨(2.07)达106.8%分位，创60日新高。短期趋势上行。浮盈+27.88%，远超止盈价1.98（现价2.11）。缩量上涨(量比0.79)，ATR 4.05%。PE分位100%历史最高，超买风险显著。止盈已触发未执行。",
+          "atr_pct": 4.05,
+          "bollinger_upper": 2.07,
+          "ma20": 1.81,
+          "ma60_high": 2.11,
+          "pe_percentile": 100.0,
+          "vol_ratio": 0.79
+        },
+        "fundamental": { "score": 0, "note": "盘中精简分析跳过" },
+        "valuation": { "score": 0, "note": "盘中精简分析跳过" },
+        "financials": { "score": 0, "note": "盘中精简分析跳过" }
+      }
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "dimensions": {
+        "technical": {
+          "score": 7,
+          "note": "站上MA20(2.13)和MA60(1.95)双均线，极度突破布林上轨(2.45)达114%分位，接近60日高2.53。短期趋势上行。浮盈+42.78%，远超止盈价2.30。巨量放量(量比127.51)需警惕高位换手。ATR 4.21%。PE分位100%历史最高，极度超买。止盈已触发未执行。",
+          "atr_pct": 4.21,
+          "bollinger_upper": 2.45,
+          "ma20": 2.13,
+          "ma60_high": 2.53,
+          "pe_percentile": 100.0,
+          "vol_ratio": 127.51
+        },
+        "fundamental": { "score": 0, "note": "盘中精简分析跳过" },
+        "valuation": { "score": 0, "note": "盘中精简分析跳过" },
+        "financials": { "score": 0, "note": "盘中精简分析跳过" }
+      }
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "dimensions": {
+        "technical": {
+          "score": 2,
+          "note": "跌破MA20(25.02)和MA60(26.92)双均线，布林下轨(22.11)附近仅11.8%分位，短期趋势下行。已跌破止损价24.00（现价22.80，止损距-5.0%），浮亏-8.40%。巨量放量(量比101.01)暗示恐慌抛售。ATR 4.92%。PE分位24.4%低位但无企稳信号。止损已触发未执行，弱势明确。",
+          "atr_pct": 4.92,
+          "bollinger_upper": 27.94,
+          "ma20": 25.02,
+          "ma60_high": 32.08,
+          "pe_percentile": 24.4,
+          "vol_ratio": 101.01
+        },
+        "fundamental": { "score": 0, "note": "盘中精简分析跳过" },
+        "valuation": { "score": 0, "note": "盘中精简分析跳过" },
+        "financials": { "score": 0, "note": "盘中精简分析跳过" }
+      }
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "dimensions": {
+        "technical": {
+          "score": 3,
+          "note": "跌破MA20(11.17)和MA60(11.82)双均线，布林下轨(9.72)上方30.4%分位，短期趋势下行。浮亏-7.14%，距止损10.50仅0.95%极度逼近。今日+3.01%放量反弹(量比68.58)，但未站上任何均线。ATR 3.98%。PE分位2.0%极低位，超跌区域。止损线岌岌可危。",
+          "atr_pct": 3.98,
+          "bollinger_upper": 12.62,
+          "ma20": 11.17,
+          "ma60_high": 12.91,
+          "pe_percentile": 2.0,
+          "vol_ratio": 68.58
+        },
+        "fundamental": { "score": 0, "note": "盘中精简分析跳过" },
+        "valuation": { "score": 0, "note": "盘中精简分析跳过" },
+        "financials": { "score": 0, "note": "盘中精简分析跳过" }
+      }
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "dimensions": {
+        "technical": {
+          "score": 3,
+          "note": "跌破MA20(24.70)和MA60(25.67)双均线，布林下轨(23.48)附近17.8%分位，短期趋势下行。浮亏-5.12%，距止损23.00尚有3.96%缓冲。今日+0.46%微涨，放量(量比71.21)。ATR 4.81%。PE分位25.6%低位。未破止损但弱势明确。",
+          "atr_pct": 4.81,
+          "bollinger_upper": 25.92,
+          "ma20": 24.70,
+          "ma60_high": 29.28,
+          "pe_percentile": 25.6,
+          "vol_ratio": 71.21
+        },
+        "fundamental": { "score": 0, "note": "盘中精简分析跳过" },
+        "valuation": { "score": 0, "note": "盘中精简分析跳过" },
+        "financials": { "score": 0, "note": "盘中精简分析跳过" }
+      }
+    }
+  ],
+  "summary": "Klaire持仓6只（含1只已卖出马钢股份不计入）。盘中14:27快照：2只ETF强势突破（科创50+3.63%、信创+5.94%）但均极度超买且远超止盈；4只个股全线跌破双均线，其中双环传动和均胜电子已跌破止损。盾安环境距止损仅0.95%极度危险。数据源仅gtimg单源，置信度受限。"
+}

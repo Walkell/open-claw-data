@@ -1,158 +1,24 @@
 {
   "principal": "klaire",
-  "monitor_time": "2026-06-25T14:10:00+08:00",
-  "data_source": "gtimg_single",
-  "data_quality_warning": "腾讯 gtimg 单源可用；akshare/网易/同花顺/新浪/东方财富 HTTP 端点均失败，未经交叉验证",
+  "check_time": "2026-06-25T14:30:00+08:00",
   "has_alerts": true,
   "alerts": [
     {
-      "symbol": "002472",
-      "name": "双环传动",
-      "price": 39.25,
-      "change_pct": -2.00,
-      "vol_ratio": 1.12,
-      "level": "🔴",
-      "alert_type": "止损触及",
-      "detail": "现价 39.25 已跌破止损价 40.81，请立即处理（distance = -3.84%）"
-    },
-    {
-      "symbol": "600699",
-      "name": "均胜电子",
-      "price": 22.84,
-      "change_pct": 0.35,
-      "vol_ratio": 1.34,
-      "level": "🔴",
-      "alert_type": "止损触及",
-      "detail": "现价 22.84 已跌破止损价 24.00（distance = -5.08%）。注：持仓表备注称已破止损24不补，反弹24先出 — 请确认是否已离场"
-    },
-    {
-      "symbol": "588080",
-      "name": "科创50ETF",
-      "price": 2.112,
-      "change_pct": 3.73,
-      "vol_ratio": 0.94,
-      "level": "🟡",
-      "alert_type": "止盈触及",
-      "detail": "现价 2.112 已达止盈价 1.98（超越止盈 6.7%），可考虑告知 Butler 决策"
-    },
-    {
-      "symbol": "588080",
-      "name": "科创50ETF",
-      "price": 2.112,
-      "change_pct": 3.73,
-      "vol_ratio": 0.94,
-      "level": "🔵",
-      "alert_type": "止损线审查",
-      "detail": "浮盈保护率为负（止损 1.55 < 成本 1.65，止损位本金线以下），触及止损时连本金都无法保全。建议告知 Butler 触发 IC 评估是否上移止损"
-    },
-    {
       "symbol": "159540",
       "name": "信创ETF",
-      "price": 2.534,
-      "change_pct": 5.98,
-      "vol_ratio": 1.26,
-      "level": "🟡",
-      "alert_type": "止盈触及",
-      "detail": "现价 2.534 已达止盈价 2.30（超越止盈 10.2%），可考虑告知 Butler 决策"
-    },
-    {
-      "symbol": "159540",
-      "name": "信创ETF",
-      "price": 2.534,
-      "change_pct": 5.98,
-      "vol_ratio": 1.26,
-      "level": "🔵",
-      "alert_type": "止损线审查",
-      "detail": "浮盈较大但浮盈保护率约 10%（止损 1.85，成本 1.774，现价 2.534），触及止损将损失 ~90% 浮盈，止损线已实质性滞后。建议告知 Butler 触发 IC 评估是否上移止损"
-    },
-    {
-      "symbol": "002011",
-      "name": "盾安环境",
-      "price": 10.59,
-      "change_pct": 2.92,
-      "vol_ratio": 1.42,
-      "level": "🟡",
-      "alert_type": "接近止损",
-      "detail": "现价 10.59 距止损 10.50 仅 0.85%，极度接近止损线，请关注"
-    },
-    {
-      "symbol": "603298",
-      "name": "杭叉集团",
-      "price": 23.93,
-      "change_pct": 0.59,
-      "vol_ratio": 0.74,
-      "level": "🟡",
-      "alert_type": "接近止损",
-      "detail": "现价 23.93 距止损 23.00 仅 3.89%，请关注"
-    },
-    {
-      "symbol": "002472",
-      "name": "双环传动",
-      "price": 39.25,
-      "change_pct": -2.00,
-      "vol_ratio": 1.12,
-      "level": "🔵",
-      "alert_type": "IC审查建议",
-      "detail": "IC 最后更新日期 2025-06-26，距今约 12 个月（远超 10 交易日阈值），建议触发 IC 复盘"
-    },
-    {
-      "symbol": "588080",
-      "name": "科创50ETF",
-      "price": 2.112,
-      "change_pct": 3.73,
-      "vol_ratio": 0.94,
-      "level": "🔵",
-      "alert_type": "IC审查建议",
-      "detail": "IC 最后更新日期 2025-06-26，距今约 12 个月，建议触发 IC 复盘"
-    },
-    {
-      "symbol": "159540",
-      "name": "信创ETF",
-      "price": 2.534,
-      "change_pct": 5.98,
-      "vol_ratio": 1.26,
-      "level": "🔵",
-      "alert_type": "IC审查建议",
-      "detail": "IC 最后更新日期 2025-06-26，距今约 12 个月，建议触发 IC 复盘"
-    },
-    {
-      "symbol": "600699",
-      "name": "均胜电子",
-      "price": 22.84,
-      "change_pct": 0.35,
-      "vol_ratio": 1.34,
-      "level": "🔵",
-      "alert_type": "IC审查建议",
-      "detail": "IC 最后更新日期 2025-06-26，距今约 12 个月，建议触发 IC 复盘"
-    },
-    {
-      "symbol": "002011",
-      "name": "盾安环境",
-      "price": 10.59,
-      "change_pct": 2.92,
-      "vol_ratio": 1.42,
-      "level": "🔵",
-      "alert_type": "IC审查建议",
-      "detail": "IC 最后更新日期 2025-06-26，距今约 12 个月，建议触发 IC 复盘"
-    },
-    {
-      "symbol": "603298",
-      "name": "杭叉集团",
-      "price": 23.93,
-      "change_pct": 0.59,
-      "vol_ratio": 0.74,
-      "level": "🔵",
-      "alert_type": "IC审查建议",
-      "detail": "IC 最后更新日期 2025-06-26，距今约 12 个月，建议触发 IC 复盘"
+      "market": "A",
+      "price": 2.543,
+      "change_pct": 6.05,
+      "alert_type": "涨",
+      "volume_note": "量比1.23 正常",
+      "position_type": "持仓",
+      "data_validation": "双源验证（腾讯+东方财富，pct分别+6.36%/+5.73%，取均值）"
     }
   ],
-  "snapshot": [
-    {"symbol": "002472", "name": "双环传动",  "price": 39.25, "change_pct": -2.00, "vol_ratio": 1.12},
-    {"symbol": "588080", "name": "科创50ETF", "price": 2.112, "change_pct": 3.73,  "vol_ratio": 0.94},
-    {"symbol": "159540", "name": "信创ETF",   "price": 2.534, "change_pct": 5.98,  "vol_ratio": 1.26},
-    {"symbol": "600699", "name": "均胜电子",  "price": 22.84, "change_pct": 0.35,  "vol_ratio": 1.34},
-    {"symbol": "002011", "name": "盾安环境",  "price": 10.59, "change_pct": 2.92,  "vol_ratio": 1.42},
-    {"symbol": "603298", "name": "杭叉集团",  "price": 23.93, "change_pct": 0.59,  "vol_ratio": 0.74}
+  "near_threshold": [
+    {"symbol": "002049", "name": "紫光国微", "change_pct": 4.69, "position_type": "观察池", "note": "接近+5%但未触发"},
+    {"symbol": "002156", "name": "通富微电", "change_pct": 4.78, "position_type": "观察池", "note": "接近+5%但未触发"}
   ],
-  "summary": "Klaire 6 支持仓 14:10 盘中扫描出 14 条触发项。🔴 紧急 2 笔：002472 双环传动现价 39.25 跌破止损 40.81、600699 均胜电子现价 22.84 跌破止损 24.00（备注称已破24不补反弹24先出，须确认离场状态）。🟡 止盈触及 2 笔：588080 科创50ETF（2.112，超止盈 6.7%）与 159540 信创ETF（2.534，超止盈 10.2%，今日涨幅 +5.98%）。🟡 接近止损 2 笔：002011 盾安环境距止损 0.85%（极度危险）、603298 杭叉集团距止损 3.89%。🔵 止损线审查 2 笔：588080 止损在成本线下方、159540 浮盈保护率仅 10%，均已实质性滞后于盈利。🔵 IC 陈旧 6 笔：全部持仓 IC 最后更新于 2025-06-26（约 12 个月前），建议批量复盘。数据来源：腾讯 gtimg 单源（备源全部失败），未交叉验证，关键决策请人工二次确认价格。下行趋势检查（C）：今日为新交易日，时段内历史数据不足 3 条，跳过；今日尚未写入新一轮快照（本任务为只读分析，输出文件仅供决策参考，不回写监控记录）。"
+  "checked_symbols": 12,
+  "summary": "共1条异动：信创ETF（159540，持仓）单日涨幅约+6%（双源均超阈值），量比1.23属正常放量上涨，建议关注。另观察池紫光国微(+4.7%)、通富微电(+4.8%)接近异动阈值未触发，可留意。"
 }

@@ -1,0 +1,103 @@
+{
+  "principal": "klaire",
+  "agent": "risk",
+  "cycle_id": "klaire-20260625-1427-intraday",
+  "data": {
+    "symbol": "klaire-portfolio",
+    "risk_score": 7,
+    "verdict": "VETO",
+    "veto_reason": "3/6持仓触发禁止加仓红线：双环传动(-3.75%)/均胜电子(-5.08%)已跌破止损；盾安环境距止损仅0.48%(≤3%阈值)。ETF超买但浮盈缓冲充足，暂无明确加仓建议触发。",
+    "dimensions": {
+      "financial_health": { "score": 4, "note": "4只个股平均ROE偏低(双环3.33%→均胜10.37%→盾安-1.39%→杭叉-2.93%)，仅均胜ROE>10%但净利润同比-4.85%。2只ETF无财务数据默认5分", "source": "self" },
+      "valuation": { "score": 5, "note": "双环PE26.3/PB3.24合理，均胜PE25.3/PB2.05合理，盾安PE10.7/PB1.66低估但负ROE，杭叉PE14.1合理；2ETF PE分位100%历史最高极度超买(2分)", "source": "self" },
+      "industry_cycle": { "score": 5, "note": "数据缺失（精简两委员流程，Industry未派发），默认5分", "source": "industry_agent" },
+      "technical": { "score": 3, "note": "4只个股全线跌破MA20/MA60双均线，2只ETF强势站上双均线但极度超买。双环/均胜已破止损放量下行，盾安距止损仅0.48%岌岌可危", "source": "self" },
+      "macro": { "score": 5, "note": "数据缺失（精简两委员流程，Industry未派发），默认5分", "source": "industry_agent" },
+      "news_sentiment": { "score": 5, "note": "数据缺失（精简两委员流程，News未派发），默认5分", "source": "news_agent" }
+    },
+    "summary": "Klaire组合风险分化严重：2只ETF(科创50/信创)强势突破但PE分位100%极度超买需警惕回调；4只个股全线下行，其中双环传动(-3.75%)和均胜电子(-5.08%)已跌破止损线，盾安环境(距止损0.48%)极度逼近红线。3条VETO触发：跌破止损×2 + 距止损≤3%×1。",
+    "positions_detail": [
+      {
+        "symbol": "002472",
+        "name": "双环传动",
+        "price": 39.28,
+        "cost": 40.693,
+        "stop_loss": 40.81,
+        "stop_distance_pct": -3.75,
+        "unrealized_pnl": -423.9,
+        "technical": "跌破MA20(41.56)/MA60(40.29)，布林下轨附近",
+        "risk_flags": ["止损已跌破", "VETO-禁止加仓"]
+      },
+      {
+        "symbol": "588080",
+        "name": "科创50ETF",
+        "price": 2.11,
+        "cost": 1.65,
+        "stop_loss": 1.55,
+        "stop_distance_pct": 36.1,
+        "unrealized_pnl": 1840.0,
+        "technical": "站上MA20(1.81)/MA60(1.65)，创60日新高，极度超买",
+        "risk_flags": ["PE分位100%", "止盈已触发"]
+      },
+      {
+        "symbol": "159540",
+        "name": "信创ETF",
+        "price": 2.534,
+        "cost": 1.774,
+        "stop_loss": 1.85,
+        "stop_distance_pct": 36.9,
+        "unrealized_pnl": 1292.0,
+        "technical": "站上MA20(2.13)/MA60(1.95)，接近60日高2.55，极度超买",
+        "risk_flags": ["PE分位100%", "止盈已触发", "巨量(量比127)"]
+      },
+      {
+        "symbol": "600699",
+        "name": "均胜电子",
+        "price": 22.78,
+        "cost": 24.89,
+        "stop_loss": 24.0,
+        "stop_distance_pct": -5.08,
+        "unrealized_pnl": -422.0,
+        "technical": "跌破MA20(25.03)/MA60(26.92)，恐慌放量(量比101)",
+        "risk_flags": ["止损已跌破", "VETO-禁止加仓", "恐慌抛售"]
+      },
+      {
+        "symbol": "002011",
+        "name": "盾安环境",
+        "price": 10.55,
+        "cost": 11.415,
+        "stop_loss": 10.5,
+        "stop_distance_pct": 0.48,
+        "unrealized_pnl": -173.0,
+        "technical": "跌破MA20(11.17)/MA60(11.82)，今日反弹+2.53%",
+        "risk_flags": ["距止损≤3%", "VETO-禁止加仓", "极度逼近红线"]
+      },
+      {
+        "symbol": "603298",
+        "name": "杭叉集团",
+        "price": 23.94,
+        "cost": 25.2,
+        "stop_loss": 23.0,
+        "stop_distance_pct": 4.09,
+        "unrealized_pnl": -252.0,
+        "technical": "跌破MA20(24.70)/MA60(25.67)，弱势下行",
+        "risk_flags": ["跌破双均线"]
+      }
+    ],
+    "concentration_detail": {
+      "ai_sector_pct": 35.4,
+      "ai_sector_positions": ["科创50ETF", "信创ETF"],
+      "ai_sector_value": 12748,
+      "total_portfolio_value": 35986,
+      "threshold": 40,
+      "level": "WARNING",
+      "exceed_reason": null
+    },
+    "concentration_weighted_pnl": {
+      "total_pnl": 1861.1,
+      "ai_sector_pnl": 3132.0,
+      "non_ai_sector_pnl": -1270.9,
+      "note": "AI赛道ETF贡献全部组合正收益，4只个股合计亏损-1271，收益集中度极高"
+    }
+  }
+}
