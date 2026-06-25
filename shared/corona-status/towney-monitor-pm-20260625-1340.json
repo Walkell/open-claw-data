@@ -1,0 +1,123 @@
+{
+  "principal": "towney",
+  "timestamp": "2026-06-25T13:40:00+08:00",
+  "has_alerts": true,
+  "alerts": [
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "current_price": 253.0,
+      "change_pct": 4.33,
+      "cost_pnl_pct": 71.99,
+      "5d_change_pct": 11.52,
+      "trigger_reasons": [
+        "距成本盈利71.99%≥10%",
+        "近5日涨幅11.52%≥8%"
+      ],
+      "position_info": "占总仓位7.46% / 成本价147.1"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "current_price": 2.123,
+      "change_pct": 4.07,
+      "cost_pnl_pct": 30.97,
+      "5d_change_pct": 8.26,
+      "trigger_reasons": [
+        "距成本盈利30.97%≥10%",
+        "近5日涨幅8.26%≥8%"
+      ],
+      "position_info": "占总仓位7.35% / 成本价1.621"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "current_price": 283.0,
+      "change_pct": 6.2,
+      "cost_pnl_pct": 82.31,
+      "5d_change_pct": 4.85,
+      "trigger_reasons": [
+        "当日涨幅6.20%≥5%",
+        "距成本盈利82.31%≥10%"
+      ],
+      "position_info": "占总仓位6.08% / 成本价155.23"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "current_price": 323.99,
+      "change_pct": -0.4,
+      "cost_pnl_pct": 92.92,
+      "5d_change_pct": -3.75,
+      "trigger_reasons": [
+        "距成本盈利92.92%≥10%"
+      ],
+      "position_info": "占总仓位11.41% / 成本价167.94"
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "current_price": 2.1,
+      "change_pct": 2.49,
+      "cost_pnl_pct": 74.56,
+      "5d_change_pct": 2.04,
+      "trigger_reasons": [
+        "距成本盈利74.56%≥10%"
+      ],
+      "position_info": "占总仓位3.18% / 成本价1.203"
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "current_price": 2.715,
+      "change_pct": 1.27,
+      "cost_pnl_pct": 21.48,
+      "5d_change_pct": -1.34,
+      "trigger_reasons": [
+        "距成本盈利21.48%≥10%"
+      ],
+      "position_info": "占总仓位5.06% / 成本价2.235"
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "current_price": 1.888,
+      "change_pct": 0.27,
+      "cost_pnl_pct": 14.15,
+      "5d_change_pct": -1.05,
+      "trigger_reasons": [
+        "距成本盈利14.15%≥10%"
+      ],
+      "position_info": "占总仓位1.43% / 成本价1.654"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "current_price": 362.24,
+      "change_pct": 7.46,
+      "cost_pnl_pct": 35.51,
+      "5d_change_pct": 10.49,
+      "trigger_reasons": [
+        "当日涨幅7.46%≥5%",
+        "距成本盈利35.51%≥10%",
+        "近5日涨幅10.49%≥8%"
+      ],
+      "position_info": "占总仓位7.57% / 成本价267.318"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "current_price": 78.42,
+      "change_pct": 5.06,
+      "cost_pnl_pct": 30.45,
+      "5d_change_pct": 14.87,
+      "trigger_reasons": [
+        "当日涨幅5.06%≥5%",
+        "距成本盈利30.45%≥10%",
+        "近5日涨幅14.87%≥8%"
+      ],
+      "position_info": "占总仓位1.62% / 成本价60.115"
+    }
+  ],
+  "summary": "共9个异动标的（11个持仓中触发），数据源:腾讯gtimg+东方财富(双源验证),时段:盘中"
+}

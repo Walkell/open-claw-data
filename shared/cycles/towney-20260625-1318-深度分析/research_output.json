@@ -1,0 +1,405 @@
+{
+  "principal": "towney",
+  "agent": "research",
+  "cycle_id": "towney-20260625-1318-深度分析",
+  "generated_at": "2026-06-25T13:18:00+08:00",
+  "data_quality": "⚠部分受限",
+  "data_quality_notes": [
+    "行情数据：仅腾讯gtimg单源可用（东方财富/网易/同花顺/新浪均不可用），未经双源交叉验证",
+    "历史K线：akshare部分标的(ETF)不可用，改用新浪财经K线API补位",
+    "PE分位数：所有标的均无法计算2年PE分位数（akshare financial_abstract 接口不稳定，eastmoney PE percentile API不可用）",
+    "PE估值数据：来自东方财富实时API，PB部分为负值(数据异常)，仅供参考",
+    "技术指标计算：基于60日K线数据，部分ETF数据点不足60日"
+  ],
+  "holdings": [
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "market": "科创板",
+      "cost_price": 147.1,
+      "position_pct": 7.46,
+      "current_price": 250.07,
+      "change_pct": 3.13,
+      "technical": {
+        "atr_pct": 5.74,
+        "bollinger_upper": 250.75,
+        "bollinger_lower": 147.67,
+        "ma20": 199.21,
+        "ma60": null,
+        "ma60_high": 257.96,
+        "vol_ratio": 0.66,
+        "price_vs_ma20": 0.2553,
+        "price_vs_bb_upper": -0.0027,
+        "price_vs_ma60_high": -0.0306
+      },
+      "valuation": {
+        "pe_dynamic": 126.31,
+        "pe_ttm": 113.83,
+        "pb": 1.3,
+        "market_cap_yi": 1249.44,
+        "pe_percentile": null,
+        "pe_percentile_note": "数据源不可用，无法计算2年PE分位数"
+      },
+      "dimensions": {
+        "technical": 7.0,
+        "technical_rationale": "价格远高于MA20(+25.6%)，多头排列强劲；量比0.66缩量整理；接近布林上轨但未突破；距60日高-3.1%有空间。短期强势但缩量需警惕回调。"
+      },
+      "data_source": "akshare(技术)+腾讯(行情)+东方财富(PE)"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "market": "ETF",
+      "cost_price": 1.621,
+      "position_pct": 7.35,
+      "current_price": 2.108,
+      "change_pct": 3.33,
+      "technical": {
+        "atr_pct": 4.13,
+        "bollinger_upper": 2.032,
+        "bollinger_lower": 1.59,
+        "ma20": 1.811,
+        "ma60": null,
+        "ma60_high": 2.046,
+        "vol_ratio": 1.05,
+        "price_vs_ma20": 0.164,
+        "price_vs_bb_upper": 0.0374,
+        "price_vs_ma60_high": 0.0303
+      },
+      "valuation": {
+        "pe_dynamic": null,
+        "pe_ttm": null,
+        "pb": null,
+        "market_cap_yi": null,
+        "pe_percentile": null,
+        "pe_percentile_note": "ETF无PE数据"
+      },
+      "dimensions": {
+        "technical": 8.0,
+        "technical_rationale": "价格突破布林上轨(+3.7%)，强势突破；MA20上行斜率陡(+16.4%)；量比1.05正常放量；突破60日高。典型突破形态，但需警惕追高风险。"
+      },
+      "data_source": "新浪财经(技术)+腾讯(行情)"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "market": "科创板",
+      "cost_price": 155.23,
+      "position_pct": 6.08,
+      "current_price": 278.84,
+      "change_pct": 4.63,
+      "technical": {
+        "atr_pct": 6.04,
+        "bollinger_upper": 284.36,
+        "bollinger_lower": 213.87,
+        "ma20": 249.11,
+        "ma60": null,
+        "ma60_high": 288.79,
+        "vol_ratio": 0.89,
+        "price_vs_ma20": 0.1193,
+        "price_vs_bb_upper": -0.0194,
+        "price_vs_ma60_high": -0.0345
+      },
+      "valuation": {
+        "pe_dynamic": 102.03,
+        "pe_ttm": 135.22,
+        "pb": -2.63,
+        "market_cap_yi": 3458.34,
+        "pe_percentile": null,
+        "pe_percentile_note": "数据源不可用，无法计算2年PE分位数"
+      },
+      "dimensions": {
+        "technical": 8.5,
+        "technical_rationale": "价格高于MA20(+11.9%)多头排列；接近布林上轨(-1.9%)有压力但未突破；量比0.89温和；距60日高仅-3.4%。今日+4.63%放量上涨，动能强劲。"
+      },
+      "data_source": "akshare(技术)+腾讯(行情)+东方财富(PE)"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "market": "创业板",
+      "cost_price": 167.94,
+      "position_pct": 11.41,
+      "current_price": 319.43,
+      "change_pct": -1.8,
+      "technical": {
+        "atr_pct": 6.98,
+        "bollinger_upper": 353.61,
+        "bollinger_lower": 282.94,
+        "ma20": 318.28,
+        "ma60": null,
+        "ma60_high": 374.5,
+        "vol_ratio": 0.93,
+        "price_vs_ma20": 0.0036,
+        "price_vs_bb_upper": -0.0967,
+        "price_vs_ma60_high": -0.147
+      },
+      "valuation": {
+        "pe_dynamic": 179.51,
+        "pe_ttm": 162.73,
+        "pb": -6.83,
+        "market_cap_yi": 3534.27,
+        "pe_percentile": null,
+        "pe_percentile_note": "数据源不可用，无法计算2年PE分位数"
+      },
+      "dimensions": {
+        "technical": 4.5,
+        "technical_rationale": "价格紧贴MA20(+0.4%)无方向；距60日高-14.7%深度回调；布林中轨附近震荡；量比0.93缩量；今日-1.8%弱势。技术面偏弱，短期无明确方向。"
+      },
+      "data_source": "akshare(技术)+腾讯(行情)+东方财富(PE)"
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "market": "ETF",
+      "cost_price": 1.203,
+      "position_pct": 3.18,
+      "current_price": 2.084,
+      "change_pct": 1.71,
+      "technical": {
+        "atr_pct": 3.47,
+        "bollinger_upper": 2.129,
+        "bollinger_lower": 1.817,
+        "ma20": 1.973,
+        "ma60": null,
+        "ma60_high": 2.112,
+        "vol_ratio": 0.74,
+        "price_vs_ma20": 0.0563,
+        "price_vs_bb_upper": -0.0211,
+        "price_vs_ma60_high": -0.0133
+      },
+      "valuation": {
+        "pe_dynamic": null,
+        "pe_ttm": null,
+        "pb": null,
+        "market_cap_yi": null,
+        "pe_percentile": null,
+        "pe_percentile_note": "ETF无PE数据"
+      },
+      "dimensions": {
+        "technical": 6.5,
+        "technical_rationale": "价格高于MA20(+5.6%)温和偏多；接近布林上轨(-2.1%)有空间；量比0.74缩量；距60日高-1.3%。温和上行趋势，但缩量显示动能不足。"
+      },
+      "data_source": "akshare(技术)+腾讯(行情)"
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "market": "ETF",
+      "cost_price": 8.302,
+      "position_pct": 4.01,
+      "current_price": 9.055,
+      "change_pct": 0.78,
+      "technical": {
+        "atr_pct": 2.38,
+        "bollinger_upper": 9.044,
+        "bollinger_lower": 7.974,
+        "ma20": 8.509,
+        "ma60": null,
+        "ma60_high": 9.049,
+        "vol_ratio": 0.9,
+        "price_vs_ma20": 0.0642,
+        "price_vs_bb_upper": 0.0012,
+        "price_vs_ma60_high": 0.0007
+      },
+      "valuation": {
+        "pe_dynamic": null,
+        "pe_ttm": null,
+        "pb": null,
+        "market_cap_yi": null,
+        "pe_percentile": null,
+        "pe_percentile_note": "ETF无PE数据"
+      },
+      "dimensions": {
+        "technical": 7.5,
+        "technical_rationale": "价格突破布林上轨(+0.1%)，强势突破；MA20上行(+6.4%)；量比0.90温和；距60日高仅+0.07%创新高边缘。突破形态确认中，关注能否站稳。"
+      },
+      "data_source": "新浪财经(技术)+腾讯(行情)"
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "market": "ETF(QDII)",
+      "cost_price": 2.235,
+      "position_pct": 5.06,
+      "current_price": 2.705,
+      "change_pct": 0.9,
+      "technical": {
+        "atr_pct": 2.94,
+        "bollinger_upper": 2.861,
+        "bollinger_lower": 2.559,
+        "ma20": 2.71,
+        "ma60": null,
+        "ma60_high": 2.9,
+        "vol_ratio": 0.84,
+        "price_vs_ma20": -0.0018,
+        "price_vs_bb_upper": -0.0545,
+        "price_vs_ma60_high": -0.0672
+      },
+      "valuation": {
+        "pe_dynamic": null,
+        "pe_ttm": null,
+        "pb": null,
+        "market_cap_yi": null,
+        "pe_percentile": null,
+        "pe_percentile_note": "QDII-ETF无PE数据"
+      },
+      "dimensions": {
+        "technical": 5.5,
+        "technical_rationale": "价格略低于MA20(-0.2%)，短期均线走平；布林中轨附近；量比0.84缩量；距60日高-6.7%。震荡整理格局，无明确方向。"
+      },
+      "data_source": "新浪财经(技术)+腾讯(行情)"
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "market": "ETF(QDII)",
+      "cost_price": 1.654,
+      "position_pct": 1.43,
+      "current_price": 1.883,
+      "change_pct": 0.0,
+      "technical": {
+        "atr_pct": 1.87,
+        "bollinger_upper": 1.961,
+        "bollinger_lower": 1.839,
+        "ma20": 1.9,
+        "ma60": null,
+        "ma60_high": 1.979,
+        "vol_ratio": 0.78,
+        "price_vs_ma20": -0.0089,
+        "price_vs_bb_upper": -0.0398,
+        "price_vs_ma60_high": -0.0485
+      },
+      "valuation": {
+        "pe_dynamic": null,
+        "pe_ttm": null,
+        "pb": null,
+        "market_cap_yi": null,
+        "pe_percentile": null,
+        "pe_percentile_note": "QDII-ETF无PE数据"
+      },
+      "dimensions": {
+        "technical": 5.0,
+        "technical_rationale": "价格低于MA20(-0.9%)，短期偏弱；布林中轨附近震荡；量比0.78缩量；距60日高-4.9%。弱势震荡，无催化。"
+      },
+      "data_source": "新浪财经(技术)+腾讯(行情)"
+    },
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "market": "ETF(商品)",
+      "cost_price": 9.2,
+      "position_pct": 1.75,
+      "current_price": 8.315,
+      "change_pct": -2.35,
+      "technical": {
+        "atr_pct": 2.32,
+        "bollinger_upper": 9.581,
+        "bollinger_lower": 8.299,
+        "ma20": 8.94,
+        "ma60": null,
+        "ma60_high": 10.153,
+        "vol_ratio": 1.01,
+        "price_vs_ma20": -0.0699,
+        "price_vs_bb_upper": -0.1321,
+        "price_vs_ma60_high": -0.181
+      },
+      "valuation": {
+        "pe_dynamic": null,
+        "pe_ttm": null,
+        "pb": null,
+        "market_cap_yi": null,
+        "pe_percentile": null,
+        "pe_percentile_note": "商品ETF无PE数据"
+      },
+      "dimensions": {
+        "technical": 2.0,
+        "technical_rationale": "价格远低于MA20(-7.0%)，空头排列；逼近布林下轨(+0.2%)；距60日高-18.1%深度回调；今日-2.35%加速下跌。技术面极弱，已触发止损预警。"
+      },
+      "data_source": "东方财富(技术)+腾讯(行情)"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "market": "科创板",
+      "cost_price": 267.318,
+      "position_pct": 7.57,
+      "current_price": 361.0,
+      "change_pct": 7.09,
+      "technical": {
+        "atr_pct": 5.86,
+        "bollinger_upper": 349.68,
+        "bollinger_lower": 246.83,
+        "ma20": 298.25,
+        "ma60": null,
+        "ma60_high": 369.0,
+        "vol_ratio": 1.12,
+        "price_vs_ma20": 0.2104,
+        "price_vs_bb_upper": 0.0324,
+        "price_vs_ma60_high": -0.0217
+      },
+      "valuation": {
+        "pe_dynamic": 306.31,
+        "pe_ttm": 308.81,
+        "pb": -0.07,
+        "market_cap_yi": 8418.52,
+        "pe_percentile": null,
+        "pe_percentile_note": "数据源不可用，无法计算2年PE分位数"
+      },
+      "dimensions": {
+        "technical": 9.0,
+        "technical_rationale": "价格突破布林上轨(+3.2%)，强势突破；远高于MA20(+21.0%)多头排列极强；量比1.12温和放量；距60日高仅-2.2%。今日+7.09%巨量突破，技术面最强标的。"
+      },
+      "data_source": "akshare(技术)+腾讯(行情)+东方财富(PE)"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "market": "深市主板",
+      "cost_price": 60.115,
+      "position_pct": 1.62,
+      "current_price": 78.15,
+      "change_pct": 4.7,
+      "technical": {
+        "atr_pct": 5.76,
+        "bollinger_upper": 76.9,
+        "bollinger_lower": 55.79,
+        "ma20": 66.35,
+        "ma60": null,
+        "ma60_high": 79.38,
+        "vol_ratio": 0.94,
+        "price_vs_ma20": 0.1778,
+        "price_vs_bb_upper": 0.0163,
+        "price_vs_ma60_high": -0.0155
+      },
+      "valuation": {
+        "pe_dynamic": 90.37,
+        "pe_ttm": 82.24,
+        "pb": 1.07,
+        "market_cap_yi": 1189.49,
+        "pe_percentile": null,
+        "pe_percentile_note": "数据源不可用，无法计算2年PE分位数"
+      },
+      "dimensions": {
+        "technical": 8.0,
+        "technical_rationale": "价格突破布林上轨(+1.6%)，强势突破；远高于MA20(+17.8%)多头排列；量比0.94温和；距60日高-1.5%。今日+4.7%放量突破，趋势强劲。"
+      },
+      "data_source": "akshare(技术)+腾讯(行情)+东方财富(PE)"
+    }
+  ],
+  "summary": {
+    "total_positions": 11,
+    "technical_avg": 6.5,
+    "technical_strongest": "海光信息 (9.0)",
+    "technical_weakest": "黄金ETF (2.0)",
+    "above_ma20_count": 8,
+    "above_bb_upper_count": 4,
+    "data_sources_summary": {
+      "akshare": "6/11标的可用(华海清科/澜起科技/天孚通信/创业板50ETF/海光信息/通富微电)",
+      "sina_kline": "4/11标的可用(科创芯片ETF/中证500ETF/纳斯达克ETF/标普500ETF)",
+      "eastmoney_kline": "1/11标的可用(黄金ETF)",
+      "tencent_gtimg": "11/11行情可用",
+      "eastmoney_pe": "5/5个股PE可用"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "principal": "klaire",
+  "timestamp": "2026-06-25T13:33:38.873888+08:00",
+  "alerts": [
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "alert_type": "止损触及",
+      "severity": "high",
+      "detail": "现价 39.44，已跌破止损价 40.81"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "alert_type": "止盈触及",
+      "severity": "medium",
+      "detail": "现价 2.115，已达止盈价 1.98"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "alert_type": "追踪止损审查",
+      "severity": "low",
+      "detail": "浮盈 28.2%，浮盈保护率 -21.5%，止损已滞后"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "alert_type": "止盈触及",
+      "severity": "medium",
+      "detail": "现价 2.534，已达止盈价 2.3"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "alert_type": "追踪止损审查",
+      "severity": "low",
+      "detail": "浮盈 42.8%，浮盈保护率 10.0%，止损已滞后"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "alert_type": "放量上涨",
+      "severity": "low",
+      "detail": "量比 18.55，涨幅 +5.98%"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "alert_type": "止损触及",
+      "severity": "high",
+      "detail": "现价 22.79，已跌破止损价 24"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "alert_type": "接近止损",
+      "severity": "medium",
+      "detail": "现价 10.59，距止损价 10.5 仅 0.85%"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "alert_type": "接近止损",
+      "severity": "medium",
+      "detail": "现价 23.95，距止损价 23 仅 3.97%"
+    }
+  ],
+  "summary": "klaire 6只持仓盘中快照（13:30）：5涨 1跌 0平。数据源仅腾讯可用(单源未验证)。最大涨幅 信创ETF +5.98%(放量18.55)，科创50ETF +3.88%(放量3.86)；002472双环传动 -1.52%。触发告警 9 项。",
+  "has_alerts": true,
+  "data_quality_note": "仅腾讯 gtimg 单源可用，东方财富/网易/同花顺/新浪均返回 502/403/404，未经双源验证"
+}
