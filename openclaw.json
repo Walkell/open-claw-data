@@ -274,7 +274,8 @@
       "feishu_task_tasklist",
       "feishu_update_doc",
       "feishu_wiki_space",
-      "feishu_wiki_space_node"
+      "feishu_wiki_space_node",
+      "zhipu-search__zhipu_web_search"
     ],
     "profile": "full",
     "web": {
@@ -400,7 +401,8 @@
             "feishu_task_tasklist",
             "feishu_update_doc",
             "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "feishu_wiki_space_node",
+            "zhipu-search__zhipu_web_search"
           ]
         }
       },
@@ -477,7 +479,8 @@
             "feishu_task_tasklist",
             "feishu_update_doc",
             "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "feishu_wiki_space_node",
+            "zhipu-search__zhipu_web_search"
           ]
         }
       },
@@ -547,7 +550,8 @@
             "feishu_update_doc",
             "feishu_wiki_space",
             "feishu_wiki_space_node",
-            "message"
+            "message",
+            "zhipu-search__zhipu_web_search"
           ]
         }
       },
@@ -628,7 +632,8 @@
             "akshare__get_inner_trade_data",
             "akshare__get_news_data",
             "akshare__get_realtime_data",
-            "akshare__get_time_info"
+            "akshare__get_time_info",
+            "zhipu-search__zhipu_web_search"
           ]
         }
       },
@@ -709,7 +714,8 @@
             "akshare__get_inner_trade_data",
             "akshare__get_news_data",
             "akshare__get_realtime_data",
-            "akshare__get_time_info"
+            "akshare__get_time_info",
+            "zhipu-search__zhipu_web_search"
           ]
         }
       },
@@ -790,7 +796,8 @@
             "akshare__get_inner_trade_data",
             "akshare__get_news_data",
             "akshare__get_realtime_data",
-            "akshare__get_time_info"
+            "akshare__get_time_info",
+            "zhipu-search__zhipu_web_search"
           ]
         }
       },
@@ -858,7 +865,8 @@
             "feishu_task_tasklist",
             "feishu_update_doc",
             "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "feishu_wiki_space_node",
+            "zhipu-search__zhipu_web_search"
           ]
         }
       },
@@ -925,7 +933,8 @@
             "feishu_task_tasklist",
             "feishu_update_doc",
             "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "feishu_wiki_space_node",
+            "zhipu-search__zhipu_web_search"
           ]
         }
       },
@@ -982,7 +991,8 @@
             "feishu_task_tasklist",
             "feishu_update_doc",
             "feishu_wiki_space",
-            "feishu_wiki_space_node"
+            "feishu_wiki_space_node",
+            "zhipu-search__zhipu_web_search"
           ]
         },
         "subagents": {
@@ -1155,6 +1165,13 @@
       "akshare": {
         "transport": "streamable-http",
         "url": "http://127.0.0.1:8081/mcp"
+      },
+      "zhipu-search": {
+        "transport": "stdio",
+        "command": "python3",
+        "args": [
+          "/home/ubuntu/.openclaw/scripts/zhipu_search_mcp.py"
+        ]
       }
     }
   },
