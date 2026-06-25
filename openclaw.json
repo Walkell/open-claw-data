@@ -18,7 +18,11 @@
         "enabled": true,
         "config": {
           "embedding": {
-            "apiKey": "${ZHIPU_API_KEY}",
+            "apiKey": {
+              "source": "file",
+              "provider": "glm-secrets",
+              "id": "/glm/apiKey"
+            },
             "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
             "model": "embedding-3",
             "dimensions": 2048
@@ -68,6 +72,10 @@
       "zhipu-search-secrets": {
         "source": "file",
         "path": "~/.openclaw/credentials/zhipu-search-secrets.json"
+      },
+      "tavily-secrets": {
+        "source": "file",
+        "path": "~/.openclaw/credentials/tavily.secrets.json"
       }
     }
   },
@@ -550,11 +558,7 @@
             "akshare__get_inner_trade_data",
             "akshare__get_news_data",
             "akshare__get_realtime_data",
-            "akshare__get_time_info",
-            "zhipu-search__websearchpro",
-            "zhipu-search__websearchquark",
-            "zhipu-search__websearchsogou",
-            "zhipu-search__websearchstd"
+            "akshare__get_time_info"
           ]
         }
       },
@@ -635,11 +639,7 @@
             "akshare__get_inner_trade_data",
             "akshare__get_news_data",
             "akshare__get_realtime_data",
-            "akshare__get_time_info",
-            "zhipu-search__websearchpro",
-            "zhipu-search__websearchquark",
-            "zhipu-search__websearchsogou",
-            "zhipu-search__websearchstd"
+            "akshare__get_time_info"
           ]
         }
       },
@@ -720,11 +720,7 @@
             "akshare__get_inner_trade_data",
             "akshare__get_news_data",
             "akshare__get_realtime_data",
-            "akshare__get_time_info",
-            "zhipu-search__websearchpro",
-            "zhipu-search__websearchquark",
-            "zhipu-search__websearchsogou",
-            "zhipu-search__websearchstd"
+            "akshare__get_time_info"
           ]
         }
       },
@@ -1089,10 +1085,6 @@
       "akshare": {
         "transport": "streamable-http",
         "url": "http://127.0.0.1:8081/mcp"
-      },
-      "zhipu-search": {
-        "url": "https://open.bigmodel.cn/api/mcp-broker/proxy/web-search/mcp?Authorization=d5683d2e895b45ccadc7086359b584d4.osL5cmblVOOKIUVK",
-        "transport": "streamable-http"
       }
     }
   },
