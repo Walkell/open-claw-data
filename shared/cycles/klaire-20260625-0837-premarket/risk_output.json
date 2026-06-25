@@ -1,0 +1,98 @@
+{
+  "principal": "klaire",
+  "agent": "risk",
+  "cycle_id": "klaire-20260625-0837-premarket",
+  "data_quality": "⚠️ 单源 — 仅腾讯gtimg可用（东方财富/新浪/网易/同花顺均不可用），PE/财务数据沿用Research拉取结果",
+  "data": {
+    "symbol": "组合（6持仓）",
+    "risk_score": 5.2,
+    "verdict": "NOC",
+    "veto_reason": "",
+    "dimensions": {
+      "financial_health": {
+        "score": 5.4,
+        "note": "杭叉集团(7)优质，均胜(4)和盾安(4)拖累。均胜负债率65%偏高、营收下滑；盾安净利下降。加权综合5.4。",
+        "source": "self"
+      },
+      "valuation": {
+        "score": 5.7,
+        "note": "杭叉PE13.97偏低合理，盾安PE10.47低估有安全边际；双环PE26.81偏高但成长溢价可接受。加权5.7。",
+        "source": "self"
+      },
+      "industry_cycle": {
+        "score": 5.5,
+        "note": "汽车零部件/机器人长期景气但短期承压；AI/半导体长期景气确认但费半三日跌6.2%传导风险；信创国产替代持续但短期过热。",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 4.9,
+        "note": "两极分化：科创50ETF(+4.09%)和信创ETF(+4.36%)强势突破但超买(60日区间99%+)，均已突破止盈价；均胜(-1.00%)和盾安(-1.53%)破止损严重弱势；双环(-1.26%)破止损；杭叉(-3.99%)距止损仅3.5%。加权4.9。",
+        "source": "self"
+      },
+      "macro": {
+        "score": 4.5,
+        "note": "美股三连跌：S&P500-1.9%、纳指-3.9%、费半-6.2%。VIX 18.63偏高。美10Y 4.402%偏紧。美元创13月新高。通胀预期升温加息压力。风险偏好收缩。",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 5.0,
+        "note": "数据缺失，默认5分。所有外部新闻源(Tavily/web_search/eastmoney)均不可用。News委员sentiment/event_impact全0，confidence 0.1-0.2。",
+        "source": "news_agent"
+      }
+    },
+    "summary": "组合风险中等(5.2/10)，主要风险：①3只持仓已破止损线(双环40.05<40.81、均胜22.76<24、盾安10.29<10.5)需止损执行；②杭叉距止损仅3.5%逼近；③宏观面美股科技三连跌+费半-6.2%传导风险；④数据源仅单源可用质量偏低。对冲因素：科创50ETF和信创ETF强势浮盈提供缓冲。"
+  },
+  "concentration_detail": {
+    "AI/半导体": {
+      "current_pct": 22.9,
+      "threshold_pct": 40,
+      "level": "safe",
+      "note": "科创50ETF为主，占比22.9%，距40%阈值有17.1%安全边际"
+    },
+    "信创/国产替代": {
+      "current_pct": 11.4,
+      "threshold_pct": 40,
+      "level": "safe",
+      "note": "信创ETF单一持仓，占比11.4%"
+    },
+    "汽车零部件": {
+      "current_pct": 46.5,
+      "threshold_pct": 50,
+      "level": "warning",
+      "note": "双环传动(33.8%)+均胜电子(12.8%)合计46.5%，接近50%监控线。均胜已破止损建议减仓后将自然降至安全区间"
+    },
+    "工程机械": {
+      "current_pct": 13.4,
+      "threshold_pct": 40,
+      "level": "safe",
+      "note": "杭叉集团单一持仓"
+    },
+    "制冷热管理": {
+      "current_pct": 5.8,
+      "threshold_pct": 40,
+      "level": "safe",
+      "note": "盾安环境单一持仓，已破止损"
+    }
+  },
+  "concentration_weighted_pnl": {
+    "AI/半导体": {"pnl": 1544.0, "pnl_pct": 23.4, "weight": 22.9},
+    "信创/国产替代": {"pnl": 1048.9, "pnl_pct": 34.8, "weight": 11.4},
+    "汽车零部件": {"pnl": -618.9, "pnl_pct": -3.6, "weight": 46.5},
+    "工程机械": {"pnl": -280.0, "pnl_pct": -5.6, "weight": 13.4},
+    "制冷热管理": {"pnl": -225.0, "pnl_pct": -9.9, "weight": 5.8},
+    "total_pnl": 1469.0,
+    "total_pnl_pct": 4.3,
+    "total_cost": 34124.7,
+    "total_value": 35593.7
+  },
+  "stop_loss_alerts": [
+    {"symbol": "002472", "name": "双环传动", "price": 40.05, "stop": 40.81, "gap_pct": -1.86, "status": "已破止损"},
+    {"symbol": "600699", "name": "均胜电子", "price": 22.76, "stop": 24.00, "gap_pct": -5.17, "status": "已破止损"},
+    {"symbol": "002011", "name": "盾安环境", "price": 10.29, "stop": 10.50, "gap_pct": -2.00, "status": "已破止损"},
+    {"symbol": "603298", "name": "杭叉集团", "price": 23.80, "stop": 23.00, "gap_pct": 3.48, "status": "逼近止损"}
+  ],
+  "take_profit_alerts": [
+    {"symbol": "588080", "name": "科创50ETF", "price": 2.036, "target": 1.98, "excess_pct": 2.8, "status": "已超止盈价"},
+    {"symbol": "159540", "name": "信创ETF", "price": 2.391, "target": 2.30, "excess_pct": 4.0, "status": "已超止盈价"}
+  ]
+}
