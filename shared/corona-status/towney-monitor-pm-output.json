@@ -1,0 +1,242 @@
+{
+  "principal": "towney",
+  "timestamp": "2026-06-25 13:00:19",
+  "principal_label": "Towney",
+  "alerts": [
+    {
+      "code": "588090",
+      "name": "科创芯片ETF",
+      "price": 2.113,
+      "change_pct_today": 3.58,
+      "holding_pct": 30.35,
+      "triggers": [
+        {
+          "level": "🟡",
+          "type": "止盈触及",
+          "msg": "现价2.113 ≥ 止盈价2.007"
+        }
+      ]
+    },
+    {
+      "code": "518880",
+      "name": "黄金ETF",
+      "price": 8.319,
+      "change_pct_today": -2.3,
+      "holding_pct": -9.58,
+      "triggers": [
+        {
+          "level": "🔴",
+          "type": "止损触及",
+          "msg": "现价8.319 ≤ 止损价8.5"
+        }
+      ]
+    },
+    {
+      "code": "688041",
+      "name": "海光信息",
+      "price": 364.58,
+      "change_pct_today": 8.15,
+      "holding_pct": 36.38,
+      "triggers": [
+        {
+          "level": "🟡",
+          "type": "止盈触及",
+          "msg": "现价364.58 ≥ 止盈价351.62"
+        },
+        {
+          "level": "🔵",
+          "type": "大涨提醒",
+          "msg": "今日涨幅8.15%"
+        },
+        {
+          "level": "🔵",
+          "type": "放量上涨",
+          "msg": "量比2.02, 涨幅8.15%"
+        }
+      ]
+    },
+    {
+      "code": "002156",
+      "name": "通富微电",
+      "price": 78.29,
+      "change_pct_today": 4.89,
+      "holding_pct": 30.23,
+      "triggers": [
+        {
+          "level": "🟡",
+          "type": "止盈触及",
+          "msg": "现价78.29 ≥ 止盈价76.99"
+        }
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "code": "688120",
+      "name": "华海清科",
+      "price": 250.55,
+      "change_pct_today": 3.32,
+      "holding_pct": 70.33,
+      "stop_loss": 228.8,
+      "take_profit": 306.73,
+      "pos_pct": 7.46,
+      "vol_ratio": 1.18,
+      "alerts": []
+    },
+    {
+      "code": "588090",
+      "name": "科创芯片ETF",
+      "price": 2.113,
+      "change_pct_today": 3.58,
+      "holding_pct": 30.35,
+      "stop_loss": 1.751,
+      "take_profit": 2.007,
+      "pos_pct": 7.35,
+      "vol_ratio": 3.04,
+      "alerts": [
+        {
+          "level": "🟡",
+          "type": "止盈触及",
+          "msg": "现价2.113 ≥ 止盈价2.007"
+        }
+      ]
+    },
+    {
+      "code": "688008",
+      "name": "澜起科技",
+      "price": 276.49,
+      "change_pct_today": 3.75,
+      "holding_pct": 78.12,
+      "stop_loss": 241.2,
+      "take_profit": 288.79,
+      "pos_pct": 7.5,
+      "vol_ratio": 1.58,
+      "alerts": []
+    },
+    {
+      "code": "300394",
+      "name": "天孚通信",
+      "price": 322.46,
+      "change_pct_today": -0.87,
+      "holding_pct": 92.01,
+      "stop_loss": 269.04,
+      "take_profit": 385.08,
+      "pos_pct": 11.41,
+      "vol_ratio": 1.68,
+      "alerts": []
+    },
+    {
+      "code": "159949",
+      "name": "创业板50ETF",
+      "price": 2.096,
+      "change_pct_today": 2.29,
+      "holding_pct": 74.23,
+      "stop_loss": 1.7,
+      "take_profit": 2.5,
+      "pos_pct": 3.18,
+      "vol_ratio": 1.28,
+      "alerts": []
+    },
+    {
+      "code": "510500",
+      "name": "中证500ETF",
+      "price": 9.047,
+      "change_pct_today": 0.69,
+      "holding_pct": 8.97,
+      "stop_loss": 7.5,
+      "take_profit": 9.049,
+      "pos_pct": 4.01,
+      "vol_ratio": 0.95,
+      "alerts": []
+    },
+    {
+      "code": "513300",
+      "name": "纳斯达克ETF",
+      "price": 2.702,
+      "change_pct_today": 0.78,
+      "holding_pct": 20.89,
+      "stop_loss": 2.392,
+      "take_profit": 2.861,
+      "pos_pct": 5.06,
+      "vol_ratio": 0.85,
+      "alerts": []
+    },
+    {
+      "code": "513650",
+      "name": "标普500ETF",
+      "price": 1.882,
+      "change_pct_today": -0.05,
+      "holding_pct": 13.78,
+      "stop_loss": 1.7,
+      "take_profit": 2.2,
+      "pos_pct": 1.43,
+      "vol_ratio": 0.76,
+      "alerts": []
+    },
+    {
+      "code": "518880",
+      "name": "黄金ETF",
+      "price": 8.319,
+      "change_pct_today": -2.3,
+      "holding_pct": -9.58,
+      "stop_loss": 8.5,
+      "take_profit": 10.5,
+      "pos_pct": 1.75,
+      "vol_ratio": 1.71,
+      "alerts": [
+        {
+          "level": "🔴",
+          "type": "止损触及",
+          "msg": "现价8.319 ≤ 止损价8.5"
+        }
+      ]
+    },
+    {
+      "code": "688041",
+      "name": "海光信息",
+      "price": 364.58,
+      "change_pct_today": 8.15,
+      "holding_pct": 36.38,
+      "stop_loss": 287.5,
+      "take_profit": 351.62,
+      "pos_pct": 7.57,
+      "vol_ratio": 2.02,
+      "alerts": [
+        {
+          "level": "🟡",
+          "type": "止盈触及",
+          "msg": "现价364.58 ≥ 止盈价351.62"
+        },
+        {
+          "level": "🔵",
+          "type": "大涨提醒",
+          "msg": "今日涨幅8.15%"
+        },
+        {
+          "level": "🔵",
+          "type": "放量上涨",
+          "msg": "量比2.02, 涨幅8.15%"
+        }
+      ]
+    },
+    {
+      "code": "002156",
+      "name": "通富微电",
+      "price": 78.29,
+      "change_pct_today": 4.89,
+      "holding_pct": 30.23,
+      "stop_loss": 64.0,
+      "take_profit": 76.99,
+      "pos_pct": 1.62,
+      "vol_ratio": 1.75,
+      "alerts": [
+        {
+          "level": "🟡",
+          "type": "止盈触及",
+          "msg": "现价78.29 ≥ 止盈价76.99"
+        }
+      ]
+    }
+  ],
+  "has_alerts": true
+}

@@ -1,0 +1,390 @@
+{
+  "principal": "towney",
+  "agent": "news",
+  "cycle_id": "towney-20260625-1318-深度分析",
+  "data_quality": {
+    "note": "智谱搜索(zhipu_search.sh)为主要数据源，部分标的(华海清科/天孚通信/黄金ETF/标普500ETF)首次搜索失败后通过调整关键词重试成功。Tavily和web_search均因API限额(432)不可用。新浪财经web_fetch补充了华海清科和天孚通信的实时新闻。中证500/创业板50/科创芯片ETF/纳斯达克ETF通过智谱搜索获取。黄金ETF和标普500ETF的智谱搜索最终失败，使用已获取的间接信息(纳斯达克搜索结果中包含黄金和标普数据)。整体数据覆盖率约85%，时效性集中在2026年6月。",
+    "sources_available": ["zhipu_search_pro", "web_fetch(sina_finance)"],
+    "sources_unavailable": ["tavily_search(432_limit)", "web_search(432_limit)"],
+    "coverage_pct": 85
+  },
+  "holdings": [
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "events": [
+        {
+          "date": "2026-06-24",
+          "title": "华海清科就37.95亿元定增回复问询 详解产能消化问题",
+          "summary": "回复上交所审核问询函，募资总额调减至37.95亿元。截至2026年5月末半导体装备在手订单74.81亿元(较上年末+30.02%)，离子注入装备在手订单同比+116.04%。天津/北京基地产能利用率长期90%以上，月度标准出货能力30-40台。上海装备研发制造基地项目税后IRR 19.56%。",
+          "sentiment": "positive",
+          "impact_score": 7
+        },
+        {
+          "date": "2026-06-25",
+          "title": "华海清科：订单饱满凸显产能瓶颈 加速扩产",
+          "summary": "券商研报指出订单饱满凸显产能瓶颈，加速扩产逻辑清晰。6/24获融资买入2.42亿元。",
+          "sentiment": "positive",
+          "impact_score": 6
+        },
+        {
+          "date": "2026-06-09",
+          "title": "华海清科获得国内首台全自动板级CMP量产",
+          "summary": "国内首台全自动板级CMP设备量产突破，技术护城河进一步加深。",
+          "sentiment": "positive",
+          "impact_score": 7
+        }
+      ],
+      "sentiment_overall": "positive",
+      "sentiment_score": 0.35,
+      "event_impact_avg": 6.7,
+      "news_score": 7.5,
+      "summary": "华海清科近期舆情积极。定增扩产37.95亿回应产能瓶颈，在手订单74.81亿(+30%)验证高景气。国内首台全自动板级CMP量产标志技术突破。离子注入装备订单翻倍(+116%)开辟第二增长曲线。定增摊薄是短期压力但IRR 19.56%支撑长期逻辑。"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "events": [
+        {
+          "date": "2026-02-09",
+          "title": "澜起科技H股上市 募资约69亿港元",
+          "summary": "2月9日港交所挂牌(06809.HK)，引入17名基石投资者(阿里、摩根资管、瑞银、霸菱等)，募资净额约69.05亿港元。70%用于互连类芯片研发。",
+          "sentiment": "positive",
+          "impact_score": 7
+        },
+        {
+          "date": "2026-04-14",
+          "title": "澜起科技2025年报：营收54.56亿(+49.94%) 净利22.36亿(+58.35%)",
+          "summary": "互连类芯片收入51.39亿(+53.43%)，多项指标创历史新高。全球内存互连芯片市占率36.8%排名第一，PCIe Retimer市占率10.9%排名第二。Q4单季营收14亿净利6亿。每10股派3.90元。",
+          "sentiment": "positive",
+          "impact_score": 6
+        },
+        {
+          "date": "2026-03-05",
+          "title": "澜起科技技术栈覆盖DDR2-DDR5/PCIe/CXL/SerDes",
+          "summary": "DDR5第五子代RCD支持8000MT/s，PCIe 6.x/CXL 3.x Retimer送样。JEDEC董事会成员，牵头DDR5 RCD/MDB/CKD国际标准。",
+          "sentiment": "positive",
+          "impact_score": 5
+        }
+      ],
+      "sentiment_overall": "positive",
+      "sentiment_score": 0.40,
+      "event_impact_avg": 6.0,
+      "news_score": 7.0,
+      "summary": "澜起科技舆情积极。H股上市成功拓宽融资渠道，引入顶级基石投资者。2025年业绩高增(净利+58%)，全球内存互连芯片龙头地位稳固。DDR5+PCIe+CXL技术栈完整，受益AI算力需求。需关注中国电子减持及股东套现压力。"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "events": [
+        {
+          "date": "2026-06-25",
+          "title": "华尔街ProShares申报中际旭创/新易盛/天孚通信两倍做多ETF",
+          "summary": "美国ETF发行商ProShares向SEC提交文件，拟推出追踪中际旭创、新易盛、天孚通信单日表现两倍的产品。类比SK海力士两倍产品暴涨先例，市场预期海外资金将涌入光模块三兄弟。",
+          "sentiment": "positive",
+          "impact_score": 9
+        },
+        {
+          "date": "2026-06-25",
+          "title": "花旗将新易盛目标价上调近翻倍 称全球光互连市场三年增长10倍",
+          "summary": "花旗大幅上调新易盛目标价，看好全球光互连市场。天孚通信作为光器件龙头间接受益。6/24获融资买入15.56亿元。",
+          "sentiment": "positive",
+          "impact_score": 8
+        },
+        {
+          "date": "2026-06-03",
+          "title": "易中天齐创历史新高 天孚通信涨8.84%一度突破500元",
+          "summary": "Computex2026催化，黄仁勋表态+英伟达Spectrum-X硅光以太网量产。CPO概念全面爆发，天孚通信盘中突破500元。",
+          "sentiment": "positive",
+          "impact_score": 8
+        },
+        {
+          "date": "2026-06-15",
+          "title": "CPO概念持续走强 太辰光20cm涨停",
+          "summary": "国盛证券研报称高速光模块放量带动MPO需求激增。光模块板块整体强势，天孚通信跟涨。",
+          "sentiment": "positive",
+          "impact_score": 6
+        }
+      ],
+      "sentiment_overall": "positive",
+      "sentiment_score": 0.55,
+      "event_impact_avg": 7.8,
+      "news_score": 8.5,
+      "summary": "天孚通信舆情极度积极。华尔街两倍做多产品申报是标志性事件，类比海力士先例可能引发海外资金大规模涌入。花旗翻倍上调目标价+CPO产业化元年双重催化。但需警惕：文章指出光模块已非早期价值发现阶段(中际旭创涨超15倍)，当前更多是波动率交易而非基本面重估，高估值蕴含回调风险。"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "events": [
+        {
+          "date": "2026-04-07",
+          "title": "海光信息2026Q1：营收40.34亿(+68.06%) 净利6.87亿(+35.82%)",
+          "summary": "扣股份支付后归母净利9.23亿(+74.86%)。2025全年营收143.77亿(+56.92%)，净利25.45亿(+31.79%)。研发投入45.69亿(+32.58%)占营收31.78%。合同负债20.19亿(+123%)，存货73.33亿，订单饱满。",
+          "sentiment": "positive",
+          "impact_score": 7
+        },
+        {
+          "date": "2026-06-01",
+          "title": "AIPC概念爆发 海光信息国产x86 NPU龙头 2026Q2批量出货",
+          "summary": "海光信息被列为AIPC核心芯片环节国产x86 NPU龙头，联想/华为主力供应商，2026Q2 NPU批量出货。",
+          "sentiment": "positive",
+          "impact_score": 7
+        },
+        {
+          "date": "2026-05-15",
+          "title": "中科曙光合并失败 海光信息市值5870亿",
+          "summary": "海光吸收合并中科曙光终止(市场环境变化)。海光市值5870亿，动态PE 213.6倍。中科曙光持海光27.96%价值1641亿。",
+          "sentiment": "neutral",
+          "impact_score": 4
+        }
+      ],
+      "sentiment_overall": "positive",
+      "sentiment_score": 0.45,
+      "event_impact_avg": 6.0,
+      "news_score": 7.5,
+      "summary": "海光信息舆情积极。Q1业绩高增68%验证AI算力+信创双轮驱动。AIPC概念赋予新增长叙事(NPU批量出货)。双芯战略(CPU+DCU)差异化竞争优势明显。但PE 213倍估值极高，中科曙光合并失败消除不确定性但暴露估值泡沫风险。合同负债+123%预示后续业绩确定性强。"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "events": [
+        {
+          "date": "2026-06-08",
+          "title": "通富微电42亿定增获深交所审核通过",
+          "summary": "募资不超过42.2亿元投向存储芯片封测/汽车电子/晶圆级封测/高性能计算四大领域。全球封测市场2026年将达961亿美元，先进封装占比超54%。",
+          "sentiment": "positive",
+          "impact_score": 7
+        },
+        {
+          "date": "2026-06-03",
+          "title": "通富微电涨停 机构净买入2.6亿 北向净买入8.28亿",
+          "summary": "6月3日涨停报70.22元，换手率11.63%，成交额122.84亿。机构+北向合计净买入超10亿。",
+          "sentiment": "positive",
+          "impact_score": 8
+        },
+        {
+          "date": "2026-05-25",
+          "title": "通富微电市值首破千亿 江苏第19家",
+          "summary": "5月25日收盘69.78元，市值1059亿。2025年营收279.21亿(+16.92%)，净利12.19亿(+79.86%)。2026Q1营收74.82亿(+22.80%)，净利3.29亿(+224.55%)。",
+          "sentiment": "positive",
+          "impact_score": 7
+        },
+        {
+          "date": "2026-05-27",
+          "title": "深度分析：通富微电定价里的确定性溢价是否透支未来？",
+          "summary": "文章指出Q1毛利率仅13.32%，利润含金量存疑。近10年利息支出从0.51亿升至5.24亿(翻10倍)，资产负债率63.73%。频繁定增融资(第5次)，高度依赖外部输血。",
+          "sentiment": "negative",
+          "impact_score": 6
+        }
+      ],
+      "sentiment_overall": "positive",
+      "sentiment_score": 0.50,
+      "event_impact_avg": 7.0,
+      "news_score": 7.5,
+      "summary": "通富微电舆情积极偏正面。定增获批+市值破千亿+机构大幅买入构成强催化。Q1净利+224%超预期，深度绑定AMD(MI450 Chiplet封测订单)。但需关注毛利率仅13.32%偏低、频繁定增稀释、利息支出10年翻10倍等隐忧。先进封装赛道确定性高但个股财务质量需持续跟踪。"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "events": [
+        {
+          "date": "2026-06-15",
+          "title": "科创芯片ETF被大买 美伊达成和平协议",
+          "summary": "6月15日科创芯片ETF获资金大幅流入。美伊和平协议提振市场情绪，科技板块全面反弹。",
+          "sentiment": "positive",
+          "impact_score": 5
+        },
+        {
+          "date": "2026-06-07",
+          "title": "费城半导体指数-10% 纳指-4% 科创芯片ETF遭抛售",
+          "summary": "美国5月非农超预期引发加息担忧，费城半导体指数暴跌10%，科创芯片ETF当周被大抛售。",
+          "sentiment": "negative",
+          "impact_score": 7
+        },
+        {
+          "date": "2026-06-22",
+          "title": "科创芯片方向ETF 6月以来净流出较多",
+          "summary": "6月以来股票ETF净流出超900亿，科创芯片方向净流出较多。但半导体设备方向逆势吸金。",
+          "sentiment": "neutral",
+          "impact_score": 4
+        }
+      ],
+      "sentiment_overall": "neutral",
+      "sentiment_score": 0.10,
+      "event_impact_avg": 5.3,
+      "news_score": 5.5,
+      "summary": "科创芯片ETF舆情中性。半导体板块呈现高波动特征：费城半导体暴跌引发抛售→美伊和平协议+AI催化反弹→6月整体资金净流出。TrendForce上修存储产值(2027年1.28万亿美元)提供长期支撑。短期受美股科技波动传导影响大。"
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "events": [
+        {
+          "date": "2026-06-21",
+          "title": "创业板周涨11.2% 科创50周涨14.93% 均创历史新高",
+          "summary": "本周创业板和科创板纷纷大涨创历史新高。成交量方面科创50仍增长3.58%。社融数据：5月末存量458.81万亿(+7.7%)，M2 353.67万亿(+8.6%)。",
+          "sentiment": "positive",
+          "impact_score": 6
+        },
+        {
+          "date": "2026-06-25",
+          "title": "创业板指领涨2.84% 机器人概念延续强势",
+          "summary": "上周五A股全面反弹，创业板指领涨2.84%。本周关注长鑫科技IPO上会、MLF续作等事件催化。",
+          "sentiment": "positive",
+          "impact_score": 5
+        },
+        {
+          "date": "2026-06-16",
+          "title": "创系列ETF中国行：聚焦创业板50投资新机遇",
+          "summary": "深交所+华安基金联合举办，中金首席策略分析师李求索就A股结构性机会作前瞻判断。创业板50ETF华安(159949)作为核心配置标的。",
+          "sentiment": "positive",
+          "impact_score": 3
+        }
+      ],
+      "sentiment_overall": "positive",
+      "sentiment_score": 0.30,
+      "event_impact_avg": 4.7,
+      "news_score": 6.0,
+      "summary": "创业板50ETF舆情积极。创业板指创历史新高，周涨11.2%。中际旭创+新易盛+天孚通信三大权重股持续走强驱动指数。但需注意创业板高度集中于AI/光模块赛道，集中度风险上升。社融和M2数据稳健提供宏观支撑。"
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "events": [
+        {
+          "date": "2026-06-24",
+          "title": "中证500报8842.94(+1.78%) 成交额6840亿",
+          "summary": "6月24日中证500指数上涨1.78%，成交额6840亿，换手率2.23%。",
+          "sentiment": "positive",
+          "impact_score": 3
+        },
+        {
+          "date": "2026-06-18",
+          "title": "中证500指数相关ETF近5日吸金超20亿",
+          "summary": "过去5个交易日资金流入中证500指数相关ETF超20亿元。6月整体股票ETF净流出超900亿，中证500是为数不多的净流入方向。",
+          "sentiment": "positive",
+          "impact_score": 4
+        },
+        {
+          "date": "2026-06-15",
+          "title": "中证500指数调样生效 更换50只样本",
+          "summary": "6月12日收市后中证500指数更换50只样本正式生效。恒玄科技、百济神州等调入。",
+          "sentiment": "neutral",
+          "impact_score": 2
+        }
+      ],
+      "sentiment_overall": "neutral",
+      "sentiment_score": 0.15,
+      "event_impact_avg": 3.0,
+      "news_score": 5.0,
+      "summary": "中证500ETF舆情中性偏积极。指数近期表现稳健(6/24 +1.78%)，资金逆势净流入(近5日+20亿)显示配置价值获认可。指数调样纳入更多科技成长标的。但整体市场风格极度偏向科创/创业板，中证500相对缺乏强催化。"
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "events": [
+        {
+          "date": "2026-06-06",
+          "title": "美股黑色星期五：纳指暴跌4.18% 费城半导体-10%",
+          "summary": "5月非农超预期引发加息担忧，10年期美债突破4.5%。SpaceX/OpenAI等巨型IPO抽血流动性。量化交易放大跌幅。但消费/公用事业/医药等价值板块韧性显著。",
+          "sentiment": "negative",
+          "impact_score": 8
+        },
+        {
+          "date": "2026-06-12",
+          "title": "SpaceX登陆纳斯达克 市值突破2万亿美元",
+          "summary": "SpaceX IPO定价135美元，开盘150美元(+11%)，盘中冲高至168.75美元(+25%)，市值一度突破2.2万亿美元。募资750亿美元创历史纪录。",
+          "sentiment": "positive",
+          "impact_score": 7
+        },
+        {
+          "date": "2026-06-09",
+          "title": "纳指25929.66(+0.86%) 道指50786.01(-0.16%)",
+          "summary": "黑色星期五后美股企稳反弹。纳指小幅上涨，道指微跌。韩国KOSPI暴跌8.23%受中东局势影响。",
+          "sentiment": "neutral",
+          "impact_score": 4
+        }
+      ],
+      "sentiment_overall": "neutral",
+      "sentiment_score": -0.05,
+      "event_impact_avg": 6.3,
+      "news_score": 5.5,
+      "summary": "纳斯达克ETF舆情中性。黑色星期五(纳指-4.18%)暴露高估值脆弱性：非农超预期→加息概率飙升→利率重定价→成长股杀估值。SpaceX成功上市提振情绪但加剧流动性分流。韩国KOSPI-8.23%显示亚太科技股联动风险。中长期AI产业趋势未变但短期波动加大。"
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "events": [
+        {
+          "date": "2026-06-06",
+          "title": "标普500重挫2.64% 终结周线九连阳",
+          "summary": "黑色星期五中标普500跌2.64%，终结周线九连阳。利率重定价+巨型IPO抽血+量化共振三重因素叠加。价值板块(消费/公用事业/医药)韧性显著优于成长。",
+          "sentiment": "negative",
+          "impact_score": 6
+        },
+        {
+          "date": "2026-06-09",
+          "title": "标普500报7405.73(+0.3%) 企稳反弹",
+          "summary": "黑色星期五后标普500小幅反弹。市场消化非农冲击，关注后续CPI数据和美联储表态。",
+          "sentiment": "neutral",
+          "impact_score": 3
+        }
+      ],
+      "sentiment_overall": "neutral",
+      "sentiment_score": -0.05,
+      "event_impact_avg": 4.5,
+      "news_score": 5.0,
+      "summary": "标普500ETF舆情中性。黑色星期五终结周线九连阳，但价值板块韧性显示非全面崩盘。标普500相比纳指更均衡(价值+成长)，调整幅度(-2.64%)小于纳指(-4.18%)。利率走向是核心变量，关注后续CPI和美联储政策信号。"
+    },
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "events": [
+        {
+          "date": "2026-06-17",
+          "title": "现货黄金突破4350美元/盎司 涨超1%",
+          "summary": "国际贵金属价格大涨，现货黄金突破4350美元。现货白银、纽约期银均涨超1%。地缘风险+美元走弱支撑金价。",
+          "sentiment": "positive",
+          "impact_score": 5
+        },
+        {
+          "date": "2026-06-09",
+          "title": "COMEX黄金4353.8美元/盎司(-0.26%) 中东局势持续",
+          "summary": "黄金高位震荡。中东冲突持续(美伊局势反复)，沙特朱拜勒PPE树脂工厂停产影响全球供应链。",
+          "sentiment": "neutral",
+          "impact_score": 4
+        },
+        {
+          "date": "2026-06-07",
+          "title": "白银暴跌超8% 黄金相对抗跌",
+          "summary": "黑色星期五中白银暴跌超8%，黄金相对抗跌。美元走强短期压制贵金属。",
+          "sentiment": "negative",
+          "impact_score": 5
+        }
+      ],
+      "sentiment_overall": "neutral",
+      "sentiment_score": 0.10,
+      "event_impact_avg": 4.7,
+      "news_score": 5.0,
+      "summary": "黄金ETF舆情中性。金价突破4350美元创近期新高，地缘风险(美伊局势反复)提供支撑。但黑色星期五中白银-8%显示贵金属板块波动加剧。黄金作为避险资产在美股调整中相对抗跌。中长期受去美元化+央行购金趋势支撑，但短期美元走强构成压力。"
+    }
+  ],
+  "portfolio_summary": {
+    "overall_sentiment": "positive",
+    "positive_count": 7,
+    "neutral_count": 4,
+    "negative_count": 0,
+    "top_positive": ["天孚通信(8.5)", "华海清科(7.5)", "海光信息(7.5)", "通富微电(7.5)"],
+    "top_concern": [
+      "天孚通信估值极高(PE超70倍)，华尔街两倍做多产品可能加剧双向波动",
+      "美股黑色星期五暴露AI高估值脆弱性，纳斯达克ETF和标普500ETF承压",
+      "黄金ETF缺乏强催化，金价高位震荡方向不明"
+    ],
+    "key_themes": [
+      "AI算力产业链(光模块/芯片/封测)仍是市场最强主线，CPO产业化元年催化密集",
+      "半导体设备国产替代(华海清科CMP/海光CPU+DCU)订单饱满，业绩确定性强",
+      "美股利率重定价风险是最大外部不确定性，非农超预期→加息概率上升→成长股杀估值",
+      "华尔街开始将A股AI标的(中际旭创/新易盛/天孚通信)纳入全球交易框架，两倍做多产品是标志性事件"
+    ]
+  }
+}

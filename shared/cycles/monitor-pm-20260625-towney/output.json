@@ -1,0 +1,111 @@
+{
+  "principal": "towney",
+  "scan_time": "2026-06-25T13:20:00+08:00",
+  "data_source": "东方财富+腾讯双源验证",
+  "alerts": [
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "type": "持仓",
+      "alert_type": "止损触及",
+      "detail": "现价8.315已跌破止损价8.5（跌幅-2.35%），CIO 6/24复盘已建议清仓override。今日继续下行确认弱势，建议立即触发IC决策处理。",
+      "current_price": 8.315,
+      "change_pct": -2.35,
+      "stop_loss": 8.5,
+      "severity": "high"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "type": "持仓",
+      "alert_type": "涨幅异动+突破止盈",
+      "detail": "现价361.41涨幅+7.21%量比1.87，已突破止盈参考位351.62（+2.8%）。CIO 6/24评估为基本面顶级但估值极高(PE 272x)不追高。建议告知Butler评估是否分批止盈。",
+      "current_price": 361.41,
+      "change_pct": 7.21,
+      "stop_profit": 351.62,
+      "volume_ratio": 1.87,
+      "severity": "medium"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "type": "持仓",
+      "alert_type": "放量上涨+突破止盈",
+      "detail": "现价2.110涨幅+3.43%量比2.64（放量）。已突破止盈参考位2.007（+5.1%）。CIO 6/24已减仓至5.5%但仍有部分仓位，建议关注是否进一步减仓。",
+      "current_price": 2.11,
+      "change_pct": 3.43,
+      "stop_profit": 2.007,
+      "volume_ratio": 2.64,
+      "severity": "medium"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "type": "持仓",
+      "alert_type": "涨幅异动+突破止盈",
+      "detail": "现价78.30涨幅+4.90%量比1.57，已突破止盈参考位76.99（+1.7%）。CIO 6/24刚加仓至3%，今日极端超买。建议关注是否需提前止盈或上移止盈线。",
+      "current_price": 78.3,
+      "change_pct": 4.9,
+      "stop_profit": 76.99,
+      "volume_ratio": 1.57,
+      "severity": "medium"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "type": "持仓",
+      "alert_type": "涨幅异动",
+      "detail": "现价278.99涨幅+4.69%量比1.48。距止盈288.79尚有3.5%空间。CIO 6/24建议加仓至7.5%但希望回调至MA20(248.70)附近执行，当前价位偏高不利建仓。",
+      "current_price": 278.99,
+      "change_pct": 4.69,
+      "stop_profit": 288.79,
+      "volume_ratio": 1.48,
+      "severity": "low"
+    },
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "type": "持仓",
+      "alert_type": "涨幅异动",
+      "detail": "现价250.67涨幅+3.37%量比1.08。距止盈306.73尚有22%空间，距止损228.80尚有8.7%空间。运行正常。",
+      "current_price": 250.67,
+      "change_pct": 3.37,
+      "volume_ratio": 1.08,
+      "severity": "low"
+    },
+    {
+      "symbol": "002463",
+      "name": "沪电股份",
+      "type": "观察池",
+      "alert_type": "涨幅异动",
+      "detail": "现价155.37涨幅+8.39%量比1.65。6/18清仓锁利@148.12，今日继续大涨，已超清仓价。短期追高风险高，建议等回调再考虑买回。",
+      "current_price": 155.37,
+      "change_pct": 8.39,
+      "volume_ratio": 1.65,
+      "severity": "medium"
+    },
+    {
+      "symbol": "002125",
+      "name": "湘潭电化",
+      "type": "观察池",
+      "alert_type": "跌幅异动",
+      "detail": "现价15.17跌幅-3.93%。仍在目标建仓价14元上方，可继续观察。当前PE仍偏高，等回调至14元以下再考虑建仓。",
+      "current_price": 15.17,
+      "change_pct": -3.93,
+      "target_price": 14,
+      "severity": "low"
+    },
+    {
+      "symbol": "300762",
+      "name": "上海瀚讯",
+      "type": "观察池",
+      "alert_type": "跌幅异动",
+      "detail": "现价40.21跌幅-3.57%。距目标建仓价30元仍有距离。继续观察。",
+      "current_price": 40.21,
+      "change_pct": -3.57,
+      "target_price": 30,
+      "severity": "low"
+    }
+  ],
+  "summary": "共9条预警：1条高优先级（黄金ETF止损触及），4条中优先级（持仓异动+突破止盈），4条低优先级。重点关注518880黄金ETF已破止损线，建议立即触发IC决策。"
+}
