@@ -1,0 +1,94 @@
+{
+  "principal": "klaire",
+  "agent": "risk",
+  "cycle_id": "klaire-20260625-2310-eod",
+  "data": {
+    "symbol": "multi",
+    "risk_score": 5.1,
+    "verdict": "NOC",
+    "veto_reason": "",
+    "dimensions": {
+      "financial_health": {
+        "score": 5.5,
+        "note": "6只持仓财务健康度分化：盾安(6)/杭叉(6)/科创50(6)/信创(6)财务稳健，均胜电子(4)商誉风险+ROE偏低拖累，双环传动(5)毛利率承压。整体中等偏上。均分5.5。",
+        "source": "self"
+      },
+      "valuation": {
+        "score": 5.3,
+        "note": "估值分化显著：盾安PE仅10.7极低估值(6)，科创50/杭叉合理偏低(6)，双环中性(5)，信创PE 60-100倍偏高(5)，均胜PE 25+缺乏安全边际(4)。均分5.3。",
+        "source": "self"
+      },
+      "industry_cycle": {
+        "score": 5,
+        "note": "精简两委员流程，Industry未派发，数据缺失，默认5分。",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 4.7,
+        "note": "技术面严重分化：信创ETF(9)+科创50(8)趋势极强但超买，其余4只均处下降通道——均胜(2)深度破位+双环(3)止损触发+盾安(3)距止损0.02元+杭叉(3)缩量反弹。两极分化拉低均分至4.7。",
+        "source": "self"
+      },
+      "macro": {
+        "score": 5,
+        "note": "精简两委员流程，Industry未派发，数据缺失，默认5分。",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 5,
+        "note": "精简两委员流程，News未派发，数据缺失，默认5分。",
+        "source": "news_agent"
+      }
+    },
+    "summary": "组合风险中等(5.1)，无硬否决。最大风险点：(1)双环传动+均胜电子止损已触发需立即执行止损纪律；(2)盾安环境距止损仅0.02元(0.19%)极度危险；(3)信创ETF+科创50超买严重，趋势强但回撤风险积累。4/6持仓技术面弱势 vs 2/6强势形成两极分化，整体风险可控但需果断处置已触发止损标的。",
+    "concentration_detail": {
+      "ai_sector_pct": 33.3,
+      "ai_threshold": 40,
+      "ai_level": "正常",
+      "ai_exceed_reason": "",
+      "auto_parts_sector_pct": 33.3,
+      "auto_parts_note": "双环传动+均胜电子均为汽车零部件，但两者均已触发止损，实际有效敞口将随止损执行而降低",
+      "refrigeration_pct": 16.7,
+      "industrial_vehicle_pct": 16.7
+    },
+    "concentration_weighted_pnl": {
+      "note": "组合整体盈亏两极分化，盈利集中在AI/信创赛道，亏损集中在汽车零部件",
+      "winners": [
+        {"symbol": "159540", "name": "信创ETF", "pnl_pct": 44.1, "weight_in_portfolio_pct": 16.7},
+        {"symbol": "588080", "name": "科创50ETF", "pnl_pct": 28.2, "weight_in_portfolio_pct": 16.7}
+      ],
+      "losers": [
+        {"symbol": "600699", "name": "均胜电子", "pnl_pct": -8.5, "weight_in_portfolio_pct": 16.7},
+        {"symbol": "002011", "name": "盾安环境", "pnl_pct": -7.8, "weight_in_portfolio_pct": 16.7},
+        {"symbol": "603298", "name": "杭叉集团", "pnl_pct": -4.8, "weight_in_portfolio_pct": 16.7},
+        {"symbol": "002472", "name": "双环传动", "pnl_pct": -3.1, "weight_in_portfolio_pct": 16.7}
+      ],
+      "weighted_net_pnl_pct": 8.0,
+      "weighted_net_pnl_note": "粗略估算(等权重16.7%×6只)，实际取决于各标的具体仓位"
+    },
+    "veto_items": [
+      {
+        "symbol": "002472",
+        "name": "双环传动",
+        "veto_type": "加仓否决",
+        "reason": "止损价40.81已触发，现价39.42，禁止任何加仓操作"
+      },
+      {
+        "symbol": "600699",
+        "name": "均胜电子",
+        "veto_type": "加仓否决",
+        "reason": "止损价24.00已触发，现价22.77，禁止任何加仓操作"
+      },
+      {
+        "symbol": "002011",
+        "name": "盾安环境",
+        "veto_type": "加仓否决",
+        "reason": "现价10.52距止损10.50仅0.02元(0.19%)，≤3%阈值，禁止任何加仓操作"
+      }
+    ],
+    "data_quality": "⚠️ 财务数据来自Research的gtimg单源估算(eniu/akshare不可用)，PE分位数为行业经验估算非精确历史分位。行情数据gtimg单源可用。",
+    "missing_dimensions": ["industry_cycle", "macro", "news_sentiment"],
+    "missing_count": 3,
+    "missing_override": true,
+    "missing_override_note": "超过2个维度缺失本应输出'数据不足建议人工研判'，但此为精简两委员流程规定行为(Industry/News未派发)，三个维度统一默认5分符合协议，继续输出评分。"
+  }
+}

@@ -41,7 +41,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.5.28",
-    "lastTouchedAt": "2026-06-16T02:24:53.219Z"
+    "lastTouchedAt": "2026-06-25T15:05:12.995Z"
   },
   "secrets": {
     "providers": {
@@ -60,10 +60,6 @@
       "volcengine-plan-secrets": {
         "source": "file",
         "path": "~/.openclaw/secrets/volcengine-plan-secrets.json"
-      },
-      "arthur-secrets": {
-        "source": "file",
-        "path": "~/.openclaw/credentials/arthur.secrets.json"
       },
       "zhipu-search-secrets": {
         "source": "file",
@@ -1177,13 +1173,6 @@
         }
       },
       "accounts": {
-        "arthur": {
-          "name": "Arthur",
-          "appId": "cli_aaadc0c90f795be8",
-          "appSecret": "SYVdrTlmWibVdeNdNQetNcJpRcFDDPPV",
-          "enabled": false,
-          "agentId": "cio"
-        },
         "butler": {
           "name": "Butler",
           "appId": "cli_aaa005a9bd789bea",
@@ -1200,5 +1189,23 @@
         }
       }
     }
-  }
+  },
+  "bindings": [
+    {
+      "type": "route",
+      "agentId": "dexter",
+      "match": {
+        "channel": "feishu",
+        "accountId": "dexter"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "butler",
+      "match": {
+        "channel": "feishu",
+        "accountId": "butler"
+      }
+    }
+  ]
 }

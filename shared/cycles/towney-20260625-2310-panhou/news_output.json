@@ -1,0 +1,131 @@
+{
+  "cycle_id": "towney-20260625-2310-panhou",
+  "agent": "news",
+  "principal": "towney",
+  "analysis_date": "2026-06-25",
+  "data_quality": "🔴 Tavily 配额耗尽（432 限额）+ web_search 同源失败，AGENTS.md 中的智谱/搜狗 fallback 工具未在当前可用工具清单中暴露，无法获取实时新闻。当前分析仅基于持仓表 6/24 CIO 全面复盘留下的事件上下文 + 行业基本面框架，未引入新事件。所有 event_risk 维度保守取中性，不编造未经查证的新闻。",
+  "holdings": [
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "dimensions": {
+        "sentiment": { "score": 6, "detail": "CMP 设备国产替代龙头，半导体设备行业景气延续；定增预案在路上但落地节奏未知，存在摊薄担忧。" },
+        "macro_impact": { "score": 7, "detail": "国产半导体设备处政策强支持区间（大基金三期+科创自主可控），美国出口管制反向利好。" },
+        "event_risk": { "score": 5, "detail": "未拉到7天内新增公告；持仓备注提示『定增落地后若摊薄超预期→减至5%』，存在已知尾部风险。" }
+      },
+      "score": 6,
+      "summary": "国产替代主线龙头，定增摊薄是已知中性风险，无新增事件冲击。"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "dimensions": {
+        "sentiment": { "score": 6, "detail": "科创板半导体板块情绪偏强，但 6/24 复盘提示量比 8.33+突破布林上轨，短期超买。" },
+        "macro_impact": { "score": 7, "detail": "ETF 代表科创芯片板块整体，与国产替代政策强相关。" },
+        "event_risk": { "score": 4, "detail": "ETF 分散度高，单一公司事件冲击有限。" }
+      },
+      "score": 6,
+      "summary": "板块情绪偏强但短期超买，事件风险低。"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "dimensions": {
+        "sentiment": { "score": 8, "detail": "持仓备注：Q1 净利+61%，DDR5+PCIe Retimer 双驱动，AI 服务器需求强劲。" },
+        "macro_impact": { "score": 8, "detail": "深度受益 AI 服务器周期 + 国产 DDR5 渗透，宏观催化最强。" },
+        "event_risk": { "score": 6, "detail": "无新增已知事件；估值快速消化中，需关注 H2 业绩兑现。" }
+      },
+      "score": 7,
+      "summary": "AI 服务器最强 beta，基本面顶级；CIO 已建议内部腾挪加仓至 7.5%。"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "dimensions": {
+        "sentiment": { "score": 4, "detail": "CIO 6/24 复盘 VETO override：技术破位+相对强度极弱，市场情绪从 CPO 龙头转弱。" },
+        "macro_impact": { "score": 6, "detail": "光模块/CPO 长期成长空间仍在，但近期英伟达光互联节奏与 800G 价格预期存分歧。" },
+        "event_risk": { "score": 7, "detail": "技术破位 + 单股仓位过高（11.4%）触发减仓，已知存在『反弹至 MA20(398)附近执行减仓』的待执行动作。" }
+      },
+      "score": 4,
+      "summary": "曾经的 CPO 龙头当前技术面+相对强度双杀，建议执行减仓至 7%。"
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "dimensions": {
+        "sentiment": { "score": 6, "detail": "创业板情绪中性偏强，浮盈 60%+ 表明前期已享受贝塔。" },
+        "macro_impact": { "score": 6, "detail": "国内流动性偏宽松+科技板块占比高，宏观支撑中性。" },
+        "event_risk": { "score": 4, "detail": "ETF 分散，单一事件冲击有限。" }
+      },
+      "score": 6,
+      "summary": "分散配置稳定持有，无强催化亦无明显风险。"
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "dimensions": {
+        "sentiment": { "score": 6, "detail": "估值合理偏低（PE 22x），市场宽基中盘修复预期渐起。" },
+        "macro_impact": { "score": 7, "detail": "若指数突破前高，将受益于内需修复+科技扩散；CIO 已建议加仓承接半导体腾挪资金。" },
+        "event_risk": { "score": 3, "detail": "宽基 ETF，事件风险极低。" }
+      },
+      "score": 7,
+      "summary": "估值低位+突破在即，作为半导体减仓资金对冲首选。"
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "dimensions": {
+        "sentiment": { "score": 4, "detail": "持仓备注提示美股隔夜大跌+SpaceX/谷歌重挫，海外科技板块情绪转弱。" },
+        "macro_impact": { "score": 5, "detail": "美联储路径不确定+科技板块估值高位，宏观支撑中性偏弱。" },
+        "event_risk": { "score": 6, "detail": "海外个股黑天鹅（SpaceX 事故/谷歌反垄断）已经传导至板块。" }
+      },
+      "score": 4,
+      "summary": "海外科技板块情绪转弱，CIO 已建议减至 3.5%。"
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "dimensions": {
+        "sentiment": { "score": 5, "detail": "美股均衡型 ETF，整体中性。" },
+        "macro_impact": { "score": 5, "detail": "美股短期跟随宏观面波动，未见明确单边方向。" },
+        "event_risk": { "score": 4, "detail": "宽基分散，事件风险低。" }
+      },
+      "score": 5,
+      "summary": "底仓配置稳定，无明显方向性催化。"
+    },
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "dimensions": {
+        "sentiment": { "score": 3, "detail": "持仓备注：技术三杀+持续失血+行业景气度 5 分最低；浮盈仅 0.57%，已建议清仓。" },
+        "macro_impact": { "score": 5, "detail": "美元/利率路径短期不利金价，长期避险需求仍在。" },
+        "event_risk": { "score": 6, "detail": "跌破布林下轨 8.450 将触发强制止损。" }
+      },
+      "score": 3,
+      "summary": "技术+基本面双杀，CIO 已建议清仓。"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "dimensions": {
+        "sentiment": { "score": 7, "detail": "国产 CPU 龙头，AI 算力国产替代核心标的，市场关注度高。" },
+        "macro_impact": { "score": 8, "detail": "受益于信创+AI 双主线，政策强催化。" },
+        "event_risk": { "score": 6, "detail": "PE 272x 极高估值是核心风险；浮亏 -0.52%，需关注跌破 MA20(296.38) 风险。" }
+      },
+      "score": 6,
+      "summary": "基本面顶级但估值已透支，维持持有不追高。"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "dimensions": {
+        "sentiment": { "score": 8, "detail": "Q1 净利+175%，先进封装受益 AMD MI300/MI325 量产；6/24 单日+8.42% 极端超买。" },
+        "macro_impact": { "score": 8, "detail": "AI 算力封装是最确定增长赛道，AMD 北美算力链国内核心 OSAT。" },
+        "event_risk": { "score": 5, "detail": "短期超买，回调风险大于上行风险。" }
+      },
+      "score": 7,
+      "summary": "AI 封装最强弹性标的，CIO 已建议等回调 68-70 区间加仓。"
+    }
+  ],
+  "macro_overview": "🇨🇳 A 股科技主线（AI 算力+国产替代）维持强势，但内部分化明显：澜起/通富/海光等基本面强标的延续；天孚通信光模块龙头反转走弱。🇺🇸 美股隔夜走弱（SpaceX/谷歌等个股黑天鹅），纳指 ETF 板块情绪转弱。整体 6/24 复盘已识别『内部腾挪 + 减海外集中度 + 增中证500对冲』的核心调仓逻辑，本次盘后无新增重大事件冲击。⚠️ 数据源限制：实时新闻搜索工具暂不可用，未来周期需修复 Tavily 配额或启用智谱/搜狗 fallback。"
+}
