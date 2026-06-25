@@ -1,0 +1,22 @@
+{
+  "providers": {
+    "glm": {
+      "baseUrl": "https://open.bigmodel.cn/api/anthropic",
+      "apiKey": "secretref-managed",
+      "api": "anthropic-messages",
+      "models": [
+        {
+          "id": "glm-5.2",
+          "name": "GLM-5.2",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 128000
+        }
+      ]
+    }
+  }
+}

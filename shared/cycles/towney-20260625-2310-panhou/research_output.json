@@ -1,0 +1,249 @@
+{
+  "cycle_id": "towney-20260625-2310-panhou",
+  "analysis_date": "2026-06-25",
+  "data_quality": "⚠️ 部分受限 — 仅腾讯gtimg单源可用（实时行情+K线），东方财富/akshare/网易/同花顺/新浪均不可用（502/403/404），Tavily搜索配额超限。PE分位数为52周价格分位近似估算，非实际PE分位。",
+  "holdings": [
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "dimensions": {
+        "technical": {
+          "score": 7,
+          "note": "强势上行，价格站于MA20/MA60之上，突破布林上轨(249.68)，距60日高(257.96)仅2.2%。但量比0.85缩量上涨，高位追涨风险上升。ATR 5.72%波动较大。",
+          "atr_pct": 5.72,
+          "bollinger_upper": 249.68,
+          "ma20": 199.25,
+          "ma60_high": 257.96,
+          "pe_percentile": 60,
+          "vol_ratio": 0.85
+        },
+        "fundamental": {
+          "score": 7,
+          "note": "CMP设备国产替代龙头，PE(TTM)≈16.48合理偏低，总市值1249亿。半导体设备赛道景气度持续，但近期10送6.1除权后筹码分散，定增落地后摊薄风险待观察。"
+        }
+      },
+      "score": 7,
+      "summary": "CMP龙头趋势向好，PE合理，但缩量上涨+定增摊薄风险，维持持有。"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "dimensions": {
+        "technical": {
+          "score": 6,
+          "note": "强势上行突破布林上轨(2.08)，量比2.35放量上攻，距60日高(2.13)仅0.5%。短期超买明显，追高风险大。ATR 4.06%。",
+          "atr_pct": 4.06,
+          "bollinger_upper": 2.08,
+          "ma20": 1.82,
+          "ma60_high": 2.13,
+          "pe_percentile": null,
+          "vol_ratio": 2.35
+        },
+        "fundamental": {
+          "score": 6,
+          "note": "半导体ETF分散配置，AI+国产替代双主线受益。但短期超买(量比8.33曾触发减仓)，CIO已计划压降AI集中度。"
+        }
+      },
+      "score": 6,
+      "summary": "半导体ETF放量突破但短期超买，按CIO计划从7.35%压降至5.5%合理。"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "dimensions": {
+        "technical": {
+          "score": 8,
+          "note": "稳健上行，价格在布林带内(上轨283.39)，量比1.21健康放量。MA20(249.09)/MA60(209.14)多头排列，距60日高(288.79)3.4%有空间。ATR 6.05%。",
+          "atr_pct": 6.05,
+          "bollinger_upper": 283.39,
+          "ma20": 249.09,
+          "ma60_high": 288.79,
+          "pe_percentile": 62,
+          "vol_ratio": 1.21
+        },
+        "fundamental": {
+          "score": 8,
+          "note": "内存接口芯片全球龙头，DDR5升级周期持续受益。PE≈16.37合理偏低，Q1净利+61%YoY。总市值3200亿，全组合baseline最高(7.39)。"
+        }
+      },
+      "score": 8,
+      "summary": "全组合最优标的，技术面+基本面双强，PE合理，建议按CIO计划加仓至7.5%。"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "dimensions": {
+        "technical": {
+          "score": 6,
+          "note": "从60日高(374.50)回落至341.97，仍在MA20(319.35)上方但动量减弱。布林上轨355.30，量比1.60。距MA20仅7.1%，若跌破MA20将触发减仓信号。ATR 6.96%全组合最高。",
+          "atr_pct": 6.96,
+          "bollinger_upper": 355.30,
+          "ma20": 319.35,
+          "ma60_high": 374.50,
+          "pe_percentile": 63,
+          "vol_ratio": 1.60
+        },
+        "fundamental": {
+          "score": 7,
+          "note": "光通信龙头，AI数据中心核心受益标的。PE≈68.24偏高但增长支撑，总市值3722亿。CIO已VETO override计划从11.41%压降至7%，因技术破位+单股超限+相对强度极弱。"
+        }
+      },
+      "score": 6,
+      "summary": "基本面优质但技术面转弱+PE偏高+仓位超标，CIO减仓计划合理，关注MA20支撑。"
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "dimensions": {
+        "technical": {
+          "score": 6,
+          "note": "稳步上行触及60日高(2.12)，布林上轨2.13，量比1.07正常。MA20(1.97)/MA60(1.82)多头排列。ATR 3.48%适中。",
+          "atr_pct": 3.48,
+          "bollinger_upper": 2.13,
+          "ma20": 1.97,
+          "ma60_high": 2.12,
+          "pe_percentile": null,
+          "vol_ratio": 1.07
+        },
+        "fundamental": {
+          "score": 6,
+          "note": "创业板50宽基分散配置，浮盈60%+。当前缺乏强催化，CIO维持3.18%底仓合理。"
+        }
+      },
+      "score": 6,
+      "summary": "宽基底仓，浮盈丰厚，维持持有，缺乏强催化暂不加仓。"
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "dimensions": {
+        "technical": {
+          "score": 6,
+          "note": "稳步上行触及60日高(9.09)，布林上轨9.12，量比0.68缩量。MA20(8.53)/MA60(8.41)多头排列。ATR 2.37%低波动。",
+          "atr_pct": 2.37,
+          "bollinger_upper": 9.12,
+          "ma20": 8.53,
+          "ma60_high": 9.09,
+          "pe_percentile": null,
+          "vol_ratio": 0.68
+        },
+        "fundamental": {
+          "score": 6,
+          "note": "中盘宽基，PE≈22x合理偏低，承接半导体减仓资金对冲AI集中度。CIO计划加仓至6.5%。"
+        }
+      },
+      "score": 6,
+      "summary": "中盘宽基估值合理，作为AI对冲配置，按CIO计划加仓至6.5%合理。"
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "dimensions": {
+        "technical": {
+          "score": 5,
+          "note": "价格紧贴MA20(2.71)，从60日高(2.90)回落，布林上轨2.86。量比0.78缩量。MA60(2.49)仍在上行但短期动能不足。ATR 2.79%。",
+          "atr_pct": 2.79,
+          "bollinger_upper": 2.86,
+          "ma20": 2.71,
+          "ma60_high": 2.90,
+          "pe_percentile": null,
+          "vol_ratio": 0.78
+        },
+        "fundamental": {
+          "score": 6,
+          "note": "全球最强科技指数，但美股隔夜大跌+SpaceX/谷歌重挫带来不确定性。CIO计划减仓至3.5%。"
+        }
+      },
+      "score": 5,
+      "summary": "美股科技短期承压，CIO减仓计划合理，关注MA60(2.49)支撑。"
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "dimensions": {
+        "technical": {
+          "score": 5,
+          "note": "价格略低于MA20(1.90)，短期偏弱。布林上轨1.96，量比0.77缩量。MA60(1.82)支撑尚在。ATR 1.76%低波动。",
+          "atr_pct": 1.76,
+          "bollinger_upper": 1.96,
+          "ma20": 1.90,
+          "ma60_high": 1.98,
+          "pe_percentile": null,
+          "vol_ratio": 0.77
+        },
+        "fundamental": {
+          "score": 5,
+          "note": "美股均衡型底仓，仓位仅1.43%过小不值得调整。CIO维持底仓判断合理。"
+        }
+      },
+      "score": 5,
+      "summary": "迷你底仓，维持不变，无强催化。"
+    },
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "dimensions": {
+        "technical": {
+          "score": 3,
+          "note": "价格远低于MA20(8.94)和MA60(9.50)，下跌趋势明确。量比1.39放量下跌，距60日高(10.15)已回落18.4%。布林下轨约8.27，接近但未触及。ATR 2.32%。",
+          "atr_pct": 2.32,
+          "bollinger_upper": 9.59,
+          "ma20": 8.94,
+          "ma60_high": 10.15,
+          "pe_percentile": null,
+          "vol_ratio": 1.39
+        },
+        "fundamental": {
+          "score": 3,
+          "note": "黄金价格持续走弱，全组合唯一接近浮亏标的。CIO已VETO override建议清仓，baseline 4.46全组合最低。"
+        }
+      },
+      "score": 3,
+      "summary": "技术面三杀+基本面最弱，CIO清仓建议完全合理，建议执行。"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "dimensions": {
+        "technical": {
+          "score": 7,
+          "note": "强势突破布林上轨(348.17)，量比1.37放量确认。MA20(298.22)/MA60(285.37)多头排列，距60日高(369.00)仅2.4%。ATR 5.87%波动大。今日+6.88%极端强势。",
+          "atr_pct": 5.87,
+          "bollinger_upper": 348.17,
+          "ma20": 298.22,
+          "ma60_high": 369.00,
+          "pe_percentile": 67,
+          "vol_ratio": 1.37
+        },
+        "fundamental": {
+          "score": 8,
+          "note": "国产AI芯片绝对龙头，x86兼容生态稀缺性极强。PE≈36.17偏高但AI赛道溢价合理，总市值8374亿。CIO baseline 7.06，基本面顶级。"
+        }
+      },
+      "score": 7,
+      "summary": "AI芯片龙头基本面顶级，但PE极高+短期超买，不追高，维持持有。"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "dimensions": {
+        "technical": {
+          "score": 7,
+          "note": "强势突破布林上轨(76.43)，量比1.18健康。MA20(66.31)/MA60(56.96)多头排列强劲，距60日高(79.38)仅2.0%。ATR 5.82%波动大。",
+          "atr_pct": 5.82,
+          "bollinger_upper": 76.43,
+          "ma20": 66.31,
+          "ma60_high": 79.38,
+          "pe_percentile": 71,
+          "vol_ratio": 1.18
+        },
+        "fundamental": {
+          "score": 7,
+          "note": "先进封装龙头，AI芯片封装核心环节。PE≈7.60极低估值，Q1净利+175%YoY爆发增长。总市值1181亿，CIO计划加仓至3%。"
+        }
+      },
+      "score": 7,
+      "summary": "低估值+高增长+技术突破，三击标的，按CIO计划回调68-70区间加仓。"
+    }
+  ]
+}
