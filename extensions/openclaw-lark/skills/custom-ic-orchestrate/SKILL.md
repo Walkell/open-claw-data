@@ -1,17 +1,17 @@
 ---
 name: custom-ic-orchestrate
 description: |
-  Butler 专用：IC 投委会编排执行流程。Butler 收到 IC 触发后调用此 SKILL。
+  Butler / Dexter 专用：IC 投委会编排执行流程。Butler（klaire）或 Dexter（towney）收到 IC 触发后调用此 SKILL。
   负责 spawn 委员、sessions_yield、收集输出、spawn CIO 综合。
   不做投资判断——判断是 CIO 的工作。
 ---
 
-# custom-ic-orchestrate · Butler IC 编排
+# custom-ic-orchestrate · Butler/Dexter IC 编排
 
 > **你的工作**：编排委员 → 收集输出 → 交给 CIO 综合。  
 > **不属于你的工作**：分析行情、评估风险、出买卖建议。
 
-参见 `workspace-butler/AGENTS.md` 中的 IC 编排流程（完整协议在那里维护，本 SKILL 是执行入口提示）。
+参见 `workspace-butler/AGENTS.md`（klaire）或 `workspace-dexter/AGENTS.md`（towney）中的 IC 编排流程（完整协议在各自文件里维护，本 SKILL 是执行入口提示，两个 principal 共用同一份 SKILL）。
 
 ---
 
@@ -29,7 +29,7 @@ cycle_id = {principal}-{YYYYMMDD}-{HHMM}-{场景}
 
 写 `~/.openclaw/shared/cycles/{cycle_id}/context.json`（principal / flow_type / table_id）。
 
-输出：`🔔 Butler IC 启动，flow_type={X}，principal={X}，cycle_id={X}`
+输出：`🔔 {Butler/Dexter} IC 启动，flow_type={X}，principal={X}，cycle_id={X}`
 
 ---
 

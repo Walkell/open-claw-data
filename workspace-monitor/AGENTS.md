@@ -10,8 +10,8 @@
 
 从 cron 消息中读取 `principal`（值为 `towney` 或 `klaire`），然后读取对应配置档：
 
-- principal=towney → `~/.openclaw/workspace-cio/CONFIG_TOWNEY.md`
-- principal=klaire → `~/.openclaw/workspace-cio/CONFIG_KLAIRE.md`
+- principal=towney → `~/.openclaw/workspace-dexter/CONFIG_TOWNEY.md`
+- principal=klaire → `~/.openclaw/workspace-butler/CONFIG_KLAIRE.md`
 
 从配置档获取：
 - `bitable_name`（如 "Towney-投资管理"）
@@ -100,7 +100,7 @@
 |------|------|---------|
 | 现价 ≤ 止损价 | 🔴 紧急 | `🔴 止损触及：{代码} 现价 {P}，已跌破止损价 {止损价}，请立即处理` |
 | 现价 ≤ 止损价 × 1.05 且 > 止损价 | 🟡 警告 | `🟡 接近止损：{代码} 现价 {P}，距止损（{止损价}）仅 {X}%，请关注` |
-| 现价 ≥ 止盈价 | 🟡 警告 | `🟡 止盈触及：{代码} 现价 {P}，已达止盈价 {止盈价}，可考虑告知 Butler 决策` |
+| 现价 ≥ 止盈价 | 🟡 警告 | `🟡 止盈触及：{代码} 现价 {P}，已达止盈价 {止盈价}，可考虑告知 Butler/Dexter 决策` |
 | 涨跌幅 ≤ -5% | 🟡 警告 | `🟡 大跌预警：{代码} 今日跌幅 {X}%，请关注` |
 | 涨跌幅 ≥ +7% | 🔵 关注 | `🔵 大涨提醒：{代码} 今日涨幅 {X}%`（每日每标的去重） |
 
@@ -134,7 +134,7 @@
 **输出（🔵 关注级）：**
 ```
 🔵 止损线审查：{代码} 浮盈 {X}%，浮盈保护率仅 {Y}%（触及止损将损失 {100-Y}% 的浮盈），止损线已滞后
-建议告知 Butler 触发 IC 评估是否上移止损。
+建议告知 Butler/Dexter 触发 IC 评估是否上移止损。
 ```
 
 **Klaire 输出（群聊禁输出成本/盈亏数据）：**
@@ -193,7 +193,7 @@
 **输出（🔵 关注级）：**
 ```
 🔵 IC 审查建议：{代码} 已 {N} 个交易日未经 IC 审查
-建议告知 Butler 触发一次 IC 复盘。
+建议告知 Butler/Dexter 触发一次 IC 复盘。
 ```
 
 ### E. 成交量异常检查

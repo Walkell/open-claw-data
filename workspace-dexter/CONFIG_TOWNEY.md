@@ -9,6 +9,7 @@
 principal:
   id: "towney"
   display_name: "Towney"
+  front_agent: "Dexter"
 ```
 
 ## 数据域（隔离核心，必填）
@@ -62,17 +63,17 @@ risk_thresholds:
 ## 输出通道（必填）
 
 > 说明：ID 前缀本身就是类型，不需要额外配置类型字段——`ou_` 开头 = 单聊 ID，`oc_` 开头 = 群聊 ID。
-> 两者可二选一或都填，留空的删掉。单聊/群聊本身不限制功能——讨论持仓、出建议、写 Bitable 在两种渠道都可以。
-> 若这个 ID 是多个 principal 共用的群聊（如 klaire 和 towney 共用的群），要注明"共用群聊"，提醒 Butler/CIO
-> 回复前先确认这次操作归属哪个 principal，再用对应 principal 的 `app_token`/表名读写——红线是不能串 principal，
-> 不是渠道类型本身。
+> **渠道归属是永久且排他的**：一个 channel ID 只能属于一个 principal，不存在"共用群聊、按消息内容区分"这种模式——
+> 哪怕另一个 principal 在这个渠道里说话，这个渠道仍然只认它声明的归属方，不切换。每个 principal 的
+> CONFIG 文件本节就是该渠道归属的唯一权威来源，不存在另一份独立的绑定声明文件。如果两个 principal
+> 真的需要同一个群聊，必须先在双方 CONFIG 的本节同步加一条明确说明，而不是在这里写"共用"。
 
 ```
-ID：oc_c19042fb899cda7eeca1bbbd7d981d1a / ou_aa8d3c082f316a8c9e18b9e6e8eeb88b
+ID：ou_aa8d3c082f316a8c9e18b9e6e8eeb88b
 ```
 
-- 群聊（Klaire+投委会+Towney）：共用群聊——回复/写入前先确认这次是 towney 还是 klaire 的操作，全权限，但不能串 principal
-- 单聊（DM Towney）：只服务 towney，全权限
+- 单聊（DM Towney）：towney 唯一输出通道，全权限
+- `oc_c19042fb899cda7eeca1bbbd7d981d1a`（投委会群）已永久绑定 klaire（见 `workspace-butler/CONFIG_KLAIRE.md` 的"输出通道"一节），**不是** towney 的输出通道，即使 towney 在该群发言也不触发 towney 的 IC 或推送
 
 ## cron 配置（必填，但本文件不维护具体内容）
 

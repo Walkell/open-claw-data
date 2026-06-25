@@ -1,7 +1,7 @@
 ---
 name: custom-config-read
 description: |
-  读取 principal 配置档（workspace-cio/CONFIG_{PRINCIPAL_ID}.md）的唯一正确方式。
+  读取 principal 配置档（CONFIG_{PRINCIPAL_ID}.md，位于该 principal 前端 agent 的工作目录下）的唯一正确方式。
   任何需要读取 profit_target / risk_thresholds / ledger / 输出通道等配置字段的场景都应使用本 SKILL，
   而不是直接 Read 文件或凭记忆/快照取值。强制按 principal 隔离：一次只读取目标 principal 自己的配置档，
   绝不在同一上下文里读取或带出其他 principal 的配置档内容。
@@ -29,11 +29,14 @@ isolated 子 Agent（Research/Industry/News/Risk）的 principal 来自派发时
 
 ## 第二步：拼出唯一目标路径
 
-```
-workspace-cio/CONFIG_{PRINCIPAL_ID 全大写}.md
-```
+每个 principal 的配置档放在其前端 agent 的工作目录下，不是统一放在 `workspace-cio/`。按以下对照表确定路径：
 
-例：`principal = "klaire"` → 只读 `workspace-cio/CONFIG_KLAIRE.md`。
+| principal id | 路径 |
+|---|---|
+| klaire | `workspace-butler/CONFIG_KLAIRE.md` |
+| towney | `workspace-dexter/CONFIG_TOWNEY.md` |
+
+新增 principal 时，在这张表里补一行（`custom-config-maintain` 的发现步骤也用同一张表，两处务必同步更新）。
 
 **只 Read 这一个文件。** 不 Glob `CONFIG_*.md`，不在同一次操作里把多个 principal 的配置档都读出来——即使只是为了"对比格式"，也会导致一个 principal 的数据域/输出通道信息出现在另一个 principal 的处理上下文里，这本身就是一次串账事故，与是否后续误用无关。
 
@@ -50,7 +53,7 @@ workspace-cio/CONFIG_{PRINCIPAL_ID 全大写}.md
 | `profit_target.*` | 年化目标 |
 | `risk_thresholds.veto` / `risk_thresholds.hard_veto` | Risk 委员否决阈值 |
 | 仓位体系（如有该节） | 该 principal 的仓位输出格式；没有这节就说明该 principal 不需要特殊格式，按通用规则处理 |
-| 输出通道 | 群聊/私聊 ID，决定推送目标；若为共用群聊，决定每次操作前是否需要先确认 principal 归属 |
+| 输出通道 | 群聊/私聊 ID，决定推送目标；归属永久且排他，不需要每次按消息内容判断 |
 
 字段缺失（如 klaire 没有"仓位体系"节）属于正常情况，不要假设缺的字段应该有值或去 CONFIG_SAMPLE.md / 其他 principal 的文件里找"应该填什么"——没有就是没有，按文件原样为准。
 
@@ -65,7 +68,7 @@ workspace-cio/CONFIG_{PRINCIPAL_ID 全大写}.md
 
 1. 从该节文字里提取所有形如 `ou_...` / `oc_...` 的 ID
 2. `ou_` 开头 = 单聊（`receive_id_type: open_id`），`oc_` 开头 = 群聊（`receive_id_type: chat_id`）——类型从前缀推断，不需要该节额外标注类型
-3. 单聊/群聊本身不限制功能——讨论持仓、出建议、写 Bitable 在两种渠道都可以。该节里若标注"共用群聊"（多个 principal 共用同一个群聊 ID），则调用方在回复/写入前必须先确认这次操作归属哪个 principal，再用对应 principal 的 `app_token`/表名读写——红线是不能串 principal，不是渠道类型本身
+3. 单聊/群聊本身不限制功能——讨论持仓、出建议、写 Bitable 在两种渠道都可以。渠道归属是永久且排他的，不需要按消息内容逐次判断 principal——一个 channel ID 在配置档里填给了谁，就永远归谁，即使另一个 principal 在该渠道发消息也不会改变判定。每个 principal 自己 CONFIG 文件的"输出通道"一节就是该渠道归属的唯一权威来源，不存在独立的绑定文件——若确实存在多个 principal 永久共用同一个渠道的情况，要在涉及的所有 principal 的 CONFIG 文件本节同步加说明，不要在本 SKILL 里临时推断归属——红线始终是不能串 principal，不是渠道类型本身
 
 ## 遇到文件不存在
 

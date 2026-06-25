@@ -1,14 +1,14 @@
 ---
 name: custom-ic-synthesise
 description: |
-  CIO 专用：接收 Butler 汇总好的委员报告，运用 §7 公式，出投资决议。
+  CIO 专用：接收发起方（Butler / Dexter / Corona）汇总好的委员报告，运用 §7 公式，出投资决议。
   当 CIO 收到 cycle_id 并被要求综合时调用此 SKILL。
-  不做任何编排、不 spawn 委员——编排是 Butler 的工作。
+  不做任何编排、不 spawn 委员——编排是发起方（Butler / Dexter / Corona）的工作。
 ---
 
 # custom-ic-synthesise · CIO 综合决议
 
-> **你的输入**：Butler 已收集好的委员输出文件。  
+> **你的输入**：发起方（Butler / Dexter / Corona）已收集好的委员输出文件。  
 > **你的工作**：读文件 → §7 公式 → 四部分裁决 → 附精密止盈止损/加减仓方案 → 推送飞书 → 写库。  
 > **不属于你的工作**：spawn 委员、sessions_yield 等待子 Agent。
 
@@ -228,15 +228,24 @@ baseline_score     = Wr×X.XX + Wi×X.XX + Wn×(5+X.XX×5) = X.XX
 
 ### 6.1 推送飞书
 
-**推送目标：只能推送到 Butler 的当前会话（即触发本次 IC 的用户对话）。**
+推送目标取决于这次 IC 是谁触发的——先看 `context.json` 里有没有 `output_channels` 字段：
 
-你是 CIO，运行在 isolated 子会话中。你的上一级会话是 Butler，而 Butler 本身运行在用户对话中。推送时：
+**情况一：`context.json` 无 `output_channels`（Butler 或 Dexter 触发，用户对话中）**
 - 使用 `message` 工具 **不传 target 参数，不传 channel 参数**（message action=send，message=决议内容，不填 target 和 channel 字段）
-- 系统会自动将消息路由到 Butler 的上一级会话，即用户飞书私聊或群聊
+- 系统会自动将消息路由到触发方（Butler 或 Dexter）的上一级会话，即用户飞书私聊或群聊
 - **严禁**使用任何硬编码的 chat_id (oc_xxx)、私聊 (user:xxx)、或其他手动指定的 target
-- 推送**一条**消息即可，信息简洁直观；不需要分开发送多条消息
 
 > 原因：你不应知道用户飞书会话的 id。硬编码 chat_id 会推送到错误的人/群。交给系统自动路由。
+
+**情况二：`context.json` 有 `output_channels`（Corona 触发，cron）**
+- Corona 的会话没有挂载任何聊天频道，不存在"上一级会话"可以默认路由，必须显式指定 target
+- 只能使用 `output_channels` 里给出的 ID（`dm` 或 `group_chat`，按该 principal 实际配置的渠道），这是从
+  `CONFIG_{PRINCIPAL_ID}.md` 读出来、Corona 写进 context.json 的，不是你自己判断的
+
+**两种情况共同的红线：**
+- 推送**一条**消息即可，信息简洁直观；不需要分开发送多条消息
+- **推送失败（权限拒绝 / chat_id 不存在等）时，直接停止并在检查点/状态文件里报告失败，绝不允许自己另外寻找或
+  创造一个 chat_id 兜底推送**——你不知道、也不应该猜任何渠道 ID，找错了就是把决议发给了不该看到的人。
 
 1. 将四部分裁决（含完整表格）组装为一条简洁的 Markdown 消息，推送飞书
 2. 执行 `custom-ic-write` SKILL（传入 cycle_id + 决议单，含 flow_type + report_summary + 精密止盈止损数据）

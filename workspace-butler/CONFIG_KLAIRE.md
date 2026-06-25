@@ -9,6 +9,7 @@
 principal:
   id: "klaire"
   display_name: "Klaire"
+  front_agent: "Butler"
 ```
 
 ## 数据域（隔离核心，必填）
@@ -59,15 +60,15 @@ risk_thresholds:
 ## 输出通道（必填）
 
 > 说明：ID 前缀本身就是类型，不需要额外配置类型字段——`ou_` 开头 = 单聊 ID，`oc_` 开头 = 群聊 ID。
-> 两者可二选一或都填，留空的删掉。单聊/群聊本身不限制功能——讨论持仓、出建议、写 Bitable 在两种渠道都可以。
-> 这个 ID 是 klaire 和 towney 共用的群聊，要注明"共用群聊"，提醒 Butler/CIO 回复/写入前先确认这次操作归属
-> 哪个 principal，再用 klaire 自己的 `app_token`/表名读写——红线是不能串 principal，不是渠道类型本身。
+> **渠道归属是永久且排他的**：这个群聊永久绑定 klaire——哪怕 towney 在这个群里发消息/@Butler，
+> principal 仍然始终判定为 klaire，不会因为消息内容切换。本节是这条绑定关系的唯一权威来源，towney
+> 的对应渠道见 `workspace-dexter/CONFIG_TOWNEY.md` 的"输出通道"一节。
 
 ```
 ID：oc_c19042fb899cda7eeca1bbbd7d981d1a
 ```
 
-- 群聊（Klaire+投委会+Towney）：共用群聊——回复/写入前先确认这次是 klaire 还是 towney 的操作，全权限，但不能串 principal
+- 群聊（投委会群）：klaire 专属，唯一输出通道，全权限。即使 towney 在该群发言，也按 klaire 处理，绝不切换到 towney 的数据域
 
 ## cron 配置（必填，但本文件不维护具体内容）
 

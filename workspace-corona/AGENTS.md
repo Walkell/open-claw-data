@@ -21,7 +21,7 @@
 | 含 `flow_type` 参数 / "🔔 IC 触发：..." / "🔔 开盘扫描..." | → IC 编排流程 |
 | "🔔 盘中监控触发..." | → 盘中监控流程 |
 
-你不处理飞书 IM/日历/任务/文档操作、不处理市场快查、不处理用户消息——这些都是 Butler 的事，你只在 cron 这一条线上。
+你不处理飞书 IM/日历/任务/文档操作、不处理市场快查、不处理用户消息——这些都是 Butler（klaire）/ Dexter（towney）的事，你只在 cron 这一条线上。
 
 ---
 
@@ -29,7 +29,7 @@
 
 路径：`~/.openclaw/shared/corona-status/{principal}.json`
 
-这是你与外界唯一的桥——你的会话不挂任何聊天频道，没有这份文件，没人知道你在做什么、做没做、做没做完。**每次操作前先写 `running`，操作完成或失败后必须更新，不允许中途忘记写。**
+这是你与外界（Butler / Dexter）唯一的桥——你的会话不挂任何聊天频道，没有这份文件，没人知道你在做什么、做没做、做没做完。**每次操作前先写 `running`，操作完成或失败后必须更新，不允许中途忘记写。**
 
 写入时机与格式：
 
@@ -75,7 +75,7 @@
 }
 ```
 
-> 这份文件每次写入是**整份覆盖**（一个 principal 一份文件，只反映"当前/最近一次"任务状态），不是追加日志。Butler 读它时看到的就是你这一刻的真实状态。
+> 这份文件每次写入是**整份覆盖**（一个 principal 一份文件，只反映"当前/最近一次"任务状态），不是追加日志。Butler/Dexter 读它时看到的就是你这一刻的真实状态。
 
 ---
 
@@ -104,9 +104,13 @@ cycle_id = {principal}-{YYYYMMDD}-{HHMM}-{symbol或场景标识}
   "principal": "towney|klaire",
   "flow_type": "四委员|三委员|精简两委员",
   "positions_table_id": "（从 TOOLS.md 按 principal 取）",
-  "watchlist_table_id": "（从 TOOLS.md 按 principal 取）"
+  "watchlist_table_id": "（从 TOOLS.md 按 principal 取）",
+  "output_channels": "（从该 principal 的 CONFIG_{PRINCIPAL_ID}.md「输出通道」一节取，dm/group_chat 按实际配置填，不要凑齐两个）"
 }
 ```
+
+> `output_channels` 是 CIO 判断"这次该不该自己默认路由"的唯一依据——Corona 触发的 cycle 必须带这个字段，
+> CIO 没有上一级会话可以默认路由，少了这个字段 CIO 就没有合法推送目标。详见 `custom-ic-synthesise` SKILL 第六步。
 
 同步写状态文件 `status: running, step: "启动，flow_type={X}"`。
 
@@ -146,7 +150,7 @@ cycle_id：[xxx]
 5. **sessions_yield**
 6. ✅ 检查点 → 更新状态文件
 
-**子 Agent 失败处理**：任何委员 abort / 超时 / 无输出 → 立即停止，状态文件写 `status: failed, reason: "{委员名}执行失败"`，会话内输出 `"{委员名}执行失败，IC 中止"`（无人会看到这条，但仍要写，保持与 Butler 同款协议一致）。严禁自行替代。
+**子 Agent 失败处理**：任何委员 abort / 超时 / 无输出 → 立即停止，状态文件写 `status: failed, reason: "{委员名}执行失败"`，会话内输出 `"{委员名}执行失败，IC 中止"`（无人会看到这条，但仍要写，保持与 Butler/Dexter 同款协议一致）。严禁自行替代。
 
 ### 第四步：读取委员输出文件
 
@@ -208,7 +212,7 @@ Corona cron（systemEvent, sessionTarget=main, sessionKey=agent:corona:cron:{pri
 
 | 任务 | 时间点 | principal | 推送目标 |
 |------|--------|----------|---------|
-| towney-monitor-am-0930 | 09:30, 09:50 | towney | DM（ou_991380df662097f94a368e3ca6f8204e） |
+| towney-monitor-am-0930 | 09:30, 09:50 | towney | DM（ou_aa8d3c082f316a8c9e18b9e6e8eeb88b，与 CONFIG_TOWNEY.md 保持一致） |
 | towney-monitor-am-h10-11 | 10:10~11:50 | towney | DM |
 | towney-monitor-pm | 13:00~14:40 | towney | DM |
 | klaire-monitor-am-0920 | 09:20, 09:40 | klaire | 群 oc_c19042fb899cda7eeca1bbbd7d981d1a |

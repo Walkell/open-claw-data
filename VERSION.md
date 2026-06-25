@@ -2,6 +2,21 @@
 
 ---
 
+## v5.6
+> 日期：2026/06/25
+
+Butler/Dexter 双前端 agent 拆分：用户消息入口按 principal 物理分流。
+
+- **新增 Dexter agent**：能力与 Butler 完全一致（IC 编排 + 飞书全域 + 市场快查），独立 appId/appSecret 的飞书机器人账号，专服务 Towney（单聊）；`openclaw.json` 新增 `agents.list.dexter` 块与 `channels.feishu.accounts.dexter` 占位（`appId`/`appSecret` 待用户创建真实飞书 app 后填入，当前 `enabled: false`）
+- **Butler 收窄为 Klaire-only**：原先同时服务 towney/klaire 两位委托人，现专服务 Klaire（群聊），不再处理 Towney 渠道消息
+- **渠道绑定从"逐次确认"改为"结构性物理隔离"**：principal 不再由 Butler 在每条消息里判断，而是由消息来自哪个飞书机器人账号决定（DM→towney→Dexter，群→klaire→Butler）；权威绑定声明就是各 principal 自己 CONFIG 文件的"输出通道"一节，不另设独立绑定文件
+- **`CONFIG_TOWNEY.md` / `CONFIG_KLAIRE.md` 各自迁移到对应前端 agent 工作目录**：不再统一放在 `workspace-cio/`，改为 `workspace-dexter/CONFIG_TOWNEY.md` / `workspace-butler/CONFIG_KLAIRE.md`，与"每个 principal 固定由一个前端 agent 服务"的结构对齐；`CONFIG_SAMPLE.md`（模板）保留在 `workspace-cio/`，因为它不属于任何具体 principal；`custom-config-read`/`custom-config-maintain` 两个 SKILL 同步改为按 principal→目录的对照表定位文件，不再假设单一共享目录
+- **`front_agent` 字段**：`CONFIG_TOWNEY.md`/`CONFIG_KLAIRE.md`/`CONFIG_SAMPLE.md` 的 `principal:` 块新增该字段，标注该 principal 由哪个前端 agent 服务
+- **共享 SKILL 与文档泛化**：`custom-ic-orchestrate`/`custom-ic-synthesise`/`custom-ic-write`/`custom-market-data-cn`/`custom-market-data-us`、`workspace-cio/*`、`workspace-corona/*`、`workspace-monitor/AGENTS.md`、`CLAUDE.md` 中原先硬编码"Butler"的表述改为按 principal 区分的"Butler/Dexter"或"该 principal 的前端 agent"
+- **修正 `workspace-cio/AGENTS.md` 决策链图遗留错误**：cron 触发分支误写为"Butler 接收 cron payload"，与 v5.5 已确立的 Corona 架构矛盾，顺手纠正为"Corona 接收 cron payload"
+
+---
+
 ## v5.5
 > 日期：2026/06/16
 

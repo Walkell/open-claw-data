@@ -1,8 +1,8 @@
 ---
 name: custom-config-maintain
 description: |
-  Claude 自用：维护 workspace-cio/CONFIG_SAMPLE.md（模板）与各 CONFIG_{PRINCIPAL_ID}.md（真实配置档）
-  之间的一致性。任何对 CONFIG_SAMPLE.md 的结构性改动（增删字段、改章节、改填写格式）都必须用本 SKILL
+  Claude 自用：维护 workspace-cio/CONFIG_SAMPLE.md（模板）与各 CONFIG_{PRINCIPAL_ID}.md（真实配置档，
+  分散在各 principal 前端 agent 的工作目录下）之间的一致性。任何对 CONFIG_SAMPLE.md 的结构性改动（增删字段、改章节、改填写格式）都必须用本 SKILL
   走一遍同步检查，防止模板改了但已有 principal 的真实配置档没跟着改、造成两者长期不一致。
   同样适用于反向场景：发现某个真实配置档的结构跟模板不一致时，先用本 SKILL 判断该改模板还是改那个文件。
 ---
@@ -35,11 +35,13 @@ description: |
 
 ### 第一步：列出所有真实配置档
 
+真实配置档不再统一放在 `workspace-cio/`，而是分散在各 principal 前端 agent 的工作目录下：
+
 ```
-Glob workspace-cio/CONFIG_*.md，排除 CONFIG_SAMPLE.md
+Glob workspace-*/CONFIG_*.md，排除 workspace-cio/CONFIG_SAMPLE.md
 ```
 
-不要硬编码"只有 towney 和 klaire"——principal 数量会变，每次都用 Glob 现查，避免漏掉后续新增的 principal。
+不要硬编码"只有 towney 和 klaire"——principal 数量会变，每次都用 Glob 现查，避免漏掉后续新增的 principal。这张文件清单与 `custom-config-read` SKILL 里的 principal→路径对照表是同一份事实的两种呈现，新增 principal 时两处都要更新。
 
 ### 第二步：判断改动类型
 

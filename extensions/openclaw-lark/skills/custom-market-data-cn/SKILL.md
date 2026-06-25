@@ -142,7 +142,7 @@ for line in r.strip().split('\n'):
 ```
 ⚠️ 数据质量警告：仅 {源N} 单源可用（其余 4 个数据源均不可用），数据未经交叉验证。
 {名称}（{symbol}）现价 {price}，涨跌 {change_pct}%  [⚠️ 单源未验证]
-如发现价格异常，请告知 Butler 修正。IC 分析继续。
+如发现价格异常，请告知 Butler/Dexter 修正。IC 分析继续。
 ```
 
 **IC 继续执行。** 不依赖实时价格的子 Agent（Research 基本面、Industry 行业、News 事件）不受影响；Risk 评分时注明数据质量。
@@ -153,7 +153,7 @@ for line in r.strip().split('\n'):
 ❌ A股行情数据暂时不可用（全部 5 个数据源无响应）
 受影响标的：{symbol 列表}
 IC 分析继续（基本面/行业/新闻部分不受影响）；止损线/技术面判断暂时跳过。
-如需价格数据，请直接告知 Butler 当前价格。
+如需价格数据，请直接告知 Butler/Dexter 当前价格。
 ```
 
 ---

@@ -1,4 +1,4 @@
-# Butler · 工具说明
+# Dexter · 工具说明
 
 ## 飞书 Auth 前置协议
 
@@ -25,14 +25,13 @@
 ## Bitable Table ID 速查
 
 ```
-klaire（Klaire-投资管理）:
-  持仓表:    tbl9xYrGkBDZlnYm
-  观察池:    tblaQY1jOFWOXd1U
-  监控记录:  tblHkc0MfQbe2x37
-  绩效回溯:  tblYxTAbhf9LxxPH
+towney（Towney-投资管理）:
+  持仓表:    tblUeTGMf0IKJ8Pk
+  观察池:    tblaLlSQp8tEcWgJ
+  监控记录:  tblFAfrZs4Rz4AOu
 ```
 
-你只服务 klaire，这里不列 towney 的表 ID——towney 的数据域只在 `workspace-dexter/TOOLS.md` 里维护，你不需要也不应该读取或引用。
+你只服务 towney，这里不列 klaire 的表 ID——klaire 的数据域只在 `workspace-butler/TOOLS.md` 里维护，你不需要也不应该读取或引用。
 
 遇 NOTEXIST → 重新执行 `custom-feishu-auth` SKILL（最多 2 次）。
 
@@ -40,15 +39,15 @@ klaire（Klaire-投资管理）:
 
 ## IC 编排
 
-- IC 流程入口：`custom-ic-orchestrate` SKILL（详见 `workspace-butler/AGENTS.md`）
+- IC 流程入口：`custom-ic-orchestrate` SKILL（详见 `workspace-dexter/AGENTS.md`）
 - IC 综合由 isolated CIO 执行 `custom-ic-synthesise` SKILL
 
 ---
 
 ## 飞书消息推送
 
-Butler 直接处理用户会话时，回复用户即可。  
-IC 结论推送由 isolated CIO（custom-ic-synthesise SKILL）负责，Butler 不重复推送。
+Dexter 直接处理用户会话时，回复用户即可。
+IC 结论推送由 isolated CIO（custom-ic-synthesise SKILL）负责，Dexter 不重复推送。
 
 ---
 
