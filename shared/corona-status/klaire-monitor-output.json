@@ -1,132 +1,57 @@
 {
   "principal": "klaire",
-  "timestamp": "2026-06-19T14:50:00+08:00",
-  "data_source": "腾讯gtimg (单源)",
-  "data_quality": "⚠️ 单源未验证 — 行情数据时间戳为2026-06-18 16:14（疑为端午节休市，数据为6/18收盘价）",
-  "indices": {
-    "上证指数": { "price": 4090.48, "change_pct": -0.43 },
-    "深证成指": { "price": 16030.7, "change_pct": 0.94 },
-    "科创50": { "price": 1911.51, "change_pct": 3.84 }
-  },
-  "positions": [
+  "check_time": "2026-06-25T09:40:00+08:00",
+  "has_alerts": true,
+  "alerts": [
     {
-      "code": "002472",
+      "symbol": "002472",
       "name": "双环传动",
-      "price": 43.78,
-      "change_pct": 4.84,
-      "volume_ratio": 1.56,
-      "cost": 40.693,
-      "stop_loss": 38.0,
-      "take_profit": 46.5,
-      "ic_date": "2025-06-24",
-      "status": "OK",
-      "alerts": [],
-      "details": "距止损13.2% | 距止盈5.8% | 浮盈7.6%"
+      "alert_type": "止损触及",
+      "detail": "现价 40.24 已跌破止损价 40.81（双源验证），请立即处理",
+      "severity": "高"
     },
     {
-      "code": "588080",
-      "name": "科创50ETF",
-      "price": 1.953,
-      "change_pct": 3.99,
-      "volume_ratio": 1.52,
-      "cost": 1.65,
-      "stop_loss": 1.55,
-      "take_profit": 1.98,
-      "ic_date": "2025-06-24",
-      "status": "WARNING_HIGH",
-      "alerts": ["🟡 止盈触及：距1.98仅1.4%"],
-      "details": "距止盈1.4% | 浮盈18.4% | 止损1.55在本金1.65以下",
-      "dedup_blue": ["追踪止损提醒(已存在)", "IC陈旧提醒(已存在)"]
-    },
-    {
-      "code": "159540",
-      "name": "信创ETF",
-      "price": 2.287,
-      "change_pct": 3.58,
-      "volume_ratio": 2.00,
-      "cost": 2.203,
-      "stop_loss": 1.85,
-      "take_profit": 2.30,
-      "ic_date": "2025-06-24",
-      "status": "WARNING_HIGH",
-      "alerts": ["🟡 止盈触及：距2.30仅0.6%"],
-      "details": "距止盈0.6% | 浮盈3.8%",
-      "dedup_blue": ["IC陈旧提醒(已存在)"]
-    },
-    {
-      "code": "600699",
+      "symbol": "600699",
       "name": "均胜电子",
-      "price": 24.67,
-      "change_pct": -0.68,
-      "volume_ratio": 0.96,
-      "cost": 24.89,
-      "stop_loss": 24.0,
-      "take_profit": 33.0,
-      "ic_date": "2025-06-24",
-      "status": "WARNING",
-      "alerts": ["🟡 接近止损：距24.00仅2.7%"],
-      "details": "距止损2.7% | 浮亏0.9%",
-      "dedup_blue": ["IC陈旧提醒(已存在)"]
+      "alert_type": "止损触及",
+      "detail": "现价 22.61 已跌破止损价 24（双源验证），浮亏约 -9.2%，请立即处理",
+      "severity": "高"
     },
     {
-      "code": "002011",
+      "symbol": "002011",
       "name": "盾安环境",
-      "price": 10.51,
-      "change_pct": -2.59,
-      "volume_ratio": 0.99,
-      "cost": 11.415,
-      "stop_loss": 10.5,
-      "take_profit": 15.0,
-      "ic_date": "2025-06-24",
-      "status": "WARNING",
-      "alerts": ["🟡 接近止损：距10.50仅0.1% 极度接近！"],
-      "details": "距止损0.1%！极度危险 | 浮亏7.9%",
-      "dedup_blue": ["IC陈旧提醒(已存在)"]
+      "alert_type": "止损触及",
+      "detail": "现价 10.44 已跌破止损价 10.5（双源验证），距止损线 -0.6%，请立即处理",
+      "severity": "高"
     },
     {
-      "code": "603298",
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "alert_type": "止盈触及",
+      "detail": "现价 2.069 已突破止盈价 1.98，浮盈约 +25.4%（双源验证），可考虑告知 Butler 决策",
+      "severity": "中"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "alert_type": "止盈触及",
+      "detail": "现价 2.473 已突破止盈价 2.30，浮盈约 +39.4%，量比 3.70 放量上行（双源验证），可考虑告知 Butler 决策",
+      "severity": "中"
+    },
+    {
+      "symbol": "603298",
       "name": "杭叉集团",
-      "price": 24.66,
-      "change_pct": -0.76,
-      "volume_ratio": 0.62,
-      "cost": 25.2,
-      "stop_loss": 23.0,
-      "take_profit": 31.0,
-      "ic_date": "2025-06-24",
-      "status": "OK",
-      "alerts": [],
-      "details": "距止损6.7% | 浮亏2.1%",
-      "dedup_blue": ["IC陈旧提醒(已存在)"]
-    }
-  ],
-  "watchlist": [
-    {
-      "code": "002125",
-      "name": "湘潭电化",
-      "price": 19.12,
-      "target_build_price": 16.0,
-      "status": "OK",
-      "alert": null
+      "alert_type": "接近止损",
+      "detail": "现价 24.10，距止损价 23 仅 4.6%（双源验证），量比 2.78，请关注",
+      "severity": "中"
     },
     {
-      "code": "600875",
-      "name": "东方电气",
-      "price": 32.56,
-      "target_build_price": 33.0,
-      "status": "INFO_DEDUPED",
-      "alert": "🔵 建仓条件触发（今日已推送，去重跳过）"
+      "symbol": "002125",
+      "name": "湘潭电化",
+      "alert_type": "建仓触发",
+      "detail": "观察池：现价 15.40 已达目标建仓价 16（双源验证），状态=观察中，建议告知 Butler 确认",
+      "severity": "低"
     }
   ],
-  "monitor_records_written": 8,
-  "monitor_record_ids": {
-    "002472": "recvmYeF7BxBOv",
-    "588080": "recvmYeF7BsEfp",
-    "159540": "recvmYeF7B6uao",
-    "600699": "recvmYeF7B4U7l",
-    "002011": "recvmYeF7BrquW",
-    "603298": "recvmYeF7BJoBg",
-    "002125": "recvmYeF7BTlgF",
-    "600875": "recvmYeF7Bc0yc"
-  },
-  "push_message": "📊 Klaire 盘中监控 14:50\n\n🟡 止盈触及：159540 现价 2.287，距止盈 2.30 仅 0.6%，可考虑告知 Butler 决策\n🟡 止盈触及：588080 现价 1.953，距止盈 1.98 仅 1.4%，可考虑告知 Butler 决策\n🟡 接近止损：600699 现价 24.67，距止损（24.00）仅 2.7%，请关注\n🟡 接近止损：002011 现价 10.51，距止损（10.50）仅 0.1%，极度接近！请立即关注\n\n---\n持仓快照已写入监控记录（8条）\n⚠️ 数据源：腾讯gtimg单源，数据时间为6/18收盘"
+  "summary": "klaire 持仓 6 只 + 观察池 9 只，09:40 快照已写入监控记录表（12 条）。共触发 7 条告警：高优 3 条（002472/600699/002011 三只持仓现价均跌破止损价，且全部伴随明显放量，量比 3.6~4.7，抛压偏强），中优 3 条（588080 与 159540 双 ETF 均已触发止盈、浮盈 25%/39%；603298 杭叉集团距止损仅 4.6%），低优 1 条（002125 湘潭电化跌至目标建仓价 16 以下）。600875 东方电气建仓触发因今日已记录，本次去重不重复输出；588080/159540 的追踪止损审查同样已在 14:50 快照中记录，本次去重。整体盘面：持仓端有 3 只破止损 + 1 只逼近止损，组合面临较强减仓压力；ETF 端浮盈丰厚但已严重偏离原止盈区。建议尽快告知 Butler 评估处置（止损执行/止盈减仓/观察池建仓）。"
 }
