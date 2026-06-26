@@ -313,13 +313,12 @@
       },
       "models": {
         "deepseek/deepseek-v4-pro": {},
-        "glm/glm-5.2": {},
+        "volcengine-plan/glm-5.2": {},
         "volcengine-plan/ark-code-latest": {},
         "volcengine-plan/doubao-seed-2.0-code": {},
         "volcengine-plan/doubao-seed-2.0-pro": {},
         "volcengine-plan/doubao-seed-2.0-lite": {},
         "volcengine-plan/doubao-seed-code": {},
-        "volcengine-plan/glm-5.2": {},
         "volcengine-plan/minimax-m2.7": {},
         "volcengine-plan/minimax-m3": {},
         "volcengine-plan/kimi-k2.6": {},
@@ -341,7 +340,7 @@
         },
         "models": {
           "deepseek/deepseek-v4-pro": {},
-          "glm/glm-5.2": {}
+          "volcengine-plan/glm-5.2": {}
         },
         "thinkingDefault": "high",
         "heartbeat": {
@@ -419,7 +418,7 @@
         },
         "models": {
           "deepseek/deepseek-v4-pro": {},
-          "glm/glm-5.2": {}
+          "volcengine-plan/glm-5.2": {}
         },
         "thinkingDefault": "high",
         "heartbeat": {
@@ -650,7 +649,7 @@
         },
         "models": {
           "volcengine-plan/deepseek-v4-pro": {},
-          "glm/glm-5.2": {}
+          "volcengine-plan/glm-5.2": {}
         },
         "thinkingDefault": "high",
         "heartbeat": {
@@ -731,7 +730,7 @@
           ]
         },
         "models": {
-          "glm/glm-5.2": {},
+          "volcengine-plan/glm-5.2": {},
           "deepseek/deepseek-v4-pro": {}
         },
         "thinkingDefault": "high",
@@ -814,7 +813,9 @@
           ]
         },
         "models": {
-          "volcengine-plan/glm-5.2": {}
+          "volcengine-plan/glm-5.2": {},
+          "volcengine-plan/minimax-m3": {},
+          "deepseek/deepseek-v4-pro": {}
         },
         "thinkingDefault": "high",
         "heartbeat": {
@@ -882,8 +883,9 @@
           ]
         },
         "models": {
-          "glm/glm-5.2": {},
-          "deepseek/deepseek-v4-pro": {}
+          "volcengine-plan/glm-5.2": {},
+          "deepseek/deepseek-v4-pro": {},
+          "volcengine-plan/minimax-m3": {}
         },
         "thinkingDefault": "medium",
         "heartbeat": {
@@ -1007,7 +1009,7 @@
         },
         "models": {
           "deepseek/deepseek-v4-pro": {},
-          "glm/glm-5.2": {}
+          "volcengine-plan/glm-5.2": {}
         },
         "thinkingDefault": "high",
         "heartbeat": {

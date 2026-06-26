@@ -1,0 +1,20 @@
+{
+  "principal": "klaire",
+  "agent": "news",
+  "cycle_id": "klaire-20260626-0848-premarket",
+  "data_quality": {
+    "status": "degraded",
+    "reason": "Tavily Search API 配额超限(432)，web_search 同源失败；web_fetch 获取的财经页面为 JS 动态加载，无法提取实质新闻文本。zhipu-search / akshare 工具在当前会话不可用。",
+    "data_sources_attempted": ["tavily_search", "web_search(brave/tavily)", "web_fetch(sina/eastmoney/10jqka)"],
+    "data_sources_succeeded": [],
+    "fallback_taken": "按 AGENTS.md 协议不硬编新闻，sentiment/event_impact 全部留 0(中性占位)，confidence 标低，下游 Risk/CIO 应将 News 权重降权或忽略本轮。"
+  },
+  "data": {
+    "symbol": "klaire-portfolio+watchlist",
+    "sentiment": 0,
+    "event_impact": 0,
+    "confidence": 0.1,
+    "events": [],
+    "summary": "⚠️ 数据源不可用。本轮 News 委员无法获取近 7 天新闻、宏观背景、公司公告。已扫描标的：持仓 6 支(双环传动002472/均胜电子600699/盾安环境002011/杭叉集团603298/科创50ETF 588080/信创ETF 159540)，观察池 9 支(银轮股份002126/华工科技000988/湘潭电化002125/东方电气600875/紫光国微002049/通富微电002156/均胜电子+盾安环境已建仓/联创电子002036已移除)。建议 CIO 在 §7 综合时：(a)将 News 权重设为 0 或最低；(b)依赖 Research/Risk/Strategy 委员形成裁决；(c)若本轮裁决依赖新闻面证据则建议延后至数据源恢复。"
+  }
+}
