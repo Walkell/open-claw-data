@@ -1,0 +1,465 @@
+{
+  "principal": "towney",
+  "agent": "research",
+  "cycle_id": "towney-20260626-1215-intraday",
+  "scenario": "盘中复盘",
+  "timestamp": "2026-06-26T12:15:00+08:00",
+  "data_quality": {
+    "a_share_source": "gtimg单源（网易502/同花顺404/新浪403/eastmoney502均不可用）",
+    "us_index_source": "Yahoo单源（Stooq 404，二次请求429限流）",
+    "kline_source": "新浪财经K线API",
+    "warning": "⚠️ A股行情仅腾讯gtimg单源可用，未经双源交叉验证。K线数据来自新浪财经API。"
+  },
+  "market_overview": {
+    "indices": {
+      "上证指数": { "value": 4032.30, "change_pct": -2.14, "vol_ratio": 0.93, "note": "上午半场放量下跌，一度触及4007低点" },
+      "创业板指": { "value": 4209.29, "change_pct": -3.72, "vol_ratio": 3.10, "note": "领跌全市场，量比3.10显著放量，科技成长股遭抛售" },
+      "科创50": { "value": 2012.53, "change_pct": -2.60, "vol_ratio": 1.91, "note": "半导体权重拖累，但跌幅小于创业板" },
+      "北证50": { "value": null, "change_pct": null, "note": "数据不可用" }
+    },
+    "us_overnight": {
+      "S&P500": { "close": 7357.49, "change_pct": -0.01, "date": "2026-06-25" },
+      "NASDAQ": { "close": 25358.60, "change_pct": -0.46, "date": "2026-06-25" },
+      "SOX_费半": { "close": 13940.87, "change_pct": 3.59, "date": "2026-06-25" },
+      "VIX": { "close": 18.89, "change_pct": 1.40, "date": "2026-06-25" }
+    },
+    "market_narrative": "今日A股全面重挫，创业板指-3.72%领跌，半导体/AI板块为杀跌主力。费半隔夜+3.59%未能提振A股半导体情绪，反而出现利好兑现式抛售。VIX升至18.89显示美股波动加大。市场呈现系统性风险释放特征，非个股独立利空。"
+  },
+  "holdings": [
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "market": "A股科创板",
+      "position_pct": 7.46,
+      "cost": 147.10,
+      "stop_loss": 228.80,
+      "take_profit": 306.73,
+      "current_price": 258.32,
+      "change_pct": 2.30,
+      "vol_ratio": 1.82,
+      "pe": 116.43,
+      "dimensions": {
+        "technical": {
+          "score": 7,
+          "atr_pct": 7.93,
+          "bollinger_upper": 286.34,
+          "ma20": 231.77,
+          "ma60_high": 312.99,
+          "pe_percentile": "中位偏高",
+          "vol_ratio": 1.82,
+          "note": "今日逆势+2.30%为全组合唯一上涨标的，站上MA20(231.77)且距布林上轨(286.34)仍有空间。量比1.82温和放量，相对强度极强。但ATR 7.93%波动剧烈，距60日高312.99已回落17.5%。"
+        },
+        "fundamental": {
+          "score": 7,
+          "note": "CMP设备国产替代龙头，Q1业绩高增。半导体设备板块景气度维持高位，国产替代逻辑未变。"
+        },
+        "valuation": {
+          "score": 5,
+          "note": "PE 116x偏高，但考虑成长性可接受。距止盈位306.73仍有18.7%空间。"
+        },
+        "financials": {
+          "score": 6,
+          "note": "利润表健康，营收利润双增。需关注定增摊薄风险（备注已标注）。"
+        }
+      },
+      "alert": null,
+      "intraday_judgment": "继续持有",
+      "judgment_note": "逆势走强显示资金认可，唯一上涨标的。距止损228.80仍有11.4%安全垫。"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "market": "A股ETF",
+      "position_pct": 7.35,
+      "cost": 1.621,
+      "stop_loss": 1.751,
+      "take_profit": 2.007,
+      "current_price": 2.062,
+      "change_pct": -2.69,
+      "vol_ratio": 14.25,
+      "dimensions": {
+        "technical": {
+          "score": 4,
+          "atr_pct": 4.04,
+          "bollinger_upper": 2.09,
+          "ma20": 1.82,
+          "ma60_high": 2.13,
+          "pe_percentile": "N/A（ETF）",
+          "vol_ratio": 14.25,
+          "note": "⚠️ 量比14.25极端放量下跌！已触发止盈位2.007但未执行。现价2.062接近布林上轨2.09，距MA20(1.82)仍有13.3%溢价。放量长阴是危险信号。"
+        },
+        "fundamental": {
+          "score": 6,
+          "note": "跟踪科创芯片指数，半导体板块整体承压但AI芯片结构性景气。"
+        },
+        "valuation": {
+          "score": 5,
+          "note": "ETF无直接估值，但成分股整体PE偏高。已触发止盈位2.007。"
+        },
+        "financials": {
+          "score": 5,
+          "note": "ETF底层资产财报整体健康，但需关注成分股分化。"
+        }
+      },
+      "alert": "🔴 异动：量比14.25极端放量+已触发止盈位2.007",
+      "intraday_judgment": "建议止盈",
+      "judgment_note": "量比14.25为全组合最高，放量暴跌信号明确。已触发止盈位2.007未执行，建议下午执行止盈或至少减半仓。"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "market": "A股科创板",
+      "position_pct": 6.08,
+      "cost": 155.23,
+      "stop_loss": 241.20,
+      "take_profit": 288.79,
+      "current_price": 259.87,
+      "change_pct": -6.91,
+      "vol_ratio": 4.59,
+      "pe": 124.18,
+      "dimensions": {
+        "technical": {
+          "score": 3,
+          "atr_pct": 5.92,
+          "bollinger_upper": 284.28,
+          "ma20": 249.09,
+          "ma60_high": 288.79,
+          "pe_percentile": "中位偏高",
+          "vol_ratio": 4.59,
+          "note": "🔴 单日-6.91%为全组合最大跌幅之一，量比4.59放量下跌。现价259.87仍在MA20(249.09)上方但距止损241.20仅7.2%。距60日高288.79已回落10%。布林上轨284.28已破。"
+        },
+        "fundamental": {
+          "score": 8,
+          "note": "DDR5内存接口芯片龙头，Q1净利+61%高增。AI服务器渗透率提升驱动长期逻辑。"
+        },
+        "valuation": {
+          "score": 5,
+          "note": "PE 124x偏高但成长性支撑。距止盈288.79需涨11.1%。"
+        },
+        "financials": {
+          "score": 8,
+          "note": "利润表强劲，净利增速61%远超营收增速，盈利能力持续改善。"
+        }
+      },
+      "alert": "🔴 异动：单日-6.91%+量比4.59放量下跌",
+      "intraday_judgment": "警惕",
+      "judgment_note": "基本面优质但技术面恶化。距止损241.20仅7.2%，若下午继续下探至245以下建议执行减仓。MA20(249.09)为关键支撑。"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "market": "A股创业板",
+      "position_pct": 11.41,
+      "cost": 167.94,
+      "stop_loss": 269.04,
+      "take_profit": 385.08,
+      "current_price": 318.99,
+      "change_pct": -6.72,
+      "vol_ratio": 3.18,
+      "pe": 160.21,
+      "dimensions": {
+        "technical": {
+          "score": 2,
+          "atr_pct": 10.27,
+          "bollinger_upper": 527.16,
+          "ma20": 389.85,
+          "ma60_high": 525.00,
+          "pe_percentile": "高位",
+          "vol_ratio": 3.18,
+          "note": "🔴 技术面严重破位！现价318.99远低于MA20(389.85)，跌幅达-18.2%。距60日高525已回落39.2%。布林上轨527.16形同虚设。ATR 10.27%为全组合最高波动。距止损269.04仅15.7%。"
+        },
+        "fundamental": {
+          "score": 7,
+          "note": "光模块龙头，AI算力核心受益。但市场对光模块增速持续性存在分歧。"
+        },
+        "valuation": {
+          "score": 4,
+          "note": "PE 160x极高，已price-in大量增长预期。技术破位后估值支撑弱化。"
+        },
+        "financials": {
+          "score": 7,
+          "note": "Q1业绩高增但增速环比放缓。需关注Q2指引是否下修。"
+        }
+      },
+      "alert": "🔴 异动：单日-6.72%+MA20破位-18.2%+ATR 10.27%极高波动",
+      "intraday_judgment": "建议减仓",
+      "judgment_note": "技术面三杀（跌破MA20/MA60/布林中轨），仓位11.41%为全组合最高，风险敞口过大。CIO 6/24已建议反弹至MA20(398)减仓，当前距该目标需涨24.8%，短期难以实现。建议下午主动减仓至7%以下。"
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "market": "A股ETF",
+      "position_pct": 3.18,
+      "cost": 1.203,
+      "stop_loss": 1.70,
+      "take_profit": 2.50,
+      "current_price": 2.025,
+      "change_pct": -4.26,
+      "vol_ratio": 7.44,
+      "dimensions": {
+        "technical": {
+          "score": 4,
+          "atr_pct": 3.48,
+          "bollinger_upper": 2.13,
+          "ma20": 1.97,
+          "ma60_high": 2.12,
+          "pe_percentile": "N/A（ETF）",
+          "vol_ratio": 7.44,
+          "note": "量比7.44放量下跌，现价2.025仍在MA20(1.97)上方但已跌破布林上轨2.13。创业板指-3.72%领跌拖累。"
+        },
+        "fundamental": {
+          "score": 5,
+          "note": "跟踪创业板50指数，新能源+医药+科技权重。创业板整体承压。"
+        },
+        "valuation": {
+          "score": 5,
+          "note": "创业板50 PE处于历史中位，估值合理。"
+        },
+        "financials": {
+          "score": 5,
+          "note": "成分股整体盈利改善中，但分化明显。"
+        }
+      },
+      "alert": "⚠️ 量比7.44放量下跌",
+      "intraday_judgment": "继续持有",
+      "judgment_note": "仓位仅3.18%影响有限，距止损1.70仍有16%安全垫。作为分散配置维持底仓。"
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "market": "A股ETF",
+      "position_pct": 4.01,
+      "cost": 8.302,
+      "stop_loss": 7.50,
+      "take_profit": 9.049,
+      "current_price": 8.871,
+      "change_pct": -2.36,
+      "vol_ratio": 4.61,
+      "dimensions": {
+        "technical": {
+          "score": 5,
+          "atr_pct": 2.37,
+          "bollinger_upper": 9.14,
+          "ma20": 8.53,
+          "ma60_high": 9.09,
+          "pe_percentile": "N/A（ETF）",
+          "vol_ratio": 4.61,
+          "note": "量比4.61放量下跌，现价8.871仍在MA20(8.53)上方。距止盈9.049仅2.0%。ATR 2.37%波动适中。"
+        },
+        "fundamental": {
+          "score": 6,
+          "note": "中盘宽基，500只分散。CIO 6/24建议加仓至6.5%作为半导体对冲。"
+        },
+        "valuation": {
+          "score": 6,
+          "note": "中证500 PE约22x，估值合理偏低。"
+        },
+        "financials": {
+          "score": 5,
+          "note": "成分股盈利改善趋势明确。"
+        }
+      },
+      "alert": null,
+      "intraday_judgment": "继续持有",
+      "judgment_note": "距止盈9.049仅2%，若下午反弹至9.05附近可考虑部分止盈。跌幅-2.36%小于创业板，相对抗跌。"
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "market": "A股ETF（跨境）",
+      "position_pct": 5.06,
+      "cost": 2.235,
+      "stop_loss": 2.392,
+      "take_profit": 2.861,
+      "current_price": 2.625,
+      "change_pct": -3.42,
+      "vol_ratio": 2.92,
+      "dimensions": {
+        "technical": {
+          "score": 4,
+          "atr_pct": 2.79,
+          "bollinger_upper": 2.86,
+          "ma20": 2.71,
+          "ma60_high": 2.90,
+          "pe_percentile": "N/A（ETF）",
+          "vol_ratio": 2.92,
+          "note": "跌穿MA20(2.71)，现价2.625。距止损2.392仅8.9%。纳指隔夜-0.46%温和下跌，但ETF盘中-3.42%超跌，存在折价交易。"
+        },
+        "fundamental": {
+          "score": 6,
+          "note": "跟踪纳斯达克100，全球最强科技指数。费半隔夜+3.59%为正面信号。"
+        },
+        "valuation": {
+          "score": 5,
+          "note": "纳指估值偏高但盈利增长强劲。"
+        },
+        "financials": {
+          "score": 6,
+          "note": "底层科技巨头盈利持续超预期。"
+        }
+      },
+      "alert": "⚠️ 跌穿MA20+盘中-3.42%超跌（纳指隔夜仅-0.46%）",
+      "intraday_judgment": "警惕",
+      "judgment_note": "盘中-3.42%远超纳指隔夜跌幅，反映A股市场情绪恐慌。距止损2.392仅8.9%，若下午继续下探至2.50以下建议减仓。CIO 6/24已建议减仓至3.5%。"
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "market": "A股ETF（跨境）",
+      "position_pct": 1.43,
+      "cost": 1.654,
+      "stop_loss": 1.70,
+      "take_profit": 2.20,
+      "current_price": 1.853,
+      "change_pct": -1.59,
+      "vol_ratio": 2.04,
+      "dimensions": {
+        "technical": {
+          "score": 4,
+          "atr_pct": 1.76,
+          "bollinger_upper": 1.96,
+          "ma20": 1.90,
+          "ma60_high": 1.98,
+          "pe_percentile": "N/A（ETF）",
+          "vol_ratio": 2.04,
+          "note": "跌穿MA20(1.90)，现价1.853。距止损1.70仅8.3%。标普隔夜-0.01%基本持平，ETF盘中-1.59%同样超跌。"
+        },
+        "fundamental": {
+          "score": 6,
+          "note": "跟踪标普500，美股均衡型宽基。"
+        },
+        "valuation": {
+          "score": 5,
+          "note": "标普500估值偏高但盈利稳健。"
+        },
+        "financials": {
+          "score": 6,
+          "note": "成分股盈利稳定。"
+        }
+      },
+      "alert": null,
+      "intraday_judgment": "继续持有",
+      "judgment_note": "仓位仅1.43%影响极小，CIO 6/24也认为不值得调整。维持底仓。"
+    },
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "market": "A股ETF（商品）",
+      "position_pct": 1.75,
+      "cost": 9.20,
+      "stop_loss": 8.50,
+      "take_profit": 10.50,
+      "current_price": 8.319,
+      "change_pct": 0.39,
+      "vol_ratio": 1.83,
+      "dimensions": {
+        "technical": {
+          "score": 2,
+          "atr_pct": 2.31,
+          "bollinger_upper": 9.60,
+          "ma20": 8.94,
+          "ma60_high": 10.15,
+          "pe_percentile": "N/A（商品）",
+          "vol_ratio": 1.83,
+          "note": "跌破布林下轨(9.60)且远低于MA20(8.94)，现价8.319。距止损8.50仅2.1%。CIO 6/24已建议清仓，唯一浮亏标的(-9.6%)。今日微涨+0.39%仅为技术反弹。"
+        },
+        "fundamental": {
+          "score": 3,
+          "note": "黄金受美元走强+利率高位压制，避险需求减弱。"
+        },
+        "valuation": {
+          "score": 3,
+          "note": "无估值锚，趋势向下。"
+        },
+        "financials": {
+          "score": 3,
+          "note": "商品ETF无财报。"
+        }
+      },
+      "alert": "🔴 CIO 6/24已建议清仓+唯一浮亏-9.6%+距止损仅2.1%",
+      "intraday_judgment": "建议清仓",
+      "judgment_note": "CIO 6/24已明确建议清仓（baseline 4.46全组合最低+VETO override）。技术面三杀+持续失血。今日微涨是减亏离场窗口。"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "market": "A股科创板",
+      "position_pct": 7.57,
+      "cost": 267.318,
+      "stop_loss": 287.50,
+      "take_profit": 351.62,
+      "current_price": 342.73,
+      "change_pct": -4.87,
+      "vol_ratio": 1.09,
+      "pe": 292.22,
+      "dimensions": {
+        "technical": {
+          "score": 5,
+          "atr_pct": 5.83,
+          "bollinger_upper": 349.53,
+          "ma20": 298.35,
+          "ma60_high": 369.00,
+          "pe_percentile": "极高",
+          "vol_ratio": 1.09,
+          "note": "今日-4.87%但量比仅1.09（缩量下跌），仍在MA20(298.35)上方14.9%。距止盈351.62仅2.6%。距止损287.50有16.1%安全垫。"
+        },
+        "fundamental": {
+          "score": 8,
+          "note": "国产CPU/GPU龙头，AI算力自主可控核心标的。Q1业绩高增。"
+        },
+        "valuation": {
+          "score": 3,
+          "note": "PE 292x为全组合最高，极度依赖高增长预期。"
+        },
+        "financials": {
+          "score": 7,
+          "note": "营收利润高速增长，国产替代订单饱满。"
+        }
+      },
+      "alert": null,
+      "intraday_judgment": "继续持有",
+      "judgment_note": "缩量下跌（量比1.09）说明非恐慌抛售，属跟随大盘调整。距止盈仅2.6%，若下午反弹至351.62可执行止盈。基本面顶级，MA20上方安全。"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "market": "A股深市",
+      "position_pct": 1.62,
+      "cost": 60.115,
+      "stop_loss": 64.00,
+      "take_profit": 76.99,
+      "current_price": 73.02,
+      "change_pct": -6.16,
+      "vol_ratio": 9.28,
+      "pe": 76.62,
+      "dimensions": {
+        "technical": {
+          "score": 3,
+          "atr_pct": 5.81,
+          "bollinger_upper": 76.69,
+          "ma20": 66.31,
+          "ma60_high": 79.38,
+          "pe_percentile": "中位",
+          "vol_ratio": 9.28,
+          "note": "🔴 单日-6.16%+量比9.28极端放量暴跌！现价73.02仍在MA20(66.31)上方但已跌破布林上轨76.69。距止损64.00有12.4%安全垫。距止盈76.99需涨5.4%。"
+        },
+        "fundamental": {
+          "score": 7,
+          "note": "先进封装龙头，AI芯片封装核心环节。Q1净利+175%爆发式增长。"
+        },
+        "valuation": {
+          "score": 6,
+          "note": "PE 76x相对成长性合理。先进封装赛道估值溢价。"
+        },
+        "financials": {
+          "score": 8,
+          "note": "净利+175%为全组合最高增速，盈利爆发力极强。"
+        }
+      },
+      "alert": "🔴 异动：单日-6.16%+量比9.28极端放量暴跌",
+      "intraday_judgment": "警惕",
+      "judgment_note": "量比9.28极端放量是危险信号，但基本面极强（净利+175%）+仓位仅1.62%影响有限。CIO 6/24建议等回调68-70加仓，若下午继续下探至70以下可考虑执行加仓。"
+    }
+  ],
+  "summary": "2026-06-26上午半场A股全面重挫，创业板指-3.72%领跌，半导体/AI板块为杀跌主力。全组合11只持仓中10只下跌，仅华海清科(+2.30%)逆势上涨。\n\n🔴 紧急关注：\n1. 天孚通信(300394)：技术面严重破位，MA20偏离-18.2%，仓位11.41%为全组合最高，建议下午主动减仓至7%以下\n2. 科创芯片ETF(588090)：量比14.25极端放量+已触发止盈位2.007，建议执行止盈\n3. 黄金ETF(518880)：CIO 6/24已建议清仓，唯一浮亏标的，今日微涨是减亏窗口\n4. 澜起科技(688008)：-6.91%距止损仅7.2%，需密切监控MA20(249.09)支撑\n5. 通富微电(002156)：量比9.28极端放量但基本面极强，仓位仅1.62%可观望\n\n⚠️ 关注：纳斯达克ETF(513300)盘中-3.42%远超纳指隔夜-0.46%，存在折价超跌。\n\n✅ 相对稳健：华海清科(唯一上涨)、海光信息(缩量下跌)、中证500ETF(相对抗跌)。\n\n市场呈现系统性风险释放特征，非个股独立利空。下午需关注：①是否有护盘资金入场 ②半导体板块能否企稳 ③北向资金流向。"
+}
