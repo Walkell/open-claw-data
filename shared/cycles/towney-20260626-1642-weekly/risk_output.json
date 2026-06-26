@@ -1,0 +1,471 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260626-1642-weekly",
+  "data": {
+    "portfolio_risk_score": 5.95,
+    "portfolio_verdict": "VETO_CONDITIONAL",
+    "portfolio_summary": "组合仓位加权风险约5.65；叠加AI赛道集中度43.28%>40%红线触发结构性VETO，综合 portfolio_risk_score 取 5.95；未达硬否决线(<7)，但已触发两条结构性VETO：①AI方向新增仓位禁止；②黄金ETF已破止损禁止加仓。CIO 需处理这两条红线、对RSI严重超买的华海(95.3)/科创芯片ETF(87)建议分批止盈、对PE>120的天孚/澜起/华海给出仓位上限、对黄金ETF决议止损或观察。",
+    "concentration_analysis": {
+      "total_position_pct": 61.97,
+      "ai_chain_pct": 43.28,
+      "ai_breakdown": "半导体31.87%(华海10.54+澜起6.08+海光7.57+通富2.43+科创芯片ETF5.25) + 算力光通信11.41%(天孚)",
+      "ai_red_line_triggered": true,
+      "ai_red_line_rule": "AI赛道>40% → VETO 任何AI方向新增仓位",
+      "qdii_pct": 6.49,
+      "broad_etf_pct": 9.45,
+      "gold_pct": 1.75,
+      "single_stock_max": "天孚通信11.41%(高仓位+PE159.72双重风险)"
+    },
+    "positions": [
+      {
+        "symbol": "688120",
+        "name": "华海清科",
+        "position_pct": 10.54,
+        "risk_score": 6.1,
+        "verdict": "WARN",
+        "dimensions": {
+          "financial_health": {
+            "score": 5.0,
+            "note": "设备股龙头，财务未自拉，默认中性",
+            "source": "self"
+          },
+          "valuation": {
+            "score": 8.5,
+            "note": "PE 118.81 极度偏高",
+            "source": "self"
+          },
+          "industry_cycle": {
+            "score": 2.5,
+            "note": "半导体超级周期(industry_score 7.5)",
+            "source": "industry_agent"
+          },
+          "technical": {
+            "score": 9.5,
+            "note": "RSI9=95.3 严重超买+周涨16.20%",
+            "source": "self"
+          },
+          "macro": {
+            "score": 5.5,
+            "note": "美联储紧+美元强(macro_score 4.5)",
+            "source": "industry_agent"
+          },
+          "news_sentiment": {
+            "score": 5.5,
+            "note": "设备股相对抗跌但高位筹码博弈",
+            "source": "news_agent"
+          }
+        },
+        "summary": "RSI严重超买+PE极高+仓位>10%，主要风险为获利回吐"
+      },
+      {
+        "symbol": "588090",
+        "name": "科创芯片ETF",
+        "position_pct": 5.25,
+        "risk_score": 5.6,
+        "verdict": "NOC",
+        "dimensions": {
+          "financial_health": {
+            "score": 5.0,
+            "note": "ETF成份分散，默认中性",
+            "source": "self"
+          },
+          "valuation": {
+            "score": 6.5,
+            "note": "成份股整体估值高位",
+            "source": "self"
+          },
+          "industry_cycle": {
+            "score": 2.5,
+            "note": "半导体超级周期",
+            "source": "industry_agent"
+          },
+          "technical": {
+            "score": 8.5,
+            "note": "RSI9=87超买+已突破止盈位2.007",
+            "source": "self"
+          },
+          "macro": {
+            "score": 5.5,
+            "note": "宏观偏紧",
+            "source": "industry_agent"
+          },
+          "news_sentiment": {
+            "score": 5.5,
+            "note": "板块利好兑现抛售",
+            "source": "news_agent"
+          }
+        },
+        "summary": "已突破止盈位+RSI超买，主要风险为板块兑现"
+      },
+      {
+        "symbol": "688008",
+        "name": "澜起科技",
+        "position_pct": 6.08,
+        "risk_score": 6.2,
+        "verdict": "WARN",
+        "dimensions": {
+          "financial_health": {
+            "score": 5.0,
+            "note": "财务未自拉",
+            "source": "self"
+          },
+          "valuation": {
+            "score": 8.5,
+            "note": "PE 125.11 极度偏高",
+            "source": "self"
+          },
+          "industry_cycle": {
+            "score": 2.5,
+            "note": "半导体超级周期",
+            "source": "industry_agent"
+          },
+          "technical": {
+            "score": 8.5,
+            "note": "周-2.99%但周内振幅>10%，高位多空博弈",
+            "source": "self"
+          },
+          "macro": {
+            "score": 5.5,
+            "note": "宏观偏紧",
+            "source": "industry_agent"
+          },
+          "news_sentiment": {
+            "score": 7.5,
+            "note": "高位明星股抛压明显",
+            "source": "news_agent"
+          }
+        },
+        "summary": "PE极高+周内剧烈震荡+明星股抛压，主要风险为筹码松动"
+      },
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "position_pct": 11.41,
+        "risk_score": 6.3,
+        "verdict": "WARN",
+        "dimensions": {
+          "financial_health": {
+            "score": 5.0,
+            "note": "财务未自拉",
+            "source": "self"
+          },
+          "valuation": {
+            "score": 9.0,
+            "note": "PE 159.72 极度偏高",
+            "source": "self"
+          },
+          "industry_cycle": {
+            "score": 3.0,
+            "note": "算力光通信景气延续但产能锚事件压制",
+            "source": "industry_agent"
+          },
+          "technical": {
+            "score": 8.0,
+            "note": "周-5.53%放量下跌，纯利润已开始回吐",
+            "source": "self"
+          },
+          "macro": {
+            "score": 5.5,
+            "note": "宏观偏紧",
+            "source": "industry_agent"
+          },
+          "news_sentiment": {
+            "score": 7.5,
+            "note": "光通信明星股抛压+SK海力士ADR估值锚下周风险",
+            "source": "news_agent"
+          }
+        },
+        "summary": "仓位最重(11.41%)+PE最高+下周SK海力士ADR估值锚事件，主要风险为利润回吐"
+      },
+      {
+        "symbol": "159949",
+        "name": "创业板50ETF",
+        "position_pct": 5.44,
+        "risk_score": 5.1,
+        "verdict": "NOC",
+        "dimensions": {
+          "financial_health": {
+            "score": 5.0,
+            "note": "ETF默认中性",
+            "source": "self"
+          },
+          "valuation": {
+            "score": 6.0,
+            "note": "成份估值偏高",
+            "source": "self"
+          },
+          "industry_cycle": {
+            "score": 3.5,
+            "note": "成长板块景气",
+            "source": "industry_agent"
+          },
+          "technical": {
+            "score": 5.5,
+            "note": "周-1.94%温和回调",
+            "source": "self"
+          },
+          "macro": {
+            "score": 5.5,
+            "note": "宏观偏紧",
+            "source": "industry_agent"
+          },
+          "news_sentiment": {
+            "score": 5.0,
+            "note": "中性偏负",
+            "source": "news_agent"
+          }
+        },
+        "summary": "宽基ETF波动相对可控"
+      },
+      {
+        "symbol": "510500",
+        "name": "中证500ETF",
+        "position_pct": 4.01,
+        "risk_score": 4.4,
+        "verdict": "NOC",
+        "dimensions": {
+          "financial_health": {
+            "score": 5.0,
+            "note": "ETF默认中性",
+            "source": "self"
+          },
+          "valuation": {
+            "score": 4.5,
+            "note": "中证500整体估值合理",
+            "source": "self"
+          },
+          "industry_cycle": {
+            "score": 5.0,
+            "note": "中盘成长",
+            "source": "industry_agent"
+          },
+          "technical": {
+            "score": 4.0,
+            "note": "周+0.37%抗跌",
+            "source": "self"
+          },
+          "macro": {
+            "score": 5.5,
+            "note": "宏观偏紧",
+            "source": "industry_agent"
+          },
+          "news_sentiment": {
+            "score": 4.0,
+            "note": "中性偏稳",
+            "source": "news_agent"
+          }
+        },
+        "summary": "组合最稳定的部分，本周正贡献"
+      },
+      {
+        "symbol": "513300",
+        "name": "纳斯达克ETF",
+        "position_pct": 5.06,
+        "risk_score": 5.6,
+        "verdict": "NOC",
+        "dimensions": {
+          "financial_health": {
+            "score": 5.0,
+            "note": "ETF默认中性",
+            "source": "self"
+          },
+          "valuation": {
+            "score": 6.5,
+            "note": "美股科技股估值偏高",
+            "source": "self"
+          },
+          "industry_cycle": {
+            "score": 3.5,
+            "note": "美股科技景气",
+            "source": "industry_agent"
+          },
+          "technical": {
+            "score": 6.5,
+            "note": "周-3.71%跌破MA10，技术形态走坏",
+            "source": "self"
+          },
+          "macro": {
+            "score": 7.0,
+            "note": "美联储9月加息概率>75%，美元走强压制",
+            "source": "industry_agent"
+          },
+          "news_sentiment": {
+            "score": 5.0,
+            "note": "中性",
+            "source": "news_agent"
+          }
+        },
+        "summary": "美股回调+加息预期升温双重压力"
+      },
+      {
+        "symbol": "513650",
+        "name": "标普500ETF",
+        "position_pct": 1.43,
+        "risk_score": 5.4,
+        "verdict": "NOC",
+        "dimensions": {
+          "financial_health": {
+            "score": 5.0,
+            "note": "ETF默认中性",
+            "source": "self"
+          },
+          "valuation": {
+            "score": 6.0,
+            "note": "美股估值偏高",
+            "source": "self"
+          },
+          "industry_cycle": {
+            "score": 4.0,
+            "note": "宽基景气中性",
+            "source": "industry_agent"
+          },
+          "technical": {
+            "score": 6.0,
+            "note": "周-2.78%回调",
+            "source": "self"
+          },
+          "macro": {
+            "score": 7.0,
+            "note": "加息预期升温",
+            "source": "industry_agent"
+          },
+          "news_sentiment": {
+            "score": 5.0,
+            "note": "中性",
+            "source": "news_agent"
+          }
+        },
+        "summary": "仓位小，配置型敞口可保留"
+      },
+      {
+        "symbol": "518880",
+        "name": "黄金ETF",
+        "position_pct": 1.75,
+        "risk_score": 7.85,
+        "verdict": "VETO",
+        "veto_reason": "止损位8.50已破+周-4.55%放量下跌+唯一浮亏-13.96%+高盛下调金价目标(-500)；距止损线为负值触发硬性风控，VETO任何加仓",
+        "dimensions": {
+          "financial_health": {
+            "score": 5.0,
+            "note": "ETF默认中性",
+            "source": "self"
+          },
+          "valuation": {
+            "score": 5.0,
+            "note": "随金价波动",
+            "source": "self"
+          },
+          "industry_cycle": {
+            "score": 7.5,
+            "note": "黄金景气下行(industry_score 7.5指半导体不适用，黄金按宏观偏空给分)",
+            "source": "industry_agent"
+          },
+          "technical": {
+            "score": 9.5,
+            "note": "止损位8.50已破+周-4.55%+唯一浮亏-13.96%",
+            "source": "self"
+          },
+          "macro": {
+            "score": 9.0,
+            "note": "美联储紧+美元强+金价跌破4000+高盛下调目标至4900",
+            "source": "industry_agent"
+          },
+          "news_sentiment": {
+            "score": 7.0,
+            "note": "金价持续承压",
+            "source": "news_agent"
+          }
+        },
+        "summary": "已破止损+唯一浮亏标的，VETO任何加仓，CIO决议止损出局或观察"
+      },
+      {
+        "symbol": "688041",
+        "name": "海光信息",
+        "position_pct": 7.57,
+        "risk_score": 5.1,
+        "verdict": "NOC",
+        "dimensions": {
+          "financial_health": {
+            "score": 5.0,
+            "note": "财务未自拉",
+            "source": "self"
+          },
+          "valuation": {
+            "score": 7.0,
+            "note": "AI芯片PE偏高",
+            "source": "self"
+          },
+          "industry_cycle": {
+            "score": 2.5,
+            "note": "半导体超级周期",
+            "source": "industry_agent"
+          },
+          "technical": {
+            "score": 5.0,
+            "note": "RSI9=59.5正常区间，周-2.34%温和回调",
+            "source": "self"
+          },
+          "macro": {
+            "score": 5.5,
+            "note": "宏观偏紧",
+            "source": "industry_agent"
+          },
+          "news_sentiment": {
+            "score": 5.5,
+            "note": "中性偏负",
+            "source": "news_agent"
+          }
+        },
+        "summary": "技术面相对健康，主要风险为AI集中度+估值偏高"
+      },
+      {
+        "symbol": "002156",
+        "name": "通富微电",
+        "position_pct": 2.43,
+        "risk_score": 6.55,
+        "verdict": "WARN",
+        "dimensions": {
+          "financial_health": {
+            "score": 5.5,
+            "note": "封测三线财务未自拉，默认中性偏弱",
+            "source": "self"
+          },
+          "valuation": {
+            "score": 7.0,
+            "note": "PE 76.62 偏高",
+            "source": "self"
+          },
+          "industry_cycle": {
+            "score": 3.0,
+            "note": "半导体超级周期但封测分化",
+            "source": "industry_agent"
+          },
+          "technical": {
+            "score": 9.5,
+            "note": "周-9.00%最大输家+量比10.29极端放量杀跌",
+            "source": "self"
+          },
+          "macro": {
+            "score": 5.5,
+            "note": "宏观偏紧",
+            "source": "industry_agent"
+          },
+          "news_sentiment": {
+            "score": 7.0,
+            "note": "封测板块跑输设备/IC设计",
+            "source": "news_agent"
+          }
+        },
+        "summary": "周最大输家+极端放量杀跌，主要风险为持续下跌"
+      }
+    ],
+    "risk_actions": [
+      "AI方向新增仓位全面 VETO（集中度43.28%>40%）",
+      "黄金ETF 518880 加仓 VETO（止损已破）",
+      "RSI严重超买标的建议止盈：华海清科(RSI95.3)/科创芯片ETF(RSI87)",
+      "PE>120 三标的仓位上限警示：天孚159.72/澜起125.11/华海118.81",
+      "下周关注事件：7/14 美联储沃什讲话/6/30 智算产业峰会/7/2 数字经济大会/SK海力士ADR上市"
+    ]
+  }
+}
