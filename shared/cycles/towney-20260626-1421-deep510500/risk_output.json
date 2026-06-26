@@ -1,0 +1,60 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260626-1421-deep510500",
+  "data": {
+    "symbol": "510500",
+    "name": "中证500ETF",
+    "risk_score": 4.4,
+    "verdict": "NOC",
+    "veto_reason": "",
+    "dimensions": {
+      "financial_health": {
+        "score": 4.0,
+        "note": "宽基ETF天然分散500只成分股，单一公司财务风险被稀释；ROE约8-9%处于修复通道，整体盈利质量中等偏稳，风险低",
+        "source": "self"
+      },
+      "valuation": {
+        "score": 3.0,
+        "note": "中证500 PE 20-25倍，历史20-30%分位，估值安全边际充足；折价交易-2.2%（净值9.08 vs 市价8.89）提供额外缓冲，估值风险低",
+        "source": "self"
+      },
+      "industry_cycle": {
+        "score": 5.0,
+        "note": "权重行业景气参差（信息技术6.5/材料6.0偏正，医药4.5/消费4.5偏弱），中小盘风格本周跑赢沪深300约2pp占优，整体中性",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 5.0,
+        "note": "均线多头排列+MACD金叉但今日-2.15%恐慌回调，RSI 62.7偏高，布林带78%偏上轨；MA20(8.54)为关键支撑，跌破则技术面恶化，短期回调风险中等",
+        "source": "self"
+      },
+      "macro": {
+        "score": 5.5,
+        "note": "PMI 49-50经济动能偏弱，中美关税不确定性持续，宏观环境中性偏弱",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 5.0,
+        "note": "News数据源不可用（Tavily 432），置信度0.2，按中性5.0处理；低置信度建议CIO降权",
+        "source": "news_agent"
+      }
+    },
+    "weighted_calculation": "4.0×0.25 + 3.0×0.20 + 5.0×0.15 + 5.0×0.15 + 5.5×0.15 + 5.0×0.10 = 1.00 + 0.60 + 0.75 + 0.75 + 0.825 + 0.50 = 4.425",
+    "concentration_detail": {
+      "current_pct": 4.01,
+      "target_pct": 6.5,
+      "delta_pct": 2.49,
+      "track": "中盘宽基（非AI赛道）",
+      "ai_concentration_check": "510500为中证500宽基ETF，非AI单一赛道，不触发AI集中度>40%红线",
+      "stop_loss_distance": "Bitable止损价需校验，触发价8.94距MA20(8.54)约+4.7%，距常规-8%止损线约8%，不触发≤3%加仓VETO"
+    },
+    "veto_check": {
+      "hard_threshold_9": false,
+      "soft_threshold_7": false,
+      "stop_loss_3pct": false,
+      "ai_concentration_40pct": false
+    },
+    "summary": "510500中证500ETF综合风险分4.4分，估值安全边际充足、宽基天然分散是主要低风险因素；短期技术面恐慌回调+宏观PMI偏弱+新闻数据源缺失为主要不确定性，但均未触发否决阈值，无异议"
+  }
+}

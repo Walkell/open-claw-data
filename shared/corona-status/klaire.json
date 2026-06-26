@@ -1,8 +1,7 @@
 {
   "principal": "klaire",
   "status": "running",
-  "cycle_id": "klaire-20260626-1410-monitor-pm",
-  "step": "盘中监控启动，spawn Monitor",
-  "started_at": "2026-06-26T14:10:00+08:00",
-  "updated_at": "2026-06-26T14:10:00+08:00"
+  "step": "盘中监控启动，检查持仓异动",
+  "started_at": "2026-06-26T14:50:00+08:00",
+  "updated_at": "2026-06-26T14:50:00+08:00"
 }
