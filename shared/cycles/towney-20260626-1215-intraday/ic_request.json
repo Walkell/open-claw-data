@@ -1,0 +1,11 @@
+{
+  "cycle_id": "towney-20260626-1215-intraday",
+  "principal": "towney",
+  "flow_type": "精简两委员",
+  "scenario": "盘中复盘",
+  "priority": "标准",
+  "trigger_source": "user",
+  "trigger_time": "2026-06-26T12:15:00+08:00",
+  "user_request": "盘中分析下吧，今天市场波动挺大",
+  "context_note": "上午半场结束（12:15），关注：①持仓盘中表现 ②市场波动来源 ③是否需要日内动作"
+}
