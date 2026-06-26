@@ -1,0 +1,10 @@
+{
+  "cycle_id": "towney-20260626-1642-weekly",
+  "principal": "towney",
+  "flow_type": "四委员",
+  "scenario": "周复盘",
+  "trigger_source": "user",
+  "trigger_time": "2026-06-26T16:42:00+08:00",
+  "period": "2026-06-22 至 2026-06-26",
+  "priority": "标准"
+}
