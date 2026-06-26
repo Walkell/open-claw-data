@@ -24,17 +24,27 @@ principal 和 table_id 从 context.json 读取，只读对应表，不碰其他 
 
 ## 新闻数据源
 
+### 网络搜索（强制优先级）
+1. **首选**：`zhipu-search__zhipu_web_search`（engine=`search_pro`）
+   - 个股新闻：`recency="oneWeek"`（重大事件用 `oneDay`）
+   - 宏观/行业：`recency="oneWeek"` 或 `oneMonth`
+   - 敏感词（涉政/涉监管措辞）可能空返，遇空 → 切 tavily
+2. **Fallback**：`tavily_search`（dev 额度可能耗尽，遇 432 → 直接降级并在 data_quality 标 ⚠️）
+3. **官方披露**：`akshare__get_news_data(symbol)` 拉公告/交易所披露（独立通道，不走搜索）
+
+⚠️ 同一 query 不在 zhipu 上重试超过 1 次；空返立刻换源/换措辞。
+
 ### 个股新闻
 ```
-web_search："{股票名} {代码} 新闻 近7天"
-tavily_search：补充英文来源（港股/美股关联标的）
+zhipu-search__zhipu_web_search(query="{股票名} {代码} 新闻", recency="oneWeek")
+tavily_search：补充英文来源（港股/美股关联标的，zhipu 中文为主）
 akshare__get_news_data(symbol)：官方公告 / 交易所披露
 ```
 
 ### 宏观 / 行业背景
 ```
-web_search：美股隔夜 + 费半指数 + A股政策
-web_search：半导体/AI 行业近期动态
+zhipu-search__zhipu_web_search(query="美股隔夜 费半指数 A股政策", recency="oneDay")
+zhipu-search__zhipu_web_search(query="半导体 AI 行业近期动态", recency="oneWeek")
 ```
 
 ### 重大事件判断标准

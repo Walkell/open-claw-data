@@ -1,0 +1,22 @@
+{
+  "principal": "klaire",
+  "agent": "news",
+  "cycle_id": "klaire-20260626-0947-junsheng",
+  "data": {
+    "symbol": "600699",
+    "name": "均胜电子",
+    "sentiment": 0,
+    "event_impact": 0,
+    "confidence": 0.1,
+    "events": [],
+    "summary": "数据源不可用：Tavily Search API 配额耗尽（HTTP 432），zhipu-search 与 akshare__get_news_data 工具在当前会话不可用，无法核实近 30 天新闻、公告及行业事件。按 SOP 降级处理，不硬编新闻。建议下游 Risk/CIO 将本次 news 输入按零证据处理或安排数据源恢复后重跑。",
+    "data_quality": {
+      "status": "degraded",
+      "level": "unavailable",
+      "reason": "Tavily 432 quota exceeded; zhipu/akshare tools not present in this session",
+      "sources_tried": ["tavily_search", "web_search"],
+      "sources_succeeded": [],
+      "fallback_action": "降级输出零事件、低置信度，标注数据源不可用，等待数据源恢复后再次扫描"
+    }
+  }
+}

@@ -62,9 +62,18 @@ akshare__get_financial_metrics(symbol)     # 关键指标（ROE/PE/PB等）
 ```
 
 ### 研报 / 估值参考
+
+**网络搜索强制优先级：**
+1. **首选**：`zhipu-search__zhipu_web_search`（engine=`search_pro`，recency=`oneMonth`）
+   - 敏感词（涉政/涉监管措辞）可能空返 → 切 tavily
+2. **Fallback**：`tavily_search`（dev 额度可能耗尽，遇 432 → 降级单源并在 data_quality 标 ⚠️）
+3. **页面原文**：`tavily_extract` 或 `web_fetch`
+
 ```
-web_search / tavily_search："{股票名} 研究报告 估值 2026"
+zhipu-search__zhipu_web_search(query="{股票名} 研究报告 估值 2026", recency="oneMonth")
 ```
+
+⚠️ 同一 query 不在 zhipu 上重试超过 1 次；空返立刻换源/换措辞。
 
 ---
 

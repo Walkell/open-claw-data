@@ -2,17 +2,28 @@
 
 ## 数据来源优先级
 
+### 网络搜索（强制优先级）
+1. **首选**：`zhipu-search__zhipu_web_search`（engine=`search_pro`，recency 按场景）
+   - 宏观/行业景气：`recency="oneMonth"`
+   - 即时事件：`recency="oneWeek"`
+   - 敏感词（涉政/涉监管措辞）可能空返，遇空 → 切 tavily
+2. **Fallback**：`tavily_search`（dev 额度可能耗尽，遇 432 → 直接降级单源并在 data_quality 标 ⚠️）
+3. **页面原文**：`tavily_extract` 或 `web_fetch`
+
+⚠️ 同一 query 不在 zhipu 上重试超过 1 次；空返立刻换源/换措辞。
+
 ### 宏观数据（利率 / PMI / 社融 / 汇率 / VIX）
 ```
-web_search / tavily_search：优先选财联社、Wind、国家统计局等来源
-tavily_extract：拉取具体页面原文
+zhipu-search__zhipu_web_search(query="...", engine="search_pro", recency="oneMonth")
+  优先选财联社、Wind、国家统计局等来源
+tavily_extract / web_fetch：拉取具体页面原文
 ```
 
 ### 行业景气度（资金流向 / ETF / 板块）
 ```
-web_search："{行业名} ETF 资金流向 近期"
-web_search："{行业名} 板块 景气度 2026"
-tavily_search：补充英文来源（半导体/AI 等全球化行业）
+zhipu-search__zhipu_web_search(query="{行业名} ETF 资金流向 近期", recency="oneWeek")
+zhipu-search__zhipu_web_search(query="{行业名} 板块 景气度 2026", recency="oneMonth")
+tavily_search：补充英文来源（半导体/AI 等全球化行业，zhipu 中文为主）
 ```
 
 ### 实时指数 / 期货
