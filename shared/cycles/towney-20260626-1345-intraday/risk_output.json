@@ -1,0 +1,67 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260626-1345-intraday",
+  "data": {
+    "symbol": "PORTFOLIO",
+    "risk_score": 6.0,
+    "verdict": "NOC",
+    "veto_reason": "组合层面无硬否决。标的级VETO见 red_alert_response：天孚>10%期间禁加仓、澜起破MA20前禁加仓、通富未到68-70区间禁加仓",
+    "dimensions": {
+      "financial_health": {"score": 4.5, "note": "半导体龙头（华海/澜起/海光/通富）基本面健康，通富PE7.22低估；ETF底层资产分散；财务风险低", "source": "self"},
+      "valuation": {"score": 6.0, "note": "华海+78.7%/澜起+70.8%/创板50ETF+69.6%浮盈巨大估值偏贵；通富PE7.22低估对冲；整体估值偏高", "source": "self"},
+      "industry_cycle": {"score": 5.0, "note": "未参与（精简两委员），默认中性", "source": "industry_agent"},
+      "technical": {"score": 8.0, "note": "上证-1.47%/创业板-2.91%，10只持仓8只量比>2，澜起/天孚/通富单日跌幅近5%，多标跌破或逼近MA20，盘中量价齐杀", "source": "self"},
+      "macro": {"score": 5.0, "note": "未参与（精简两委员），默认中性；外盘费半隔夜+3.94%但A股盘中独立重挫，宏观背离", "source": "industry_agent"},
+      "news_sentiment": {"score": 5.0, "note": "未参与（精简两委员）", "source": "news_agent"}
+    },
+    "weighted_calc": "0.25×4.5 + 0.20×6.0 + 0.15×5.0 + 0.15×8.0 + 0.15×5.0 + 0.10×5.0 = 1.125+1.20+0.75+1.20+0.75+0.50 = 5.525 → +0.5集中度溢价（天孚11.41%超10%警戒+半导体30.08%偏高）→ 6.0",
+    "concentration_detail": {
+      "total_position_pct": 56.92,
+      "available_cash_pct": 43.08,
+      "single_max": {"symbol": "300394天孚通信", "weight_pct": 11.41, "alert": "单标超10%警戒线，必须减仓"},
+      "semi_sector_pct": 30.08,
+      "semi_components": "华海7.46 + 科创芯片7.35 + 澜起6.08 + 海光7.57 + 通富1.62",
+      "cross_border_etf_pct": 6.49,
+      "ai_concentration_check": "半导体30.08%未触AI赛道>40%硬否决线"
+    },
+    "intraday_actions": [
+      {"symbol": "688120华海清科", "action": "继续持有", "current_weight_pct": 7.46, "target_weight_pct": 7.46, "current_price": 262.79, "trigger": "跌破BB中轨或MA20启动减仓至5%；现价突破BB上轨续涨+4.08%维持持有", "note": "组合亮点，设动态止盈"},
+      {"symbol": "588090科创芯片ETF", "action": "盘中减仓", "current_weight_pct": 7.35, "target_weight_pct": 5.5, "delta_pp": -1.85, "current_price": 2.104, "trigger": "现价2.10±附近分两批执行减仓", "note": "量比14.80爆量恐慌，落地CIO 6/24减仓决议"},
+      {"symbol": "688008澜起科技", "action": "警戒持有", "current_weight_pct": 6.08, "target_weight_pct": 6.08, "current_price": 265.06, "trigger": "跌破MA20(约249)触发减仓至4%；反弹至275以上可逢高减0.5pp锁盈", "note": "单日-5.05%量比5.44，距MA20仅6%，浮盈70.8%已到锁盈区"},
+      {"symbol": "300394天孚通信", "action": "盘中减仓", "current_weight_pct": 11.41, "target_weight_pct": 7.0, "delta_pp": -4.41, "current_price": 325.0, "trigger": "现价325±立即分批减仓；若跌破MA20(319.64)加速减仓", "note": "单标超10%警戒+逼近MA20+CIO 6/24决议，必须执行"},
+      {"symbol": "159949创业板50ETF", "action": "继续持有", "current_weight_pct": 3.18, "target_weight_pct": 3.18, "current_price": 2.040, "trigger": "跌破2.00启动减仓至2%", "note": "浮盈69.6%但仓位轻"},
+      {"symbol": "510500中证500ETF", "action": "盘中加仓", "current_weight_pct": 4.01, "target_weight_pct": 6.5, "delta_pp": 2.49, "current_price": 8.942, "trigger": "现价8.94±以下分两批加仓；跌破8.80第二批", "note": "落地CIO 6/24加仓决议，对冲半导体集中度"},
+      {"symbol": "513300纳斯达克ETF", "action": "盘中减仓", "current_weight_pct": 5.06, "target_weight_pct": 3.5, "delta_pp": -1.56, "current_price": 2.647, "trigger": "现价2.64±立即执行；跌破MA20确认", "note": "已跌破MA20技术破位+CIO 6/24决议"},
+      {"symbol": "513650标普500ETF", "action": "继续持有", "current_weight_pct": 1.43, "target_weight_pct": 1.43, "current_price": 1.853, "trigger": "跌破1.80减仓至1%", "note": "仓位小不动"},
+      {"symbol": "518880黄金ETF", "action": "盘中清仓", "current_weight_pct": 1.75, "target_weight_pct": 0, "delta_pp": -1.75, "current_price": 8.345, "trigger": "盘中分批清仓，挂8.34-8.36区间", "note": "CIO 6/24 override决议清仓，PE分位3.5%已极低无配置价值"},
+      {"symbol": "688041海光信息", "action": "继续持有", "current_weight_pct": 7.57, "target_weight_pct": 7.57, "current_price": 350.47, "trigger": "跌破340或MA20启动减仓至5%", "note": "量比1.37相对克制，浮盈31.1%留仓"},
+      {"symbol": "002156通富微电", "action": "区间加仓（条件单）", "current_weight_pct": 1.62, "target_weight_pct": 3.0, "delta_pp": 1.38, "current_price": 73.92, "trigger": "现价73.92未到加仓区间，挂68-70区间限价单，触发再执行；当日不主动追买", "note": "PE7.22低估+量比10.45爆量恐慌恰为吸筹机会，但须等区间"}
+    ],
+    "portfolio_advice": {
+      "net_action": "盘中净减仓约 -5.59pp（减天孚4.41+科创芯片1.85+纳指1.56+黄金1.75 - 加中证500 2.49 - 加通富1.38条件单暂不计），完成后总仓位约 51.33%",
+      "post_action_position_pct": 51.33,
+      "rationale": "市场盘中恐慌量价齐杀+半导体集中度30%偏高+天孚单标超10%，必须借盘中执行积压的CIO 6/24决议；同时加中证500ETF对冲半导体集中度，整体降仓5pp保留弹药",
+      "execution_priority": "1) 天孚减仓（最紧急-超阈值） 2) 黄金清仓 3) 科创芯片+纳指减仓 4) 中证500加仓 5) 通富挂条件单",
+      "cash_buffer_target": "保持 ≥40% 现金等价物以备进一步下跌补仓"
+    },
+    "risk_points": [
+      "天孚通信单标 11.41% 超 10% 警戒线，是最大单点风险",
+      "半导体板块集中度 30.08%，距AI硬否决40%线尚有空间但已偏高",
+      "10只持仓中8只量比>2显示盘中恐慌情绪，警惕尾盘进一步杀跌",
+      "澜起距MA20仅6%、纳指已破MA20，技术面进入危险区",
+      "外盘费半+3.94%与A股盘中重挫背离，需警惕外资流向反复",
+      "组合浮盈集中（华海78.7%/澜起70.8%/创板50ETF69.6%）需启动动态止盈保护"
+    ],
+    "red_alert_response": {
+      "300394天孚通信": "VETO任何加仓；盘中必须减至7%（-4.41pp）以满足单标≤10%警戒；跌破MA20(319.64)时加速第二批",
+      "588090科创芯片ETF": "盘中执行减仓至5.5%；量比14.80爆量为撤退好窗口，不要追低",
+      "688008澜起科技": "警戒持有；VETO加仓直至股价企稳MA20上方；现价距MA20仅6%，破位即减仓至4%锁70.8%浮盈",
+      "518880黄金ETF": "盘中分批清仓至 0%；不接受 override，PE分位3.5%极低且持仓1.75%意义有限",
+      "002156通富微电": "VETO当日主动追买（现价73.92超出68-70加仓区间）；只允许挂限价条件单等回踩；CIO 6/24决议加至3%在区间内有效"
+    },
+    "news": {"score": 0, "note": "未参与（精简两委员）"},
+    "industry": {"score": 5, "note": "未参与，默认中性"},
+    "summary": "组合风险6.0(中等偏高)：盘中量价齐杀+半导体30%集中+天孚11.41%超阈值是核心风险；建议立即执行CIO 6/24积压的减仓清单（天孚/科创芯片/纳指/黄金）+加仓中证500ETF对冲，净降仓5pp保留弹药。"
+  }
+}

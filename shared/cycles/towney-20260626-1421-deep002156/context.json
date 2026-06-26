@@ -1,0 +1,14 @@
+{
+  "cycle_id": "towney-20260626-1421-deep002156",
+  "principal": "towney",
+  "flow_type": "四委员",
+  "scenario": "深度分析",
+  "symbol": "002156",
+  "name": "通富微电",
+  "action": "加仓评估",
+  "current_position_pct": 1.62,
+  "target_position_pct": 3.0,
+  "trigger_price": 68.0,
+  "positions_table_id": "tblUeTGMf0IKJ8Pk",
+  "watchlist_table_id": "tblaLlSQp8tEcWgJ"
+}

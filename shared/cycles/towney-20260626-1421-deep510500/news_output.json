@@ -1,0 +1,17 @@
+{
+  "principal": "towney",
+  "agent": "news",
+  "cycle_id": "towney-20260626-1421-deep510500",
+  "data": {
+    "symbol": "510500",
+    "name": "中证500ETF",
+    "news_score": 5.0,
+    "sentiment": 0,
+    "event_impact": 0,
+    "confidence": 0.2,
+    "events": [],
+    "key_news": [],
+    "summary": "数据源不可用：Tavily Search API 返回 432（配额超限），zhipu-search/akshare 工具未在当前会话工具集中暴露，本轮无法获取 510500 中证500ETF 近 7 天的舆情、资金流向、政策与市场情绪数据。按 News Agent 协议不进行新闻硬编，输出中性 sentiment=0、event_impact=0、低置信度 0.2。建议 CIO 在 §7 综合时对 news 维度降权或回退至历史均值；如需补齐舆情，请在恢复数据源后重跑本 cycle。",
+    "data_quality": "⚠️ unavailable: tavily_quota_exceeded + zhipu_tool_missing; no news fetched; not fabricated"
+  }
+}

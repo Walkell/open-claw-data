@@ -1,0 +1,16 @@
+{
+  "cycle_id": "towney-20260626-1421-deep002156",
+  "principal": "towney",
+  "flow_type": "四委员",
+  "scenario": "深度分析",
+  "symbol": "002156",
+  "name": "通富微电",
+  "action": "加仓评估",
+  "current_position_pct": 1.62,
+  "target_position_pct": 3.0,
+  "priority": "高优",
+  "trigger_source": "user",
+  "trigger_time": "2026-06-26T14:21:00+08:00",
+  "user_request": "两支加仓的标的 投委会四委员，深度分析下吧",
+  "context_note": "盘中深度分析，对通富微电加仓做四委员全面评估。6/24 Risk 55分可持有，6/26盘中量比10.45 -5%异常。本轮需重新评估加仓合理性。"
+}

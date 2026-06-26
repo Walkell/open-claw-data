@@ -1,0 +1,14 @@
+{
+  "cycle_id": "towney-20260626-1421-deep510500",
+  "principal": "towney",
+  "flow_type": "四委员",
+  "scenario": "深度分析",
+  "symbol": "510500",
+  "name": "中证500ETF",
+  "action": "加仓评估",
+  "current_position_pct": 4.01,
+  "target_position_pct": 6.5,
+  "trigger_price": 8.94,
+  "positions_table_id": "tblUeTGMf0IKJ8Pk",
+  "watchlist_table_id": "tblaLlSQp8tEcWgJ"
+}

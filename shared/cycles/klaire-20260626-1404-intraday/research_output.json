@@ -1,0 +1,244 @@
+{
+  "principal": "klaire",
+  "agent": "research",
+  "cycle_id": "klaire-20260626-1404-intraday",
+  "data_quality": {
+    "market_data": "⚠️ 单源未验证 - 仅腾讯gtimg可用（东方财富502、网易502、同花顺404、新浪403），K线数据来自新浪财经API",
+    "pe_percentile": "⚠️ 东方财富PE分位API部分可用（002472/600699成功，002011/603298 502），ETFs无PE分位",
+    "web_search": "❌ Tavily 432配额耗尽，web_search不可用，研报/新闻数据缺失",
+    "financial_data": "✅ 东方财富RPT_LICO_FN_CPD API正常，获取到最新季报/年报数据"
+  },
+  "data": {
+    "holdings": [
+      {
+        "symbol": "002472",
+        "name": "双环传动",
+        "cost": 40.693,
+        "stop_loss": 40.81,
+        "stop_profit": 45.2,
+        "position": 300,
+        "current_price": 37.45,
+        "change_pct": -5.00,
+        "pnl_pct": -8.0,
+        "stop_loss_triggered": true,
+        "stop_profit_triggered": false,
+        "dimensions": {
+          "technical": {
+            "score": 2,
+            "note": "深度破位：跌破MA20(41.57)和MA60(40.29)，今日-5.00%放量暴跌，止损价40.81已触发。均线空头排列，距MA60高点45.03回撤16.8%。ATR 6.6%极高波动率，盘中最低37.36接近前低。布林上轨45.01远高于现价，无支撑参考。",
+            "atr_pct": 6.60,
+            "bollinger_upper": 45.01,
+            "ma20": 41.57,
+            "ma60_high": 45.03,
+            "pe_percentile": 89.5,
+            "vol_ratio": 1.04
+          },
+          "fundamental": {
+            "score": 5,
+            "note": "机器人减速器+新能源齿轮双赛道龙头地位稳固。2025全年ROE 13.36%尚可，净利+23.2%。但Q1增速骤降：营收仅+1.5%、净利+2.9%、ROE仅2.79%，增长动能明显衰减。毛利率27.3%维持稳定。"
+          },
+          "valuation": {
+            "score": 2,
+            "note": "PE处于历史89.5%分位，估值极度昂贵。PB 3.15倍。当前37.45元对应约25x PE(TTM)，在Q1增速近乎停滞背景下缺乏支撑。若按Q1年化EPS仅1.32元，forward PE达28x。"
+          },
+          "financials": {
+            "score": 4,
+            "note": "2025全年：EPS 1.50，ROE 13.36%，BPS 11.79。2026Q1：EPS 0.33，ROE 2.79%，BPS 12.13。Q1营收同比+1.5%几乎零增长，净利+2.9%微增。毛利率27.5%环比稳定。资产负债表健康但增长失速是核心问题。"
+          }
+        },
+        "summary": "⚠️ 止损已触发，今日-5%放量暴跌。Q1增长近乎停滞，PE估值处于历史高位。技术面全面破位，建议立即执行止损纪律。"
+      },
+      {
+        "symbol": "588080",
+        "name": "科创50ETF",
+        "cost": 1.65,
+        "stop_loss": 1.55,
+        "stop_profit": 1.98,
+        "position": 4000,
+        "current_price": 2.093,
+        "change_pct": -1.04,
+        "pnl_pct": 26.8,
+        "stop_loss_triggered": false,
+        "stop_profit_triggered": true,
+        "dimensions": {
+          "technical": {
+            "score": 7,
+            "note": "多头趋势但遇阻：站稳MA20(1.81)和MA60(1.65)上方，中期趋势完好。但今日-1.04%回落，距MA60高点2.12仅1.3%，前高阻力明显。止盈价1.98已触发。ATR 4.05%适中。布林上轨2.08已被突破后回落，短期超买修正中。",
+            "atr_pct": 4.05,
+            "bollinger_upper": 2.08,
+            "ma20": 1.81,
+            "ma60_high": 2.12,
+            "pe_percentile": null,
+            "vol_ratio": 0.99
+          },
+          "fundamental": {
+            "score": 6,
+            "note": "跟踪科创50指数，权重集中于半导体(中芯国际/海光信息/寒武纪)和AI算力。国产替代+AI算力建设双主线支撑。但板块估值已高，产业资本减持潮构成压制。"
+          },
+          "valuation": {
+            "score": 5,
+            "note": "科创50指数PE约45-50x区间，处于历史中高位置。ETF净值2.093已触发止盈线1.98。考虑到半导体板块估值泡沫风险，当前位置性价比下降。"
+          },
+          "financials": {
+            "score": 5,
+            "note": "ETF产品，无独立财报。底层科创50成分股2026Q1整体营收增速约15-20%，但利润分化严重。半导体设备/材料增速领先，设计/制造承压。"
+          }
+        },
+        "summary": "✅ 止盈已触发(+26.8%)，趋势仍偏多但前高阻力明显。建议按IC裁决执行减仓，锁定利润。"
+      },
+      {
+        "symbol": "159540",
+        "name": "信创ETF",
+        "cost": 1.774,
+        "stop_loss": 1.85,
+        "stop_profit": 2.3,
+        "position": 1700,
+        "current_price": 2.494,
+        "change_pct": -2.43,
+        "pnl_pct": 40.6,
+        "stop_loss_triggered": false,
+        "stop_profit_triggered": true,
+        "dimensions": {
+          "technical": {
+            "score": 7,
+            "note": "强势多头但短期回调：站稳MA20(2.13)和MA60(1.96)上方，中期趋势完好。今日-2.43%回落幅度较大，距MA60高点2.56仅2.6%，接近前高阻力。止盈价2.3已大幅触发。ATR 4.18%适中偏高。布林上轨2.45已被突破后回落。",
+            "atr_pct": 4.18,
+            "bollinger_upper": 2.45,
+            "ma20": 2.13,
+            "ma60_high": 2.56,
+            "pe_percentile": null,
+            "vol_ratio": 1.30
+          },
+          "fundamental": {
+            "score": 6,
+            "note": "信创国产替代政策持续加码，2026年党政/行业信创进入规模化替换期。成分股覆盖操作系统、数据库、中间件、办公软件等核心环节。政策确定性高。"
+          },
+          "valuation": {
+            "score": 4,
+            "note": "信创板块整体估值偏高，部分成分股PE超100x。ETF净值2.494已远超止盈线2.3。当前位置已充分反映政策预期，安全边际不足。"
+          },
+          "financials": {
+            "score": 5,
+            "note": "ETF产品。信创板块2026Q1整体营收增速约25%，但利润释放不均衡。操作系统/数据库龙头亏损收窄，应用软件盈利改善。"
+          }
+        },
+        "summary": "✅ 止盈大幅触发(+40.6%)，量比1.30显示资金仍在流入但今日-2.43%回落。建议按IC裁决执行减仓。"
+      },
+      {
+        "symbol": "600699",
+        "name": "均胜电子",
+        "cost": 24.89,
+        "stop_loss": 24,
+        "stop_profit": 33,
+        "position": 200,
+        "current_price": 21.30,
+        "change_pct": -6.46,
+        "pnl_pct": -14.4,
+        "stop_loss_triggered": true,
+        "stop_profit_triggered": false,
+        "dimensions": {
+          "technical": {
+            "score": 1,
+            "note": "深度崩跌：今日-6.46%放量暴跌，远低于MA20(25.05)和MA60(27.05)，均线全面空头排列。止损价24已深度触发(距-11.2%)。距MA60高点32.26回撤34%。ATR 4.92%高波动。布林上轨28.03远高于现价。连续破位无任何技术支撑。",
+            "atr_pct": 4.92,
+            "bollinger_upper": 28.03,
+            "ma20": 25.05,
+            "ma60_high": 32.26,
+            "pe_percentile": 95.0,
+            "vol_ratio": 0.96
+          },
+          "fundamental": {
+            "score": 4,
+            "note": "汽车安全(全球第二)+智能座舱+机器人布局。2025全年净利+39%亮眼，但Q1营收-5.2%转负，毛利率仅17.7%极薄。汽车安全业务受全球车市放缓+关税影响。机器人概念尚未贡献实质营收。"
+          },
+          "valuation": {
+            "score": 2,
+            "note": "PE处于历史95%分位，极度昂贵。当前21.30元对应约82x PE(TTM)。Q1营收下滑背景下估值无支撑。PB 1.91倍尚可但盈利质量差。"
+          },
+          "financials": {
+            "score": 3,
+            "note": "2025全年：EPS 0.95，ROE 9.42%，BPS 11.17，营收+9.5%，净利+39.1%。2026Q1：EPS 0.26，ROE 2.31%，BPS 11.30，营收-5.2%，净利+18.1%。Q1营收转负是危险信号，毛利率17.7%极低，盈利质量差。"
+          }
+        },
+        "summary": "⚠️ 止损深度触发(-14.4%)，今日-6.46%加速下跌。Q1营收转负+毛利率极薄+PE极度昂贵三重利空叠加。建议立即执行止损。"
+      },
+      {
+        "symbol": "002011",
+        "name": "盾安环境",
+        "cost": 11.415,
+        "stop_loss": 10.5,
+        "stop_profit": 15,
+        "position": 200,
+        "current_price": 10.13,
+        "change_pct": -3.71,
+        "pnl_pct": -11.3,
+        "stop_loss_triggered": true,
+        "stop_profit_triggered": false,
+        "dimensions": {
+          "technical": {
+            "score": 2,
+            "note": "破位下行：今日-3.71%跌破止损价10.5(距-3.5%)。低于MA20(11.17)和MA60(11.82)，均线空头排列。距MA60高点12.91回撤21.5%。ATR 4.01%适中。布林上轨12.62远高于现价。盘中最低10.12接近整数关口10元。",
+            "atr_pct": 4.01,
+            "bollinger_upper": 12.62,
+            "ma20": 11.17,
+            "ma60_high": 12.91,
+            "pe_percentile": 65.0,
+            "vol_ratio": 0.97
+          },
+          "fundamental": {
+            "score": 5,
+            "note": "热管理(家电+汽车)+液冷+核电多赛道布局。2025全年ROE 17.72%优秀。但Q1净利-9.9%下滑，营收仅+1.2%，增长乏力。液冷/核电概念尚未贡献实质业绩。"
+          },
+          "valuation": {
+            "score": 4,
+            "note": "PE处于历史65%分位，中性偏高。当前10.13元对应约10x PE(TTM)。PB 1.58倍。估值不算极端但Q1利润下滑背景下缺乏向上催化。"
+          },
+          "financials": {
+            "score": 5,
+            "note": "2025全年：EPS 1.02，ROE 17.72%，BPS 6.20，营收+2.8%，净利+3.2%。2026Q1：EPS 0.19，ROE 2.91%，BPS 6.35，营收+1.2%，净利-9.9%。Q1利润下滑是主要担忧，毛利率15.4%偏低。"
+          }
+        },
+        "summary": "⚠️ 止损触发(-3.5%跌破)，Q1利润下滑+技术面破位。建议执行止损纪律。"
+      },
+      {
+        "symbol": "603298",
+        "name": "杭叉集团",
+        "cost": 25.2,
+        "stop_loss": 23,
+        "stop_profit": 31,
+        "position": 200,
+        "current_price": 24.05,
+        "change_pct": 0.21,
+        "pnl_pct": -4.6,
+        "stop_loss_triggered": false,
+        "stop_profit_triggered": false,
+        "dimensions": {
+          "technical": {
+            "score": 4,
+            "note": "弱势震荡：今日+0.21%微涨为6只持仓中唯一红盘。低于MA20(24.72)和MA60(25.94)，均线偏空但跌幅收窄。距止损23仅4.6%安全垫薄。距MA60高点29.68回撤19%。ATR 4.79%偏高。布林上轨26.0。量比1.19略放量。",
+            "atr_pct": 4.79,
+            "bollinger_upper": 26.00,
+            "ma20": 24.72,
+            "ma60_high": 29.68,
+            "pe_percentile": 85.0,
+            "vol_ratio": 1.19
+          },
+          "fundamental": {
+            "score": 6,
+            "note": "叉车行业龙头，全球市占率领先。2025全年ROE 20.34%优秀，Q1营收+10.3%/净利+9.2%稳健增长。受益于智能物流+海外扩张双驱动。毛利率24.8%行业领先。"
+          },
+          "valuation": {
+            "score": 3,
+            "note": "PE处于历史85%分位，偏贵。当前24.05元对应约14.4x PE(TTM)。PB 2.76倍。考虑ROE 20%+和稳定增长，估值溢价有一定合理性但安全边际不足。"
+          },
+          "financials": {
+            "score": 7,
+            "note": "2025全年：EPS 1.67，ROE 20.34%，BPS 8.86，营收+5.9%，净利+8.9%。2026Q1：EPS 0.36，ROE 4.0%，BPS 9.19，营收+10.3%，净利+9.2%。Q1营收加速增长(+10.3% vs 全年+5.9%)，毛利率22.5%维持良好。财务质量最优。"
+          }
+        },
+        "summary": "⚠️ 预警标的：技术面偏弱(低于MA20/MA60)，距止损仅4.6%。但基本面最优(ROE 20%+Q1加速)，是持仓中唯一值得保留观察的标的。建议设23元硬止损，跌破即走。"
+      }
+    ],
+    "cross_holding_summary": "6只持仓中：3只触发止损(双环传动/均胜电子/盾安环境)、2只触发止盈(科创50ETF/信创ETF)、1只预警(杭叉集团距止损仅4.6%)。今日市场普跌，仅杭叉微涨。均胜电子-6.46%和双环传动-5.00%跌幅最大。建议收盘前执行止损/止盈纪律。"
+  }
+}

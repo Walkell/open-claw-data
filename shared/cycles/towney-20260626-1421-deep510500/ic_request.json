@@ -1,0 +1,16 @@
+{
+  "cycle_id": "towney-20260626-1421-deep510500",
+  "principal": "towney",
+  "flow_type": "四委员",
+  "scenario": "深度分析",
+  "symbol": "510500",
+  "name": "中证500ETF",
+  "action": "加仓评估",
+  "current_position_pct": 4.01,
+  "target_position_pct": 6.5,
+  "priority": "高优",
+  "trigger_source": "user",
+  "trigger_time": "2026-06-26T14:21:00+08:00",
+  "user_request": "两支加仓的标的 投委会四委员，深度分析下吧",
+  "context_note": "盘中深度分析，对中证500ETF加仓做四委员全面评估。前序6/24 Risk裁决75分建议加仓，本轮需全维度验证。"
+}

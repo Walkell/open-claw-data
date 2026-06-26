@@ -1,0 +1,15 @@
+{
+  "principal": "towney",
+  "agent": "news",
+  "cycle_id": "towney-20260626-1421-deep002156",
+  "data": {
+    "symbol": "002156",
+    "name": "通富微电",
+    "sentiment": 0.0,
+    "event_impact": 0,
+    "confidence": 0.2,
+    "events": [],
+    "summary": "⚠️ 数据源不可用：本次 cycle 中 tavily_search / web_search 均返回 432（API 配额超限），zhipu-search 工具未在本子代理环境中暴露，akshare 同样不可用，无法在不编造的前提下取得近 7 天 002156 通富微电的可核验新闻、机构观点、板块资金流向与上游客户动态。基线行业判断（仅作背景参考，不构成事件证据）：先进封装(2.5D/3D、CoWoS-类工艺、HBM 配套)仍是 2026 年 AI 算力链核心环节，通富微电作为 AMD 全球封装核心合作方+国内 Chiplet 头部之一，长期景气逻辑未变；但短期情绪与事件影响因数据缺失无法量化，故 sentiment 给中性 0、event_impact 给 0、confidence 仅 0.2。建议 CIO 在综合裁决时降低 News 维度权重，或以 Risk/Technical/Fundamental 三方为主要依据；加仓决策需谨慎对待新闻面缺口。"
+  },
+  "data_quality": "degraded: all web search sources returned 432 quota-exceeded; no fabricated news produced"
+}

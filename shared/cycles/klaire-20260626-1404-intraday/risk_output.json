@@ -1,0 +1,170 @@
+{
+  "principal": "klaire",
+  "agent": "risk",
+  "cycle_id": "klaire-20260626-1404-intraday",
+  "data": {
+    "symbol": "组合(6只)",
+    "risk_score": 7.0,
+    "verdict": "VETO",
+    "veto_reason": "三重风险叠加：(1) AI/机器人/半导体赛道集中度68.4%远超40%硬阈值；(2) 6只持仓中3只已跌破止损价(双环-8.0%/均胜-14.4%/盾安-11.3%)，未执行纪律前禁止任何方向加仓；(3) 单一标的002472双环传动权重32.2%过高且已破位。仅允许执行止损/止盈减仓，禁止新增买入；命中AI赛道>40%硬性VETO，CIO不可override。",
+    "concentration_detail": {
+      "total_market_value_cny": 34942.8,
+      "weights_pct": {
+        "002472_双环传动": 32.2,
+        "588080_科创50ETF": 24.0,
+        "603298_杭叉集团": 13.8,
+        "600699_均胜电子": 12.2,
+        "159540_信创ETF": 12.1,
+        "002011_盾安环境": 5.8
+      },
+      "sector_concentration_pct": {
+        "AI_机器人_半导体": 68.4,
+        "AI_breakdown": "双环32.2% + 科创50 24.0% + 均胜12.2%",
+        "信创_国产替代": 12.1,
+        "工业制造_家电热管理": 19.6
+      },
+      "veto_threshold_breach": {
+        "ai_sector_over_40pct": true,
+        "below_stop_loss_count": 3,
+        "below_stop_loss_symbols": ["002472", "600699", "002011"],
+        "near_stop_loss_within_5pct_count": 1,
+        "near_stop_loss_symbols": ["603298(距止损4.6%)"],
+        "single_position_over_30pct": true,
+        "single_position_max": "002472_双环传动 32.2%"
+      },
+      "note": "AI赛道集中度严重超阈+头号重仓股已破位，组合级硬否决。"
+    },
+    "concentration_weighted_pnl": {
+      "total_weighted_pnl_pct": 5.73,
+      "method": "市值权重 × 各标的pnl_pct求和",
+      "calc_breakdown": {
+        "002472_双环": "32.2% × -8.0% = -2.58%",
+        "588080_科创50": "24.0% × +26.8% = +6.43%",
+        "159540_信创": "12.1% × +40.6% = +4.93%",
+        "600699_均胜": "12.2% × -14.4% = -1.76%",
+        "002011_盾安": "5.8% × -11.3% = -0.66%",
+        "603298_杭叉": "13.8% × -4.6% = -0.63%"
+      },
+      "interpretation": "组合浮盈+5.73%全靠两只ETF撑盘(科创50+26.8%/信创+40.6%)；4只个股全部亏损加权-5.62%。利润高度集中于已触发止盈的两只ETF，不锁定将面临回吐风险。",
+      "today_intraday_change_weighted_pct": -3.13,
+      "today_breakdown": "双环-1.61 + 均胜-0.79 + 盾安-0.22 + 信创-0.29 + 科创50-0.25 + 杭叉+0.03 ≈ -3.13%，下午盘普跌"
+    },
+    "dimensions": {
+      "financial_health": {
+        "score": 5.4,
+        "note": "10分制越高越差。亮点：杭叉ROE 20.34%+Q1营收+10.3%加速；隐患：均胜Q1营收-5.2%毛利率17.7%极薄，双环Q1增速骤降至+1.5%几近停滞。",
+        "source": "self"
+      },
+      "valuation": {
+        "score": 6.78,
+        "note": "组合估值偏贵：4只PE分位≥65%(均胜95%/双环89.5%/杭叉85%/盾安65%)；仅杭叉因高ROE勉强支撑。两只ETF净值远超止盈位性价比下降。",
+        "source": "self"
+      },
+      "industry_cycle": {
+        "score": 5.0,
+        "note": "未参与，默认5(精简两委员流程，Industry Agent未派发)。",
+        "source": "default_industry_not_dispatched"
+      },
+      "technical": {
+        "score": 7.6,
+        "note": "技术面普遍恶化。3只深度破位：双环=8/均胜=9/盾安=8；2只ETF偏多但超买回落各=3；杭叉预警=6。市值加权≈7.6。均线空头排列+放量下跌为主导。",
+        "source": "self"
+      },
+      "macro": {
+        "score": 5.0,
+        "note": "未参与，默认5(精简两委员流程)。",
+        "source": "default_industry_not_dispatched"
+      },
+      "news_sentiment": {
+        "score": 5.0,
+        "note": "未参与。task指示默认0被Risk协议覆盖为5：维度分越低=风险越低，赋0等于宣称'新闻面绝对安全'与缺数据语义相悖，按Risk协议默认5(中性)。",
+        "source": "default_news_not_dispatched",
+        "task_directive_note": "task指示'默认0'被显式覆盖为5(中性)"
+      }
+    },
+    "weighted_dimension_score_raw": 5.85,
+    "weighted_calc_explain": "0.25×5.4 + 0.20×6.78 + 0.15×5.0 + 0.15×7.6 + 0.15×5.0 + 0.10×5.0 = 5.85。但因命中赛道集中度硬规则(68.4%>40%)+3只破位双重红线，按否决规则上修至7.0，触发软VETO；同时AI赛道>40%命中独立硬性VETO，CIO不可override。",
+    "execution_recommendations": {
+      "summary": "下午盘最后1小时(14:30-15:00)按纪律执行：清仓3只破位个股+减仓2只大幅止盈ETF+1只预警标的设硬止损。预计执行后AI赛道集中度从68.4%压降至约33-37%回到40%红线之内。",
+      "priority_1_stop_loss_execute": [
+        {
+          "symbol": "002472_双环传动",
+          "action": "清仓300股(全部卖出)",
+          "current_price": 37.45,
+          "stop_loss": 40.81,
+          "loss_pct": -8.0,
+          "weight_pct": 32.2,
+          "reason": "已破止损-8.2%、Q1增速近停滞(+1.5%)、PE 89.5%分位、今日-5.00%放量、ATR 6.6%极高波动、组合32.2%头号风险源",
+          "execution_window": "14:30-15:00分2-3笔限价37.30-37.50出货",
+          "urgency": "极高"
+        },
+        {
+          "symbol": "600699_均胜电子",
+          "action": "清仓200股(全部卖出)",
+          "current_price": 21.30,
+          "stop_loss": 24.0,
+          "loss_pct": -14.4,
+          "weight_pct": 12.2,
+          "reason": "深度破位-11.2%、Q1营收转负-5.2%、毛利率仅17.7%、PE 95%极致分位、今日-6.46%放量加速",
+          "execution_window": "立即限价21.25-21.35出货；若封跌停则次日开盘竞价撤单",
+          "urgency": "极高"
+        },
+        {
+          "symbol": "002011_盾安环境",
+          "action": "清仓200股(全部卖出)",
+          "current_price": 10.13,
+          "stop_loss": 10.5,
+          "loss_pct": -11.3,
+          "weight_pct": 5.8,
+          "reason": "跌破止损-3.5%、Q1净利-9.9%、临近10元整数关口若失守恐加速",
+          "execution_window": "14:45前限价10.10-10.15出货",
+          "urgency": "高"
+        }
+      ],
+      "priority_2_take_profit_execute": [
+        {
+          "symbol": "159540_信创ETF",
+          "action": "减仓约60%(卖1000份留700份)",
+          "current_price": 2.494,
+          "stop_profit": 2.3,
+          "pnl_pct": 40.6,
+          "weight_pct": 12.1,
+          "reason": "止盈大幅触发(+40.6%)、净值超止盈线8.4%、今日-2.43%前高阻力明显、距MA60高点2.56仅2.6%",
+          "execution_window": "限价2.485-2.500出货1000份，剩余700份移动止盈上移至2.35",
+          "urgency": "中高",
+          "rationale": "保留约40%仓位捕捉信创政策催化，锁定大头利润"
+        },
+        {
+          "symbol": "588080_科创50ETF",
+          "action": "减仓50%(卖2000份留2000份)",
+          "current_price": 2.093,
+          "stop_profit": 1.98,
+          "pnl_pct": 26.8,
+          "weight_pct": 24.0,
+          "reason": "止盈触发(+26.8%)、距MA60高点2.12仅1.3%阻力极重、布林上轨2.08突破后回落、产业资本减持压制",
+          "execution_window": "限价2.085-2.100出货2000份，剩余2000份移动止盈上移至1.95",
+          "urgency": "中高",
+          "rationale": "保留50%仓位享受半导体/AI算力中期趋势；配合个股清仓将AI赛道集中度压降至40%以内"
+        }
+      ],
+      "priority_3_warning_hold_with_hard_stop": [
+        {
+          "symbol": "603298_杭叉集团",
+          "action": "继续持有200股 + 设硬止损23.00元(盘中跌破即出)",
+          "current_price": 24.05,
+          "stop_loss": 23.0,
+          "pnl_pct": -4.6,
+          "weight_pct": 13.8,
+          "reason": "6只持仓唯一基本面优质标的(ROE 20.34%/Q1营收+10.3%加速/毛利率24.8%行业领先)；今日唯一红盘+0.21%相对强势；但距止损仅4.6%安全垫薄，PE 85%分位偏贵",
+          "execution_window": "盘中实时监控，跌破23.00即市价出货",
+          "urgency": "中",
+          "rationale": "唯一允许保留的个股，安全垫薄须严守硬止损"
+        }
+      ],
+      "post_execution_estimate": {
+        "approx_realized_pnl_cny": "+7000~+8000(锁定两只ETF大部分利润，兑现3只个股亏损共约-2640后净额仍为正)",
+        "ai_concentration_after_pct": "33-37",
+        "veto_status_after_execution": "VETO解除条件：AI<40%+无破位标的；执行后两者均可达成"
+      }
+    },
+    "summary": "组合命中AI赛道集中度68.4%+3只破位双重红线，组合层面硬否决任何新增买入；纪律层面必须本下午盘内清仓3只破位个股(双环/均胜/盾安)、减仓两只ETF锁定+26.8%/+40.6%利润、杭叉设23元硬止损保留观察。
