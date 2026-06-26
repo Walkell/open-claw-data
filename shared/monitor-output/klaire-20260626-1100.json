@@ -1,0 +1,37 @@
+{
+  "principal": "klaire",
+  "run_at": "2026-06-26T11:00:23+08:00",
+  "trading_session": "上午",
+  "has_alert": true,
+  "alert_count": 7,
+  "alerts_by_level": {
+    "red": 3,
+    "yellow": 4,
+    "blue": 0
+  },
+  "push_text": "📊 Klaire 盘中监控 11:00\n\n🔴 止损触及：002472(双环传动) 现价 37.73，已跌破止损价 40.81，请立即处理\n🔴 止损触及：600699(均胜电子) 现价 21.54，已跌破止损价 24，请立即处理\n🔴 止损触及：002011(盾安环境) 现价 10.24，已跌破止损价 10.5，请立即处理\n🟡 止盈触及：588080(科创50ETF) 现价 2.046，已达止盈价 1.98，可考虑告知 Butler 决策\n🟡 止盈触及：159540(信创ETF) 现价 2.45，已达止盈价 2.3，可考虑告知 Butler 决策\n🟡 大跌预警：600699(均胜电子) 今日跌幅 -5.27%，请关注\n🟡 接近止损：603298(杭叉集团) 现价 23.61，距止损（23）仅 2.58%，请关注\n\n---\n持仓快照已写入监控记录（10条，含观察池4只）\n数据源：腾讯+东方财富双源验证；002125/600875/002049 东方财富 502，单源未验证",
+  "snapshot": {
+    "positions": [
+      {"code": "002472", "name": "双环传动", "price": 37.73, "pct": -4.31, "vol_ratio": 1.29, "verify": "双源", "alerts": ["止损触及"]},
+      {"code": "588080", "name": "科创50ETF", "price": 2.046, "pct": -3.31, "vol_ratio": 1.54, "verify": "双源", "alerts": ["止盈触及"]},
+      {"code": "159540", "name": "信创ETF", "price": 2.45, "pct": -4.15, "vol_ratio": 1.82, "verify": "双源", "alerts": ["止盈触及"]},
+      {"code": "600699", "name": "均胜电子", "price": 21.54, "pct": -5.27, "vol_ratio": 1.53, "verify": "双源", "alerts": ["止损触及", "大跌预警"]},
+      {"code": "002011", "name": "盾安环境", "price": 10.24, "pct": -2.66, "vol_ratio": 1.24, "verify": "双源", "alerts": ["止损触及"]},
+      {"code": "603298", "name": "杭叉集团", "price": 23.61, "pct": -1.67, "vol_ratio": 0.77, "verify": "双源", "alerts": ["接近止损"]}
+    ],
+    "watchlist": [
+      {"code": "002125", "name": "湘潭电化", "price": 14.45, "pct": -5.62, "vol_ratio": 1.09, "verify": "单源仅腾讯", "target_buy": 16, "triggered_today_already": true},
+      {"code": "600875", "name": "东方电气", "price": 28.81, "pct": -4.38, "vol_ratio": 1.31, "verify": "单源仅腾讯", "target_buy": 33, "triggered_today_already": true},
+      {"code": "002049", "name": "紫光国微", "price": 83.66, "pct": -4.39, "vol_ratio": 1.61, "verify": "单源仅腾讯", "target_buy": 78, "triggered": false},
+      {"code": "002156", "name": "通富微电", "price": 73.15, "pct": -5.78, "vol_ratio": 1.79, "verify": "双源", "target_buy": 55, "triggered": false}
+    ]
+  },
+  "dedupe_notes": {
+    "skipped_due_to_today_dedupe": [
+      "002125/600875 建仓触发（10:26 已通知）",
+      "588080/159540 追踪止损提醒（10:26 已通知）",
+      "159540 放量下跌（10:26 已触发）"
+    ],
+    "ic_freshness": "全部持仓 IC 最后更新日期=2026-06-26 今日，未触发陈旧检查"
+  }
+}
