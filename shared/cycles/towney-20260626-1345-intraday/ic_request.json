@@ -1,0 +1,16 @@
+{
+  "cycle_id": "towney-20260626-1345-intraday",
+  "principal": "towney",
+  "flow_type": "精简两委员",
+  "scenario": "盘中复盘（下午半场进行中）",
+  "priority": "标准",
+  "trigger_source": "user",
+  "trigger_time": "2026-06-26T13:45:00+08:00",
+  "user_request": "投委会再执行下盘中分析，输出今天加减仓、建或清仓的建议",
+  "context_note": "下午半场进行中（13:45）。上一轮盘中 IC（cycle towney-20260626-1215-intraday）Research+Risk 已落盘但 CIO 子任务死锁未产出决议。本轮用最新数据重新跑全流程，重点输出今日明确的加/减/止盈/止损动作清单。",
+  "previous_cycle_refs": [
+    "towney-20260617-XXXX（CIO 6/17 决议）",
+    "towney-20260624-XXXX（CIO 6/24 决议：天孚减至7% / 黄金清仓 / 纳指减至3.5% / 中证500加至6.5% / 通富68-70加仓）",
+    "towney-20260626-1215-intraday（Research+Risk 完成，CIO 失败）"
+  ]
+}
