@@ -1,0 +1,156 @@
+{
+  "principal": "klaire",
+  "agent": "news",
+  "cycle_id": "klaire-20260626-0821-premarket",
+  "data_quality": {
+    "status": "degraded",
+    "reason": "Tavily Search API 配额超限 (HTTP 432)，web_search/tavily_search 均不可用；fallback 智谱搜索工具在本环境未注册；财经门户网页为 JS 渲染未抓到正文",
+    "sources_attempted": [
+      "tavily_search",
+      "web_search",
+      "web_fetch:eastmoney",
+      "web_fetch:cls",
+      "web_fetch:sina"
+    ],
+    "sources_succeeded": [],
+    "bitable_read_ok": true,
+    "coverage": "0/14 标的拿到可验证的近 7 天新闻；本轮 News 数据视为不可用",
+    "advice_to_cio": "本轮 sentiment / event_impact / confidence 全部按 0 输出，建议 CIO 在 §7 公式中对 News 项降权或忽略，以技术面 + 风控为主导"
+  },
+  "data": [
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "scope": "持仓",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.1,
+      "events": [],
+      "summary": "数据源不可用（Tavily 432 配额超限），未获取到近 7 天可验证新闻；行业层面机器人减速器+新能源齿轮主线无已知重大利空，按中性处理。"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "scope": "持仓",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.1,
+      "events": [],
+      "summary": "数据源不可用，未获取到近 7 天可验证新闻；作为宽基 ETF，方向取决于半导体/AI 板块β，需结合 Research+Risk 给出的技术面数据判断。"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "scope": "持仓",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.1,
+      "events": [],
+      "summary": "数据源不可用，未获取到近 7 天可验证新闻；信创板块近期处于政策预期窗口，建议盘中关注监管/招标层面通稿。"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "scope": "持仓+观察池",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.1,
+      "events": [],
+      "summary": "数据源不可用，未获取到近 7 天可验证新闻；汽车安全+智驾+机器人主线无已知突发利空，已破止损24，新闻面无新增驱动。"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "scope": "持仓+观察池",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.1,
+      "events": [],
+      "summary": "数据源不可用，未获取到近 7 天可验证新闻；热管理+液冷+核电主线无已知突发利空。"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "scope": "持仓",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.1,
+      "events": [],
+      "summary": "数据源不可用，未获取到近 7 天可验证新闻；叉车出口主线无已知突发利空。"
+    },
+    {
+      "symbol": "002126",
+      "name": "银轮股份",
+      "scope": "观察池",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.1,
+      "events": [],
+      "summary": "数据源不可用，未获取到近 7 天可验证新闻；CIO 此前裁决观望，等海外液冷送样+Q2 利润率修复信号。"
+    },
+    {
+      "symbol": "000988",
+      "name": "华工科技",
+      "scope": "观察池",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.1,
+      "events": [],
+      "summary": "数据源不可用，未获取到近 7 天可验证新闻；AI 光模块二线龙头，估值偏高需回调至 110-130 区间再评估。"
+    },
+    {
+      "symbol": "002125",
+      "name": "湘潭电化",
+      "scope": "观察池",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.1,
+      "events": [],
+      "summary": "数据源不可用，未获取到近 7 天可验证新闻；EMD+固态电池概念股，等待回调至 16 一线。"
+    },
+    {
+      "symbol": "600875",
+      "name": "东方电气",
+      "scope": "观察池",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.1,
+      "events": [],
+      "summary": "数据源不可用，未获取到近 7 天可验证新闻；核电+氢能+光热多赛道，IC 决议要求 MACD 金叉+RSI>50+站稳 MA20(33.24) 2 日方触发建仓。"
+    },
+    {
+      "symbol": "002049",
+      "name": "紫光国微",
+      "scope": "观察池",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.1,
+      "events": [],
+      "summary": "数据源不可用，未获取到近 7 天可验证新闻；特种芯片龙头，等待回调至 76-80 或 PE<35x 再评估。"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "scope": "观察池",
+      "sentiment": 0,
+      "event_impact": 0,
+      "confidence": 0.1,
+      "events": [],
+      "summary": "数据源不可用，未获取到近 7 天可验证新闻；AMD 链先进封装，估值 PE~75x 极度昂贵，等待回调至 55-60 区间。"
+    }
+  ],
+  "macro": {
+    "us_overnight": {
+      "sentiment": 0,
+      "summary": "数据源不可用，未拉到美股 6/25 隔夜行情（纳指/标普/费半）。建议下游用 Research 的行情接口交叉补"
+    },
+    "a_share_policy": {
+      "sentiment": 0,
+      "summary": "数据源不可用，未拉到 6 月下旬央行/监管政策通稿。"
+    },
+    "industry": {
+      "sentiment": 0,
+      "summary": "数据源不可用，未拉到半导体/AI/液冷/机器人板块近期重大事件。"
+    }
+  }
+}
