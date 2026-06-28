@@ -1,0 +1,67 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260628-2124-a_stock_preview",
+  "data": {
+    "symbol": "PORTFOLIO_A_STOCK",
+    "risk_score": 6.5,
+    "verdict": "VETO",
+    "veto_reason": "AI/半导体赛道集中度43.28%>40%红线 → 硬性否决AI方向任何新增仓位；天孚通信11.41%>10%单股上限；三大指数集体跌破/逼近MA20叠加全球AI链踩踏（KOSPI熔断/日经-4.15%/费半周-7.94%），周一存在二次下跌风险。允许的动作仅限：减仓/再平衡/防御性轮动/观察。",
+    "dimensions": {
+      "financial_health":  { "score": 5.0, "note": "组合层面默认5分，盘前预览场景未逐股拉取财务", "source": "self_default" },
+      "valuation":         { "score": 6.5, "note": "AI链估值高位：海光PE 272x、天孚浮盈94%+减仓后留存仍超限、澜起+54%、华海+20%；估值修复风险大于扩张空间", "source": "self" },
+      "industry_cycle":    { "score": 4.0, "note": "Industry industry_score=6.0（半导体设备/存储/光模块仍强但波动加大），反向风险分10-6=4.0", "source": "industry_agent" },
+      "technical":         { "score": 6.5, "note": "Research三指数技术分均值3.3：上证跌破MA20(-0.89%)逼近布林下轨；深成-3.44%吞没两日涨幅；创业板-4.07%长阴；量比均≈1.0未恐慌但破位延续风险", "source": "self+research" },
+      "macro":             { "score": 4.5, "note": "Industry macro_score=5.5（利润+18.8%+流动性宽松 对冲 全球AI拥挤+苹果涨价输入通胀），反向4.5", "source": "industry_agent" },
+      "news_sentiment":    { "score": 7.5, "note": "News sentiment=-0.4 × event_impact=7：全球AI算力链踩踏（OpenAI推迟IPO+苹果内存涨价+费半-7.94%）；周末无政策对冲；新闻面单源置信度0.7", "source": "news_agent" }
+    },
+    "weighted_score_raw": 5.55,
+    "adjustment": "+0.95（集中度43.28%>40%硬性红线 + 单股天孚11.41%>10%）",
+    "concentration_detail": {
+      "AI/半导体": {
+        "current_pct": 43.28,
+        "threshold_pct": 40,
+        "level": "🔴",
+        "constituents": "华海清科10.54 + 澜起6.08 + 海光7.57 + 天孚11.41 + 科创芯片ETF5.25 + 通富2.43",
+        "reason": "六只AI/半导体相关持仓合计43.28%，突破40%红线3.28pp；触发硬性VETO规则：AI赛道集中度>40%→禁止任何AI方向新增"
+      },
+      "海外科技": {
+        "current_pct": 6.49,
+        "threshold_pct": 15,
+        "level": "🟢",
+        "constituents": "纳斯达克ETF 5.06 + 标普500ETF 1.43",
+        "reason": "正常区间"
+      },
+      "宽基ETF": {
+        "current_pct": 9.45,
+        "threshold_pct": 20,
+        "level": "🟢",
+        "constituents": "创业板50ETF 5.44 + 中证500ETF 4.01",
+        "reason": "正常区间，本周已加仓中证500为对冲AI集中度的关键动作"
+      },
+      "大宗/防御": {
+        "current_pct": 1.75,
+        "threshold_pct": 10,
+        "level": "🟢",
+        "constituents": "黄金ETF 1.75",
+        "reason": "Risk警示：CIO 6/24已建议清仓（baseline 4.46最低+持续浮亏），尚未执行"
+      }
+    },
+    "single_stock_breach": {
+      "天孚通信": {
+        "current_pct": 11.41,
+        "threshold_pct": 10,
+        "level": "🟠",
+        "reason": "单股11.41%超10%上限1.41pp；CIO 6/24已要求减仓至7%（-4.41pp）但尚未执行；技术破位+相对强度极弱"
+      }
+    },
+    "concentration_weighted_pnl": {
+      "AI/半导体": 41.4,
+      "海外科技": 18.7,
+      "宽基ETF": 34.7,
+      "大宗/防御": 0.6,
+      "note": "AI/半导体加权浮盈+41.4%（按占比加权：华海10.54×20.3 + 澜起6.08×54.2 + 海光7.57×-0.52 + 天孚11.41×94.1 + 科创芯片5.25×34 + 通富2.43×0=1791.9/43.28），处于浮盈兑现压力区"
+    },
+    "summary": "组合AI/半导体集中度43.28%突破40%硬性红线+单股天孚11.41%超限，叠加三大指数集体跌破/逼近MA20、全球AI链踩踏（KOSPI熔断/费半-7.94%/OpenAI IPO推迟），周一系统性二次下跌风险偏高，VETO任何AI方向新增仓位；允许的调整：天孚减仓至7%/黄金清仓/中证500等防御性轮动/科创芯片ETF浮盈兑现部分。"
+  }
+}
