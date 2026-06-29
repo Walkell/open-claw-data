@@ -1,72 +1,64 @@
 {
   "principal": "klaire",
-  "monitor_time": "2026-06-29T11:00:00+08:00",
-  "has_alerts": true,
+  "timestamp": "2026-06-29T14:50:00+08:00",
   "alerts": [
     {
       "symbol": "002472",
       "name": "双环传动",
-      "type": "持仓",
-      "price": 36.97,
-      "change_pct": -0.47,
-      "alert_reason": "🔴 止损触及：现价36.97 ≤ 止损40.81（已显著跌破）"
+      "alert_type": "止损触及",
+      "detail": "🔴 止损触及：002472 双环传动 现价 37.79 已跌破止损价 40.81，请立即处理",
+      "severity": "high"
     },
     {
       "symbol": "600699",
       "name": "均胜电子",
-      "type": "持仓",
-      "price": 20.72,
-      "change_pct": -1.80,
-      "alert_reason": "🔴 止损触及：现价20.72 ≤ 止损24（已跌破止损）"
+      "alert_type": "止损触及",
+      "detail": "🔴 止损触及：600699 均胜电子 现价 20.92 已跌破止损价 24.00，请立即处理",
+      "severity": "high"
     },
     {
       "symbol": "588080",
       "name": "科创50ETF",
-      "type": "持仓",
-      "price": 2.122,
-      "change_pct": 2.10,
-      "alert_reason": "🟡 止盈触及：现价2.122 ≥ 止盈1.98，可考虑告知 Butler 决策"
+      "alert_type": "止盈触及",
+      "detail": "🟡 止盈触及：588080 科创50ETF 现价 2.176 已达止盈价 1.98",
+      "severity": "medium"
     },
     {
       "symbol": "159540",
       "name": "信创ETF",
-      "type": "持仓",
-      "price": 2.536,
-      "change_pct": 1.85,
-      "alert_reason": "🟡 止盈触及：现价2.536 ≥ 止盈2.3，可考虑告知 Butler 决策"
+      "alert_type": "止盈触及",
+      "detail": "🟡 止盈触及：159540 信创ETF 现价 2.594 已达止盈价 2.30",
+      "severity": "medium"
     },
     {
       "symbol": "002011",
       "name": "盾安环境",
-      "type": "持仓",
-      "price": 10.59,
-      "change_pct": 6.11,
-      "alert_reason": "🟡 接近止损（距止损10.5仅0.85%，反弹中但尚未脱险）；🔵 放量上涨：量比2.32"
+      "alert_type": "接近止损",
+      "detail": "🟡 接近止损：002011 盾安环境 现价 10.51 距止损（10.50）仅 0.10%",
+      "severity": "medium"
     },
     {
-      "symbol": "000988",
-      "name": "华工科技",
-      "type": "观察",
-      "price": 174.96,
-      "change_pct": 8.72,
-      "alert_reason": "🔵 放量上涨：量比3.13 涨幅+8.72%，注意追高风险（远离目标建仓区110-130）"
+      "symbol": "002126",
+      "name": "银轮股份(观察)",
+      "alert_type": "大跌预警",
+      "detail": "🟡 大跌预警：002126 银轮股份(观察) 今日跌幅 -5.78%",
+      "severity": "medium"
     },
     {
-      "symbol": "002125",
-      "name": "湘潭电化",
-      "type": "观察",
-      "price": 13.45,
-      "change_pct": -4.07,
-      "alert_reason": "🔵 建仓条件触发：现价13.45 已低于目标建仓价16，建议告知 Butler 确认"
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "alert_type": "追踪止损提醒",
+      "detail": "🔵 止损线审查：588080 科创50ETF 止损设置可能已滞后于当前行情，建议 IC 审查",
+      "severity": "low"
     },
     {
-      "symbol": "600875",
-      "name": "东方电气",
-      "type": "观察",
-      "price": 28.89,
-      "change_pct": 1.48,
-      "alert_reason": "🔵 建仓条件触发：现价28.89 已低于目标建仓价33，建议告知 Butler 确认"
+      "symbol": "159540",
+      "name": "信创ETF",
+      "alert_type": "追踪止损提醒",
+      "detail": "🔵 止损线审查：159540 信创ETF 止损设置可能已滞后于当前行情，建议 IC 审查",
+      "severity": "low"
     }
   ],
-  "summary": "Klaire 11:00 监控：2 只持仓 🔴 止损触及（双环传动、均胜电子），2 只 🟡 止盈触及（科创50ETF、信创ETF），盾安环境接近止损但放量反弹；观察池 3 只触发（华工科技放量上涨、湘潭电化与东方电气达建仓价）。建议 Butler 优先处理止损/止盈持仓。"
+  "has_alerts": true,
+  "summary": "盘中检测到 8 项异动：双环传动、均胜电子触及止损（🔴 紧急2项）；科创50ETF、信创ETF已达止盈，盾安环境逼近止损，银轮股份观察池大跌-5.78%（🟡 警告4项）；科创50ETF、信创ETF浮盈保护率偏低，建议IC复核止损（🔵 关注2项）。"
 }
