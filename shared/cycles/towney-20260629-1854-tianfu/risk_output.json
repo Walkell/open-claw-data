@@ -1,0 +1,117 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260629-1854-tianfu",
+  "data": {
+    "symbol": "300394",
+    "name": "天孚通信",
+    "risk_score": 8.4,
+    "verdict": "VETO",
+    "veto_reason": "天孚单股仓位14.26%突破10%单股硬上限+4.26pp；AI/半导体狭义赛道集中度40.88%(天孚14.26+华海10.54+海光7.57+澜起6.08+通富2.43)突破>40%硬阈值，按硬规则任何AI方向新增/维持超配自动VETO；叠加技术面三杀(评分3/10)、距止损位仅4.9%(<1×ATR=8.33%)、融资余额111亿高位+6/26转流出-2.47亿杠杆共振、Glass Bridge对FAU/ELS核心业务中长期替代威胁、用户操作悖离14:41 CIO减至7%裁决形成治理风险。",
+    "dimensions": {
+      "financial_health": {
+        "score": 6,
+        "note": "营收/净利高增长+ROE优秀，但PE 148x板块最高+PEG≈3.7严重透支3年增长，融资111亿放大波动。",
+        "source": "self"
+      },
+      "valuation": {
+        "score": 8,
+        "note": "PE 148x板块最高，2026E PE仍107x，PEG≈3.7远超1.0-1.5合理区间。现价305.85较合理锚PE 70-80x(195-225)透支35-50%。",
+        "source": "self"
+      },
+      "industry_cycle": {
+        "score": 5,
+        "note": "Industry industry_score 7.0支持CPO长期主题，但短期光通信主力净流出-139亿(6/29单日)+天孚近20日-116.69亿+Glass Bridge技术替代威胁，短期风险已显化。",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 9,
+        "note": "Research技术评分3/10：今日-7.19%放量长阴跌破MA5/10/20三杀；MACD死叉(DIF 9.55<DEA 12.77)；ATR(14)=24.59(8.33%)极端波动；距止损280.56仅4.9%<1×ATR即可触发。",
+        "source": "self"
+      },
+      "macro": {
+        "score": 4,
+        "note": "Industry macro_score 7.0偏积极，但融资111亿+6/26转流出反映流动性边际收紧，杠杆共振放大风险。",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 4,
+        "note": "News sentiment +0.40、event_impact 5较14:41轮下调-0.15/-2；零新增催化，6/27调研仅重申已知，情绪温度下降。",
+        "source": "news_agent"
+      }
+    },
+    "weighted_calculation": {
+      "base_weighted_formula": "6×0.25 + 8×0.20 + 5×0.15 + 9×0.15 + 4×0.15 + 4×0.10 = 1.50+1.60+0.75+1.35+0.60+0.40 = 6.20",
+      "base_weighted_score": 6.20,
+      "portfolio_overlays": {
+        "单股突破10%硬上限(+4.26pp)": 0.8,
+        "AI赛道集中度40.88%>40%硬阈值": 0.5,
+        "距止损<1×ATR极端风险": 0.3,
+        "融资盘111亿高位+转流出杠杆共振": 0.3,
+        "用户操作悖离CIO前轮裁决治理风险": 0.3
+      },
+      "overlay_sum": 2.2,
+      "final_risk_score": 8.4,
+      "veto_logic": "8.4≥7触发自动VETO；<9，CIO理论可override但同时违反两条硬阈值(单股>10%+赛道>40%)→实际硬否决"
+    },
+    "concentration_detail": {
+      "ai_semi_narrow": {
+        "members": ["天孚通信14.26%", "华海清科10.54%", "海光信息7.57%", "澜起科技6.08%", "通富微电2.43%"],
+        "total": 40.88,
+        "threshold": 40.0,
+        "breach": true,
+        "breach_pp": 0.88
+      },
+      "broad_ai_tech_etf": {
+        "members": ["上述5只个股40.88%", "科创芯片ETF3.41%", "创业板50ETF5.44%", "纳指ETF5.06%", "标普500ETF1.43%"],
+        "total": 56.22,
+        "note": "广义科技/AI/海外科技ETF合计约56%，集中度风险极高"
+      },
+      "single_stock_breach": {
+        "symbol": "300394",
+        "current": 14.26,
+        "hard_cap": 10.0,
+        "breach_pp": 4.26
+      },
+      "remediation_required": "立即将天孚通信仓位截断至≤7%(合规线)或≤10%(底线)；同时禁止AI/光通信方向任何新增直至赛道集中度回落<40%"
+    },
+    "concentration_weighted_pnl": {
+      "method": "Σ(占总仓位比例 × 盈亏比例) 仅持有标的",
+      "items": [
+        {"symbol": "688120", "name": "华海清科", "weight": 0.1054, "pnl_pct": 0.2030, "contrib": 0.02140},
+        {"symbol": "588090", "name": "科创芯片ETF", "weight": 0.0341, "pnl_pct": 0.3400, "contrib": 0.01159},
+        {"symbol": "688008", "name": "澜起科技", "weight": 0.0608, "pnl_pct": 0.5421, "contrib": 0.03296},
+        {"symbol": "300394", "name": "天孚通信", "weight": 0.1426, "pnl_pct": 0.9410, "contrib": 0.13419},
+        {"symbol": "159949", "name": "创业板50ETF", "weight": 0.0544, "pnl_pct": 0.6018, "contrib": 0.03270},
+        {"symbol": "510500", "name": "中证500ETF", "weight": 0.0401, "pnl_pct": 0.0045, "contrib": 0.00018},
+        {"symbol": "513300", "name": "纳指ETF", "weight": 0.0506, "pnl_pct": 0.2022, "contrib": 0.01023},
+        {"symbol": "513650", "name": "标普500ETF", "weight": 0.0143, "pnl_pct": 0.1487, "contrib": 0.00213},
+        {"symbol": "518880", "name": "黄金ETF", "weight": 0.0175, "pnl_pct": 0.0057, "contrib": 0.00010},
+        {"symbol": "688041", "name": "海光信息", "weight": 0.0757, "pnl_pct": -0.0052, "contrib": -0.00039},
+        {"symbol": "002156", "name": "通富微电", "weight": 0.0243, "pnl_pct": 0.0000, "contrib": 0.00000}
+      ],
+      "weighted_pnl_pct": 0.245,
+      "note": "组合加权浮盈约+24.5%；天孚单标的贡献+13.42pp(占组合浮盈55%)，集中度风险=单只回撤10%将拖累组合-1.43pp"
+    },
+    "position_truncation_advice": {
+      "current": 14.26,
+      "hard_cap_compliance": 10.0,
+      "cio_prior_target": 7.0,
+      "risk_recommended": 7.0,
+      "rationale": "硬规则单股≤10%为底线；AI赛道已达40.88%>40%需要从天孚减出至少4.88pp以回落赛道集中度<40%；14:41 CIO裁决目标7%；技术面三杀+距止损4.9%不支持持仓>7%。建议立即按市价减仓至7%(减出7.26pp)；若市场流动性受限可分两步：先减至10%锁定合规、剩余3pp等技术面企稳(MA20回站稳)再清",
+      "execution": "可于次日开盘按市价分2-3笔执行，避免单笔冲击；若开盘跌停或缺口下行3%以上，则先减仓至10%守合规线、剩余等反弹至MA5/MA10附近再处置"
+    },
+    "stop_loss_advice": {
+      "current_stop": 280.56,
+      "recommended_stop": 280.56,
+      "tighten_to": null,
+      "rationale": "止损位280.56(MA20×0.97)由6/24 CIO复盘设定，符合中期均线技术止损逻辑；当前价305.85距止损4.9%(<1×ATR=8.33%)，意味着1根日内长阴即可触发。不建议上移止损(因RSI=29.9近超卖、技术上可能反弹)，但任何情况下不得下移止损规避减亏。若跌破280.56→无条件清仓，不再等候反弹",
+      "trigger_actions": [
+        "跌破280.56任何瞬间→市价清仓100%剩余仓位，不分批不犹豫",
+        "若日内放量跌至285-288区间→主动减半剩余仓位，不等止损",
+        "若止盈位317.84上方反弹→在315-318分批减仓至10%以下合规"
+      ]
+    },
+    "summary": "天孚单股14.26%突破10%硬上限+AI赛道集中度40.88%突破40%硬阈值，叠加技术三杀+距止损<1×ATR+融资盘111亿杠杆共振+Glass Bridge替代威胁+操作悖离前轮裁决治理风险，risk_score 8.4 硬VETO；必须立即减至≤7%(合规)或≤10%(底线)，止损280.56严格执行不得下移。"
+  }
+}
