@@ -32,7 +32,8 @@
       "deepseek",
       "memory-core",
       "memory-lancedb",
-      "openclaw-lark"
+      "openclaw-lark",
+      "duckduckgo"
     ],
     "bundledDiscovery": "compat",
     "slots": {
@@ -280,7 +281,7 @@
     "profile": "full",
     "web": {
       "search": {
-        "provider": "tavily",
+        "provider": "duckduckgo",
         "maxResults": 5,
         "timeoutSeconds": 30
       }
