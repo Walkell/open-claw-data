@@ -1,0 +1,10 @@
+{
+  "cycle_id": "towney-20260630-1510-688041-reentry",
+  "principal": "towney",
+  "flow_type": "三委员",
+  "positions_table_id": "tblUeTGMf0IKJ8Pk",
+  "watchlist_table_id": "tblaLlSQp8tEcWgJ",
+  "symbol": "688041",
+  "name": "海光信息",
+  "task": "海光信息已清仓→重新入池：深度分析设定新建仓阈值（建仓价格区间、止损位、止盈位、仓位上限、五级监控阈值），优先级高"
+}
