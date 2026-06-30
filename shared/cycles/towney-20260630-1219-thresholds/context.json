@@ -1,0 +1,8 @@
+{
+  "cycle_id": "towney-20260630-1219-thresholds",
+  "principal": "towney",
+  "flow_type": "三委员",
+  "positions_table_id": "tblUeTGMf0IKJ8Pk",
+  "watchlist_table_id": "tblaLlSQp8tEcWgJ",
+  "task": "盘中监控阈值设定：为每个持仓标的产出五级阈值（安全/关注/警戒/触发/违规），写入持仓表的新字段"
+}
