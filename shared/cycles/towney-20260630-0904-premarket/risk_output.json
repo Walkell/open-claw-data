@@ -1,0 +1,42 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260630-0904-premarket",
+  "data_quality": "⚠️部分受限 — 实时行情:gtimg单源(akshare 502/网易 502/同花顺 404/新浪 403); Bitable持仓:✅; 上游Research/Industry/News:✅",
+  "as_of": "2026-06-30 09:21 GMT+8 开盘前",
+  "data": {
+    "risk_score": 68,
+    "verdict": "🟠危险",
+    "verdict_reason": "三重红线触发: (1)AI/半导体直接持股集中度40.88%突破40%硬阈值,含科创芯片ETF总科技敞口44.29% (2)天孚通信单股14.26%超10%上限+跌破MA20/MA60+距止损仅4.3% (3)黄金ETF现价8.325已跌破硬止损8.5。同时三只半导体已穿越止盈(华海+9.87%/澜起+4.92%/海光+2.39%)未减仓。",
+    "dimensions": {
+      "financial_health": {"score":7.0,"risk_value":3.0,"weight":0.25,"note":"组合财务质量良好:澜起Q1净利+61.3%毛利率71.5%、天孚+45.79%、海光营收+68%、通富+224.55%(低基数)、华海+5.95%放缓。核心持股均细分龙头。","source":"research_agent"},
+      "valuation": {"score":4.8,"risk_value":5.2,"weight":0.20,"note":"估值整体偏高:海光PE 302x(85分位)/天孚148x(70分位)/华海143x(75分位)/澜起141x(80分位);科创芯片ETF PE≈85。增速强但安全边际不足。","source":"research_agent"},
+      "industry_cycle": {"score":6.5,"risk_value":3.5,"weight":0.15,"note":"半导体板块剧烈分化:设备(华海+20%)/内存接口(澜起+13%)走强,光模块(天孚-7.19%)走弱;市场风格从纯科技切向医药轮动。","source":"industry_agent"},
+      "technical": {"score":3.9,"risk_value":6.1,"weight":0.15,"note":"组合技术面偏弱:天孚跌破MA20/MA60;华海远离MA20+35%严重超买;4只(华海/澜起/海光/科创芯片ETF)突破布林上轨;黄金ETF跌破止损8.5。","source":"self+research"},
+      "macro": {"score":6.0,"risk_value":4.0,"weight":0.15,"note":"宏观偏暖但风格切换:上证+1.16%(4073.90)创业板+0.54%;资金从科技向医药轮动,组合在风格不利侧。","source":"industry_agent"},
+      "news_sentiment": {"score":6.0,"risk_value":4.0,"weight":0.10,"note":"News偏多:AI算力链业绩验证扎实;华海定增警惕摊薄;黄金ETF新闻面+技术面双弱与CIO清仓方向一致。","source":"news_agent"}
+    },
+    "risk_score_calculation": {
+      "base_weighted_risk_0_10": 4.23,
+      "formula": "3.0×0.25 + 5.2×0.20 + 3.5×0.15 + 6.1×0.15 + 4.0×0.15 + 4.0×0.10 = 0.75+1.04+0.525+0.915+0.60+0.40 = 4.23",
+      "concentration_penalty": "+2.6(半导体40.88%超40%硬阈值 +1.5;天孚14.26%超10% +0.5;黄金破止损未执行 +0.4;多标的越止盈未减仓 +0.2)",
+      "final_risk_0_10": 6.83,
+      "final_risk_0_100": 68
+    },
+    "concentration_detail": {
+      "AI_半导体_直接持股": {"current_pct":40.88,"threshold_pct":40.0,"level":"🔴","constituents":"天孚14.26+华海10.54+海光7.57+澜起6.08+通富2.43","concentration_weighted_pnl_pct":46.9,"exceed_reason":"突破40%硬阈值0.88pp;加权浮盈+46.9%处于浮盈过厚区,板块系统性回撤直接冲击NAV。"},
+      "AI_半导体_含科创芯片ETF": {"current_pct":44.29,"threshold_pct":40.0,"level":"🔴","constituents":"上述直接持股+科创芯片ETF 3.41","concentration_weighted_pnl_pct":47.6,"exceed_reason":"ETF增强同方向暴露,板块层面相关性≈1,叠加后超阈值4.29pp。"},
+      "光通信_CPO": {"current_pct":14.26,"threshold_pct":15.0,"level":"🟡","constituents":"天孚通信14.26","concentration_weighted_pnl_pct":94.1,"exceed_reason":"细分赛道占比逼近上限;CPO资金流出+日内已暴跌-7.19%。"},
+      "天孚通信_单股": {"current_pct":14.26,"threshold_pct":10.0,"level":"🔴","concentration_weighted_pnl_pct":94.1,"exceed_reason":"单股超10%上限4.26pp;浮盈94.1%脆弱;跌破MA20/MA60;距止损280.56仅4.30%(<5%警戒);6/29 CIO已裁决减至7%但用户反向加仓违IC裁决。"},
+      "海外科技": {"current_pct":6.49,"threshold_pct":15.0,"level":"🟢","constituents":"纳斯达克ETF 5.06+标普500ETF 1.43","exceed_reason":"未超标"},
+      "宽基ETF对冲": {"current_pct":9.45,"threshold_pct":20.0,"level":"🟢","constituents":"创业板50ETF 5.44+中证500ETF 4.01","exceed_reason":"未超标,但对冲比例偏低不足以平衡科技集中度。"},
+      "黄金_避险": {"current_pct":1.75,"threshold_pct":5.0,"level":"🔴_破止损","constituents":"黄金ETF 518880","concentration_weighted_pnl_pct":0.57,"exceed_reason":"占比未超,但现价8.325已跌破止损位8.5(-2.06%),触发硬止损规则未执行;CIO 6/24已建议清仓。"},
+      "现金_债性": {"current_pct":23.20,"threshold_pct":"下限15%","level":"🟢","exceed_reason":"充裕,可承接调仓"}
+    },
+    "per_symbol_review": [
+      {"symbol":"688120","name":"华海清科","price":337.0,"chg_pct":6.54,"cost":84.27,"pnl_pct":20.3,"weight_pct":10.54,"stop_loss_current":228.80,"stop_loss_distance_pct":32.1,"take_profit_current":306.73,"vs_take_profit_pct":9.87,"verdict":"🟠 越止盈+严重超买","advice":"已超止盈+9.87%;远离MA20+35%极端超买。建议首批减30%锁利,仓位10.54%→7%;止损上移MA10区域295,止盈上移60日新高380。","suggested_stop_loss":295.0,"suggested_take_profit":380.0},
+      {"symbol":"688008","name":"澜起科技","price":303.0,"chg_pct":2.34,"cost":30.60,"pnl_pct":54.21,"weight_pct":6.08,"stop_loss_current":241.20,"stop_loss_distance_pct":20.4,"take_profit_current":288.79,"vs_take_profit_pct":4.92,"verdict":"🟡 越止盈但基本面顶级","advice":"已超止盈+4.92%;Q1净利+61.3%毛利率71.5%,技术面相对健康(MA20+18%)。止盈上移312(60日新高),止损上移MA20 251.3。不强减仓但禁止追高。","suggested_stop_loss":251.30,"suggested_take_profit":312.0},
+      {"symbol":"300394","name":"天孚通信","price":293.18,"chg_pct":-0.67,"cost":-67.21,"pnl_pct":94.1,"weight_pct":14.26,"stop_loss_current":280.56,"stop_loss_distance_pct":4.30,"take_profit_current":317.84,"vs_take_profit_pct":-7.76,"verdict":"🔴 VETO — 单股超限+距止损≤5%+反IC加仓","advice":"顶格红牌:仓位14.26%超10%上限;跌破MA20/MA60形态破坏;距止损仅4.3%;浮盈94.1%极脆弱;用户违IC裁决反向加仓。强制方案:开盘后市价减至7%(-7.26pp回归6/29 CIO目标);若早盘反弹则分批减,触及280.56全清。","suggested_stop_loss":280.56,"suggested_take_profit":317.84,"veto":true,"veto_reason":"单股14.26%超10%上限+距止损≤5%双重触发;Risk VETO任何方向加仓/维持不减仓行为。"},
+      {"symbol":"688041","name":"海光信息","price":360.0,"chg_pct":1.45,"cost":226.72,"pnl_pct":-0.52,"weight_pct":7.57,"stop_loss_current":287.50,"stop_loss_distance_pct":20.1,"take_profit_current":351.62,"vs_take_profit_pct":2.39,"verdict":"🟠 越止盈+估值极高","advice":"已超止盈+2.39%;PE 302x极端估值;布林上沿94%。建议小幅减仓7.57%→5%锁定;止损上移MA20 302.92,止盈上移400。跌破MA20强制减至3%。","suggested_stop_loss":302.92,"suggested_take_profit":400.0},
+      {"symbol":"002156","name":"通富微电","price":72.95,"chg_pct":0.51,"cost":63.95,"pnl_pct":14.07,"weight_pct":2.43,"stop_loss_current":64.0,"stop_loss_distance_pct":12.3,"take_profit_current":76.99,"vs_take_profit_pct":-5.25,"verdict":"🟢 持有","advice":"仓位2.43%偏轻,封测板块AMD绑定核心,Q1净利+224.55%(低基数)。技术面站上MA20多头排列。止损64保持,止盈上移81(原止盈+5%缓冲)。","suggested_stop_loss":64.0,"suggested_take_profit":81.0},
+      {"symbol":"588090","name":"科创芯片ETF","price":2.182,"chg_pct":0.09,"cost":1.506,"pnl_pct":44.9,"weight_pct":3.41,"stop_loss_current":1.751,"stop_loss_distance_pct":19.7,"take_profit_current":2.007,"vs_take_profit_pct":8.72,"verdict":"🟡 越止盈+科技敞口叠加","adv

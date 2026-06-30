@@ -1,0 +1,329 @@
+{
+  "principal": "towney",
+  "agent": "research",
+  "cycle_id": "towney-20260630-0904-premarket",
+  "data_quality": "⚠️部分受限 — 实时行情:✅(gtimg单源) K线:✅(sina 60日) 财报:⚠️(东方财富API 502,以10jqka公开数据+gtimg PE替代) PE百分位:⚠️(估算值,非精确计算) 双源验证:❌(仅gtimg可用,新浪403/东方财富502/网易超时)",
+  "data": {
+    "holdings": [
+      {
+        "symbol": "688120",
+        "name": "华海清科",
+        "dimensions": {
+          "technical": {
+            "score": 2,
+            "note": "远离MA20(+35%)超买; 远离MA60(+42%); 突破布林上轨超买; 温和放量(1.32x); 涨停",
+            "atr_pct": 7.33,
+            "bollinger_upper": 296.45,
+            "ma20": 233.98,
+            "ma60_high": 316.32,
+            "pe_percentile": 75,
+            "vol_ratio": 1.32
+          },
+          "fundamental": {
+            "score": 8,
+            "note": "EPS2025=3.08 Q1'26=0.7 净利增速=5.95% | CMP设备国产龙头,在手订单74.81亿(+30%),定增扩产,先进封装批量交付"
+          },
+          "valuation": {
+            "score": 4,
+            "note": "PE(TTM)=142.58,高位,定增摊薄风险,但订单饱满支撑估值"
+          },
+          "financials": {
+            "score": 6,
+            "note": "EPS2025=3.08 Q1'26=0.70,净利+5.95%增速放缓,定增加大费用"
+          }
+        },
+        "summary": "技术2/10 基本面8/10 估值4/10 财报6/10"
+      },
+      {
+        "symbol": "688008",
+        "name": "澜起科技",
+        "dimensions": {
+          "technical": {
+            "score": 5,
+            "note": "高于MA20(+18%)偏强; 远离MA60(+38%); 突破布林上轨超买; 温和放量(1.38x); 涨停",
+            "atr_pct": 6.1,
+            "bollinger_upper": 291.28,
+            "ma20": 251.29,
+            "ma60_high": 296.66,
+            "pe_percentile": 80,
+            "vol_ratio": 1.38
+          },
+          "fundamental": {
+            "score": 9,
+            "note": "EPS2025=0.73 Q1'26=None 净利增速=19.5% | DDR5内存接口全球#1,PCIe Retimer#2,CXL MXC受益AI推理,毛利率71.5%"
+          },
+          "valuation": {
+            "score": 5,
+            "note": "PE(TTM)=141.48,偏高但Q1利润+61.3%高速增长,估值可消化"
+          },
+          "financials": {
+            "score": 8,
+            "note": "Q1营收+19.5%净利+61.3%,毛利率71.5%提升,互连芯片放量"
+          }
+        },
+        "summary": "技术5/10 基本面9/10 估值5/10 财报8/10"
+      },
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "dimensions": {
+          "technical": {
+            "score": 1,
+            "note": "跌破MA20(-21%)偏弱; 跌破MA60(-18%)中期偏弱; 大跌-7.19%",
+            "atr_pct": 10.93,
+            "bollinger_upper": 510.93,
+            "ma20": 375.37,
+            "ma60_high": 525.0,
+            "pe_percentile": 70,
+            "vol_ratio": 0.94
+          },
+          "fundamental": {
+            "score": 8,
+            "note": "EPS2025=2.6 Q1'26=0.63 净利增速=45.79% | 光器件龙头,H股上市推进中,AI光互联核心供应商,Q1净利+45.79%"
+          },
+          "valuation": {
+            "score": 5,
+            "note": "PE(TTM)=148.24,偏高但利润+45.79%,增长匹配估值"
+          },
+          "financials": {
+            "score": 8,
+            "note": "EPS2025=2.60 Q1'26=0.63,净利+45.79%,10送4后股本扩张"
+          }
+        },
+        "summary": "技术1/10 基本面8/10 估值5/10 财报8/10"
+      },
+      {
+        "symbol": "688041",
+        "name": "海光信息",
+        "dimensions": {
+          "technical": {
+            "score": 5,
+            "note": "高于MA20(+17%)偏强; 远离MA60(+22%); 布林上沿(94%)",
+            "atr_pct": 6.27,
+            "bollinger_upper": 361.41,
+            "ma20": 302.92,
+            "ma60_high": 369.0,
+            "pe_percentile": 85,
+            "vol_ratio": 1.04
+          },
+          "fundamental": {
+            "score": 9,
+            "note": "EPS2025=1.1 Q1'26=0.3 净利增速=68.06% | 国产CPU+DCU双芯战略,DeepSeek适配365+模型,量子安全技术领先,营收+68%"
+          },
+          "valuation": {
+            "score": 3,
+            "note": "PE(TTM)=302.55,极高估值,营收+68%但净利增速35.82%不及营收"
+          },
+          "financials": {
+            "score": 6,
+            "note": "EPS2025=1.10 Q1'26=0.30,营收+68%但利润率薄,研发费用高"
+          }
+        },
+        "summary": "技术5/10 基本面9/10 估值3/10 财报6/10"
+      },
+      {
+        "symbol": "002156",
+        "name": "通富微电",
+        "dimensions": {
+          "technical": {
+            "score": 6,
+            "note": "站上MA20(+9%)多头; 远离MA60(+25%)",
+            "atr_pct": 6.6,
+            "bollinger_upper": 77.4,
+            "ma20": 66.75,
+            "ma60_high": 79.38,
+            "pe_percentile": 60,
+            "vol_ratio": 0.89
+          },
+          "fundamental": {
+            "score": 7,
+            "note": "EPS2025=0.8 Q1'26=0.22 净利增速=22.8% | AMD主要封测商,CPO封装量产导入,存储封测扩产42.2亿定增,大基金减持中"
+          },
+          "valuation": {
+            "score": 6,
+            "note": "PE(TTM)=76.54,封测行业中位,CPO+存储扩产提升估值空间"
+          },
+          "financials": {
+            "score": 7,
+            "note": "EPS2025=0.80 Q1'26=0.22,净利+224.55%低基数效应,定增摊薄"
+          }
+        },
+        "summary": "技术6/10 基本面7/10 估值6/10 财报7/10"
+      },
+      {
+        "symbol": "588090",
+        "name": "科创芯片ETF",
+        "dimensions": {
+          "technical": {
+            "score": 4,
+            "note": "高于MA20(+18%)偏强; 远离MA60(+29%); 突破布林上轨超买; 缩量(0.39x)",
+            "atr_pct": 4.11,
+            "bollinger_upper": 2.17,
+            "ma20": 1.85,
+            "ma60_high": 2.18,
+            "pe_percentile": 78,
+            "vol_ratio": 0.39
+          },
+          "fundamental": {
+            "score": 7,
+            "note": "跟踪科创芯片指数 PE≈85 | 科创芯片指数ETF,分散化半导体持仓,受益AI+存储双主线"
+          },
+          "valuation": {
+            "score": 5,
+            "note": "科创芯片指数PE~85,偏高但AI+存储景气支撑"
+          },
+          "financials": {
+            "score": 5,
+            "note": "ETF无财报,跟踪科创芯片指数成分股整体盈利改善中"
+          }
+        },
+        "summary": "技术4/10 基本面7/10 估值5/10 财报5/10"
+      },
+      {
+        "symbol": "159949",
+        "name": "创业板50ETF",
+        "dimensions": {
+          "technical": {
+            "score": 6,
+            "note": "MA20附近(-1%)整理; 站上MA60(+3%)中期多头",
+            "atr_pct": 2.01,
+            "bollinger_upper": 2.11,
+            "ma20": 2.04,
+            "ma60_high": 2.12,
+            "pe_percentile": 55,
+            "vol_ratio": 0.87
+          },
+          "fundamental": {
+            "score": 6,
+            "note": "跟踪创业板50 PE≈35 | 创业板50ETF,覆盖新能源+医药+科技龙头,分散化配置"
+          },
+          "valuation": {
+            "score": 6,
+            "note": "创业板50PE~35,合理区间"
+          },
+          "financials": {
+            "score": 5,
+            "note": "ETF无财报,创业板50成分股盈利分化"
+          }
+        },
+        "summary": "技术6/10 基本面6/10 估值6/10 财报5/10"
+      },
+      {
+        "symbol": "510500",
+        "name": "中证500ETF",
+        "dimensions": {
+          "technical": {
+            "score": 8,
+            "note": "站上MA20(+5%)多头; 站上MA60(+6%)中期多头; 布林上沿(82%)",
+            "atr_pct": 2.4,
+            "bollinger_upper": 9.2,
+            "ma20": 8.57,
+            "ma60_high": 9.09,
+            "pe_percentile": 50,
+            "vol_ratio": 0.88
+          },
+          "fundamental": {
+            "score": 6,
+            "note": "跟踪中证500 PE≈22 | 中证500ETF,中盘成长股分散配置,PE合理偏低"
+          },
+          "valuation": {
+            "score": 7,
+            "note": "中证500PE~22,估值合理偏低"
+          },
+          "financials": {
+            "score": 5,
+            "note": "ETF无财报,中证500成分股盈利温和增长"
+          }
+        },
+        "summary": "技术8/10 基本面6/10 估值7/10 财报5/10"
+      },
+      {
+        "symbol": "513300",
+        "name": "纳斯达克ETF",
+        "dimensions": {
+          "technical": {
+            "score": 6,
+            "note": "MA20附近(-1%)整理; 站上MA60(+7%)中期多头",
+            "atr_pct": 2.66,
+            "bollinger_upper": 2.86,
+            "ma20": 2.7,
+            "ma60_high": 2.9,
+            "pe_percentile": 65,
+            "vol_ratio": 0.66
+          },
+          "fundamental": {
+            "score": 7,
+            "note": "跟踪纳斯达克100 PE≈35 | 纳斯达克100ETF,全球最强科技指数,AI算力核心敞口"
+          },
+          "valuation": {
+            "score": 5,
+            "note": "纳斯达克100PE~35,历史中高位"
+          },
+          "financials": {
+            "score": 5,
+            "note": "ETF无财报,纳斯达克100成分股盈利强劲"
+          }
+        },
+        "summary": "技术6/10 基本面7/10 估值5/10 财报5/10"
+      },
+      {
+        "symbol": "513650",
+        "name": "标普500ETF",
+        "dimensions": {
+          "technical": {
+            "score": 6,
+            "note": "MA20附近(-2%)整理; 站上MA60(+2%)中期多头; 温和放量(1.22x)",
+            "atr_pct": 1.67,
+            "bollinger_upper": 1.96,
+            "ma20": 1.89,
+            "ma60_high": 1.98,
+            "pe_percentile": 60,
+            "vol_ratio": 1.22
+          },
+          "fundamental": {
+            "score": 6,
+            "note": "跟踪标普500 PE≈23 | 标普500ETF,美股均衡配置,分散化底仓"
+          },
+          "valuation": {
+            "score": 6,
+            "note": "标普500PE~23,合理偏高"
+          },
+          "financials": {
+            "score": 5,
+            "note": "ETF无财报,标普500成分股盈利稳健"
+          }
+        },
+        "summary": "技术6/10 基本面6/10 估值6/10 财报5/10"
+      },
+      {
+        "symbol": "518880",
+        "name": "黄金ETF",
+        "dimensions": {
+          "technical": {
+            "score": 3,
+            "note": "MA20附近(-5%)整理; 跌破MA60(-11%)中期偏弱",
+            "atr_pct": 2.07,
+            "bollinger_upper": 9.52,
+            "ma20": 8.85,
+            "ma60_high": 10.15,
+            "pe_percentile": null,
+            "vol_ratio": 0.79
+          },
+          "fundamental": {
+            "score": 5,
+            "note": "跟踪黄金ETF(不适用PE) PE≈None | 黄金ETF,避险资产,金价高位震荡,缺乏向上催化"
+          },
+          "valuation": {
+            "score": 5,
+            "note": "黄金不适用PE估值,金价处历史高位"
+          },
+          "financials": {
+            "score": 5,
+            "note": "ETF无财报,金价受美联储政策+地缘政治驱动"
+          }
+        },
+        "summary": "技术3/10 基本面5/10 估值5/10 财报5/10"
+      }
+    ]
+  }
+}
