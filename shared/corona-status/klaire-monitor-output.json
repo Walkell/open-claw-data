@@ -1,64 +1,26 @@
 {
   "principal": "klaire",
-  "timestamp": "2026-06-29T14:50:00+08:00",
+  "detected_at": "2026-06-30T10:45:01+08:00",
+  "has_alert": true,
   "alerts": [
     {
       "symbol": "002472",
       "name": "双环传动",
-      "alert_type": "止损触及",
-      "detail": "🔴 止损触及：002472 双环传动 现价 37.79 已跌破止损价 40.81，请立即处理",
-      "severity": "high"
-    },
-    {
-      "symbol": "600699",
-      "name": "均胜电子",
-      "alert_type": "止损触及",
-      "detail": "🔴 止损触及：600699 均胜电子 现价 20.92 已跌破止损价 24.00，请立即处理",
-      "severity": "high"
-    },
-    {
-      "symbol": "588080",
-      "name": "科创50ETF",
-      "alert_type": "止盈触及",
-      "detail": "🟡 止盈触及：588080 科创50ETF 现价 2.176 已达止盈价 1.98",
-      "severity": "medium"
-    },
-    {
-      "symbol": "159540",
-      "name": "信创ETF",
-      "alert_type": "止盈触及",
-      "detail": "🟡 止盈触及：159540 信创ETF 现价 2.594 已达止盈价 2.30",
-      "severity": "medium"
-    },
-    {
-      "symbol": "002011",
-      "name": "盾安环境",
-      "alert_type": "接近止损",
-      "detail": "🟡 接近止损：002011 盾安环境 现价 10.51 距止损（10.50）仅 0.10%",
-      "severity": "medium"
-    },
-    {
-      "symbol": "002126",
-      "name": "银轮股份(观察)",
-      "alert_type": "大跌预警",
-      "detail": "🟡 大跌预警：002126 银轮股份(观察) 今日跌幅 -5.78%",
-      "severity": "medium"
-    },
-    {
-      "symbol": "588080",
-      "name": "科创50ETF",
-      "alert_type": "追踪止损提醒",
-      "detail": "🔵 止损线审查：588080 科创50ETF 止损设置可能已滞后于当前行情，建议 IC 审查",
-      "severity": "low"
-    },
-    {
-      "symbol": "159540",
-      "name": "信创ETF",
-      "alert_type": "追踪止损提醒",
-      "detail": "🔵 止损线审查：159540 信创ETF 止损设置可能已滞后于当前行情，建议 IC 审查",
-      "severity": "low"
+      "current_price": 39.80,
+      "cost": 40.693,
+      "change_pct": 5.46,
+      "alert_type": "上涨",
+      "threshold": "A股 ±5%"
     }
   ],
-  "has_alerts": true,
-  "summary": "盘中检测到 8 项异动：双环传动、均胜电子触及止损（🔴 紧急2项）；科创50ETF、信创ETF已达止盈，盾安环境逼近止损，银轮股份观察池大跌-5.78%（🟡 警告4项）；科创50ETF、信创ETF浮盈保护率偏低，建议IC复核止损（🔵 关注2项）。"
+  "summary": "1只持仓触发异动：双环传动(002472) 上涨 +5.46%，现价 39.80，量比 2.11，已突破 ±5% 阈值。",
+  "data_quality_note": "腾讯单源（其余 4 个数据源 502/403/404 不可用，未做交叉验证）",
+  "snapshot_all": [
+    {"symbol": "002472", "name": "双环传动", "price": 39.80, "change_pct": 5.46, "vol_ratio": 2.11},
+    {"symbol": "588080", "name": "科创50ETF", "price": 2.233, "change_pct": 2.43, "vol_ratio": 1.38},
+    {"symbol": "159540", "name": "信创ETF", "price": 2.640, "change_pct": 1.62, "vol_ratio": 1.76},
+    {"symbol": "600699", "name": "均胜电子", "price": 21.16, "change_pct": 1.24, "vol_ratio": 1.27},
+    {"symbol": "002011", "name": "盾安环境", "price": 10.53, "change_pct": 0.48, "vol_ratio": 1.33},
+    {"symbol": "603298", "name": "杭叉集团", "price": 23.95, "change_pct": -2.04, "vol_ratio": 1.07}
+  ]
 }
