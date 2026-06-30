@@ -1,0 +1,374 @@
+{
+  "principal": "towney",
+  "agent": "research",
+  "cycle_id": "towney-20260630-1133-intraday",
+  "data_quality": "⚠️部分受限 - 行情:gtimg单源(东方财富502不可用,网易/同花顺/新浪未验证) | K线:sina单源 | PE数据:web搜索(lixinger/东方财富) | 盘中分析时效性优先",
+  "data": {
+    "holdings": [
+      {
+        "symbol": "688120 华海清科",
+        "price": 307.44,
+        "change_pct": -2.81,
+        "intraday_high": 332.55,
+        "intraday_low": 303.01,
+        "dimensions": {
+          "technical": {
+            "score": 6.5,
+            "note": "股价高于MA20 20.9%，短期强势; 布林带内运行; RSI(14)=67，中性区间",
+            "atr_pct": 5.16,
+            "bollinger_upper": 329.6,
+            "ma20": 254.23,
+            "ma60_high": 316.32,
+            "pe_percentile": 96.12,
+            "vol_ratio": 0.89,
+            "rsi14": 66.8,
+            "macd_dif": 28.33
+          },
+          "fundamental": {
+            "score": 7.0,
+            "note": "CMP设备龙头，国产替代核心标的。Q1营收增长强劲，定增扩产。但估值极高(PE 142x)，透支较多"
+          },
+          "valuation": {
+            "score": 2.5,
+            "note": "PE(TTM) 142.58x，近2年分位96.12%。估值处于历史极高水平，安全边际极低"
+          },
+          "financials": {
+            "score": 6.5,
+            "note": "2026E EPS 2.99元(同花顺一致预期)，净利润14.25亿同比+31.5%。盈利增速尚可但绝对估值过高"
+          }
+        }
+      },
+      {
+        "symbol": "688008 澜起科技",
+        "price": 310.19,
+        "change_pct": 4.77,
+        "intraday_high": 313.13,
+        "intraday_low": 290.01,
+        "dimensions": {
+          "technical": {
+            "score": 7.0,
+            "note": "股价高于MA20 16.4%，短期强势; RSI(14)=62，中性区间",
+            "atr_pct": 4.51,
+            "bollinger_upper": 314.55,
+            "ma20": 266.52,
+            "ma60_high": 296.66,
+            "pe_percentile": 100.0,
+            "vol_ratio": 0.87,
+            "rsi14": 62.1,
+            "macd_dif": 14.99
+          },
+          "fundamental": {
+            "score": 8.0,
+            "note": "内存接口芯片龙头，DDR5渗透+AI服务器需求驱动。新产品线(CKD/MRCD)放量，成长逻辑清晰"
+          },
+          "valuation": {
+            "score": 2.0,
+            "note": "PE(TTM) 125.11x，近2年分位100.0%。估值处于历史最高水平，高增长预期已充分定价"
+          },
+          "financials": {
+            "score": 7.5,
+            "note": "2026E净利润预计高增，DDR5渗透率提升+AI服务器需求带来量价齐升。但估值已反映乐观预期"
+          }
+        }
+      },
+      {
+        "symbol": "300394 天孚通信",
+        "price": 309.68,
+        "change_pct": 4.92,
+        "intraday_high": 309.88,
+        "intraday_low": 290.02,
+        "dimensions": {
+          "technical": {
+            "score": 5.0,
+            "note": "股价低于MA20 8.8%，短期弱势; 布林带内运行; RSI(14)=45，中性区间",
+            "atr_pct": 5.2,
+            "bollinger_upper": 425.71,
+            "ma20": 339.53,
+            "ma60_high": 525.0,
+            "pe_percentile": 98.35,
+            "vol_ratio": 0.55,
+            "rsi14": 44.7,
+            "macd_dif": -15.78
+          },
+          "fundamental": {
+            "score": 8.5,
+            "note": "光器件龙头，AI算力超级周期核心受益。2026E EPS 3.11元，净利润33.3亿同比+65%。技术壁垒高"
+          },
+          "valuation": {
+            "score": 2.0,
+            "note": "PE(TTM) 148.24x，近2年分位98.35%。估值历史极高水平，但高增速提供一定支撑"
+          },
+          "financials": {
+            "score": 8.0,
+            "note": "Q1业绩超预期，全年指引乐观。净利润同比+65%，毛利率行业领先。但当前股价已包含较多乐观预期"
+          }
+        }
+      },
+      {
+        "symbol": "688041 海光信息",
+        "price": 374.14,
+        "change_pct": 5.44,
+        "intraday_high": 377.79,
+        "intraday_low": 354.24,
+        "dimensions": {
+          "technical": {
+            "score": 7.5,
+            "note": "股价高于MA20 18.1%，短期强势; RSI(14)=64，中性区间",
+            "atr_pct": 4.33,
+            "bollinger_upper": 375.54,
+            "ma20": 316.7,
+            "ma60_high": 377.79,
+            "pe_percentile": 99.86,
+            "vol_ratio": 0.63,
+            "rsi14": 64.3,
+            "macd_dif": 18.6
+          },
+          "fundamental": {
+            "score": 9.0,
+            "note": "国产CPU/DCU龙头，信创+AI双轮驱动。2026E EPS 1.92元，净利润45亿同比+77%。国产替代最纯正标的"
+          },
+          "valuation": {
+            "score": 1.5,
+            "note": "PE(TTM) 302.55x，近2年分位99.86%。估值严重高估，但市场给予稀缺性溢价"
+          },
+          "financials": {
+            "score": 8.0,
+            "note": "营收40.34亿(Q1)，全年指引强劲。DCU出货量有望超预期。但PE 302x意味着极高增长预期"
+          }
+        }
+      },
+      {
+        "symbol": "002156 通富微电",
+        "price": 75.17,
+        "change_pct": 3.57,
+        "intraday_high": 75.49,
+        "intraday_low": 69.8,
+        "dimensions": {
+          "technical": {
+            "score": 6.5,
+            "note": "股价高于MA20 10.9%，短期强势; 布林带内运行; RSI(14)=61，中性区间",
+            "atr_pct": 4.95,
+            "bollinger_upper": 81.05,
+            "ma20": 67.78,
+            "ma60_high": 79.38,
+            "pe_percentile": 56.22,
+            "vol_ratio": 0.55,
+            "rsi14": 60.8,
+            "macd_dif": 2.42
+          },
+          "fundamental": {
+            "score": 7.5,
+            "note": "国内第二大封测企业，AMD深度绑定+先进封装卡位。2025年净利润12.19亿同比+80%，成长加速"
+          },
+          "valuation": {
+            "score": 5.5,
+            "note": "PE(TTM) 76.15x，近2年分位56.22%。估值在历史中位区间，相对合理"
+          },
+          "financials": {
+            "score": 7.5,
+            "note": "2025年营收279亿同比+17%，净利润+80%。先进封装贡献核心增量。PEG约0.77，成长性价比突出"
+          }
+        }
+      },
+      {
+        "symbol": "588090 科创芯片ETF",
+        "price": 2.265,
+        "change_pct": 3.9,
+        "intraday_high": 2.266,
+        "intraday_low": 2.168,
+        "dimensions": {
+          "technical": {
+            "score": 7.5,
+            "note": "股价高于MA20 12.2%，短期强势; RSI(14)=70，超买区间; 缩量(量比=0.3x)",
+            "atr_pct": 3.22,
+            "bollinger_upper": 2.281,
+            "ma20": 2.018,
+            "ma60_high": 2.181,
+            "pe_percentile": "N/A(ETF)",
+            "vol_ratio": 0.32,
+            "rsi14": 70.5,
+            "macd_dif": 0.077
+          },
+          "fundamental": {
+            "score": 7.0,
+            "note": "科创芯片ETF，分散配置科创板半导体龙头。受益于AI+国产替代双主线，波动大但方向明确"
+          },
+          "valuation": {
+            "score": 5.0,
+            "note": "ETF不适用PE估值。净值跟随成分股，当前科创芯片板块整体估值偏高"
+          },
+          "financials": {
+            "score": 6.5,
+            "note": "ETF成分股整体盈利增长强劲(澜起/海光/中芯等)，但估值分化严重。ETF提供分散化收益"
+          }
+        }
+      },
+      {
+        "symbol": "159949 创业板50ETF",
+        "price": 2.09,
+        "change_pct": 3.21,
+        "intraday_high": 2.094,
+        "intraday_low": 2.018,
+        "dimensions": {
+          "technical": {
+            "score": 6.5,
+            "note": "股价在MA20附近(偏离+3.1%); RSI(14)=58，中性区间",
+            "atr_pct": 1.93,
+            "bollinger_upper": 2.126,
+            "ma20": 2.027,
+            "ma60_high": 2.119,
+            "pe_percentile": "N/A(ETF)",
+            "vol_ratio": 0.58,
+            "rsi14": 58.3,
+            "macd_dif": 0.018
+          },
+          "fundamental": {
+            "score": 6.5,
+            "note": "创业板50ETF，覆盖宁德时代、东方财富等创业板龙头。新能源+医药+科技均衡配置"
+          },
+          "valuation": {
+            "score": 6.0,
+            "note": "ETF不适用PE估值。创业板50整体PE约30-35x，处于历史中位偏低水平"
+          },
+          "financials": {
+            "score": 6.0,
+            "note": "成分股盈利分化，宁德时代等权重股盈利稳健。整体ROE水平良好"
+          }
+        }
+      },
+      {
+        "symbol": "510500 中证500ETF",
+        "price": 9.148,
+        "change_pct": 1.94,
+        "intraday_high": 9.15,
+        "intraday_low": 8.909,
+        "dimensions": {
+          "technical": {
+            "score": 6.5,
+            "note": "股价在MA20附近(偏离+3.7%); RSI(14)=62，中性区间; 缩量(量比=0.3x)",
+            "atr_pct": 1.5,
+            "bollinger_upper": 9.201,
+            "ma20": 8.818,
+            "ma60_high": 9.087,
+            "pe_percentile": "N/A(ETF)",
+            "vol_ratio": 0.31,
+            "rsi14": 62.1,
+            "macd_dif": 0.132
+          },
+          "fundamental": {
+            "score": 6.5,
+            "note": "中证500ETF，覆盖500家中盘股，行业分散。当前估值合理偏低(PE约22x)，性价比突出"
+          },
+          "valuation": {
+            "score": 7.0,
+            "note": "ETF不适用PE估值。中证500整体PE约22x，处于近5年中位偏低，估值合理"
+          },
+          "financials": {
+            "score": 6.0,
+            "note": "成分股盈利整体改善，中小盘盈利增速回升。2026年盈利预期向好"
+          }
+        }
+      },
+      {
+        "symbol": "513300 纳斯达克ETF",
+        "price": 2.708,
+        "change_pct": 1.5,
+        "intraday_high": 2.71,
+        "intraday_low": 2.696,
+        "dimensions": {
+          "technical": {
+            "score": 6.0,
+            "note": "股价在MA20附近(偏离+1.3%); RSI(14)=56，中性区间; 缩量(量比=0.3x)",
+            "atr_pct": 1.53,
+            "bollinger_upper": 2.777,
+            "ma20": 2.672,
+            "ma60_high": 2.878,
+            "pe_percentile": "N/A(ETF)",
+            "vol_ratio": 0.33,
+            "rsi14": 55.6,
+            "macd_dif": 0.016
+          },
+          "fundamental": {
+            "score": 7.5,
+            "note": "纳斯达克100ETF，覆盖美国科技巨头(苹果/微软/英伟达等)。全球AI主线核心受益"
+          },
+          "valuation": {
+            "score": 5.0,
+            "note": "ETF不适用PE估值。纳指100整体PE约30-32x，处于历史偏高水平但盈利增长支撑"
+          },
+          "financials": {
+            "score": 7.0,
+            "note": "美国科技巨头盈利强劲，AI投资回报逐步兑现。但美股整体估值偏高，波动风险存在"
+          }
+        }
+      },
+      {
+        "symbol": "513650 标普500ETF",
+        "price": 1.866,
+        "change_pct": 0.32,
+        "intraday_high": 1.883,
+        "intraday_low": 1.861,
+        "dimensions": {
+          "technical": {
+            "score": 5.5,
+            "note": "股价在MA20附近(偏离+1.2%); 布林带内运行; RSI(14)=54，中性区间",
+            "atr_pct": 1.37,
+            "bollinger_upper": 1.928,
+            "ma20": 1.843,
+            "ma60_high": 1.883,
+            "pe_percentile": "N/A(ETF)",
+            "vol_ratio": 1.28,
+            "rsi14": 54.1,
+            "macd_dif": 0.008
+          },
+          "fundamental": {
+            "score": 7.0,
+            "note": "标普500ETF，覆盖美国500家大中型企业。均衡分散，长期稳健。当前估值偏高"
+          },
+          "valuation": {
+            "score": 5.0,
+            "note": "ETF不适用PE估值。标普500整体PE约22-24x，处于历史偏高水平"
+          },
+          "financials": {
+            "score": 6.5,
+            "note": "美国经济韧性强，企业盈利整体稳健。但高利率环境下估值扩张空间有限"
+          }
+        }
+      },
+      {
+        "symbol": "518880 黄金ETF",
+        "price": 8.248,
+        "change_pct": -2.38,
+        "intraday_high": 8.28,
+        "intraday_low": 8.224,
+        "dimensions": {
+          "technical": {
+            "score": 3.0,
+            "note": "股价在MA20附近(偏离-4.5%); 布林带内运行; RSI(14)=37，中性区间",
+            "atr_pct": 1.28,
+            "bollinger_upper": 9.158,
+            "ma20": 8.633,
+            "ma60_high": 9.909,
+            "pe_percentile": "N/A(ETF)",
+            "vol_ratio": 0.54,
+            "rsi14": 37.4,
+            "macd_dif": -0.186
+          },
+          "fundamental": {
+            "score": 5.5,
+            "note": "黄金ETF，跟踪国内金价。全球避险+央行购金+降息预期三重支撑，但短期回调明显"
+          },
+          "valuation": {
+            "score": 4.5,
+            "note": "ETF不适用PE估值。金价受实际利率、美元、避险情绪驱动。当前金价处于历史高位回调中"
+          },
+          "financials": {
+            "score": 5.0,
+            "note": "无盈利概念。黄金ETF收益完全取决于金价走势。全球央行持续购金提供长期支撑"
+          }
+        }
+      }
+    ],
+    "summary": "盘中快评(2026-06-30 11:33): 半导体板块全面反弹，海光信息(+5.44%)领涨，澜起(+4.77%)、天孚(+4.92%)紧随。科创芯片ETF(+3.90%)强势。华海清科(-2.81%)逆势回调，连续两日大涨后获利回吐。黄金ETF(-2.38%)持续弱势。整体A股持仓偏科技/AI方向，今日大幅反弹修复前期跌幅。估值维度：个股PE普遍处于历史极高分位(澜起100%/海光99.86%/天孚98.35%/华海96.12%)，仅通富微电(56.22%)相对合理。技术面：多数标的站上MA20但RSI偏高，华海清科/海光信息突破布林上轨呈超买。天孚通信跌破MA20(-8.8%)短期偏弱。黄金ETF跌破MA20且RSI仅37.4，技术面最弱。"
+  }
+}

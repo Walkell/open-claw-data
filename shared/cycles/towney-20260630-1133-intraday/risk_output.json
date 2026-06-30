@@ -1,0 +1,249 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260630-1133-intraday",
+  "flow_type": "精简两委员",
+  "data_quality": "Industry/News未参与；行情采用Research委员单源结果未做风险侧二次校验；盘中时效性优先",
+  "data": {
+    "risk_score": 78,
+    "verdict": "🟠危险",
+    "industry_dimension": "未参与，默认5",
+    "news_dimension": "未参与，默认0",
+    "summary_one_line": "AI赛道44.29%超阈+天孚单股14.26%违规+黄金已破止损未清仓+三大IC决议执行违约，组合处于🟠危险区，浮盈丰厚但估值极端不容追高",
+    "concentration_detail": {
+      "AI_半导体_个股加主题ETF": {
+        "constituents": [
+          "688120",
+          "688008",
+          "300394",
+          "688041",
+          "002156",
+          "588090"
+        ],
+        "current_pct": 44.29,
+        "threshold_pct": 40,
+        "level": "🔴",
+        "reason": "单赛道44.29%超出40%硬阈值。天孚通信单股14.26%突破10%单股上限(6/29反向IC加仓);华海清科10.54%亦踩10%红线"
+      },
+      "A股宽基": {
+        "constituents": [
+          "159949",
+          "510500"
+        ],
+        "current_pct": 9.45,
+        "threshold_pct": 25,
+        "level": "🟢",
+        "reason": "宽基ETF合计9.45%克制;但159949与AI赛道实质重叠约30%,剔重叠后纯分散暴露不足"
+      },
+      "海外_美股": {
+        "constituents": [
+          "513300",
+          "513650"
+        ],
+        "current_pct": 6.49,
+        "threshold_pct": 20,
+        "level": "🟢",
+        "reason": "纳指5.06+标普1.43=6.49%克制;6/24 CIO已下达纳指减至3.5%裁决,执行未到位(超目标1.56pp)"
+      },
+      "避险_黄金": {
+        "constituents": [
+          "518880"
+        ],
+        "current_pct": 1.75,
+        "threshold_pct": 10,
+        "level": "🔴",
+        "reason": "现价8.248已跌破止损8.5(-2.96%),6/24 CIO清仓VETO override裁决未执行"
+      },
+      "现金或其他": {
+        "current_pct": 38.02,
+        "threshold_pct": null,
+        "level": "🟢",
+        "reason": "持仓约61.98%,现金缓冲约38%,短期回撤弹药充足"
+      }
+    },
+    "concentration_weighted_pnl": {
+      "ai_semi_track_weighted_pnl_pct": 47.3,
+      "calc_note": "AI赛道加权浮盈≈Σ(个股仓位×盈亏比例)/赛道总仓位。天孚94.1%×14.26+澜起54.2%×6.08+华海20.3%×10.54+海光-0.5%×7.57+通富17.5%估×2.43+科创芯片ETF50.4%×3.41≈+47.3%",
+      "weighted_pnl_uplift_rule": "浮盈>30%可放宽集中度阈值至~50%,但44.29%叠加单股14.26%违规,综合仍判🔴",
+      "interpretation": "高浮盈≠低风险。估值分位普遍95-100百分位(澜起100/海光99.86/天孚98.35/华海96.12),浮盈本身就是回撤敞口。AI赛道一旦反转,加权-30%回撤=组合约-13.3pp损耗"
+    },
+    "per_position_check": [
+      {
+        "symbol": "688120 华海清科",
+        "price": 307.44,
+        "change_pct": -2.81,
+        "stop_loss": 295.0,
+        "dist_to_sl_pct": 4.22,
+        "take_profit": 380.0,
+        "dist_to_tp_pct": 23.6,
+        "status": "🟡 距止损仅4.22%-接近VETO加仓阈值;今日-2.81%为全组合最弱;PE 142x近2年96分位",
+        "action_hint": "禁止任何加仓;跌破305严格止损"
+      },
+      {
+        "symbol": "688008 澜起科技",
+        "price": 310.19,
+        "change_pct": 4.77,
+        "stop_loss": 251.3,
+        "dist_to_sl_pct": 23.43,
+        "take_profit": 312.0,
+        "dist_to_tp_pct": 0.58,
+        "status": "🔴 实质已触止盈(距止盈仅0.58%);PE 125x近2年100分位极值;浮盈+54.2%",
+        "action_hint": "立即部分止盈减仓30-50%,仓位6.08%降至3-4%"
+      },
+      {
+        "symbol": "300394 天孚通信",
+        "price": 309.68,
+        "change_pct": 4.92,
+        "stop_loss": 280.56,
+        "dist_to_sl_pct": 9.41,
+        "take_profit": 317.84,
+        "dist_to_tp_pct": 2.57,
+        "status": "🔴 仓位14.26%超10%单股上限+6/29反向IC操作;接近止盈;浮盈+94.1%;RSI 44.7短期弱势;PE 148x近2年98分位",
+        "action_hint": "强制减仓至10%以下(优先级最高);反弹317.84附近务必减仓4-5pp"
+      },
+      {
+        "symbol": "688041 海光信息",
+        "price": 374.14,
+        "change_pct": 5.44,
+        "stop_loss": 302.92,
+        "dist_to_sl_pct": 19.04,
+        "take_profit": 400.0,
+        "dist_to_tp_pct": 6.91,
+        "status": "🟡 距止盈6.91%;PE 302x近2年99.86分位为全组合最高估值;浮盈-0.5%几乎打平",
+        "action_hint": "不追高;放量突破380可止盈30%锁利;跌破MA20(316.7)需减仓"
+      },
+      {
+        "symbol": "002156 通富微电",
+        "price": 75.17,
+        "change_pct": 3.57,
+        "stop_loss": 64.0,
+        "dist_to_sl_pct": 17.46,
+        "take_profit": 81.0,
+        "dist_to_tp_pct": 7.76,
+        "status": "🟢 唯一估值合理标的(PE 76x近2年56分位);距止损充裕",
+        "action_hint": "继续持有;若回踩MA20(67.78)不破可作为AI赛道唯一加仓候选(限内部腾挪)"
+      },
+      {
+        "symbol": "588090 科创芯片ETF",
+        "price": 2.265,
+        "change_pct": 3.9,
+        "stop_loss": 1.9,
+        "dist_to_sl_pct": 19.21,
+        "take_profit": 2.3,
+        "dist_to_tp_pct": 1.55,
+        "status": "🟠 RSI 70.5超买;距止盈仅1.55%;6/29用户已减仓35%锁利+44%",
+        "action_hint": "继续持有剩余仓位;触及2.30可再减30%;跌破MA20(2.018)清仓"
+      },
+      {
+        "symbol": "159949 创业板50ETF",
+        "price": 2.09,
+        "change_pct": 3.21,
+        "stop_loss": 1.95,
+        "dist_to_sl_pct": 7.18,
+        "take_profit": 2.5,
+        "dist_to_tp_pct": 19.62,
+        "status": "🟢 仓位5.44%/浮盈+60.2%/分散配置合理",
+        "action_hint": "维持持有;触及2.20可减仓1pp"
+      },
+      {
+        "symbol": "510500 中证500ETF",
+        "price": 9.148,
+        "change_pct": 1.94,
+        "stop_loss": 8.57,
+        "dist_to_sl_pct": 6.74,
+        "take_profit": 9.5,
+        "dist_to_tp_pct": 3.85,
+        "status": "🟢 估值合理(PE 22x);距止盈3.85%临近;6/24 CIO要求加仓至6.5%(目前4.01%)",
+        "action_hint": "可承接半导体减仓资金小幅加仓0.5-1pp"
+      },
+      {
+        "symbol": "513300 纳斯达克ETF",
+        "price": 2.708,
+        "change_pct": 1.5,
+        "stop_loss": 2.52,
+        "dist_to_sl_pct": 7.46,
+        "take_profit": 2.861,
+        "dist_to_tp_pct": 5.65,
+        "status": "🟡 6/24 CIO已要求减至3.5%(目前5.06%超目标1.56pp);距止盈5.65%",
+        "action_hint": "执行未完成的减仓裁决,降至3.5%目标"
+      },
+      {
+        "symbol": "513650 标普500ETF",
+        "price": 1.866,
+        "change_pct": 0.32,
+        "stop_loss": 1.7,
+        "dist_to_sl_pct": 9.76,
+        "take_profit": 2.2,
+        "dist_to_tp_pct": 17.9,
+        "status": "🟢 仓位1.43%过小;6/24 CIO已确认维持底仓不动",
+        "action_hint": "维持持有,无操作"
+      },
+      {
+        "symbol": "518880 黄金ETF",
+        "price": 8.248,
+        "change_pct": -2.38,
+        "stop_loss": 8.5,
+        "dist_to_sl_pct": -2.96,
+        "take_profit": 10.5,
+        "dist_to_tp_pct": 27.31,
+        "status": "🔴 已跌破止损-2.96%;6/24 CIO清仓VETO override裁决未执行;RSI 37.4持续走弱;MACD死叉",
+        "action_hint": "立即市价清仓(IC决议执行违约项)"
+      }
+    ],
+    "veto_rules_triggered": [
+      {
+        "rule": "AI赛道集中度>40%硬阈值",
+        "current": "44.29%",
+        "verdict": "VETO任何AI方向新增建仓/加仓",
+        "exception": "002156通富微电(PE 76x/56分位)可作为AI内部腾挪唯一候选,但赛道总额不可上升"
+      },
+      {
+        "rule": "单股10%硬上限",
+        "violated": "300394天孚通信14.26%、688120华海清科10.54%",
+        "verdict": "VETO两者任何加仓;天孚必须减仓至10%以下"
+      },
+      {
+        "rule": "距止损≤3%即VETO加仓",
+        "violated": "688120华海清科距止损4.22%(临界);518880黄金已破止损-2.96%",
+        "verdict": "VETO两者加仓"
+      },
+      {
+        "rule": "IC决议执行违约项",
+        "list": [
+          "6/24 CIO 黄金ETF清仓裁决未执行(VETO override级别)",
+          "6/24 CIO 纳指减至3.5%裁决未执行(目前5.06%超1.56pp)",
+          "6/29 CIO 天孚通信减至7%裁决被反向操作(实际加至14.26%)"
+        ],
+        "verdict": "建议盘中优先补执行,而非新增建仓"
+      }
+    ],
+    "intraday_action_top3": [
+      {
+        "priority": 1,
+        "action": "天孚通信(300394)强制减仓至10%以下",
+        "reason": "单股14.26%突破10%硬上限+6/29反向IC操作+今日反弹至接近止盈位317.84,正是减仓窗口期",
+        "execution": "盘中反弹至309-318区间,减仓4-5pp(14.26%→10%以下),释放资金约4-5%作为现金或腾挪至002156通富微电"
+      },
+      {
+        "priority": 2,
+        "action": "黄金ETF(518880)立即市价清仓",
+        "reason": "已跌破止损8.5(-2.96%),6/24 CIO VETO override裁决至今未执行,继续持有=纪律失守",
+        "execution": "全仓1.75%市价清仓,补执行6/24 IC决议;释放资金1.75%"
+      },
+      {
+        "priority": 3,
+        "action": "澜起科技(688008)部分止盈减仓30-50%",
+        "reason": "现价310.19实质已触止盈312(距止盈0.58%),PE 125x近2年100%分位极端,浮盈+54.2%锁利最佳窗口",
+        "execution": "若放量突破312可移动止盈至320等候;若310-312区间放缓,减仓30%(6.08%→4-4.5%);释放资金约2pp"
+      }
+    ],
+    "portfolio_risk_factors": {
+      "concentration": "🔴 AI/半导体单赛道44.29%超阈+单股双违规(天孚14.26%/华海10.54%)",
+      "valuation": "🔴 AI核心标的估值分位普遍95-100百分位(澜起100/海光99.86/天孚98.35/华海96.12),仅002156合理",
+      "stop_loss_proximity": "🟡 华海距止损4.22%(临界);黄金已破止损",
+      "ic_discipline": "🔴 三大IC决议执行违约(黄金清仓/纳指减仓/天孚减仓),组合纪律性恶化",
+      "technical": "🟡 多只标的接近止盈位+RSI偏高(科创芯片ETF 70.5超买;海光接近布林上轨)",
+      "macro_news": "⚪ Industry/News未参与,无法验证宏观面/事件面;盘中决策应保守"
+    }
+  }
+}
