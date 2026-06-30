@@ -1,0 +1,80 @@
+{
+  "principal": "towney",
+  "monitor_time": "2026-06-30T13:20:00+08:00",
+  "has_alerts": true,
+  "alerts": [
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "alert_type": "止损触及",
+      "detail": "现价 8.281 已跌破止损价 8.5（跌幅 -1.99%），日内振幅 0.82%。注：CIO 6/24 已建议清仓，该止损线长期破位",
+      "current_price": 8.281,
+      "change_pct": -1.99,
+      "severity": "high"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "alert_type": "涨跌幅异常",
+      "detail": "涨幅 +4.86%（现价 372.07），日内振幅 6.64%，日内最高 377.79 / 最低 354.24，量比 1.09",
+      "current_price": 372.07,
+      "change_pct": 4.86,
+      "severity": "medium"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "alert_type": "涨跌幅异常",
+      "detail": "涨幅 +4.48%（现价 75.83），日内振幅 8.31%，日内最高 75.83 / 最低 69.80，接近止盈参考位 81",
+      "current_price": 75.83,
+      "change_pct": 4.48,
+      "severity": "medium"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "alert_type": "涨跌幅异常",
+      "detail": "涨幅 +4.35%（现价 308.93），日内振幅 7.81%，日内高点 313.13 已触及止盈参考位 312",
+      "current_price": 308.93,
+      "change_pct": 4.35,
+      "severity": "medium"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "alert_type": "涨跌幅异常",
+      "detail": "涨幅 +3.51%（现价 305.5），日内振幅 6.73%，日内最高 309.89 / 最低 290.02",
+      "current_price": 305.5,
+      "change_pct": 3.51,
+      "severity": "medium"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "alert_type": "涨跌幅异常",
+      "detail": "涨幅 +3.49%（现价 2.256），日内最高 2.269 接近止盈参考位 2.30",
+      "current_price": 2.256,
+      "change_pct": 3.49,
+      "severity": "medium"
+    },
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "alert_type": "振幅异常",
+      "detail": "日内振幅 9.34%（日内高点 332.55 / 低点 303.01），现价 313.37 涨跌幅 -0.93%，量比 1.84",
+      "current_price": 313.37,
+      "change_pct": -0.93,
+      "severity": "medium"
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "alert_type": "成交量异常",
+      "detail": "量比 2.10（>2.0 阈值），现价 1.87 涨跌幅 +0.54%，日内振幅 1.18%",
+      "current_price": 1.87,
+      "change_pct": 0.54,
+      "severity": "low"
+    }
+  ],
+  "summary": "总共 8 条异动：1 条高危（518880 止损触及），6 条中危（半导体/AI 板块普涨 +3%~+5% 含振幅异常），1 条低危（513650 成交量放大）。数据源降级：当前仅腾讯单源可用（东方财富/网易/新浪/同花顺均不可达），未经交叉验证。"
+}

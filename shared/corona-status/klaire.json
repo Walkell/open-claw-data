@@ -1,8 +1,8 @@
 {
   "principal": "klaire",
   "status": "running",
-  "cycle_id": "klaire-20260630-1140-monitor",
-  "step": "盘中监控启动，principal=klaire，推送目标=群oc_c19042fb899cda7eeca1bbbd7d981d1a",
-  "started_at": "2026-06-30T11:40:00+08:00",
-  "updated_at": "2026-06-30T11:40:00+08:00"
+  "cycle_id": "klaire-20250630-1330-monitor-pm",
+  "step": "盘中监控启动，spawn Monitor",
+  "started_at": "2026-06-30T13:30:00+08:00",
+  "updated_at": "2026-06-30T13:30:00+08:00"
 }
