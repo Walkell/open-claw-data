@@ -1,0 +1,117 @@
+{
+  "principal": "towney",
+  "timestamp": "2026-06-30T14:40:00+08:00",
+  "alerts": [
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "price": 372.52,
+      "change_pct": 4.98,
+      "volume": 38074145,
+      "volume_ratio": 0.90,
+      "alert_level": "预警",
+      "reason": "当日涨幅+4.98%，接近5%强预警阈值；现价接近止盈参考位区间(370.23-380.73)下沿"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创50ETF",
+      "price": 2.269,
+      "change_pct": 4.08,
+      "volume": 3323376,
+      "volume_ratio": 1.81,
+      "alert_level": "预警",
+      "reason": "当日涨幅+4.08%；量比1.81，放量上行；现价距止盈参考位2.30仅1.4%"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "price": 75.47,
+      "change_pct": 3.98,
+      "volume": 1411294,
+      "volume_ratio": 0.82,
+      "alert_level": "预警",
+      "reason": "当日涨幅+3.98%；现价进入关注区(76.63-80.11)下方边缘"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "price": 307.70,
+      "change_pct": 3.93,
+      "volume": 84836453,
+      "volume_ratio": 1.10,
+      "alert_level": "预警",
+      "reason": "当日涨幅+3.93%；现价307.70已突破止盈触发区(297.81-303.89)上沿，需评估是否止盈"
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "price": 2.087,
+      "change_pct": 3.06,
+      "volume": 9248540,
+      "volume_ratio": 0.82,
+      "alert_level": "预警",
+      "reason": "当日涨幅+3.06%；现价处于关注区(2.05-2.15)"
+    },
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "price": 323.09,
+      "change_pct": 2.14,
+      "volume": 19364184,
+      "volume_ratio": 1.46,
+      "alert_level": "正常",
+      "reason": "涨跌幅未触发±3%阈值，记录快照"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "price": 302.99,
+      "change_pct": 2.66,
+      "volume": 389286,
+      "volume_ratio": 0.77,
+      "alert_level": "正常",
+      "reason": "涨跌幅未触发±3%阈值"
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "price": 9.161,
+      "change_pct": 2.08,
+      "volume": 1741648,
+      "volume_ratio": 0.61,
+      "alert_level": "正常",
+      "reason": "涨跌幅未触发±3%阈值"
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "price": 2.703,
+      "change_pct": 1.31,
+      "volume": 1571366,
+      "volume_ratio": 0.72,
+      "alert_level": "正常",
+      "reason": "涨跌幅未触发±3%阈值"
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "price": 1.868,
+      "change_pct": 0.43,
+      "volume": 2737223,
+      "volume_ratio": 1.82,
+      "alert_level": "正常",
+      "reason": "涨跌幅未触发±3%阈值"
+    },
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "price": 8.365,
+      "change_pct": -0.99,
+      "volume": 3893427,
+      "volume_ratio": 1.02,
+      "alert_level": "正常",
+      "reason": "涨跌幅未触发±3%阈值"
+    }
+  ],
+  "summary": "共11个持仓标的，5个异动预警（强预警0个，预警5个：688041海光信息+4.98%、588090科创50ETF+4.08%、002156通富微电+3.98%、688008澜起科技+3.93%、159949创业板50ETF+3.06%）。整体偏多头普涨，半导体/科创板块领涨；无下跌方向异动；无成交量异常放大（量比>2）个例；6个标的涨跌幅在±3%以内。数据来源：腾讯gtimg + akshare东方财富双源验证，11只标的双源价差均在0.5%以内。"
+}

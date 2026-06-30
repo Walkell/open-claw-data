@@ -1,0 +1,212 @@
+{
+  "cycle_id": "towney-20260630-1418-watchlist",
+  "principal": "towney",
+  "flow_type": "三委员",
+  "decision_time": 1751266800000,
+  "scope": "观察池10只标的加减仓信号判断",
+  "data_quality_overall": "⚠️ 中低（Research单源gtimg未验证，Industry价格未做双源验证，拓荆疑似停牌数据异常）",
+
+  "votes": {
+    "research": {
+      "principal": "towney",
+      "agent": "research",
+      "data_quality": "⚠️ 单源未验证（仅gtimg可用，东方财富/网易/同花顺/新浪均不可用）",
+      "dimensions_summary": {
+        "002125_湘潭电化": { "technical": 4.0 },
+        "300762_上海瀚讯": { "technical": 6.0 },
+        "688072_拓荆科技": { "technical": 6.0, "note": "疑似停牌" },
+        "688234_天岳先进": { "technical": 7.5 },
+        "000988_华工科技": { "technical": 7.0 },
+        "563530_卫星ETF": { "technical": 6.0 },
+        "159227_航空航天ETF": { "technical": 5.0 },
+        "002156_通富微电": { "technical": 7.5, "note": "已持仓2.43%浮盈+17.5%" },
+        "300346_南大光电": { "technical": 7.0 },
+        "002463_沪电股份": { "technical": 6.0 }
+      }
+    },
+    "industry": {
+      "principal": "towney",
+      "agent": "industry",
+      "data_quality": "⚠️ 行业分析数据可用，价格未做双源验证",
+      "macro_score": 5.5,
+      "industry_score": 7.0,
+      "segment_scores": {
+        "电池材料": 5.0,
+        "军工通信/航天": 6.0,
+        "SiC碳化硅": 7.5,
+        "AI光通信/PCB": 9.0,
+        "半导体封测": 7.5,
+        "半导体设备": 8.5
+      }
+    },
+    "news": null,
+    "risk": {
+      "principal": "towney",
+      "agent": "risk",
+      "data_quality": "🟢",
+      "risk_score": 5.8,
+      "verdict": "黄牌",
+      "concentration_ai_semiconductor": "44.29%（持仓）+ 60%（观察池AI链）= 严重重叠"
+    }
+  },
+
+  "per_symbol_baseline": {
+    "002125_湘潭电化": {
+      "name": "湘潭电化",
+      "segment": "电池材料",
+      "tech": 4.0,
+      "fund": 5.0, "fin": 5.0, "val": 5.0,
+      "research_composite": 4.80,
+      "industry_composite": 5.25,
+      "news_modifier": 0,
+      "baseline_score": 4.94,
+      "baseline_action": "持有观察",
+      "risk_decision": "⛔建议移除"
+    },
+    "300762_上海瀚讯": {
+      "name": "上海瀚讯",
+      "segment": "军工通信/航天",
+      "tech": 6.0,
+      "fund": 5.0, "fin": 5.0, "val": 5.0,
+      "research_composite": 5.20,
+      "industry_composite": 5.75,
+      "news_modifier": 0,
+      "baseline_score": 5.31,
+      "baseline_action": "持有观察",
+      "risk_decision": "⛔建议移除"
+    },
+    "688072_拓荆科技": {
+      "name": "拓荆科技",
+      "segment": "半导体设备",
+      "tech": 6.0,
+      "fund": 5.0, "fin": 5.0, "val": 5.0,
+      "research_composite": 5.20,
+      "industry_composite": 7.00,
+      "news_modifier": 0,
+      "baseline_score": 5.62,
+      "baseline_action": "持有观察",
+      "risk_decision": "🟡持续观察"
+    },
+    "688234_天岳先进": {
+      "name": "天岳先进",
+      "segment": "SiC碳化硅",
+      "tech": 7.5,
+      "fund": 5.0, "fin": 5.0, "val": 5.0,
+      "research_composite": 5.50,
+      "industry_composite": 6.50,
+      "news_modifier": 0,
+      "baseline_score": 5.68,
+      "baseline_action": "持有观察",
+      "risk_decision": "🟡持续观察"
+    },
+    "000988_华工科技": {
+      "name": "华工科技",
+      "segment": "AI光通信/PCB",
+      "tech": 7.0,
+      "fund": 5.0, "fin": 5.0, "val": 5.0,
+      "research_composite": 5.40,
+      "industry_composite": 7.25,
+      "news_modifier": 0,
+      "baseline_score": 5.80,
+      "baseline_action": "持有观察",
+      "risk_decision": "🟡持续观察"
+    },
+    "563530_卫星ETF": {
+      "name": "卫星ETF",
+      "segment": "军工通信/航天",
+      "tech": 6.0,
+      "fund": 5.0, "fin": 5.0, "val": 5.0,
+      "research_composite": 5.20,
+      "industry_composite": 5.75,
+      "news_modifier": 0,
+      "baseline_score": 5.31,
+      "baseline_action": "持有观察",
+      "risk_decision": "🟡持续观察"
+    },
+    "159227_航空航天ETF": {
+      "name": "航空航天ETF",
+      "segment": "军工通信/航天",
+      "tech": 5.0,
+      "fund": 5.0, "fin": 5.0, "val": 5.0,
+      "research_composite": 5.00,
+      "industry_composite": 5.75,
+      "news_modifier": 0,
+      "baseline_score": 5.19,
+      "baseline_action": "持有观察",
+      "risk_decision": "🟡持续观察"
+    },
+    "002156_通富微电": {
+      "name": "通富微电",
+      "segment": "半导体封测",
+      "tech": 7.5,
+      "fund": 5.0, "fin": 5.0, "val": 5.0,
+      "research_composite": 5.50,
+      "industry_composite": 6.50,
+      "news_modifier": 0,
+      "baseline_score": 5.68,
+      "baseline_action": "持有观察",
+      "risk_decision": "🟢已持仓维持"
+    },
+    "300346_南大光电": {
+      "name": "南大光电",
+      "segment": "半导体设备/材料",
+      "tech": 7.0,
+      "fund": 5.0, "fin": 5.0, "val": 5.0,
+      "research_composite": 5.40,
+      "industry_composite": 7.00,
+      "news_modifier": 0,
+      "baseline_score": 5.74,
+      "baseline_action": "持有观察",
+      "risk_decision": "🟡持续观察"
+    },
+    "002463_沪电股份": {
+      "name": "沪电股份",
+      "segment": "AI光通信/PCB",
+      "tech": 6.0,
+      "fund": 5.0, "fin": 5.0, "val": 5.0,
+      "research_composite": 5.20,
+      "industry_composite": 7.25,
+      "news_modifier": 0,
+      "baseline_score": 5.68,
+      "baseline_action": "持有观察",
+      "risk_decision": "🟡持续观察（可触发建仓条件附后）"
+    }
+  },
+
+  "cio_final_decisions": {
+    "remove_from_watchlist": [
+      { "symbol": "002125", "name": "湘潭电化", "reason": "技术面空头排列(tech=4.0)+行业景气5.0乏力+营收增长停滞(0.46%)。虽跌破建仓线但左侧抄底风险高，分散价值不足。baseline 4.94勉强过4.0线但综合风险收益比差。" },
+      { "symbol": "300762", "name": "上海瀚讯", "reason": "估值极端(PE 128-673x)+现价45.37远超券商目标价28.28+仍亏损+距建仓线51.2%。军工航天ETF分散配置优于个股。baseline 5.31≠安全，估值泡沫风险大于行业逻辑。" }
+    ],
+    "keep_observing": [
+      { "symbol": "688072", "name": "拓荆科技", "note": "CVD/PVD龙头逻辑硬核+设备景气8.5，但RSI 87极度超买+疑似停牌+距建仓线51.3%。等复牌确认+回调至MA20(675)附近再评估" },
+      { "symbol": "688234", "name": "天岳先进", "note": "SiC全球衬底市占第一(27.6%)+景气7.5，但距建仓线38.9%+RSI 71超买。等Q2季报毛利率确认或回调至145以下" },
+      { "symbol": "000988", "name": "华工科技", "note": "AI光通信景气9.0+Q1净利+55.8%，但距建仓线31.3%+触及布林上轨。等回调至150以下或Q2季报上调目标价后触发建仓" },
+      { "symbol": "563530", "name": "卫星ETF", "note": "中国星网长期催化但MA60(1.44)中期压制+距建仓线15.9%。等MACD金叉+突破MA60或回调至1.25以下" },
+      { "symbol": "159227", "name": "航空航天ETF", "note": "均线空头+MACD负值短期弱势，距建仓线11%。等放量站回MA20(1.12)确认反转或回调至1.02以下" },
+      { "symbol": "300346", "name": "南大光电", "note": "光刻胶+前驱体逻辑硬，但RSI 78超买+突破布林上轨+距建仓线50.2%。等深度回调至MA20(66)附近或Q2季报验证" }
+    ],
+    "maintain_position": [
+      { "symbol": "002156", "name": "通富微电", "note": "已持仓2.43%浮盈+17.5%。封测景气7.5+AMD深度绑定+MACD红柱扩张。维持持有不补仓，止损64(成本附近)，关注MA20(67.4)支撑" }
+    ],
+    "entry_signal": [
+      { "symbol": "002463", "name": "沪电股份", "note": "AI服务器PCB核心+景气9.0+今日+7.83%大阳线。但⚠️ AI链集中度已超40%红线，禁止新增建仓。等现有AI持仓降仓释放额度后，回调至135-138再建10%试探仓。当前仅维持观察。" }
+    ]
+  },
+
+  "risk_override": {
+    "risk_score": 5.8,
+    "verdict": "黄牌",
+    "cio_action": "接受Risk黄牌判断，无override。全票通过Risk移除湘潭电化+上海瀚讯建议。AI集中度超标(>40%)触发禁止建仓/加仓规则，沪电股份建仓信号暂时搁置。"
+  },
+
+  "concentration_management": {
+    "current_ai_holding_pct": "44.29%",
+    "threshold": "40%",
+    "status": "🟠 超标",
+    "action": "禁止AI赛道新增建仓/加仓，直到集中度降至40%以下。沪电/华工/拓荆/天岳/南大/通富共6只AI链观察标的均受此限制。",
+    "deconcentration_priority": "若需降仓：通富微电(002156)浮盈+17.5%最高，为AI链首选减仓标的（但当前技术面健康，暂不建议主动减仓）。观察池中AI链标的均为非持仓，无减仓操作。"
+  },
+
+  "report_summary": "【观察池半年度复盘】10只标的综合裁决：⛔移除2只（湘潭电化/上海瀚讯），🟡持续观察6只，🟢已持仓维持1只（通富微电），🟡沪电股份有建仓信号但受AI集中度超标暂时搁置。整体风险5.8黄牌，AI链集中度44.29%超40%红线是核心制约。建议下半年优先降AI集中度再考虑新增AI建仓。"
+}

@@ -3,141 +3,230 @@
   "agent": "research",
   "cycle_id": "towney-20260630-1418-watchlist",
   "data_quality": {
-    "sources": "gtimg(腾讯)单源验证",
-    "note": "东方财富akshare连接被拒，网易502，同花顺404，新浪403。仅腾讯gtimg可用。拓荆科技(688072)行情显示832.00/0.00%，疑似停牌或数据延迟（最后K线日期6/26），价格待验证。",
-    "688072_warning": "拓荆科技gtimg显示832.00涨跌0%高低0，K线截止6/26，可能停牌中",
+    "sources": "gtimg(腾讯) 单源验证",
+    "note": "东方财富akshare连接被拒、网易502、同花顺404、新浪403。仅腾讯gtimg可用。拓荆科技(688072)gtimg显示832.00/0.00%/高低0，疑似今日停牌（K线止于6/26收832）。所有技术指标基于腾讯K线前复权数据计算。",
     "verification": "⚠️ 单源未验证"
   },
   "data": {
     "002125": {
-      "score": 4.0,
-      "note": "跌破MA20(16.8)；跌破MA60(15.0)；RSI=35中性；MACD绿柱",
-      "atr_pct": 10.47,
-      "bollinger_upper": 20.66,
-      "ma20": 16.84,
-      "ma60_high": 20.86,
-      "vol_ratio": 0.63,
-      "rsi14": 35.0,
-      "macd_dif": -0.22,
+      "name": "湘潭电化",
+      "price": 13.67,
+      "change_pct": 2.01,
+      "dimensions": {
+        "technical": {
+          "score": 4.0,
+          "note": "跌破MA20(16.8)且跌破MA60(15.0)，均线空头排列；RSI=35偏弱但未超卖；MACD绿柱持续；布林下轨13.02勉强支撑；量比0.6缩量。短期下行趋势未扭转，但距布林下轨仅4.8%有技术反弹需求",
+          "atr_pct": 10.47,
+          "bollinger_upper": 20.66,
+          "ma20": 16.84,
+          "ma60_high": 20.86,
+          "vol_ratio": 0.63,
+          "rsi14": 35.0,
+          "macd_dif": -0.22
+        }
+      },
       "distance_to_entry_pct": -2.4,
-      "entry_signal": "是"
+      "entry_signal": "是",
+      "entry_analysis": "已跌破14元建仓线(13.67)，价格条件满足。但技术面空头排列+缩量阴跌，不宜左侧抄底。建议等放量阳线确认止跌或RSI金叉后再触发建仓流程",
+      "summary": "快照18.78→现价13.67跌27.2%。价格已满足建仓条件但技术面极度弱势，锰系电池材料景气度3/5未见改善信号。建议CIO重新评估建仓时机"
     },
     "300762": {
-      "score": 6.0,
-      "note": "站上MA20(38.6)；站上MA60(39.5)；RSI=70中性；MACD红柱；触及布林上轨",
-      "atr_pct": 7.17,
-      "bollinger_upper": 45.37,
-      "ma20": 38.61,
-      "ma60_high": 49.44,
-      "vol_ratio": 1.02,
-      "rsi14": 69.7,
-      "macd_dif": 1.42,
+      "name": "上海瀚讯",
+      "price": 45.37,
+      "change_pct": 3.35,
+      "dimensions": {
+        "technical": {
+          "score": 6.0,
+          "note": "站上MA20(38.6)且站上MA60(39.5)，均线多头排列；RSI=70触及超买边缘；MACD红柱扩张中；触及布林上轨(45.37)精确到位；ATR 7.17%波动率偏高。短期强势但已到阻力位",
+          "atr_pct": 7.17,
+          "bollinger_upper": 45.37,
+          "ma20": 38.61,
+          "ma60_high": 49.44,
+          "vol_ratio": 1.02,
+          "rsi14": 69.7,
+          "macd_dif": 1.42
+        }
+      },
       "distance_to_entry_pct": 51.2,
-      "entry_signal": "否"
+      "entry_signal": "否",
+      "entry_analysis": "距建仓线30元溢价51.2%，短期无建仓可能。技术面强势但RSI接近超买+触及布林上轨，有回调压力。军工通信+千帆星座双驱动逻辑未变，但需等回调",
+      "summary": "快照37.48→现价45.37涨21.0%。短期强势但距建仓线太远，等回调+扭亏信号。目标48仅5.8%空间，需重评估目标价"
     },
     "688072": {
-      "score": 6.0,
-      "note": "站上MA20(675.2)；站上MA60(536.7)；RSI=87超买；MACD红柱",
-      "atr_pct": 7.34,
-      "bollinger_upper": 844.79,
-      "ma20": 675.16,
-      "ma60_high": 865.0,
-      "vol_ratio": 0.81,
-      "rsi14": 87.0,
-      "macd_dif": 67.51,
+      "name": "拓荆科技",
+      "price": 832.0,
+      "change_pct": 0.0,
+      "dimensions": {
+        "technical": {
+          "score": 6.0,
+          "note": "⚠️ 今日疑似停牌（gtimg显示0%涨跌/高低0）。K线止于6/26收832。6/12以来从645暴涨至832(+29%)，RSI=87严重超买；MACD红柱；触及布林上轨(845)；6/24单日+6.5%放量突破。极度超买需警惕回调",
+          "atr_pct": 7.34,
+          "bollinger_upper": 844.79,
+          "ma20": 675.16,
+          "ma60_high": 865.0,
+          "vol_ratio": 0.81,
+          "rsi14": 87.0,
+          "macd_dif": 67.51
+        }
+      },
       "distance_to_entry_pct": 51.3,
-      "entry_signal": "否"
+      "entry_signal": "否",
+      "entry_analysis": "距建仓线550元溢价51.3%，RSI 87极度超买。短期暴涨后回调风险极高，不宜追高。等回调至550以下可能需30%+跌幅，短期内概率低",
+      "summary": "快照613.88→现价832涨35.5%。CVD/PVD龙头逻辑未变但短期超买严重。若今日停牌需关注复牌公告。目标800已接近(仅3.8%空间)，建议上调目标价"
     },
     "688234": {
-      "score": 7.5,
-      "note": "站上MA20(146.8)；站上MA60(128.2)；RSI=71超买；MACD红柱",
-      "atr_pct": 8.32,
-      "bollinger_upper": 183.6,
-      "ma20": 146.79,
-      "ma60_high": 188.88,
-      "vol_ratio": 0.9,
-      "rsi14": 71.5,
-      "macd_dif": 10.74,
+      "name": "天岳先进",
+      "price": 173.61,
+      "change_pct": -0.95,
+      "dimensions": {
+        "technical": {
+          "score": 7.5,
+          "note": "站上MA20(146.8)且站上MA60(128.2)，均线多头排列强势；RSI=71超买边缘；MACD红柱扩张；布林上轨183.6尚有5.7%空间；连续10日放量(日均2000万+)资金活跃。短期强势但RSI需警惕",
+          "atr_pct": 8.32,
+          "bollinger_upper": 183.6,
+          "ma20": 146.79,
+          "ma60_high": 188.88,
+          "vol_ratio": 0.9,
+          "rsi14": 71.5,
+          "macd_dif": 10.74
+        }
+      },
       "distance_to_entry_pct": 38.9,
-      "entry_signal": "否"
+      "entry_signal": "否",
+      "entry_analysis": "距建仓区间120-125溢价38.9%。三个建仓条件：(1)120-125企稳缩量→未满足(现173远高于此) (2)MACD金叉→已发生但非在建仓区间 (3)Q2毛利率回升→待季报验证。当前不宜追高",
+      "summary": "快照123.80→现价173.61涨40.2%。SiC衬底超级景气逻辑验证，但已大幅脱离建仓区间。等待回调或Q2季报确认毛利率回升后重新评估建仓位。目标200仅15.2%空间"
     },
     "000988": {
-      "score": 7.0,
-      "note": "站上MA20(162.3)；站上MA60(141.3)；RSI=65中性；MACD红柱；触及布林上轨",
-      "atr_pct": 5.79,
-      "bollinger_upper": 183.69,
-      "ma20": 162.33,
-      "ma60_high": 187.66,
-      "vol_ratio": 1.32,
-      "rsi14": 65.1,
-      "macd_dif": 7.88,
+      "name": "华工科技",
+      "price": 183.85,
+      "change_pct": 3.85,
+      "dimensions": {
+        "technical": {
+          "score": 7.0,
+          "note": "站上MA20(162.3)且站上MA60(141.3)，均线多头排列；RSI=65中性偏强；MACD红柱但DIF-DEA收窄；触及布林上轨(183.69)精确到位；放量1.3x。短期强势但上轨阻力+MACD动能减弱",
+          "atr_pct": 5.79,
+          "bollinger_upper": 183.69,
+          "ma20": 162.33,
+          "ma60_high": 187.66,
+          "vol_ratio": 1.32,
+          "rsi14": 65.1,
+          "macd_dif": 7.88
+        }
+      },
       "distance_to_entry_pct": 31.3,
-      "entry_signal": "否"
+      "entry_signal": "否",
+      "entry_analysis": "距建仓线140元溢价31.3%。技术面强势但距建仓线太远。3.2T CPO+A+H IPO逻辑未变，Q1净利+55.8%支撑。需等回调至140以下",
+      "summary": "快照149.29→现价183.85涨23.2%。AI光模块逻辑强劲但已大幅脱离建仓区间。目标220仅19.7%空间，建议上调目标价或等待回调"
     },
     "563530": {
-      "score": 6.0,
-      "note": "站上MA20(1.3)；跌破MA60(1.4)；RSI=53中性；MACD红柱",
-      "atr_pct": 3.67,
-      "bollinger_upper": 1.39,
-      "ma20": 1.35,
-      "ma60_high": 1.69,
-      "vol_ratio": 1.03,
-      "rsi14": 53.3,
-      "macd_dif": -0.02,
+      "name": "卫星ETF",
+      "price": 1.391,
+      "change_pct": 4.04,
+      "dimensions": {
+        "technical": {
+          "score": 6.0,
+          "note": "站上MA20(1.35)但跌破MA60(1.44)，均线纠结；RSI=53中性；MACD红柱微弱(DIF=-0.02接近零轴)；触及布林上轨(1.39)；今日+4.04%放量突破。短期反弹但中期MA60压制",
+          "atr_pct": 3.67,
+          "bollinger_upper": 1.39,
+          "ma20": 1.35,
+          "ma60_high": 1.69,
+          "vol_ratio": 1.03,
+          "rsi14": 53.3,
+          "macd_dif": -0.02
+        }
+      },
       "distance_to_entry_pct": 15.9,
-      "entry_signal": "否"
+      "entry_signal": "否",
+      "entry_analysis": "距建仓线1.20溢价15.9%。MACD即将金叉但MA60(1.44)压制明显。中国星网1.3万颗低轨卫星组网推进是长期催化剂，但短期需等回调",
+      "summary": "快照1.327→现价1.391涨4.8%。商业航天长期逻辑确定但当前价格不具吸引力。等回调至1.20以下或突破MA60确认趋势"
     },
     "159227": {
-      "score": 5.0,
-      "note": "跌破MA20(1.1)；跌破MA60(1.2)；RSI=49中性；MACD红柱",
-      "atr_pct": 3.29,
-      "bollinger_upper": 1.16,
-      "ma20": 1.12,
-      "ma60_high": 1.4,
-      "vol_ratio": 0.98,
-      "rsi14": 48.8,
-      "macd_dif": -0.03,
+      "name": "航空航天ETF",
+      "price": 1.11,
+      "change_pct": 3.26,
+      "dimensions": {
+        "technical": {
+          "score": 5.0,
+          "note": "跌破MA20(1.12)且跌破MA60(1.23)，均线空头排列；RSI=49中性偏弱；MACD微弱红柱(DIF=-0.03)；布林下轨1.08支撑；今日+3.26%反弹但仍在MA20下方。中期弱势未改",
+          "atr_pct": 3.29,
+          "bollinger_upper": 1.16,
+          "ma20": 1.12,
+          "ma60_high": 1.4,
+          "vol_ratio": 0.98,
+          "rsi14": 48.8,
+          "macd_dif": -0.03
+        }
+      },
       "distance_to_entry_pct": 11.0,
-      "entry_signal": "否"
+      "entry_signal": "否",
+      "entry_analysis": "距建仓线1.00溢价11.0%。均线空头+MACD负值，短期弱势。军工防御属性在当前市场环境下未体现。需等回调至1.00以下",
+      "summary": "快照1.101→现价1.110涨0.8%基本持平。空天一体属性长期看好但短期弱势。等回调至1.00以下或放量站回MA20确认反转"
     },
     "002156": {
-      "score": 7.5,
-      "note": "站上MA20(67.4)；站上MA60(58.5)；RSI=62中性；MACD红柱",
-      "atr_pct": 6.68,
-      "bollinger_upper": 78.36,
-      "ma20": 67.44,
-      "ma60_high": 79.38,
-      "vol_ratio": 0.85,
-      "rsi14": 62.3,
-      "macd_dif": 3.53,
+      "name": "通富微电",
+      "price": 75.14,
+      "change_pct": 3.53,
+      "dimensions": {
+        "technical": {
+          "score": 7.5,
+          "note": "⚠️ 已持仓2.43%(成本63.95)。站上MA20(67.4)且站上MA60(58.5)，均线多头排列；RSI=62中性偏强；MACD红柱扩张(DIF>DEA)；布林上轨78.36尚有4.3%空间。浮盈+17.5%。技术面健康",
+          "atr_pct": 6.68,
+          "bollinger_upper": 78.36,
+          "ma20": 67.44,
+          "ma60_high": 79.38,
+          "vol_ratio": 0.85,
+          "rsi14": 62.3,
+          "macd_dif": 3.53
+        }
+      },
       "distance_to_entry_pct": 29.6,
-      "entry_signal": "已持仓"
+      "entry_signal": "已持仓",
+      "entry_analysis": "已持仓2.43%成本63.95，浮盈+17.5%。建仓触发条件(54-58缩量企稳)已失效，当前远高于建仓区间。持仓逻辑：MACD金叉+站回MA20已满足。止损64(成本附近)，止盈81",
+      "summary": "快照61.44→现价75.14涨22.3%。AMD深度绑定+Q1利润+225%逻辑强劲但毛利率仅14.6%。建议维持持有，关注MA20(67.4)支撑，跌破需警惕"
     },
     "300346": {
-      "score": 7.0,
-      "note": "站上MA20(66.3)；站上MA60(56.9)；RSI=78超买；MACD红柱；触及布林上轨",
-      "atr_pct": 6.98,
-      "bollinger_upper": 88.95,
-      "ma20": 66.31,
-      "ma60_high": 93.7,
-      "vol_ratio": 1.08,
-      "rsi14": 78.3,
-      "macd_dif": 7.73,
+      "name": "南大光电",
+      "price": 91.65,
+      "change_pct": 1.83,
+      "dimensions": {
+        "technical": {
+          "score": 7.0,
+          "note": "站上MA20(66.3)且站上MA60(56.9)，均线多头排列极强势；RSI=78超买；MACD红柱扩张(DIF=7.73强势)；突破布林上轨(88.95)进入超涨区；放量1.1x。短期极度强势但超买风险累积",
+          "atr_pct": 6.98,
+          "bollinger_upper": 88.95,
+          "ma20": 66.31,
+          "ma60_high": 93.7,
+          "vol_ratio": 1.08,
+          "rsi14": 78.3,
+          "macd_dif": 7.73
+        }
+      },
       "distance_to_entry_pct": 50.2,
-      "entry_signal": "否"
+      "entry_signal": "否",
+      "entry_analysis": "距建仓线MA20≈61元溢价50.2%。四个建仓前置条件无一满足。RSI 78超买+突破布林上轨，短期回调风险高。等Q2季报验证前驱体收入和PE回落后再评估",
+      "summary": "快照74.72→现价91.65涨22.7%。光刻胶+前驱体国产替代逻辑硬核但已大幅脱离建仓区间。需等深度回调或季报验证后再考虑"
     },
     "002463": {
-      "score": 6.0,
-      "note": "站上MA20(139.3)；站上MA60(114.9)；RSI=56中性；MACD绿柱",
-      "atr_pct": 7.31,
-      "bollinger_upper": 155.58,
-      "ma20": 139.34,
-      "ma60_high": 156.33,
-      "vol_ratio": 0.85,
-      "rsi14": 56.1,
-      "macd_dif": 8.07,
+      "name": "沪电股份",
+      "price": 152.11,
+      "change_pct": 7.83,
+      "dimensions": {
+        "technical": {
+          "score": 6.0,
+          "note": "站上MA20(139.3)且站上MA60(114.9)，均线多头排列；RSI=56中性；MACD绿柱微弱(DIF略低于DEA，即将金叉)；布林上轨155.6尚有2.3%空间。今日+7.83%放量大阳线突破，强势反弹",
+          "atr_pct": 7.31,
+          "bollinger_upper": 155.58,
+          "ma20": 139.34,
+          "ma60_high": 156.33,
+          "vol_ratio": 0.85,
+          "rsi14": 56.1,
+          "macd_dif": 8.07
+        }
+      },
       "distance_to_entry_pct": 10.2,
-      "entry_signal": "否"
+      "entry_signal": "否",
+      "entry_analysis": "距建仓方案第一档135-138溢价10.2%。6/29 CIO WAIT裁决维持。今日+7.83%大阳线强势反弹但MACD尚未金叉。等回调至135-138缩量回踩MA20再建10%试探仓",
+      "summary": "快照141.06→现价152.11涨7.8%。AI服务器PCB核心标的，6/29 CIO裁决baseline=7.21≥7.0方向看多。今日大涨但建仓方案第一档135-138尚未触及。维持WAIT，等回调"
     }
   }
 }

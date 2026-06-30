@@ -1,31 +1,48 @@
 {
   "principal": "klaire",
-  "checked_at": "2026-06-30T13:50:00+08:00",
-  "positions_checked": 6,
+  "check_time": "2026-06-30T14:50:00+08:00",
   "alerts": [
     {
       "symbol": "002472",
       "name": "双环传动",
       "price": 41.51,
       "change_pct": 9.99,
-      "alert_type": "大涨+9.99%，逼近涨停，量比498K"
+      "amplitude": 9.01,
+      "alert_type": "涨跌幅超3%,振幅超5%",
+      "detail": "今日涨停（+9.99%），振幅9.01%，量比1.49，已突破止盈价45.2前关键节点"
     },
     {
       "symbol": "588080",
       "name": "科创50ETF",
-      "price": 2.262,
-      "change_pct": 3.76,
-      "alert_type": "涨+3.76%，量比6.1M，科创50板块走强"
+      "price": 2.273,
+      "change_pct": 4.27,
+      "amplitude": 5.23,
+      "alert_type": "涨跌幅超3%,振幅超5%",
+      "detail": "现价2.273，涨幅4.27%，振幅5.23%，盘中走强"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "price": 2.662,
+      "change_pct": 2.46,
+      "amplitude": 5.43,
+      "alert_type": "振幅超5%",
+      "detail": "现价2.662，涨2.46%但盘中振幅5.43%，震荡偏大"
     },
     {
       "symbol": "600699",
       "name": "均胜电子",
-      "price": 21.63,
-      "change_pct": 3.49,
-      "alert_type": "涨+3.49%，量比302K，放量上涨"
+      "price": 21.62,
+      "change_pct": 3.44,
+      "amplitude": 6.08,
+      "alert_type": "涨跌幅超3%,振幅超5%",
+      "detail": "现价21.62，涨3.44%，振幅6.08%，仍在止损价24下方"
     }
   ],
+  "no_alert": [
+    {"symbol": "002011", "name": "盾安环境", "price": 10.63, "change_pct": 1.43, "amplitude": 2.77},
+    {"symbol": "603298", "name": "杭叉集团", "price": 23.86, "change_pct": -2.41, "amplitude": 4.13}
+  ],
   "has_alerts": true,
-  "data_quality": "⚠️ 单源未验证 - 仅腾讯gtimg可用，网易502、同花顺404、新浪403",
-  "summary": "3个异动：双环传动+9.99%涨停、科创50ETF+3.76%、均胜电子+3.49%"
+  "summary": "共4条预警（双环传动涨停、科创50ETF/均胜电子涨幅+振幅双触发、信创ETF振幅触发）"
 }
