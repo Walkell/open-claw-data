@@ -1,0 +1,8 @@
+{
+  "cycle_id": "towney-20260630-1418-watchlist",
+  "principal": "towney",
+  "flow_type": "三委员",
+  "positions_table_id": "tblUeTGMf0IKJ8Pk",
+  "watchlist_table_id": "tblaLlSQp8tEcWgJ",
+  "task": "观察池分析：对 10 只活跃标的（观察中/已入池）做技术+行业筛选，输出是否有加减仓信号，不做建仓决策"
+}

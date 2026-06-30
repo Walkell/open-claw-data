@@ -1,0 +1,25 @@
+{
+  "principal": "towney",
+  "timestamp": "2026-06-30T14:00:00+08:00",
+  "alerts": [
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "alert_type": "🔴 止损触及",
+      "detail": "现价 8.283，已跌破止损价 8.50（昨收8.449，今日-1.96%）；6/24 CIO 已 VETO override 建议清仓，决议未执行的话本次触发请立即处理",
+      "severity": "critical"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "alert_type": "🔵 止损线审查",
+      "detail": "现价 75.45，浮盈 18.0%，浮盈保护率仅 0.4%（止损 64.00 几乎等于成本 63.95），若触及止损将损失 99.6% 浮盈，止损线已实质性滞后；建议告知 Dexter 触发 IC 评估是否上移止损",
+      "severity": "info"
+    }
+  ],
+  "total_alerts": 2,
+  "data_quality": "single_source_unverified",
+  "data_source_note": "akshare MCP / 网易 / 同花顺 / 新浪 / 东方财富 直连均不可用（502/403/404/DNS），仅腾讯 gtimg 单源可用；价格未经交叉验证，如发现异常请告知 Dexter 修正",
+  "positions_monitored": 11,
+  "snapshot_written": 11
+}
