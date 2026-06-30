@@ -196,19 +196,20 @@
       }
     },
     "65d4dcfe-f437-49b8-ba64-d35ed4bd43fe": {
-      "updatedAtMs": 1782796812517,
+      "updatedAtMs": 1782798016381,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0,20,40 13-14 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1782798000000,
-        "lastRunAtMs": 1782796800005,
+        "nextRunAtMs": 1782799200000,
+        "lastRunAtMs": 1782798000004,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 12512,
+        "lastDurationMs": 16377,
         "lastDeliveryStatus": "not-delivered",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
         "consecutiveSkipped": 0,
-        "lastDelivered": false
+        "lastDelivered": false,
+        "runningAtMs": 1782799200001
       }
     },
     "5b8507c5-b4d5-4000-8481-2f8709c7c27f": {
@@ -244,20 +245,19 @@
       }
     },
     "611a2148-db4b-4b09-9a1c-60ff48625578": {
-      "updatedAtMs": 1782796213188,
+      "updatedAtMs": 1782798617094,
       "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"10,30,50 13-14 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
       "state": {
-        "nextRunAtMs": 1782797400000,
-        "lastRunAtMs": 1782796200004,
+        "nextRunAtMs": 1782799800000,
+        "lastRunAtMs": 1782798600004,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 13184,
+        "lastDurationMs": 17090,
         "lastDeliveryStatus": "not-delivered",
         "lastFailureNotificationDeliveryStatus": "not-requested",
         "consecutiveErrors": 0,
         "consecutiveSkipped": 0,
-        "lastDelivered": false,
-        "runningAtMs": 1782797400002
+        "lastDelivered": false
       }
     }
   }
