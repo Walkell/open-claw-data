@@ -1,0 +1,104 @@
+{
+  "principal": "klaire",
+  "monitor_time": "2026-06-30T11:00:00+08:00",
+  "data_source": "腾讯gtimg 单源（网易/同花顺/新浪三个备源均不可用，数据未经交叉验证）",
+  "data_quality_warning": "⚠️ 仅腾讯 gtimg 单源可用，akshare MCP 未配置，akshare__get_news_data 不可调用，新闻分析降级",
+  "has_alert": true,
+  "alert_count": 4,
+  "positions_monitored": 6,
+  "alerts": [
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "current_price": 40.59,
+      "cost_price": 40.693,
+      "change_pct": 7.55,
+      "pnl_pct_vs_cost": -0.25,
+      "stop_loss": 40.81,
+      "take_profit": 45.2,
+      "alert_level": "strong",
+      "alert_type": "强异动-大涨+止损触及",
+      "reason": "当日大涨 +7.55%（强异动阈值±5%），机器人减速器+新能源齿轮板块异动；但现价 40.59 仍低于止损价 40.81，触发 🔴 止损线（建议告知 Butler 决策）。新闻源不可用，无法验证异动原因（财报/产业事件待人工核实）。",
+      "volume_ratio_raw": "274960（腾讯返回原始量比字段异常，疑似累计成交量，量比待人工核对）"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "current_price": 21.58,
+      "cost_price": 24.89,
+      "change_pct": 3.25,
+      "pnl_pct_vs_cost": -13.30,
+      "stop_loss": 24,
+      "take_profit": 33,
+      "alert_level": "mild",
+      "alert_type": "弱异动-反弹",
+      "reason": "当日反弹 +3.25%（弱异动阈值±3%），但累计浮亏 -13.3%，现价仍远低于止损 24 元（已破止损区间）。备注显示『已破止损24不补、反弹24先出』。新闻源不可用，反弹原因待核实。",
+      "volume_ratio_raw": "186938"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "current_price": 2.239,
+      "cost_price": 1.65,
+      "change_pct": 2.71,
+      "pnl_pct_vs_cost": 35.70,
+      "stop_loss": 1.55,
+      "take_profit": 1.98,
+      "alert_level": "mild",
+      "alert_type": "止盈深度突破",
+      "reason": "当日涨幅 +2.71% 未达异动阈值，但现价 2.239 已超止盈 1.98 达 13%，浮盈率 +35.7% 显著超出止盈线。浮盈保护率较高（止损1.55 vs 成本1.65），但止盈线已严重滞后，建议告知 Butler 评估是否上调止盈/部分止盈。"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "current_price": 2.645,
+      "cost_price": 1.774,
+      "change_pct": 1.81,
+      "pnl_pct_vs_cost": 49.10,
+      "stop_loss": 1.85,
+      "take_profit": 2.3,
+      "alert_level": "mild",
+      "alert_type": "止盈深度突破",
+      "reason": "当日涨幅 +1.81% 未达异动阈值，但现价 2.645 已超止盈 2.3 达 15%，累计浮盈 +49.1%。备注显示『6/23 已减半锁利』。止盈线明显滞后于当前盈利水平，建议告知 Butler 启动 IC 评估是否上移止盈/止损。"
+    }
+  ],
+  "non_alert_positions": [
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "current_price": 10.55,
+      "change_pct": 0.67,
+      "note": "未达异动阈值；现价 10.55 接近止损 10.5（距止损 +0.5%）⚠️ 警示"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "current_price": 23.92,
+      "change_pct": -2.17,
+      "note": "未达异动阈值；现价 23.92 接近止损 23（距止损 +3.85%）"
+    }
+  ],
+  "critical_findings": [
+    "🔴 002472 双环传动：现价 40.59 已低于止损价 40.81，止损触及",
+    "🟡 600699 均胜电子：累计浮亏 13.3%，已破止损区间（备注已注明）",
+    "🟡 002011 盾安环境：现价距止损仅 +0.5%，逼近止损",
+    "🔵 588080 科创50ETF + 159540 信创ETF：止盈线均已严重滞后于实际盈利（+35.7% / +49.1%），建议 IC 评估"
+  ],
+  "summary": "klaire 6只活跃持仓中 4 项触发监控阈值。最紧急：双环传动（002472）当日 +7.55% 强反弹但仍跌破止损（现价 40.59 vs 止损 40.81）；均胜电子（600699）+3.25% 反弹但累计浮亏已破止损区。两只ETF（科创50ETF/信创ETF）已远超止盈线，建议告知 Butler 触发 IC 评估止盈调整。数据降级：本次监控仅腾讯单源可用，新闻接口不可用，异动原因需人工核实。",
+  "skipped_positions": [
+    {
+      "symbol": "600808",
+      "name": "马钢股份",
+      "reason": "状态=已卖出，跳过监控"
+    }
+  ],
+  "data_source_status": {
+    "tencent_gtimg": "OK",
+    "netease_163": "FAIL HTTP 502",
+    "10jqka": "FAIL HTTP 404",
+    "sina": "FAIL HTTP 403",
+    "akshare_mcp": "NOT AVAILABLE",
+    "akshare_get_news_data": "NOT AVAILABLE",
+    "web_search": "FAIL bot-detection"
+  }
+}
