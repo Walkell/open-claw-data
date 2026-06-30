@@ -1,0 +1,323 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260630-1219-thresholds",
+  "generated_at": "2026-06-30T12:30:00+08:00",
+  "data": {
+    "task_type": "intraday_threshold_approval",
+    "risk_score": 5.9,
+    "verdict": "NOC",
+    "veto_reason": "",
+    "dimensions": {
+      "financial_health": {
+        "score": 6.5,
+        "note": "海光信息PE 272x极高估值，澜起科技毛利率69.8%质地佳，板块盈利波动加大",
+        "source": "self"
+      },
+      "valuation": {
+        "score": 6.5,
+        "note": "澜起、海光已突破止盈线；天孚通信浮盈94%估值悖离",
+        "source": "self"
+      },
+      "industry_cycle": {
+        "score": 3.2,
+        "note": "Industry给6.8分（高景气），换算风险维度=10-6.8=3.2",
+        "source": "industry_agent"
+      },
+      "technical": {
+        "score": 7.5,
+        "note": "11只标的5违规+1触发+5警戒，2只破止盈、1只破止损、1只距止损<4%",
+        "source": "self"
+      },
+      "macro": {
+        "score": 5.5,
+        "note": "Industry给4.5分（偏弱），换算=10-4.5=5.5。PMI 50.0%临界+社融缩量+SOX暴跌传导",
+        "source": "industry_agent"
+      },
+      "news_sentiment": {
+        "score": 5.0,
+        "note": "News委员未参与（三委员流程），数据缺失默认5分",
+        "source": "not_participated"
+      },
+      "weighted_calc": "0.25*6.5 + 0.20*6.5 + 0.15*3.2 + 0.15*7.5 + 0.15*5.5 + 0.10*5.0 = 5.855"
+    },
+    "summary": "阈值方案整体合规可批准（5.9分未达7分VETO线），但叠加5违规+1触发的存量风险已逼近警戒，须按本批准的五级阈值严格盘中监控。"
+  },
+  "sector_level_thresholds": {
+    "ai_semiconductor": {
+      "scope": "华海清科+澜起科技+海光信息+通富微电+天孚通信+科创芯片ETF",
+      "current_pct": 44.29,
+      "safe_zone": "<=30%",
+      "watch_zone": "30-35%",
+      "warning_zone": "35-40%",
+      "trigger_zone": ">40%",
+      "violation": ">45%",
+      "current_status": "TRIGGER (44.29% > 40%) → 须主动减仓至<=35%硬上限",
+      "final_approval": "approved (adopted from industry_agent)"
+    },
+    "single_stock_cap": {
+      "safe": "<=8%",
+      "watch": "8-10%",
+      "warning": "10-12%",
+      "trigger": "12-15%",
+      "violation": ">15%",
+      "note": "Risk校订：采纳Industry五级阈值取代Research单层10%上限。华海清科10.54%→warning，天孚通信14.26%→trigger",
+      "final_approval": "approved (replaces Research flat 10% cap)"
+    },
+    "overseas_exposure": {
+      "scope": "纳斯达克ETF+标普500ETF",
+      "current_pct": 6.49,
+      "safe_zone": "<=10%",
+      "watch_zone": "10-15%",
+      "warning_zone": "15-20%",
+      "trigger_zone": ">20%",
+      "violation": ">25%",
+      "current_status": "SAFE (6.49% < 10%)",
+      "vix_rule": "VIX>25进入观察级，VIX>30触发减仓",
+      "final_approval": "approved"
+    }
+  },
+  "position_cap_5level_standard": {
+    "safe": "<=8%",
+    "watch": "8-10%",
+    "warning": "10-12%",
+    "trigger": "12-15%",
+    "violation": ">15%",
+    "note": "适用于所有个股；ETF沿用统一10%上限"
+  },
+  "per_symbol_thresholds": [
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "type": "stock",
+      "current_price": 307.44,
+      "stop_loss": 276.85,
+      "take_profit": 317.4,
+      "current_position_pct": 10.544,
+      "current_zone": "warning (10.54% in 10-12%)",
+      "risk_validation": "ATR/MA20止损公式合规；止盈取布林上轨2σ=317.40合理",
+      "monitor_levels": {
+        "price_safe": "N/A (间距13% 无安全区)",
+        "price_watch": "止损侧 304.54-318.38 | 止盈侧 285.66-301.53",
+        "price_alert": "止损侧 290.69-304.54 | 止盈侧 301.53-311.05",
+        "price_trigger": "止损侧 276.85-290.69 | 止盈侧 311.05-317.40 | 仓位>12%",
+        "price_violation": "< 276.85 或 仓位>15%"
+      },
+      "final_approval": "approved (仓位按Industry 5级, 价格按Research)"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "type": "stock",
+      "current_price": 310.19,
+      "stop_loss": 285.27,
+      "take_profit": 303.89,
+      "current_position_pct": 6.08,
+      "current_zone": "VIOLATION (已破止盈线303.89)",
+      "risk_validation": "ATR/布林公式合规。已突破止盈，建议触发执行",
+      "monitor_levels": {
+        "price_safe": "N/A",
+        "price_watch": "止损侧 313.80-328.06 | 止盈侧 273.50-288.70",
+        "price_alert": "止损侧 299.53-313.80 | 止盈侧 288.70-297.81",
+        "price_trigger": "止损侧 285.27-299.53 | 止盈侧 297.81-303.89 | 仓位>12%",
+        "price_violation": "< 285.27 或 仓位>15%"
+      },
+      "final_approval": "approved + IMMEDIATE TAKE-PROFIT"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "type": "stock",
+      "current_price": 309.68,
+      "stop_loss": 298.13,
+      "take_profit": 338.67,
+      "current_position_pct": 14.26,
+      "current_zone": "TRIGGER (仓位14.26% in 12-15% + 距止损3.7%)",
+      "risk_validation": "除权数据已正确处理：MA60_high=445.59为除权前数据→切换布林2σ=338.67止盈位。止损用MA20×0.95=298.13(已破MA20)，合理。距止损3.7%逼近<=3%加仓VETO临界",
+      "monitor_levels": {
+        "price_safe": "N/A",
+        "price_watch": "止损侧 327.94-342.85 | 止盈侧 304.80-321.74",
+        "price_alert": "止损侧 313.04-327.94 | 止盈侧 321.74-331.90",
+        "price_trigger": "止损侧 298.13-313.04 | 止盈侧 331.90-338.67 | 仓位12-15%(当前)",
+        "price_violation": "< 298.13 或 仓位>15%"
+      },
+      "final_approval": "approved + NO-ADD-VETO + HIGHEST PRIORITY",
+      "veto_flags": [
+        "VETO_新增加仓：距止损<4% + 仓位>10%",
+        "强制减仓建议：仓位14.26% → 目标<=10%"
+      ]
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "type": "stock",
+      "current_price": 374.14,
+      "stop_loss": 346.12,
+      "take_profit": 370.23,
+      "current_position_pct": 7.57,
+      "current_zone": "VIOLATION (已破止盈线370.23)",
+      "risk_validation": "ATR/MA60公式合规。已突破止盈，建议触发执行",
+      "monitor_levels": {
+        "price_safe": "N/A",
+        "price_watch": "止损侧 380.73-398.04 | 止盈侧 333.21-351.72",
+        "price_alert": "止损侧 363.43-380.73 | 止盈侧 351.72-362.83",
+        "price_trigger": "止损侧 346.12-363.43 | 止盈侧 362.83-370.23 | 仓位>12%",
+        "price_violation": "< 346.12 或 仓位>15%"
+      },
+      "final_approval": "approved + IMMEDIATE TAKE-PROFIT"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "type": "stock",
+      "current_price": 75.17,
+      "stop_loss": 69.66,
+      "take_profit": 77.79,
+      "current_position_pct": 2.43,
+      "current_zone": "WARNING (距止盈3.5%)",
+      "risk_validation": "ATR/布林公式合规, 仓位2.43%安全区",
+      "monitor_levels": {
+        "price_safe": "N/A",
+        "price_watch": "止损侧 76.63-80.11 | 止盈侧 70.01-73.90",
+        "price_alert": "止损侧 73.14-76.63 | 止盈侧 73.90-76.23",
+        "price_trigger": "止损侧 69.66-73.14 | 止盈侧 76.23-77.79 | 仓位>12%",
+        "price_violation": "< 69.66 或 仓位>15%"
+      },
+      "final_approval": "approved"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "type": "ETF",
+      "current_price": 2.265,
+      "stop_loss": 1.9,
+      "take_profit": 2.3,
+      "current_position_pct": 3.41,
+      "current_zone": "TRIGGER (距止盈仅1.5%, 盘中随时触发)",
+      "risk_validation": "ETF沿用Bitable现有止损止盈, 不基于ATR/布林计算, 合理",
+      "monitor_levels": {
+        "price_safe": "N/A",
+        "price_watch": "止损侧 2.09-2.18 | 止盈侧 2.07-2.18",
+        "price_alert": "止损侧 1.99-2.09 | 止盈侧 2.18-2.25",
+        "price_trigger": "止损侧 1.90-1.99 | 止盈侧 2.25-2.30 | 仓位>10%",
+        "price_violation": "< 1.90 或 仓位>10%"
+      },
+      "final_approval": "approved (ETF沿用10%统一上限)"
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "type": "ETF",
+      "current_price": 2.09,
+      "stop_loss": 1.95,
+      "take_profit": 2.5,
+      "current_position_pct": 5.435,
+      "current_zone": "WARNING (距止损6.7%)",
+      "risk_validation": "ETF沿用Bitable现有止损止盈",
+      "monitor_levels": {
+        "price_safe": "2.24-2.25 (窄安全区)",
+        "price_watch": "止损侧 2.15-2.24 | 止盈侧 2.25-2.38",
+        "price_alert": "止损侧 2.05-2.15 | 止盈侧 2.38-2.45",
+        "price_trigger": "止损侧 1.95-2.05 | 止盈侧 2.45-2.50 | 仓位>10%",
+        "price_violation": "< 1.95 或 仓位>10%"
+      },
+      "final_approval": "approved"
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "type": "ETF",
+      "current_price": 9.148,
+      "stop_loss": 8.57,
+      "take_profit": 9.5,
+      "current_position_pct": 4.009,
+      "current_zone": "WARNING (距止损6.3%, 距止盈3.8%)",
+      "risk_validation": "ETF沿用Bitable现有止损止盈",
+      "monitor_levels": {
+        "price_safe": "N/A",
+        "price_watch": "止损侧 9.43-9.86 | 止盈侧 8.55-9.03",
+        "price_alert": "止损侧 9.00-9.43 | 止盈侧 9.03-9.31",
+        "price_trigger": "止损侧 8.57-9.00 | 止盈侧 9.31-9.50 | 仓位>10%",
+        "price_violation": "< 8.57 或 仓位>10%"
+      },
+      "final_approval": "approved"
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "type": "ETF",
+      "current_price": 2.708,
+      "stop_loss": 2.52,
+      "take_profit": 2.861,
+      "current_position_pct": 5.06,
+      "current_zone": "WARNING (距止损6.9%)",
+      "risk_validation": "ETF沿用Bitable现有止损止盈; 触发VIX联动减仓",
+      "monitor_levels": {
+        "price_safe": "N/A",
+        "price_watch": "止损侧 2.77-2.90 | 止盈侧 2.57-2.72",
+        "price_alert": "止损侧 2.65-2.77 | 止盈侧 2.72-2.80",
+        "price_trigger": "止损侧 2.52-2.65 | 止盈侧 2.80-2.861 | 仓位>10% | VIX>30",
+        "price_violation": "< 2.52 或 仓位>10%"
+      },
+      "final_approval": "approved + VIX>30触发减仓联动"
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "type": "ETF",
+      "current_price": 1.866,
+      "stop_loss": 1.7,
+      "take_profit": 2.2,
+      "current_position_pct": 1.428,
+      "current_zone": "WARNING (距止损8.9%)",
+      "risk_validation": "ETF沿用Bitable现有止损止盈",
+      "monitor_levels": {
+        "price_safe": "1.95-1.98 (窄安全区)",
+        "price_watch": "止损侧 1.87-1.95 | 止盈侧 1.98-2.09",
+        "price_alert": "止损侧 1.78-1.87 | 止盈侧 2.09-2.16",
+        "price_trigger": "止损侧 1.70-1.78 | 止盈侧 2.16-2.20 | 仓位>10% | VIX>30",
+        "price_violation": "< 1.70 或 仓位>10%"
+      },
+      "final_approval": "approved + VIX>30触发减仓联动"
+    },
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "type": "ETF",
+      "current_price": 8.248,
+      "stop_loss": 8.5,
+      "take_profit": 10.5,
+      "current_position_pct": 1.75,
+      "current_zone": "VIOLATION (现价8.248 < 止损线8.50, 已破止损)",
+      "risk_validation": "已破止损线 + CIO 6/24已VETO建议清仓; IC决议长期未执行=违规",
+      "monitor_levels": {
+        "price_safe": "N/A (已破止损)",
+        "price_watch": "止损侧 9.35-9.77 | 止盈侧 9.45-9.97",
+        "price_alert": "止损侧 8.93-9.35 | 止盈侧 9.97-10.29",
+        "price_trigger": "止损侧 8.50-8.93 | 止盈侧 10.29-10.50 | 仓位>10%",
+        "price_violation": "< 8.50 或 仓位>10% 或 IC决议长期未执行 (当前状态)"
+      },
+      "final_approval": "approved + IMMEDIATE STOP-LOSS (CIO 6/24 VETO仍未执行)"
+    }
+  ],
+  "risk_red_flags": [
+    "🔴 立即执行止盈：澜起科技(688008)、海光信息(688041) 均已突破止盈线",
+    "🔴 立即执行止损：黄金ETF(518880) 现价8.248 < 止损线8.50，CIO 6/24已VETO建议清仓但未执行",
+    "⚫ 禁止加仓：天孚通信(300394) 距止损3.7% + 仓位14.26%超限",
+    "🟡 主动减仓：天孚通信→<=10%（化解单票违规），AI半导体赛道→<=35%（化解赛道触发级44.29%）",
+    "🟢 维持观察：通富微电、创业板50ETF、中证500ETF、纳斯达克ETF、标普500ETF",
+    "⚠️ 单股仓位阈值替换：Research统一10%上限 → Industry五级(8/10/12/15/>15)"
+  ],
+  "calibration_summary": {
+    "research_individual_stock_thresholds": "ATR/MA20止损 + min(MA60×0.98, 布林2σ)止盈，公式合规",
+    "research_tianfu_dividend_handling": "天孚通信MA60_high=445.59识别为除权前数据并切换布林2σ=338.67止盈位，处理合理",
+    "research_etf_thresholds": "沿用Bitable现有止损止盈，未自创公式，合理",
+    "industry_sector_thresholds": "AI半导体赛道5级 + 单股5级 + 海外敞口5级，采纳",
+    "risk_amendment": "用Industry单股5级阈值替换Research统一10%上限，更精细可分级监控",
+    "risk_red_lines_applied": [
+      "≤3%距止损VETO加仓（天孚通信触发）",
+      "AI集中度>40%触发（当前44.29%触发）",
+      "硬否决线9分（本次5.9分远低于阈值）"
+    ]
+  }
+}
