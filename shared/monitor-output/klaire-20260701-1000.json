@@ -1,0 +1,84 @@
+{
+  "principal": "klaire",
+  "checked_at": "2026-07-01T10:00:00+08:00",
+  "trading_session": "上午盘中",
+  "data_source": "腾讯 gtimg + 东方财富（双源验证，差异<0.5%）",
+  "positions_checked": 6,
+  "alerts": [
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "price": 21.97,
+      "change_pct": 1.67,
+      "cost": 24.89,
+      "stop_loss": 24.0,
+      "take_profit": 33.0,
+      "alert_type": "止损已破",
+      "severity": "critical",
+      "detail": "现价 21.97 已跌破止损价 24.0（-8.5%），持仓账面亏损 -11.7%。备注显示已破止损不补，等反弹24先出，需持续关注反弹机会。"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "price": 2.730,
+      "change_pct": 2.06,
+      "cost": 1.774,
+      "stop_loss": 1.85,
+      "take_profit": 2.30,
+      "alert_type": "止盈触及",
+      "severity": "high",
+      "detail": "现价 2.730 已达并突破止盈价 2.30，浮盈率 +53.9%。前次已在 2.328 减仓1800股锁利，剩1700股，建议 Butler 评估是否再次减仓或上移止盈线。"
+    },
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "price": 43.50,
+      "change_pct": 4.79,
+      "cost": 40.693,
+      "stop_loss": 40.81,
+      "take_profit": 45.20,
+      "alert_type": "大涨异动",
+      "severity": "high",
+      "detail": "涨跌幅 +4.79%（>3% 阈值），量比 5.37 显著放量。现价 43.50 距止盈 45.20 仅 3.9%，浮盈 +6.9%。放量上涨接近目标价，建议关注是否触发止盈减半策略。"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "price": 10.73,
+      "change_pct": 1.13,
+      "cost": 11.415,
+      "stop_loss": 10.50,
+      "take_profit": 15.0,
+      "alert_type": "接近止损",
+      "severity": "medium",
+      "detail": "现价 10.73 距止损 10.50 仅 2.14%（<5% 警戒线），持仓账面亏损 -6.0%。当前虽小涨但仍在止损带内，建议密切关注下方支撑。"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "price": 23.70,
+      "change_pct": -0.67,
+      "cost": 25.20,
+      "stop_loss": 23.0,
+      "take_profit": 31.0,
+      "alert_type": "接近止损",
+      "severity": "medium",
+      "detail": "现价 23.70 距止损 23.0 仅 2.95%（<5% 警戒线），持仓账面亏损 -6.0%，今日弱势下跌。防御标的走弱需关注是否止损离场。"
+    }
+  ],
+  "no_alert_positions": [
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "price": 2.312,
+      "change_pct": 1.72,
+      "status": "正常运行区间"
+    }
+  ],
+  "summary": "6 只持仓中触发 5 项异动：600699 均胜电子 已跌破止损（critical）；159540 信创ETF 触及止盈（high）；002472 双环传动 放量大涨 +4.79% 接近止盈（high）；002011 盾安环境、603298 杭叉集团 双双接近止损带（medium）。整体持仓两极分化：进攻端接近止盈、防御端逼近止损，需 Butler/IC 综合评估仓位调整。",
+  "notes": [
+    "数据源：腾讯 gtimg（主源）+ 东方财富（三只 ETF 交叉验证一致，差异<0.5%）",
+    "新闻源 akshare 本次运行超时未取，已跳过负面新闻扫描，如需可后续单独触发",
+    "本次仅盘中数据观察，未做任何投资决策；所有止损/止盈调整需经 IC 评估"
+  ]
+}
