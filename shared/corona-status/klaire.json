@@ -1,7 +1,8 @@
 {
   "principal": "klaire",
   "status": "running",
+  "cycle_id": "klaire-monitor-am-0920-20260701",
   "step": "盘中监控启动",
-  "started_at": "2026-06-30T14:50:00+08:00",
-  "updated_at": "2026-06-30T14:50:00+08:00"
+  "started_at": "2026-07-01T09:20:00+08:00",
+  "updated_at": "2026-07-01T09:20:00+08:00"
 }
