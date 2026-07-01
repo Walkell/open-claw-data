@@ -1,26 +1,35 @@
 {
   "principal": "klaire",
-  "detected_at": "2026-06-30T10:45:01+08:00",
-  "has_alert": true,
+  "checked_at": "2026-07-01T10:40:21+08:00",
   "alerts": [
     {
-      "symbol": "002472",
-      "name": "双环传动",
-      "current_price": 39.80,
-      "cost": 40.693,
-      "change_pct": 5.46,
-      "alert_type": "上涨",
-      "threshold": "A股 ±5%"
+      "symbol": "600699",
+      "name": "均胜电子",
+      "price": 21.78,
+      "change_pct": 0.79,
+      "cost": 24.89,
+      "profit_pct": -12.49,
+      "alert_reason": "距成本亏损 -12.49%，现价21.78已跌破止损价24.0（该持仓处于止损击穿状态，建议 IC 评估）"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "price": 2.676,
+      "change_pct": 0.04,
+      "cost": 1.774,
+      "profit_pct": 50.85,
+      "alert_reason": "距成本盈利 +50.85%，现价2.676远超止盈价2.30（累计浮盈显著，止盈线已滞后）"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "price": 2.26,
+      "change_pct": -0.57,
+      "cost": 1.65,
+      "profit_pct": 36.97,
+      "alert_reason": "距成本盈利 +36.97%，现价2.26已超止盈价1.98（累计浮盈显著）"
     }
   ],
-  "summary": "1只持仓触发异动：双环传动(002472) 上涨 +5.46%，现价 39.80，量比 2.11，已突破 ±5% 阈值。",
-  "data_quality_note": "腾讯单源（其余 4 个数据源 502/403/404 不可用，未做交叉验证）",
-  "snapshot_all": [
-    {"symbol": "002472", "name": "双环传动", "price": 39.80, "change_pct": 5.46, "vol_ratio": 2.11},
-    {"symbol": "588080", "name": "科创50ETF", "price": 2.233, "change_pct": 2.43, "vol_ratio": 1.38},
-    {"symbol": "159540", "name": "信创ETF", "price": 2.640, "change_pct": 1.62, "vol_ratio": 1.76},
-    {"symbol": "600699", "name": "均胜电子", "price": 21.16, "change_pct": 1.24, "vol_ratio": 1.27},
-    {"symbol": "002011", "name": "盾安环境", "price": 10.53, "change_pct": 0.48, "vol_ratio": 1.33},
-    {"symbol": "603298", "name": "杭叉集团", "price": 23.95, "change_pct": -2.04, "vol_ratio": 1.07}
-  ]
+  "no_alert": false,
+  "summary": "klaire 6只持仓监控完成，3只触发累计盈亏 ±8% 阈值：均胜电子(600699) 亏损12.49%且已跌破止损价24.0，属止损击穿状态需 IC 优先评估；信创ETF(159540) 浮盈50.85%、科创50ETF(588080) 浮盈36.97%，两只ETF均已远超止盈价，止盈线滞后。日内涨跌全部在±5%以内，无当日单日大幅异动。行情来源：腾讯qt.gtimg.cn 主源 + Eastmoney 交叉验证（5/6 一致）。6条快照已写入监控记录表。"
 }
