@@ -1,0 +1,368 @@
+{
+  "cycle_id": "towney-20260701-1359-观察池分析",
+  "principal": "towney",
+  "flow_type": "三委员",
+  "decision_time": 1751353200000,
+  "cio_version": "v5.0",
+  "data_quality_note": "⚠️ Research 单源验证（仅腾讯gtimg可用，其余4源不可用）；拓荆科技疑似停牌数据异常；Industry双源验证通过；Risk综合评分基于多委员输入",
+
+  "委员评分汇总表": {
+    "Research": {
+      "评分": "tech:各标的差异 / fund:估算 / val:各标的差异 / fin:估算",
+      "核心判断": "AI/半导体集体暴跌，证券ETF条件触发+红利对冲逻辑验证，其余标的距建仓线均有距离",
+      "数据置信度": "⚠️ 单源（仅gtimg可用，其余4源均不可用）"
+    },
+    "Industry": {
+      "评分": "macro:6.5 / industry:7.0（整体）",
+      "核心判断": "PMI回暖+政策加速，AI回调属技术性获利了结非趋势反转，军工/红利/券商逆势走强",
+      "数据置信度": "✅ 双源验证"
+    },
+    "News": {
+      "评分": "sentiment:0 / impact:0",
+      "核心判断": "未参与，默认5/0",
+      "数据置信度": "—"
+    },
+    "Risk": {
+      "评分": "6.2 / WARN（黄牌）",
+      "核心判断": "AI集中度35.81%接近40%红线，所有AI/半导体方向新仓VETO；非AI方向PASS/WARN分级放行",
+      "数据置信度": "🟢"
+    }
+  },
+
+  "§7_公式展开_说明": "观察池场景，12个标的分别计算。Research未提供标准四维评分（本次聚焦技术面），fundamental/financials基于公开数据估算，valuation基于PE分位映射，technical基于Research技术面判断。三委员权重：Wr=0.60, Wi=0.25, Wn=0.15。News默认sentiment=0, event_impact=0 → news_modifier=0。Industry macro=6.5恒定，industry_score取各标的行业分。",
+
+  "标的分析": [
+    {
+      "symbol": "512880",
+      "name": "证券ETF",
+      "sector": "非银金融",
+      "priority_rank": 1,
+      "dimensions": {
+        "fundamental": 5.0,
+        "financials": 5.0,
+        "valuation": 5.0,
+        "technical": 7.5,
+        "research_composite": 5.50,
+        "industry_score": 6.5,
+        "industry_composite": 6.50,
+        "news_modifier": 0,
+        "baseline_score": 5.68
+      },
+      "baseline_action": "持有观察（接近加仓阈值）",
+      "risk_verdict": "PASS",
+      "cio_conclusion": "🟢 可建仓评估",
+      "build_condition": "MA60突破+金叉已满足；需二重验证：A股成交额连续3日>1.5万亿",
+      "position_recommendation": "试探仓5-10%，分2-3批建仓。今日单日暴涨4.09%后追高性价比下降，等回调至MA20(1.07)附近加仓",
+      "stop_loss": "1.00（MA60下方5%，跌破则金叉失效）",
+      "profit_target": "1.50（基于牛市券商估值锚定）",
+      "invalidation_condition": "成交额回落至<1万亿连续3日，或MA20下穿MA60死叉"
+    },
+    {
+      "symbol": "512890",
+      "name": "红利低波ETF",
+      "sector": "高股息/红利",
+      "priority_rank": 2,
+      "dimensions": {
+        "fundamental": 5.0,
+        "financials": 5.0,
+        "valuation": 5.0,
+        "technical": 5.5,
+        "research_composite": 5.10,
+        "industry_score": 6.0,
+        "industry_composite": 6.25,
+        "news_modifier": 0,
+        "baseline_score": 5.37
+      },
+      "baseline_action": "持有观察",
+      "risk_verdict": "PASS（最优先建议标的）",
+      "cio_conclusion": "🟢 可建仓10-15%作为AI赛道对冲",
+      "build_condition": "AI赛道今日集体暴跌，红利逆势上涨0.94%，CIO预设的'AI赛道过热或组合回撤>10%'配置场景已触发。本次观察池最高优先级对冲标的",
+      "position_recommendation": "10-15%仓位，分2批建仓。首批5%现价1.077附近，第二批等MA20(1.13)突破确认后追加",
+      "stop_loss": "1.02（前低1.062下方，ATR仅1.83%低波动，止损紧）",
+      "profit_target": "1.20（BOLL上轨+MA60高位，股息率锚定4.5%）",
+      "invalidation_condition": "AI赛道企稳反弹+红利连续跑输3日以上，或10Y国债收益率升至3.5%以上（红利相对吸引力下降）"
+    },
+    {
+      "symbol": "159227",
+      "name": "航空航天ETF华夏",
+      "sector": "军工/商业航天",
+      "priority_rank": 3,
+      "dimensions": {
+        "fundamental": 5.0,
+        "financials": 5.0,
+        "valuation": 5.0,
+        "technical": 5.5,
+        "research_composite": 5.10,
+        "industry_score": 7.0,
+        "industry_composite": 6.75,
+        "news_modifier": 0,
+        "baseline_score": 5.50
+      },
+      "baseline_action": "持有观察",
+      "risk_verdict": "WARN（建仓线未触发）",
+      "cio_conclusion": "🟡 等待建仓线1.00触发",
+      "build_condition": "现价1.128距建仓线1.00差12.8%。今日逆势上涨0.98%反而降低短期触发概率。建议等7月底政治局会议军费/航天产业定调后再评估",
+      "position_recommendation": "暂不建仓。观察窗口：7月下旬政治局会议前后",
+      "stop_loss": "—（未建仓）",
+      "profit_target": "1.50",
+      "invalidation_condition": "政治局会议军费预算不及预期，或商业航天政策收紧"
+    },
+    {
+      "symbol": "159892",
+      "name": "创新药ETF",
+      "sector": "港股创新药",
+      "priority_rank": 4,
+      "dimensions": {
+        "fundamental": 5.0,
+        "financials": 5.0,
+        "valuation": 5.0,
+        "technical": 5.8,
+        "research_composite": 5.16,
+        "industry_score": 6.5,
+        "industry_composite": 6.50,
+        "news_modifier": 0,
+        "baseline_score": 5.47
+      },
+      "baseline_action": "持有观察",
+      "risk_verdict": "WARN（建仓线未触发）",
+      "cio_conclusion": "🟡 资金流入信号积极，但建仓线未到。优先级在红利/证券之后",
+      "build_condition": "现价0.668距建仓线0.55差21.5%。今日放量+2.30%资金流入信号积极，但估值端未到位。若美联储降息预期升温（关注7月FOMC）可提前至0.60附近建小仓",
+      "position_recommendation": "暂不建仓。若美联储7月FOMC偏鸽+现价回调至0.60-0.63，可建5%试探仓",
+      "stop_loss": "—（未建仓）",
+      "profit_target": "0.85（MA60高位附近）",
+      "invalidation_condition": "美联储意外加息，或港股流动性危机（恒指跌破17000）"
+    },
+    {
+      "symbol": "563530",
+      "name": "卫星ETF易方达",
+      "sector": "军工/商业航天",
+      "priority_rank": 5,
+      "dimensions": {
+        "fundamental": 5.0,
+        "financials": 5.0,
+        "valuation": 5.0,
+        "technical": 4.5,
+        "research_composite": 4.90,
+        "industry_score": 7.5,
+        "industry_composite": 7.00,
+        "news_modifier": 0,
+        "baseline_score": 5.44
+      },
+      "baseline_action": "持有观察",
+      "risk_verdict": "WARN（建仓线未触发+MA60死叉）",
+      "cio_conclusion": "🟡 等MA60死叉修复+建仓线触发，优先级低于航空航天ETF",
+      "build_condition": "现价1.395距建仓线1.20差16.3%。MA20(1.35)<MA60(1.44)死叉+上方套牢盘重。即使回调至1.20也需趋势确认。商业航天长期看好但短期技术面不利",
+      "position_recommendation": "暂不建仓。观察MA20上穿MA60金叉信号出现后再评估",
+      "stop_loss": "—（未建仓）",
+      "profit_target": "1.80",
+      "invalidation_condition": "中国星网组网进度严重延迟，或商业航天融资环境恶化"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "sector": "半导体封测",
+      "priority_rank": 6,
+      "dimensions": {
+        "fundamental": 6.5,
+        "financials": 6.0,
+        "valuation": 3.5,
+        "technical": 5.0,
+        "research_composite": 5.33,
+        "industry_score": 8.0,
+        "industry_composite": 7.25,
+        "news_modifier": 0,
+        "baseline_score": 5.76
+      },
+      "baseline_action": "持有观察（接近止盈区）",
+      "risk_verdict": "HOLD（已建仓，禁止加仓）",
+      "cio_conclusion": "🟢 持有，建议分批止盈",
+      "build_condition": "已建仓浮盈18.8%，现价72.98距目标价78仅6.4%。放量9.52倍下跌需警惕获利了结",
+      "position_recommendation": "分批止盈方案：①现价附近止盈1/3锁定利润 ②剩余持仓移动止盈至MA20(67.94) ③若跌破MA20则全部止盈。止损维持50不变",
+      "stop_loss": "50（MA60下方硬止损），移动止盈线：MA20=67.94",
+      "profit_target": "78（原始目标价），但PE分位85%+量比9.52放量下跌，建议提前止盈",
+      "invalidation_condition": "半导体封测板块集体暴跌（板块指数单日跌>5%），或AMD重大客户流失"
+    },
+    {
+      "symbol": "002463",
+      "name": "沪电股份",
+      "sector": "AI服务器PCB",
+      "priority_rank": 7,
+      "dimensions": {
+        "fundamental": 7.0,
+        "financials": 6.0,
+        "valuation": 3.5,
+        "technical": 5.5,
+        "research_composite": 5.58,
+        "industry_score": 8.0,
+        "industry_composite": 7.25,
+        "news_modifier": 0,
+        "baseline_score": 5.91
+      },
+      "baseline_action": "持有观察（技术面接近触发但集中度阻断）",
+      "risk_verdict": "VETO（AI集中度红线）",
+      "cio_conclusion": "🔴 集中度硬VETO。技术面接近触发（距建仓区间①135-138仅6-7%），但AI集中度35.81%+沪电试探仓10%=45.81%突破40%红线",
+      "build_condition": "需先腾出AI预算：通富微电止盈→AI集中度降至~30%→沪电可进入建仓评估。三委员建仓方案维持：①135-138缩量回踩MA20建10%→②125-130回踩MA60加至20%→③115-120满仓25%",
+      "position_recommendation": "暂不建仓（集中度VETO）。优先执行通富止盈以释放AI预算",
+      "stop_loss": "—（未建仓）",
+      "profit_target": "180（基于AI PCB景气周期+PE回归60x）",
+      "invalidation_condition": "AI服务器出货量连续2季下滑，或PCB行业产能过剩价格战"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "sector": "AI芯片/国产CPU",
+      "priority_rank": 8,
+      "dimensions": {
+        "fundamental": 8.0,
+        "financials": 7.0,
+        "valuation": 2.5,
+        "technical": 4.0,
+        "research_composite": 5.58,
+        "industry_score": 8.5,
+        "industry_composite": 7.50,
+        "news_modifier": 0,
+        "baseline_score": 5.97
+      },
+      "baseline_action": "持有观察（基本面优秀但估值+技术+集中度三重压制）",
+      "risk_verdict": "VETO（AI集中度红线+建仓线未触发）",
+      "cio_conclusion": "🔴 集中度硬VETO+技术未触发双重否决。维持观察",
+      "build_condition": "维持CIO判断：等274低点确认后280附近建15%试探仓，建仓线260。需先释放AI集中度预算（通富止盈后AI集中度降至~30%，海光试探仓15%不超40%）",
+      "position_recommendation": "暂不建仓。优先级在沪电之后（估值PE 296.2远超沪电64.7）",
+      "stop_loss": "—（未建仓）",
+      "profit_target": "400",
+      "invalidation_condition": "国产CPU市占率数据连续下滑，或美国对华芯片禁令重大升级导致无法获取先进制程"
+    },
+    {
+      "symbol": "688072",
+      "name": "拓荆科技",
+      "sector": "半导体设备",
+      "priority_rank": 9,
+      "dimensions": {
+        "fundamental": 7.5,
+        "financials": 7.0,
+        "valuation": 3.0,
+        "technical": 3.0,
+        "research_composite": 5.35,
+        "industry_score": 8.0,
+        "industry_composite": 7.25,
+        "news_modifier": 0,
+        "baseline_score": 5.77
+      },
+      "baseline_action": "持有观察（已超目标价+可能停牌）",
+      "risk_verdict": "VETO（半导体集中度红线+现价超目标价）",
+      "cio_conclusion": "🔴 集中度VETO+现价832已超目标价800+疑似停牌。短期无操作价值",
+      "build_condition": "等回调至550以下+确认非停牌状态。现价832远超建仓线550（差51%），目标价800已超过。即使不停牌也无建仓条件",
+      "position_recommendation": "暂不建仓。若复牌后大幅回调至700以下可重新评估建仓线是否需要上调",
+      "stop_loss": "—（未建仓）",
+      "profit_target": "800（已超过，需上修至1000-1200若基本面持续向好）",
+      "invalidation_condition": "半导体设备国产替代进度严重不及预期，或公司核心客户砍单"
+    },
+    {
+      "symbol": "300346",
+      "name": "南大光电",
+      "sector": "半导体材料",
+      "priority_rank": 10,
+      "dimensions": {
+        "fundamental": 6.5,
+        "financials": 4.5,
+        "valuation": 2.0,
+        "technical": 2.5,
+        "research_composite": 4.08,
+        "industry_score": 8.5,
+        "industry_composite": 7.50,
+        "news_modifier": 0,
+        "baseline_score": 5.07
+      },
+      "baseline_action": "持有观察（估值+技术面极差，但行业景气度高）",
+      "risk_verdict": "VETO（集中度红线+今日极端放量跳水顶部出货信号）",
+      "cio_conclusion": "🔴 集中度VETO+顶部出货形态+估值极端超标。三重否决，不建议介入",
+      "build_condition": "四个CIO条件均不满足：①MA20≈61元(现价88差29%) ②PE 175x vs 80x ③Q2未出 ④集中度超标。今日量比15.78+振幅12.3%是典型主力出货，短期不宜介入",
+      "position_recommendation": "不建仓。即便四个条件全部满足，今日顶部出货形态也需至少2-4周消化",
+      "stop_loss": "—（未建仓）",
+      "profit_target": "120（基于ArF光刻胶量产+前驱体放量）",
+      "invalidation_condition": "ArF光刻胶验证失败，或前驱体大客户流失"
+    },
+    {
+      "symbol": "000988",
+      "name": "华工科技",
+      "sector": "AI光模块/激光装备",
+      "priority_rank": 11,
+      "dimensions": {
+        "fundamental": 5.5,
+        "financials": 4.5,
+        "valuation": 2.5,
+        "technical": 3.5,
+        "research_composite": 4.10,
+        "industry_score": 7.5,
+        "industry_composite": 7.00,
+        "news_modifier": 0,
+        "baseline_score": 4.96
+      },
+      "baseline_action": "持有观察（逼近减仓阈值4.0）",
+      "risk_verdict": "VETO（集中度红线+毛利率劣势+估值超标）",
+      "cio_conclusion": "🔴 集中度VETO+基本面毛利率13.3%劣势+PE 102x估值超标。三重否决。光模块赛道景气但华工个股质地弱于龙头",
+      "build_condition": "等回调140以下建仓20%。但毛利率仅13.3%远低于中际旭创/新易盛是硬伤。即便集中度释放也不建议作为AI光模块首选（优先考虑赛道龙头）",
+      "position_recommendation": "不建仓。建议CIO重新评估：是否值得在观察池中保留（毛利率劣势+估值超标+二线地位）",
+      "stop_loss": "—（未建仓）",
+      "profit_target": "220",
+      "invalidation_condition": "3.2T CPO量产进度严重延迟，或A+H IPO取消"
+    },
+    {
+      "symbol": "688234",
+      "name": "天岳先进",
+      "sector": "第三代半导体SiC",
+      "priority_rank": 12,
+      "dimensions": {
+        "fundamental": 6.0,
+        "financials": 3.0,
+        "valuation": 2.0,
+        "technical": 3.5,
+        "research_composite": 3.75,
+        "industry_score": 9.0,
+        "industry_composite": 7.75,
+        "news_modifier": 0,
+        "baseline_score": 4.94
+      },
+      "baseline_action": "持有观察（逼近减仓阈值4.0）",
+      "risk_verdict": "VETO（集中度红线+持续亏损+建仓线未触发）",
+      "cio_conclusion": "🔴 集中度VETO+亏损基本面+建仓线未触发三重否决。行业景气度9.0但个股财务风险大",
+      "build_condition": "等三个条件任一满足：(1)120-125企稳缩量 (2)MACD金叉 (3)Q2毛利率回升。当前三个条件均不满足，且亏损状态PE无意义",
+      "position_recommendation": "不建仓。SiC赛道长期看好但个股财务风险+集中度约束下优先级最低",
+      "stop_loss": "—（未建仓）",
+      "profit_target": "200（基于8英寸衬底量产+SiC三线需求共振）",
+      "invalidation_condition": "8英寸SiC衬底量产失败，或新能源车800V平台渗透率不达预期"
+    }
+  ],
+
+  "cio_overall_conclusion": {
+    "summary": "本次观察池分析覆盖12个标的。核心发现：AI/半导体赛道7月1日集体暴跌（海光-6.18%、华工-6.12%、沪电-5.35%），资金从高位AI撤出转向券商(+4.09%)、创新药(+2.30%)、红利(+0.94%)和军工(+0.98%)，风格切换信号显著。Risk综合评分6.2（黄牌），AI集中度35.81%接近40%红线，所有AI/半导体方向新仓被集中度VETO否决。非AI方向中，证券ETF建仓条件已触发（MA60突破+金叉），红利低波ETF对冲逻辑在今日AI暴跌中完美验证。",
+    "actionable_recommendations": [
+      "🥇 红利低波ETF(512890)：建议建仓10-15%，现价1.077附近分批。AI暴跌验证对冲逻辑，本次最优先建议标的",
+      "🥈 证券ETF(512880)：可建仓5-10%，需验证成交额连续3日>1.5万亿。MA60突破+金叉已触发，但今日暴涨后追高需谨慎，分批建仓",
+      "🥉 通富微电(002156)：已建仓浮盈18.8%接近目标价78，建议分批止盈。止盈后释放AI集中度预算，为沪电/海光建仓创造条件",
+      "📋 航空航天ETF(159227)/创新药ETF(159892)/卫星ETF(563530)：维持观察，等建仓线触发",
+      "🔴 沪电/海光/拓荆/南大/华工/天岳：AI集中度VETO，暂不建仓。待通富止盈释放AI预算后，沪电（技术面最近触发）可优先进入建仓评估"
+    ],
+    "concentration_strategy": "当前AI集中度35.81%，距40%红线仅4.19pp。CIO建议分两步走：第一步→通富微电止盈释放~5%AI预算，AI集中度降至~30%；第二步→红利低波+证券ETF建仓15-25%非AI仓位，进一步降低AI占比。完成后AI集中度将降至安全区间，届时沪电股份（技术面最近触发）可优先进入建仓评估。",
+    "risk_warning": "⚠️ Research数据仅单源（gtimg）验证，其余4源均不可用，数据置信度中低。拓荆科技疑似停牌数据异常。在数据源恢复前，所有基于技术面的建仓触发判断应偏保守。"
+  },
+
+  "集中度超标降仓方案": {
+    "current_ai_concentration": "35.81%",
+    "status": "🟡 关注（30%-40%区间）",
+    "action_required": "柔性限制：新加仓AI方向上限减半（原计划10%→5%）。当前无AI方向超标的已建仓标的需减仓，但通富微电接近止盈区，建议主动止盈以释放预算",
+    "减仓优先级列表": [
+      {
+        "rank": 1,
+        "symbol": "002156",
+        "name": "通富微电",
+        "reason": "唯一AI方向已建仓标的，浮盈18.8%接近目标价78。止盈后AI集中度降至~30%，为沪电/海光等AI观察标的腾出预算",
+        "action": "分批止盈：现价72.98止盈1/3→剩余移动止盈MA20(67.94)"
+      }
+    ],
+    "target_concentration_after": "~30%（通富止盈后）",
+    "note": "当前AI集中度35.81%处于关注区间，非强制减仓。但通富接近止盈区+AI板块今日集体暴跌，建议主动止盈锁定利润并释放预算"
+  },
+
+  "核心逻辑": "7月1日AI/半导体集体暴跌是年内涨幅过大后的正常技术性回调（PCB板块+107%、融资90%分位），PMI回暖+政策密集落地不支持趋势反转。Risk黄牌(6.2)主因集中度35.81%接近红线+估值维度3.5分（多数标的PE远超80x建仓要求），非系统性风险。CIO裁决：优先执行非AI方向建仓（红利低波对冲+证券ETF博弈），通富微电分批止盈释放AI预算，沪电股份作为AI方向首选等集中度+技术面双重条件满足后进入建仓评估。"
+}

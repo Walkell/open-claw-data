@@ -1,0 +1,39 @@
+{
+  "principal": "klaire",
+  "timestamp": "2026-07-01T14:30:00+08:00",
+  "session_id": "agent:monitor:subagent:04f2e49a-5e55-4c9b-b922-8bad8fb7f921",
+  "trading_status": "TRADING",
+  "data_sources": ["腾讯gtimg", "东财push2"],
+  "verification": "双源验证通过（差异<0.5%）",
+  "checked_holdings": [
+    {"symbol": "002472", "name": "双环传动", "price": 42.64, "change_pct": 2.72, "volume_ratio": 1.64},
+    {"symbol": "588080", "name": "科创50ETF", "price": 2.204, "change_pct": -3.04, "volume_ratio": 1.00},
+    {"symbol": "159540", "name": "信创ETF", "price": 2.588, "change_pct": -3.25, "volume_ratio": 1.01},
+    {"symbol": "600699", "name": "均胜电子", "price": 21.80, "change_pct": 0.88, "volume_ratio": 0.87},
+    {"symbol": "002011", "name": "盾安环境", "price": 10.68, "change_pct": 0.66, "volume_ratio": 0.96},
+    {"symbol": "603298", "name": "杭叉集团", "price": 24.44, "change_pct": 2.43, "volume_ratio": 2.42}
+  ],
+  "checked_watchlist": [
+    {"symbol": "002125", "name": "湘潭电化", "price": 13.88, "change_pct": 1.61, "volume_ratio": 1.11},
+    {"symbol": "600875", "name": "东方电气", "price": 28.79, "change_pct": 0.07, "volume_ratio": 1.15},
+    {"symbol": "002049", "name": "紫光国微", "price": 86.00, "change_pct": -3.10, "volume_ratio": 1.26},
+    {"symbol": "002156", "name": "通富微电", "price": 72.99, "change_pct": -3.80, "volume_ratio": 0.88},
+    {"symbol": "000988", "name": "华工科技", "price": 173.35, "change_pct": -6.10, "volume_ratio": 1.15}
+  ],
+  "alerts": [
+    {
+      "symbol": "000988",
+      "name": "华工科技",
+      "type": "观察",
+      "alert": "大跌预警：跌幅超 -5%（观察池标的）",
+      "change_pct": -6.10,
+      "price": 173.35
+    }
+  ],
+  "notes": [
+    "半导体板块 002049/002156 双双跌 -3%~-4%，未达 ±5% 异动阈值，未列入 alerts",
+    "两只 ETF（588080/159540）同步走弱约 -3%，未触发阈值",
+    "均线突破检查因东财 K 线接口本次不可用而跳过；量比全部 <3，无异常放量"
+  ],
+  "alerts_text": "🟡 盘中异动 14:30 · Klaire 观察池\n\n华工科技（000988）今日跌幅 -6.10%，现价 173.35。观察池已入池标的短线走弱，建议 IC 关注。\n\n---\n持仓 6 只、观察 5 只本轮扫描完成，其余标的未达 ±5% 阈值。"
+}

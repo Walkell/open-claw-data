@@ -1,0 +1,53 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260701-1359-观察池分析",
+  "data": {
+    "scope": "watchlist_12_symbols",
+    "risk_score": 62,
+    "risk_score_10scale": 6.2,
+    "verdict": "WARN",
+    "dimensions": {
+      "financial_health": {"score": 6.0, "note": "AI/半导体主线财务分化：通富Q1利润+225%但毛利率14.6%偏低；沪电基本面坚挺；海光稳定；华工毛利率13.3%劣势明显；天岳亏损；南大盈利质量待验证。ETF无个体财务风险。", "source": "self+industry"},
+      "valuation": {"score": 3.5, "note": "估值维度最大风险项。PE-TTM：南大174.74、海光296.2、拓荆143、华工102.55、通富76.57、沪电64.7，多数远超建仓要求80x以下。PE分位大多70-85%。仅ETF无估值风险。", "source": "self"},
+      "industry_cycle": {"score": 3.0, "note": "Industry给分7.0-9.0(SiC 9.0/海光8.5/南大8.5/拓荆8.0/沪电8.0/通富8.0)，行业景气度极高换算为低风险维度分。AI算力超级周期+国产替代+SiC三线共振逻辑坚固。", "source": "industry_agent"},
+      "technical": {"score": 7.5, "note": "技术面高风险：AI/半导体集体暴跌(海光-6.18%/华工-6.12%/南大-4.93%/沪电-5.35%/通富-3.81%)，量比3-15倍极端放量。南大振幅12.3%量比15.78顶部出货形态。ATR 6-9%高波动。拓荆疑似停牌。逆势上涨仅证券ETF(+4.09%)/创新药(+2.30%)/红利(+0.94%)/航空航天(+0.98%)四只非AI标的。风格切换信号明显。", "source": "self"},
+      "macro": {"score": 3.5, "note": "Industry给分6.5：6月PMI 50.3%重返扩张+新订单51.2%创新高+高技术制造PMI 53.5%连续4月加速。负向：建筑业49%弱、小企业PMI 48.2%连续收缩、美联储沃什偏鹰。中性偏正面。", "source": "industry_agent"},
+      "news_sentiment": {"score": 5.0, "note": "News默认未参与=中性5分", "source": "default"}
+    },
+    "concentration_check": {
+      "current_ai_concentration_pct": 35.81,
+      "veto_threshold_pct": 40.0,
+      "headroom_pct": 4.19,
+      "veto_status": "AI/半导体方向新增建仓——硬否决",
+      "reason": "第一轮持仓分析已判定AI集中度35.81%接近40%红线，若新增沪电/海光/华工/南大/天岳/拓荆任一AI/半导体标的，最小试探仓(10-15%)即可能突破40%红线。Risk维持VETO：任何AI/半导体方向新增仓位均否决。已建仓通富微电不受影响，可继续持有并按目标价止盈。",
+      "unblocked_directions": [
+        "非银金融/证券(证券ETF 512880)",
+        "高股息/红利(红利低波ETF 512890)",
+        "港股创新药(创新药ETF 159892)",
+        "军工/商业航天(卫星ETF 563530/航空航天ETF 159227)"
+      ]
+    },
+    "watchlist_action": [
+      {"symbol": "512880", "name": "证券ETF", "sector": "非银金融", "concentration_impact": "无AI重叠，不占用AI预算", "technical_trigger": "站上MA60(1.06)+金叉+放量4.09%，条件已触发", "risk_signal": "低——防御性板块+成交额博弈逻辑坚实", "action": "PASS", "recommendation": "允许CIO建仓评估。建议试探仓10-15%，注意成交额连续3日>1.5万亿的CIO条件二重验证。今日单日暴涨后追高需谨慎，可分批。"},
+      {"symbol": "512890", "name": "红利低波ETF", "sector": "高股息", "concentration_impact": "无AI重叠，纯对冲工具", "technical_trigger": "AI赛道暴跌+逆势上涨0.94%，CIO对冲触发场景", "risk_signal": "极低——股息率5.5%+PE 7x历史低位+ATR仅1.83%低波动", "action": "PASS", "recommendation": "允许CIO建仓评估。作为AI赛道回撤对冲工具配置10-15%合理。今日风格切换验证对冲逻辑，是本次最优先建议标的。"},
+      {"symbol": "159227", "name": "航空航天ETF华夏", "sector": "军工/商业航天", "concentration_impact": "无AI重叠", "technical_trigger": "逆势+0.98%但距建仓线1.00仍有12.8%空间", "risk_signal": "中——建仓线未触发", "action": "WARN", "recommendation": "维持等待≤1.00建仓条件。当前逆势上涨反而降低触发概率，建议观察7月底政治局会议后再评估。"},
+      {"symbol": "563530", "name": "卫星ETF易方达", "sector": "军工/商业航天", "concentration_impact": "无AI重叠", "technical_trigger": "微跌0.21%+距建仓线1.20有16.3%空间+MA20/MA60死叉", "risk_signal": "中——建仓线未触发+中期均线死叉需警惕", "action": "WARN", "recommendation": "维持等待≤1.20建仓条件。MA60死叉+上方套牢盘重，即使回调至1.20也需趋势确认。"},
+      {"symbol": "159892", "name": "创新药ETF", "sector": "港股创新药", "concentration_impact": "无AI重叠", "technical_trigger": "逆势+2.30%但距建仓线0.55有21.5%空间", "risk_signal": "中——建仓线未触发", "action": "WARN", "recommendation": "维持等待≤0.55或美联储明确降息触发条件。今日资金流入信号积极但估值端未到位。分散化工具优先级排在红利/证券之后。"},
+      {"symbol": "002156", "name": "通富微电", "sector": "半导体封测", "concentration_impact": "已计入AI集中度", "technical_trigger": "已建仓浮盈18.8%，接近目标价78(差6.4%)", "risk_signal": "中——放量下跌可能是获利了结信号，止盈风险大于加仓风险", "action": "HOLD", "recommendation": "已建仓不新增。放量9.52倍下跌需关注是否为趋势反转，建议CIO评估分批止盈。止损50不变。禁止加仓(集中度约束)。"},
+      {"symbol": "002463", "name": "沪电股份", "sector": "AI服务器PCB", "concentration_impact": "AI方向，新增触发40%集中度红线", "technical_trigger": "距建仓区间①(135-138)仅6-7%，若明后日续跌可触发", "risk_signal": "高——技术面接近触发+估值PE 64.7x/分位80%+集中度红线", "action": "VETO", "recommendation": "集中度硬VETO。即使技术条件①触发，AI集中度35.81%+沪电试探仓10%将突破40%红线。除非先减仓其他AI标的(如通富止盈)腾出预算，否则否决建仓。"},
+      {"symbol": "688041", "name": "海光信息", "sector": "AI芯片", "concentration_impact": "AI方向，新增触发40%集中度红线", "technical_trigger": "距建仓线260差25%+，短期无触发可能", "risk_signal": "高——PE 296.2估值极端+集中度红线", "action": "VETO", "recommendation": "集中度硬VETO+技术未触发双重否决。维持观察。"},
+      {"symbol": "000988", "name": "华工科技", "sector": "AI光模块", "concentration_impact": "AI方向，新增触发40%集中度红线", "technical_trigger": "距建仓线140差19%+PE 102x不满足估值条件", "risk_signal": "高——PE 102x/毛利率仅13.3%+集中度红线", "action": "VETO", "recommendation": "集中度硬VETO+基本面毛利率劣势+估值超标三重否决。维持观察。"},
+      {"symbol": "300346", "name": "南大光电", "sector": "半导体材料", "concentration_impact": "半导体方向，新增触发40%集中度红线", "technical_trigger": "距MA20建仓线61差29%+PE 174.74超标2倍+今日极端放量跳水", "risk_signal": "极高——PE 174.74/量比15.78顶部出货形态+集中度红线", "action": "VETO", "recommendation": "集中度硬VETO+今日顶部出货信号+估值极端超标三重否决。量比15.78+振幅12.3%是典型主力出货形态，短期不宜介入。"},
+      {"symbol": "688234", "name": "天岳先进", "sector": "第三代半导体SiC", "concentration_impact": "半导体方向，新增触发40%集中度红线", "technical_trigger": "距建仓区间120-125差33%+持续亏损", "risk_signal": "高——PE -290.53亏损+集中度红线", "action": "VETO", "recommendation": "集中度硬VETO+亏损基本面+建仓线未触发三重否决。行业景气度9.0但个股财务风险大，等三个建仓条件任一满足再重召投委会。"},
+      {"symbol": "688072", "name": "拓荆科技", "sector": "半导体设备", "concentration_impact": "半导体方向，新增触发40%集中度红线", "technical_trigger": "现价832超过目标价800+疑似停牌数据异常", "risk_signal": "极高——数据异常疑似停牌+价格超过目标价+集中度红线", "action": "VETO", "recommendation": "集中度硬VETO+价格已超CIO目标价+数据异常三重否决。取消入池评估，等回调至550以下且交易正常后再重新评估。"}
+    ],
+    "action_summary": {
+      "PASS": ["512880 证券ETF", "512890 红利低波ETF"],
+      "WARN": ["159227 航空航天ETF", "563530 卫星ETF", "159892 创新药ETF"],
+      "HOLD": ["002156 通富微电（已建仓，禁止加仓）"],
+      "VETO": ["002463 沪电股份", "688041 海光信息", "000988 华工科技", "300346 南大光电", "688234 天岳先进", "688072 拓荆科技"]
+    },
+    "summary": "观察池综合风险评分6.2/10(WARN)。核心风险：AI集中度35.81%距40%红线仅4.19%余量，6只AI/半导体标的(沪电/海光/华工/南大/天岳/拓荆)全部VETO；估值端多数标的PE-TTM远超建仓要求(南大174/海光296/拓荆143/华工102)；技术面AI集体暴跌+量比3-15倍显示获利了结/顶部出货形态。风格切换窗口下，Risk仅放行2只ETF(证券512880/红利低波512890)供CIO建仓评估，另3只ETF(军工/卫星/创新药)建仓线未触发列WARN，已建仓通富微电HOLD并建议关注止盈。"
+  }
+}

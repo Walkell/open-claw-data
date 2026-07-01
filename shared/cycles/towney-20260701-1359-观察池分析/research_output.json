@@ -1,0 +1,404 @@
+{
+  "principal": "towney",
+  "agent": "research",
+  "cycle_id": "towney-20260701-1359-观察池分析",
+  "data_quality": {
+    "realtime_source": "gtimg（腾讯）单源",
+    "verification": "网易财经 502 / 东方财富 502 / 新浪 403 / 同花顺 404，仅 gtimg 可用",
+    "kline_source": "gtimg 前复权日线",
+    "pe_percentile_source": "东方财富数据中心不可用，PE分位为基于历史区间估算（标注 ~）",
+    "data_timestamp": "2026-07-01 14:26 CST",
+    "warning": "⚠️ 单源未验证 - 仅腾讯 gtimg 可用，其余 4 源均不可用。拓荆科技 688072 涨跌幅 0% 疑似停牌。"
+  },
+  "data": {
+    "market_context": "2026-07-01 下午大幅回调。半导体/AI赛道普跌，红利低波ETF和证券ETF逆势上涨。大盘风格切换明显——资金从高位AI/半导体撤出，转向低估值防御和券商。",
+    "watchlist_analysis": [
+      {
+        "symbol": "002463",
+        "name": "沪电股份",
+        "status": "已入池",
+        "priority": "高",
+        "snapshot_price": 141.06,
+        "realtime": {
+          "price": 144.63,
+          "change_pct": -5.35,
+          "high": 158.2,
+          "low": 143.65,
+          "vol_ratio": 3.69
+        },
+        "technical": {
+          "atr_pct": 7.79,
+          "bollinger_upper": 156.02,
+          "ma20": 140.01,
+          "ma60": 116.02,
+          "ma60_high": 158.2,
+          "pe_ttm": 64.7,
+          "pe_percentile": "~80%",
+          "vol_ratio": 3.69,
+          "note": "放量跌破5日线，回踩MA20(140.01)支撑。今日跌5.35%但仍在MA20上方(144.63 vs 140.01)。距建仓区间①(135-138)还有6-7%空间。若继续回调2-3日至138以下且缩量企稳，可触发试探仓。MA60在116较远，中期趋势完好。ATR 7.79%属高波动，单日5%+跌幅在正常波动范围内。"
+        },
+        "build_condition": {
+          "cio_conditions": [
+            "① 135-138缩量回踩MA20建10%试探仓(PE 45-46x)",
+            "② 125-130回踩MA60+MACD底背离加至20%",
+            "③ 理想115-120满仓25%"
+          ],
+          "current_status": "距条件①差6-7%，距条件②差13-16%。今日回调加速接近，但尚未触发。量比3.69偏大非缩量。",
+          "feasibility": "🟡 接近但未触发——若明后日继续回调至138附近且量能萎缩至<2.0，可触发条件①"
+        }
+      },
+      {
+        "symbol": "688041",
+        "name": "海光信息",
+        "status": "观察中",
+        "priority": "高",
+        "snapshot_price": 370.6,
+        "realtime": {
+          "price": 347.4,
+          "change_pct": -6.18,
+          "high": 377.88,
+          "low": 347.35,
+          "vol_ratio": 1.54
+        },
+        "technical": {
+          "atr_pct": 6.53,
+          "bollinger_upper": 376.12,
+          "ma20": 310.79,
+          "ma60": 294.56,
+          "ma60_high": 377.88,
+          "pe_ttm": 296.2,
+          "pe_percentile": "~65%",
+          "vol_ratio": 1.54,
+          "note": "今日大跌6.18%放量至1.54倍。快照价370.6→现价347.4，距快照价已跌6.3%。CIO此前判断'被错杀，国产算力逻辑与英伟达链完全不同'成立，但建仓线260距离现价仍有87元(25%)空间。MA20在310.79提供中期支撑，若跌破310则可能加速回调。BOLL上轨376.12，下轨约245。"
+        },
+        "build_condition": {
+          "cio_conditions": [
+            "条件B建仓：等2-3天确认274是本轮低点后，280附近建15%试探仓",
+            "建仓线维持260，目标价400"
+          ],
+          "current_status": "现价347.4远高于280试探仓线和260建仓线。今日回调但距建仓区间仍有67-87元。短期无触发可能。",
+          "feasibility": "🔴 远未触发——现价距建仓线差25%+，需深度回调才触发"
+        }
+      },
+      {
+        "symbol": "000988",
+        "name": "华工科技",
+        "status": "观察中",
+        "priority": "高",
+        "snapshot_price": 149.29,
+        "realtime": {
+          "price": 173.32,
+          "change_pct": -6.12,
+          "high": 187.66,
+          "low": 172.0,
+          "vol_ratio": 8.19
+        },
+        "technical": {
+          "atr_pct": 6.44,
+          "bollinger_upper": 184.69,
+          "ma20": 163.59,
+          "ma60": 142.47,
+          "ma60_high": 187.66,
+          "pe_ttm": 102.55,
+          "pe_percentile": "~75%",
+          "vol_ratio": 8.19,
+          "note": "今日放量暴跌6.12%，量比8.19为全观察池最高，恐慌性抛售明显。快照价149.29→现价173.32，期间上涨16%。今日从187.66跌至172.0，振幅达9%。MA20在163.59，若明日继续下跌可能测试。PE 102.55仍远高于建仓要求的80x以下。"
+        },
+        "build_condition": {
+          "cio_conditions": [
+            "等回调140以下建仓20%，目标220"
+          ],
+          "current_status": "现价173.32远高于140建仓线，差33元(19%)。虽然今日大跌但前期涨幅过大，距建仓线仍远。PE 102x也不满足估值要求。",
+          "feasibility": "🔴 远未触发——距建仓线差19%，且PE不满足估值条件"
+        }
+      },
+      {
+        "symbol": "300346",
+        "name": "南大光电",
+        "status": "观察中",
+        "priority": "高",
+        "snapshot_price": 74.72,
+        "realtime": {
+          "price": 88.08,
+          "change_pct": -4.93,
+          "high": 98.82,
+          "low": 88.01,
+          "vol_ratio": 15.78
+        },
+        "technical": {
+          "atr_pct": 7.93,
+          "bollinger_upper": 91.69,
+          "ma20": 68.31,
+          "ma60": 57.66,
+          "ma60_high": 98.82,
+          "pe_ttm": 174.74,
+          "pe_percentile": "~80%",
+          "vol_ratio": 15.78,
+          "note": "今日从98.82高开跳水至88.01，振幅12.3%，量比15.78极端放量。快照价74.72→现价88.08，期间涨17.9%但今日一天回吐近半涨幅。MA20在68.31，距现价仍有22%。PE 174.74远高于80x条件。BOLL上轨91.69已跌破，进入BOLL通道内。"
+        },
+        "build_condition": {
+          "cio_conditions": [
+            "① 回调MA20≈61元缩量企稳",
+            "② PE TTM<80x",
+            "③ Q2季报前驱体收入≥20%",
+            "④ 半导体集中度<35%"
+          ],
+          "current_status": "四个条件均不满足：①现价88 vs MA20 68(差29%) ②PE 175x vs 80x ③Q2未出 ④未知。今日极端放量跳水是典型的顶部出货信号。",
+          "feasibility": "🔴 远未触发——距MA20建仓线差29%，PE超标2倍+，今日极端放量跳水信号负面"
+        }
+      },
+      {
+        "symbol": "688234",
+        "name": "天岳先进",
+        "status": "观察中",
+        "priority": "中",
+        "snapshot_price": 123.8,
+        "realtime": {
+          "price": 166.27,
+          "change_pct": -4.17,
+          "high": 179.91,
+          "low": 164.78,
+          "vol_ratio": 3.95
+        },
+        "technical": {
+          "atr_pct": 8.75,
+          "bollinger_upper": 185.65,
+          "ma20": 148.34,
+          "ma60": 129.56,
+          "ma60_high": 188.88,
+          "pe_ttm": -290.53,
+          "pe_percentile": "N/A（亏损）",
+          "vol_ratio": 3.95,
+          "note": "今日放量跌4.17%。快照价123.8→现价166.27，期间涨34%。亏损状态PE无意义。MA20在148.34，距现价11%。BOLL上轨185.65，中轨148。投委会此前baseline=5.63(观望)。"
+        },
+        "build_condition": {
+          "cio_conditions": [
+            "等待三个条件任一满足：(1)120-125企稳缩量 (2)MACD金叉 (3)Q2季报毛利率回升"
+          ],
+          "current_status": "现价166.27远高于120-125建仓区间(差33%)。Q2季报未出。今日放量下跌非企稳缩量。三个条件无一满足。",
+          "feasibility": "🔴 远未触发——距建仓区间差33%，且持续亏损"
+        }
+      },
+      {
+        "symbol": "688072",
+        "name": "拓荆科技",
+        "status": "观察中",
+        "priority": "中",
+        "snapshot_price": 613.88,
+        "realtime": {
+          "price": 832.0,
+          "change_pct": 0.0,
+          "high": 0.0,
+          "low": 0.0,
+          "vol_ratio": 0.0
+        },
+        "technical": {
+          "atr_pct": 7.34,
+          "bollinger_upper": 844.79,
+          "ma20": 675.16,
+          "ma60": 536.74,
+          "ma60_high": 865.0,
+          "pe_ttm": 143.04,
+          "pe_percentile": "~60%",
+          "vol_ratio": "N/A（疑似停牌）",
+          "note": "⚠️ 涨跌幅0%、量比0、无日内高低价——疑似停牌或暂停交易。K线最后收盘832。快照价613.88→现价832，期间涨35.5%。MA20在675.16。如非停牌则为数据异常。"
+        },
+        "build_condition": {
+          "cio_conditions": [
+            "等回调至550以下考虑建仓，目标800"
+          ],
+          "current_status": "现价832远超550建仓线(差51%)。目标价800已超过。即使不停牌也无建仓条件。",
+          "feasibility": "🔴 远未触发——现价超过目标价，且可能停牌"
+        }
+      },
+      {
+        "symbol": "002156",
+        "name": "通富微电",
+        "status": "已建仓",
+        "priority": "中",
+        "snapshot_price": 61.44,
+        "realtime": {
+          "price": 72.98,
+          "change_pct": -3.81,
+          "high": 78.58,
+          "low": 72.4,
+          "vol_ratio": 9.52
+        },
+        "technical": {
+          "atr_pct": 7.05,
+          "bollinger_upper": 79.11,
+          "ma20": 67.94,
+          "ma60": 59.04,
+          "ma60_high": 79.38,
+          "pe_ttm": 76.57,
+          "pe_percentile": "~85%",
+          "vol_ratio": 9.52,
+          "note": "已建仓标的。今日跌3.81%放量至9.52倍。现价72.98接近目标价78(差6.4%)。快照价61.44建仓至今涨幅18.8%。BOLL上轨79.11接近目标价78。注意：接近止盈区，量比放大可能是获利了结信号。MA20在67.94提供支撑。"
+        },
+        "build_condition": {
+          "cio_conditions": [
+            "已建仓。建仓触发：54-58区间缩量企稳。止损50(MA60下方)。目标仓位15-20%。"
+          ],
+          "current_status": "已建仓，浮盈约18.8%。现价72.98距目标价78仅差6.4%，已接近止盈区。放量下跌需关注是否趋势反转。",
+          "feasibility": "🟢 已建仓——接近目标价，建议关注止盈时机"
+        }
+      },
+      {
+        "symbol": "563530",
+        "name": "卫星ETF易方达",
+        "status": "观察中",
+        "priority": "中",
+        "snapshot_price": 1.327,
+        "realtime": {
+          "price": 1.395,
+          "change_pct": -0.21,
+          "high": 1.425,
+          "low": 1.39,
+          "vol_ratio": 8.5
+        },
+        "technical": {
+          "atr_pct": 3.49,
+          "bollinger_upper": 1.4,
+          "ma20": 1.35,
+          "ma60": 1.44,
+          "ma60_high": 1.69,
+          "pe_percentile": "N/A（ETF）",
+          "vol_ratio": 8.5,
+          "note": "今日微跌0.21%，但量比8.5显示放量明显。MA20 1.35 < MA60 1.44，中期均线死叉但短期已站上MA20。BOLL上轨1.40，现价1.395接近上轨。MA60高位1.69远高于现价，上方套牢盘重。"
+        },
+        "build_condition": {
+          "cio_conditions": [
+            "建仓≤1.20，目标1.80"
+          ],
+          "current_status": "现价1.395高于1.20建仓线(差16.3%)。MA60死叉+上方套牢盘，即使回调至1.20也需确认趋势。",
+          "feasibility": "🟡 距建仓线仍有距离——需回调16%+，短期无触发可能"
+        }
+      },
+      {
+        "symbol": "159227",
+        "name": "航空航天ETF华夏",
+        "status": "观察中",
+        "priority": "中",
+        "snapshot_price": 1.101,
+        "realtime": {
+          "price": 1.128,
+          "change_pct": 0.98,
+          "high": 1.138,
+          "low": 1.115,
+          "vol_ratio": 5.66
+        },
+        "technical": {
+          "atr_pct": 3.16,
+          "bollinger_upper": 1.16,
+          "ma20": 1.12,
+          "ma60": 1.23,
+          "ma60_high": 1.4,
+          "pe_percentile": "N/A（ETF）",
+          "vol_ratio": 5.66,
+          "note": "今日逆势上涨+0.98%，军工防御属性体现。站上MA20(1.12)，但MA60在1.23形成压力。MA60高位1.40远高于现价。BOLL上轨1.16接近现价。"
+        },
+        "build_condition": {
+          "cio_conditions": [
+            "建仓≤1.00，目标1.50"
+          ],
+          "current_status": "现价1.128高于1.00建仓线(差12.8%)。今日逆势上涨，短期回调至1.00可能性低。",
+          "feasibility": "🟡 距建仓线仍有距离——逆势上涨，短期触发可能性低"
+        }
+      },
+      {
+        "symbol": "512890",
+        "name": "红利低波ETF",
+        "status": "观察中",
+        "priority": "高",
+        "snapshot_price": null,
+        "realtime": {
+          "price": 1.077,
+          "change_pct": 0.94,
+          "high": 1.083,
+          "low": 1.062,
+          "vol_ratio": 2.33
+        },
+        "technical": {
+          "atr_pct": 1.83,
+          "bollinger_upper": 1.2,
+          "ma20": 1.13,
+          "ma60": 1.16,
+          "ma60_high": 1.2,
+          "pe_percentile": "N/A（ETF）",
+          "vol_ratio": 2.33,
+          "note": "今日逆势上涨+0.94%，防御属性凸显。但MA20(1.13)和MA60(1.16)均在现价上方形成压力，趋势仍偏弱。BOLL上轨1.20。低波动品种，ATR仅1.83%。"
+        },
+        "build_condition": {
+          "cio_conditions": [
+            "AI赛道过热或组合回撤>10%时配置10-15%。目标价按股息率4.5%锚定。"
+          ],
+          "current_status": "今日AI赛道大幅回调，红利低波逆势上涨，正是CIO预设的配置场景。但需要判断是否为'AI赛道过热'的系统性拐点而非单日回调。",
+          "feasibility": "🟢 条件部分触发——AI赛道今日集体暴跌，红利逆势上涨验证对冲逻辑。建议CIO判断是否为系统性切换"
+        }
+      },
+      {
+        "symbol": "159892",
+        "name": "创新药ETF",
+        "status": "观察中",
+        "priority": "中",
+        "snapshot_price": null,
+        "realtime": {
+          "price": 0.668,
+          "change_pct": 2.3,
+          "high": 0.67,
+          "low": 0.647,
+          "vol_ratio": 10.25
+        },
+        "technical": {
+          "atr_pct": 3.64,
+          "bollinger_upper": 0.67,
+          "ma20": 0.63,
+          "ma60": 0.71,
+          "ma60_high": 0.84,
+          "pe_percentile": "N/A（ETF）",
+          "vol_ratio": 10.25,
+          "note": "今日放量大涨+2.30%，站上BOLL上轨0.67。MA20在0.63已站稳，但MA60在0.71形成中期压力。量比10.25极强。资金从AI撤出流入医药板块迹象明显。"
+        },
+        "build_condition": {
+          "cio_conditions": [
+            "净值0.55以下或美联储明确降息"
+          ],
+          "current_status": "现价0.668高于0.55建仓线(差21.5%)。虽然今日大涨但距建仓线仍远。",
+          "feasibility": "🟡 距建仓线仍有距离——但资金流入信号积极"
+        }
+      },
+      {
+        "symbol": "512880",
+        "name": "证券ETF",
+        "status": "观察中",
+        "priority": "中",
+        "snapshot_price": null,
+        "realtime": {
+          "price": 1.172,
+          "change_pct": 4.09,
+          "high": 1.191,
+          "low": 1.119,
+          "vol_ratio": 8.59
+        },
+        "technical": {
+          "atr_pct": 3.68,
+          "bollinger_upper": 1.18,
+          "ma20": 1.07,
+          "ma60": 1.06,
+          "ma60_high": 1.19,
+          "pe_percentile": "N/A（ETF）",
+          "vol_ratio": 8.59,
+          "note": "⭐ 今日放量大涨+4.09%，为全观察池涨幅最大。MA20(1.07)和MA60(1.06)均被突破，形成金叉。BOLL上轨1.18接近现价。量比8.59显示强资金流入。今日高1.191距MA60高位1.19，突破前高在即。"
+        },
+        "build_condition": {
+          "cio_conditions": [
+            "A股成交额连续3日>1.5万亿或券商指数站上MA60"
+          ],
+          "current_status": "⭐ 站上MA60条件已满足！MA60在1.06，现价1.172已显著突破。MA20(1.07)也同时突破，金叉形成。需确认成交额是否连续3日>1.5万亿。",
+          "feasibility": "🟢 条件已触发——MA60突破+金叉形成，强烈建议CIO评估建仓"
+        }
+      }
+    ],
+    "summary": "下午大幅回调中，AI/半导体赛道集体暴跌（海光-6.18%、华工-6.12%、沪电-5.35%、南大-4.93%），资金明显撤离高估值成长股。红利低波ETF(+0.94%)和证券ETF(+4.09%)逆势上涨，风格切换信号显著。\n\n最值得CIO关注：\n1. ⭐ 证券ETF(512880)建仓条件已触发——站上MA60+金叉+放量，强烈建议评估\n2. 🟡 沪电股份(002463)距建仓区间①(135-138)仅差6-7%，若明后日续跌可触发\n3. 🟢 红利低波ETF(512890)AI赛道暴跌验证对冲逻辑，建议判断是否为系统性切换\n4. 🟢 通富微电(002156)已建仓浮盈18.8%，距目标价78仅6.4%，建议关注止盈\n\n其余标的距建仓条件均有较大差距（华工差19%、南大差29%、海光差25%、天岳差33%），短期无触发可能。"
+  }
+}

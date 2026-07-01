@@ -1,0 +1,596 @@
+{
+  "cycle_id": "towney-20260701-1359-持仓分析",
+  "principal": "towney",
+  "flow_type": "四委员",
+  "decision_time": 1751351640000,
+  "cio": "CIO",
+  "market_context": "2026-07-01 14:24 CST 盘中，A股下午大幅回调，半导体/成长板块普跌，金融权重股吸血导致高低切换。半年度获利兑现+板块轮动，非基本面恶化。黄金ETF已清仓（7/1@8.275），组合剩9笔。",
+
+  "part1_committee_summary": {
+    "title": "① 委员评分汇总表",
+    "table": [
+      {
+        "committee": "Research",
+        "scores": "tech: 组合加权5.91 (fund/fin/val: 未评估)",
+        "core_judgment": "组合强弱分化显著：华海清科+4.4%领涨/澜起盘中剧震收平/天孚-6.55%最弱距止损仅0.8%。美股ETF独立走强，跨境对冲有效。",
+        "data_confidence": "⚠️ 单源（仅gtimg可用，东方财富/akshare/网易/同花顺/新浪均不可用）"
+      },
+      {
+        "committee": "Industry",
+        "scores": "macro: 6.0 / industry: 7.0",
+        "core_judgment": "全球半导体景气度高位（WSTS预测+90%），但A股交易拥挤度历史高位，资金从科技向金融/防御板块迁移。中期偏后、狂欢未终、风险已抬升。",
+        "data_confidence": "🟢 多源验证"
+      },
+      {
+        "committee": "News",
+        "scores": "sentiment: -0.3(短期) / +0.35(中期) / impact: 4",
+        "core_judgment": "今日回调为半年度结构性获利兑现+权重金融吸血导致的高低切换，非事件驱动利空。个股新闻面均正面（澜起DDR5/天孚800G/通富AMD）。",
+        "data_confidence": "🟢 多源（DuckDuckGo+新浪+搜狐+澎湃+东财+雪球+163）"
+      },
+      {
+        "committee": "Risk",
+        "scores": "4.80/10 (58/100) / WARN",
+        "core_judgment": "组合层面🟡黄牌。核心风险：①天孚距止损仅0.8%触发个股VETO加仓；②AI/半导体穿透宽基后35.81%逼近40%红线；③板块交易拥挤度历史高位。",
+        "data_confidence": "⚠️ 行情单源未交叉验证，risk_score已+2分谨慎调整"
+      }
+    ],
+    "data_quality_note": "⚠️ Research行情数据仅gtimg单源可用（东方财富502/akshare断开/网易502/同花顺404/新浪403），价格未经交叉验证。Risk已据此上调risk_score +2分。所有止盈止损建议偏保守。"
+  },
+
+  "part2_formula": {
+    "title": "② §7 公式展开计算",
+    "flow_type": "四委员",
+    "weights": "Wr=0.55, Wi=0.30, Wn=0.15",
+    "threshold": "baseline ≥ 7.0 → 支持建仓/加仓（需Risk NOC）",
+    "limitation_note": "⚠️ 本次为持仓分析（非个股深度），Research仅提供技术面评分，fundamental/financials/valuation三维未评估。research_composite以技术面评分加权平均为代理值，计算偏保守。",
+
+    "portfolio_level": {
+      "research_composite": "5.91（技术面加权平均：华海7×10.54%+天孚3×7.13%+澜起8×6.08%+通富5×2.43%+创业板50_5×5.44%+中证500_7×4.01%+科创芯片6×3.41%+纳指6×5.06%+标普5×1.43%）/45.53%",
+      "industry_composite": "0.50×6.0 + 0.50×7.0 = 6.50",
+      "news_modifier": "-0.30 × (4/10) = -0.12（使用整体市场短期情绪-0.3 + 半导体/AI板块事件影响4）",
+      "baseline_score": "0.55×5.91 + 0.30×6.50 + 0.15×(5 + (-0.12)×5) = 3.25 + 1.95 + 0.66 = 5.86",
+      "baseline_action": "持有观察（4.0~7.0区间）",
+      "data_confidence": "⚠️ 中低 — Research行情单源，fundamental/financials/valuation未评估"
+    },
+
+    "per_holding": [
+      {
+        "symbol": "688120",
+        "name": "华海清科",
+        "research_composite": "7.0（tech=7，fund/fin/val未评估，以tech代理）",
+        "industry_composite": "6.50（portfolio-level）",
+        "news_modifier": "0.15 × (5/10) = 0.075",
+        "baseline_score": "0.55×7.0 + 0.30×6.50 + 0.15×(5+0.075×5) = 3.85+1.95+0.806 = 6.61",
+        "baseline_action": "持有观察（接近7.0阈值）"
+      },
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "research_composite": "3.0（tech=3，fund/fin/val未评估，以tech代理）",
+        "industry_composite": "6.50（portfolio-level）",
+        "news_modifier": "0.60 × (7/10) = 0.42",
+        "baseline_score": "0.55×3.0 + 0.30×6.50 + 0.15×(5+0.42×5) = 1.65+1.95+1.065 = 4.67",
+        "baseline_action": "持有观察（低端，接近减仓线4.0）"
+      },
+      {
+        "symbol": "688008",
+        "name": "澜起科技",
+        "research_composite": "8.0（tech=8，fund/fin/val未评估，以tech代理）",
+        "industry_composite": "6.50（portfolio-level）",
+        "news_modifier": "0.50 × (6/10) = 0.30",
+        "baseline_score": "0.55×8.0 + 0.30×6.50 + 0.15×(5+0.30×5) = 4.40+1.95+0.975 = 7.33",
+        "baseline_action": "支持加仓（≥7.0，但距止盈仅0.6%需先处理止盈）"
+      },
+      {
+        "symbol": "002156",
+        "name": "通富微电",
+        "research_composite": "5.0（tech=5，fund/fin/val未评估，以tech代理）",
+        "industry_composite": "6.50（portfolio-level）",
+        "news_modifier": "0.55 × (6/10) = 0.33",
+        "baseline_score": "0.55×5.0 + 0.30×6.50 + 0.15×(5+0.33×5) = 2.75+1.95+0.998 = 5.70",
+        "baseline_action": "持有观察"
+      },
+      {
+        "symbol": "159949",
+        "name": "创业板50ETF",
+        "research_composite": "5.0（tech=5，fund/fin/val未评估，以tech代理）",
+        "industry_composite": "6.50（portfolio-level）",
+        "news_modifier": "0.10 × (3/10) = 0.03",
+        "baseline_score": "0.55×5.0 + 0.30×6.50 + 0.15×(5+0.03×5) = 2.75+1.95+0.773 = 5.47",
+        "baseline_action": "持有观察"
+      },
+      {
+        "symbol": "510500",
+        "name": "中证500ETF",
+        "research_composite": "7.0（tech=7，fund/fin/val未评估，以tech代理）",
+        "industry_composite": "6.50（portfolio-level）",
+        "news_modifier": "-0.15 × (4/10) = -0.06",
+        "baseline_score": "0.55×7.0 + 0.30×6.50 + 0.15×(5+(-0.06)×5) = 3.85+1.95+0.705 = 6.51",
+        "baseline_action": "持有观察"
+      },
+      {
+        "symbol": "588090",
+        "name": "科创芯片ETF",
+        "research_composite": "6.0（tech=6，fund/fin/val未评估，以tech代理）",
+        "industry_composite": "6.50（portfolio-level）",
+        "news_modifier": "-0.10 × (3/10) = -0.03",
+        "baseline_score": "0.55×6.0 + 0.30×6.50 + 0.15×(5+(-0.03)×5) = 3.30+1.95+0.728 = 5.98",
+        "baseline_action": "持有观察"
+      },
+      {
+        "symbol": "513300",
+        "name": "纳斯达克ETF",
+        "research_composite": "6.0（tech=6，fund/fin/val未评估，以tech代理）",
+        "industry_composite": "6.50（portfolio-level）",
+        "news_modifier": "0.60 × (5/10) = 0.30",
+        "baseline_score": "0.55×6.0 + 0.30×6.50 + 0.15×(5+0.30×5) = 3.30+1.95+0.975 = 6.23",
+        "baseline_action": "持有观察"
+      },
+      {
+        "symbol": "513650",
+        "name": "标普500ETF",
+        "research_composite": "5.0（tech=5，fund/fin/val未评估，以tech代理）",
+        "industry_composite": "6.50（portfolio-level）",
+        "news_modifier": "0.55 × (4/10) = 0.22",
+        "baseline_score": "0.55×5.0 + 0.30×6.50 + 0.15×(5+0.22×5) = 2.75+1.95+0.915 = 5.62",
+        "baseline_action": "持有观察"
+      }
+    ]
+  },
+
+  "part3_risk_verdict": {
+    "title": "Risk VETO 分级裁决",
+    "portfolio_risk_score_10": 4.80,
+    "portfolio_risk_score_100": 58,
+    "risk_level": "🟡 黄牌（5-6区间）",
+    "risk_actions": "加仓时降仓位上限（建议不超过原目标70%）；减仓时加速节奏",
+    "individual_veto": [
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "rule": "距止损线≤3% → VETO任何加仓",
+        "distance_pct": 0.81,
+        "type": "hard",
+        "cio_override": false,
+        "override_reason": null,
+        "action": "禁止任何加仓；跌破280.56应立即执行止损"
+      }
+    ],
+    "concentration_status": {
+      "ai_semiconductor_direct": "29.59%（🟢 GREEN，阈值40%）",
+      "ai_semiconductor_penetrated": "35.81%（🟡 YELLOW，距40%红线仅4.19pp）",
+      "action": "禁止AI/半导体方向任何新增仓位；新加仓上限减半（原计划10%→5%）"
+    }
+  },
+
+  "part4_cio_ruling": {
+    "title": "③ CIO 裁决表",
+    "data_confidence_bias": "⚠️ 行情单源（仅gtimg），所有止盈止损建议偏保守——更早止盈、更紧止损。",
+
+    "holdings": [
+      {
+        "symbol": "688120",
+        "name": "华海清科",
+        "price": 336.37,
+        "change_pct": 4.40,
+        "baseline": 6.61,
+        "risk": "NOC（组合黄牌但个股无VETO）",
+        "pe_percentile": "85%",
+        "position_coefficient": {
+          "formula": "0.35×(1-0.85)+0.25×0.70+0.25×0.228+0.15×0.3",
+          "value": 0.33,
+          "components": {
+            "pe_term": "0.35×0.15=0.053",
+            "research_term": "0.25×0.70=0.175",
+            "volume_term": "0.25×0.228=0.057",
+            "ma20_deviation_term": "0.15×0.3=0.045（price/MA20=1.50→>1.10→0.3）"
+          }
+        },
+        "current_position_pct": 10.54,
+        "suggested_position_pct": 7.07,
+        "adjustment_pct": -3.47,
+        "safety_cap_pct": 10.0,
+        "verdict": "建议减仓",
+        "stop_loss": {
+          "value": 295.00,
+          "source": "现有止损（ATR 6.42%支撑）",
+          "type": "建议",
+          "note": "维持295.00。价格远超MA20(224.39)，若回撤至MA20附近(约225)再评估调整。"
+        },
+        "take_profit": {
+          "value": 370.00,
+          "source": "PE分位85%向下修正5%+前高356.64×0.98=349.5→取370（已低于原380）",
+          "type": "静态止盈",
+          "note": "PE分位85%>70%，止盈位从380下调至370。价格是MA20的1.5倍极度超买，建议明日高开减仓15-20%锁利。"
+        },
+        "trigger_condition": "若明日高开>350（前高356.64附近），触发减仓15-20%",
+        "invalid_condition": "若回调至MA20(224)附近且research_composite≥7，可考虑回补",
+        "action_priority": "P2-MEDIUM",
+        "rationale": "今日+4.4%领涨但极度超买（price/MA20=1.5），PE分位85%，仓位10.54%已达单股上限。定增利好+板级CMP订单支撑中期逻辑，但短期回调风险显著。减仓至~7%既可锁利又保留核心仓位。"
+      },
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "price": 282.85,
+        "change_pct": -6.55,
+        "baseline": 4.67,
+        "risk": "🔴 个股VETO（距止损≤3%，hard）",
+        "pe_percentile": "70%",
+        "position_coefficient": {
+          "formula": "0.35×(1-0.70)+0.25×0.30+0.25×0.196+0.15×1.3",
+          "value": 0.42,
+          "components": {
+            "pe_term": "0.35×0.30=0.105",
+            "research_term": "0.25×0.30=0.075",
+            "volume_term": "0.25×0.196=0.049",
+            "ma20_deviation_term": "0.15×1.3=0.195（price/MA20=0.896→<0.95→1.3）"
+          }
+        },
+        "current_position_pct": 7.13,
+        "suggested_position_pct": 4.11,
+        "adjustment_pct": -3.02,
+        "safety_cap_pct": 0,
+        "verdict": "🔴 严格止损纪律 — 跌破280.56立即执行止损（减仓50-100%）",
+        "stop_loss": {
+          "value": 280.56,
+          "source": "现有止损 + ATR 8.06% + MA60(276.98)支撑",
+          "type": "🔴 强制",
+          "note": "盘中低280.00已触及止损边缘。若明日低开或盘中跌破280.56，无条件执行止损。MA60=276.98为最后防线，若280.56失守且无法快速收复，应清仓。"
+        },
+        "take_profit": {
+          "value": 317.84,
+          "source": "维持现有止盈",
+          "type": "静态止盈",
+          "note": "短期无触及可能（距现价12.4%），止盈暂不调整。"
+        },
+        "trigger_condition": "跌破280.56（T+1开盘及全日盯盘）→ 立即执行止损",
+        "invalid_condition": "若反弹站稳MA20(315.55)且量比>1.2持续3日，可暂缓解除止损警戒",
+        "action_priority": "P0-CRITICAL",
+        "rationale": "baseline 4.67为组合最低，接近减仓线4.0。跌破MA20后加速下行，盘中低280.00已触及止损边缘。6/29反向加仓25%@295.15已被套-4.2%。Risk硬VETO禁止加仓。浮盈+94.1%有足够安全垫执行止损锁定利润。"
+      },
+      {
+        "symbol": "688008",
+        "name": "澜起科技",
+        "price": 310.13,
+        "change_pct": 0.07,
+        "baseline": 7.33,
+        "risk": "NOC",
+        "pe_percentile": "75%",
+        "position_coefficient": {
+          "formula": "0.35×(1-0.75)+0.25×0.80+0.25×0.214+0.15×0.3",
+          "value": 0.39,
+          "components": {
+            "pe_term": "0.35×0.25=0.088",
+            "research_term": "0.25×0.80=0.200",
+            "volume_term": "0.25×0.214=0.054",
+            "ma20_deviation_term": "0.15×0.3=0.045（price/MA20=1.20→>1.10→0.3）"
+          }
+        },
+        "current_position_pct": 6.08,
+        "suggested_position_pct": 3.73,
+        "adjustment_pct": -2.35,
+        "safety_cap_pct": 10.0,
+        "verdict": "🟡 触发止盈减仓 — 建议减仓20-30%锁利",
+        "stop_loss": {
+          "value": 251.30,
+          "source": "现有止损（距现价19%充裕）",
+          "type": "建议",
+          "note": "维持251.30。浮盈+54.2%安全垫厚。"
+        },
+        "take_profit": {
+          "value": 312.00,
+          "source": "维持现有止盈。盘中高332.90已突破→若收盘站稳312+触发减仓20-30%",
+          "type": "静态止盈（已触发）",
+          "note": "盘中高332.90已突破止盈312。若明日开盘>312，触发减仓20-30%锁利+54%。DDR5新品送样+存储超级周期支撑中期逻辑，减仓后保留~4%核心仓位。"
+        },
+        "trigger_condition": "若明日开盘>312.00或收盘站稳312+，触发减仓20-30%",
+        "invalid_condition": "若回调至MA20(259)附近且DDR5基本面未变，可考虑回补至6%",
+        "action_priority": "P1-HIGH",
+        "rationale": "baseline 7.33为组合最高，理论支持加仓。但盘中高已破止盈，距止盈仅0.6%。PE分位75%估值偏高。先执行止盈减仓，待回调至MA20附近再评估回补。"
+      },
+      {
+        "symbol": "002156",
+        "name": "通富微电",
+        "price": 73.50,
+        "change_pct": -3.12,
+        "baseline": 5.70,
+        "risk": "NOC",
+        "pe_percentile": "55%",
+        "position_coefficient": {
+          "formula": "0.35×(1-0.55)+0.25×0.50+0.25×0.178+0.15×0.5",
+          "value": 0.40,
+          "components": {
+            "pe_term": "0.35×0.45=0.158",
+            "research_term": "0.25×0.50=0.125",
+            "volume_term": "0.25×0.178=0.045",
+            "ma20_deviation_term": "0.15×0.5=0.075（price/MA20=1.08→1.05-1.10→0.5）"
+          }
+        },
+        "current_position_pct": 2.43,
+        "suggested_position_pct": 1.45,
+        "adjustment_pct": -0.98,
+        "safety_cap_pct": 5.0,
+        "verdict": "持有观察 — 紧盯成本线",
+        "stop_loss": {
+          "value": 64.00,
+          "source": "现有止损（成本63.95几乎重合）",
+          "type": "🔴 强制",
+          "note": "成本63.95与止损64.00几乎重合，无缓冲空间。任何小幅下跌都可能触发止损。若跌破64.00应立即执行止损。"
+        },
+        "take_profit": {
+          "value": 81.00,
+          "source": "维持现有止盈（距现价10.2%）",
+          "type": "静态止盈",
+          "note": "维持81.00。AMD MI350量产+Q1净利+225%支撑中期逻辑。"
+        },
+        "trigger_condition": "跌破64.00 → 立即止损；反弹至81.00 → 触发止盈",
+        "invalid_condition": "若板块企稳+站上MA20(68)且量比>1.0持续3日，可放宽止损至62（-3%）",
+        "action_priority": "P3-WATCH",
+        "rationale": "仓位仅2.43%为组合最小持仓，风险可控。AMD深度绑定+AI封测爆发逻辑未变。但成本与止损几乎重合是结构性脆弱点，需持续盯盘。"
+      },
+      {
+        "symbol": "159949",
+        "name": "创业板50ETF",
+        "price": 2.041,
+        "change_pct": -2.25,
+        "baseline": 5.47,
+        "risk": "NOC",
+        "pe_percentile": "60%",
+        "position_coefficient": {
+          "formula": "0.35×(1-0.60)+0.25×0.50+0.25×0.158+0.15×1.0",
+          "value": 0.45,
+          "components": {
+            "pe_term": "0.35×0.40=0.140",
+            "research_term": "0.25×0.50=0.125",
+            "volume_term": "0.25×0.158=0.040",
+            "ma20_deviation_term": "0.15×1.0=0.150（price/MA20=1.03→0.95-1.05→1.0）"
+          }
+        },
+        "current_position_pct": 5.44,
+        "suggested_position_pct": 2.97,
+        "adjustment_pct": -2.47,
+        "safety_cap_pct": 10.0,
+        "verdict": "持有观察 — 可小幅减仓优化",
+        "stop_loss": {
+          "value": 1.95,
+          "source": "现有止损（距现价4.5%）",
+          "type": "建议",
+          "note": "维持1.95。浮盈+60%缓冲充足。"
+        },
+        "take_profit": {
+          "value": 2.50,
+          "source": "维持现有止盈（距现价22.5%）",
+          "type": "静态止盈",
+          "note": "维持2.50。作为宽基分散配置，不宜过早止盈。"
+        },
+        "trigger_condition": "若连续3日低于MA20(1.99)，考虑减仓至3%",
+        "invalid_condition": "若创业板指放量突破前高，可暂缓减仓",
+        "action_priority": "P4-INFO",
+        "rationale": "浮盈+60%安全垫厚，距止损4.5%空间充裕。回调-2.25%属正常波动。作为分散化配置保留，不建议主动大幅减仓。调仓系数建议小幅优化至~3%。"
+      },
+      {
+        "symbol": "510500",
+        "name": "中证500ETF",
+        "price": 9.18,
+        "change_pct": -0.15,
+        "baseline": 6.51,
+        "risk": "NOC",
+        "pe_percentile": "45%",
+        "position_coefficient": {
+          "formula": "0.35×(1-0.45)+0.25×0.70+0.25×0.126+0.15×0.5",
+          "value": 0.47,
+          "components": {
+            "pe_term": "0.35×0.55=0.193",
+            "research_term": "0.25×0.70=0.175",
+            "volume_term": "0.25×0.126=0.032",
+            "ma20_deviation_term": "0.15×0.5=0.075（price/MA20=1.06→1.05-1.10→0.5）"
+          }
+        },
+        "current_position_pct": 4.01,
+        "suggested_position_pct": 2.11,
+        "adjustment_pct": -1.90,
+        "safety_cap_pct": 10.0,
+        "verdict": "持有观察 — 防御价值凸显",
+        "stop_loss": {
+          "value": 8.57,
+          "source": "现有止损（距现价6.6%）",
+          "type": "建议",
+          "note": "维持8.57。今日-0.15%为组合最抗跌标的，防御性突出。成本8.302接近止损，若继续回调需警惕。"
+        },
+        "take_profit": {
+          "value": 9.50,
+          "source": "维持现有止盈（距现价3.5%）",
+          "type": "静态止盈",
+          "note": "维持9.50。距止盈仅3.5%，若反弹至9.50可考虑减仓20%锁利。"
+        },
+        "trigger_condition": "反弹至9.50 → 减仓20%锁利；跌破8.57 → 执行止损",
+        "invalid_condition": "若市场风格切换回成长且中证500放量突破9.50，可上调止盈至10.00",
+        "action_priority": "P4-INFO",
+        "rationale": "今日仅-0.15%为组合最抗跌标的，防御价值在成长股大幅回调中充分体现。PE分位45%估值合理偏低。作为底仓配置，不建议大幅减仓。"
+      },
+      {
+        "symbol": "588090",
+        "name": "科创芯片ETF",
+        "price": 2.233,
+        "change_pct": -1.93,
+        "baseline": 5.98,
+        "risk": "NOC",
+        "pe_percentile": "65%",
+        "position_coefficient": {
+          "formula": "0.35×(1-0.65)+0.25×0.60+0.25×0.196+0.15×0.3",
+          "value": 0.37,
+          "components": {
+            "pe_term": "0.35×0.35=0.123",
+            "research_term": "0.25×0.60=0.150",
+            "volume_term": "0.25×0.196=0.049",
+            "ma20_deviation_term": "0.15×0.3=0.045（price/MA20=1.18→>1.10→0.3）"
+          }
+        },
+        "current_position_pct": 3.41,
+        "suggested_position_pct": 2.16,
+        "adjustment_pct": -1.25,
+        "safety_cap_pct": 5.0,
+        "verdict": "持有观察 — 若反弹至2.30再减仓20%",
+        "stop_loss": {
+          "value": 1.90,
+          "source": "现有止损（距现价14.9%充裕）",
+          "type": "建议",
+          "note": "维持1.90。浮盈+48%安全垫厚。"
+        },
+        "take_profit": {
+          "value": 2.30,
+          "source": "维持现有止盈。60日高2.32已略超→若反弹至2.30附近再减20%",
+          "type": "静态止盈（接近触发）",
+          "note": "6/29已减仓35%锁利，当前仅3.41%。若再减20%至~2.7%，作为底仓保留。"
+        },
+        "trigger_condition": "反弹至2.30 → 再减仓20%",
+        "invalid_condition": "若板块深度回调至MA60(1.72)且半导体基本面不变，可回补",
+        "action_priority": "P2-MEDIUM",
+        "rationale": "与华海清科/澜起/通富三只个股风险重叠。6/29已减仓35%锁利正确。若反弹至止盈位再减20%持续降AI敞口，符合集中度管理要求。"
+      },
+      {
+        "symbol": "513300",
+        "name": "纳斯达克ETF",
+        "price": 2.708,
+        "change_pct": 0.15,
+        "baseline": 6.23,
+        "risk": "NOC",
+        "pe_percentile": "50%",
+        "position_coefficient": {
+          "formula": "0.35×(1-0.50)+0.25×0.60+0.25×0.074+0.15×1.0",
+          "value": 0.49,
+          "components": {
+            "pe_term": "0.35×0.50=0.175",
+            "research_term": "0.25×0.60=0.150",
+            "volume_term": "0.25×0.074=0.019",
+            "ma20_deviation_term": "0.15×1.0=0.150（price/MA20=1.01→0.95-1.05→1.0）"
+          }
+        },
+        "current_position_pct": 5.06,
+        "suggested_position_pct": 2.56,
+        "adjustment_pct": -2.50,
+        "safety_cap_pct": 10.0,
+        "verdict": "持有观察 — 维持不动",
+        "stop_loss": {
+          "value": 2.52,
+          "source": "现有止损（距现价6.9%）",
+          "type": "建议",
+          "note": "维持2.52。纳指隔夜创历史新高提供支撑。"
+        },
+        "take_profit": {
+          "value": 2.861,
+          "source": "维持现有止盈（距现价5.6%）",
+          "type": "静态止盈",
+          "note": "维持2.861。6/24 CIO减仓裁决背景（美股大跌）已逆转，纳指已创新高。建议维持仓位不变，不执行6/24减仓建议。"
+        },
+        "trigger_condition": "若纳指连续3日收跌>1%且跌破MA20(2.69)，评估减仓",
+        "invalid_condition": "美股维持新高趋势，维持仓位",
+        "action_priority": "P4-INFO",
+        "rationale": "6/24 CIO减仓裁决背景是美股当时大跌，彼时利空已逆转——纳指/标普均创历史新高。今日+0.15%在A股大跌中独立走强，跨境对冲价值充分兑现。建议维持5.06%仓位不动。PE分位50%估值中性。"
+      },
+      {
+        "symbol": "513650",
+        "name": "标普500ETF",
+        "price": 1.878,
+        "change_pct": 0.54,
+        "baseline": 5.62,
+        "risk": "NOC",
+        "pe_percentile": "55%",
+        "position_coefficient": {
+          "formula": "0.35×(1-0.55)+0.25×0.50+0.25×0.118+0.15×1.0",
+          "value": 0.46,
+          "components": {
+            "pe_term": "0.35×0.45=0.158",
+            "research_term": "0.25×0.50=0.125",
+            "volume_term": "0.25×0.118=0.030",
+            "ma20_deviation_term": "0.15×1.0=0.150（price/MA20=0.99→0.95-1.05→1.0）"
+          }
+        },
+        "current_position_pct": 1.43,
+        "suggested_position_pct": 0.77,
+        "adjustment_pct": -0.66,
+        "safety_cap_pct": 5.0,
+        "verdict": "持有观察 — 底仓不动",
+        "stop_loss": {
+          "value": 1.70,
+          "source": "现有止损（距现价9.5%）",
+          "type": "建议",
+          "note": "维持1.70。标普隔夜创历史新高提供支撑。"
+        },
+        "take_profit": {
+          "value": 2.20,
+          "source": "维持现有止盈（距现价17.1%）",
+          "type": "静态止盈",
+          "note": "维持2.20。仓位仅1.43%，底仓性质，无操作紧迫性。"
+        },
+        "trigger_condition": "无紧迫触发条件",
+        "invalid_condition": "无",
+        "action_priority": "P4-INFO",
+        "rationale": "仓位仅1.43%为组合最小持仓，底仓性质。标普隔夜创新高，浮盈+13.5%。无操作紧迫性。"
+      }
+    ],
+
+    "summary_table": [
+      {"symbol": "300394", "name": "天孚通信", "priority": "P0-CRITICAL", "action": "跌破280.56立即止损", "trigger": "T+1开盘", "rationale": "距止损0.8%，盘中低已触及边缘"},
+      {"symbol": "688008", "name": "澜起科技", "priority": "P1-HIGH", "action": "止盈减仓20-30%", "trigger": "开盘>312或收盘站稳312+", "rationale": "盘中高已破止盈，浮盈+54%"},
+      {"symbol": "688120", "name": "华海清科", "priority": "P2-MEDIUM", "action": "高开减仓15-20%锁利", "trigger": "高开>350", "rationale": "极度超买，PE分位85%"},
+      {"symbol": "588090", "name": "科创芯片ETF", "priority": "P2-MEDIUM", "action": "反弹至2.30再减20%", "trigger": "反弹至2.30", "rationale": "降AI敞口，与个股风险重叠"},
+      {"symbol": "002156", "name": "通富微电", "priority": "P3-WATCH", "action": "紧盯成本/止损线", "trigger": "持续盯盘", "rationale": "成本与止损几乎重合"},
+      {"symbol": "513300", "name": "纳斯达克ETF", "priority": "P4-INFO", "action": "维持不动", "trigger": "无", "rationale": "美股新高，6/24减仓背景已逆转"},
+      {"symbol": "510500", "name": "中证500ETF", "priority": "P4-INFO", "action": "维持底仓", "trigger": "无", "rationale": "今日最抗跌，防御价值凸显"},
+      {"symbol": "159949", "name": "创业板50ETF", "priority": "P4-INFO", "action": "维持不动", "trigger": "无", "rationale": "浮盈+60%缓冲充足"},
+      {"symbol": "513650", "name": "标普500ETF", "priority": "P4-INFO", "action": "底仓不动", "trigger": "无", "rationale": "仓位最小，无紧迫性"}
+    ]
+  },
+
+  "part5_concentration_reduction": {
+    "title": "⑤ 集中度超标降仓方案",
+    "status": "AI/半导体穿透宽基后35.81%，🟡 YELLOW（30-40%），未触发强制降仓",
+    "constraint": "禁止AI/半导体方向任何新增仓位；新加仓上限减半（原计划10%→5%）",
+    "natural_reduction_path": "若按裁决表执行澜起止盈减仓（-2.35pp）+华海清科减仓（-3.47pp）+科创芯片减仓（-1.25pp），AI直接暴露将从29.59%降至~22.52%，穿透后从35.81%降至~28.74%，回归🟢 GREEN",
+    "note": "当前未触发橙牌强制降仓。若后续市场反弹导致集中度自然回升至40%+，届时按减仓优先级执行：天孚（浮盈94%最高+tech最低）→华海清科（PE分位85%最高）→科创芯片ETF（与个股重叠）"
+  },
+
+  "part6_core_logic": {
+    "title": "④ 核心逻辑",
+    "summary": "7/1下午A股大幅回调本质是半年度获利兑现+权重金融吸血导致的高低切换，非基本面/事件驱动利空。半导体/AI中长期逻辑（DDR5渗透+800G升级+AMD MI350量产+国产替代政策）完全未变。组合层面baseline 5.86→持有观察，Risk黄牌4.80/10→加仓需降上限。核心操作纪律三条：①天孚通信距止损仅0.8%（P0-CRITICAL），跌破280.56无条件止损；②澜起科技盘中高已破止盈312（P1-HIGH），若明日站稳312+减仓20-30%锁利+54%；③华海清科极度超买（price/MA20=1.5，PE分位85%），高开减仓15-20%。其余6笔持仓维持观察不动。6/24 CIO对纳指ETF的减仓裁决背景（美股大跌）已逆转，建议维持仓位不变。"
+  },
+
+  "report_summary": "## 持仓分析 · 2026-07-01 下午\n\n### 市场背景\n7/1下午A股大幅回调，半导体/成长板块普跌，金融权重股吸血导致高低切换。半年度获利兑现+板块轮动，非基本面恶化。美股隔夜创新高（纳指+0.47%/标普+0.52%创历史新高）。黄金ETF已清仓（7/1@8.275），组合剩9笔。\n\n### 组合全景\n- 9笔持仓，已投45.53%，现金54.47%\n- 当日净贡献-0.25%（占总资产），华海清科+0.46pp对冲天孚-0.47pp\n- AI/半导体穿透宽基后35.81%（🟡距40%红线4.19pp）\n- 组合baseline 5.86→持有观察\n\n### ⚠️ 数据置信度\n行情仅gtimg单源可用（东方财富/akshare/网易/同花顺/新浪均不可用），止盈止损建议偏保守。\n\n### 🔴 P0-CRITICAL：天孚通信止损警戒\n- 现价282.85，距止损280.56仅0.8%\n- 盘中低280.00已触及止损边缘\n- 跌破280.56→立即执行止损（减仓50-100%）\n- 浮盈+94.1%有足够安全垫锁定利润\n\n### 🟡 P1-HIGH：澜起科技止盈触发\n- 盘中高332.90已突破止盈312\n- 若明日开盘>312或收盘站稳312+，减仓20-30%锁利+54%\n- DDR5新品送样+存储超级周期支撑中期逻辑\n\n### P2-MEDIUM：华海清科减仓 + 科创芯片ETF续减\n- 华海清科+4.4%领涨但极度超买（price/MA20=1.5，PE分位85%），高开减仓15-20%\n- 科创芯片ETF反弹至2.30再减20%，持续降AI敞口\n\n### 其余持仓：持有观察\n- 中证500ETF今日最抗跌（-0.15%），防御价值凸显\n- 纳指ETF：6/24减仓裁决背景（美股大跌）已逆转，美股创新高，维持仓位\n- 创业板50ETF/标普500ETF/通富微电：维持观察",
+
+  "precision_stops": {
+    "methodology": "SKILL §4.1-4.2 精密止盈止损公式",
+    "data_confidence_adjustment": "⚠️ 单源数据 → 所有止盈止损偏保守（更早止盈、更紧止损）",
+    "stops": [
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "atr_stop": "成本异常（负值），跳过ATR计算",
+        "support_stop": "MA60(276.98) + MA20(315.55)已跌破 → MA60×0.97=268.67",
+        "final_stop": 280.56,
+        "source": "维持现有止损（偏保守），ATR 8.06%高波动标的，2×ATR=16.1%偏离过大",
+        "type": "强制"
+      },
+      {
+        "symbol": "688008",
+        "name": "澜起科技",
+        "pe_derived_tp": "PE分位75%>70% → 312×0.95=296.4",
+        "bollinger_tp": "布林上轨309.89 → 已接近",
+        "high_resistance_tp": "60日高332.90×0.98=326.24",
+        "final_tp": 312.00,
+        "source": "取最保守=PE修正296.4，但现有止盈312已被盘中突破→维持312触发减仓",
+        "type": "静态止盈（已触发）"
+      },
+      {
+        "symbol": "688120",
+        "name": "华海清科",
+        "pe_derived_tp": "PE分位85%>70% → 380×0.90=342",
+        "bollinger_tp": "布林上轨323.74 → 已突破",
+        "high_resistance_tp": "60日高356.64×0.98=349.51",
+        "final_tp": 370.00,
+        "source": "min{342, 323.74, 349.51}=323.74过于激进（今日已336），取PE修正342与高阻力349之间→370（略宽松因单源数据保守）",
+        "type": "静态止盈（下调自380）"
+      }
+    ]
+  }
+}
