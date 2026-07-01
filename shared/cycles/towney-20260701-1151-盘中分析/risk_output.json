@@ -1,0 +1,181 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260701-1151-盘中分析",
+  "flow_type": "精简两委员",
+  "data_quality_note": "Research 数据仅腾讯 gtimg 单源未验证（4 源失败），风险评分已因此上调 5-8 分；Industry / News 未派发，行业景气度/宏观环境/新闻情绪三维统一按数据缺失默认 5 分处理。",
+  "data": {
+    "risk_score": 68,
+    "verdict": "WARN",
+    "veto_targets": [
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "action": "VETO 任何加仓",
+        "reason": "距止损位 280.56 仅 2.93%（<3% 硬红线），量比 3.23 放量跌破 MA20，MA20 拐头向下，止损触发概率高"
+      },
+      {
+        "symbol": "518880",
+        "name": "黄金ETF",
+        "action": "强制清仓 / 执行 6/24 CIO 裁决",
+        "reason": "已跌破止损位 8.50（距止损 -2.5%），空头排列 + 布林下轨弱势，CIO 6/24 已裁决清仓但未执行，属于执行违规，本身已构成硬否决状态"
+      }
+    ],
+    "take_profit_alerts": [
+      {
+        "symbol": "688008",
+        "name": "澜起科技",
+        "distance_pct": 0.003,
+        "action": "立即部分止盈（建议 30-50%）",
+        "reason": "几乎触及止盈参考位 312，量比 5.12 全组合最高 + 长上影线，量价背离高位兑现压力极大"
+      },
+      {
+        "symbol": "588090",
+        "name": "科创芯片ETF",
+        "distance_pct": 1.37,
+        "action": "预留止盈计划",
+        "reason": "量比 7.27 放量滞涨，短期触发止盈概率较高"
+      },
+      {
+        "symbol": "510500",
+        "name": "中证500ETF",
+        "distance_pct": 2.3,
+        "action": "监控",
+        "reason": "温和放量接近止盈位 9.5"
+      },
+      {
+        "symbol": "688120",
+        "name": "华海清科",
+        "distance_pct": 10.5,
+        "action": "监控",
+        "reason": "站上布林上轨强势多头，2-3 日可能上抵止盈参考位"
+      }
+    ],
+    "stop_loss_alerts": [
+      {
+        "symbol": "518880",
+        "name": "黄金ETF",
+        "triggered": true,
+        "distance_pct": -2.5,
+        "severity": "critical"
+      },
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "triggered": false,
+        "distance_pct": 2.93,
+        "severity": "high"
+      }
+    ],
+    "concentration_detail": {
+      "verdict": "AI/半导体集中度已逼近 40% 硬红线，方向新增须 VETO",
+      "estimated_exposure_pct": "≈55-60%（含 ETF 穿透，粗估）",
+      "note": "本次未拉取持仓表实际市值比例（Research 未提供），下述按赛道枚举，需持仓表核实精确权重",
+      "buckets": [
+        {
+          "bucket": "半导体设备/材料/存储",
+          "symbols": ["688120 华海清科", "688008 澜起科技", "002156 通富微电"],
+          "type": "个股"
+        },
+        {
+          "bucket": "AI/光模块/CCL",
+          "symbols": ["300394 天孚通信"],
+          "type": "个股",
+          "watchlist_adjacent": "002463 沪电股份（观察）"
+        },
+        {
+          "bucket": "半导体 / 创业板 ETF（AI 穿透高）",
+          "symbols": ["588090 科创芯片ETF", "159949 创业板50ETF"],
+          "type": "ETF，与个股赛道高度重叠"
+        },
+        {
+          "bucket": "宽基对冲",
+          "symbols": ["510500 中证500ETF"],
+          "type": "ETF，相对独立"
+        },
+        {
+          "bucket": "海外权益",
+          "symbols": ["513300 纳斯达克ETF（AI 权重高）", "513650 标普500ETF"],
+          "note": "纳斯达克ETF 与国内 AI 相关性高，风险不独立"
+        },
+        {
+          "bucket": "商品避险",
+          "symbols": ["518880 黄金ETF（已破止损，实为负向敞口）"],
+          "type": "已失效对冲"
+        }
+      ],
+      "veto_rule": "任何 AI / 半导体方向新增仓位一律 VETO，直到黄金 ETF 清仓 + 天孚通信仓位处置到位后重新核算敞口"
+    },
+    "dimensions": {
+      "financial_health": {
+        "score": 5,
+        "note": "本次 Research 未派发财务拉取，默认中性",
+        "source": "default"
+      },
+      "valuation": {
+        "score": 5,
+        "note": "PE 分位数 API 不可用，全组合 pe_percentile=N/A",
+        "source": "default"
+      },
+      "industry_cycle": {
+        "score": 5,
+        "note": "Industry 未参与，精简流程默认",
+        "source": "default"
+      },
+      "technical": {
+        "score": 5.5,
+        "note": "组合技术面均分 5.5：多头强势 4 只（华海/澜起/中证500/科创芯片），中性 3 只（通富/创业板50/纳指），弱势 2 只（天孚/黄金），单只已破止损（黄金）。数据仅单源未验证，可靠度打折。",
+        "source": "self（来自 Research）"
+      },
+      "macro": {
+        "score": 5,
+        "note": "Industry 未参与，精简流程默认",
+        "source": "default"
+      },
+      "news_sentiment": {
+        "score": 5,
+        "note": "News 未参与，精简流程默认",
+        "source": "default"
+      }
+    },
+    "action_priority": [
+      {
+        "rank": 1,
+        "priority": "P0-立即执行",
+        "action": "清仓 518880 黄金ETF",
+        "reason": "已跌破止损 + CIO 6/24 裁决未执行，属既有决议执行违规，风控层面无讨论空间"
+      },
+      {
+        "rank": 2,
+        "priority": "P0-立即评估",
+        "action": "300394 天孚通信仓位处置（减仓 or 严格纪律止损）",
+        "reason": "距止损 2.93% 触及 3% 硬红线，放量跌破 MA20 且 MA20 拐头向下，若次日不能收复 MA20 建议纪律性减半以上"
+      },
+      {
+        "rank": 3,
+        "priority": "P1-盘中执行",
+        "action": "688008 澜起科技部分止盈（30-50%）",
+        "reason": "触及止盈参考位 312，量比 5.12 + 长上影线是典型高位量价背离，兑现部分保护盈利"
+      },
+      {
+        "rank": 4,
+        "priority": "P1-预案",
+        "action": "588090 科创芯片ETF、510500 中证500ETF、688120 华海清科 挂止盈预警",
+        "reason": "均在止盈参考位 1-11% 范围内，预设阶梯止盈规则"
+      },
+      {
+        "rank": 5,
+        "priority": "P2-禁令",
+        "action": "AI/半导体方向新增仓位 VETO（含 002463 沪电股份建仓）",
+        "reason": "赛道集中度约 55-60%，逼近 40% 硬红线；须先处理黄金 + 天孚，重新核算敞口后再议"
+      },
+      {
+        "rank": 6,
+        "priority": "P2-建议",
+        "action": "数据源修复 + 复核",
+        "reason": "5 源中 4 源失败，仅腾讯 gtimg 可用，价格未交叉验证；CIO 综合时应对本次 risk_score 施加数据质量折扣，重大决策前须补充第二源"
+      }
+    ],
+    "summary": "组合最大风险不在市场端而在执行端：黄金 ETF 已破止损且既有 CIO 清仓裁决未执行（P0-1），天孚通信距止损 2.93% 触及 3% 硬红线（P0-2），澜起科技触及止盈量价背离需保护盈利（P1）。AI/半导体赛道穿透后集中度约 55-60%，逼近 40% 硬红线，该方向新增一律 VETO。数据仅腾讯单源未交叉验证，Industry/News/财务/估值四维缺失，综合 risk_score 68/100（WARN），高于中性阈值主要由执行端积压 + 集中度 + 数据可靠度三项共同推升。"
+  }
+}

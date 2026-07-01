@@ -1,0 +1,293 @@
+{
+  "principal": "towney",
+  "agent": "research",
+  "cycle_id": "towney-20260701-1151-盘中分析",
+  "data_quality": {
+    "source": "gtimg (腾讯)",
+    "verification": "⚠️ 单源未验证",
+    "failed_sources": ["东方财富 eastmoney (502)", "网易财经 (502)", "同花顺 (404)", "新浪财经 (403)"],
+    "note": "仅腾讯gtimg单源可用，其余4个数据源均不可用。价格未经交叉验证。K线数据同样来自腾讯gtimg历史K线接口。PE分位数API不可用，pe_percentile字段统一标注N/A。"
+  },
+  "holdings": [
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "dimensions": {
+        "technical": {
+          "score": 8,
+          "note": "放量突破布林上轨，站稳所有均线上方，多头排列强势。量比2.50放量上行，振幅11.37%显示多空博弈激烈。MA20/MA60均线大幅上行发散，趋势完好。短期累计涨幅较大，ATR偏高提示波动风险。",
+          "atr_pct": 6.20,
+          "bollinger_upper": 326.90,
+          "ma20": 224.96,
+          "ma60_high": 356.64,
+          "pe_percentile": "N/A",
+          "vol_ratio": 2.50
+        }
+      },
+      "stop_loss_warning": {
+        "triggered": false,
+        "distance_pct": 14.2,
+        "note": "距止损位安全，有充足缓冲"
+      },
+      "take_profit_warning": {
+        "triggered": false,
+        "distance_pct": 10.5,
+        "note": "接近止盈参考位，若继续上行2-3日可能触发"
+      }
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "dimensions": {
+        "technical": {
+          "score": 3,
+          "note": "放量跌破MA20，量比3.23空方主导。MA20拐头向下形成压制，仅MA60提供下方支撑。布林中轨已破，下方逼近布林下轨。ATR高企波动加剧。技术面显著恶化。",
+          "atr_pct": 7.70,
+          "bollinger_upper": 355.16,
+          "ma20": 315.81,
+          "ma60_high": 374.50,
+          "pe_percentile": "N/A",
+          "vol_ratio": 3.23
+        }
+      },
+      "stop_loss_warning": {
+        "triggered": false,
+        "distance_pct": 2.93,
+        "note": "⚠️ 极度接近止损位280.56，仅差约3%。放量下跌+跌破MA20，止损触发概率高。建议密切监控。"
+      },
+      "take_profit_warning": {
+        "triggered": false,
+        "distance_pct": null,
+        "note": "当前远低于止盈参考位317.84"
+      }
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "dimensions": {
+        "technical": {
+          "score": 7,
+          "note": "放巨量突破布林上轨，量比5.12为全组合最高。MA20/MA60多头排列完好。但今日高开低走收长上影线，振幅8.68%显示高位抛压显著。接近止盈位需关注量价背离风险。",
+          "atr_pct": 6.35,
+          "bollinger_upper": 310.66,
+          "ma20": 258.92,
+          "ma60_high": 332.90,
+          "pe_percentile": "N/A",
+          "vol_ratio": 5.12
+        }
+      },
+      "stop_loss_warning": {
+        "triggered": false,
+        "distance_pct": 19.5,
+        "note": "距止损位安全"
+      },
+      "take_profit_warning": {
+        "triggered": false,
+        "distance_pct": 0.003,
+        "note": "🔴 几乎触及止盈参考位312！量比5.12放巨量+长上影线，高位兑现压力极大。建议立即关注。"
+      }
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "dimensions": {
+        "technical": {
+          "score": 5,
+          "note": "放量下跌，量比7.49为个股最高。仍在MA20上方但回调幅度明显，布林上轨形成压力。MA60趋势向上提供中期支撑。短期回调未破关键均线，暂视为正常调整。",
+          "atr_pct": 6.84,
+          "bollinger_upper": 79.27,
+          "ma20": 67.99,
+          "ma60_high": 79.38,
+          "pe_percentile": "N/A",
+          "vol_ratio": 7.49
+        }
+      },
+      "stop_loss_warning": {
+        "triggered": false,
+        "distance_pct": 13.7,
+        "note": "距止损位64安全"
+      },
+      "take_profit_warning": {
+        "triggered": false,
+        "distance_pct": 9.3,
+        "note": "距止盈参考位81有一定距离"
+      }
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "dimensions": {
+        "technical": {
+          "score": 5,
+          "note": "量比4.93放量下跌，仍在MA20上方但弱势。布林带收窄中，处于中轨与上轨之间。整体跟随创业板指弱势震荡，缺乏独立催化。",
+          "atr_pct": 3.43,
+          "bollinger_upper": 2.16,
+          "ma20": 1.99,
+          "ma60_high": 2.12,
+          "pe_percentile": "N/A",
+          "vol_ratio": 4.93
+        }
+      },
+      "stop_loss_warning": {
+        "triggered": false,
+        "distance_pct": 5.6,
+        "note": "距止损位1.95有缓冲"
+      },
+      "take_profit_warning": {
+        "triggered": false,
+        "distance_pct": null,
+        "note": "距止盈参考位2.5较远"
+      }
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "dimensions": {
+        "technical": {
+          "score": 7,
+          "note": "量比3.64温和放量上行，站稳MA20/MA60，均线多头排列。布林上轨附近运行，趋势向好。作为宽基对冲AI集中度配置合理，技术面稳健。",
+          "atr_pct": 2.33,
+          "bollinger_upper": 9.39,
+          "ma20": 8.66,
+          "ma60_high": 9.31,
+          "pe_percentile": "N/A",
+          "vol_ratio": 3.64
+        }
+      },
+      "stop_loss_warning": {
+        "triggered": false,
+        "distance_pct": 7.7,
+        "note": "距止损位8.57安全"
+      },
+      "take_profit_warning": {
+        "triggered": false,
+        "distance_pct": 2.3,
+        "note": "接近止盈参考位9.5，若继续上行可能触发"
+      }
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "dimensions": {
+        "technical": {
+          "score": 7,
+          "note": "量比7.27放量但小幅下跌，多空分歧加大。布林上轨附近运行，整体仍在上升通道。MA20/MA60多头排列完好。接近止盈位需警惕回调。",
+          "atr_pct": 3.97,
+          "bollinger_upper": 2.30,
+          "ma20": 1.91,
+          "ma60_high": 2.32,
+          "pe_percentile": "N/A",
+          "vol_ratio": 7.27
+        }
+      },
+      "stop_loss_warning": {
+        "triggered": false,
+        "distance_pct": 16.3,
+        "note": "距止损位1.9安全"
+      },
+      "take_profit_warning": {
+        "triggered": false,
+        "distance_pct": 1.37,
+        "note": "⚠️ 接近止盈参考位2.30，仅差约1.4%。量比7.27放量但滞涨，止盈触发概率较高。"
+      }
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "dimensions": {
+        "technical": {
+          "score": 6,
+          "note": "量比1.37缩量小幅上行，在MA20与布林上轨之间运行。均线多头排列但斜率放缓。隔夜美股走势决定次日方向，技术面中性偏多。",
+          "atr_pct": 2.32,
+          "bollinger_upper": 2.81,
+          "ma20": 2.69,
+          "ma60_high": 2.90,
+          "pe_percentile": "N/A",
+          "vol_ratio": 1.37
+        }
+      },
+      "stop_loss_warning": {
+        "triggered": false,
+        "distance_pct": 7.6,
+        "note": "距止损位2.52安全"
+      },
+      "take_profit_warning": {
+        "triggered": false,
+        "distance_pct": 4.95,
+        "note": "距止盈参考位2.861有一定距离"
+      }
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "dimensions": {
+        "technical": {
+          "score": 5,
+          "note": "缩量横盘，量比1.69。略低于MA20，布林带极度收窄（振幅仅0.54%），处于方向选择窗口。均线粘合，短期缺乏趋势信号。",
+          "atr_pct": 1.51,
+          "bollinger_upper": 1.94,
+          "ma20": 1.89,
+          "ma60_high": 1.98,
+          "pe_percentile": "N/A",
+          "vol_ratio": 1.69
+        }
+      },
+      "stop_loss_warning": {
+        "triggered": false,
+        "distance_pct": 9.3,
+        "note": "距止损位1.70安全"
+      },
+      "take_profit_warning": {
+        "triggered": false,
+        "distance_pct": null,
+        "note": "距止盈参考位2.2较远"
+      }
+    },
+    {
+      "symbol": "518880",
+      "name": "黄金ETF",
+      "dimensions": {
+        "technical": {
+          "score": 2,
+          "note": "已跌破止损位且跌破所有均线（MA20/MA60），布林下轨附近弱势运行。均线空头排列，MA60持续下行压制。量比1.44缩量阴跌，无反弹迹象。CIO 6/24已裁决清仓但未执行。",
+          "atr_pct": 2.04,
+          "bollinger_upper": 9.39,
+          "ma20": 8.75,
+          "ma60_high": 10.15,
+          "pe_percentile": "N/A",
+          "vol_ratio": 1.44
+        }
+      },
+      "stop_loss_warning": {
+        "triggered": true,
+        "distance_pct": -2.5,
+        "note": "🔴 已跌破止损位8.50！当前在止损位下方运行。CIO 6/24裁决清仓未执行，建议立即处理。"
+      },
+      "take_profit_warning": {
+        "triggered": false,
+        "distance_pct": null,
+        "note": "距止盈参考位10.5极远"
+      }
+    }
+  ],
+  "watchlist": [
+    {
+      "symbol": "002463",
+      "name": "沪电股份",
+      "dimensions": {
+        "technical": {
+          "score": 6,
+          "note": "放量下跌，量比2.77。仍在MA20上方但高开低走收阴，振幅7.33%显示高位分歧。布林上轨附近运行，整体上升趋势未破但短期回调压力增大。建仓区间135-138尚未触及。",
+          "atr_pct": 7.42,
+          "bollinger_upper": 156.45,
+          "ma20": 140.20,
+          "ma60_high": 158.20,
+          "pe_percentile": "N/A",
+          "vol_ratio": 2.77
+        }
+      },
+      "status": "观察中，建仓区间135-138未触发"
+    }
+  ],
+  "summary": "盘中快评：半导体板块分化加剧，华海清科(+6.71%)和澜起科技(放巨量)强势但澜起已触及止盈参考位312；天孚通信(-4.51%放量)逼近止损位280.56仅差3%，为全组合最大风险点；黄金ETF已跌破止损位8.50且CIO清仓裁决未执行，需立即处理。科创芯片ETF和沪深500ETF接近止盈位。数据仅gtimg单源，其余4源不可用，价格未经交叉验证。PE分位数API不可用。"
+}
