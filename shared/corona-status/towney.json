@@ -1,10 +1,8 @@
 {
   "principal": "towney",
-  "status": "done",
-  "cycle_id": "towney-20260701-1320-monitor-pm",
-  "step": "监控完成，4条预警已推送+写库",
-  "result_summary": "有4条预警：🔴天孚通信距止损1.63%+澜起科技量比6.53异常；🟡黄金ETF跌破止损+通富微电跌3.58%",
-  "started_at": "2026-07-01T13:20:00+08:00",
-  "completed_at": "2026-07-01T13:20:00+08:00",
-  "updated_at": "2026-07-01T13:20:00+08:00"
+  "status": "running",
+  "cycle_id": "towney-20260701-1340-monitor-pm",
+  "step": "盘中监控启动",
+  "started_at": "2026-07-01T13:40:00+08:00",
+  "updated_at": "2026-07-01T13:40:00+08:00"
 }
