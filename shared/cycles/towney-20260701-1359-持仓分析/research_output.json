@@ -1,0 +1,232 @@
+{
+  "principal": "towney",
+  "agent": "research",
+  "cycle_id": "towney-20260701-1359-持仓分析",
+  "data_quality": {
+    "market_data_source": "腾讯gtimg (qt.gtimg.cn)",
+    "verification": "⚠️ 单源未验证 — 东方财富502/akshare断开/网易502/同花顺404/新浪403，仅gtimg单源可用",
+    "data_timestamp": "2026-07-01 13:59 CST (盘中)",
+    "quality_flag": "⚠️ 单源"
+  },
+  "data": {
+    "holdings": [
+      {
+        "symbol": "688120",
+        "name": "华海清科",
+        "price": 336.37,
+        "change_pct": 4.40,
+        "position_pct": 10.54,
+        "cost": 84.27,
+        "stop_loss": 295.00,
+        "take_profit": 380.00,
+        "dimensions": {
+          "technical": {
+            "score": 7,
+            "note": "今日+4.4%领涨组合，盘中振幅11.4%（低320→高356.64），放量突破布林上轨(323.74)，价格远超MA20(224.39)/MA60(179.45)，距60日高仅-5.7%。定增利好+板级CMP量产订单催化。但极度超买：价格是MA20的1.5倍，短期回调风险显著。多头排列强势但需要消化。",
+            "atr_pct": 6.42,
+            "bollinger_upper": 323.74,
+            "ma20": 224.39,
+            "ma60_high": 356.64,
+            "pe_percentile": 85,
+            "vol_ratio": 1.14
+          }
+        },
+        "stop_loss_warning": "安全 — 距止损295尚有12.3%缓冲，但盘中振幅达11.4%需警惕日内V反",
+        "take_profit_warning": "安全 — 距止盈380尚有13.0%，今日冲高356.64未触及止盈"
+      },
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "price": 282.85,
+        "change_pct": -6.55,
+        "position_pct": 7.13,
+        "cost": -67.21,
+        "stop_loss": 280.56,
+        "take_profit": 317.84,
+        "dimensions": {
+          "technical": {
+            "score": 3,
+            "note": "今日-6.55%为组合最弱标的，跌破MA20(315.55)后加速下行，当前仅勉强守在MA60(276.98)上方(+2.1%)。盘中低280.00距止损280.56仅0.56元，几乎触发。布林下轨275.42为最后防线。除权后筹码松动，6/29反向加仓25%@295.15已被套-4.2%。成交量萎缩(vol_ratio 0.98)暗示恐慌盘已部分释放但买盘不足。",
+            "atr_pct": 8.06,
+            "bollinger_upper": 355.67,
+            "ma20": 315.55,
+            "ma60_high": 374.50,
+            "pe_percentile": 70,
+            "vol_ratio": 0.98
+          }
+        },
+        "stop_loss_warning": "🔴 危险 — 现价282.85距止损280.56仅0.8%，盘中最低280.00已逼近止损线，若明日低开或盘中跌破280.56应立即执行止损",
+        "take_profit_warning": "安全 — 距止盈317.84尚有12.4%，短期无触及可能"
+      },
+      {
+        "symbol": "688008",
+        "name": "澜起科技",
+        "price": 310.13,
+        "change_pct": 0.07,
+        "position_pct": 6.08,
+        "cost": 30.60,
+        "stop_loss": 251.30,
+        "take_profit": 312.00,
+        "dimensions": {
+          "technical": {
+            "score": 8,
+            "note": "今日盘中剧震(-2.8%→+7.4%→收平)，振幅10.3%后收红，展现极强韧性。价格站稳MA20(258.77)和MA60(220.05)上方，紧贴布林上轨(309.89)。DDR5第六子代RCD芯片送样利好支撑。盘中高332.90接近60日高。量能放大(vol_ratio 1.07)显示多空博弈激烈但多头守住了阵地。",
+            "atr_pct": 6.52,
+            "bollinger_upper": 309.89,
+            "ma20": 258.77,
+            "ma60_high": 332.90,
+            "pe_percentile": 75,
+            "vol_ratio": 1.07
+          }
+        },
+        "stop_loss_warning": "安全 — 距止损251.30尚有19.0%充裕缓冲",
+        "take_profit_warning": "🟡 逼近 — 现价310.13距止盈312.00仅0.6%，盘中高332.90已突破止盈位，若收盘站稳312以上应触发止盈减持"
+      },
+      {
+        "symbol": "002156",
+        "name": "通富微电",
+        "price": 73.50,
+        "change_pct": -3.12,
+        "position_pct": 2.43,
+        "cost": 63.95,
+        "stop_loss": 64.00,
+        "take_profit": 81.00,
+        "dimensions": {
+          "technical": {
+            "score": 5,
+            "note": "今日-3.12%跟随半导体板块回调，但仍在MA20(67.97)和MA60(59.05)上方。盘中低72.40测试了短期支撑，高78.58接近60日高79.38后回落。量比0.89缩量下跌，非恐慌性抛售。仓位仅2.43%为组合最小持仓，风险可控。成本63.95有安全垫(+14.9%)。",
+            "atr_pct": 7.00,
+            "bollinger_upper": 79.20,
+            "ma20": 67.97,
+            "ma60_high": 79.38,
+            "pe_percentile": 55,
+            "vol_ratio": 0.89
+          }
+        },
+        "stop_loss_warning": "安全 — 距止损64.00尚有12.9%，成本63.95接近止损线但浮盈中",
+        "take_profit_warning": "安全 — 距止盈81尚有10.2%"
+      },
+      {
+        "symbol": "159949",
+        "name": "创业板50ETF",
+        "price": 2.041,
+        "change_pct": -2.25,
+        "position_pct": 5.44,
+        "cost": 1.506,
+        "stop_loss": 1.95,
+        "take_profit": 2.50,
+        "dimensions": {
+          "technical": {
+            "score": 5,
+            "note": "今日-2.25%回调，但仍站稳MA20(1.99)上方，距MA60(1.86)有9.7%空间。布林上轨2.15形成短期压力。量比0.79缩量下跌。作为创业板宽基，回调幅度(-2.25%)小于科创芯片(-1.93%)和个股，体现了分散化优势。浮盈60%+安全垫充足。",
+            "atr_pct": 3.57,
+            "bollinger_upper": 2.15,
+            "ma20": 1.99,
+            "ma60_high": 2.12,
+            "pe_percentile": 60,
+            "vol_ratio": 0.79
+          }
+        },
+        "stop_loss_warning": "安全 — 距止损1.95尚有4.5%，浮盈60%+有充裕缓冲",
+        "take_profit_warning": "安全 — 距止盈2.50尚有22.5%"
+      },
+      {
+        "symbol": "510500",
+        "name": "中证500ETF",
+        "price": 9.18,
+        "change_pct": -0.15,
+        "position_pct": 4.01,
+        "cost": 8.302,
+        "stop_loss": 8.57,
+        "take_profit": 9.50,
+        "dimensions": {
+          "technical": {
+            "score": 7,
+            "note": "今日仅-0.15%为组合最抗跌标的，盘中振幅2.0%后几乎收平。价格站稳MA20(8.65)和MA60(8.50)上方，布林上轨9.37在望。量比0.63缩量横盘，筹码锁定良好。在今日半导体+成长股大幅回调中，中证500展现了出色的防御性和稳定性。PE约22x估值合理偏低。",
+            "atr_pct": 2.38,
+            "bollinger_upper": 9.37,
+            "ma20": 8.65,
+            "ma60_high": 9.31,
+            "pe_percentile": 45,
+            "vol_ratio": 0.63
+          }
+        },
+        "stop_loss_warning": "安全 — 距止损8.57尚有6.6%，浮盈+10.6%",
+        "take_profit_warning": "安全 — 距止盈9.50尚有3.5%，接近但未触发"
+      },
+      {
+        "symbol": "588090",
+        "name": "科创芯片ETF",
+        "price": 2.233,
+        "change_pct": -1.93,
+        "position_pct": 3.41,
+        "cost": 1.506,
+        "stop_loss": 1.90,
+        "take_profit": 2.30,
+        "dimensions": {
+          "technical": {
+            "score": 6,
+            "note": "今日-1.93%回调，但仍站稳MA20(1.90)和MA60(1.72)上方，布林上轨2.29形成压力。量比0.98缩量下跌。浮盈+48%安全垫厚。6/29减仓35%锁利正确。回调幅度可控，半导体板块整体承压但科创芯片ETF相对抗跌。",
+            "atr_pct": 4.23,
+            "bollinger_upper": 2.29,
+            "ma20": 1.90,
+            "ma60_high": 2.32,
+            "pe_percentile": 65,
+            "vol_ratio": 0.98
+          }
+        },
+        "stop_loss_warning": "安全 — 距止损1.90尚有14.9%",
+        "take_profit_warning": "🟡 关注 — 距止盈2.30仅3.0%，60日高2.32已略超止盈位，若反弹至2.30附近可考虑减仓"
+      },
+      {
+        "symbol": "513300",
+        "name": "纳斯达克ETF",
+        "price": 2.708,
+        "change_pct": 0.15,
+        "position_pct": 5.06,
+        "cost": 2.475,
+        "stop_loss": 2.52,
+        "take_profit": 2.861,
+        "dimensions": {
+          "technical": {
+            "score": 6,
+            "note": "今日+0.15%小幅收红，A股大跌中独立走强。价格在MA20(2.69)附近盘整，MA60(2.52)提供下方支撑。布林带收窄(上2.81/下2.57)预示即将变盘。量比0.37极度缩量，方向不明。美股隔夜表现为今日A股盘中唯一正收益标的，跨境配置价值凸显。",
+            "atr_pct": 2.34,
+            "bollinger_upper": 2.81,
+            "ma20": 2.69,
+            "ma60_high": 2.90,
+            "pe_percentile": 50,
+            "vol_ratio": 0.37
+          }
+        },
+        "stop_loss_warning": "安全 — 距止损2.52尚有6.9%",
+        "take_profit_warning": "安全 — 距止盈2.861尚有5.6%"
+      },
+      {
+        "symbol": "513650",
+        "name": "标普500ETF",
+        "price": 1.878,
+        "change_pct": 0.54,
+        "position_pct": 1.43,
+        "cost": 1.654,
+        "stop_loss": 1.70,
+        "take_profit": 2.20,
+        "dimensions": {
+          "technical": {
+            "score": 5,
+            "note": "今日+0.54%小幅收红，A股大跌中独立走强。价格在MA20(1.89)和MA60(1.83)之间窄幅震荡，布林下轨1.83提供支撑。ATR仅1.51%为组合最低波动标的。仓位1.43%最小，浮盈+13.5%。作为底仓配置合理，但缺乏弹性。",
+            "atr_pct": 1.51,
+            "bollinger_upper": 1.94,
+            "ma20": 1.89,
+            "ma60_high": 1.98,
+            "pe_percentile": 55,
+            "vol_ratio": 0.59
+          }
+        },
+        "stop_loss_warning": "安全 — 距止损1.70尚有9.5%",
+        "take_profit_warning": "安全 — 距止盈2.20尚有17.1%"
+      }
+    ],
+    "summary": "7/1下午大幅回调场景复盘：组合9笔持仓中，A股半导体/成长方向普跌，美股ETF逆势收红。强弱分化显著：华海清科+4.4%领涨（定增利好+板级CMP订单催化，但极度超买需警惕回调），澜起科技盘中剧震后收平+0.07%（DDR5新品送样支撑，距止盈仅0.6%即将触发），中证500ETF-0.15%最抗跌（防御价值凸显）。天孚通信-6.55%为最弱标的（跌破MA20，距止损仅0.8%岌岌可危，今日盘中低点280.00已触及止损边缘）。通富微电-3.12%、科创芯片ETF-1.93%、创业板50ETF-2.25%为中等回调。美股ETF（纳指+0.15%、标普+0.54%）独立走强，跨境对冲有效。⚠️ 紧急关注：天孚通信止损风险（280.56，距现价仅0.8%），澜起科技止盈风险（312，距现价仅0.6%）。数据质量：仅gtimg单源（东方财富/akshare/网易/同花顺/新浪均不可用），价格未经交叉验证。"
+  }
+}
