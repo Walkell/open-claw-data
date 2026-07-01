@@ -35,27 +35,45 @@ cycle_id = {principal}-{YYYYMMDD}-{HHMM}-{场景}
 
 ### 第二步：按 flow_type 编排委员
 
+#### 🚫 数据注入红线（最高优先级）
+
+spawn 委员/CiO 时，**严禁在 prompt 中手写任何以下内容**：
+- 仓位（xx%）
+- 成本价
+- 现价
+- 止盈/止损价格
+- 浮盈亏比例
+- 持仓备注（任何 text 字段内容）
+
+**唯一正确做法：告诉委员去 Bitable `占总仓位比例` 字段自行读取。**
+
+备注（`备注` 字段）是历史审计日志，不是实时仓位数据源——委员必须读 `占总仓位比例`，禁止读备注。
+
+prompt 只允许注入：`cycle_id` + `context.json` 路径。（table_id 在 context.json 里，Bitable token 通过 custom-feishu-auth SKILL 获取，均不经过 prompt 文字。）
+
+---
+
 **四委员**
-1. 并行 spawn Research + Industry + News（isolated, delivery:none，只注入 cycle_id）
+1. 并行 spawn Research + Industry + News（isolated, delivery:none，只注入 cycle_id，不注入任何持仓/价格数据）
 2. **sessions_yield** ← 必须等全部完成
 3. ✅ `Research/Industry/News yield 完成`
-4. spawn Risk（inline 三份输出，只注入 cycle_id）
+4. spawn Risk（inline 三份输出，只注入 cycle_id，不注入任何持仓/价格数据）
 5. **sessions_yield**
 6. ✅ `Risk yield 完成，risk_score={X}`
 
 **三委员**
-1. 并行 spawn Research + Industry
+1. 并行 spawn Research + Industry（isolated, delivery:none，只注入 cycle_id）
 2. **sessions_yield**
 3. ✅ 检查点
-4. spawn Risk（News 标注"未参与，默认0"）
+4. spawn Risk（News 标注"未参与，默认0"，只注入 cycle_id）
 5. **sessions_yield**
 6. ✅ 检查点
 
 **精简两委员**
-1. spawn Research
+1. spawn Research（isolated, delivery:none，只注入 cycle_id）
 2. **sessions_yield**
 3. ✅ 检查点
-4. spawn Risk（Industry/News 标注"未参与，默认5/0"）
+4. spawn Risk（Industry/News 标注"未参与，默认5/0"，只注入 cycle_id）
 5. **sessions_yield**
 6. ✅ 检查点
 
