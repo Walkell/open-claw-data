@@ -1,0 +1,237 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260701-0907-盘前",
+  "generated_at": "2026-07-01T09:33:00+08:00",
+  "data_quality": {
+    "sources": ["research_output.json", "industry_output.json", "news_output.json", "context.json"],
+    "note": "上游三委员报告完整。行情源仅gtimg+新浪双源(未达完整双源验证)，但足以支撑风险层面判断。"
+  },
+  "data": {
+    "risk_score": 62,
+    "verdict": "SOFT_VETO",
+    "verdict_summary": "组合整体风险偏高但可控(62/100)。核心风险: (1)AI/半导体集中度29.59%接近40%红线; (2)华海清科单股10.54%超10%上限; (3)黄金ETF已破止损线且CIO两次清仓裁决未执行(纪律硬伤,硬否决); (4)天孚通信距止损7.3%叠加ATR 10.64%极端波动率。软否决动作:黄金ETF立即清仓; 华海清科禁止加仓,回调至300以下减至8-9%; 天孚通信禁止加仓,破285立即减仓。",
+    "portfolio_snapshot": {
+      "total_position_pct": 47.28,
+      "cash_pct": 52.72,
+      "holdings_count": 10,
+      "unrealized_status": "9浮盈+1浮亏(黄金)"
+    },
+    "concentration_detail": {
+      "AI半导体核心": {
+        "current_pct": 29.59,
+        "threshold_pct": 40.0,
+        "level": "🟠",
+        "constituents": {"688120华海清科": 10.54, "300394天孚通信": 7.13, "688008澜起科技": 6.08, "588090科创芯片ETF": 3.41, "002156通富微电": 2.43},
+        "reason": "AI/半导体赛道29.59%距40%硬红线10.4pp。穿透创业板50/纳指ETF后实际AI敞口约35%,接近VETO阈值。AI新增需谨慎。"
+      },
+      "单股上限": {
+        "current_pct": 10.54,
+        "threshold_pct": 10.0,
+        "level": "🟠",
+        "constituents": {"688120华海清科": 10.54},
+        "reason": "华海清科10.54%超10%上限0.54pp。技术面站上60日均线44%、PE 145x极度泡沫,回调至300以下应主动减至8-9%。"
+      },
+      "海外科技": {
+        "current_pct": 6.49,
+        "threshold_pct": 15.0,
+        "level": "🟢",
+        "constituents": {"513300纳斯达克ETF": 5.06, "513650标普500ETF": 1.43},
+        "reason": "海外科技6.49%合理,但纳指ETF距止损仅6.8%,隔夜VIX/汇率是主要风险。"
+      },
+      "宽基分散": {
+        "current_pct": 9.45,
+        "threshold_pct": 20.0,
+        "level": "🟢",
+        "constituents": {"159949创业板50ETF": 5.44, "510500中证500ETF": 4.01},
+        "reason": "宽基工具9.45%作为组合稳定器定位合理。"
+      },
+      "商品": {
+        "current_pct": 1.75,
+        "threshold_pct": 10.0,
+        "level": "🔴",
+        "constituents": {"518880黄金ETF": 1.75},
+        "reason": "黄金ETF已两次被CIO裁决清仓但未执行。技术面三杀,当前净值8.378距止损线8.5仅0.9%缓冲。IC决议未执行=纪律违规,硬否决继续持有。"
+      }
+    },
+    "concentration_weighted_pnl": {
+      "AI半导体核心": {"weighted_pnl_pct": 78.5, "note": "华海清科+295%、澜起+913%、天孚(负成本已回本+)、通富+18.6%、科创芯片ETF+51%。加权约+78%。"},
+      "海外科技": {"weighted_pnl_pct": 8.2, "note": "纳指+9.3%、标普+11.9%。加权+8.2%。"},
+      "宽基分散": {"weighted_pnl_pct": 25.5, "note": "创业板50+38.7%、中证500+10.2%。加权+25.5%。"},
+      "商品": {"weighted_pnl_pct": -14.1, "note": "黄金-14.08%,唯一浮亏赛道。"},
+      "portfolio_weighted_pnl_pct": 48.7,
+      "portfolio_note": "组合整体加权浮盈约+48.7%。触发浮盈修正规则:AI核心浮盈>50%时,AI新增打折至50%配额;组合浮盈>30%应保持防守姿态。"
+    },
+    "positions_risk": {
+      "688120": {
+        "name": "华海清科",
+        "position_pct": 10.54,
+        "risk_score": 7.2,
+        "verdict": "VETO_加仓",
+        "veto_reason": "单股10.54%超10%上限;PE 145x极度泡沫;ATR 7.51%极高波动。禁止加仓,回调至300以下应主动减至8-9%。",
+        "dimensions": {
+          "financial_health": {"score": 3, "note": "基本面7分,客户集中度高(前五占60%)", "source": "self"},
+          "valuation": {"score": 8, "note": "PE 145x、PB 21x,历史85%分位,溢价45%+", "source": "self"},
+          "industry_cycle": {"score": 2, "note": "行业评分9.0,SEMI预测2026设备支出1330亿美元", "source": "industry_agent"},
+          "technical": {"score": 6, "note": "站上MA60 44%、RSI接近超买、ATR 7.51%极高", "source": "self"},
+          "macro": {"score": 3, "note": "流动性充裕+国产替代强支撑", "source": "industry_agent"},
+          "news_sentiment": {"score": 4, "note": "news_score 7.5,间接利好为主", "source": "news_agent"}
+        },
+        "summary": "半导体设备龙头,基本面顶级但估值+仓位+波动率三重压力,软否决加仓。"
+      },
+      "588090": {
+        "name": "科创芯片ETF",
+        "position_pct": 3.41,
+        "risk_score": 4.5,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": {"score": 5, "note": "ETF无财报,成分分化", "source": "self"},
+          "valuation": {"score": 6, "note": "指数PE 80x+,已+51%接近止盈2.3", "source": "self"},
+          "industry_cycle": {"score": 2, "note": "科创50上半年+64.25%创历史,行业评分8.0", "source": "industry_agent"},
+          "technical": {"score": 3, "note": "MA20上方21%,量比1.7放量,回踩MA20是加仓良机", "source": "self"},
+          "macro": {"score": 3, "note": "流动性宽松有利", "source": "industry_agent"},
+          "news_sentiment": {"score": 2, "note": "news_score 8.5全组合最强", "source": "news_agent"}
+        },
+        "summary": "已部分止盈+44%,剩余仓位管理良好。趋势健康,风险可控。"
+      },
+      "688008": {
+        "name": "澜起科技",
+        "position_pct": 6.08,
+        "risk_score": 5.5,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": {"score": 2, "note": "Q1净利+61%、毛利率55%+、现金流充裕", "source": "self"},
+          "valuation": {"score": 8, "note": "PE 149x、PB 18x,近2年75-80%分位,对标Marvell溢价严重", "source": "self"},
+          "industry_cycle": {"score": 2, "note": "DDR5+AI服务器双引擎,行业评分8.0", "source": "industry_agent"},
+          "technical": {"score": 5, "note": "突破布林上轨,接近60日高313阻力位", "source": "self"},
+          "macro": {"score": 3, "note": "存储超级周期+韩国5500亿美元投资", "source": "industry_agent"},
+          "news_sentiment": {"score": 3, "note": "news_score 7.8,CXL/PCIe Switch新品线推进", "source": "news_agent"}
+        },
+        "summary": "基本面最优标的之一(fundamental 9),DDR5+AI双引擎,估值已充分反映预期。持有可,不追高。"
+      },
+      "300394": {
+        "name": "天孚通信",
+        "position_pct": 7.13,
+        "risk_score": 7.5,
+        "verdict": "VETO_加仓",
+        "veto_reason": "距止损280.56仅7.3%空间叠加ATR 10.64%极端波动率,止损极易触发。除权后指标失真。禁止加仓,破285立即减仓。",
+        "dimensions": {
+          "financial_health": {"score": 2, "note": "Q1高增+毛利率50%+,除权后EPS摊薄40%", "source": "self"},
+          "valuation": {"score": 8, "note": "PE 151x、PB 60x极度高估,PB远超光模块行业15-20x均值", "source": "self"},
+          "industry_cycle": {"score": 3, "note": "CPO商用元年+1.6T放量,但6/29光通信集体退潮", "source": "industry_agent"},
+          "technical": {"score": 8, "note": "除权导致指标失真,ATR 10.64%极高,距止损仅7.3%缓冲", "source": "self"},
+          "macro": {"score": 3, "note": "云Capex高增支撑,汇率波动是风险", "source": "industry_agent"},
+          "news_sentiment": {"score": 3, "note": "news_score 8.0、CoWoS扩产利好", "source": "news_agent"}
+        },
+        "summary": "基本面优秀但仓位+波动率+除权指标失真三重风险,软否决加仓。"
+      },
+      "159949": {
+        "name": "创业板50ETF",
+        "position_pct": 5.44,
+        "risk_score": 4.0,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": {"score": 5, "note": "ETF无独立财报", "source": "self"},
+          "valuation": {"score": 4, "note": "PE 35-40x中等偏低分位,估值合理", "source": "self"},
+          "industry_cycle": {"score": 4, "note": "行业评分6.5,均衡配置弹性弱于AI", "source": "industry_agent"},
+          "technical": {"score": 5, "note": "MA20上方5%,量比0.83缩量,动能减弱", "source": "self"},
+          "macro": {"score": 3, "note": "流动性宽松+创新药催化", "source": "industry_agent"},
+          "news_sentiment": {"score": 3, "note": "news_score 7.5,创业板+35.58%强势收官", "source": "news_agent"}
+        },
+        "summary": "分散配置工具,浮盈丰厚,风险可控。"
+      },
+      "510500": {
+        "name": "中证500ETF",
+        "position_pct": 4.01,
+        "risk_score": 3.5,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": {"score": 5, "note": "ETF无独立财报,成分股盈利中等", "source": "self"},
+          "valuation": {"score": 3, "note": "PE 22x处于中等偏低分位,相对沪深300折价15%", "source": "self"},
+          "industry_cycle": {"score": 4, "note": "行业评分6.0,流动性外溢有利中盘", "source": "industry_agent"},
+          "technical": {"score": 4, "note": "突破布林上轨边缘,量比0.66缩量,MACD金叉延续", "source": "self"},
+          "macro": {"score": 3, "note": "成交额3.5万亿+利好中盘", "source": "industry_agent"},
+          "news_sentiment": {"score": 5, "note": "news_score 5.5,结构性分化不利宽基", "source": "news_agent"}
+        },
+        "summary": "估值合理的中盘配置,CIO加仓至6.5%方向正确,可等回踩MA20执行。"
+      },
+      "513300": {
+        "name": "纳斯达克ETF",
+        "position_pct": 5.06,
+        "risk_score": 6.0,
+        "verdict": "VETO_加仓",
+        "veto_reason": "距止损2.52仅6.8%缓冲,VIX/汇率隔夜风险高,美股高位盘整方向不明。CIO已建议减仓至3.5%,建议执行。",
+        "dimensions": {
+          "financial_health": {"score": 4, "note": "科技巨头盈利强劲但增速放缓", "source": "self"},
+          "valuation": {"score": 6, "note": "纳指100 PE 30x,近5年中等偏高分位", "source": "self"},
+          "industry_cycle": {"score": 3, "note": "行业评分7.0,美股AI景气但波动加大", "source": "industry_agent"},
+          "technical": {"score": 6, "note": "MA20附近震荡,量比0.72缩量,方向待选择,距止损6.8%", "source": "self"},
+          "macro": {"score": 6, "note": "美联储加息预期压制+中东局势+汇率波动", "source": "industry_agent"},
+          "news_sentiment": {"score": 2, "note": "news_score 8.5,纳指创历史新高20369.73,Q2最强单季", "source": "news_agent"}
+        },
+        "summary": "美股高位盘整,隔夜风险高,支持CIO减仓至3.5%的建议。"
+      },
+      "513650": {
+        "name": "标普500ETF",
+        "position_pct": 1.43,
+        "risk_score": 5.0,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": {"score": 5, "note": "底层企业盈利增速放缓至5-8%", "source": "self"},
+          "valuation": {"score": 5, "note": "标普500 PE 22x,历史偏高非极端", "source": "self"},
+          "industry_cycle": {"score": 4, "note": "行业评分6.0,美股均衡型", "source": "industry_agent"},
+          "technical": {"score": 6, "note": "跌破MA20偏弱,量比1.8放量下跌需警惕", "source": "self"},
+          "macro": {"score": 6, "note": "美联储政策+经济数据反复", "source": "industry_agent"},
+          "news_sentiment": {"score": 2, "note": "news_score 8.0,标普续创新高", "source": "news_agent"}
+        },
+        "summary": "技术面偏弱但仓位仅1.43%不值得调整,维持底仓观察。"
+      },
+      "518880": {
+        "name": "黄金ETF",
+        "position_pct": 1.75,
+        "risk_score": 9.0,
+        "verdict": "HARD_VETO",
+        "veto_reason": "IC决议未执行=纪律硬伤!技术面三杀(均线空头/MACD死叉/破布林下轨),当前净值8.378距止损线8.5仅0.9%缓冲实质已破位。CIO两次清仓裁决未执行。硬否决继续持有,必须立即无条件清仓。",
+        "dimensions": {
+          "financial_health": {"score": 8, "note": "唯一浮亏标的-14.08%,持续失血", "source": "self"},
+          "valuation": {"score": 5, "note": "金价2000美元/盎司近2年中等水平", "source": "self"},
+          "industry_cycle": {"score": 8, "note": "行业评分3.0,AI牛市中避险资产持续弱势", "source": "industry_agent"},
+          "technical": {"score": 10, "note": "技术面三杀,距止损0.9%,布林下轨已破", "source": "self"},
+          "macro": {"score": 7, "note": "强美元+美联储鹰派压制,央行购金放缓", "source": "industry_agent"},
+          "news_sentiment": {"score": 6, "note": "news_score 5.0,无正向催化", "source": "news_agent"}
+        },
+        "summary": "组合最弱标的+IC决议未执行违规,硬否决继续持有,立即清仓。"
+      },
+      "002156": {
+        "name": "通富微电",
+        "position_pct": 2.43,
+        "risk_score": 5.0,
+        "verdict": "NOC",
+        "veto_reason": "",
+        "dimensions": {
+          "financial_health": {"score": 5, "note": "Q1净利+225%爆发增长,毛利率仅14.6%封测通病,AMD单客52%集中度高", "source": "self"},
+          "valuation": {"score": 5, "note": "PE 80x溢价100%,PEG 0.35可消化", "source": "self"},
+          "industry_cycle": {"score": 3, "note": "行业评分7.5,先进封装+CoWoS扩产利好", "source": "industry_agent"},
+          "technical": {"score": 5, "note": "MA20/MA60上方,接近60日高79.38阻力", "source": "self"},
+          "macro": {"score": 3, "note": "半导体涨价传导至封测", "source": "industry_agent"},
+          "news_sentiment": {"score": 3, "note": "news_score 7.5,AMD深度绑定+2.5D/3D封装", "source": "news_agent"}
+        },
+        "summary": "封测龙头业绩爆发但AMD单客集中度是最大风险点,仓位2.43%较小风险可控。"
+      }
+    },
+    "risk_recommendations": [
+      {"priority": "HARD", "symbol": "518880", "action": "立即无条件清仓黄金ETF(1.75%仓位),纠正IC决议未执行的纪律违规"},
+      {"priority": "SOFT", "symbol": "688120", "action": "华海清科禁止任何加仓,回调至300以下应主动减至8-9%"},
+      {"priority": "SOFT", "symbol": "300394", "action": "天孚通信禁止加仓,若破285应立即减仓"},
+      {"priority": "SOFT", "symbol": "513300", "action": "纳斯达克ETF支持CIO减仓至3.5%,降低隔夜VIX/汇率风险"},
+      {"priority": "HINT", "symbol": "portfolio", "action": "AI新增打折至50%配额(组合浮盈>30%+AI核心浮盈>50%触发浮盈修正规则)"},
+      {"priority": "HINT", "symbol": "portfolio", "action": "总仓位47.28%+现金52.72%,底仓充足,不宜激进加仓"}
+    ],
+    "summary": "组合整体风险62/100偏高但可控。核心矛盾:AI/半导体集中度接近40%红线+估值全线泡沫化+黄金ETF违规未清仓。硬否决:黄金ETF必须清仓;软否决:华海清科/天孚通信禁止加仓,纳指ETF建议减仓。"
+  }
+}

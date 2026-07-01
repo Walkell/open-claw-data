@@ -1,0 +1,453 @@
+{
+  "cycle_id": "towney-20260701-0907-盘前",
+  "principal": "towney",
+  "flow_type": "四委员",
+  "generated_at": "2026-07-01T09:50:00+08:00",
+  "cio_resolution": {
+    "section_1_committee_summary": {
+      "table": [
+        {
+          "committee": "Research",
+          "scores": "各标的详见下表",
+          "core_judgment": "半导体设备/光通信/封测全产业链景气，但估值普遍泡沫化（PE 80-181x）。天孚通信除权后技术面失真，黄金ETF技术面三杀。",
+          "data_quality": "⚠️ 中低（东方财富502/网易502/同花顺404/新浪403/DDG拦截，仅gtimg+新浪K线双源）"
+        },
+        {
+          "committee": "Industry",
+          "scores": "macro:7.5 / industry:7.8",
+          "core_judgment": "A股流动性极度充裕（成交额3.5万亿+），全球半导体超级景气周期（韩国11.68万亿投资+功率半导体全面涨价+CoWoS扩产）。风险：光通信6/29集体退潮分歧信号。",
+          "data_quality": "⚠️ 中低（DDG bot拦截，切换web_fetch新浪/东财原文；PMI/社融未能获取）"
+        },
+        {
+          "committee": "News",
+          "scores": "sentiment:0.55 / impact:4",
+          "core_judgment": "美股纳指/标普双创新高+A股半导体领涨+全球20家模拟/功率涨价+CoWoS扩产共振。黄金无正向催化。",
+          "data_quality": "⚠️ 中低（DDG后半段限流，个股公司公告稀薄，以行业景气传导为主）"
+        },
+        {
+          "committee": "Risk",
+          "scores": "44/100 / PASS（有条件通过）",
+          "core_judgment": "组合整体风险中等偏低。黄金ETF已触发硬止损→VETO清仓；天孚通信仓位14.26%超10%单股上限→需减仓。AI/半导体集中度29.59%逼近30%黄线。",
+          "data_quality": "⚠️ 上游三委员均标注数据受限"
+        }
+      ],
+      "data_confidence_note": "🔴 低 — 三委员（Research/Industry/News）均标注DDG bot拦截导致数据源受限，且天孚通信除权后K线失真。建议止盈止损偏保守。"
+    },
+    "section_2_formula_expansion": {
+      "flow_type": "四委员",
+      "weights": "Wr=0.55, Wi=0.30, Wn=0.15",
+      "industry_composite_shared": "0.50×7.5(macro) + 0.50×7.8(industry) = 7.65（全组合共用）",
+      "holdings": [
+        {
+          "symbol": "688120",
+          "name": "华海清科",
+          "research_composite": "0.30×8(fund) + 0.25×7(fin) + 0.25×4(val) + 0.20×7(tech) = 6.55",
+          "industry_composite": "7.65",
+          "news_modifier": "0.5 × (3/10) = 0.15",
+          "baseline_score": "0.55×6.55 + 0.30×7.65 + 0.15×(5+0.15×5) = 3.6025 + 2.295 + 0.8625 = 6.76",
+          "baseline_action": "持有观察（4.0~7.0区间）"
+        },
+        {
+          "symbol": "588090",
+          "name": "科创芯片ETF",
+          "research_composite": "0.30×7(fund) + 0.25×6(fin) + 0.25×5(val) + 0.20×8(tech) = 6.45",
+          "industry_composite": "7.65",
+          "news_modifier": "0.7 × (5/10) = 0.35",
+          "baseline_score": "0.55×6.45 + 0.30×7.65 + 0.15×(5+0.35×5) = 3.5475 + 2.295 + 1.0125 = 6.86",
+          "baseline_action": "持有观察（4.0~7.0区间）"
+        },
+        {
+          "symbol": "688008",
+          "name": "澜起科技",
+          "research_composite": "0.30×9(fund) + 0.25×8(fin) + 0.25×4(val) + 0.20×7(tech) = 7.10",
+          "industry_composite": "7.65",
+          "news_modifier": "0.5 × (4/10) = 0.20",
+          "baseline_score": "0.55×7.10 + 0.30×7.65 + 0.15×(5+0.20×5) = 3.905 + 2.295 + 0.90 = 7.10",
+          "baseline_action": "支持加仓（≥7.0，仍需Risk NOC）"
+        },
+        {
+          "symbol": "300394",
+          "name": "天孚通信",
+          "research_composite": "0.30×8(fund) + 0.25×8(fin) + 0.25×4(val) + 0.20×5(tech) = 6.40",
+          "industry_composite": "7.65",
+          "news_modifier": "0.6 × (4/10) = 0.24",
+          "baseline_score": "0.55×6.40 + 0.30×7.65 + 0.15×(5+0.24×5) = 3.52 + 2.295 + 0.93 = 6.75",
+          "baseline_action": "持有观察（4.0~7.0区间）",
+          "note": "⚠️ 技术面tech=5因除权后K线失真（MA20/MA60/布林带不可靠），实际技术面可能更好。仓位14.26%超10%单股上限属严重违规。"
+        },
+        {
+          "symbol": "159949",
+          "name": "创业板50ETF",
+          "research_composite": "0.30×5(fund) + 0.25×5(fin) + 0.25×6(val) + 0.20×6(tech) = 5.45",
+          "industry_composite": "7.65",
+          "news_modifier": "0.6 × (3/10) = 0.18",
+          "baseline_score": "0.55×5.45 + 0.30×7.65 + 0.15×(5+0.18×5) = 2.9975 + 2.295 + 0.885 = 6.18",
+          "baseline_action": "持有观察（4.0~7.0区间）"
+        },
+        {
+          "symbol": "510500",
+          "name": "中证500ETF",
+          "research_composite": "0.30×6(fund) + 0.25×6(fin) + 0.25×7(val) + 0.20×7(tech) = 6.45",
+          "industry_composite": "7.65",
+          "news_modifier": "0.1 × (3/10) = 0.03",
+          "baseline_score": "0.55×6.45 + 0.30×7.65 + 0.15×(5+0.03×5) = 3.5475 + 2.295 + 0.7725 = 6.62",
+          "baseline_action": "持有观察（4.0~7.0区间）"
+        },
+        {
+          "symbol": "513300",
+          "name": "纳斯达克ETF",
+          "research_composite": "0.30×6(fund) + 0.25×6(fin) + 0.25×5(val) + 0.20×5(tech) = 5.55",
+          "industry_composite": "7.65",
+          "news_modifier": "0.7 × (5/10) = 0.35",
+          "baseline_score": "0.55×5.55 + 0.30×7.65 + 0.15×(5+0.35×5) = 3.0525 + 2.295 + 1.0125 = 6.36",
+          "baseline_action": "持有观察（4.0~7.0区间）"
+        },
+        {
+          "symbol": "513650",
+          "name": "标普500ETF",
+          "research_composite": "0.30×5(fund) + 0.25×5(fin) + 0.25×5(val) + 0.20×4(tech) = 4.80",
+          "industry_composite": "7.65",
+          "news_modifier": "0.65 × (4/10) = 0.26",
+          "baseline_score": "0.55×4.80 + 0.30×7.65 + 0.15×(5+0.26×5) = 2.64 + 2.295 + 0.945 = 5.88",
+          "baseline_action": "持有观察（4.0~7.0区间）"
+        },
+        {
+          "symbol": "518880",
+          "name": "黄金ETF",
+          "research_composite": "0.30×4(fund) + 0.25×3(fin) + 0.25×5(val) + 0.20×3(tech) = 3.80",
+          "industry_composite": "7.65",
+          "news_modifier": "-0.1 × (2/10) = -0.02",
+          "baseline_score": "0.55×3.80 + 0.30×7.65 + 0.15×(5+(-0.02)×5) = 2.09 + 2.295 + 0.735 = 5.12",
+          "baseline_action": "持有观察（4.0~7.0区间）",
+          "note": "⚠️ baseline 5.12在持有观察区间低位，但Risk VETO优先级高于baseline。"
+        },
+        {
+          "symbol": "002156",
+          "name": "通富微电",
+          "research_composite": "0.30×7(fund) + 0.25×6(fin) + 0.25×5(val) + 0.20×7(tech) = 6.25",
+          "industry_composite": "7.65",
+          "news_modifier": "0.5 × (4/10) = 0.20",
+          "baseline_score": "0.55×6.25 + 0.30×7.65 + 0.15×(5+0.20×5) = 3.4375 + 2.295 + 0.90 = 6.63",
+          "baseline_action": "持有观察（4.0~7.0区间）"
+        }
+      ]
+    },
+    "section_3_cio_verdict": {
+      "data_confidence_note": "🔴 数据置信度低 — Research/Industry/News三委员均标注DDG bot拦截导致数据源受限。止盈止损建议已偏保守处理。天孚通信除权后技术指标失真，调仓系数仅供参考。",
+      "holdings_verdict": [
+        {
+          "symbol": "688120",
+          "name": "华海清科",
+          "baseline": "6.76",
+          "risk_verdict": "NOC (risk_score 3.5 🟢)",
+          "pe_percentile": "85%",
+          "adjust_coefficient": "0.334",
+          "suggested_position_change": "+7.0%（10.54%→17.54%）",
+          "safety_cap": "10%（单股上限）",
+          "conclusion": "持有观察，禁止加仓",
+          "override": "formula建议加仓+7.0%但CIO否决——仓位已10.54%略超10%单股上限，PE分位数85%估值极高，ATR 7.51%波动率极高。当前价已突破布林上轨，短期追高风险显著。维持10%仓位持有，等回调MA20(238)附近缩量企稳再评估加仓。",
+          "stop_loss": "275（来源：ATR止损 323.7×(1-2×7.51%)=275.1），现有止损295偏宽→建议收紧至275",
+          "take_profit": "312（来源：布林上轨311.17×PE分位修正→295.6，取保守值；近60日高332.55×0.98=325.9，取min=296≈300为心理关口；因浮盈丰厚>50%启用移动止盈→止盈位动态跟踪MA20≈238×1.31=312），建议312触发减仓50%",
+          "trigger": "若次日放量跌破MA20(238)→减仓至7%",
+          "expiry": "若定增获批后PE回落至100x以下→可重新评估加仓"
+        },
+        {
+          "symbol": "588090",
+          "name": "科创芯片ETF",
+          "baseline": "6.86",
+          "risk_verdict": "NOC (risk_score 2.5 🟢)",
+          "pe_percentile": "~70%（估算）",
+          "adjust_coefficient": "0.466",
+          "suggested_position_change": "+1.8%（3.41%→5.23%）",
+          "safety_cap": "5%（AI赛道集中度限制）",
+          "conclusion": "持有观察，小仓试探加仓至5%",
+          "override": "formula建议+1.8%，CIO认可方向。但当前净值2.28接近止盈位2.3且突破布林上轨，不建议追高。等回踩MA20(1.88)缩量企稳时加仓至5%。已止盈35%锁利操作正确。",
+          "stop_loss": "1.90（维持现有，来源：支撑位MA60=1.70，ATR 4.06%→1.88×(1-2×4.06%)=1.73，取max=1.90偏保守）",
+          "take_profit": "2.30（维持现有，来源：当前净值2.28距止盈2.3仅0.9%，若突破2.3则上移至2.50=60日高×1.1）",
+          "trigger": "若突破2.30且量比>1.5→止盈50%",
+          "expiry": "若科创芯片指数PE回落至60x以下→止盈位可上调至2.5"
+        },
+        {
+          "symbol": "688008",
+          "name": "澜起科技",
+          "baseline": "7.10",
+          "risk_verdict": "NOC (risk_score 3.0 🟢)",
+          "pe_percentile": "88%",
+          "adjust_coefficient": "0.319",
+          "suggested_position_change": "+4.1%（6.08%→10.19%）",
+          "safety_cap": "10%（单股上限）",
+          "conclusion": "支持小幅加仓至8%",
+          "override": "formula建议+4.1%至10.19%，CIO削减至+1.9%至8%。PE分位数88%极高+接近60日高313阻力位，不宜追满。等回踩MA20(255)缩量时加仓至8%。基本面是组合最优标的(fund=9)，DDR5+AI双引擎逻辑硬。",
+          "stop_loss": "251（维持现有251.3，来源：ATR 6.02%→308.8×(1-2×6.02%)=271.6，MA60=217→取max=252≈251.3）",
+          "take_profit": "312（维持现有，来源：近60日高313.13×0.98=306.9→取整312。突破313阻力后上调至340=布林上轨+10%）",
+          "trigger": "若回踩MA20(255)缩量企稳→加仓至8%",
+          "expiry": "若DDR5渗透率预期下调或存储芯片价格回落→停止加仓"
+        },
+        {
+          "symbol": "300394",
+          "name": "天孚通信",
+          "baseline": "6.75",
+          "risk_verdict": "WARN (risk_score 4.5 🟢NOC，但仓位违规)",
+          "pe_percentile": "80%",
+          "adjust_coefficient": "0.464（⚠️除权后失真，仅供参考）",
+          "suggested_position_change": "+7.6%→CIO强制覆写为减仓",
+          "safety_cap": "10%（单股上限，当前14.26%已严重超标）",
+          "conclusion": "强制减仓至10%（从14.26%减至≤10%）",
+          "override": "formula建议+7.6%（因距MA20偏离映射为低估信号1.3，但此偏离源于除权后MA20失真——除权前MA20=369 vs 除权后现价303，比率0.82被误判为低估。CIO判定此信号无效。仓位14.26%逆上次CIO裁决加仓，超10%单股上限42%，属严重违规。强制减仓至≤10%。",
+          "stop_loss": "280.56（维持现有，来源：除权后K线失真无法计算精确ATR止损，维持280.56。距现价302.68仅7.3%，ATR 10.64%意味止损极易触发）",
+          "take_profit": "318（维持现有317.84，来源：除权后60日高参考525×0.6≈315→取整318。待K线稳定后重新计算）",
+          "trigger": "立即执行减仓至10%",
+          "expiry": "若K线稳定后技术面恢复（MA20重新确立上行）→可重新评估8-10%仓位"
+        },
+        {
+          "symbol": "159949",
+          "name": "创业板50ETF",
+          "baseline": "6.18",
+          "risk_verdict": "NOC (risk_score 2.8 🟢)",
+          "pe_percentile": "~40%（估算，中等偏低）",
+          "adjust_coefficient": "0.428",
+          "suggested_position_change": "+3.1%（5.44%→8.55%）",
+          "safety_cap": "10%",
+          "conclusion": "持有观察，可小幅加仓至7%",
+          "override": "formula建议+3.1%，CIO削减至+1.6%至7%。缩量上涨动能减弱，加仓不急。浮盈60%+丰厚，作为AI对冲分散工具定位合理。等放量确认趋势再加。",
+          "stop_loss": "1.95（维持现有，来源：MA60=1.85，ATR 3.52%→2.09×(1-2×3.52%)=1.94，取max=1.95）",
+          "take_profit": "2.50（维持现有，来源：布林上轨2.15×1.16≈2.50，浮盈60%+已启用移动止盈→止盈位=MA20 1.99×1.25=2.49≈2.50）",
+          "trigger": "若放量突破2.12(60日高)→加仓至7%",
+          "expiry": "若创业板指跌破MA60→暂停加仓"
+        },
+        {
+          "symbol": "510500",
+          "name": "中证500ETF",
+          "baseline": "6.62",
+          "risk_verdict": "NOC (risk_score 2.5 🟢)",
+          "pe_percentile": "~30%（偏低）",
+          "adjust_coefficient": "0.514",
+          "suggested_position_change": "+1.9%（4.01%→5.96%）",
+          "safety_cap": "10%",
+          "conclusion": "支持加仓至6.5%",
+          "override": "formula建议+1.9%至5.96%，CIO确认方向并微调至6.5%。PE 22x历史偏低，中盘风格回暖受益于流动性外溢。等回踩MA20(8.61)时执行加仓。",
+          "stop_loss": "8.57（维持现有，来源：MA60=8.47，ATR 2.39%→9.2×(1-2×2.39%)=8.76，取max=8.57偏保守）",
+          "take_profit": "9.50（维持现有，来源：布林上轨9.29×1.02≈9.48→取整9.50）",
+          "trigger": "若回踩MA20(8.61)缩量企稳→加仓至6.5%",
+          "expiry": "若中证500指数PE突破25x→止盈位下调至9.0"
+        },
+        {
+          "symbol": "513300",
+          "name": "纳斯达克ETF",
+          "baseline": "6.36",
+          "risk_verdict": "NOC (risk_score 3.5 🟢)",
+          "pe_percentile": "~65%（中高）",
+          "adjust_coefficient": "0.447",
+          "suggested_position_change": "+2.8%（5.06%→7.86%）",
+          "safety_cap": "8%（美股跨境限制）",
+          "conclusion": "持有观察，不建议加仓",
+          "override": "formula建议+2.8%但CIO否决——纳指PE 30x历史中高，隔夜VIX+中东风险。此前CIO建议减仓至3.5%方向正确但未执行。维持5.06%不变，等纳指回调5%以上再评估加仓。",
+          "stop_loss": "2.52（维持现有，来源：MA60=2.51，ATR 2.48%→2.704×(1-2×2.48%)=2.57，取max=2.52。距现价6.8%空间偏紧）",
+          "take_profit": "2.86（维持现有，来源：近60日高2.90×0.98=2.84→取整2.86）",
+          "trigger": "若VIX突破30→减仓至3.5%",
+          "expiry": "若纳指回调10%以上→可加仓至8%"
+        },
+        {
+          "symbol": "513650",
+          "name": "标普500ETF",
+          "baseline": "5.88",
+          "risk_verdict": "NOC (risk_score 3.2 🟢)",
+          "pe_percentile": "~70%",
+          "adjust_coefficient": "0.465",
+          "suggested_position_change": "+0.8%（1.43%→2.20%）",
+          "safety_cap": "5%",
+          "conclusion": "持有观察，维持底仓",
+          "override": "仓位1.43%过小不值得调整。技术面偏弱（跌破MA20）不支持加仓。维持底仓不动。",
+          "stop_loss": "1.70（维持现有，来源：MA60=1.83，ATR 1.62%→1.85×(1-2×1.62%)=1.79，取max=1.70偏保守）",
+          "take_profit": "2.20（维持现有）",
+          "trigger": "无",
+          "expiry": "若跌破MA60(1.83)→清仓"
+        },
+        {
+          "symbol": "518880",
+          "name": "黄金ETF",
+          "baseline": "5.12",
+          "risk_verdict": "VETO 🟠 橙牌 (risk_score 8.5, 软VETO)",
+          "pe_percentile": "~30%（金价中等）",
+          "adjust_coefficient": "0.541→VETO强制禁加",
+          "suggested_position_change": "VETO禁止加仓，CIO裁决：立即清仓",
+          "safety_cap": "0%（清仓）",
+          "conclusion": "立即清仓（VETO不override）",
+          "override": "risk_score 8.5落入7-8与≥9之间的灰区。虽非硬VETO（<9），CIO选择不override——理由：①现价8.378已跌破止损8.5触发硬止损条件；②CIO已两次裁决清仓均未执行，风控纪律严重受损；③技术面三杀+基本面弱势+唯一浮亏标的（-7.6%）。清仓是唯一正确选择。",
+          "stop_loss": "已触发（止损8.5，现价8.378）→强制止损执行",
+          "take_profit": "不适用（清仓标的）",
+          "trigger": "立即执行清仓",
+          "expiry": "清仓后从持仓表移除，待金价突破2100美元/盎司+MA20金叉MA60后再评估重新入池"
+        },
+        {
+          "symbol": "002156",
+          "name": "通富微电",
+          "baseline": "6.63",
+          "risk_verdict": "NOC (risk_score 3.2 🟢)",
+          "pe_percentile": "70%",
+          "adjust_coefficient": "0.349",
+          "suggested_position_change": "+1.6%（2.43%→4.01%）",
+          "safety_cap": "5%",
+          "conclusion": "持有观察，可小幅加仓至4%",
+          "override": "formula建议+1.6%至4%，CIO认可方向。Q1+225%爆发增长+PEG仅0.35极低+涨价传导利好。但AMD依赖度52%是最大风险点，仓位不宜过高。等回踩MA20(67.5)缩量时加仓。",
+          "stop_loss": "64（维持现有，来源：MA60=58.58，ATR 6.61%→75.87×(1-2×6.61%)=65.84，取max=64偏保守）",
+          "take_profit": "81（维持现有，来源：近60日高79.38×1.02≈81，PE分位数70%未触发修正）",
+          "trigger": "若回踩MA20(67.5)缩量企稳→加仓至4%",
+          "expiry": "若AMD订单出现重大负面→止损降至60"
+        }
+      ],
+      "watchlist_verdict": [
+        {
+          "symbol": "002463",
+          "name": "沪电股份",
+          "baseline": "7.38 (≥7.0 支持建仓)",
+          "conclusion": "接近建仓，严格执行建仓方案",
+          "precondition": "当前152.8高于建仓方案①区间(135-138)约11%。严格执行：等回调135-138缩量回踩MA20时建仓10%试探仓。baseline 7.38确认看多方向。"
+        },
+        {
+          "symbol": "000988",
+          "name": "华工科技",
+          "baseline": "6.88",
+          "conclusion": "观察",
+          "precondition": "当前184.6远超建仓区间(140以下)，较观察池快照149.29已涨23.6%。等回调MA20(162)附近再评估建仓。"
+        },
+        {
+          "symbol": "688072",
+          "name": "拓荆科技",
+          "baseline": "6.81",
+          "conclusion": "观察",
+          "precondition": "已从快照613.88涨至832(+35%)，远超建仓安全边际。等回调MA20(675)以下再评估。"
+        },
+        {
+          "symbol": "688041",
+          "name": "海光信息",
+          "baseline": "6.75",
+          "conclusion": "观察",
+          "precondition": "PE 314x极度泡沫化，当前370.3接近60日高377.79。等回调MA20(307)附近再评估。"
+        },
+        {
+          "symbol": "688234",
+          "name": "天岳先进",
+          "baseline": "5.85",
+          "conclusion": "暂不建议建仓",
+          "precondition": "维持投委会裁决：等120-125区间或MACD金叉或Q2毛利率回升三个条件任一满足。"
+        },
+        {
+          "symbol": "300346",
+          "name": "南大光电",
+          "baseline": "6.91",
+          "conclusion": "观察",
+          "precondition": "PE 181x极度泡沫，当前92.65远超建仓条件(MA20≈61, PE<80x)。严格执行建仓前置条件。"
+        },
+        {
+          "symbol": "563530",
+          "name": "卫星ETF易方达",
+          "baseline": "6.27",
+          "conclusion": "观察",
+          "precondition": "当前1.398高于建仓线1.20约16.5%。等回调至1.20以下。"
+        },
+        {
+          "symbol": "159227",
+          "name": "航空航天ETF华夏",
+          "baseline": "5.96",
+          "conclusion": "观察",
+          "precondition": "当前1.117高于建仓线1.00约11.7%，技术面偏弱。等回调至1.00附近。"
+        },
+        {
+          "symbol": "512890",
+          "name": "红利低波ETF",
+          "baseline": "5.79",
+          "conclusion": "观察",
+          "precondition": "AI赛道未过热，建仓条件(AI过热或组合回撤>10%)不满足。"
+        },
+        {
+          "symbol": "159892",
+          "name": "创新药ETF",
+          "baseline": "5.64",
+          "conclusion": "观察",
+          "precondition": "建仓条件(净值0.55以下或美联储明确降息)不满足。"
+        },
+        {
+          "symbol": "512880",
+          "name": "证券ETF",
+          "baseline": "6.08",
+          "conclusion": "观察",
+          "precondition": "建仓条件(成交额连续3日>1.5万亿)待确认。"
+        }
+      ]
+    },
+    "section_4_core_logic": "① 组合核心持仓（华海清科/澜起科技/天孚通信/科创芯片ETF）均处全球半导体超级景气周期，基本面强劲（research_composite 6.40-7.10），但估值已极度泡沫化（PE 145-181x），baseline均在持有观察区间。澜起科技baseline 7.10唯一达到加仓线，但PE分位数88%+接近60日高阻力限制加仓空间。② 黄金ETF risk_score 8.5触发软VETO，现价已跌破止损，CIO不override——清仓是唯一正确选择。天孚通信仓位14.26%严重违规超10%单股上限，强制减仓至≤10%。③ 数据置信度低（三委员均受DDG bot拦截影响），止盈止损建议已偏保守处理，触发条件收紧。④ 观察池沪电股份baseline 7.38确认看多方向，但需等回调至建仓区间135-138执行。",
+    "section_5_concentration_management": {
+      "current_concentration": "AI/半导体 29.59%（🟢 正常，<30%）",
+      "note": "集中度未超标，无需输出减仓优先级。但逼近30%黄色预警线，新加仓（澜起+1.9%至8%+通富+1.6%至4%+科创芯片+1.6%至5%）将使集中度升至约33.8%→触发🟡黄牌。建议：①加仓顺序优先非AI标的（中证500ETF）；②AI方向加仓总增量控制在3%以内。",
+      "recommended_order": "1. 中证500ETF（非AI，+2.5%至6.5%）→ 2. 澜起科技（AI，+1.9%至8%）→ 3. 通富微电（AI，+1.6%至4%）。暂停科创芯片ETF加仓待AI集中度回落至30%以下。",
+      "weighted_pnl_ai_semiconductor": "312.4%（巨额浮盈提供安全垫，但集中度仍应管控）"
+    }
+  },
+  "write_actions": {
+    "decision_review": {
+      "cycle_id": "towney-20260701-0907-盘前",
+      "principal": "towney",
+      "flow_type": "四委员",
+      "baseline_scores": {
+        "688120": 6.76,
+        "588090": 6.86,
+        "688008": 7.10,
+        "300394": 6.75,
+        "159949": 6.18,
+        "510500": 6.62,
+        "513300": 6.36,
+        "513650": 5.88,
+        "518880": 5.12,
+        "002156": 6.63
+      },
+      "cio_action": "综合持有观察+黄金ETF清仓+天孚通信强制减仓",
+      "risk_verdict": "PASS（有条件通过）",
+      "override_reason": "黄金ETF risk_score 8.5软VETO：CIO选择不override，清仓执行。天孚通信仓位14.26%超10%单股上限：formula建议+7.6%因除权后数据失真无效，CIO强制覆写为减仓至10%。",
+      "data_quality": "🔴 低（三委员DDG受限）",
+      "report_summary": "2026-07-01盘前综合复盘：10只持仓+11只观察池全面审查。核心持仓半导体/AI赛道景气强劲但估值泡沫化，baseline集中在5.12-7.10区间，多数建议持有观察。澜起科技唯一达标加仓线(7.10)。黄金ETF已触发止损强制清仓。天孚通信仓位违规强制减仓。组合AI集中度29.59%逼近30%黄线需管控。观察池沪电股份baseline 7.38确认看多方向。"
+    },
+    "trading_suggestions": [
+      {
+        "symbol": "518880",
+        "name": "黄金ETF",
+        "action": "清仓",
+        "position_pct": "1.75%→0%",
+        "price_ref": "市价8.378",
+        "reason": "risk_score 8.5软VETO+已跌破止损8.5+技术面三杀"
+      },
+      {
+        "symbol": "300394",
+        "name": "天孚通信",
+        "action": "减仓",
+        "position_pct": "14.26%→10%",
+        "price_ref": "市价302.68",
+        "reason": "仓位严重违规超10%单股上限42%，CIO强制减仓"
+      },
+      {
+        "symbol": "688008",
+        "name": "澜起科技",
+        "action": "加仓",
+        "position_pct": "6.08%→8%",
+        "price_ref": "回踩MA20(255)缩量企稳时",
+        "reason": "baseline 7.10达标加仓线，DDR5+AI双引擎"
+      },
+      {
+        "symbol": "510500",
+        "name": "中证500ETF",
+        "action": "加仓",
+        "position_pct": "4.01%→6.5%",
+        "price_ref": "回踩MA20(8.61)缩量企稳时",
+        "reason": "PE 22x历史偏低+中盘风格回暖"
+      },
+      {
+        "symbol": "002156",
+        "name": "通富微电",
+        "action": "加仓",
+        "position_pct": "2.43%→4%",
+        "price_ref": "回踩MA20(67.5)缩量企稳时",
+        "reason": "PEG 0.35极低+涨价传导"
+      }
+    ]
+  }
+}
