@@ -1,0 +1,83 @@
+{
+  "principal": "klaire",
+  "monitor_time": "2026-07-01T11:00:00+08:00",
+  "trading_session": "上午",
+  "data_source_note": "腾讯 gtimg 主源（12/12 全部覆盖），东方财富部分交叉验证成功；网易/同花顺/新浪均失败，观察池/持仓数据以腾讯源为准",
+  "has_alerts": true,
+  "alerts": [
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "type": "持仓",
+      "alert_type": "涨跌幅+成交量+接近止盈",
+      "detail": "现价43.24元，日内+4.17%，量比2.72（放量上涨）；距止盈价45.20仅4.5%，接近止盈触发区间",
+      "severity": "高",
+      "price": 43.24,
+      "change_pct": 4.17,
+      "volume_ratio": 2.72,
+      "stop_profit": 45.2,
+      "stop_loss": 40.81
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "type": "持仓",
+      "alert_type": "成交量+涨跌幅",
+      "detail": "现价24.55元，日内+2.89%，量比3.80（显著放量，接近涨跌3%阈值）；距止损23.00元约6.7%，趋势偏强",
+      "severity": "中",
+      "price": 24.55,
+      "change_pct": 2.89,
+      "volume_ratio": 3.80,
+      "stop_profit": 31,
+      "stop_loss": 23
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "type": "持仓",
+      "alert_type": "价格突破-已破止损",
+      "detail": "现价21.99元，止损价24.00元，现价已在止损线下方约8.4%（历史遗留破位）；日内+1.76%仍未收复止损",
+      "severity": "高",
+      "price": 21.99,
+      "change_pct": 1.76,
+      "volume_ratio": 1.37,
+      "stop_profit": 33,
+      "stop_loss": 24
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "type": "持仓",
+      "alert_type": "接近止损",
+      "detail": "现价10.67元，止损价10.50元，距止损仅1.59%，处于止损边缘，需密切关注",
+      "severity": "高",
+      "price": 10.67,
+      "change_pct": 0.57,
+      "volume_ratio": 1.52,
+      "stop_profit": 15,
+      "stop_loss": 10.5
+    },
+    {
+      "symbol": "000988",
+      "name": "华工科技",
+      "type": "观察池",
+      "alert_type": "涨跌幅",
+      "detail": "现价178.16元，日内-3.49%（跌幅超过3%阈值）；观察池目标建仓区110-130，当前仍远离建仓价，跌势可增加建仓机会",
+      "severity": "高",
+      "price": 178.16,
+      "change_pct": -3.49,
+      "volume_ratio": 1.69
+    }
+  ],
+  "no_alert_holdings": [
+    {"symbol": "588080", "name": "科创50ETF易方达", "price": 2.292, "change_pct": 0.84},
+    {"symbol": "159540", "name": "信创ETF易方达", "price": 2.689, "change_pct": 0.52}
+  ],
+  "no_alert_watchlist": [
+    {"symbol": "002126", "name": "银轮股份", "price": 49.41, "change_pct": -0.78},
+    {"symbol": "002125", "name": "湘潭电化", "price": 13.62, "change_pct": -0.29},
+    {"symbol": "600875", "name": "东方电气", "price": 29.02, "change_pct": 0.87, "note": "距目标建仓价33仍有13.7%空间"},
+    {"symbol": "002049", "name": "紫光国微", "price": 88.60, "change_pct": -0.17},
+    {"symbol": "002156", "name": "通富微电", "price": 75.15, "change_pct": -0.95}
+  ]
+}
