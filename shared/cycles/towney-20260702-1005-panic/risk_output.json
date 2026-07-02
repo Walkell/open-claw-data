@@ -1,0 +1,80 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260702-1005-panic",
+  "flow_type": "精简两委员",
+  "data_quality": "🟢 持仓表全量拉取(9条持有记录) + Research委员双源验证行情",
+  "risk_score": 62,
+  "verdict": "🟠 警戒级 — 天孚通信已跌破止损必须立即执行(违规级);创业板50ETF距止损1.4%触发级;华海清科距止损4.5%+越10%单标的软线;半导体集中度29.59%未破40%硬阈但已警戒;组合浮盈+39%+跨境宽基对冲有效未失控。",
+  "portfolio_snapshot": {
+    "total_position_pct": 45.53,
+    "cash_pct": 54.47,
+    "holdings_count": 9,
+    "up_count": 1,
+    "down_count": 8,
+    "breach_stop_loss_count": 1,
+    "near_stop_loss_count": 1
+  },
+  "concentration_detail": {
+    "半导体": {"constituents": ["688120","588090","688008","300394","002156"], "current_pct": 29.59, "threshold_pct": 40, "level": "🟠", "reason": "AI赛道29.59%未破40%硬VETO但已警戒(>25%)。华海10.54%越10%单标的软线。减仓优先级=天孚>华海>科创芯片ETF"},
+    "AI概念含跨境": {"constituents": ["688120","588090","688008","300394","002156","513300"], "current_pct": 34.65, "threshold_pct": 40, "level": "🟠", "reason": "叠加纳指ETF后AI敞口34.65%。跨境与A股半导体今日相关性低(纳指-0.85% vs A股-6%+)可视为部分对冲"},
+    "宽基分散": {"constituents": ["159949","510500"], "current_pct": 9.45, "threshold_pct": null, "level": "🟢", "reason": "创业板50ETF+中证500ETF=9.45%对冲。但159949已进入触发级"},
+    "跨境ETF": {"constituents": ["513300","513650"], "current_pct": 6.49, "threshold_pct": null, "level": "🟢", "reason": "标普500ETF今日+0.53%组合唯一上涨,纳指ETF-0.85%,跨境有效对冲A股恐慌"},
+    "单标的_10pct软线": {"constituents": ["688120"], "current_pct": 10.54, "threshold_pct": 10, "level": "🟡", "reason": "华海10.54%越10%软线;距止损4.5%;PE分位100%;跌破295强制减仓至5%以下"}
+  },
+  "concentration_weighted_pnl": {
+    "半导体": {
+      "constituents_pnl": {
+        "688120": {"weight_pct": 10.54, "pnl_pct": 20.3, "contrib_pct": 2.14},
+        "588090": {"weight_pct": 3.41, "pnl_pct": 34.0, "contrib_pct": 1.16},
+        "688008": {"weight_pct": 6.08, "pnl_pct": 54.21, "contrib_pct": 3.30},
+        "300394": {"weight_pct": 7.13, "pnl_pct": 94.1, "contrib_pct": 6.71},
+        "002156": {"weight_pct": 2.43, "pnl_pct": 10.3, "contrib_pct": 0.25}
+      },
+      "sector_weight_pct": 29.59,
+      "weighted_pnl_pct": 45.83,
+      "note": "半导体加权浮盈+45.83%。浮盈修正规则:赛道仍保约40%浮盈护城河,不整体清仓;但破位标的(天孚)必须止损"
+    },
+    "跨境ETF": {"sector_weight_pct": 6.49, "weighted_pnl_pct": 18.99},
+    "宽基分散": {"sector_weight_pct": 9.45, "weighted_pnl_pct": 34.83},
+    "全组合": {"estimated_weighted_pnl_pct": 39.2, "note": "组合加权浮盈约+39%(天孚成本-67.209除权异常未计入)。风险预算充足可承担结构性止损"}
+  },
+  "five_level_assessment": {
+    "violation_black": {"count": 1, "items": [{"symbol": "300394", "name": "天孚通信", "weight_pct": 7.13, "current_price": 264.70, "stop_loss": 280.56, "gap_pct": -5.7, "reason": "已跌破止损280.56。同时跌破MA20+MA60均线空头排列,量比0.38缩量破位属最恶劣形态。近60日高525→264.70回撤49.6%接近腰斩", "action": "🔴 立即执行止损全部清仓7.13%。硬性纪律不容CIO override"}]},
+    "trigger_red": {"count": 1, "items": [{"symbol": "159949", "name": "创业板50ETF", "weight_pct": 5.44, "current_price": 1.978, "stop_loss": 1.95, "gap_pct": 1.4, "reason": "距止损1.95仅1.4%。已跌破MA20(1.987),MA60(1.867)最后防线", "action": "🔴 设强制盘中预警;若跌破1.95即刻止损清仓;VETO一切补仓(距止损≤3%规则)"}]},
+    "warning_orange": {"count": 2, "items": [
+      {"symbol": "688120", "name": "华海清科", "weight_pct": 10.54, "current_price": 309.01, "stop_loss": 295, "gap_pct": 4.5, "reason": "距止损4.5%;单标的10.54%越10%软线;PE 148.74(100%分位);跌破布林上轨;ATR 7.42%;定增摊薄10-15%风险", "action": "🟠 VETO加仓(CIO不可override);跌破295→强减仓至5%以下;295-309窄区设移动止损"},
+      {"symbol": "588090", "name": "科创芯片ETF", "weight_pct": 3.41, "current_price": 2.169, "stop_loss": 1.90, "gap_pct": 12.4, "reason": "标的自身安全但作为半导体赛道敞口且底层含警戒/破位个股,赛道传染风险高", "action": "🟠 不加仓;若半导体再跌5%考虑减半仓;减仓次优先级"}
+    ]},
+    "attention_yellow": {"count": 2, "items": [
+      {"symbol": "688008", "name": "澜起科技", "weight_pct": 6.08, "current_price": 295.52, "stop_loss": 251.30, "gap_pct": 15.0, "reason": "距止损15%安全垫足;基本面/财务双优(8/8);但PE 150.95(99.61%分位)面临均值回归", "action": "🟡 持有;VETO加仓;跌破MA20(261.15)升级警戒"},
+      {"symbol": "002156", "name": "通富微电", "weight_pct": 2.43, "current_price": 70.56, "stop_loss": 64, "gap_pct": 9.3, "reason": "距止损9.3%;PE分位56.55%半导体中最合理;PEG=0.79<1;昨日刚加仓×1.5倍浮亏中;AMD集中40%风险", "action": "🟡 持有;不加仓;跌破MA20(68.00)升级警戒"}
+    ]},
+    "safe_green": {"count": 3, "items": [
+      {"symbol": "510500", "name": "中证500ETF", "weight_pct": 4.01, "current_price": 9.022, "stop_loss": 8.57, "gap_pct": 5.0, "reason": "今日-1.72%远优半导体;PE 22x合理偏低;均线多头良好", "action": "🟢 持有;可作半导体减仓资金承接标的"},
+      {"symbol": "513300", "name": "纳斯达克ETF", "weight_pct": 5.06, "current_price": 2.687, "stop_loss": 2.52, "gap_pct": 6.2, "reason": "跨境不受A股恐慌直接影响;今日-0.85%;VIX=16.59低位;美股纳指创新高", "action": "🟢 持有;VETO加仓(AI叠加已34.65%)"},
+      {"symbol": "513650", "name": "标普500ETF", "weight_pct": 1.43, "current_price": 1.889, "stop_loss": 1.70, "gap_pct": 10.0, "reason": "今日+0.53%组合唯一上涨;ATR 1.41%极低波动;标普500创7483新高", "action": "🟢 持有;仓位1.43%过小无需调整;作组合稳定器"}
+    ]}
+  },
+  "dimensions": {
+    "financial_health": {"score": 6.5, "note": "组合底层资产财务整体健康:澜起8/天孚7/科创ETF+华海+通富6/宽基跨境5-7", "source": "self"},
+    "valuation": {"score": 3.5, "note": "组合估值偏高:华海148.74(100%分位)/澜起150.95(99.61%)/天孚143.14(95.45%)均历史极高位;仅通富77.55(56.55%)和宽基跨境合理。3只超高估值合计19.75%是最大风险源", "source": "self"},
+    "industry_cycle": {"score": 5, "note": "未参与,默认5(精简两委员)", "source": "default"},
+    "technical": {"score": 3.8, "note": "组合技术面承压:天孚破MA20+MA60空排列(2);华海破布林上轨(4);创业板50ETF破MA20(4);澜起5;仅标普(7)/中证(6)/纳指(6)良好", "source": "self"},
+    "macro": {"score": 5, "note": "未参与,默认5(精简两委员)", "source": "default"},
+    "news_sentiment": {"score": 5, "note": "未参与,默认5(精简两委员)", "source": "default"}
+  },
+  "portfolio_level_risks": {
+    "concentration_risk": {
+      "level": "🟠 警戒",
+      "detail": "半导体29.59%未破40%硬阈但已警戒;单标的华海10.54%越10%软线;AI含跨境敞口34.65%。三重集中度信号叠加",
+      "mitigation": "天孚清仓释放7.13%仓位天然降低集中度至22.46%;不允许新增半导体;后续择机减华海至5-8%"
+    },
+    "max_drawdown_risk": {
+      "level": "🟠 警戒",
+      "detail": "今日半导体单日回撤6%+;天孚已回撤49.6%接近腰斩;华海60日高356.64→309.01回撤13.4%;组合单日估计-3.3%至-4.0%",
+      "mitigation": "执行天孚止损后组合仓位45.53%→38.40%;若创业板50ETF触损再释放5.44%→32.96%。现金54.47%提供强大流动性缓冲"
+    },
+    "correlation_risk": {
+      "level": "🟠 警戒",
+      "detail": "半导体5只标的今日高度相关(华海-6.36/澜起-6.45/天孚-7.

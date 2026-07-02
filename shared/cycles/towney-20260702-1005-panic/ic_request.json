@@ -1,0 +1,10 @@
+{
+  "cycle_id": "towney-20260702-1005-panic",
+  "principal": "towney",
+  "flow_type": "精简两委员",
+  "symbol": "全仓",
+  "trigger": "盘中监控大跌",
+  "positions_table_id": "tblUeTGMf0IKJ8Pk",
+  "watchlist_table_id": "tblaLlSQp8tEcWgJ",
+  "context": "2026-07-02 09:49 盘中监控：9个持仓全部下跌，天孚通信(-8.18%)跌破止损位，通富微电(-6.81%)跌破违规阈值，澜起科技(-7.52%)/创业板50ETF(-3.45%)/中证500ETF(-2.18%)触发止损方向阈值。科技板块普跌。"
+}

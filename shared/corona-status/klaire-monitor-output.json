@@ -1,35 +1,52 @@
 {
   "principal": "klaire",
-  "checked_at": "2026-07-01T10:40:21+08:00",
-  "alerts": [
-    {
-      "symbol": "600699",
-      "name": "均胜电子",
-      "price": 21.78,
-      "change_pct": 0.79,
-      "cost": 24.89,
-      "profit_pct": -12.49,
-      "alert_reason": "距成本亏损 -12.49%，现价21.78已跌破止损价24.0（该持仓处于止损击穿状态，建议 IC 评估）"
-    },
+  "has_anomalies": true,
+  "data_quality": "single_source_unverified (仅腾讯gtimg可用；网易/同花顺/新浪/东财均失败)",
+  "snapshot_time": "2026-07-02 10:20 GMT+8",
+  "anomalies": [
     {
       "symbol": "159540",
       "name": "信创ETF",
-      "price": 2.676,
-      "change_pct": 0.04,
-      "cost": 1.774,
-      "profit_pct": 50.85,
-      "alert_reason": "距成本盈利 +50.85%，现价2.676远超止盈价2.30（累计浮盈显著，止盈线已滞后）"
+      "anomaly_type": "large_drop",
+      "current_price": 2.493,
+      "change_pct": -4.59,
+      "reason": "跌幅 -4.59%，触发大跌预警阈值（≤-3%）；成本1.774，止损1.85，加仓价1.85，价格仍高于止损但连续下探需关注"
     },
     {
       "symbol": "588080",
       "name": "科创50ETF",
-      "price": 2.26,
-      "change_pct": -0.57,
-      "cost": 1.65,
-      "profit_pct": 36.97,
-      "alert_reason": "距成本盈利 +36.97%，现价2.26已超止盈价1.98（累计浮盈显著）"
+      "anomaly_type": "large_drop",
+      "current_price": 2.135,
+      "change_pct": -3.74,
+      "reason": "跌幅 -3.74%，触发大跌预警阈值（≤-3%）；成本1.65，止损1.55，加仓价1.58，仍持仓浮亏状态"
+    },
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "anomaly_type": "large_gain",
+      "current_price": 44.10,
+      "change_pct": 3.28,
+      "reason": "涨幅 +3.28%，触发大涨关注阈值（≥+3%）；接近止盈价45.2（距止盈约2.5%），可考虑告知 Butler 决策是否分批止盈"
+    },
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "anomaly_type": "large_gain_below_stoploss",
+      "current_price": 22.53,
+      "change_pct": 3.06,
+      "reason": "涨幅 +3.06%，但现价22.53仍低于止损价24（备注已注明破止损不补、反弹24先出）；今日反弹但未回到止损线以上，需关注是否触及24即卖出"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "anomaly_type": "near_stoploss",
+      "current_price": 10.74,
+      "change_pct": 0.09,
+      "reason": "现价10.74，距止损价10.5仅约2.24%，处于接近止损区间；今日基本持平但风险敞口仍需关注"
     }
   ],
-  "no_alert": false,
-  "summary": "klaire 6只持仓监控完成，3只触发累计盈亏 ±8% 阈值：均胜电子(600699) 亏损12.49%且已跌破止损价24.0，属止损击穿状态需 IC 优先评估；信创ETF(159540) 浮盈50.85%、科创50ETF(588080) 浮盈36.97%，两只ETF均已远超止盈价，止盈线滞后。日内涨跌全部在±5%以内，无当日单日大幅异动。行情来源：腾讯qt.gtimg.cn 主源 + Eastmoney 交叉验证（5/6 一致）。6条快照已写入监控记录表。"
+  "no_anomaly": [
+    {"symbol": "603298", "name": "杭叉集团", "current_price": 24.90, "change_pct": 1.59}
+  ],
+  "summary": "klaire 6只持仓中5只出现异动或需关注：2只大跌（信创ETF -4.59%、科创50ETF -3.74%），2只大涨（双环传动 +3.28%接近止盈、均胜电子 +3.06%但仍破止损），1只逼近止损（盾安环境距止损仅2.24%）。ETF板块（科创50、信创）今日走弱；机器人/汽车电子（双环、均胜）反弹。数据源仅腾讯gtimg可用，未双源验证。"
 }
