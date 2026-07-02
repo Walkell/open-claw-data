@@ -412,14 +412,15 @@
         "workspace": "/home/ubuntu/.openclaw/workspace-dexter",
         "agentDir": "/home/ubuntu/.openclaw/agents/dexter/agent",
         "model": {
-          "primary": "deepseek/deepseek-v4-pro",
+          "primary": "glm/glm-5.2",
           "fallbacks": [
-            "volcengine-plan/glm-5.2"
+            "deepseek/deepseek-v4-pro"
           ]
         },
         "models": {
           "deepseek/deepseek-v4-pro": {},
-          "volcengine-plan/glm-5.2": {}
+          "volcengine-plan/glm-5.2": {},
+          "glm/glm-5.2": {}
         },
         "thinkingDefault": "high",
         "heartbeat": {
