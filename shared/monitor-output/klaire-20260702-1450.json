@@ -1,0 +1,94 @@
+{
+  "principal": "klaire",
+  "timestamp": "2026-07-02T14:50:00+08:00",
+  "has_alert": true,
+  "data_source": "东方财富 + 腾讯 双源验证一致",
+  "alerts": [
+    {
+      "symbol": "600699",
+      "name": "均胜电子",
+      "price": 21.83,
+      "change_pct": -0.14,
+      "cost": 24.89,
+      "stop_loss": 24.0,
+      "take_profit": 33.0,
+      "alert_type": "🔴 止损触及",
+      "level": "critical",
+      "detail": "现价 21.83 已跌破止损价 24（浮亏约 -12.3%），备注显示已破止损不补，建议告知 Butler 触发平仓决策。"
+    },
+    {
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "price": 2.041,
+      "change_pct": -7.98,
+      "cost": 1.65,
+      "stop_loss": 1.55,
+      "take_profit": 1.98,
+      "vol_ratio": 1.59,
+      "alert_type": "🟡 止盈触及 + 大跌预警",
+      "level": "warning",
+      "detail": "现价 2.041 已达/超止盈价 1.98；同时今日跌幅 -7.98%（疑似 ETF 除息导致），量比 1.59。若非除息，需触发止盈决策。"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "price": 2.395,
+      "change_pct": -8.30,
+      "cost": 1.774,
+      "stop_loss": 1.85,
+      "take_profit": 2.3,
+      "vol_ratio": 0.89,
+      "alert_type": "🟡 止盈触及 + 大跌预警",
+      "level": "warning",
+      "detail": "现价 2.395 已超止盈价 2.3；今日跌幅 -8.30%（同样疑似 ETF 除息）。备注中已锁部分利润，建议决策剩余仓位。"
+    },
+    {
+      "symbol": "159540-b",
+      "name": "信创ETF",
+      "alert_type": "🔵 追踪止损审查",
+      "level": "info",
+      "detail": "止损线设置可能已滞后于当前行情，建议 IC 审查是否上移止损。"
+    },
+    {
+      "symbol": "002472",
+      "name": "双环传动",
+      "price": 42.62,
+      "change_pct": -0.19,
+      "cost": 40.693,
+      "stop_loss": 40.81,
+      "take_profit": 45.2,
+      "alert_type": "🟡 接近止损",
+      "level": "warning",
+      "detail": "现价 42.62，距止损（40.81）仅 4.25%，请关注。"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "price": 10.71,
+      "change_pct": -0.19,
+      "cost": 11.415,
+      "stop_loss": 10.5,
+      "take_profit": 15.0,
+      "alert_type": "🟡 接近止损",
+      "level": "warning",
+      "detail": "现价 10.71，距止损（10.50）仅 1.96%，请关注。"
+    },
+    {
+      "symbol": "603298",
+      "name": "杭叉集团",
+      "price": 25.0,
+      "change_pct": 2.0,
+      "cost": 25.2,
+      "stop_loss": 23.0,
+      "take_profit": 31.0,
+      "alert_type": "正常",
+      "level": "normal",
+      "detail": "现价 25.0，涨幅 +2.0%，量比 1.77，无异动。"
+    }
+  ],
+  "summary": "6 只持仓中 5 只出现异动：1 只🔴止损触及（均胜电子），2 只🟡止盈触及+大跌（科创50ETF、信创ETF，疑似除息，需人工确认），2 只🟡接近止损（双环传动、盾安环境）。建议 Butler 触发 IC 复盘对均胜电子作出平仓决策，并核实两只 ETF 是否为除息导致的价格跳降。",
+  "push_target": "oc_c19042fb899cda7eeca1bbbd7d981d1a",
+  "positions_checked": 6,
+  "us_stocks": 0,
+  "note": "本次监控范围内未识别到美股持仓，跳过 custom-market-data-us。"
+}

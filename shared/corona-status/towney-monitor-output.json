@@ -1,35 +1,157 @@
 {
-  "principal": "towney",
-  "timestamp": "2026-07-01T13:44:00.742307+08:00",
+  "has_alerts": true,
   "alerts": [
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "alert_type": "🔴 止损触及",
+      "current_price": 277.13,
+      "change_pct": -16.02,
+      "reason": "现价 277.13 已跌破止损价 295.0，请立即处理"
+    },
     {
       "symbol": "300394",
       "name": "天孚通信",
-      "price": 283.13,
-      "change_pct": -6.46,
-      "volume_ratio": 1.21,
-      "alert_level": "预警",
-      "reason": "今日跌幅 -6.46% 超 5%；距止损 280.56 仅 0.91%"
+      "alert_type": "🔴 止损触及",
+      "current_price": 250.4,
+      "change_pct": -12.14,
+      "reason": "现价 250.4 已跌破止损价 280.56，请立即处理"
     },
     {
       "symbol": "159949",
       "name": "创业板50ETF",
-      "price": 2.044,
-      "change_pct": -2.11,
-      "volume_ratio": 1.08,
-      "alert_level": "预警",
-      "reason": "距止损 1.95 仅 4.60%"
+      "alert_type": "🔴 止损触及",
+      "current_price": 1.911,
+      "change_pct": -5.91,
+      "reason": "现价 1.911 已跌破止损价 1.95，请立即处理"
     },
     {
-      "symbol": "518880",
-      "name": "黄金ETF",
-      "price": 8.275,
-      "change_pct": -1.23,
-      "volume_ratio": 0.73,
-      "alert_level": "强预警",
-      "reason": "现价 8.275 已跌破止损 8.5"
+      "symbol": "688120",
+      "name": "华海清科",
+      "alert_type": "🟡 大跌预警",
+      "current_price": 277.13,
+      "change_pct": -16.02,
+      "reason": "今日跌幅 -16.02%"
+    },
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "alert_type": "🟡 放量下跌",
+      "current_price": 277.13,
+      "change_pct": -16.02,
+      "reason": "量比 4.65，跌幅 -16.02%，抛压较强"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "alert_type": "🟡 大跌预警",
+      "current_price": 2.057,
+      "change_pct": -7.84,
+      "reason": "今日跌幅 -7.84%"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "alert_type": "🟡 大跌预警",
+      "current_price": 269.0,
+      "change_pct": -14.84,
+      "reason": "今日跌幅 -14.84%"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "alert_type": "🟡 放量下跌",
+      "current_price": 269.0,
+      "change_pct": -14.84,
+      "reason": "量比 7.27，跌幅 -14.84%，抛压较强"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "alert_type": "🟡 大跌预警",
+      "current_price": 250.4,
+      "change_pct": -12.14,
+      "reason": "今日跌幅 -12.14%"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "alert_type": "🟡 放量下跌",
+      "current_price": 250.4,
+      "change_pct": -12.14,
+      "reason": "量比 4.51，跌幅 -12.14%，抛压较强"
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "alert_type": "🟡 大跌预警",
+      "current_price": 1.911,
+      "change_pct": -5.91,
+      "reason": "今日跌幅 -5.91%"
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "alert_type": "🟡 接近止损",
+      "current_price": 8.851,
+      "change_pct": -3.58,
+      "reason": "现价 8.851 距止损（8.57）仅 3.17%"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "alert_type": "🟡 接近止损",
+      "current_price": 67.09,
+      "change_pct": -9.23,
+      "reason": "现价 67.09 距止损（64.0）仅 4.61%"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "alert_type": "🟡 大跌预警",
+      "current_price": 67.09,
+      "change_pct": -9.23,
+      "reason": "今日跌幅 -9.23%"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "alert_type": "🟡 放量下跌",
+      "current_price": 67.09,
+      "change_pct": -9.23,
+      "reason": "量比 8.30，跌幅 -9.23%，抛压较强"
+    },
+    {
+      "symbol": "000988",
+      "name": "华工科技",
+      "alert_type": "🟡 放量下跌(观察池)",
+      "current_price": 156.22,
+      "change_pct": -9.99,
+      "reason": "量比 7.87，跌幅 -9.99%"
+    },
+    {
+      "symbol": "002463",
+      "name": "沪电股份",
+      "alert_type": "🟡 放量下跌(观察池)",
+      "current_price": 130.51,
+      "change_pct": -10.0,
+      "reason": "量比 4.48，跌幅 -10.00%"
+    },
+    {
+      "symbol": "002463",
+      "name": "沪电股份",
+      "alert_type": "🔵 建仓条件触发",
+      "current_price": 130.51,
+      "change_pct": -10.0,
+      "reason": "现价 130.51 已达目标建仓价 135.0"
     }
   ],
-  "summary": "有 3 条预警",
-  "data_source": "gtimg (double-source verified vs eastmoney partial)"
+  "summary": "A股午后大幅下挫。Towney 组合 9 只持仓中 8 只下跌（含 4 只跌幅 -9%~-16%），触发 3 项🔴紧急、14 项🟡警告、1 项🔵关注。华海清科 -16%/澜起 -14.8%/天孚 -12.1%/沪电 -10%/华工 -10% 均放量下跌，688120、300394 现价已跌破止损位。建议立即联系 Dexter 触发 IC 复盘。",
+  "meta": {
+    "time": "2026-07-02 14:40 GMT+8",
+    "principal": "towney",
+    "data_source": "腾讯gtimg + 东方财富push2delay (双源验证)",
+    "positions_count": 9,
+    "watchlist_count": 8
+  }
 }
