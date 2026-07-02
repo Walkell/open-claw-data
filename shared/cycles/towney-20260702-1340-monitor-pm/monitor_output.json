@@ -1,0 +1,113 @@
+{
+  "principal": "towney",
+  "type": "monitor_pm",
+  "timestamp": "2026-07-02T13:46:48.944811+08:00",
+  "anomalies": [
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "current_price": 284.2,
+      "change_pct": -13.88,
+      "type": "🔴 止损触及",
+      "description": "现价 284.2 已跌破止损价 295"
+    },
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "current_price": 284.2,
+      "change_pct": -13.88,
+      "type": "🟡 大跌预警",
+      "description": "跌幅 -13.88%，量比 1.39"
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "current_price": 2.088,
+      "change_pct": -6.45,
+      "type": "🟡 大跌预警",
+      "description": "跌幅 -6.45%，量比 0.64"
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "current_price": 277.6,
+      "change_pct": -12.12,
+      "type": "🟡 大跌预警",
+      "description": "跌幅 -12.12%，量比 1.06"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "current_price": 256.8,
+      "change_pct": -9.89,
+      "type": "🔴 止损触及",
+      "description": "现价 256.8 已跌破止损价 280.56"
+    },
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "current_price": 256.8,
+      "change_pct": -9.89,
+      "type": "🟡 大跌预警",
+      "description": "跌幅 -9.89%，量比 1.02"
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "current_price": 1.925,
+      "change_pct": -5.22,
+      "type": "🔴 止损触及",
+      "description": "现价 1.925 已跌破止损价 1.95"
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "current_price": 1.925,
+      "change_pct": -5.22,
+      "type": "🟡 大跌预警",
+      "description": "跌幅 -5.22%，量比 1.00"
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "current_price": 8.93,
+      "change_pct": -2.72,
+      "type": "🟡 接近止损",
+      "description": "现价 8.93，距止损 8.57 仅 4.03%"
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "current_price": 68.26,
+      "change_pct": -7.64,
+      "type": "🟡 大跌预警",
+      "description": "跌幅 -7.64%，量比 0.80"
+    },
+    {
+      "symbol": "688041",
+      "name": "海光信息",
+      "current_price": 326.3,
+      "change_pct": -6.74,
+      "type": "🟡 观察池大跌",
+      "description": "跌幅 -6.74%，量比 0.93"
+    },
+    {
+      "symbol": "000988",
+      "name": "华工科技",
+      "current_price": 157.38,
+      "change_pct": -9.32,
+      "type": "🟡 观察池大跌",
+      "description": "跌幅 -9.32%，量比 1.01"
+    },
+    {
+      "symbol": "002463",
+      "name": "沪电股份",
+      "current_price": 131.0,
+      "change_pct": -9.66,
+      "type": "🟡 观察池大跌",
+      "description": "跌幅 -9.66%，量比 1.19"
+    }
+  ],
+  "summary": "AI板块普跌，共触发 13 项异动：🔴 止损触及×3、🟡 大跌预警×6、🟡 接近止损×1、🟡 观察池大跌×3。持仓中华海清科、天孚通信、创业板50ETF 已跌破止损，建议告知 Dexter/CIO 评估。",
+  "has_anomaly": true
+}
