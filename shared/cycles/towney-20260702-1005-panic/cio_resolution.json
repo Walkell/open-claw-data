@@ -1,0 +1,271 @@
+{
+  "cycle_id": "towney-20260702-1005-panic",
+  "principal": "towney",
+  "flow_type": "精简两委员",
+  "decision_time": 1751427120000,
+  "scene_weights": {
+    "Wr": 0.70,
+    "Wi": 0.15,
+    "Wn": 0.15,
+    "threshold": 6.5,
+    "note": "精简两委员：EOD/减仓/止损/大跌应对，技术面+估值优先"
+  },
+
+  "committee_summary": {
+    "research": { "status": "✅", "data_quality": "🟢全部可用" },
+    "industry": { "status": "未参与", "default_value": 5, "note": "精简两委员模式，Industry未参与" },
+    "news": { "status": "未参与", "default_value": 0, "note": "精简两委员模式，News未参与" },
+    "risk": {
+      "status": "✅",
+      "data_quality": "GREEN",
+      "raw_risk_score": 62,
+      "interpreted_risk_score": 6.2,
+      "raw_verdict": "ORANGE Warning",
+      "interpreted_verdict": "🟡黄牌（关注项，非阻断）",
+      "schema_note": "risk_score字段为整数62（预期0-10浮点数），按6.2/10解读；verdict='ORANGE Warning'非标准枚举值(NOC/VETO)，按Risk snapshot上下文解读为黄牌级关注"
+    }
+  },
+
+  "holdings_analysis": [
+    {
+      "symbol": "300394",
+      "name": "天孚通信",
+      "current_price": 264.70,
+      "bitable_position_pct": 7.13,
+      "cost_basis": -67.209,
+      "stop_loss": 280.56,
+      "stop_loss_status": "⚠️ 已跌破（跌破5.7%）",
+      "research": { "tech": 2, "fund": 7, "val": 3, "fin": 7 },
+      "research_composite": 5.00,
+      "industry_composite": 5,
+      "news_modifier": 0,
+      "baseline_score": 5.00,
+      "baseline_action": "建议减仓/止损",
+      "risk_verdict": "黄牌",
+      "cio_action": "强制止损出局",
+      "cio_reason": "已跌破止损位280.56（现价264.70，跌破5.7%），同时跌破MA20(348.78)和MA60(360.16)，均线空头排列确认。技术面评分2/10为全组合最低，ATR%达11.88%极端波动。baseline=5.00虽在持有观察区间，但止损位跌破+技术面破位构成强制卖出信号。PE分位数95.5%叠加从525高点回撤49.6%，高估值在恐慌中首当其冲。",
+      "stop_loss_update": "已触发，建议市价清仓",
+      "position_adjustment": {
+        "from_pct": 7.13,
+        "to_pct": 0,
+        "adjustment_pct": -7.13,
+        "action": "清仓"
+      }
+    },
+    {
+      "symbol": "688120",
+      "name": "华海清科",
+      "current_price": 309.01,
+      "bitable_position_pct": 10.544,
+      "cost_basis": 84.266,
+      "stop_loss": 295,
+      "stop_loss_status": "⚠️ 距止损仅4.5%",
+      "research": { "tech": 4, "fund": 6, "val": 2, "fin": 6 },
+      "research_composite": 4.60,
+      "industry_composite": 5,
+      "news_modifier": 0,
+      "baseline_score": 4.72,
+      "baseline_action": "持有观察",
+      "risk_verdict": "黄牌",
+      "cio_action": "持有观察，但降仓至7%",
+      "cio_reason": "CMP设备龙头基本面扎实（fundamental 6, financials 6），但PE=148.74处于100%分位，估值评分仅2/10。距止损295仅4.5%，若继续下跌触发止损将产生实质亏损。今日缩量(-6.36%, 量比0.41)非放量恐慌，中期均线支撑(MA20 245)尚远。建议先降仓位至7%，降低下行暴露，保留CMP设备赛道底仓。若跌破295止损位→执行清仓。",
+      "stop_loss_update": "维持295不变（ATR止损=成本84.27×(1-2×7.42%)=71.77不适用，支撑位MA20×0.97=237.81偏松，保留现有295紧止损）",
+      "stop_profit": "300.36（布林上轨333.73×0.90 PE分位数向下修正10%）",
+      "position_adjustment": {
+        "from_pct": 10.544,
+        "to_pct": 7.0,
+        "adjustment_pct": -3.544,
+        "action": "减仓"
+      }
+    },
+    {
+      "symbol": "159949",
+      "name": "创业板50ETF",
+      "current_price": 1.978,
+      "bitable_position_pct": 5.435,
+      "cost_basis": 1.506,
+      "stop_loss": 1.95,
+      "stop_loss_status": "⚠️ 极度接近止损（距1.4%）",
+      "research": { "tech": 4, "fund": 5, "val": 5, "fin": 5 },
+      "research_composite": 4.80,
+      "industry_composite": 5,
+      "news_modifier": 0,
+      "baseline_score": 4.86,
+      "baseline_action": "持有观察",
+      "risk_verdict": "黄牌",
+      "cio_action": "持有观察，止损维持1.95",
+      "cio_reason": "创业板50ETF作为分散配置工具（新能源+医药+科技），PE约35x处于近5年40%分位合理偏低。今日-2.61%远优于半导体板块(-6%+)。但已跌破MA20(1.987)且距止损1.95仅1.4%，风险极高。若明日继续下跌触发1.95止损→立即执行清仓。若守住1.95反弹→继续持有。",
+      "stop_loss_update": "维持1.95不变（ATR止损=1.393偏松，MA20×0.97=1.927稍紧，现有1.95合理）",
+      "stop_profit": "2.077（近60日最高2.119×0.98，静态止盈）",
+      "position_adjustment": {
+        "from_pct": 5.435,
+        "to_pct": 5.435,
+        "adjustment_pct": 0,
+        "action": "持有"
+      }
+    },
+    {
+      "symbol": "688008",
+      "name": "澜起科技",
+      "current_price": 295.52,
+      "bitable_position_pct": 6.08,
+      "cost_basis": 30.598,
+      "stop_loss": 251.30,
+      "stop_loss_status": "安全（距15.0%）",
+      "research": { "tech": 5, "fund": 8, "val": 3, "fin": 8 },
+      "research_composite": 6.15,
+      "industry_composite": 5,
+      "news_modifier": 0,
+      "baseline_score": 5.805,
+      "baseline_action": "持有观察",
+      "risk_verdict": "黄牌",
+      "cio_action": "持有观察",
+      "cio_reason": "DDR5龙头基本面全组合最优（fundamental 8, financials 8），DDR5渗透率+AI互联双主线确定性强。但PE=150.95处于99.6%分位，估值评分仅3/10。今日缩量-6.45%未放量恐慌，MA20(261.15)支撑尚在，距止损251.30有15%安全垫。基本面顶级+止损远=恐慌中相对安全标的，维持持有。若跌至MA20(261)附近考虑小幅加仓至8%。",
+      "stop_loss_update": "维持251.30不变（ATR止损=成本30.60×(1-2×7.45%)=26.03不适用，支撑位MA20×0.97=253.32接近，现有251.30合理）",
+      "stop_profit": "309.55（布林上轨315.87×0.98 PE分位数向下修正2%）",
+      "position_adjustment": {
+        "from_pct": 6.08,
+        "to_pct": 6.08,
+        "adjustment_pct": 0,
+        "action": "持有"
+      }
+    },
+    {
+      "symbol": "588090",
+      "name": "科创芯片ETF",
+      "current_price": 2.169,
+      "bitable_position_pct": 3.41,
+      "cost_basis": 1.506,
+      "stop_loss": 1.90,
+      "stop_loss_status": "安全（距12.4%）",
+      "research": { "tech": 5, "fund": 7, "val": 4, "fin": 6 },
+      "research_composite": 5.60,
+      "industry_composite": 5,
+      "news_modifier": 0,
+      "baseline_score": 5.42,
+      "baseline_action": "持有观察",
+      "risk_verdict": "黄牌",
+      "cio_action": "持有观察",
+      "cio_reason": "科创芯片ETF覆盖半导体全产业链，fundamental 7受益AI+国产替代。今日-2.82%远优于个股，ETF分散性在恐慌中体现价值。PE约80-100x偏高但ETF持仓分散降低了个股估值风险。距止损1.90有12.4%安全垫，止损位在MA60(1.733)之上合理。维持持有。",
+      "stop_loss_update": "维持1.90不变",
+      "position_adjustment": {
+        "from_pct": 3.41,
+        "to_pct": 3.41,
+        "adjustment_pct": 0,
+        "action": "持有"
+      }
+    },
+    {
+      "symbol": "002156",
+      "name": "通富微电",
+      "current_price": 70.56,
+      "bitable_position_pct": 2.43,
+      "cost_basis": 63.95,
+      "stop_loss": 64,
+      "stop_loss_status": "安全（距9.3%）",
+      "research": { "tech": 4, "fund": 6, "val": 5, "fin": 6 },
+      "research_composite": 5.35,
+      "industry_composite": 5,
+      "news_modifier": 0,
+      "baseline_score": 5.245,
+      "baseline_action": "持有观察",
+      "risk_verdict": "黄牌",
+      "cio_action": "持有观察",
+      "cio_reason": "先进封装龙头PEG=0.79估值合理（PE 77.55，56.6%分位），在半导体板块中相对低估。今日-4.53%缩量回调至MA20(68.00)附近，距止损64有9.3%安全垫。仓位仅2.43%风险可控。若跌至MA20下方且放量→考虑减仓至1.5%，否则持有。",
+      "stop_loss_update": "维持64不变",
+      "position_adjustment": {
+        "from_pct": 2.43,
+        "to_pct": 2.43,
+        "adjustment_pct": 0,
+        "action": "持有"
+      }
+    },
+    {
+      "symbol": "510500",
+      "name": "中证500ETF",
+      "current_price": 9.022,
+      "bitable_position_pct": 4.009,
+      "cost_basis": 8.302,
+      "stop_loss": 8.57,
+      "stop_loss_status": "安全（距5.0%）",
+      "research": { "tech": 6, "fund": 6, "val": 6, "fin": 5 },
+      "research_composite": 5.75,
+      "industry_composite": 5,
+      "news_modifier": 0,
+      "baseline_score": 5.525,
+      "baseline_action": "持有观察",
+      "risk_verdict": "黄牌",
+      "cio_action": "持有观察",
+      "cio_reason": "中证500ETF今日仅-1.72%，验证分散配置价值。PE约22x处于近5年30%分位合理偏低。均线多头排列良好(MA20 8.678, MA60 8.518)，技术面评分6/10。距止损8.57有5.0%安全垫。作为半导体集中持仓的对冲工具，维持持有。",
+      "stop_loss_update": "维持8.57不变",
+      "position_adjustment": {
+        "from_pct": 4.009,
+        "to_pct": 4.009,
+        "adjustment_pct": 0,
+        "action": "持有"
+      }
+    },
+    {
+      "symbol": "513300",
+      "name": "纳斯达克ETF",
+      "current_price": 2.687,
+      "bitable_position_pct": 5.06,
+      "cost_basis": 2.475,
+      "stop_loss": 2.52,
+      "stop_loss_status": "安全（距6.2%）",
+      "research": { "tech": 6, "fund": 7, "val": 5, "fin": 7 },
+      "research_composite": 6.30,
+      "industry_composite": 5,
+      "news_modifier": 0,
+      "baseline_score": 5.91,
+      "baseline_action": "持有观察",
+      "risk_verdict": "黄牌",
+      "cio_action": "持有观察",
+      "cio_reason": "纳斯达克ETF今日仅-0.85%，远优于A股半导体板块，跨境配置价值突出。纳指隔夜收26040创新高，VIX=16.59低位，美股未显示恐慌。fundamental 7 + financials 7为ETF中最高。距止损2.52有6.2%安全垫。维持持有。",
+      "stop_loss_update": "维持2.52不变",
+      "position_adjustment": {
+        "from_pct": 5.06,
+        "to_pct": 5.06,
+        "adjustment_pct": 0,
+        "action": "持有"
+      }
+    },
+    {
+      "symbol": "513650",
+      "name": "标普500ETF",
+      "current_price": 1.889,
+      "bitable_position_pct": 1.428,
+      "cost_basis": 1.654,
+      "stop_loss": 1.70,
+      "stop_loss_status": "安全（距10.0%）",
+      "research": { "tech": 7, "fund": 7, "val": 5, "fin": 7 },
+      "research_composite": 6.50,
+      "industry_composite": 5,
+      "news_modifier": 0,
+      "baseline_score": 6.05,
+      "baseline_action": "持有观察",
+      "risk_verdict": "黄牌",
+      "cio_action": "持有观察",
+      "cio_reason": "标普500ETF今日逆势+0.53%，全组合唯一上涨标的。技术面7/10全组合最高，低波动(ATR% 1.41%)提供组合稳定器功能。仓位仅1.43%偏低，但恐慌中不急于加仓。维持持有。",
+      "stop_loss_update": "维持1.70不变",
+      "position_adjustment": {
+        "from_pct": 1.428,
+        "to_pct": 1.428,
+        "adjustment_pct": 0,
+        "action": "持有"
+      }
+    }
+  ],
+
+  "panic_summary": {
+    "event": "2026-07-02 A股半导体板块恐慌性大跌",
+    "portfolio_pct": 45.53,
+    "breach_count": 1,
+    "near_breach_count": 2,
+    "ai_semi_concentration": 29.59,
+    "concentration_level": "🟢正常（<30%）",
+    "cio_verdict": "精简两委员大跌应对：天孚通信强制止损+华海清科降仓防御，其余持有观察。核心逻辑：半导体高估值（PE分位数95-100%）在恐慌中首当其冲，但缩量下跌(量比0.2-0.4)非放量出逃，跨境ETF(+0.53%/-0.85%)验证分散配置价值。不恐慌清仓，有序降风险暴露。"
+  },
+
+  "report_summary": "## 2026-07-02 半导体恐慌大跌 CIO综合裁决\n\n### 市场背景\nA股半导体板块集体大跌：天孚通信-7.12%、澜起科技-6.45%、华海清科-6.36%。触发因素：美股科技回调传导+前期涨幅过大获利回吐+AI资本开支分歧。但全板块缩量下跌（量比0.2-0.4），非放量恐慌出逃。\n\n### 裁决要点\n1. **天孚通信（300394）：强制止损出局** ⚠️ 已跌破止损280.56（现264.70，-5.7%），同时跌破MA20/MA60，技术面全面破位。从7.13%→0%。\n2. **华海清科（688120）：降仓防御** 距止损295仅4.5%，PE=148.74处于100%分位。从10.54%→7.0%，降低下行暴露。\n3. **创业板50ETF（159949）：高度警戒** 距止损1.95仅1.4%，若明日跌破立即执行清仓。\n4. **其余6只：持有观察** 澜起科技/科创芯片ETF/通富微电/中证500ETF/纳斯达克ETF/标普500ETF。\n\n### 核心逻辑\n半导体高估值（PE分位数95-100%）在恐慌中首当其冲，但缩量下跌暗示非系统性崩溃。跨境ETF（纳斯达克-0.85%/标普500+0.53%）验证分散配置价值。不恐慌清仓，有序降风险暴露。AI/半导体集中度29.59%仍在安全线内。\n\n### 执行清单\n- [ ] 天孚通信：市价清仓（7.13%→0%）\n- [ ] 华海清科：减仓至7%（10.54%→7.0%）\n- [ ] 创业板50ETF：若跌破1.95→清仓\n- [ ] 华海清科：若跌破295→清仓"
+}
