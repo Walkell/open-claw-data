@@ -1,52 +1,50 @@
 {
   "principal": "klaire",
-  "has_anomalies": true,
-  "data_quality": "single_source_unverified (仅腾讯gtimg可用；网易/同花顺/新浪/东财均失败)",
-  "snapshot_time": "2026-07-02 10:20 GMT+8",
-  "anomalies": [
-    {
-      "symbol": "159540",
-      "name": "信创ETF",
-      "anomaly_type": "large_drop",
-      "current_price": 2.493,
-      "change_pct": -4.59,
-      "reason": "跌幅 -4.59%，触发大跌预警阈值（≤-3%）；成本1.774，止损1.85，加仓价1.85，价格仍高于止损但连续下探需关注"
-    },
-    {
-      "symbol": "588080",
-      "name": "科创50ETF",
-      "anomaly_type": "large_drop",
-      "current_price": 2.135,
-      "change_pct": -3.74,
-      "reason": "跌幅 -3.74%，触发大跌预警阈值（≤-3%）；成本1.65，止损1.55，加仓价1.58，仍持仓浮亏状态"
-    },
-    {
-      "symbol": "002472",
-      "name": "双环传动",
-      "anomaly_type": "large_gain",
-      "current_price": 44.10,
-      "change_pct": 3.28,
-      "reason": "涨幅 +3.28%，触发大涨关注阈值（≥+3%）；接近止盈价45.2（距止盈约2.5%），可考虑告知 Butler 决策是否分批止盈"
-    },
+  "timestamp": "2026-07-02T11:00:00+08:00",
+  "session": "am-h10-11",
+  "has_alerts": true,
+  "alerts": [
     {
       "symbol": "600699",
       "name": "均胜电子",
-      "anomaly_type": "large_gain_below_stoploss",
-      "current_price": 22.53,
-      "change_pct": 3.06,
-      "reason": "涨幅 +3.06%，但现价22.53仍低于止损价24（备注已注明破止损不补、反弹24先出）；今日反弹但未回到止损线以上，需关注是否触及24即卖出"
+      "alert_type": "🔴 止损触及",
+      "detail": "现价 22.19 已跌破止损价 24.00，止损空间 -7.5%（今日 +1.51%，量比 1.87），成本价 24.89 已亏损，请立即处理"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "alert_type": "🟡 止盈触及",
+      "detail": "现价 2.488 已达/超止盈价 2.30（超出 +8.2%），今日 -4.78%（量比 1.15），可考虑告知 Butler 决策"
     },
     {
       "symbol": "002011",
       "name": "盾安环境",
-      "anomaly_type": "near_stoploss",
-      "current_price": 10.74,
-      "change_pct": 0.09,
-      "reason": "现价10.74，距止损价10.5仅约2.24%，处于接近止损区间；今日基本持平但风险敞口仍需关注"
+      "alert_type": "🟡 接近止损",
+      "detail": "现价 10.69，距止损价 10.50 仅 1.78%（<5% 阈值），今日 -0.37%（量比 1.07），请关注"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "alert_type": "🔵 止损线审查",
+      "detail": "浮盈率 40.2%，浮盈保护率仅 10.6%（触及止损将损失约 89% 的浮盈），止损线明显滞后于当前行情，建议告知 Butler 触发 IC 评估上移止损"
+    },
+    {
+      "symbol": "002125",
+      "name": "湘潭电化",
+      "alert_type": "🔵 建仓条件触发（观察池）",
+      "detail": "现价 13.88 已低于目标建仓价 16.00（低 -13.3%），今日持平，建议告知 Butler 确认"
+    },
+    {
+      "symbol": "600875",
+      "name": "东方电气",
+      "alert_type": "🔵 建仓条件触发（观察池）",
+      "detail": "现价 28.48 已低于目标建仓价 33.00（低 -13.7%），今日 -1.45%，建议告知 Butler 确认"
     }
   ],
-  "no_anomaly": [
-    {"symbol": "603298", "name": "杭叉集团", "current_price": 24.90, "change_pct": 1.59}
-  ],
-  "summary": "klaire 6只持仓中5只出现异动或需关注：2只大跌（信创ETF -4.59%、科创50ETF -3.74%），2只大涨（双环传动 +3.28%接近止盈、均胜电子 +3.06%但仍破止损），1只逼近止损（盾安环境距止损仅2.24%）。ETF板块（科创50、信创）今日走弱；机器人/汽车电子（双环、均胜）反弹。数据源仅腾讯gtimg可用，未双源验证。"
+  "notes": {
+    "data_source": "东方财富 + 腾讯 gtimg 双源验证通过（差异率均 < 0.5%）",
+    "holdings_checked": 6,
+    "watchlist_checked": 4,
+    "session_scope": "盘中健康检查（价格阈值 + 追踪止损审查 + 观察池建仓触发 + 成交量异常）"
+  }
 }

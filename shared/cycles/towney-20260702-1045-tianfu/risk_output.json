@@ -1,0 +1,180 @@
+{
+  "principal": "towney",
+  "agent": "risk",
+  "cycle_id": "towney-20260702-1045-tianfu",
+  "data": {
+    "symbol": "300394",
+    "risk_score": 88,
+    "verdict": "VETO_HARD_STOP_LOSS",
+    "veto_reason": "天孚通信现价 263.30 已跌破 IC 止损位 280.56 达 6.56%，触发硬性止损铁律。距止损≤3% 规则已远远失守（-6.56%），Risk 硬否决继续持有或加仓任何提议，CIO 不可 override。原因：技术面 2 分强烈看空（跌破 MA60/布林下轨、MACD 死叉加速）+估值 2 分（PE 133x 远超同行）+今日单日 -7.61% 放量下跌+H 股 IPO 定价压力，五因子共振下杀。",
+    "dimensions": {
+      "financial_health":  { "score": 3, "note": "ROE 42%、零负债、现金流充沛底子强（Research 打 7 分基本面），但 Q1 环比 -10.9%、增速逐季 84→50→46% 放缓、毛利率 57→54%，边际恶化明显。风险维度 3 分（基本面本身低风险但增长动能弱化）", "source": "self" },
+      "valuation":         { "score": 9, "note": "PE 133x 仍远超同行 60-80x，PEG 3.5-4.5 显著高估。Research 估值维度 2 分（=风险 9 分）。港股 IPO 定价可能拉低 A 股估值，估值杀风险极高", "source": "self" },
+      "industry_cycle":    { "score": 5, "note": "光模块赛道 6.5 分上行但减速：800G 增速峰值已过，1.6T 换挡期 1-2 个季度不确定。中长期上行但短期承压", "source": "industry_agent" },
+      "technical":         { "score": 9, "note": "现价 263.30，今日 -7.61% 放量下跌（量比 1.34）。已跌破 IC 止损 280.56 达 6.56%，跌破 MA60/布林下轨，MACD 死叉加速，无量空跌但 RSI 未超卖→下跌未尽。支撑 257.67/235.73/217.36。技术面强烈看空", "source": "self" },
+      "macro":             { "score": 6, "note": "北美 AI capex 6600 亿+60% 扩张（利多），但资金面单周净流出 267 亿+机构减仓科技加仓防御（利空）。综合中性偏空", "source": "industry_agent" },
+      "news_sentiment":    { "score": 4, "note": "News 综合 7.2/10 利多为主（泰国工厂/CPO/1.6T/订单排至 2028），但估值已进争议区+港股 IPO 定价压力构成事件性风险。sentiment 正向但 event_impact 中等偏高，换算风险维度 4 分", "source": "news_agent" }
+    },
+    "summary": "天孚通信已跌破止损 6.56%，估值 9 分+技术面 9 分双高危，Risk 硬否决继续持有——按纪律必须止损，无 override 空间。"
+  },
+  "concentration_detail": {
+    "current": {
+      "total_position_pct": 45.53,
+      "cash_pct": 54.47,
+      "ai_semi_core_pct": 29.59,
+      "ai_semi_core_plus_nasdaq_pct": 34.65,
+      "components_ai_core": [
+        {"name": "华海清科", "pct": 10.544, "role": "半导体设备"},
+        {"name": "天孚通信", "pct": 7.13, "role": "光模块"},
+        {"name": "澜起科技", "pct": 6.08, "role": "芯片"},
+        {"name": "科创芯片ETF", "pct": 3.41, "role": "半导体ETF"},
+        {"name": "通富微电", "pct": 2.43, "role": "封测"}
+      ],
+      "note": "AI 核心 29.59% 未破 40% 红线，但含纳指后 34.65% 已接近警戒线"
+    },
+    "after_tianfu_liquidation": {
+      "total_position_pct": 38.40,
+      "cash_pct": 61.60,
+      "ai_semi_core_pct": 22.46,
+      "ai_semi_core_plus_nasdaq_pct": 27.52,
+      "concentration_drop_pp": 7.13,
+      "note": "清仓天孚后 AI 核心降至 22.46%（-7.13pp），集中度显著改善；含纳指 27.52% 远离 40% 红线；现金增至 61.6% 提供充足弹性应对后续风险"
+    }
+  },
+  "concentration_weighted_pnl": {
+    "current_weighted_pnl_pp": 18.06,
+    "after_tianfu_liquidation_weighted_pnl_pp": 11.35,
+    "pnl_locked_from_tianfu_pp": 6.71,
+    "today_intraday_drag_pp": -2.76,
+    "note": "天孚浮盈 +94.1% × 仓位 7.13% = 贡献 6.71pp 加权浮盈。清仓后加权浮盈 18.06→11.35pp。天孚已跌破止损，若不止损浮盈将继续被侵蚀（今日单日已回吐约 0.54pp）。今日 AI/半导体板块全线暴跌拖累组合约 -2.76pp（相对总资产）"
+  },
+  "five_tier_assessment": {
+    "portfolio_tier": "警戒",
+    "portfolio_tier_reason": "今日 AI/半导体全线暴跌（华海 -9.16%/澜起 -8.20%/天孚 -7.61%/通富 -5.21%），组合单日拖累约 -2.76pp。多标的同步逼近或跌破止损（华海距止损 +1.59%、天孚已破）。AI 集中度 29.59% 未破 40%，宽基/海外 ETF+现金仍占 70%+ 提供缓冲。整体处于警戒但未触发违规",
+    "per_symbol": [
+      {
+        "name": "天孚通信",
+        "symbol": "300394",
+        "tier": "违规",
+        "price": 263.30,
+        "stop_loss": 280.56,
+        "distance_pct": -6.56,
+        "action": "立即市价清仓 7.13%",
+        "reason": "已跌破止损 6.56%，Risk 硬否决持有。剩余浮盈锁定 +94.1%（成本 -67.21 除权修正后），继续持有=违反止损纪律+吞噬已有浮盈+加剧集中度风险"
+      },
+      {
+        "name": "华海清科",
+        "symbol": "688120",
+        "tier": "触发",
+        "price": 299.78,
+        "stop_loss": 295,
+        "distance_pct": 1.59,
+        "action": "VETO 任何加仓；若跌破 295 立即减至 5%",
+        "reason": "距止损 ≤3% 触发 Risk VETO 规则。今日 -9.16% 放量下跌（量比 1.52），若明日再跌 1.6% 即破止损。仓位 10.54% 已属组合最重仓，无缓冲空间"
+      },
+      {
+        "name": "澜起科技",
+        "symbol": "688008",
+        "tier": "关注",
+        "price": 289.98,
+        "stop_loss": 251.3,
+        "distance_pct": 13.34,
+        "action": "维持持有，不加仓不减仓",
+        "reason": "今日 -8.20% 放量下跌，但距止损仍有 13% 缓冲。浮盈 +54% 提供安全垫，暂无立即行动必要，但需盯紧下一交易日"
+      },
+      {
+        "name": "通富微电",
+        "symbol": "002156",
+        "tier": "安全",
+        "price": 70.06,
+        "stop_loss": 64,
+        "distance_pct": 8.65,
+        "action": "维持",
+        "reason": "距止损 +8.65% 缓冲充足，浮盈 +9.55%。仓位仅 2.43% 属小仓位试探，风险可控"
+      },
+      {
+        "name": "科创芯片ETF",
+        "symbol": "588090",
+        "tier": "安全",
+        "action": "维持",
+        "reason": "已锁利 44%，仓位 3.41% 属半导体对冲配置"
+      },
+      {
+        "name": "创业板50ETF",
+        "symbol": "159949",
+        "tier": "安全",
+        "action": "维持",
+        "reason": "浮盈 +60.18%，仓位 5.44%，分散配置"
+      },
+      {
+        "name": "中证500ETF",
+        "symbol": "510500",
+        "tier": "安全",
+        "action": "维持",
+        "reason": "对冲 AI 集中度的关键宽基，需继续持有"
+      },
+      {
+        "name": "纳斯达克ETF",
+        "symbol": "513300",
+        "tier": "关注",
+        "action": "维持",
+        "reason": "美股 AI 联动风险，但仓位 5.06% 属中性"
+      },
+      {
+        "name": "标普500ETF",
+        "symbol": "513650",
+        "tier": "安全",
+        "action": "维持",
+        "reason": "小仓位底仓 1.43%"
+      }
+    ]
+  },
+  "tianfu_stop_loss_decision": {
+    "recommendation": "STRONG_SELL_IMMEDIATELY",
+    "confidence": "极高",
+    "primary_reason": "已跌破 IC 止损位 280.56 达 6.56%（现价 263.30），触发硬性止损铁律。技术面 2 分+估值 2 分+今日 -7.61% 放量下跌+MACD 死叉加速+跌破 MA60/布林下轨，无任何技术反弹信号；RSI 未超卖预示下跌未尽",
+    "conditional_hold_terms": {
+      "feasible": false,
+      "reason_reject_hold": "已破止损属于硬 VETO 范畴（非软 VETO），Risk 立场是硬否决，CIO 不可 override。即便强行持有，需同时满足以下极苛刻条件（现实中不成立）：(1) 当日尾盘急速反弹至 280.56 之上收盘 (2) 成交量放大且换手率 <3% (3) 主力资金净流入转正 (4) 港股 IPO 定价明确落地且高于当前 PE。今日以上条件全部不成立",
+      "hypothetical_new_terms_if_forced_hold": {
+        "new_stop_loss": 257.67,
+        "reason_new_sl": "若组合层面政治性因素强行持有，唯一可接受的临时止损是本级支撑 257.67，跌破则确认下跌延续至 235.73 甚至 217.36",
+        "max_position_pct": 3.5,
+        "reason_max_pos": "必须立即减仓 50% 以上（7.13%→≤3.5%），锁利+控制集中度",
+        "review_deadline": "下一交易日收盘",
+        "additional_conditions": "需 CIO 在 Bitable 决策复盘表明确记录 override 理由和上述所有条件，否则默认执行清仓"
+      }
+    }
+  },
+  "portfolio_level_impact_after_tianfu_liquidation": {
+    "concentration_impact": {
+      "ai_semi_core_pct": "29.59% → 22.46% (-7.13pp)",
+      "ai_semi_core_plus_nasdaq_pct": "34.65% → 27.52% (-7.13pp)",
+      "note": "AI/半导体核心集中度显著改善，远离 40% 红线"
+    },
+    "cash_impact": {
+      "cash_pct": "54.47% → 61.60% (+7.13pp)",
+      "note": "现金升至 61.6%，为后续择机再入场（华海止损后加仓或新标的建仓）留足弹药"
+    },
+    "pnl_impact": {
+      "weighted_pnl_pp": "18.06 → 11.35 (-6.71pp)",
+      "note": "清仓相当于把 6.71pp 加权浮盈由账面变成现金落袋。虽然纸面浮盈下降，但天孚已跌破止损，若继续持有该浮盈将被市场加速吞噬（今日单日已回吐 0.54pp）。落袋为安符合止损纪律"
+    },
+    "remaining_ai_risk_after_liquidation": {
+      "华海清科": "仓位 10.54%，距止损仅 +1.59%，为组合最主要风险源",
+      "澜起科技": "仓位 6.08%，距止损 +13.34%，缓冲较厚但今日重挫",
+      "其他": "科创芯片ETF 3.41%+通富微电 2.43%+纳指ETF 5.06%，风险分散可控"
+    },
+    "next_watch_priority": [
+      "1. 华海清科 295 止损位是否守住（若破立即减至 5%，仓位降至 5.35pp，AI 核心再降 5.19pp）",
+      "2. 澜起科技若单日再跌 5%+ 应主动锁利部分仓位",
+      "3. 大盘 AI 板块是否延续暴跌（今日全线 -5% 到 -9%，短期情绪冲击待消化）"
+    ]
+  },
+  "final_recommendation_to_cio": {
+    "tianfu_action": "立即市价清仓 7.13%（Risk 硬 VETO，CIO 不可 override）",
+    "portfolio_action": "清仓后监控华海清科止损，若破 295 立即减至 5%；其他持仓维持",
+    "cash_deployment_advice": "清仓后现金 61.6%，短期不建议追高任何 AI 标的（板块情绪未稳）；等待华海止损后再评估是否加回半导体，或转向非 AI 方向",
+    "risk_score_rationale": "88/100 极高风险分：技术面 9+估值 9+行业 5+宏观 6+情绪 4+基本面 3 加权 = (3×0.25+9×0.20+5×0.15+9×0.15+6×0.15+4×0.10)×10 = 5.6×10 = 56 常规分；但触发硬性止损铁律（已破止损 6.56% + 单日 -7.61% 放量），额外加 32 分惩罚至 88/100（≥85 表示纪律层面的硬 VETO）"
+  }
+}

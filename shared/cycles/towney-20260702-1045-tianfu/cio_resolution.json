@@ -1,0 +1,77 @@
+{
+  "cycle_id": "towney-20260702-1045-tianfu",
+  "principal": "towney",
+  "flow_type": "四委员",
+  "symbol": "300394",
+  "decision_time": 1751425620000,
+  "data_quality": {
+    "research": "🟢",
+    "industry": "⚠️ 中低",
+    "news": "🟢",
+    "risk": "🟢",
+    "overall_note": "Industry数据置信度中低（web_search不可用），但不影响核心判断"
+  },
+  "votes": {
+    "research": {
+      "principal": "towney",
+      "agent": "research",
+      "dimensions": {"technical": 2, "fundamental": 7, "valuation": 2, "financials": 7}
+    },
+    "industry": {
+      "principal": "towney",
+      "agent": "industry",
+      "macro_score": 5.5,
+      "industry_score": 6.5
+    },
+    "news": {
+      "principal": "towney",
+      "agent": "news",
+      "sentiment": 0.55,
+      "event_impact": 7,
+      "confidence": 0.78
+    },
+    "risk": {
+      "principal": "towney",
+      "agent": "risk",
+      "risk_score": 8.8,
+      "verdict": "VETO_HARD_STOP_LOSS",
+      "veto_reason": "现价263.30已跌破止损280.56达6.56%，触发硬性止损铁律。技术面2分+估值2分+MACD死叉加速+RSI未超卖。"
+    }
+  },
+  "section7": {
+    "weights": {"Wr": 0.55, "Wi": 0.30, "Wn": 0.15},
+    "research_composite": 4.75,
+    "research_breakdown": "0.30×7(fund) + 0.25×7(fin) + 0.25×2(val) + 0.20×2(tech)",
+    "industry_composite": 6.00,
+    "industry_breakdown": "0.50×5.5(macro) + 0.50×6.5(industry)",
+    "news_modifier": 0.385,
+    "news_breakdown": "0.55(sentiment) × 7(event_impact) / 10",
+    "baseline_score": 5.45,
+    "baseline_breakdown": "0.55×4.75 + 0.30×6.00 + 0.15×(5+0.385×5) = 2.6125+1.8000+1.03875",
+    "threshold": 7.0,
+    "baseline_action": "持有观察"
+  },
+  "cio_decision": {
+    "symbol": "300394",
+    "action": "清仓",
+    "position_pct_current": 7.13,
+    "position_pct_target": 0,
+    "price_ref": 263.30,
+    "override_reason": null,
+    "override_note": "CIO不override Risk VETO。止损已破6.56%+技术面2分+估值2分，无任何持有理由。止损纪律是组合生存根基。",
+    "pnl_locked": "+94.1%浮盈锁利，贡献6.71pp加权浮盈落袋",
+    "portfolio_impact": {
+      "total_position": "45.53% → 38.40%",
+      "cash": "54.47% → 61.60%",
+      "ai_concentration": "29.59% → 22.46%",
+      "weighted_pnl": "18.06pp → 11.35pp"
+    }
+  },
+  "post_liquidation_monitor": [
+    {"priority": 1, "symbol": "688120", "name": "华海清科", "risk": "距止损295仅+1.59%", "action": "若跌破295→减至5%；禁止加仓"},
+    {"priority": 2, "symbol": "688008", "name": "澜起科技", "risk": "今日-8.20%，距止损+13.34%", "action": "维持；再跌5%+主动锁利"},
+    {"priority": 3, "symbol": "002156", "name": "通富微电", "risk": "距止损+8.65%", "action": "维持；小仓位风险可控"}
+  ],
+  "core_logic": "天孚通信baseline 5.45处于持有观察区间，但Risk硬VETO(8.8/10)具有否决权：现价263.30已跌破止损280.56达6.56%，技术面2分强烈看空（跌破MA60/布林下轨/MACD死叉加速/RSI未超卖），估值仍偏贵(PE 133x)，基本面虽优但增速逐季放缓(84→50→46%)且Q1环比-10.9%。清仓锁定+94.1%浮盈，AI集中度降至22.46%远离红线，现金升至61.6%。不override——已破止损的情况下不存在值得override的投资逻辑。",
+  "report_summary": "天孚通信(300394) IC综合裁决：建议立即清仓。baseline=5.45（持有观察），但Risk硬VETO——止损280.56已跌破6.56%（现价263.30），技术面2分强烈看空。基本面优良(7分)但增速放缓+Q1环比下滑，估值仍偏贵(PE 133x)。清仓锁定+94.1%浮盈，组合现金升至61.6%，AI集中度降至22.46%。后续重点监控华海清科（距止损仅1.59%）。"
+}
