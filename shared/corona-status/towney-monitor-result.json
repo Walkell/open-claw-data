@@ -1,32 +1,101 @@
 {
   "principal": "towney",
-  "timestamp": "2026-07-01T14:45:00+08:00",
+  "check_time": "2026-07-02T13:22:00+08:00",
   "has_alerts": true,
+  "market_context": "A股半导体/成长板块集体重挫，Towney持仓多个标的深度下跌",
+  "summary": "⚠️ 严重异动：Towney持仓9只中7只下跌，其中3只已跌破止损位（华海清科、天孚通信、创业板50ETF），4只跌幅>5%。触发条件：3个🔴跌破止损 + 4个🟡大跌预警。数据源：腾讯gtimg（主）+东方财富eastmoney（备），双源验证一致（差异率<0.5%）。",
   "alerts": [
     {
-      "symbol": "300394",
+      "level": "🔴 CRITICAL",
+      "type": "止损触及",
+      "code": "688120",
+      "name": "华海清科",
+      "current_price": 287.95,
+      "change_pct": -12.74,
+      "stop_loss": 295,
+      "distance_to_stop_pct": -2.45,
+      "note": "现价已跌破止损价 295，跌幅-12.74%，量比1.39（放量下跌）。立即需要 Dexter IC 决策。"
+    },
+    {
+      "level": "🔴 CRITICAL",
+      "type": "止损触及",
+      "code": "300394",
       "name": "天孚通信",
-      "price": 281.5,
-      "change_pct": -7.0,
-      "alert_type": "大跌预警/接近止损",
-      "detail": "今日跌幅-7.0%，现价281.50，距止损280.56仅0.33%，濒临触发；量比1.06；成本-67.21（除权修正）浮盈仍高但止损线极度贴近，请优先处理"
+      "current_price": 258.17,
+      "change_pct": -9.41,
+      "stop_loss": 280.56,
+      "distance_to_stop_pct": -8.67,
+      "note": "现价258.17严重跌破止损价280.56（跌破幅度8.67%），跌幅-9.41%，量比1.04。持仓成本已被减仓摊薄至负值，浮盈仍在但止损已被穿透，需 Dexter IC 立即决策。"
     },
     {
-      "symbol": "159949",
+      "level": "🔴 CRITICAL",
+      "type": "止损触及",
+      "code": "159949",
       "name": "创业板50ETF",
-      "price": 2.026,
-      "change_pct": -2.97,
-      "alert_type": "接近止损",
-      "detail": "今日跌幅-2.97%，现价2.026，距止损1.95约3.75%，进入警戒区；量比1.02正常；数据源单源（eastmoney返回502）"
+      "current_price": 1.940,
+      "change_pct": -4.48,
+      "stop_loss": 1.95,
+      "distance_to_stop_pct": -0.52,
+      "note": "现价1.940已跌破止损1.95，跌幅-4.48%。持仓浮盈+60%（成本1.506），需 Dexter 评估是否止损离场。"
     },
     {
-      "symbol": "002156",
+      "level": "🟡 WARNING",
+      "type": "大跌预警",
+      "code": "688008",
+      "name": "澜起科技",
+      "current_price": 282.89,
+      "change_pct": -10.45,
+      "stop_loss": 251.3,
+      "distance_to_stop_pct": 11.17,
+      "note": "跌幅-10.45%，距止损尚有11.17%缓冲。持仓浮盈+54.21%。量比1.04（未见放量恐慌）。属跟随板块回调，建议 Dexter 关注是否需上移止损保护浮盈。"
+    },
+    {
+      "level": "🟡 WARNING",
+      "type": "大跌预警",
+      "code": "002156",
       "name": "通富微电",
-      "price": 73.0,
-      "change_pct": -3.78,
-      "alert_type": "中跌预警",
-      "detail": "今日跌幅-3.78%，现价73.00，成本63.95仍浮盈+14%，止损64.00距离12.3%较安全；量比0.85无异常放量"
+      "current_price": 69.25,
+      "change_pct": -6.30,
+      "stop_loss": 64,
+      "distance_to_stop_pct": 7.58,
+      "note": "跌幅-6.30%，距止损7.58%。刚加仓摊薄后成本63.95（仅高出0.08%），若继续下跌本金岌岌可危。量比0.84。"
+    },
+    {
+      "level": "🟡 WARNING",
+      "type": "大跌预警",
+      "code": "588090",
+      "name": "科创芯片ETF",
+      "current_price": 2.107,
+      "change_pct": -5.60,
+      "stop_loss": 1.90,
+      "distance_to_stop_pct": 9.82,
+      "note": "跌幅-5.60%，距止损9.82%。持仓浮盈+34%。量比0.62（未放量），属被动跟跌。"
+    },
+    {
+      "level": "🔵 INFO",
+      "type": "跟随下跌",
+      "code": "510500",
+      "name": "中证500ETF",
+      "current_price": 8.979,
+      "change_pct": -2.19,
+      "stop_loss": 8.57,
+      "distance_to_stop_pct": 4.55,
+      "note": "跌幅-2.19%，宽基ETF跟随大盘小幅回调，无异动，仅供参考。"
     }
   ],
-  "summary": "9只持仓中3只触发监控：天孚通信-7%重挫已濒临止损（距离仅0.33%），最高优先级；创业板50ETF小跌但接近止损警戒区；通富微电中幅回调但仍有安全距离。半导体AI板块（天孚、通富、澜起、科创芯片ETF、创50ETF）今日普跌，市场情绪偏弱。行情双源验证：gtimg+eastmoney，天孚跌幅一致确认。当前时间14:45（下午盘中），距收盘还有20分钟，建议关注天孚通信是否守住止损位。"
+  "no_alert_positions": [
+    {"code": "513300", "name": "纳斯达克ETF", "current_price": 2.686, "change_pct": -0.89, "stop_loss": 2.52, "note": "小幅回调，距止损6.18%，健康"},
+    {"code": "513650", "name": "标普500ETF", "current_price": 1.881, "change_pct": 0.11, "stop_loss": 1.70, "note": "微涨，距止损9.63%，健康"}
+  ],
+  "data_sources": {
+    "primary": "腾讯 gtimg (qt.gtimg.cn)",
+    "secondary": "东方财富 eastmoney push2 API",
+    "validation_status": "双源验证：9只中8只价格差异<0.5%；澜起科技(688008)东方财富接口未返回，采用腾讯单源。差异率均在容忍范围内。",
+    "excluded_sources": ["akshare MCP(未配置)", "网易财经(502)", "新浪财经(403)", "同花顺(404)"]
+  },
+  "recommended_actions": [
+    "🚨 立即触发 Dexter IC 复盘：华海清科(688120)、天孚通信(300394)、创业板50ETF(159949) 三只已跌破止损，需人工决策止损离场 或 IC 判断是否为盘中假摔",
+    "⚠️ 关注：澜起科技(688008)、通富微电(002156)、科创芯片ETF(588090) 跌幅显著，可能进一步逼近止损",
+    "📊 板块判断：A股半导体、成长股当日集体重挫，可能存在系统性风险，建议 Dexter 评估整体仓位保护"
+  ]
 }

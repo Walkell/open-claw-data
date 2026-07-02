@@ -1,80 +1,92 @@
 {
   "principal": "klaire",
-  "timestamp": "2026-06-24T14:10:00+08:00",
+  "timestamp": "2026-07-02T13:12:00+08:00",
+  "session_window": "下午盘中",
   "has_alerts": true,
   "alerts": [
     {
-      "symbol": "002472",
-      "name": "双环传动",
-      "price": 40.11,
-      "change_pct": -1.11,
-      "alert_type": "🔴 止损触及",
-      "detail": "现价 40.11 已跌破止损价 40.81，请立即处理"
-    },
-    {
       "symbol": "600699",
       "name": "均胜电子",
-      "price": 22.75,
-      "change_pct": -1.04,
+      "current_price": 22.29,
+      "change_pct": 1.97,
       "alert_type": "🔴 止损触及",
-      "detail": "现价 22.75 已跌破止损价 24.00，请立即处理"
-    },
-    {
-      "symbol": "002011",
-      "name": "盾安环境",
-      "price": 10.31,
-      "change_pct": -1.34,
-      "alert_type": "🔴 止损触及",
-      "detail": "现价 10.31 已跌破止损价 10.50，请立即处理"
-    },
-    {
-      "symbol": "588080",
-      "name": "科创50ETF",
-      "price": 2.019,
-      "change_pct": 3.22,
-      "alert_type": "🟡 止盈触及",
-      "detail": "现价 2.019 已达止盈价 1.98，可考虑告知 Butler 决策"
+      "level": "urgent",
+      "detail": "现价 22.29 已跌破止损价 24（持仓早前已破止损，备注注明反弹24先出）。建议立即告知 Butler 决策清仓/减仓。"
     },
     {
       "symbol": "159540",
       "name": "信创ETF",
-      "price": 2.362,
-      "change_pct": 3.10,
+      "current_price": 2.464,
+      "change_pct": -5.7,
+      "alert_type": "🟡 大跌预警",
+      "level": "warning",
+      "detail": "今日跌幅 -5.7%，跌幅超过 -5% 阈值，请关注。"
+    },
+    {
+      "symbol": "159540",
+      "name": "信创ETF",
+      "current_price": 2.464,
+      "change_pct": -5.7,
       "alert_type": "🟡 止盈触及",
-      "detail": "现价 2.362 已达止盈价 2.30，可考虑告知 Butler 决策"
+      "level": "warning",
+      "detail": "现价 2.464 已达/超过止盈价 2.3，可考虑告知 Butler 是否分批止盈锁利。"
     },
     {
-      "symbol": "603298",
-      "name": "杭叉集团",
-      "price": 23.75,
-      "change_pct": -4.20,
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "current_price": 2.112,
+      "change_pct": -4.78,
+      "alert_type": "🟡 止盈触及",
+      "level": "warning",
+      "detail": "现价 2.112 已高于止盈价 1.98，且今日大幅回落 -4.78%，建议告知 Butler 评估是否止盈锁利。"
+    },
+    {
+      "symbol": "002011",
+      "name": "盾安环境",
+      "current_price": 10.7,
+      "change_pct": -0.28,
       "alert_type": "🟡 接近止损",
-      "detail": "现价 23.75 距止损 23.00 仅 3.16%，且今日跌幅 -4.20%，请关注"
+      "level": "warning",
+      "detail": "现价 10.70 距止损价 10.5 仅 1.87%，缓冲极薄，请关注是否会加速下探。"
     },
     {
-      "symbol": "002125",
-      "name": "湘潭电化",
-      "price": 15.70,
-      "change_pct": -5.48,
-      "alert_type": "🔵 建仓条件触发",
-      "detail": "现价 15.70 已达目标建仓价 16，但今日跌幅 -5.48%，建议告知 Butler 确认时机"
+      "symbol": "159540",
+      "name": "信创ETF",
+      "current_price": 2.464,
+      "change_pct": -5.7,
+      "alert_type": "🔵 止损线审查",
+      "level": "info",
+      "detail": "止损设置可能已滞后于当前行情，建议 IC 审查是否上移止损保护盈利。"
     },
     {
-      "symbol": "600875",
-      "name": "东方电气",
-      "price": 30.30,
-      "change_pct": -1.75,
-      "alert_type": "🔵 建仓条件触发",
-      "detail": "现价 30.30 已低于目标建仓价 33，建议告知 Butler 评估前置条件（MACD/RSI/MA20）"
-    },
-    {
-      "symbol": "002156",
-      "name": "通富微电",
-      "price": 73.88,
-      "change_pct": 7.98,
-      "alert_type": "🔵 大涨异动",
-      "detail": "观察池标的今日涨幅 +7.98%，距目标建仓价 55 已大幅偏离，注意追高风险"
+      "symbol": "588080",
+      "name": "科创50ETF",
+      "current_price": 2.112,
+      "change_pct": -4.78,
+      "alert_type": "🔵 止损线审查",
+      "level": "info",
+      "detail": "止损设置可能已滞后于当前行情，建议 IC 审查是否上移止损保护盈利。"
     }
   ],
-  "summary": "盘中监控发现 9 项异动：3 只持仓股触发止损（002472双环传动、600699均胜电子、002011盾安环境），2 只ETF触发止盈（588080科创50ETF、159540信创ETF），1 只接近止损（603298杭叉集团），2 只观察池标的进入建仓区间（002125湘潭电化、600875东方电气），1 只观察池标的大涨偏离建仓价（002156通富微电）。多项异动需告知 Butler 评估决策。"
+  "positions_snapshot": [
+    {"symbol": "002472", "name": "双环传动", "price": 43.78, "change_pct": 2.53, "status": "正常"},
+    {"symbol": "588080", "name": "科创50ETF", "price": 2.112, "change_pct": -4.78, "status": "止盈触及+止损审查"},
+    {"symbol": "159540", "name": "信创ETF", "price": 2.464, "change_pct": -5.7, "status": "大跌+止盈触及+止损审查"},
+    {"symbol": "600699", "name": "均胜电子", "price": 22.29, "change_pct": 1.97, "status": "止损触及"},
+    {"symbol": "002011", "name": "盾安环境", "price": 10.7, "change_pct": -0.28, "status": "接近止损"},
+    {"symbol": "603298", "name": "杭叉集团", "price": 25.67, "change_pct": 4.73, "status": "正常"}
+  ],
+  "watchlist_snapshot": [
+    {"symbol": "002125", "name": "湘潭电化", "price": 13.89, "change_pct": 0.07, "state": "观察中"},
+    {"symbol": "600875", "name": "东方电气", "price": 28.75, "change_pct": -0.52, "state": "已入池"},
+    {"symbol": "002049", "name": "紫光国微", "price": 85.79, "change_pct": -0.72, "state": "观察中"},
+    {"symbol": "002156", "name": "通富微电", "price": 69.46, "change_pct": -6.02, "state": "观察中"}
+  ],
+  "data_source": {
+    "primary": "腾讯 gtimg（10/10 全量成功）",
+    "verification": "东财 push2 备源（成功 4/10：002011/603298/600875/002049/002156，差异率均 <0.5%，双源验证通过）",
+    "unverified": ["002472", "588080", "159540", "600699", "002125"],
+    "note": "东财大部分标的返回502；网易/同花顺/新浪备源也不可用。主源腾讯稳定，故 5 个标的按单源使用，价格质量可接受。"
+  },
+  "summary": "klaire 6 只持仓触发 7 条异动：1条🔴止损触及(600699均胜电子)、4条🟡警告(159540信创ETF大跌+止盈触及、588080科创50ETF止盈触及、002011盾安环境接近止损)、2条🔵止损线审查(159540/588080盈利较大但止损滞后)。观察池4只均未触发建仓条件（无待建仓状态）。建议立即向 Butler/Klaire 推送预警群。"
 }
