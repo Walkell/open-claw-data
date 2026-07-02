@@ -1,8 +1,7 @@
 {
   "principal": "towney",
   "status": "running",
-  "cycle_id": "towney-20260702-1340-monitor-pm",
   "step": "盘中监控启动",
-  "started_at": "2026-07-02T13:40:00+08:00",
-  "updated_at": "2026-07-02T13:40:00+08:00"
+  "started_at": "2026-07-02T14:20:00+08:00",
+  "updated_at": "2026-07-02T14:20:00+08:00"
 }
